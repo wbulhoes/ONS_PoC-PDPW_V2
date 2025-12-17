@@ -1,0 +1,34 @@
+# Escape=`
+
+# Usa ASP.NET .NET 8 (Nano Server LTSC 2022)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-nanoserver-ltsc2022 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+# Etapa de build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-ltsc2022 AS build
+WORKDIR /src
+
+# Copia csproj e restaura dependências
+COPY ["src/PDPW.API/PDPW.API.csproj", "PDPW.API/"]
+COPY ["src/PDPW.Application/PDPW.Application.csproj", "PDPW.Application/"]
+COPY ["src/PDPW.Domain/PDPW.Domain.csproj", "PDPW.Domain/"]
+COPY ["src/PDPW.Infrastructure/PDPW.Infrastructure.csproj", "PDPW.Infrastructure/"]
+
+RUN dotnet restore "PDPW.API/PDPW.API.csproj"
+
+# Copia o restante e compila
+COPY src/ .
+WORKDIR "/src/PDPW.API"
+RUN dotnet build "PDPW.API.csproj" -c Release -o /app/build
+
+# Etapa de publicação
+FROM build AS publish
+RUN dotnet publish "PDPW.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+# Etapa final
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "PDPW.API.dll"]
