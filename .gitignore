@@ -50,3 +50,25 @@ logs/
 *.ldf
 *.db
 *.sqlite
+
+# ============================================================================
+# PDPW - Arquivos Sensíveis e Backups
+# ============================================================================
+
+# Backups de banco de dados (IMPORTANTE: Não commitar!)
+*.bak
+*.bacpac
+*.trn
+database/backups/original/
+database/backups/working/
+database/data/
+
+# Connection strings locais
+appsettings.local.json
+appsettings.*.local.json
+secrets.json
+
+# Dados de produção ou sensíveis
+*.sql.data
+*_data.sql
+seed_production.sql
