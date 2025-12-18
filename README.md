@@ -6,284 +6,186 @@ PoC de modernização do sistema legado PDPW para o ONS (Operador Nacional do Si
 
 ---
 
-## ⚡ ATUALIZAÇÃO IMPORTANTE (18/12/2025)
+## ⚡ ATUALIZAÇÃO IMPORTANTE (19/12/2024)
 
-### 🎯 Vertical Slices Definidos e Prontos para Implementação!
+### 🚀 KICK-OFF DO SQUAD - DOCUMENTAÇÃO COMPLETA DISPONÍVEL!
 
-**Status:** ✅ Análise de banco de dados COMPLETA  
-**Próximo:** 🚀 Iniciar desenvolvimento 19/12/2025
+**Status:** ✅ Ambiente de desenvolvimento preparado  
+**Equipe:** 3 Devs + 1 QA  
+**Início:** 19/12/2024 - 15:00h
 
-#### Problema Encontrado:
-- ❌ Backup do banco: 43GB (~350GB descompactado)
-- ❌ Espaço disponível: 245GB
-- ❌ **Impossível restaurar banco legado no ambiente atual**
+#### 📚 Documentação para Reunião de Kick-off
 
-#### Solução Implementada:
-- ✅ **Engenharia reversa** do código VB.NET
-- ✅ **Mapeamento completo** de 10+ entidades através dos DAOs
-- ✅ **InMemory Database** para PoC (setup instantâneo)
-- ✅ **Dados seed** realistas para demonstração
+**Para o Tech Lead:**
+- 📋 [`docs/CHECKLIST_REUNIAO_EXECUTIVO.md`](docs/CHECKLIST_REUNIAO_EXECUTIVO.md) - Checklist executivo para conduzir a reunião
+- 📊 [`docs/APRESENTACAO_REUNIAO_SQUAD.md`](docs/APRESENTACAO_REUNIAO_SQUAD.md) - Material completo de apresentação
+- 📱 [`docs/RESUMO_VISUAL_APRESENTACAO.md`](docs/RESUMO_VISUAL_APRESENTACAO.md) - Slides visuais para projeção
 
-#### Documentos Criados:
-- 📄 [`database/SCHEMA_ANALYSIS_FROM_CODE.md`](database/SCHEMA_ANALYSIS_FROM_CODE.md) - Análise completa do schema
-- 📄 [`VERTICAL_SLICES_DECISION.md`](VERTICAL_SLICES_DECISION.md) - Decisões técnicas e entidades
-- 📄 [`RESUMO_EXECUTIVO.md`](RESUMO_EXECUTIVO.md) - Resumo executivo completo
+**Para o Squad (Devs + QA):**
+- 📄 [`docs/SQUAD_BRIEFING_19DEC.md`](docs/SQUAD_BRIEFING_19DEC.md) - Briefing completo com divisão de tarefas
+- 🔍 [`docs/ANALISE_TECNICA_CODIGO_LEGADO.md`](docs/ANALISE_TECNICA_CODIGO_LEGADO.md) - Análise detalhada do código VB.NET
+- 🛠️ [`docs/SETUP_AMBIENTE_GUIA.md`](docs/SETUP_AMBIENTE_GUIA.md) - Guia passo a passo de instalação
 
-### 🎯 Slices Selecionados:
+**Documentos Anteriores:**
+- 📄 [`database/SCHEMA_ANALYSIS_FROM_CODE.md`](database/SCHEMA_ANALYSIS_FROM_CODE.md) - Análise do schema do banco
+- 📄 [`VERTICAL_SLICES_DECISION.md`](VERTICAL_SLICES_DECISION.md) - Decisões técnicas dos slices
+- 📄 [`RESUMO_EXECUTIVO.md`](RESUMO_EXECUTIVO.md) - Resumo executivo do projeto
+- 📖 [`GLOSSARIO.md`](GLOSSARIO.md) - Glossário de termos técnicos
 
-#### **SLICE 1: Cadastro de Usinas** ⭐⭐⭐
+---
+
+## 👥 DIVISÃO DO SQUAD
+
+### 🟦 DEV 1 - Backend Lead
+**Responsabilidade:** SLICE 1 - Cadastro de Usinas  
+**Prazo:** 20/12/2024 (2 dias)  
+**Entregáveis:**
+- Entidade `Usina` no Domain
+- Repository + Service + Controller
+- 6 endpoints REST (GET/POST/PUT/DELETE)
+- Testes unitários (> 70% cobertura)
+
+### 🟩 DEV 2 - Backend
+**Responsabilidade:** SLICE 2 - Consulta Arquivos DADGER  
+**Prazo:** 22/12/2024 (4 dias)  
+**Entregáveis:**
+- 3 entidades relacionadas (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
+- Repositórios com JOINs complexos
+- Services com filtros (período, usina, semana)
+- 5 endpoints REST
+- Testes de integração
+
+### 🟨 DEV 3 - Frontend Lead
+**Responsabilidade:** Interfaces React para ambos slices  
+**Prazo:** 21/12/2024 (3 dias)  
+**Entregáveis:**
+- Tela de listagem de Usinas + Formulário
+- Tela de consulta DADGER + Filtros dinâmicos
+- Integração completa com API
+- UI responsiva e moderna
+
+### 🟪 QA - Quality Assurance
+**Responsabilidade:** Testes e documentação  
+**Prazo:** Diário (19-24/12/2024)  
+**Entregáveis:**
+- Plano de testes documentado
+- Casos de teste executados (API + UI)
+- Relatório de bugs (se houver)
+- Checklist de validação final
+
+---
+
+## 📅 CRONOGRAMA
+
+```
+19/12 (Qui) ━━━ Setup + Kick-off + Início desenvolvimento
+20/12 (Sex) ━━━ SLICE 1 (Usinas) completo
+21/12 (Sáb) ━━━ Integração SLICE 1 + Início SLICE 2
+22/12 (Dom) ━━━ SLICE 2 (DADGER) completo
+23/12 (Seg) ━━━ Integração SLICE 2 + Ajustes
+24/12 (Ter) ━━━ Docker + Testes + Documentação
+25/12 (Qua) ━━━ FERIADO 🎄
+26/12 (Qui) ━━━ Apresentação + Entrega ✅
+```
+
+**📅 Entrega:** 26/12/2024  
+**📅 Apresentação:** 05/01/2025  
+**📅 Estimativa completa:** 12/01/2025
+
+---
+
+## 🎯 Vertical Slices Definidos
+
+### **SLICE 1: Cadastro de Usinas** ⭐⭐⭐
 - Entidade central do sistema (CRUD completo)
 - Backend: API REST com 6 endpoints
 - Frontend: Listagem + formulário + filtros
+- **Código legado:** `pdpw_act/pdpw/Dao/UsinaDAO.vb`
+- **Complexidade:** Média
 - **Tempo:** 2 dias
 
-#### **SLICE 2: Consulta Arquivos DADGER** ⭐⭐⭐
+### **SLICE 2: Consulta Arquivos DADGER** ⭐⭐⭐
 - Funcionalidade core do PDPW
 - 3 entidades relacionadas (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
 - Backend: API REST com relacionamentos complexos
 - Frontend: Consulta + filtros + grid de valores
+- **Código legado:** `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
+- **Complexidade:** Alta
 - **Tempo:** 3 dias
 
-**📅 Início:** 19/12/2025  
-**📅 Entrega:** 26/12/2025
-
 ---
 
-## ✅ Decisões da Reunião (17/12/2025)
+## 🛠️ Setup Rápido do Ambiente
 
-- Escopo: migrar para .NET 8 (backend) e React (frontend).
-- Foco: Backend primeiro; tentar 2 fluxos completos se houver tempo.
-- Legado: receberemos repositório em VB.NET (WebForms) e um backup (dump) do banco.
-- Autenticação: fora do escopo da PoC (sem login por ora).
-- Banco de dados: SQL Server (usar backup/dump legado; sem EF migrations iniciais).
-- Contêineres: priorizar backend em contêiner Windows; banco ficará externo (local/VM) devido à indisponibilidade de imagem oficial do SQL Server para contêiner Windows.
-- IaC: Docker Compose como diferencial (frontend e backend); SQL Server fora do compose no Windows.
-- Repositório: manteremos TFS no cliente durante a PoC; entrega final no GitHub.
-- Entregáveis: código, compose, documentação e demonstração funcional até 26/12.
-
-## 🏗️ Arquitetura
-
-### Backend (.NET 8)
-- **Arquitetura Limpa (Clean Architecture)** com separação de camadas:
-  - **PDPW.Domain**: Entidades e interfaces do domínio
-  - **PDPW.Application**: Casos de uso, serviços e DTOs
-  - **PDPW.Infrastructure**: Implementação de repositórios e Entity Framework Core
-  - **PDPW.API**: Controllers e configuração da API REST
-
-### Frontend (React + TypeScript)
-- React 18 com TypeScript
-- Vite como bundler
-- Axios para comunicação com API
-- React Router para navegação
-
-### Containerização
-- **Docker Compose** orquestrando:
-  - SQL Server 2022
-  - Backend API (.NET 8)
-  - Frontend (React + Nginx)
-- Contêineres Windows para backend (compatibilidade com legado)
-
-## 📁 Estrutura do Projeto
-
-```
-_ONS_PoC-PDPW/
-├── src/
-│   ├── PDPW.Domain/           # Camada de domínio
-│   │   ├── Entities/          # Entidades de negócio
-│   │   └── Interfaces/        # Contratos de repositórios
-│   ├── PDPW.Application/      # Camada de aplicação
-│   │   ├── DTOs/              # Data Transfer Objects
-│   │   ├── Interfaces/        # Contratos de serviços
-│   │   └── Services/          # Lógica de negócio
-│   ├── PDPW.Infrastructure/   # Camada de infraestrutura
-│   │   ├── Data/              # Contexto do EF Core
-│   │   └── Repositories/      # Implementações
-│   └── PDPW.API/              # API REST
-│       └── Controllers/       # Endpoints
-├── frontend/                  # Aplicação React
-│   ├── src/
-│   │   ├── components/        # Componentes React
-│   │   └── services/          # Integração com API
-│   └── package.json
-├── docker-compose.yml         # Orquestração dos containers
-├── Dockerfile.backend         # Build do backend
-├── Dockerfile.frontend        # Build do frontend
-└── PDPW.sln                   # Solução Visual Studio
-```
-
-## 🚀 Como Executar
-
-### Pré-requisitos
-- .NET 8 SDK
-- Node.js 20+
-- Docker Desktop
-- SQL Server (ou usar o container)
-
-### Opção 1: Executar com Docker (Recomendado)
-
+### Backend Devs
 ```powershell
-# Na raiz do projeto
-docker-compose up --build
-```
+# Instalar .NET 8 SDK
+winget install Microsoft.DotNet.SDK.8
 
-Acessar:
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000
-- Swagger: http://localhost:5000/swagger
+# Instalar Visual Studio 2022
+winget install Microsoft.VisualStudio.2022.Community
 
-### Opção 2: Executar Localmente
+# Instalar Docker
+winget install Docker.DockerDesktop
 
-#### Backend
-```powershell
+# Testar
 cd src\PDPW.API
-
-# Restaurar pacotes
 dotnet restore
-
-# Criar banco de dados
-dotnet ef database update --project ..\PDPW.Infrastructure
-
-# Executar
 dotnet run
+# Abrir: http://localhost:5000/swagger
 ```
 
-#### Frontend
+### Frontend Dev
 ```powershell
+# Instalar Node.js 20
+winget install OpenJS.NodeJS.LTS
+
+# Instalar VS Code
+winget install Microsoft.VisualStudioCode
+
+# Testar
 cd frontend
-
-# Instalar dependências
 npm install
-
-# Executar em modo desenvolvimento
 npm run dev
+# Abrir: http://localhost:3000
 ```
 
-## 🗄️ Banco de Dados
-
-### Criar Migração Inicial
+### QA
 ```powershell
-cd src\PDPW.Infrastructure
-dotnet ef migrations add InitialCreate --startup-project ..\PDPW.API
-dotnet ef database update --startup-project ..\PDPW.API
+# Instalar Postman
+winget install Postman.Postman
+
+# Instalar Git
+winget install Git.Git
 ```
 
-### Connection String
-Padrão em `appsettings.json`:
-```json
-"DefaultConnection": "Server=localhost;Database=PDPW_DB;Trusted_Connection=True;TrustServerCertificate=True"
-```
-
-## 📡 API Endpoints
-
-### Dados Energéticos
-- `GET /api/dadosenergeticos` - Lista todos
-- `GET /api/dadosenergeticos/{id}` - Busca por ID
-- `GET /api/dadosenergeticos/periodo?dataInicio=&dataFim=` - Busca por período
-- `POST /api/dadosenergeticos` - Criar novo
-- `PUT /api/dadosenergeticos/{id}` - Atualizar
-- `DELETE /api/dadosenergeticos/{id}` - Remover (soft delete)
-
-### Exemplo de Request (POST)
-```json
-{
-  "dataReferencia": "2025-12-17T00:00:00",
-  "codigoUsina": "UHE-001",
-  "producaoMWh": 1500.50,
-  "capacidadeDisponivel": 2000.00,
-  "status": "Ativo",
-  "observacoes": "Produção normal"
-}
-```
-
-## 🎨 Funcionalidades Implementadas
-
-### ✅ Backend
-- [x] API REST com .NET 8
-- [x] Clean Architecture
-- [x] Entity Framework Core com SQL Server
-- [x] Repository Pattern
-- [x] DTOs e Validações
-- [x] Swagger/OpenAPI
-- [x] CORS configurado para React
-
-### ✅ Frontend
-- [x] Interface de listagem de dados
-- [x] Formulário de criação/edição
-- [x] Integração com API
-- [x] Roteamento com React Router
-- [x] Responsividade básica
-
-### ✅ DevOps
-- [x] Dockerfile para backend (Windows Container)
-- [x] Dockerfile para frontend (Nginx)
-- [x] Docker Compose
-- [x] .gitignore configurado
-
-## 🔧 Próximos Passos
-
-### Antes da Entrega (26/12/2025)
-1. **Integração com sistema legado**
-   - Analisar código VB.NET original
-   - Migrar lógica de negócio específica
-   - Validar cálculos e regras
-
-2. **Melhorias de UI**
-   - Adicionar filtros e busca
-   - Gráficos de produção
-   - Dashboard resumido
-
-3. **Testes**
-   - Testes unitários (xUnit)
-   - Testes de integração
-   - Testes E2E com Playwright
-
-4. **Documentação**
-   - Documentar decisões arquiteturais
-   - Criar guia de migração completo
-   - Preparar apresentação
-
-## 📊 Tecnologias Utilizadas
-
-### Backend
-- .NET 8
-- ASP.NET Core Web API
-- Entity Framework Core 8
-- SQL Server 2022
-- Swashbuckle (Swagger)
-
-### Frontend
-- React 18
-- TypeScript 5
-- Vite 5
-- Axios
-- React Router 6
-
-### DevOps
-- Docker e Docker Compose
-- Contêineres Windows
-- Nginx
+**📄 Guia completo:** [`docs/SETUP_AMBIENTE_GUIA.md`](docs/SETUP_AMBIENTE_GUIA.md)
 
 ---
 
-## � Glossário de Termos
+## 📊 Código Legado Analisado
 
-Para consultar definições e conceitos técnicos utilizados neste projeto, consulte o [GLOSSARIO.md](GLOSSARIO.md).
-Ele contém explicações de termos como PoC, Arquitetura Limpa, DTO, Contêiner, Docker Compose, Vertical Slice e muito mais.
+### Estatísticas
+- **473** arquivos VB.NET
+- **168** páginas ASPX (WebForms)
+- **.NET Framework 4.8** + SQL Server
+- **Arquitetura:** 3 camadas (DAO/Business/DTO)
+
+### Pontos Positivos
+✅ Código bem estruturado com separação de responsabilidades  
+✅ Padrão Repository implementado  
+✅ Sistema de cache implementado  
+✅ Testes unitários existentes
+
+### Desafios
+⚠️ WebForms legado (dificulta migração de UI)  
+⚠️ VB.NET (requer conversão para C#)  
+⚠️ SQL inline (sem ORM moderno)  
+⚠️ Banco de 350GB (impossível restaurar - usaremos InMemory)
+
+**📄 Análise completa:** [`docs/ANALISE_TECNICA_CODIGO_LEGADO.md`](docs/ANALISE_TECNICA_CODIGO_LEGADO.md)
 
 ---
-
-## �🔄 Integração com TFS (PoC)
-
-- Fonte legado: será recebido via TFS/TFVC (ou ZIP exportado).
-- Estratégia na PoC:
-   - Manter TFS como origem do legado para consulta.
-   - Migrar o código funcional para esta nova solução .NET 8 (sem tentar converter projeto VB/WebForms in-place).
-   - Entrega final: espelhar a PoC no GitHub (repositório público/privado a combinar).
-- Sugestão de fluxo:
-   1) Baixar o repositório VB/WebForms do TFS em uma pasta separada (`_legado/` fora da solução).
-   2) Mapear entidades, regras e consultas SQL necessárias para os 2 fluxos prioritários.
-   3) Reimplementar no backend .NET 8 (camadas Domain/Application/Infrastructure).
-   4) Replicar telas no React conforme fidelidade necessária.
 
 ## 📝 Observações Importantes
 
