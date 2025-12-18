@@ -1,19 +1,46 @@
-# Etapa de build
-FROM node:20-alpine AS build
+# Escape=`
+
+# Stage 1: Build do frontend
+FROM mcr.microsoft.com/windows/servercore:ltsc2022 AS build
+
+# Instalar Node.js
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+# Download e instalar Node.js 20.x
+RUN Invoke-WebRequest -Uri 'https://nodejs.org/dist/v20.10.0/node-v20.10.0-x64.msi' -OutFile 'node.msi'; `
+    Start-Process msiexec.exe -Wait -ArgumentList '/i', 'node.msi', '/quiet', '/norestart'; `
+    Remove-Item -Force node.msi
+
 WORKDIR /app
 
-# Copia arquivos de pacotes
+# Copiar package files (agora com package-lock.json)
 COPY frontend/package*.json ./
+
+# Usar npm ci para build determinístico (requer package-lock.json)
 RUN npm ci
 
-# Copia código-fonte
+# Copiar código-fonte e fazer build
 COPY frontend/ ./
 RUN npm run build
 
-# Etapa de produção com Nginx
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
+# Stage 2: Runtime com IIS
+FROM mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2022 AS final
+
+# Remover site padrão
+RUN powershell -Command Remove-Item -Path 'C:\inetpub\wwwroot\*' -Force -Recurse
+
+# Copiar build do frontend
+COPY --from=build /app/dist C:/inetpub/wwwroot
+
+# Configurar IIS para SPA (Single Page Application)
+RUN powershell -Command `
+    Import-Module WebAdministration; `
+    New-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter 'system.webServer/rewrite/rules' -name '.' -value @{name='SPA'; patternSyntax='ECMAScript'; stopProcessing='True'}; `
+    Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter 'system.webServer/rewrite/rules/rule[@name="SPA"]/match' -name 'url' -value '.*'; `
+    Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter 'system.webServer/rewrite/rules/rule[@name="SPA"]/conditions' -name '.' -value @{input='{REQUEST_FILENAME}'; matchType='IsFile'; negate='True'}; `
+    Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter 'system.webServer/rewrite/rules/rule[@name="SPA"]/action' -name 'type' -value 'Rewrite'; `
+    Set-WebConfigurationProperty -pspath 'MACHINE/WEBROOT/APPHOST' -filter 'system.webServer/rewrite/rules/rule[@name="SPA"]/action' -name 'url' -value '/index.html'
+
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["ping", "-t", "localhost"]
