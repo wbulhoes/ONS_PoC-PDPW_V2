@@ -6,6 +6,49 @@ PoC de modernização do sistema legado PDPW para o ONS (Operador Nacional do Si
 
 ---
 
+## ⚡ ATUALIZAÇÃO IMPORTANTE (18/12/2025)
+
+### 🎯 Vertical Slices Definidos e Prontos para Implementação!
+
+**Status:** ✅ Análise de banco de dados COMPLETA  
+**Próximo:** 🚀 Iniciar desenvolvimento 19/12/2025
+
+#### Problema Encontrado:
+- ❌ Backup do banco: 43GB (~350GB descompactado)
+- ❌ Espaço disponível: 245GB
+- ❌ **Impossível restaurar banco legado no ambiente atual**
+
+#### Solução Implementada:
+- ✅ **Engenharia reversa** do código VB.NET
+- ✅ **Mapeamento completo** de 10+ entidades através dos DAOs
+- ✅ **InMemory Database** para PoC (setup instantâneo)
+- ✅ **Dados seed** realistas para demonstração
+
+#### Documentos Criados:
+- 📄 [`database/SCHEMA_ANALYSIS_FROM_CODE.md`](database/SCHEMA_ANALYSIS_FROM_CODE.md) - Análise completa do schema
+- 📄 [`VERTICAL_SLICES_DECISION.md`](VERTICAL_SLICES_DECISION.md) - Decisões técnicas e entidades
+- 📄 [`RESUMO_EXECUTIVO.md`](RESUMO_EXECUTIVO.md) - Resumo executivo completo
+
+### 🎯 Slices Selecionados:
+
+#### **SLICE 1: Cadastro de Usinas** ⭐⭐⭐
+- Entidade central do sistema (CRUD completo)
+- Backend: API REST com 6 endpoints
+- Frontend: Listagem + formulário + filtros
+- **Tempo:** 2 dias
+
+#### **SLICE 2: Consulta Arquivos DADGER** ⭐⭐⭐
+- Funcionalidade core do PDPW
+- 3 entidades relacionadas (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
+- Backend: API REST com relacionamentos complexos
+- Frontend: Consulta + filtros + grid de valores
+- **Tempo:** 3 dias
+
+**📅 Início:** 19/12/2025  
+**📅 Entrega:** 26/12/2025
+
+---
+
 ## ✅ Decisões da Reunião (17/12/2025)
 
 - Escopo: migrar para .NET 8 (backend) e React (frontend).
