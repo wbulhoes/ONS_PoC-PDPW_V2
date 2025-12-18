@@ -1,16 +1,10 @@
 # Escape=`
 
-# Usa ASP.NET .NET 8 (Nano Server LTSC 2022)
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-nanoserver-ltsc2022 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
-# Etapa de build
-FROM mcr.microsoft.com/dotnet/sdk:8.0-nanoserver-ltsc2022 AS build
+# Stage 1: Build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia csproj e restaura dependências
+# Copiar arquivos de projeto e restaurar dependências
 COPY ["src/PDPW.API/PDPW.API.csproj", "PDPW.API/"]
 COPY ["src/PDPW.Application/PDPW.Application.csproj", "PDPW.Application/"]
 COPY ["src/PDPW.Domain/PDPW.Domain.csproj", "PDPW.Domain/"]
@@ -18,17 +12,28 @@ COPY ["src/PDPW.Infrastructure/PDPW.Infrastructure.csproj", "PDPW.Infrastructure
 
 RUN dotnet restore "PDPW.API/PDPW.API.csproj"
 
-# Copia o restante e compila
-COPY src/ .
+# Copiar código fonte (apenas os projetos necessários)
+COPY ["src/PDPW.API/", "PDPW.API/"]
+COPY ["src/PDPW.Application/", "PDPW.Application/"]
+COPY ["src/PDPW.Domain/", "PDPW.Domain/"]
+COPY ["src/PDPW.Infrastructure/", "PDPW.Infrastructure/"]
+
+# Compilar
 WORKDIR "/src/PDPW.API"
 RUN dotnet build "PDPW.API.csproj" -c Release -o /app/build
 
-# Etapa de publicação
+# Stage 2: Publish
 FROM build AS publish
 RUN dotnet publish "PDPW.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-# Etapa final
-FROM base AS final
+# Stage 3: Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+# Copiar arquivos publicados
 COPY --from=publish /app/publish .
+
+# Configurar entrypoint
 ENTRYPOINT ["dotnet", "PDPW.API.dll"]
