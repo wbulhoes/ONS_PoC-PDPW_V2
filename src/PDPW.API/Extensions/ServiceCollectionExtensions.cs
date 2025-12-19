@@ -119,9 +119,11 @@ public static class ServiceCollectionExtensions
     {
         // === REPOSITÓRIOS ===
         services.AddScoped<IUsinaRepository, UsinaRepository>();
+        services.AddScoped<ITipoUsinaRepository, TipoUsinaRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
+        services.AddScoped<ITipoUsinaService, TipoUsinaService>();
 
         // Outros repositórios e services serão adicionados aqui conforme forem criados
         
