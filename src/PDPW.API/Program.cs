@@ -128,3 +128,8 @@ catch (Exception ex)
     app.Logger.LogCritical(ex, "❌ Aplicação encerrada inesperadamente: {Message}", ex.Message);
     throw;
 }
+
+/// <summary>
+/// Classe Program pública para permitir testes de integração
+/// </summary>
+public partial class Program { }
