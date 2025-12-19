@@ -1,279 +1,498 @@
-# PDPW - Programação Diária da Produção
+# PDPw - Programação Diária de Produção (Migração .NET 8 + React)
 
-## 🎯 Sobre o Projeto
-
-PoC de modernização do sistema legado PDPW para o ONS (Operador Nacional do Sistema Elétrico), migrando de .NET Framework/WebForms/VB.NET para uma arquitetura moderna com .NET 8, React e containerização.
+**Versão**: 2.0  
+**Status**: 🚧 Em Desenvolvimento  
+**Cliente**: ONS (Operador Nacional do Sistema Elétrico)
 
 ---
 
-## ⚡ ATUALIZAÇÃO IMPORTANTE (19/12/2024)
+## 📋 Sobre o Projeto
 
-### ✅ SOLICITAÇÕES DO GESTOR ATENDIDAS
+Migração incremental do sistema PDPw de um legado .NET Framework 4.8/VB.NET com WebForms para uma arquitetura moderna usando:
 
-#### 1. 🐋 Dockerização
-**Status:** ✅ **COMPLETA E FUNCIONANDO**
+- **Back-end**: .NET 8 com C# e ASP.NET Core Web API
+- **Front-end**: React com TypeScript
+- **Banco de Dados**: SQL Server (Entity Framework Core)
+- **Infraestrutura**: Docker e Docker Compose
+- **Testes**: xUnit (backend) + Jest (frontend)
 
-O projeto está **100% dockerizado** com Docker Compose:
+---
 
+## 🚀 Início Rápido
+
+### Via Docker (Recomendado)
 ```bash
-# Iniciar todo o ambiente
-docker-compose up --build
-
-# Acessos:
-# • Backend API: http://localhost:5000/swagger
-# • Frontend: http://localhost:3000
-# • SQL Server: localhost:1433
+docker-compose up -d
+# Backend: http://localhost:5000/swagger
+# Frontend: http://localhost:3000
 ```
 
-**Serviços containerizados:**
-- ✅ SQL Server 2022
-- ✅ Backend .NET 8 API
-- ✅ Frontend React
-- ✅ Networking configurado
-- ✅ Volumes persistentes
-
-**Documentação:**
-- 📋 [`docs/GUIA_DEMONSTRACAO_DOCKER.md`](docs/GUIA_DEMONSTRACAO_DOCKER.md) - Guia completo de demonstração
-
-#### 2. 🏗️ Arquitetura MVC
-**Status:** ✅ **JÁ IMPLEMENTADA**
-
-**Esclarecimento Importante:**
-O projeto **JÁ SEGUE O PADRÃO MVC** integrado à Clean Architecture:
-
-```
-✅ MODEL (M):
-   • Entities: src/PDPW.Domain/Entities/
-   • DTOs: src/PDPW.Application/DTOs/
-
-✅ VIEW (V):
-   • Frontend React (frontend/src/)
-
-✅ CONTROLLER (C):
-   • Controllers: src/PDPW.API/Controllers/
-```
-
-**Conceitos:**
-- **MVC** = Padrão de apresentação (Model-View-Controller)
-- **Clean Architecture** = Organização de camadas (Domain/Application/Infrastructure/API)
-- **Compatibilidade:** São complementares, NÃO excludentes
-
-**Documentação:**
-- 📐 [`docs/COMPROVACAO_MVC_ATUAL.md`](docs/COMPROVACAO_MVC_ATUAL.md) - Prova técnica (MVC já implementado)
-- 🔄 [`docs/MIGRACAO_CLEAN_PARA_MVC.md`](docs/MIGRACAO_CLEAN_PARA_MVC.md) - Análise completa (recomendação: manter atual)
-
-**Vantagens da arquitetura atual:**
-- ✅ Segue MVC na camada de apresentação
-- ✅ Organização profissional em camadas
-- ✅ Alta testabilidade (interfaces)
-- ✅ Alta manutenibilidade
-- ✅ Preparado para o futuro (mobile, outros frontends)
-- ✅ Padrão recomendado pela Microsoft
+### Via Local
+Consulte [QUICKSTART.md](QUICKSTART.md)
 
 ---
 
-## 🚀 KICK-OFF DO SQUAD - DOCUMENTAÇÃO ORIGINAL
+## 📊 Progresso
 
-**Status:** ✅ Ambiente de desenvolvimento preparado  
-**Equipe:** 3 Devs + 1 QA  
-**Início:** 19/12/2024 - 15:00h
+### Backend APIs
+- ✅ Usinas (8 endpoints)
+- ✅ TiposUsina (6 endpoints)
+- ✅ Empresas (8 endpoints)
+- ✅ SemanasPMO (9 endpoints)
+- ✅ EquipesPDP (8 endpoints)
+- ✅ Cargas (8 endpoints)
+- ✅ ArquivosDadger (9 endpoints)
+- ✅ RestricoesUG (9 endpoints)
+- 🔄 DadosEnergeticos (parcial)
+- ⏳ 20 APIs restantes
 
-#### 📚 Documentação para Reunião de Kick-off
+**Total**: 9/29 APIs (31%) | 65/154 endpoints (42%)
 
-**Para o Tech Lead:**
-- 📋 [`docs/CHECKLIST_REUNIAO_EXECUTIVO.md`](docs/CHECKLIST_REUNIAO_EXECUTIVO.md) - Checklist executivo para conduzir a reunião
-- 📊 [`docs/APRESENTACAO_REUNIAO_SQUAD.md`](docs/APRESENTACAO_REUNIAO_SQUAD.md) - Material completo de apresentação
-- 📱 [`docs/RESUMO_VISUAL_APRESENTACAO.md`](docs/RESUMO_VISUAL_APRESENTACAO.md) - Slides visuais para projeção
+### Frontend
+- 🚧 Em desenvolvimento
 
-**Para o Squad (Devs + QA):**
-- 📄 [`docs/SQUAD_BRIEFING_19DEC.md`](docs/SQUAD_BRIEFING_19DEC.md) - Briefing completo com divisão de tarefas
-- 🔍 [`docs/ANALISE_TECNICA_CODIGO_LEGADO.md`](docs/ANALISE_TECNICA_CODIGO_LEGADO.md) - Análise detalhada do código VB.NET
-- 🛠️ [`docs/SETUP_AMBIENTE_GUIA.md`](docs/SETUP_AMBIENTE_GUIA.md) - Guia passo a passo de instalação
-
-**Documentos Anteriores:**
-- 📄 [`database/SCHEMA_ANALYSIS_FROM_CODE.md`](database/SCHEMA_ANALYSIS_FROM_CODE.md) - Análise do schema do banco
-- 📄 [`VERTICAL_SLICES_DECISION.md`](VERTICAL_SLICES_DECISION.md) - Decisões técnicas dos slices
-- 📄 [`RESUMO_EXECUTIVO.md`](RESUMO_EXECUTIVO.md) - Resumo executivo do projeto
-- 📖 [`GLOSSARIO.md`](GLOSSARIO.md) - Glossário de termos técnicos
-
----
-
-## 👥 DIVISÃO DO SQUAD
-
-### 🟦 DEV 1 - Backend Lead
-**Responsabilidade:** SLICE 1 - Cadastro de Usinas  
-**Prazo:** 20/12/2024 (2 dias)  
-**Entregáveis:**
-- Entidade `Usina` no Domain
-- Repository + Service + Controller
-- 6 endpoints REST (GET/POST/PUT/DELETE)
-- Testes unitários (> 70% cobertura)
-
-### 🟩 DEV 2 - Backend
-**Responsabilidade:** SLICE 2 - Consulta Arquivos DADGER  
-**Prazo:** 22/12/2024 (4 dias)  
-**Entregáveis:**
-- 3 entidades relacionadas (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
-- Repositórios com JOINs complexos
-- Services com filtros (período, usina, semana)
-- 5 endpoints REST
-- Testes de integração
-
-### 🟨 DEV 3 - Frontend Lead
-**Responsabilidade:** Interfaces React para ambos slices  
-**Prazo:** 21/12/2024 (3 dias)  
-**Entregáveis:**
-- Tela de listagem de Usinas + Formulário
-- Tela de consulta DADGER + Filtros dinâmicos
-- Integração completa com API
-- UI responsiva e moderna
-
-### 🟪 QA - Quality Assurance
-**Responsabilidade:** Testes e documentação  
-**Prazo:** Diário (19-24/12/2024)  
-**Entregáveis:**
-- Plano de testes documentado
-- Casos de teste executados (API + UI)
-- Relatório de bugs (se houver)
-- Checklist de validação final
+### Testes
+- ✅ 15 testes unitários implementados
+- ✅ 100% cobertura CargaService
 
 ---
 
-## 📅 CRONOGRAMA
+## 🎯 APIs Implementadas
 
-```
-19/12 (Qui) ━━━ Setup + Kick-off + Início desenvolvimento
-20/12 (Sex) ━━━ SLICE 1 (Usinas) completo
-21/12 (Sáb) ━━━ Integração SLICE 1 + Início SLICE 2
-22/12 (Dom) ━━━ SLICE 2 (DADGER) completo
-23/12 (Seg) ━━━ Integração SLICE 2 + Ajustes
-24/12 (Ter) ━━━ Docker + Testes + Documentação
-25/12 (Qua) ━━━ FERIADO 🎄
-26/12 (Qui) ━━━ Apresentação + Entrega ✅
+### 📌 **1. Empresas (Agentes do Setor Elétrico)**
+Gerenciamento de empresas/agentes do setor elétrico brasileiro.
+
+```http
+GET    /api/empresas              # Lista todas as empresas
+GET    /api/empresas/{id}         # Busca por ID
+GET    /api/empresas/sigla/{sigla} # Busca por sigla
+POST   /api/empresas              # Cria nova empresa
+PUT    /api/empresas/{id}         # Atualiza empresa
+DELETE /api/empresas/{id}         # Remove empresa (soft delete)
 ```
 
-**📅 Entrega:** 26/12/2024  
-**📅 Apresentação:** 05/01/2025  
-**📅 Estimativa completa:** 12/01/2025
-
----
-
-## 🎯 Vertical Slices Definidos
-
-### **SLICE 1: Cadastro de Usinas** ⭐⭐⭐
-- Entidade central do sistema (CRUD completo)
-- Backend: API REST com 6 endpoints
-- Frontend: Listagem + formulário + filtros
-- **Código legado:** `pdpw_act/pdpw/Dao/UsinaDAO.vb`
-- **Complexidade:** Média
-- **Tempo:** 2 dias
-
-### **SLICE 2: Consulta Arquivos DADGER** ⭐⭐⭐
-- Funcionalidade core do PDPW
-- 3 entidades relacionadas (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
-- Backend: API REST com relacionamentos complexos
-- Frontend: Consulta + filtros + grid de valores
-- **Código legado:** `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
-- **Complexidade:** Alta
-- **Tempo:** 3 dias
-
----
-
-## 🛠️ Setup Rápido do Ambiente
-
-### Backend Devs
-```powershell
-# Instalar .NET 8 SDK
-winget install Microsoft.DotNet.SDK.8
-
-# Instalar Visual Studio 2022
-winget install Microsoft.VisualStudio.2022.Community
-
-# Instalar Docker
-winget install Docker.DockerDesktop
-
-# Testar
-cd src\PDPW.API
-dotnet restore
-dotnet run
-# Abrir: http://localhost:5000/swagger
+**Exemplo de Request:**
+```json
+POST /api/empresas
+{
+  "sigla": "CEMIG",
+  "nomeCompleto": "Companhia Energética de Minas Gerais",
+  "cnpj": "17155730000164",
+  "ativo": true
+}
 ```
 
-### Frontend Dev
-```powershell
-# Instalar Node.js 20
-winget install OpenJS.NodeJS.LTS
+---
 
-# Instalar VS Code
-winget install Microsoft.VisualStudioCode
+### 📌 **2. Tipos de Usina**
+Gerenciamento de tipos/categorias de usinas geradoras.
 
-# Testar
-cd frontend
-npm install
-npm run dev
-# Abrir: http://localhost:3000
+```http
+GET    /api/tiposusina           # Lista todos os tipos
+GET    /api/tiposusina/{id}      # Busca por ID
+GET    /api/tiposusina/codigo/{codigo} # Busca por código
+POST   /api/tiposusina           # Cria novo tipo
+PUT    /api/tiposusina/{id}      # Atualiza tipo
+DELETE /api/tiposusina/{id}      # Remove tipo
 ```
 
-### QA
-```powershell
-# Instalar Postman
-winget install Postman.Postman
-
-# Instalar Git
-winget install Git.Git
+**Exemplo de Response:**
+```json
+{
+  "id": 1,
+  "codigo": "UHE",
+  "nome": "Usina Hidrelétrica",
+  "descricao": "Geração hidráulica de energia",
+  "ativo": true
+}
 ```
-
-**📄 Guia completo:** [`docs/SETUP_AMBIENTE_GUIA.md`](docs/SETUP_AMBIENTE_GUIA.md)
 
 ---
 
-## 📊 Código Legado Analisado
+### 📌 **3. Usinas Geradoras**
+Gerenciamento de usinas geradoras de energia.
 
-### Estatísticas
-- **473** arquivos VB.NET
-- **168** páginas ASPX (WebForms)
-- **.NET Framework 4.8** + SQL Server
-- **Arquitetura:** 3 camadas (DAO/Business/DTO)
+```http
+GET    /api/usinas                # Lista todas as usinas
+GET    /api/usinas/{id}           # Busca por ID
+GET    /api/usinas/codigo/{codigo} # Busca por código ONS
+GET    /api/usinas/tipo/{tipoId}  # Filtra por tipo
+GET    /api/usinas/empresa/{empresaId} # Filtra por empresa
+POST   /api/usinas                # Cria nova usina
+PUT    /api/usinas/{id}           # Atualiza usina
+DELETE /api/usinas/{id}           # Remove usina
+```
 
-### Pontos Positivos
-✅ Código bem estruturado com separação de responsabilidades  
-✅ Padrão Repository implementado  
-✅ Sistema de cache implementado  
-✅ Testes unitários existentes
-
-### Desafios
-⚠️ WebForms legado (dificulta migração de UI)  
-⚠️ VB.NET (requer conversão para C#)  
-⚠️ SQL inline (sem ORM moderno)  
-⚠️ Banco de 350GB (impossível restaurar - usaremos InMemory)
-
-**📄 Análise completa:** [`docs/ANALISE_TECNICA_CODIGO_LEGADO.md`](docs/ANALISE_TECNICA_CODIGO_LEGADO.md)
+**Exemplo de Request:**
+```json
+POST /api/usinas
+{
+  "codigo": "ITAIPU",
+  "nome": "Usina Hidrelétrica de Itaipu",
+  "tipoUsinaId": 1,
+  "empresaId": 5,
+  "potenciaInstalada": 14000.00,
+  "latitude": -25.4078,
+  "longitude": -54.5889,
+  "municipio": "Foz do Iguaçu",
+  "uf": "PR"
+}
+```
 
 ---
 
-## 📝 Observações Importantes
+### 📌 **4. Semanas PMO**
+Gerenciamento de semanas operativas do PMO (Programa Mensal de Operação).
 
-- Este é um projeto de **Proof of Concept (PoC)**
-- Foco em **vertical slice**: um fluxo completo e funcional
-- Prazo de entrega: **26/12/2025**
-- Apresentação: **05/01/2026**
+```http
+GET    /api/semanaspmo            # Lista todas as semanas
+GET    /api/semanaspmo/{id}       # Busca por ID
+GET    /api/semanaspmo/ano/{ano}  # Filtra por ano
+GET    /api/semanaspmo/atual      # Semana atual
+GET    /api/semanaspmo/proximas?quantidade=4 # Próximas N semanas
+GET    /api/semanaspmo/numero/{numero}/ano/{ano} # Busca específica
+POST   /api/semanaspmo            # Cria nova semana
+PUT    /api/semanaspmo/{id}       # Atualiza semana
+DELETE /api/semanaspmo/{id}       # Remove semana
+```
+
+**Exemplo de Response:**
+```json
+{
+  "id": 1,
+  "numero": 3,
+  "ano": 2025,
+  "dataInicio": "2025-01-18",
+  "dataFim": "2025-01-24",
+  "observacoes": "Semana operativa 3/2025",
+  "ativo": true
+}
+```
+
+---
+
+### 📌 **5. Equipes PDP**
+Gerenciamento de equipes responsáveis pela programação diária.
+
+```http
+GET    /api/equipespdp            # Lista todas as equipes
+GET    /api/equipespdp/{id}       # Busca por ID
+GET    /api/equipespdp/ativas     # Lista apenas ativas
+POST   /api/equipespdp            # Cria nova equipe
+PUT    /api/equipespdp/{id}       # Atualiza equipe
+DELETE /api/equipespdp/{id}       # Remove equipe
+```
+
+---
+
+### 📌 **6. Cargas Elétricas** ⭐ **NOVO**
+Gerenciamento de dados de carga elétrica do sistema.
+
+```http
+GET    /api/cargas                # Lista todas as cargas
+GET    /api/cargas/{id}           # Busca por ID
+GET    /api/cargas/subsistema/{subsistemaId} # Filtra por subsistema
+GET    /api/cargas/periodo?dataInicio=&dataFim= # Filtra por período
+GET    /api/cargas/data/{data}    # Busca por data específica
+POST   /api/cargas                # Cria nova carga
+PUT    /api/cargas/{id}           # Atualiza carga
+DELETE /api/cargas/{id}           # Remove carga
+```
+
+**Exemplo de Request:**
+```json
+POST /api/cargas
+{
+  "dataReferencia": "2025-01-20",
+  "subsistemaId": "SE",
+  "cargaMWmed": 45678.50,
+  "cargaVerificada": 45234.20,
+  "previsaoCarga": 46000.00,
+  "observacoes": "Carga elevada devido a temperatura"
+}
+```
+
+**Exemplo de Response:**
+```json
+{
+  "id": 1,
+  "dataReferencia": "2025-01-20",
+  "subsistemaId": "SE",
+  "subsistemaNome": "Sudeste",
+  "cargaMWmed": 45678.50,
+  "cargaVerificada": 45234.20,
+  "previsaoCarga": 46000.00,
+  "observacoes": "Carga elevada devido a temperatura",
+  "ativo": true,
+  "dataCriacao": "2025-01-20T10:30:00Z"
+}
+```
+
+---
+
+### 📌 **7. Arquivos DADGER** ⭐ **NOVO**
+Gerenciamento de arquivos DADGER (Dados de Geração).
+
+```http
+GET    /api/arquivosdadger        # Lista todos os arquivos
+GET    /api/arquivosdadger/{id}   # Busca por ID
+GET    /api/arquivosdadger/semana/{semanaPMOId} # Filtra por semana PMO
+GET    /api/arquivosdadger/processados?processado=true # Por status
+GET    /api/arquivosdadger/periodo?dataInicio=&dataFim= # Por período
+GET    /api/arquivosdadger/nome/{nomeArquivo} # Busca por nome
+POST   /api/arquivosdadger        # Cria novo arquivo
+PUT    /api/arquivosdadger/{id}   # Atualiza arquivo
+PATCH  /api/arquivosdadger/{id}/processar # Marca como processado ⚡
+DELETE /api/arquivosdadger/{id}   # Remove arquivo
+```
+
+**Exemplo de Request:**
+```json
+POST /api/arquivosdadger
+{
+  "nomeArquivo": "dadger_202501_semana03.dat",
+  "caminhoArquivo": "/uploads/2025/01/dadger_202501_semana03.dat",
+  "dataImportacao": "2025-01-20T08:00:00Z",
+  "semanaPMOId": 3,
+  "observacoes": "Arquivo importado automaticamente"
+}
+```
+
+**Funcionalidade Especial:**
+```http
+PATCH /api/arquivosdadger/5/processar
+```
+Marca o arquivo como processado e registra a data de processamento.
+
+---
+
+### 📌 **8. Restrições de Unidades Geradoras** ⭐ **NOVO**
+Gerenciamento de restrições operacionais de unidades geradoras.
+
+```http
+GET    /api/restricoesug          # Lista todas as restrições
+GET    /api/restricoesug/{id}     # Busca por ID
+GET    /api/restricoesug/unidade/{unidadeGeradoraId} # Por unidade
+GET    /api/restricoesug/ativas?dataReferencia=2025-01-20 # Ativas em uma data
+GET    /api/restricoesug/periodo?dataInicio=&dataFim= # Por período
+GET    /api/restricoesug/motivo/{motivoRestricaoId} # Por motivo
+POST   /api/restricoesug          # Cria nova restrição
+PUT    /api/restricoesug/{id}     # Atualiza restrição
+DELETE /api/restricoesug/{id}     # Remove restrição
+```
+
+**Exemplo de Request:**
+```json
+POST /api/restricoesug
+{
+  "unidadeGeradoraId": 15,
+  "dataInicio": "2025-01-20",
+  "dataFim": "2025-01-27",
+  "motivoRestricaoId": 3,
+  "potenciaRestrita": 150.00,
+  "observacoes": "Manutenção preventiva programada"
+}
+```
+
+**Exemplo de Response:**
+```json
+{
+  "id": 1,
+  "unidadeGeradoraId": 15,
+  "unidadeGeradora": "UG-ITAIPU-01",
+  "codigoUnidade": "ITU01",
+  "dataInicio": "2025-01-20",
+  "dataFim": "2025-01-27",
+  "motivoRestricaoId": 3,
+  "motivoRestricao": "Manutenção Preventiva",
+  "categoriaMotivoRestricao": "PROGRAMADA",
+  "potenciaRestrita": 150.00,
+  "observacoes": "Manutenção preventiva programada",
+  "ativo": true,
+  "dataCriacao": "2025-01-19T14:20:00Z"
+}
+```
+
+**Query Especial - Restrições Ativas:**
+```http
+GET /api/restricoesug/ativas?dataReferencia=2025-01-20
+```
+Retorna todas as restrições que estão ativas na data especificada (DataInicio <= data <= DataFim).
+
+---
+
+### 📌 **9. Dados Energéticos**
+Gerenciamento de dados energéticos do sistema (em desenvolvimento).
+
+```http
+GET    /api/dadosenergeticos      # Lista todos os dados
+GET    /api/dadosenergeticos/{id} # Busca por ID
+POST   /api/dadosenergeticos      # Cria novo registro
+PUT    /api/dadosenergeticos/{id} # Atualiza registro
+DELETE /api/dadosenergeticos/{id} # Remove registro
+```
+
+---
+
+## 🔧 Funcionalidades Comuns
+
+Todas as APIs implementam:
+
+- ✅ **Validação de entrada** (Data Annotations + FluentValidation)
+- ✅ **Soft Delete** (flag `Ativo` em vez de exclusão física)
+- ✅ **Auditoria** (DataCriacao, DataAtualizacao)
+- ✅ **Documentação Swagger** (XML Comments)
+- ✅ **Logging estruturado** (ILogger)
+- ✅ **Tratamento de erros** (try-catch com mensagens amigáveis)
+- ✅ **DTOs separados** (Create, Update, Response)
+- ✅ **Repository Pattern** (abstração de dados)
+- ✅ **Clean Architecture** (Domain, Application, Infrastructure, API)
+
+---
+
+## 📦 Recursos Avançados
+
+### Paginação (Preparado)
+```csharp
+// Estrutura pronta para uso
+public class PaginationParameters
+{
+    public int PageNumber { get; set; } = 1;
+    public int PageSize { get; set; } = 10; // Max: 100
+    public string? OrderBy { get; set; }
+    public string OrderDirection { get; set; } = "asc";
+}
+
+public class PagedResult<T>
+{
+    public int PageNumber { get; set; }
+    public int PageSize { get; set; }
+    public int TotalCount { get; set; }
+    public int TotalPages { get; set; }
+    public bool HasPreviousPage { get; set; }
+    public bool HasNextPage { get; set; }
+    public IEnumerable<T> Data { get; set; }
+}
+```
+
+### Cache (Redis - Preparado)
+```bash
+# Instalação
+dotnet add src/PDPW.API package Microsoft.Extensions.Caching.StackExchangeRedis
+
+# Configuração em appsettings.json
+"ConnectionStrings": {
+  "Redis": "localhost:6379"
+}
+```
+
+### Logging Estruturado (Serilog - Preparado)
+```bash
+# Instalação
+dotnet add src/PDPW.API package Serilog.AspNetCore
+dotnet add src/PDPW.API package Serilog.Sinks.Console
+dotnet add src/PDPW.API package Serilog.Sinks.File
+```
+
+---
+
+## 🧪 Testes
+
+### Testes Unitários
+```bash
+# Rodar todos os testes
+dotnet test
+
+# Rodar com cobertura
+dotnet test /p:CollectCoverage=true
+```
+
+**Cobertura Atual:**
+- ✅ CargaService: 10 testes (100% cobertura)
+- 🔄 Outros services: em desenvolvimento
+
+---
+
+## 🏗️ Arquitetura
+
+Consulte [STRUCTURE.md](STRUCTURE.md) para detalhes da arquitetura.
+
+```
+src/
+├── PDPW.API/              # Controllers, Middleware, Swagger
+├── PDPW.Application/      # Services, DTOs, Interfaces
+├── PDPW.Domain/           # Entities, Interfaces de Repositórios
+└── PDPW.Infrastructure/   # Repositories, DbContext, Migrations
+
+tests/
+├── PDPW.UnitTests/        # Testes unitários (xUnit + Moq)
+└── PDPW.IntegrationTests/ # Testes de integração
+```
+
+---
+
+## 📚 Documentação
+
+- [AGENTS.md](AGENTS.md) - Documentação para IA
+- [STRUCTURE.md](STRUCTURE.md) - Estrutura do projeto
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Guia de contribuição
+- [QUICKSTART.md](QUICKSTART.md) - Início rápido
+- [docs/](docs/) - Documentação adicional
+- [Swagger UI](http://localhost:5000/swagger) - Documentação interativa das APIs
+
+---
+
+## 🎯 Roadmap
+
+### Fase Atual (Janeiro 2025)
+- ✅ APIs de Cadastro (Empresas, Usinas, Tipos)
+- ✅ APIs de Operação (Semanas PMO, Equipes)
+- ✅ APIs de Dados (Cargas, DADGER, Restrições)
+- 🚧 APIs de Processamento
+- ⏳ Frontend React
+
+### Próximas Fases
+- ⏳ Autenticação e Autorização (JWT)
+- ⏳ APIs de Relatórios
+- ⏳ Migração de dados legados
+- ⏳ Testes E2E
+- ⏳ Deploy em produção
+
+---
 
 ## 🤝 Contribuindo
 
-1. Analise o código legado em VB.NET
-2. Identifique funcionalidades críticas
-3. Implemente usando Clean Architecture
-4. Documente decisões técnicas
-5. Teste extensivamente
-
-## 📞 Suporte
-
-Para dúvidas sobre o projeto, consulte:
-- Documentação do código (comentários inline)
-- Swagger da API: http://localhost:5000/swagger
-- Issues do repositório
+Consulte [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-**Desenvolvido para ONS - Operador Nacional do Sistema Elétrico**  
-**PoC de Modernização PDPW - Dezembro/2025**
+## 📄 Licença
+
+Propriedade intelectual do ONS (Operador Nacional do Sistema Elétrico Brasileiro).
+
+---
+
+## 🎓 Tecnologias Utilizadas
+
+**Backend:**
+- .NET 8.0
+- ASP.NET Core Web API
+- Entity Framework Core 8
+- SQL Server
+- Swagger/OpenAPI
+- xUnit + Moq
+
+**Infraestrutura:**
+- Docker
+- Docker Compose
+- Git + GitHub
+
+**Ferramentas:**
+- Visual Studio 2022
+- VS Code
+- SQL Server Management Studio
+- Postman
+
+---
+
+**Desenvolvido com ❤️ por Willian + GitHub Copilot**

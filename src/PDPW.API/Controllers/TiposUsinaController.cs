@@ -167,7 +167,7 @@ public class TiposUsinaController : BaseController
     /// <param name="tipoUsinaId">ID do tipo de usina a excluir da verificação (opcional)</param>
     /// <returns>Indica se o nome já existe</returns>
     /// <response code="200">Resultado da verificação</response>
-    [HttpGet("verificar-nome/{nome}", Name = nameof(VerificarNomeExiste))]
+    [HttpGet("verificar-nome/{nome}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarNomeExiste(string nome, [FromQuery] int? tipoUsinaId = null)
     {

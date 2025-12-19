@@ -185,7 +185,7 @@ public class EmpresasController : BaseController
     /// <param name="empresaId">ID da empresa a excluir da verificação (opcional)</param>
     /// <returns>Indica se o nome já existe</returns>
     /// <response code="200">Resultado da verificação</response>
-    [HttpGet("verificar-nome/{nome}", Name = nameof(VerificarNomeExiste))]
+    [HttpGet("verificar-nome/{nome}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarNomeExiste(string nome, [FromQuery] int? empresaId = null)
     {
@@ -202,7 +202,7 @@ public class EmpresasController : BaseController
     /// <param name="empresaId">ID da empresa a excluir da verificação (opcional)</param>
     /// <returns>Indica se o CNPJ já existe</returns>
     /// <response code="200">Resultado da verificação</response>
-    [HttpGet("verificar-cnpj/{cnpj}", Name = nameof(VerificarCnpjExiste))]
+    [HttpGet("verificar-cnpj/{cnpj}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarCnpjExiste(string cnpj, [FromQuery] int? empresaId = null)
     {

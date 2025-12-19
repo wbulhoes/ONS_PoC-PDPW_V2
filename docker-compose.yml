@@ -1,47 +1,59 @@
+version: '3.8'
+
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: pdpw-sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=Pdpw@2024!Strong
+      - SA_PASSWORD=Pdpw@2024!
       - MSSQL_PID=Developer
     ports:
       - "1433:1433"
     volumes:
-      - sqlserver-data:/var/opt/mssql
+      - sqldata:/var/opt/mssql
     networks:
       - pdpw-network
     healthcheck:
-      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "SELECT 1" || exit 1
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!" -Q "SELECT 1"
       interval: 10s
-      timeout: 3s
-      retries: 10
-      start_period: 10s
+      timeout: 5s
+      retries: 5
 
-  api:
+  backend:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: pdpw-api
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_DB_Dev;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=True;MultipleActiveResultSets=true
-      - UseInMemoryDatabase=false
+      dockerfile: src/PDPW.API/Dockerfile
+    container_name: pdpw-backend
     ports:
       - "5000:80"
     depends_on:
       sqlserver:
         condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_PoC;User Id=sa;Password=Pdpw@2024!;TrustServerCertificate=True;
     networks:
       - pdpw-network
-    restart: on-failure
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pdpw-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/api
+    networks:
+      - pdpw-network
+
+volumes:
+  sqldata:
+    driver: local
 
 networks:
   pdpw-network:
     driver: bridge
-
-volumes:
-  sqlserver-data:
-    driver: local

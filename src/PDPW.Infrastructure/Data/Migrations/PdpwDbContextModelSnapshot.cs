@@ -622,6 +622,63 @@ namespace PDPW.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EquipesPDP");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ativo = true,
+                            Coordenador = "João Silva Santos",
+                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Nordeste",
+                            Email = "operacao.ne@ons.org.br",
+                            Nome = "Equipe de Operação Nordeste",
+                            Telefone = "(81) 3421-5000"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ativo = true,
+                            Coordenador = "Maria Oliveira Costa",
+                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Sudeste/Centro-Oeste",
+                            Email = "operacao.se@ons.org.br",
+                            Nome = "Equipe de Operação Sudeste",
+                            Telefone = "(21) 3444-5500"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Ativo = true,
+                            Coordenador = "Carlos Eduardo Ferreira",
+                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Sul",
+                            Email = "operacao.sul@ons.org.br",
+                            Nome = "Equipe de Operação Sul",
+                            Telefone = "(41) 3333-4400"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Ativo = true,
+                            Coordenador = "Ana Paula Rodrigues",
+                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Norte",
+                            Email = "operacao.norte@ons.org.br",
+                            Nome = "Equipe de Operação Norte",
+                            Telefone = "(92) 3232-1100"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Ativo = true,
+                            Coordenador = "Roberto Mendes Lima",
+                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pelo planejamento de médio e longo prazo da operação",
+                            Email = "planejamento@ons.org.br",
+                            Nome = "Equipe de Planejamento Energético",
+                            Telefone = "(21) 3444-5600"
+                        });
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.GerForaMerito", b =>
