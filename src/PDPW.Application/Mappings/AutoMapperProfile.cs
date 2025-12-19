@@ -1,5 +1,6 @@
 using AutoMapper;
 using PDPW.Application.DTOs.Usina;
+using PDPW.Application.DTOs.TipoUsina;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -49,5 +50,26 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.InflexibilidadesContratadas, opt => opt.Ignore())
             .ForMember(dest => dest.RampasTermicas, opt => opt.Ignore())
             .ForMember(dest => dest.Conversoras, opt => opt.Ignore());
+
+        // === TIPO USINA MAPPINGS ===
+        
+        // TipoUsina ? TipoUsinaDto
+        CreateMap<TipoUsina, TipoUsinaDto>()
+            .ForMember(dest => dest.QuantidadeUsinas, opt => opt.MapFrom(src => src.Usinas != null ? src.Usinas.Count(u => u.Ativo) : 0));
+
+        // CreateTipoUsinaDto ? TipoUsina
+        CreateMap<CreateTipoUsinaDto, TipoUsina>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.Usinas, opt => opt.Ignore());
+
+        // UpdateTipoUsinaDto ? TipoUsina
+        CreateMap<UpdateTipoUsinaDto, TipoUsina>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Usinas, opt => opt.Ignore());
     }
 }
