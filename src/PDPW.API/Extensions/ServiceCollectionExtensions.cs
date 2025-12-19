@@ -120,10 +120,16 @@ public static class ServiceCollectionExtensions
         // === REPOSITÓRIOS ===
         services.AddScoped<IUsinaRepository, UsinaRepository>();
         services.AddScoped<ITipoUsinaRepository, TipoUsinaRepository>();
+        services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+        services.AddScoped<ISemanaPMORepository, SemanaPMORepository>();
+        services.AddScoped<IEquipePDPRepository, EquipePDPRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
         services.AddScoped<ITipoUsinaService, TipoUsinaService>();
+        services.AddScoped<IEmpresaService, EmpresaService>();
+        services.AddScoped<ISemanaPmoService, SemanaPmoService>();
+        services.AddScoped<IEquipePdpService, EquipePdpService>();
 
         // Outros repositórios e services serão adicionados aqui conforme forem criados
         
