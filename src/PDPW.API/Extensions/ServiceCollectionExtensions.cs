@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using PDPW.Application.Interfaces;
+using PDPW.Application.Services;
+using PDPW.Domain.Interfaces;
 using PDPW.Infrastructure.Data;
+using PDPW.Infrastructure.Repositories;
 
 namespace PDPW.API.Extensions;
 
@@ -113,11 +117,14 @@ public static class ServiceCollectionExtensions
     /// </summary>
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        // Repositórios e Services serão registrados aqui conforme forem criados
-        // Exemplo:
-        // services.AddScoped<IUsinaRepository, UsinaRepository>();
-        // services.AddScoped<IUsinaService, UsinaService>();
+        // === REPOSITÓRIOS ===
+        services.AddScoped<IUsinaRepository, UsinaRepository>();
 
+        // === SERVICES ===
+        services.AddScoped<IUsinaService, UsinaService>();
+
+        // Outros repositórios e services serão adicionados aqui conforme forem criados
+        
         return services;
     }
 }
