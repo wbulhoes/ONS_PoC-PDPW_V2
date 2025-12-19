@@ -6,7 +6,7 @@ services:
     container_name: pdpw-sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=YourStrong@Password123
+      - MSSQL_SA_PASSWORD=Pdpw@2024!Strong
       - MSSQL_PID=Developer
     ports:
       - "1433:1433"
@@ -14,34 +14,31 @@ services:
       - sqlserver-data:/var/opt/mssql
     networks:
       - pdpw-network
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
 
-  backend:
+  api:
     build:
       context: .
-      dockerfile: Dockerfile.backend
-    container_name: pdpw-backend
+      dockerfile: Dockerfile
+    container_name: pdpw-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_DB;User Id=sa;Password=YourStrong@Password123;TrustServerCertificate=True;MultipleActiveResultSets=true
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_DB_Dev;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=True;MultipleActiveResultSets=true
+      - UseInMemoryDatabase=false
     ports:
       - "5000:80"
     depends_on:
-      - sqlserver
+      sqlserver:
+        condition: service_healthy
     networks:
       - pdpw-network
-
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.frontend
-    container_name: pdpw-frontend
-    ports:
-      - "3000:80"
-    depends_on:
-      - backend
-    networks:
-      - pdpw-network
+    restart: on-failure
 
 networks:
   pdpw-network:
@@ -49,3 +46,4 @@ networks:
 
 volumes:
   sqlserver-data:
+    driver: local
