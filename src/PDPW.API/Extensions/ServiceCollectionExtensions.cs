@@ -121,13 +121,19 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IUsinaRepository, UsinaRepository>();
         services.AddScoped<ITipoUsinaRepository, TipoUsinaRepository>();
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+<<<<<<< Updated upstream
         services.AddScoped<ISemanaPmoRepository, SemanaPmoRepository>();
+=======
+>>>>>>> Stashed changes
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
         services.AddScoped<ITipoUsinaService, TipoUsinaService>();
         services.AddScoped<IEmpresaService, EmpresaService>();
+<<<<<<< Updated upstream
         services.AddScoped<ISemanaPmoService, SemanaPmoService>();
+=======
+>>>>>>> Stashed changes
 
         // Outros repositórios e services serão adicionados aqui conforme forem criados
         
