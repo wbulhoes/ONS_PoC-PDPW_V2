@@ -123,6 +123,9 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
         services.AddScoped<ISemanaPMORepository, SemanaPMORepository>();
         services.AddScoped<IEquipePDPRepository, EquipePDPRepository>();
+        services.AddScoped<ICargaRepository, CargaRepository>();
+        services.AddScoped<IArquivoDadgerRepository, ArquivoDadgerRepository>();
+        services.AddScoped<IRestricaoUGRepository, RestricaoUGRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
@@ -130,9 +133,10 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IEmpresaService, EmpresaService>();
         services.AddScoped<ISemanaPmoService, SemanaPmoService>();
         services.AddScoped<IEquipePdpService, EquipePdpService>();
+        services.AddScoped<ICargaService, CargaService>();
+        services.AddScoped<IArquivoDadgerService, ArquivoDadgerService>();
+        services.AddScoped<IRestricaoUGService, RestricaoUGService>();
 
-        // Outros repositórios e services serão adicionados aqui conforme forem criados
-        
         return services;
     }
 }
