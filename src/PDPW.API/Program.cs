@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using PDPW.API.Extensions;
+using PDPW.API.Filters;
+using PDPW.API.Middlewares;
 using PDPW.Application.Interfaces;
 using PDPW.Application.Services;
 using PDPW.Domain.Interfaces;
@@ -8,62 +11,34 @@ using PDPW.Infrastructure.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Adiciona serviços ao contêiner
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddControllers(options =>
 {
-    c.SwaggerDoc("v1", new() { 
-        Title = "PDPW API", 
-        Version = "v1",
-        Description = "API modernizada do sistema PDPW - Programação Diária da Produção"
-    });
+    // Adiciona filtros globais
+    options.Filters.Add<ValidationFilter>();
+    options.Filters.Add<ExceptionFilter>();
 });
 
-// Configuração de banco de dados
-var useInMemoryDatabase = builder.Configuration.GetValue<bool>("UseInMemoryDatabase");
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// Configurações usando Extension Methods
+builder.Services.AddDatabaseConfiguration(builder.Configuration);
+builder.Services.AddAutoMapperConfiguration();
+builder.Services.AddCorsConfiguration();
+builder.Services.AddSwaggerConfiguration();
 
-builder.Services.AddDbContext<PdpwDbContext>(options =>
-{
-    if (useInMemoryDatabase)
-    {
-        options.UseInMemoryDatabase("PDPW_InMemory");
-        builder.Logging.AddConsole();
-        Console.WriteLine("🗄️ Usando banco de dados InMemory (dados temporários)");
-    }
-    else
-    {
-        options.UseSqlServer(connectionString);
-    }
-    
-    if (builder.Environment.IsDevelopment())
-    {
-        options.EnableSensitiveDataLogging();
-        options.EnableDetailedErrors();
-    }
-});
-
-// Injeção de dependências
+// Injeção de dependências - Repositórios e Services existentes
 builder.Services.AddScoped<IDadoEnergeticoRepository, DadoEnergeticoRepository>();
 builder.Services.AddScoped<IDadoEnergeticoService, DadoEnergeticoService>();
 
-// Configuração de CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReactApp",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
-});
+// Adicionar novos serviços conforme APIs forem criadas
+builder.Services.AddApplicationServices();
 
-// Adicionar Health Checks
+// Health Checks
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<PdpwDbContext>("database");
 
 var app = builder.Build();
+
+// Middleware de erro customizado (primeira coisa no pipeline)
+app.UseErrorHandling();
 
 // Testar conexão com banco de dados na inicialização
 try
@@ -72,10 +47,11 @@ try
     var dbContext = scope.ServiceProvider.GetRequiredService<PdpwDbContext>();
     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
     
+    var useInMemoryDatabase = builder.Configuration.GetValue<bool>("UseInMemoryDatabase");
+    
     if (useInMemoryDatabase)
     {
         logger.LogInformation("🗄️ Banco de dados InMemory inicializado (dados temporários)");
-        // Garante que o banco InMemory está criado
         await dbContext.Database.EnsureCreatedAsync();
     }
     else
@@ -86,7 +62,6 @@ try
         {
             logger.LogInformation("✓ Conexão com banco de dados estabelecida com sucesso!");
             
-            // Verifica se há migrações pendentes
             var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
             if (pendingMigrations.Any())
             {
@@ -97,7 +72,6 @@ try
         else
         {
             logger.LogWarning("⚠ Não foi possível conectar ao banco de dados SQL Server");
-            logger.LogWarning("A aplicação continuará funcionando, mas operações de banco falharão");
             logger.LogInformation("💡 Dica: Configure UseInMemoryDatabase=true no appsettings para usar banco em memória");
         }
     }
@@ -106,37 +80,37 @@ catch (Exception ex)
 {
     var logger = app.Services.GetRequiredService<ILogger<Program>>();
     logger.LogError(ex, "❌ Erro ao testar conexão com banco de dados: {Message}", ex.Message);
-    logger.LogWarning("A aplicação continuará funcionando, mas operações de banco falharão");
-    if (!useInMemoryDatabase)
-    {
-        logger.LogInformation("💡 Dica: Configure UseInMemoryDatabase=true no appsettings para usar banco em memória");
-    }
 }
 
 // Configuração do pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "PDPW API v1");
+        c.RoutePrefix = "swagger";
+    });
     app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowReactApp");
+// CORS - usar política do ambiente
+var corsPolicy = app.Environment.IsDevelopment() ? "Development" : "AllowAll";
+app.UseCors(corsPolicy);
 
 app.UseAuthorization();
 
-// Endpoint de health check
+// Endpoints
 app.MapHealthChecks("/health");
 
-// Endpoint raiz para teste
 app.MapGet("/", () => Results.Ok(new 
 { 
     status = "running",
     application = "PDPW API",
     version = "v1",
-    databaseType = useInMemoryDatabase ? "InMemory (temporário)" : "SQL Server",
+    environment = app.Environment.EnvironmentName,
     timestamp = DateTime.UtcNow
 }));
 
@@ -144,7 +118,9 @@ app.MapControllers();
 
 try
 {
-    app.Logger.LogInformation("Iniciando aplicação PDPW API...");
+    app.Logger.LogInformation("🚀 Iniciando aplicação PDPW API...");
+    app.Logger.LogInformation("📊 Ambiente: {Environment}", app.Environment.EnvironmentName);
+    app.Logger.LogInformation("📖 Swagger: {SwaggerUrl}", app.Environment.IsDevelopment() ? "http://localhost:5000/swagger" : "Desabilitado");
     app.Run();
 }
 catch (Exception ex)
