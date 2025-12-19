@@ -1,14 +1,18 @@
 using AutoMapper;
 using PDPW.Application.DTOs.Usina;
 using PDPW.Application.Interfaces;
+using PDPW.Domain.Common;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
 
 namespace PDPW.Application.Services;
 
 /// <summary>
-/// Serviço de Usinas
+/// Serviço de Usinas Geradoras
 /// </summary>
+/// <remarks>
+/// Nomenclatura ubíqua: UsinaGeradoraService (mantido como UsinaService por compatibilidade)
+/// </remarks>
 public class UsinaService : IUsinaService
 {
     private readonly IUsinaRepository _repository;
@@ -23,57 +27,74 @@ public class UsinaService : IUsinaService
     /// <summary>
     /// Obtém todas as usinas
     /// </summary>
-    public async Task<IEnumerable<UsinaDto>> GetAllAsync()
+    public async Task<Result<IEnumerable<UsinaDto>>> GetAllAsync()
     {
         var usinas = await _repository.GetAllAsync();
-        return _mapper.Map<IEnumerable<UsinaDto>>(usinas);
+        var dtos = _mapper.Map<IEnumerable<UsinaDto>>(usinas);
+        return Result<IEnumerable<UsinaDto>>.Success(dtos);
     }
 
     /// <summary>
     /// Obtém usina por ID
     /// </summary>
-    public async Task<UsinaDto?> GetByIdAsync(int id)
+    public async Task<Result<UsinaDto>> GetByIdAsync(int id)
     {
         var usina = await _repository.GetByIdAsync(id);
-        return _mapper.Map<UsinaDto?>(usina);
+        
+        if (usina == null)
+        {
+            return Result<UsinaDto>.NotFound("Usina", id);
+        }
+
+        var dto = _mapper.Map<UsinaDto>(usina);
+        return Result<UsinaDto>.Success(dto);
     }
 
     /// <summary>
     /// Obtém usina por código
     /// </summary>
-    public async Task<UsinaDto?> GetByCodigoAsync(string codigo)
+    public async Task<Result<UsinaDto>> GetByCodigoAsync(string codigo)
     {
         var usina = await _repository.GetByCodigoAsync(codigo);
-        return _mapper.Map<UsinaDto?>(usina);
+        
+        if (usina == null)
+        {
+            return Result<UsinaDto>.Failure($"Usina com código '{codigo}' não foi encontrada");
+        }
+
+        var dto = _mapper.Map<UsinaDto>(usina);
+        return Result<UsinaDto>.Success(dto);
     }
 
     /// <summary>
     /// Obtém usinas por tipo
     /// </summary>
-    public async Task<IEnumerable<UsinaDto>> GetByTipoAsync(int tipoUsinaId)
+    public async Task<Result<IEnumerable<UsinaDto>>> GetByTipoAsync(int tipoUsinaId)
     {
         var usinas = await _repository.GetByTipoAsync(tipoUsinaId);
-        return _mapper.Map<IEnumerable<UsinaDto>>(usinas);
+        var dtos = _mapper.Map<IEnumerable<UsinaDto>>(usinas);
+        return Result<IEnumerable<UsinaDto>>.Success(dtos);
     }
 
     /// <summary>
     /// Obtém usinas por empresa
     /// </summary>
-    public async Task<IEnumerable<UsinaDto>> GetByEmpresaAsync(int empresaId)
+    public async Task<Result<IEnumerable<UsinaDto>>> GetByEmpresaAsync(int empresaId)
     {
         var usinas = await _repository.GetByEmpresaAsync(empresaId);
-        return _mapper.Map<IEnumerable<UsinaDto>>(usinas);
+        var dtos = _mapper.Map<IEnumerable<UsinaDto>>(usinas);
+        return Result<IEnumerable<UsinaDto>>.Success(dtos);
     }
 
     /// <summary>
     /// Cria nova usina
     /// </summary>
-    public async Task<UsinaDto> CreateAsync(CreateUsinaDto createDto)
+    public async Task<Result<UsinaDto>> CreateAsync(CreateUsinaDto createDto)
     {
         // Validar código único
         if (await _repository.CodigoExisteAsync(createDto.Codigo))
         {
-            throw new InvalidOperationException($"Já existe uma usina com o código '{createDto.Codigo}'");
+            return Result<UsinaDto>.Conflict($"Já existe uma usina com o código '{createDto.Codigo}'");
         }
 
         var usina = _mapper.Map<Usina>(createDto);
@@ -81,24 +102,26 @@ public class UsinaService : IUsinaService
 
         // Buscar novamente para incluir relacionamentos
         var result = await _repository.GetByIdAsync(created.Id);
-        return _mapper.Map<UsinaDto>(result);
+        var dto = _mapper.Map<UsinaDto>(result);
+        
+        return Result<UsinaDto>.Success(dto);
     }
 
     /// <summary>
     /// Atualiza usina existente
     /// </summary>
-    public async Task<UsinaDto> UpdateAsync(int id, UpdateUsinaDto updateDto)
+    public async Task<Result<UsinaDto>> UpdateAsync(int id, UpdateUsinaDto updateDto)
     {
         var usina = await _repository.GetByIdAsync(id);
         if (usina == null)
         {
-            throw new KeyNotFoundException($"Usina com ID {id} não encontrada");
+            return Result<UsinaDto>.NotFound("Usina", id);
         }
 
         // Validar código único (exceto para a própria usina)
         if (await _repository.CodigoExisteAsync(updateDto.Codigo, id))
         {
-            throw new InvalidOperationException($"Já existe outra usina com o código '{updateDto.Codigo}'");
+            return Result<UsinaDto>.Conflict($"Já existe outra usina com o código '{updateDto.Codigo}'");
         }
 
         // Mapear dados atualizados
@@ -108,21 +131,23 @@ public class UsinaService : IUsinaService
 
         // Buscar novamente para incluir relacionamentos
         var result = await _repository.GetByIdAsync(id);
-        return _mapper.Map<UsinaDto>(result);
+        var dto = _mapper.Map<UsinaDto>(result);
+        
+        return Result<UsinaDto>.Success(dto);
     }
 
     /// <summary>
     /// Remove usina
     /// </summary>
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<Result> DeleteAsync(int id)
     {
         if (!await _repository.ExistsAsync(id))
         {
-            return false;
+            return Result.Failure($"Usina com ID {id} não foi encontrada");
         }
 
         await _repository.DeleteAsync(id);
-        return true;
+        return Result.Success();
     }
 
     /// <summary>
