@@ -1,0 +1,136 @@
+.App {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.App-header {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.App-header h1 {
+  color: #646cff;
+  margin-bottom: 1rem;
+}
+
+.App-header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.App-header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  transition: background-color 0.3s;
+}
+
+.App-header nav a:hover {
+  background-color: #3a3a3a;
+}
+
+.App-main {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  min-height: 400px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+table th {
+  background-color: #2a2a2a;
+  font-weight: 600;
+  color: #646cff;
+}
+
+table tr:hover {
+  background-color: #2a2a2a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #646cff;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #3a3a3a;
+  background-color: #2a2a2a;
+  color: white;
+  font-family: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: #646cff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #ff4444;
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+}
+
+.error {
+  background-color: #ff4444;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.success {
+  background-color: #44ff44;
+  color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
