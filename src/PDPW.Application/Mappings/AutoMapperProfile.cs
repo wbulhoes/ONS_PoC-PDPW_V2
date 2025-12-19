@@ -1,7 +1,10 @@
 using AutoMapper;
 using PDPW.Application.DTOs.Usina;
 using PDPW.Application.DTOs.TipoUsina;
+<<<<<<< HEAD
 using PDPW.Application.DTOs.Empresa;
+=======
+>>>>>>> fd78d2e85ef0989d3b33e114720c29b6736cecf3
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -72,6 +75,7 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.Usinas, opt => opt.Ignore());
+<<<<<<< HEAD
 
         // === EMPRESA MAPPINGS ===
         
@@ -93,5 +97,7 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.Usinas, opt => opt.Ignore());
+=======
+>>>>>>> fd78d2e85ef0989d3b33e114720c29b6736cecf3
     }
 }

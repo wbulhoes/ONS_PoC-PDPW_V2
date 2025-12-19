@@ -120,12 +120,18 @@ public static class ServiceCollectionExtensions
         // === REPOSITÓRIOS ===
         services.AddScoped<IUsinaRepository, UsinaRepository>();
         services.AddScoped<ITipoUsinaRepository, TipoUsinaRepository>();
+<<<<<<< HEAD
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+=======
+>>>>>>> fd78d2e85ef0989d3b33e114720c29b6736cecf3
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
         services.AddScoped<ITipoUsinaService, TipoUsinaService>();
+<<<<<<< HEAD
         services.AddScoped<IEmpresaService, EmpresaService>();
+=======
+>>>>>>> fd78d2e85ef0989d3b33e114720c29b6736cecf3
 
         // Outros repositórios e services serão adicionados aqui conforme forem criados
         
