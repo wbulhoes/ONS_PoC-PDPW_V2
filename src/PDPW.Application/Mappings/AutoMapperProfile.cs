@@ -1,14 +1,9 @@
 using AutoMapper;
 using PDPW.Application.DTOs.Usina;
 using PDPW.Application.DTOs.TipoUsina;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 using PDPW.Application.DTOs.Empresa;
-=======
->>>>>>> fd78d2e85ef0989d3b33e114720c29b6736cecf3
-=======
-using PDPW.Application.DTOs.Empresa;
->>>>>>> Stashed changes
+using PDPW.Application.DTOs.SemanaPmo;
+using PDPW.Application.DTOs.EquipePdp;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -79,10 +74,6 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.Usinas, opt => opt.Ignore());
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 
         // === EMPRESA MAPPINGS ===
         
@@ -104,10 +95,51 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.Usinas, opt => opt.Ignore());
-<<<<<<< Updated upstream
-=======
->>>>>>> fd78d2e85ef0989d3b33e114720c29b6736cecf3
-=======
->>>>>>> Stashed changes
+
+        // === SEMANA PMO MAPPINGS ===
+        
+        // SemanaPMO ? SemanaPmoDto
+        CreateMap<SemanaPMO, SemanaPmoDto>()
+            .ForMember(dest => dest.QuantidadeArquivos, opt => opt.MapFrom(src => src.ArquivosDadger != null ? src.ArquivosDadger.Count(a => a.Ativo) : 0));
+
+        // CreateSemanaPmoDto ? SemanaPMO
+        CreateMap<CreateSemanaPmoDto, SemanaPMO>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.ArquivosDadger, opt => opt.Ignore())
+            .ForMember(dest => dest.DCAs, opt => opt.Ignore())
+            .ForMember(dest => dest.DCRs, opt => opt.Ignore());
+
+        // UpdateSemanaPmoDto ? SemanaPMO
+        CreateMap<UpdateSemanaPmoDto, SemanaPMO>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.ArquivosDadger, opt => opt.Ignore())
+            .ForMember(dest => dest.DCAs, opt => opt.Ignore())
+            .ForMember(dest => dest.DCRs, opt => opt.Ignore());
+
+        // === EQUIPE PDP MAPPINGS ===
+        
+        // EquipePDP ? EquipePdpDto
+        CreateMap<EquipePDP, EquipePdpDto>()
+            .ForMember(dest => dest.QuantidadeMembros, opt => opt.MapFrom(src => src.Membros != null ? src.Membros.Count(m => m.Ativo) : 0));
+
+        // CreateEquipePdpDto ? EquipePDP
+        CreateMap<CreateEquipePdpDto, EquipePDP>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.Membros, opt => opt.Ignore());
+
+        // UpdateEquipePdpDto ? EquipePDP
+        CreateMap<UpdateEquipePdpDto, EquipePDP>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Membros, opt => opt.Ignore());
     }
 }
