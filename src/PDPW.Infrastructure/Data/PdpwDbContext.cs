@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PDPW.Domain.Entities;
+using PDPW.Infrastructure.Data.Seed;
 
 namespace PDPW.Infrastructure.Data;
 
@@ -71,7 +72,7 @@ public class PdpwDbContext : DbContext
         ConfigurarEntidades(modelBuilder);
 
         // Aplicar seed data
-        // DbSeeder.Seed(modelBuilder); // Será implementado depois
+        DbSeeder.Seed(modelBuilder);
     }
 
     private void ConfigurarDadoEnergetico(ModelBuilder modelBuilder)

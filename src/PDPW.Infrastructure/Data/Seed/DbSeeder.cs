@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using PDPW.Domain.Entities;
 
 namespace PDPW.Infrastructure.Data.Seed;
 
@@ -13,21 +12,18 @@ public static class DbSeeder
     /// </summary>
     public static void Seed(ModelBuilder modelBuilder)
     {
-        // Seed será implementado conforme APIs forem criadas
-        // Exemplo de estrutura:
+        // Aplicar seeds na ordem correta (respeitando FKs)
         
-        // SeedTiposUsina(modelBuilder);
-        // SeedEmpresas(modelBuilder);
-        // SeedUsinas(modelBuilder);
+        // 1. Tabelas sem dependências
+        TipoUsinaSeed.Seed(modelBuilder);
+        EmpresaSeed.Seed(modelBuilder);
+        
+        // 2. Tabelas que dependem das anteriores
+        UsinaSeed.Seed(modelBuilder);
+        
+        // Adicionar mais seeds conforme forem criados:
+        // MotivosRestricaoSeed.Seed(modelBuilder);
+        // SemanaPMOSeed.Seed(modelBuilder);
         // etc...
     }
-
-    // Exemplo de método de seed
-    private static void SeedTiposUsina(ModelBuilder modelBuilder)
-    {
-        // Será implementado quando criar a entidade TipoUsina
-    }
-
-    // Método helper para gerar IDs sequenciais
-    private static int GetNextId(int startId) => startId;
 }
