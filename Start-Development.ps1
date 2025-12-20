@@ -62,6 +62,6 @@ Write-Host "📝 Próximos passos:" -ForegroundColor Cyan
 Write-Host "   1️⃣  No Visual Studio: defina 'PDPW.API' como projeto de inicialização e pressione F5" -ForegroundColor White
 Write-Host "   2️⃣  No terminal frontend: execute 'npm run dev'" -ForegroundColor White
 Write-Host "   3️⃣  Acesse:" -ForegroundColor White
-Write-Host "      - Backend API: http://localhost:5000/swagger" -ForegroundColor Cyan
+Write-Host "      - Backend API: http://localhost:5001/swagger" -ForegroundColor Cyan
 Write-Host "      - Frontend: http://localhost:5173" -ForegroundColor Cyan
 Write-Host ""

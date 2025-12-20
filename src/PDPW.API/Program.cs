@@ -120,7 +120,7 @@ try
 {
     app.Logger.LogInformation("🚀 Iniciando aplicação PDPW API...");
     app.Logger.LogInformation("📊 Ambiente: {Environment}", app.Environment.EnvironmentName);
-    app.Logger.LogInformation("📖 Swagger: {SwaggerUrl}", app.Environment.IsDevelopment() ? "http://localhost:5000/swagger" : "Desabilitado");
+    app.Logger.LogInformation("📖 Swagger: {SwaggerUrl}", app.Environment.IsDevelopment() ? "http://localhost:5001/swagger" : "Desabilitado");
     app.Run();
 }
 catch (Exception ex)
