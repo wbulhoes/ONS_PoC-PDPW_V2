@@ -19,25 +19,43 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services, 
         IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
+        var useInMemoryDatabase = configuration.GetValue<bool>("UseInMemoryDatabase");
 
-        services.AddDbContext<PdpwDbContext>(options =>
+        if (useInMemoryDatabase)
         {
-            options.UseSqlServer(connectionString, sqlOptions =>
+            services.AddDbContext<PdpwDbContext>(options =>
             {
-                sqlOptions.EnableRetryOnFailure(
-                    maxRetryCount: 3,
-                    maxRetryDelay: TimeSpan.FromSeconds(5),
-                    errorNumbersToAdd: null
-                );
+                options.UseInMemoryDatabase("PDPW_InMemory");
+                
+                // Habilitar sensitive data logging apenas em desenvolvimento
+                if (configuration.GetValue<bool>("EnableSensitiveDataLogging"))
+                {
+                    options.EnableSensitiveDataLogging();
+                }
             });
+        }
+        else
+        {
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            // Habilitar sensitive data logging apenas em desenvolvimento
-            if (configuration.GetValue<bool>("EnableSensitiveDataLogging"))
+            services.AddDbContext<PdpwDbContext>(options =>
             {
-                options.EnableSensitiveDataLogging();
-            }
-        });
+                options.UseSqlServer(connectionString, sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure(
+                        maxRetryCount: 3,
+                        maxRetryDelay: TimeSpan.FromSeconds(5),
+                        errorNumbersToAdd: null
+                    );
+                });
+
+                // Habilitar sensitive data logging apenas em desenvolvimento
+                if (configuration.GetValue<bool>("EnableSensitiveDataLogging"))
+                {
+                    options.EnableSensitiveDataLogging();
+                }
+            });
+        }
 
         return services;
     }
