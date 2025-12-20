@@ -135,8 +135,20 @@ Retorna **30 usinas hidrelétricas reais** + dados de seed (total: ~40 usinas)
 #### ? **GET /api/tipos-usina**
 Retorna tipos de usina (UHE, UTE, EOL, UFV, etc)
 
-#### ? **GET /api/equipes-pdp**
-Retorna **6 equipes PDP reais** do ONS
+#### ? **GET /api/semanaspmo** ? **NOVO**
+Retorna **13 semanas PMO reais** (Nov/2024 a Jan/2025) + 3 de seed (total: 16 semanas)
+
+#### ? **GET /api/equipespdp** ? **NOVO**
+Retorna **6 equipes PDP reais** do ONS + 5 de seed (total: 11 equipes)
+
+#### ? **GET /api/cargas**
+Retorna dados de cargas elétricas do sistema
+
+#### ? **GET /api/arquivosdadger**
+Retorna arquivos DADGER importados
+
+#### ? **GET /api/restricoesug**
+Retorna restrições de unidades geradoras
 
 ---
 
