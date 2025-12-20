@@ -15,7 +15,7 @@ cd ONS_PoC-PDPW
 docker-compose up -d
 
 # 3. Acessar aplica��o
-# Backend: http://localhost:5000/swagger
+# Backend: http://localhost:5001/swagger
 # Frontend: http://localhost:3000
 \\\
 
@@ -43,7 +43,7 @@ npm start
 
 ## Testar APIs
 
-Acesse: http://localhost:5000/swagger
+Acesse: http://localhost:5001/swagger
 
 APIs dispon�veis:
 - GET /api/usinas - Listar usinas
@@ -62,10 +62,10 @@ APIs dispon�veis:
 
 ## Problemas Comuns
 
-### Porta 5000 em uso
+### Porta 5001 em uso
 \\\ash
 # Windows
-netstat -ano | findstr :5000
+netstat -ano | findstr :5001
 taskkill /PID <PID> /F
 \\\
 
@@ -73,4 +73,4 @@ taskkill /PID <PID> /F
 \\\ash
 cd src/PDPW.Infrastructure
 dotnet ef database update --startup-project ../PDPW.API
-\\\
+\\\

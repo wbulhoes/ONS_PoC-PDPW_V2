@@ -23,7 +23,7 @@ Migração incremental do sistema PDPw de um legado .NET Framework 4.8/VB.NET co
 ### Via Docker (Recomendado)
 ```bash
 docker-compose up -d
-# Backend: http://localhost:5000/swagger
+# Backend: http://localhost:5001/swagger
 # Frontend: http://localhost:3000
 ```
 
@@ -438,7 +438,7 @@ tests/
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Guia de contribuição
 - [QUICKSTART.md](QUICKSTART.md) - Início rápido
 - [docs/](docs/) - Documentação adicional
-- [Swagger UI](http://localhost:5000/swagger) - Documentação interativa das APIs
+- [Swagger UI](http://localhost:5001/swagger) - Documentação interativa das APIs
 
 ---
 
