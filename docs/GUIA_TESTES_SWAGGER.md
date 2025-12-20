@@ -227,6 +227,150 @@ http://localhost:5001/swagger
 
 ---
 
+### ?? **LISTAR SEMANAS PMO** ? **NOVO**
+
+**Endpoint:** `GET /api/semanaspmo`
+
+**Como testar:**
+1. Localize `GET /api/semanaspmo`
+2. Clique em **"Try it out"**
+3. Clique em **"Execute"**
+
+**Resultado esperado:**
+- ? **16 semanas PMO** (3 de seed + 13 reais)
+- ? Semanas de Nov/2024 a Jan/2025
+- ? Datas de início e fim corretas
+- ? Ordenadas por ano e número
+
+**Exemplo de resposta:**
+```json
+{
+  "id": 59,
+  "numero": 1,
+  "ano": 2025,
+  "dataInicio": "2025-01-04",
+  "dataFim": "2025-01-10",
+  "quantidadeArquivos": 0,
+  "ativo": true
+}
+```
+
+**IDs interessantes para testar:**
+- `59` - Semana 1/2025
+- `60` - Semana 2/2025
+- `61` - Semana 3/2025
+- `50` - Semana 44/2024
+- `57` - Semana 51/2024 (última do ano)
+
+---
+
+### 1??1?? **BUSCAR SEMANA PMO POR ANO** ? **NOVO**
+
+**Endpoint:** `GET /api/semanaspmo/ano/{ano}`
+
+**Como testar:**
+1. Localize `GET /api/semanaspmo/ano/{ano}`
+2. Clique em **"Try it out"**
+3. Digite `2025`
+4. Clique em **"Execute"**
+
+**Resultado esperado:**
+- ? Retorna apenas semanas de 2025
+- ? Ordenadas por número
+
+---
+
+### 1??2?? **LISTAR EQUIPES PDP** ? **NOVO**
+
+**Endpoint:** `GET /api/equipespdp`
+
+**Como testar:**
+1. Localize `GET /api/equipespdp`
+2. Clique em **"Try it out"**
+3. Clique em **"Execute"**
+
+**Resultado esperado:**
+- ? **11 equipes PDP** (5 de seed + 6 reais)
+- ? Equipes regionais (Norte, Nordeste, Sudeste, Sul)
+- ? Coordenadores e contatos válidos
+
+**Exemplo de resposta:**
+```json
+{
+  "id": 50,
+  "nome": "Equipe Norte",
+  "descricao": "Responsável pela região Norte do SIN",
+  "coordenador": "João Silva Santos",
+  "email": "norte@ons.org.br",
+  "telefone": "(61) 3429-3000",
+  "ativo": true
+}
+```
+
+**IDs interessantes para testar:**
+- `50` - Equipe Norte
+- `51` - Equipe Nordeste
+- `52` - Equipe Sudeste/Centro-Oeste
+- `53` - Equipe Sul
+- `54` - Equipe Operação em Tempo Real
+- `55` - Equipe Planejamento da Operação
+
+---
+
+### 1??3?? **CRIAR NOVA SEMANA PMO** ? **NOVO**
+
+**Endpoint:** `POST /api/semanaspmo`
+
+**Como testar:**
+1. Localize `POST /api/semanaspmo`
+2. Clique em **"Try it out"**
+3. Cole o JSON de exemplo abaixo
+4. Clique em **"Execute"**
+
+**Payload de exemplo:**
+```json
+{
+  "numero": 5,
+  "dataInicio": "2025-02-01",
+  "dataFim": "2025-02-07",
+  "ano": 2025,
+  "observacoes": "Semana de teste"
+}
+```
+
+**Resultado esperado:**
+- ? Status: `201 Created`
+- ? Semana PMO criada com ID gerado automaticamente
+
+---
+
+### 1??4?? **CRIAR NOVA EQUIPE PDP** ? **NOVO**
+
+**Endpoint:** `POST /api/equipespdp`
+
+**Como testar:**
+1. Localize `POST /api/equipespdp`
+2. Clique em **"Try it out"**
+3. Cole o JSON de exemplo abaixo
+4. Clique em **"Execute"**
+
+**Payload de exemplo:**
+```json
+{
+  "nome": "Equipe Teste",
+  "descricao": "Equipe de testes do sistema",
+  "coordenador": "Coordenador Teste",
+  "email": "teste@ons.org.br",
+  "telefone": "(61) 3429-9999"
+}
+```
+
+**Resultado esperado:**
+- ? Status: `201 Created`
+- ? Equipe PDP criada com ID gerado automaticamente
+
+---
+
 ## ?? **VALIDAÇÕES ÚTEIS**
 
 ### ? Verificar integridade dos dados:
@@ -243,19 +387,38 @@ GET /api/usinas
 ```
 Resultado esperado: **40 usinas**
 
-#### 3. **Verificar relacionamento Empresa ? Usinas:**
+#### 3. **Contar semanas PMO:** ? **NOVO**
+```bash
+GET /api/semanaspmo
+```
+Resultado esperado: **16 semanas** (3 seed + 13 reais)
+
+#### 4. **Contar equipes PDP:** ? **NOVO**
+```bash
+GET /api/equipespdp
+```
+Resultado esperado: **11 equipes** (5 seed + 6 reais)
+
+#### 5. **Verificar relacionamento Empresa ? Usinas:**
 Busque a Furnas:
 ```bash
 GET /api/empresas/100
 ```
 Observe: `"quantidadeUsinas": 9`
 
-#### 4. **Verificar relacionamento Usina ? Empresa:**
+#### 6. **Verificar relacionamento Usina ? Empresa:**
 Busque Itaipu:
 ```bash
 GET /api/usinas/200
 ```
 Observe: `"empresaId": 106` e `"empresa": "Itaipu Binacional"`
+
+#### 7. **Verificar semana PMO por ano:** ? **NOVO**
+Busque semanas de 2025:
+```bash
+GET /api/semanaspmo/ano/2025
+```
+Observe: Deve retornar 4 semanas do ano 2025
 
 ---
 
@@ -276,6 +439,20 @@ Observe: `"empresaId": 106` e `"empresa": "Itaipu Binacional"`
 1. GET `/api/usinas?pageNumber=1&pageSize=10`
 2. GET `/api/usinas?pageNumber=2&pageSize=10`
 3. Verificar que os dados são diferentes
+
+### Cenário 4: **Criar semana PMO e validar conflito** ? **NOVO**
+1. POST `/api/semanaspmo` com número e ano únicos (ex: semana 10/2025)
+2. Tentar criar outra semana com mesmo número e ano
+3. Resultado esperado: erro de duplicação
+
+### Cenário 5: **Criar equipe PDP e validar nome único** ? **NOVO**
+1. POST `/api/equipespdp` com nome único (ex: "Equipe Teste XYZ")
+2. Tentar criar outra equipe com mesmo nome
+3. Resultado esperado: erro de nome duplicado
+
+### Cenário 6: **Buscar semana PMO por data** ? **NOVO**
+1. GET `/api/semanaspmo/data/2025-01-20`
+2. Resultado esperado: Retorna a semana 3/2025 (18/01 a 24/01)
 
 ---
 
@@ -300,6 +477,28 @@ Observe: `"empresaId": 106` e `"empresa": "Itaipu Binacional"`
 | 201 | BELOMONTE | Belo Monte | 11.233 MW | Eletronorte (104) |
 | 202 | TUCURUI | Tucuruí | 8.370 MW | Eletronorte (104) |
 | 217 | FURNAS | Furnas | 1.216 MW | Furnas (100) |
+
+### Semanas PMO mais relevantes para testes: ? **NOVO**
+
+| ID | Semana | Ano | Data Início | Data Fim |
+|----|--------|-----|-------------|----------|
+| 50 | 44 | 2024 | 02/11/2024 | 08/11/2024 |
+| 57 | 51 | 2024 | 21/12/2024 | 27/12/2024 |
+| 59 | 1 | 2025 | 04/01/2025 | 10/01/2025 |
+| 60 | 2 | 2025 | 11/01/2025 | 17/01/2025 |
+| 61 | 3 | 2025 | 18/01/2025 | 24/01/2025 |
+| 62 | 4 | 2025 | 25/01/2025 | 31/01/2025 |
+
+### Equipes PDP mais relevantes para testes: ? **NOVO**
+
+| ID | Nome | Coordenador | Email |
+|----|------|-------------|-------|
+| 50 | Equipe Norte | João Silva Santos | norte@ons.org.br |
+| 51 | Equipe Nordeste | Maria Oliveira Costa | nordeste@ons.org.br |
+| 52 | Equipe Sudeste/Centro-Oeste | Pedro Almeida Ferreira | sudeste@ons.org.br |
+| 53 | Equipe Sul | Ana Paula Rodrigues | sul@ons.org.br |
+| 54 | Equipe Operação em Tempo Real | Carlos Eduardo Lima | operacao@ons.org.br |
+| 55 | Equipe Planejamento da Operação | Juliana Martins Souza | planejamento@ons.org.br |
 
 ---
 
@@ -338,16 +537,45 @@ Verifique:
 
 ## ? **CHECKLIST DE TESTES**
 
+### Básicos:
 - [ ] ? GET /api/empresas retorna 24 empresas
 - [ ] ? GET /api/usinas retorna 40 usinas
+- [ ] ? GET /api/semanaspmo retorna 16 semanas ? **NOVO**
+- [ ] ? GET /api/equipespdp retorna 11 equipes ? **NOVO**
+
+### Busca por ID:
 - [ ] ? GET /api/empresas/100 retorna Furnas com 9 usinas
 - [ ] ? GET /api/usinas/200 retorna Itaipu com 14.000 MW
+- [ ] ? GET /api/semanaspmo/59 retorna Semana 1/2025 ? **NOVO**
+- [ ] ? GET /api/equipespdp/50 retorna Equipe Norte ? **NOVO**
+
+### Buscas especiais:
+- [ ] ? GET /api/semanaspmo/ano/2025 retorna 4 semanas ? **NOVO**
+- [ ] ? GET /api/semanaspmo/data/2025-01-20 retorna Semana 3/2025 ? **NOVO**
+- [ ] ? GET /api/equipespdp/nome/Equipe Norte retorna ID 50 ? **NOVO**
+
+### CRUD - Create:
 - [ ] ? POST /api/empresas cria nova empresa
 - [ ] ? POST /api/usinas cria nova usina
+- [ ] ? POST /api/semanaspmo cria nova semana ? **NOVO**
+- [ ] ? POST /api/equipespdp cria nova equipe ? **NOVO**
+
+### CRUD - Update:
 - [ ] ? PUT /api/empresas/{id} atualiza empresa
+- [ ] ? PUT /api/usinas/{id} atualiza usina
+- [ ] ? PUT /api/semanaspmo/{id} atualiza semana ? **NOVO**
+- [ ] ? PUT /api/equipespdp/{id} atualiza equipe ? **NOVO**
+
+### CRUD - Delete:
 - [ ] ? DELETE /api/empresas/{id} remove empresa
+- [ ] ? DELETE /api/usinas/{id} remove usina
+- [ ] ? DELETE /api/semanaspmo/{id} remove semana ? **NOVO**
+- [ ] ? DELETE /api/equipespdp/{id} remove equipe ? **NOVO**
+
+### Relacionamentos:
 - [ ] ? Relacionamento Empresa ? Usinas funciona
 - [ ] ? Validações de campos funcionam
+- [ ] ? Validações de duplicação funcionam ? **NOVO**
 
 ---
 
@@ -357,8 +585,24 @@ Acesse agora: **http://localhost:5001/swagger**
 
 Todos os **69 registros reais** do cliente estão disponíveis para teste! ??
 
+### ?? **APIs Disponíveis:**
+
+? **Empresas** - 24 registros (8 endpoints)  
+? **Usinas** - 40 registros (8 endpoints)  
+? **Tipos de Usina** - 6 registros (6 endpoints)  
+? **Semanas PMO** - 16 registros (9 endpoints) ? **NOVO**  
+? **Equipes PDP** - 11 registros (8 endpoints) ? **NOVO**  
+? **Cargas** - 8 endpoints  
+? **Arquivos DADGER** - 9 endpoints  
+? **Restrições UG** - 9 endpoints  
+
+### ?? **Total de Endpoints Testáveis:**
+
+**66+ endpoints** implementados e funcionando! ??
+
 ---
 
-**Última atualização**: 20/12/2024  
+**Última atualização**: 20/12/2024 - 20:00  
 **Status**: ? Tudo Funcionando  
+**Versão**: POC PDPW V2  
 
