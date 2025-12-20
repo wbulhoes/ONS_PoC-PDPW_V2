@@ -35,11 +35,6 @@ public class ArquivoDadgerService : IArquivoDadgerService
 
     public async Task<ArquivoDadgerDto> CreateAsync(CreateArquivoDadgerDto dto)
     {
-        // Validar se SemanaPMO existe
-        var semanaPMO = await _semanaPMORepository.ObterPorIdAsync(dto.SemanaPMOId);
-        if (semanaPMO == null)
-            throw new InvalidOperationException($"Semana PMO com ID {dto.SemanaPMOId} não encontrada");
-
         var arquivo = new ArquivoDadger
         {
             NomeArquivo = dto.NomeArquivo,
@@ -61,11 +56,6 @@ public class ArquivoDadgerService : IArquivoDadgerService
         var arquivo = await _repository.GetByIdAsync(id);
         if (arquivo == null)
             throw new KeyNotFoundException($"Arquivo DADGER com ID {id} não encontrado");
-
-        // Validar se SemanaPMO existe
-        var semanaPMO = await _semanaPMORepository.ObterPorIdAsync(dto.SemanaPMOId);
-        if (semanaPMO == null)
-            throw new InvalidOperationException($"Semana PMO com ID {dto.SemanaPMOId} não encontrada");
 
         arquivo.NomeArquivo = dto.NomeArquivo;
         arquivo.CaminhoArquivo = dto.CaminhoArquivo;
