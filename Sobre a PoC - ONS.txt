@@ -1,0 +1,35 @@
+Sobre a PoC - ONS
+ 
+A PoC consiste em modernizar rapidamente o sistema legado PDPW usando .NET 8, React e containerização, entregando código até 30/12 e apresentando em 05/01, com posterior envio de uma estimativa completa de um projeto real de modernização até 12/01.
+
+A aplicação é o PDPW, um módulo Web do processo PDP (Programação Diária da Produção).
+• Tecnologias atuais da aplicação
+.NET Framework
+WebForms
+VB.NET
+Arquitetura monolítica
+Tecnologias consideradas antigas pelo ONS
+• Função do PDPW
+Coleta dados energéticos
+Envia insumos para modelos matemáticos
+Apoia previsões e fluxos de produção do ONS
+É um sistema pequeno, mas representa bem o legado que o órgão precisa modernizar
+
+Objetivo da PoC
+ 
+1. Migrar a aplicaçãoTransformar o PDPW em uma aplicação moderna com:
+Backend em .NET 8
+Frontend em React (última versão)
+Containerização (Windows container, dado o legado)
+Arquitetura limpa, modular e atualizada
+2. Manter o máximo de fidelidade às funcionalidades e UI
+As telas devem manter o máximo possível da experiência atual, apenas modernizadas.
+ 
+3. Migrar o máximo possível de featurNão é obrigatório migrar tudo. O parceiro pode:
+fazer vertical slice (fluxos completos),
+ou horizontal slice (migrar mais backend, menos frontend, por exemplo).
+Entregáveis
+Código migrado, enviado via commit no GitHub
+Documentação clara e didática
+Apresentação da solução
+Uso de ferramentas de automação e aceleração (incluindo IA)
