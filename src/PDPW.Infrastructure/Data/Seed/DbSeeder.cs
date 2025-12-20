@@ -15,15 +15,18 @@ public static class DbSeeder
     {
         // Aplicar seeds na ordem correta (respeitando FKs)
         
-        // 1. Tabelas sem dependências
+        // 1. Tabelas sem dependências - Dados de exemplo
         TipoUsinaSeed.Seed(modelBuilder);
         EmpresaSeed.Seed(modelBuilder);
         EquipePdpSeed.SeedEquipesPdp(modelBuilder);
         
-        // 2. Tabelas que dependem das anteriores
+        // 2. Tabelas que dependem das anteriores - Dados de exemplo
         UsinaSeed.Seed(modelBuilder);
         SeedSemanasPMO(modelBuilder);
         SeedMotivosRestricao(modelBuilder);
+        
+        // 3. DADOS REAIS DO CLIENTE (50+ registros)
+        modelBuilder.SeedLegacyData();
     }
 
     private static void SeedSemanasPMO(ModelBuilder modelBuilder)
