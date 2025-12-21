@@ -12,7 +12,6 @@ public class SemanaPmoDto
     public DateTime DataInicio { get; set; }
     public DateTime DataFim { get; set; }
     public int Ano { get; set; }
-    public int Mes { get; set; }
     public string? Observacoes { get; set; }
     public int QuantidadeArquivos { get; set; }
     public bool Ativo { get; set; }
@@ -39,10 +38,6 @@ public class CreateSemanaPmoDto
     [Range(2020, 2100, ErrorMessage = "O ano deve estar entre 2020 e 2100")]
     public int Ano { get; set; }
 
-    [Required(ErrorMessage = "O mês é obrigatório")]
-    [Range(1, 12, ErrorMessage = "O mês deve estar entre 1 e 12")]
-    public int Mes { get; set; }
-
     [MaxLength(500, ErrorMessage = "As observações não podem ter mais de 500 caracteres")]
     public string? Observacoes { get; set; }
 }
@@ -65,10 +60,6 @@ public class UpdateSemanaPmoDto
     [Required(ErrorMessage = "O ano é obrigatório")]
     [Range(2020, 2100, ErrorMessage = "O ano deve estar entre 2020 e 2100")]
     public int Ano { get; set; }
-
-    [Required(ErrorMessage = "O mês é obrigatório")]
-    [Range(1, 12, ErrorMessage = "O mês deve estar entre 1 e 12")]
-    public int Mes { get; set; }
 
     [MaxLength(500, ErrorMessage = "As observações não podem ter mais de 500 caracteres")]
     public string? Observacoes { get; set; }
