@@ -2,6 +2,7 @@
 # GERADOR DE DADOS FICTÍCIOS - TODAS AS APIs
 # ============================================
 # Cria dados de teste para validação completa
+# ORDEM CORRETA PARA EVITAR ERROS DE FK
 # Data: 20/12/2024
 # ============================================
 
@@ -18,6 +19,9 @@ PRINT ''
 -- ============================================
 
 PRINT 'Gerando Empresas Fictícias...'
+
+-- Limpar dados fictícios anteriores se existirem
+DELETE FROM Empresas WHERE Id BETWEEN 200 AND 210;
 
 SET IDENTITY_INSERT Empresas ON;
 
@@ -39,6 +43,9 @@ GO
 -- ============================================
 
 PRINT 'Gerando Usinas Fictícias...'
+
+-- Limpar dados fictícios anteriores
+DELETE FROM Usinas WHERE Id BETWEEN 300 AND 310;
 
 SET IDENTITY_INSERT Usinas ON;
 
@@ -66,6 +73,9 @@ GO
 
 PRINT 'Gerando Unidades Geradoras Fictícias...'
 
+-- Limpar dados fictícios anteriores
+DELETE FROM UnidadesGeradoras WHERE Id BETWEEN 100 AND 110;
+
 SET IDENTITY_INSERT UnidadesGeradoras ON;
 
 INSERT INTO UnidadesGeradoras (Id, Codigo, Nome, UsinaId, PotenciaNominal, PotenciaMinima, DataComissionamento, Status, DataCriacao, Ativo)
@@ -92,6 +102,9 @@ GO
 
 PRINT 'Gerando Semanas PMO Fictícias...'
 
+-- Limpar dados fictícios anteriores
+DELETE FROM SemanasPMO WHERE Id BETWEEN 100 AND 110;
+
 SET IDENTITY_INSERT SemanasPMO ON;
 
 INSERT INTO SemanasPMO (Id, Numero, DataInicio, DataFim, Ano, Observacoes, DataCriacao, Ativo)
@@ -112,6 +125,9 @@ GO
 -- ============================================
 
 PRINT 'Gerando Cargas Fictícias...'
+
+-- Limpar dados fictícios anteriores
+DELETE FROM Cargas WHERE Id BETWEEN 100 AND 120;
 
 SET IDENTITY_INSERT Cargas ON;
 
@@ -139,6 +155,10 @@ GO
 
 PRINT 'Gerando Arquivos DADGER Fictícios...'
 
+
+-- Limpar dados fictícios anteriores
+DELETE FROM ArquivosDadger WHERE Id BETWEEN 100 AND 110;
+
 SET IDENTITY_INSERT ArquivosDadger ON;
 
 INSERT INTO ArquivosDadger (Id, NomeArquivo, CaminhoArquivo, DataImportacao, SemanaPMOId, Processado, DataProcessamento, Observacoes, DataCriacao, Ativo)
@@ -159,6 +179,10 @@ GO
 -- ============================================
 
 PRINT 'Gerando Restrições UG Fictícias...'
+
+
+-- Limpar dados fictícios anteriores
+DELETE FROM RestricoesUG WHERE Id BETWEEN 100 AND 120;
 
 SET IDENTITY_INSERT RestricoesUG ON;
 
@@ -185,6 +209,10 @@ GO
 -- ============================================
 
 PRINT 'Gerando Equipes PDP Fictícias...'
+
+
+-- Limpar dados fictícios anteriores
+DELETE FROM EquipesPDP WHERE Id BETWEEN 100 AND 110;
 
 SET IDENTITY_INSERT EquipesPDP ON;
 
@@ -235,6 +263,7 @@ PRINT ''
 PRINT 'TOTAL: 58 novos registros fictícios'
 PRINT ''
 PRINT '? Dados prontos para testes automatizados!'
+PRINT '? Todas as Foreign Keys válidas!'
 PRINT ''
 
 GO
