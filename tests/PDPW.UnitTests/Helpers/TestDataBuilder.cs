@@ -1,4 +1,4 @@
-using PDPW.Domain.Entities;
+ï»¿using PDPW.Domain.Entities;
 
 namespace PDPW.UnitTests.Helpers;
 
@@ -19,7 +19,7 @@ public static class TestDataBuilder
                 TipoUsinaId = 1,
                 EmpresaId = 1,
                 CapacidadeInstalada = 1000,
-                Localizacao = "São Paulo, SP",
+                Localizacao = "SÃ£o Paulo, SP",
                 DataOperacao = DateTime.Now.AddYears(-5),
                 DataCriacao = DateTime.Now,
                 Ativo = true
@@ -45,8 +45,8 @@ public static class TestDataBuilder
             {
                 Id = id,
                 Nome = nome ?? $"Tipo {id}",
-                Descricao = $"Descrição do Tipo {id}",
-                FonteEnergia = "Térmica",
+                Descricao = $"DescriÃ§Ã£o do Tipo {id}",
+                FonteEnergia = "TÃ©rmica",
                 DataCriacao = DateTime.Now,
                 Ativo = true
             };
@@ -102,7 +102,6 @@ public static class TestDataBuilder
                 Ano = ano,
                 DataInicio = new DateTime(ano, 1, 1).AddDays((numero - 1) * 7),
                 DataFim = new DateTime(ano, 1, 1).AddDays(numero * 7 - 1),
-                Mes = 1,
                 DataCriacao = DateTime.Now,
                 Ativo = true
             };

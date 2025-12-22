@@ -2,8 +2,8 @@
 
 **Objetivo**: Garantir migração de qualidade enterprise do sistema legado VB.NET para .NET 8/C#  
 **Responsável**: Willian Bulhões  
-**Data Início**: 23/12/2024  
-**Meta**: Entregar POC com padrões de excelência em 29/12/2024
+**Data Início**: 22/12/2025  
+**Meta**: Entregar POC com padrões de excelência em 30/12/2025
 
 ---
 

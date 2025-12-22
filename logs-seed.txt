@@ -1,13 +1,13 @@
-Usando as configura├º├Áes de inicializa├º├úo de C:\temp\_ONS_PoC-PDPW_V2\src\PDPW.API\Properties\launchSettings.json...
+﻿Usando as configura├º├�es de inicializa├º├�o de C:\temp\_ONS_PoC-PDPW_V2\src\PDPW.API\Properties\launchSettings.json...
 info: Program[0]
-      ­ƒùä´©Å Banco de dados InMemory inicializado (dados tempor├írios)
+      ­ƒùä´©Å Banco de dados InMemory inicializado (dados tempor├�rios)
 info: Microsoft.EntityFrameworkCore.Update[30100]
       Saved 105 entities to in-memory store.
 info: Program[0]
       ­ƒôè Populando banco com dados realistas do setor el├®trico brasileiro...
-? Banco j├í cont├®m dados. Pulando seed.
+? Banco j├� cont├®m dados. Pulando seed.
 info: PDPW.API[0]
-      ­ƒÜÇ Iniciando aplica├º├úo PDPW API...
+      ­ƒÜ� Iniciando aplica├º├�o PDPW API...
 info: PDPW.API[0]
       ­ƒôè Ambiente: Development
 info: PDPW.API[0]

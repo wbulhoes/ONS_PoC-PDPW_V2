@@ -1,22 +1,22 @@
-Contexto do banco de dados alterado para 'master'.
+ï»¿Contexto do banco de dados alterado para 'master'.
 =========================================
-PASSO 1: Restaurando backup temporário...
+PASSO 1: Restaurando backup temporï¿½rio...
 =========================================
-Restaurando backup do cliente em banco temporário...
+Restaurando backup do cliente em banco temporï¿½rio...
 Isso pode levar alguns minutos...
-Mensagem 3257, Nível 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 6
-O espaço livre no volume do disco 'C:\' é insuficiente para criar o banco de dados, o qual requer 375855316992 bytes livres adicionais, mas somente 207608971264 bytes estão disponíveis.
-Mensagem 3119, Nível 16, Estado 4, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 6
-Foram identificados problemas durante o planejamento da instrução RESTORE. Mensagens anteriores fornecem detalhes.
-Mensagem 3013, Nível 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 6
-RESTORE DATABASE está sendo encerrado de forma anormal.
+Mensagem 3257, Nï¿½vel 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 6
+O espaï¿½o livre no volume do disco 'C:\' ï¿½ insuficiente para criar o banco de dados, o qual requer 375855316992 bytes livres adicionais, mas somente 207608971264 bytes estï¿½o disponï¿½veis.
+Mensagem 3119, Nï¿½vel 16, Estado 4, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 6
+Foram identificados problemas durante o planejamento da instruï¿½ï¿½o RESTORE. Mensagens anteriores fornecem detalhes.
+Mensagem 3013, Nï¿½vel 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 6
+RESTORE DATABASE estï¿½ sendo encerrado de forma anormal.
 ? Backup restaurado em PDPW_TEMP_BACKUP
-Mensagem 5011, Nível 14, Estado 5, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 3
-O usuário não tem permissão para alterar o banco de dados 'PDPW_TEMP_BACKUP', o banco de dados não existe ou o banco de dados não está em um estado que permita o acesso às verificações.
-Mensagem 5069, Nível 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 3
-Falha na instrução ALTER DATABASE.
-Mensagem 911, Nível 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 10
-O banco de dados 'PDPW_TEMP_BACKUP' não existe. Verifique se o nome foi digitado corretamente.
+Mensagem 5011, Nï¿½vel 14, Estado 5, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 3
+O usuï¿½rio nï¿½o tem permissï¿½o para alterar o banco de dados 'PDPW_TEMP_BACKUP', o banco de dados nï¿½o existe ou o banco de dados nï¿½o estï¿½ em um estado que permita o acesso ï¿½s verificaï¿½ï¿½es.
+Mensagem 5069, Nï¿½vel 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 3
+Falha na instruï¿½ï¿½o ALTER DATABASE.
+Mensagem 911, Nï¿½vel 16, Estado 1, Servidor ACT-F0RGP74\SQLEXPRESS, Linha 10
+O banco de dados 'PDPW_TEMP_BACKUP' nï¿½o existe. Verifique se o nome foi digitado corretamente.
 Tabela                                                                                                                           Colunas     Registros           
 -------------------------------------------------------------------------------------------------------------------------------- ----------- --------------------
 MSreplication_options                                                                                                                      6                    3
@@ -32,10 +32,10 @@ PASSO 3: Analisando dados do backup
 =========================================
  
 =========================================
-Verificação concluída!
+Verificaï¿½ï¿½o concluï¿½da!
 =========================================
  
-PRÓXIMOS PASSOS:
+PRï¿½XIMOS PASSOS:
 1. Revisar estrutura das tabelas
 2. Executar script de merge de dados
 3. Validar dados copiados
