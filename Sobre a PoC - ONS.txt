@@ -1,35 +1,35 @@
-Sobre a PoC - ONS
+﻿Sobre a PoC - ONS
  
-A PoC consiste em modernizar rapidamente o sistema legado PDPW usando .NET 8, React e containerização, entregando código até 30/12 e apresentando em 05/01, com posterior envio de uma estimativa completa de um projeto real de modernização até 12/01.
+A PoC consiste em modernizar rapidamente o sistema legado PDPW usando .NET 8, React e containeriza��o, entregando c�digo at� 30/12 e apresentando em 05/01, com posterior envio de uma estimativa completa de um projeto real de moderniza��o at� 12/01.
 
-A aplicação é o PDPW, um módulo Web do processo PDP (Programação Diária da Produção).
-• Tecnologias atuais da aplicação
+A aplica��o � o PDPW, um m�dulo Web do processo PDP (Programa��o Di�ria da Produ��o).
+• Tecnologias atuais da aplica��o
 .NET Framework
 WebForms
 VB.NET
-Arquitetura monolítica
+Arquitetura monol�tica
 Tecnologias consideradas antigas pelo ONS
-• Função do PDPW
-Coleta dados energéticos
-Envia insumos para modelos matemáticos
-Apoia previsões e fluxos de produção do ONS
-É um sistema pequeno, mas representa bem o legado que o órgão precisa modernizar
+• Fun��o do PDPW
+Coleta dados energ�ticos
+Envia insumos para modelos matem�ticos
+Apoia previsões e fluxos de produ��o do ONS
+� um sistema pequeno, mas representa bem o legado que o �rg�o precisa modernizar
 
 Objetivo da PoC
  
-1. Migrar a aplicaçãoTransformar o PDPW em uma aplicação moderna com:
+1. Migrar a aplica��oTransformar o PDPW em uma aplica��o moderna com:
 Backend em .NET 8
-Frontend em React (última versão)
-Containerização (Windows container, dado o legado)
+Frontend em React (�ltima vers�o)
+Containeriza��o (Windows container, dado o legado)
 Arquitetura limpa, modular e atualizada
-2. Manter o máximo de fidelidade às funcionalidades e UI
-As telas devem manter o máximo possível da experiência atual, apenas modernizadas.
+2. Manter o m�ximo de fidelidade às funcionalidades e UI
+As telas devem manter o m�ximo poss�vel da experiência atual, apenas modernizadas.
  
-3. Migrar o máximo possível de featurNão é obrigatório migrar tudo. O parceiro pode:
+3. Migrar o m�ximo poss�vel de featurN�o � obrigat�rio migrar tudo. O parceiro pode:
 fazer vertical slice (fluxos completos),
 ou horizontal slice (migrar mais backend, menos frontend, por exemplo).
-Entregáveis
-Código migrado, enviado via commit no GitHub
-Documentação clara e didática
-Apresentação da solução
-Uso de ferramentas de automação e aceleração (incluindo IA)
+Entreg�veis
+C�digo migrado, enviado via commit no GitHub
+Documenta��o clara e did�tica
+Apresenta��o da solu��o
+Uso de ferramentas de automa��o e acelera��o (incluindo IA)

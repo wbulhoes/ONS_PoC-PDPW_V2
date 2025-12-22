@@ -12,10 +12,11 @@ public static class RealisticDataSeeder
 {
     public static async Task SeedAsync(PdpwDbContext context)
     {
-        // Se já existem dados, não faz nada
-        if (await context.Empresas.AnyAsync())
+        // Verificar se já foi executado (verificando se temos mais de 30 empresas)
+        var empresasCount = await context.Empresas.CountAsync();
+        if (empresasCount >= 30)
         {
-            Console.WriteLine("? Banco já contém dados. Pulando seed.");
+            Console.WriteLine("? Banco já contém dados completos do seed. Pulando...");
             return;
         }
 

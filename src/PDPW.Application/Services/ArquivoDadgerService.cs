@@ -47,7 +47,7 @@ public class ArquivoDadgerService : IArquivoDadgerService
         }
 
         // Validar se semana PMO existe
-        var semanaPMO = await _semanaPMORepository.GetByIdAsync(dto.SemanaPMOId);
+        var semanaPMO = await _semanaPMORepository.ObterPorIdAsync(dto.SemanaPMOId);
         if (semanaPMO == null)
         {
             throw new ArgumentException($"Semana PMO com ID {dto.SemanaPMOId} não encontrada");
@@ -87,7 +87,7 @@ public class ArquivoDadgerService : IArquivoDadgerService
             throw new KeyNotFoundException($"Arquivo DADGER com ID {id} não encontrado");
 
         // Validar se semana PMO existe
-        var semanaPMO = await _semanaPMORepository.GetByIdAsync(dto.SemanaPMOId);
+        var semanaPMO = await _semanaPMORepository.ObterPorIdAsync(dto.SemanaPMOId);
         if (semanaPMO == null)
         {
             throw new ArgumentException($"Semana PMO com ID {dto.SemanaPMOId} não encontrada");
