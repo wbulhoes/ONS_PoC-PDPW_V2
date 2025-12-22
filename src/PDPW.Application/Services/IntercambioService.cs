@@ -86,6 +86,12 @@ public class IntercambioService : IIntercambioService
     {
         try
         {
+            // Validação conforme InterDAO.vb
+            if (dataReferencia == default)
+            {
+                throw new ArgumentException("Data de referência não informada");
+            }
+
             var intercambios = await _repository.GetByDataAsync(dataReferencia);
             return _mapper.Map<IEnumerable<IntercambioDto>>(intercambios);
         }
@@ -133,6 +139,22 @@ public class IntercambioService : IIntercambioService
     {
         try
         {
+            // Validações conforme InterDAO.vb
+            if (dto.DataReferencia == default)
+            {
+                throw new ArgumentException("Data de referência não informada");
+            }
+
+            if (string.IsNullOrWhiteSpace(dto.SubsistemaOrigem))
+            {
+                throw new ArgumentException("Subsistema de origem não informado");
+            }
+
+            if (string.IsNullOrWhiteSpace(dto.SubsistemaDestino))
+            {
+                throw new ArgumentException("Subsistema de destino não informado");
+            }
+
             // Validar se subsistemas são diferentes
             if (dto.SubsistemaOrigem == dto.SubsistemaDestino)
             {
@@ -170,6 +192,22 @@ public class IntercambioService : IIntercambioService
     {
         try
         {
+            // Validações conforme InterDAO.vb
+            if (dto.DataReferencia == default)
+            {
+                throw new ArgumentException("Data de referência não informada");
+            }
+
+            if (string.IsNullOrWhiteSpace(dto.SubsistemaOrigem))
+            {
+                throw new ArgumentException("Subsistema de origem não informado");
+            }
+
+            if (string.IsNullOrWhiteSpace(dto.SubsistemaDestino))
+            {
+                throw new ArgumentException("Subsistema de destino não informado");
+            }
+
             var intercambio = await _repository.GetByIdAsync(id);
             if (intercambio == null)
             {

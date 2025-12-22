@@ -35,6 +35,24 @@ public class ArquivoDadgerService : IArquivoDadgerService
 
     public async Task<ArquivoDadgerDto> CreateAsync(CreateArquivoDadgerDto dto)
     {
+        // Validações conforme ArquivoDadgerValorDAO.vb
+        if (string.IsNullOrWhiteSpace(dto.NomeArquivo))
+        {
+            throw new ArgumentException("Nome do arquivo não informado");
+        }
+
+        if (dto.SemanaPMOId <= 0)
+        {
+            throw new ArgumentException("Semana PMO não informada");
+        }
+
+        // Validar se semana PMO existe
+        var semanaPMO = await _semanaPMORepository.GetByIdAsync(dto.SemanaPMOId);
+        if (semanaPMO == null)
+        {
+            throw new ArgumentException($"Semana PMO com ID {dto.SemanaPMOId} não encontrada");
+        }
+
         var arquivo = new ArquivoDadger
         {
             NomeArquivo = dto.NomeArquivo,
@@ -53,9 +71,27 @@ public class ArquivoDadgerService : IArquivoDadgerService
 
     public async Task<ArquivoDadgerDto> UpdateAsync(int id, UpdateArquivoDadgerDto dto)
     {
+        // Validações conforme ArquivoDadgerValorDAO.vb
+        if (string.IsNullOrWhiteSpace(dto.NomeArquivo))
+        {
+            throw new ArgumentException("Nome do arquivo não informado");
+        }
+
+        if (dto.SemanaPMOId <= 0)
+        {
+            throw new ArgumentException("Semana PMO não informada");
+        }
+
         var arquivo = await _repository.GetByIdAsync(id);
         if (arquivo == null)
             throw new KeyNotFoundException($"Arquivo DADGER com ID {id} não encontrado");
+
+        // Validar se semana PMO existe
+        var semanaPMO = await _semanaPMORepository.GetByIdAsync(dto.SemanaPMOId);
+        if (semanaPMO == null)
+        {
+            throw new ArgumentException($"Semana PMO com ID {dto.SemanaPMOId} não encontrada");
+        }
 
         arquivo.NomeArquivo = dto.NomeArquivo;
         arquivo.CaminhoArquivo = dto.CaminhoArquivo;
@@ -82,6 +118,12 @@ public class ArquivoDadgerService : IArquivoDadgerService
 
     public async Task<IEnumerable<ArquivoDadgerDto>> GetBySemanaPMOAsync(int semanaPMOId)
     {
+        // Validação conforme ArquivoDadgerValorDAO.vb
+        if (semanaPMOId <= 0)
+        {
+            throw new ArgumentException("Semana PMO não informada");
+        }
+
         var arquivos = await _repository.GetBySemanaPMOAsync(semanaPMOId);
         return arquivos.Select(MapToDto);
     }

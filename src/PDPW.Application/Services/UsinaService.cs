@@ -81,6 +81,12 @@ public class UsinaService : IUsinaService
     /// </summary>
     public async Task<Result<IEnumerable<UsinaDto>>> GetByEmpresaAsync(int empresaId)
     {
+        // Validação: código de empresa não pode ser zero ou negativo
+        if (empresaId <= 0)
+        {
+            return Result<IEnumerable<UsinaDto>>.Failure("Código da empresa não informado");
+        }
+
         var usinas = await _repository.GetByEmpresaAsync(empresaId);
         var dtos = _mapper.Map<IEnumerable<UsinaDto>>(usinas);
         return Result<IEnumerable<UsinaDto>>.Success(dtos);
@@ -91,6 +97,17 @@ public class UsinaService : IUsinaService
     /// </summary>
     public async Task<Result<UsinaDto>> CreateAsync(CreateUsinaDto createDto)
     {
+        // Validações de campos obrigatórios (conforme UsinaDAO.vb)
+        if (string.IsNullOrWhiteSpace(createDto.Codigo))
+        {
+            return Result<UsinaDto>.Failure("Código da usina é obrigatório");
+        }
+
+        if (string.IsNullOrWhiteSpace(createDto.Nome))
+        {
+            return Result<UsinaDto>.Failure("Nome da usina é obrigatório");
+        }
+
         // Validar código único
         if (await _repository.CodigoExisteAsync(createDto.Codigo))
         {
@@ -112,6 +129,17 @@ public class UsinaService : IUsinaService
     /// </summary>
     public async Task<Result<UsinaDto>> UpdateAsync(int id, UpdateUsinaDto updateDto)
     {
+        // Validações de campos obrigatórios
+        if (string.IsNullOrWhiteSpace(updateDto.Codigo))
+        {
+            return Result<UsinaDto>.Failure("Código da usina é obrigatório");
+        }
+
+        if (string.IsNullOrWhiteSpace(updateDto.Nome))
+        {
+            return Result<UsinaDto>.Failure("Nome da usina é obrigatório");
+        }
+
         var usina = await _repository.GetByIdAsync(id);
         if (usina == null)
         {

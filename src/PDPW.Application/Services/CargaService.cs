@@ -31,6 +31,22 @@ public class CargaService : ICargaService
 
     public async Task<CargaDto> CreateAsync(CreateCargaDto dto)
     {
+        // Validações conforme CargaDAO.vb
+        if (dto.DataReferencia == default)
+        {
+            throw new ArgumentException("Data de referência não informada");
+        }
+
+        if (string.IsNullOrWhiteSpace(dto.SubsistemaId))
+        {
+            throw new ArgumentException("Subsistema não informado");
+        }
+
+        if (dto.CargaMWmed < 0)
+        {
+            throw new ArgumentException("Carga MW média não pode ser negativa");
+        }
+
         var carga = new Carga
         {
             DataReferencia = dto.DataReferencia,
@@ -49,6 +65,22 @@ public class CargaService : ICargaService
 
     public async Task<CargaDto> UpdateAsync(int id, UpdateCargaDto dto)
     {
+        // Validações conforme CargaDAO.vb
+        if (dto.DataReferencia == default)
+        {
+            throw new ArgumentException("Data de referência não informada");
+        }
+
+        if (string.IsNullOrWhiteSpace(dto.SubsistemaId))
+        {
+            throw new ArgumentException("Subsistema não informado");
+        }
+
+        if (dto.CargaMWmed < 0)
+        {
+            throw new ArgumentException("Carga MW média não pode ser negativa");
+        }
+
         var carga = await _repository.GetByIdAsync(id);
         if (carga == null)
             throw new KeyNotFoundException($"Carga com ID {id} não encontrada");
@@ -89,6 +121,12 @@ public class CargaService : ICargaService
 
     public async Task<IEnumerable<CargaDto>> GetByDataReferenciaAsync(DateTime dataReferencia)
     {
+        // Validação conforme CargaDAO.vb
+        if (dataReferencia == default)
+        {
+            throw new ArgumentException("Data de referência não informada");
+        }
+
         var cargas = await _repository.GetByDataReferenciaAsync(dataReferencia);
         return cargas.Select(MapToDto);
     }
