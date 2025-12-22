@@ -1,63 +1,192 @@
-# PDPw - Programação Diária de Produção (Migração .NET 8 + React)
+# PDPw - Programação Diária de Produção (POC - Migração .NET 8 + React)
 
-**Versão**: 2.0  
-**Status**: 🚧 Em Desenvolvimento  
-**Cliente**: ONS (Operador Nacional do Sistema Elétrico)
+**Versão**: 2.0 - POC  
+**Status**: 🟢 85% Concluído  
+**Cliente**: ONS (Operador Nacional do Sistema Elétrico)  
+**Prazo**: 29/12/2024
 
 ---
 
 ## 📋 Sobre o Projeto
 
-Migração incremental do sistema PDPw de um legado .NET Framework 4.8/VB.NET com WebForms para uma arquitetura moderna usando:
+**Prova de Conceito (POC)** para migração do sistema PDPw de um legado .NET Framework 4.8/VB.NET com WebForms para uma arquitetura moderna usando:
 
-- **Back-end**: .NET 8 com C# e ASP.NET Core Web API
-- **Front-end**: React com TypeScript
-- **Banco de Dados**: SQL Server (Entity Framework Core)
-- **Infraestrutura**: Docker e Docker Compose
-- **Testes**: xUnit (backend) + Jest (frontend)
+- **Back-end**: .NET 8 com C# e ASP.NET Core Web API ✅ **85% CONCLUÍDO**
+- **Front-end**: React 18 com TypeScript 🚧 **0% - Início 24/12**
+- **Banco de Dados**: SQL Server 2019 Express ✅ **100% CONFIGURADO**
+- **Testes**: xUnit + Moq 🟡 **10% - Meta: 60%**
+- **CI/CD**: GitHub Actions 🔴 **0% - Meta 27/12**
 
 ---
 
 ## 🚀 Início Rápido
 
-### Via Docker (Recomendado)
-```bash
-docker-compose up -d
-# Backend: http://localhost:5001/swagger
-# Frontend: http://localhost:3000
+### Pré-requisitos
+```yaml
+- .NET 8 SDK
+- SQL Server 2019 Express ou superior
+- Visual Studio 2022 / VS Code / Rider
+- Git
 ```
 
-### Via Local
-Consulte [QUICKSTART.md](QUICKSTART.md)
+### Setup em 5 minutos
+```powershell
+# 1. Clonar repositório
+git clone https://github.com/wbulhoes/ONS_PoC-PDPW_V2.git
+cd ONS_PoC-PDPW_V2
+
+# 2. Restaurar pacotes
+dotnet restore
+
+# 3. Aplicar migrations
+dotnet ef database update --project src/PDPW.Infrastructure --startup-project src/PDPW.API
+
+# 4. Executar aplicação
+dotnet run --project src/PDPW.API/PDPW.API.csproj
+
+# 5. Acessar Swagger
+# https://localhost:5001/swagger
+```
+
+### Credenciais
+```yaml
+SQL Server:
+  Servidor: .\SQLEXPRESS
+  Banco: PDPW_DB
+  Usuário: sa
+  Senha: Pdpw@2024!Strong
+
+Swagger:
+  URL: https://localhost:5001/swagger
+```
 
 ---
 
-## 📊 Progresso
+## 📊 Progresso da POC
 
-### Backend APIs
-- ✅ Usinas (8 endpoints)
-- ✅ TiposUsina (6 endpoints)
-- ✅ Empresas (8 endpoints)
-- ✅ SemanasPMO (9 endpoints)
-- ✅ EquipesPDP (8 endpoints)
-- ✅ Cargas (8 endpoints)
-- ✅ ArquivosDadger (9 endpoints)
-- ✅ RestricoesUG (9 endpoints)
-- 🔄 DadosEnergeticos (parcial)
-- ⏳ 20 APIs restantes
+### ✅ APIs Backend (15 APIs - 107 Endpoints)
 
-**Total**: 9/29 APIs (31%) | 65/154 endpoints (42%)
+#### **Grupo 1: Cadastros Base (10 APIs) - 100%**
+| # | API | Endpoints | Status |
+|---|-----|-----------|--------|
+| 1 | Usinas | 8 | ✅ |
+| 2 | Empresas | 6 | ✅ |
+| 3 | TiposUsina | 6 | ✅ |
+| 4 | SemanasPMO | 7 | ✅ |
+| 5 | EquipesPDP | 6 | ✅ |
+| 6 | Cargas | 7 | ✅ |
+| 7 | ArquivosDadger | 8 | ✅ |
+| 8 | RestricoesUG | 7 | ✅ |
+| 9 | DadosEnergeticos | 6 | ✅ |
+| 10 | Usuarios | 6 | ✅ |
 
-### Frontend
-- 🚧 Em desenvolvimento
+**Subtotal: 67 endpoints**
 
-### Testes
-- ✅ 15 testes unitários implementados
-- ✅ 100% cobertura CargaService
+#### **Grupo 2: Operação Energética (5 APIs) - 100%** ⭐ **NOVO**
+| # | API | Endpoints | Status |
+|---|-----|-----------|--------|
+| 11 | UnidadesGeradoras | 8 | ✅ |
+| 12 | ParadasUG | 9 | ✅ |
+| 13 | MotivosRestricao | 6 | ✅ |
+| 14 | Balancos | 8 | ✅ |
+| 15 | Intercambios | 9 | ✅ |
+
+**Subtotal: 40 novos endpoints** ⭐
+
+### **TOTAL GERAL: 107 ENDPOINTS REST** 🎉
 
 ---
 
-## 🎯 APIs Implementadas
+## 🗄️ Banco de Dados
+
+### Configuração
+- **Servidor**: `.\SQLEXPRESS`
+- **Banco**: `PDPW_DB`
+- **Autenticação**: SQL Server (sa)
+- **Tabelas**: 31 tabelas
+- **Dados**: ~550 registros realistas
+
+### Dados Populados
+- ✅ 30 Empresas (CEMIG, COPEL, Itaipu, FURNAS, etc.)
+- ✅ 50 Usinas (Itaipu, Belo Monte, Tucuruí, etc.)
+- ✅ 100 Unidades Geradoras
+- ✅ 10 Motivos de Restrição
+- ✅ 50 Paradas UG
+- ✅ 120 Balanços Energéticos
+- ✅ 240 Intercâmbios
+- ✅ 25 Semanas PMO
+- ✅ 11 Equipes PDP
+
+**Dados baseados no setor elétrico brasileiro real!**
+
+---
+
+## 📅 Roadmap até 29/12/2024
+
+```
+┌─────────────────────────────────────────────────────┐
+│ DIA   │ ATIVIDADE                    │ STATUS       │
+├─────────────────────────────────────────────────────┤
+│ 23/12 │ Testes Backend               │ 🟡 Pendente  │
+│ 24/12 │ Setup React + 3 telas        │ 🔴 Pendente  │
+│ 25/12 │ CRUD + Dashboard             │ 🔴 Pendente  │
+│ 26/12 │ Integração + Testes E2E      │ 🔴 Pendente  │
+│ 27/12 │ CI/CD + Deploy               │ 🔴 Pendente  │
+│ 28/12 │ Documentação Final           │ 🔴 Pendente  │
+│ 29/12 │ Entrega POC                  │ 🔴 Pendente  │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📚 Documentação Completa
+
+| Documento | Localização | Status |
+|-----------|-------------|--------|
+| **Status e Roadmap** | [docs/POC_STATUS_E_ROADMAP.md](docs/POC_STATUS_E_ROADMAP.md) | ✅ ⭐ |
+| **Apresentação Squad** | [docs/APRESENTACAO_SQUAD.md](docs/APRESENTACAO_SQUAD.md) | ✅ ⭐ |
+| **Setup Banco de Dados** | [docs/SQL_SERVER_SETUP_SUMMARY.md](docs/SQL_SERVER_SETUP_SUMMARY.md) | ✅ |
+| **Configuração Final** | [docs/SQL_SERVER_FINAL_SETUP.md](docs/SQL_SERVER_FINAL_SETUP.md) | ✅ |
+| **Guia de Configuração** | [docs/DATABASE_CONFIG.md](docs/DATABASE_CONFIG.md) | ✅ |
+| **Schema do Banco** | [docs/database_schema.sql](docs/database_schema.sql) | ✅ |
+| **Quadro Resumo** | [docs/QUADRO_RESUMO_POC.md](docs/QUADRO_RESUMO_POC.md) | ✅ |
+| **Guia Setup QA** | [docs/SETUP_GUIDE_QA.md](docs/SETUP_GUIDE_QA.md) | ✅ |
+
+---
+
+## 🏗️ Arquitetura
+
+### Clean Architecture
+
+```
+┌───────────────────────────────────┐
+│         FRONTEND (React)          │ ← Em desenvolvimento
+└────────────┬──────────────────────┘
+             │ REST API
+┌────────────▼──────────────────────┐
+│     PDPW.API (Controllers)        │ ← 15 Controllers ✅
+└────────────┬──────────────────────┘
+             │
+┌────────────▼──────────────────────┐
+│  PDPW.Application (Services)      │ ← 15 Services ✅
+└────────────┬──────────────────────┘
+             │
+┌────────────▼──────────────────────┐
+│    PDPW.Domain (Entities)         │ ← 31 Entities ✅
+└────────────┬──────────────────────┘
+             │
+┌────────────▼──────────────────────┐
+│ PDPW.Infrastructure (EF Core)     │ ← 15 Repositories ✅
+└────────────┬──────────────────────┘
+             │
+┌────────────▼──────────────────────┐
+│   SQL Server 2019 (PDPW_DB)       │ ← 31 Tabelas ✅
+└───────────────────────────────────┘
+```
+
+---
+
+## 🎯 APIs Projetadas
 
 ### 📌 **1. Empresas (Agentes do Setor Elétrico)**
 Gerenciamento de empresas/agentes do setor elétrico brasileiro.
