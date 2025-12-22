@@ -6,6 +6,7 @@ using PDPW.Application.Interfaces;
 using PDPW.Application.Services;
 using PDPW.Domain.Interfaces;
 using PDPW.Infrastructure.Data;
+using PDPW.Infrastructure.Data.Seeders;
 using PDPW.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,7 +41,7 @@ var app = builder.Build();
 // Middleware de erro customizado (primeira coisa no pipeline)
 app.UseErrorHandling();
 
-// Testar conexão com banco de dados na inicialização
+// Testar conexão com banco de dados e popular dados realistas
 try
 {
     using var scope = app.Services.CreateScope();
@@ -53,6 +54,10 @@ try
     {
         logger.LogInformation("🗄️ Banco de dados InMemory inicializado (dados temporários)");
         await dbContext.Database.EnsureCreatedAsync();
+        
+        // Popular com dados realistas
+        logger.LogInformation("📊 Populando banco com dados realistas do setor elétrico brasileiro...");
+        await RealisticDataSeeder.SeedAsync(dbContext);
     }
     else
     {
@@ -67,6 +72,15 @@ try
             {
                 logger.LogWarning("⚠ Há {Count} migrações pendentes no banco de dados", pendingMigrations.Count());
                 logger.LogInformation("Para aplicar as migrações, execute: dotnet ef database update");
+            }
+            else
+            {
+                // Popular com dados realistas se o banco estiver vazio
+                if (!await dbContext.Empresas.AnyAsync())
+                {
+                    logger.LogInformation("📊 Populando banco com dados realistas do setor elétrico brasileiro...");
+                    await RealisticDataSeeder.SeedAsync(dbContext);
+                }
             }
         }
         else
