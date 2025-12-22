@@ -1,6 +1,6 @@
-# ?? GUIA DE EXECUÇÃO - EXPANSÃO PARA 100 REGISTROS
+ï»¿# ?? GUIA DE EXECUï¿½ï¿½O - EXPANSï¿½O PARA 100 REGISTROS
 
-## ? **EXECUÇÃO RÁPIDA (1 Comando)**
+## ? **EXECUï¿½ï¿½O Rï¿½PIDA (1 Comando)**
 
 ```powershell
 .\scripts\migration\Expand-To-100-Records.ps1
@@ -10,13 +10,13 @@
 
 ---
 
-## ?? **PRÉ-REQUISITOS**
+## ?? **PRï¿½-REQUISITOS**
 
 Antes de executar, verifique:
 
 ### 1. SQL Server Express Instalado
 ```powershell
-# Verificar se está instalado
+# Verificar se estï¿½ instalado
 Get-Service MSSQL*
 
 # Deve retornar algo como: MSSQL$SQLEXPRESS
@@ -29,11 +29,11 @@ docker ps
 # Deve mostrar: pdpw-sqlserver e pdpw-backend
 ```
 
-### 3. Espaço em Disco
+### 3. Espaï¿½o em Disco
 ```powershell
 Get-PSDrive C | Select-Object Name, @{Name="FreeGB";Expression={[math]::Round($_.Free / 1GB, 2)}}
 
-# Mínimo recomendado: 25 GB livres
+# Mï¿½nimo recomendado: 25 GB livres
 ```
 
 ### 4. Backup do Cliente
@@ -51,7 +51,7 @@ Test-Path "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
 
 1. Pressione `Win + X`
 2. Escolha "Windows PowerShell (Admin)"
-3. Navegue até o diretório do projeto:
+3. Navegue atï¿½ o diretï¿½rio do projeto:
 
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW_V2
@@ -63,16 +63,16 @@ cd C:\temp\_ONS_PoC-PDPW_V2
 .\scripts\migration\Expand-To-100-Records.ps1
 ```
 
-O script irá:
-1. ? Validar pré-requisitos
-2. ? Restaurar backup temporário (~10-15 min)
+O script irï¿½:
+1. ? Validar prï¿½-requisitos
+2. ? Restaurar backup temporï¿½rio (~10-15 min)
 3. ? Extrair dados (Top 25 empresas + Top 40 usinas)
 4. ? Gerar scripts SQL
 5. ? Perguntar se deseja aplicar
 6. ? Aplicar dados no Docker
 7. ? Perguntar se deseja limpar
 
-### **Passo 3: Confirmar Aplicação**
+### **Passo 3: Confirmar Aplicaï¿½ï¿½o**
 
 Quando perguntado:
 ```
@@ -85,7 +85,7 @@ Digite: **S** (Enter)
 
 Quando perguntado:
 ```
-Deseja remover o banco temporário? (S/N)
+Deseja remover o banco temporï¿½rio? (S/N)
 ```
 
 Digite: **S** (Enter)
@@ -106,7 +106,7 @@ Usinas        40
 
 ---
 
-## ?? **O QUE SERÁ EXTRAÍDO**
+## ?? **O QUE SERï¿½ EXTRAï¿½DO**
 
 ### **Empresas (Top 25)**
 - Empresas com mais usinas associadas
@@ -114,18 +114,18 @@ Usinas        40
 - IDs iniciando em 101
 
 ### **Usinas (Top 40)**
-- Usinas com maior potência instalada
-- Dados reais: Nome, Potência, Localização
+- Usinas com maior potï¿½ncia instalada
+- Dados reais: Nome, Potï¿½ncia, Localizaï¿½ï¿½o
 - IDs iniciando em 201
 
 ### **Relacionamentos**
-- Usinas vinculadas a empresas válidas
+- Usinas vinculadas a empresas vï¿½lidas
 - Foreign Keys corretas
-- Dados históricos preservados
+- Dados histï¿½ricos preservados
 
 ---
 
-## ?? **PERSONALIZAÇÃO**
+## ?? **PERSONALIZAï¿½ï¿½O**
 
 ### **Alterar Quantidade de Registros**
 
@@ -139,7 +139,7 @@ Usinas        40
 .\scripts\migration\Expand-To-100-Records.ps1 -BackupPath "D:\Backups\Backup_PDP_TST.bak"
 ```
 
-### **Alterar Diretório de Saída**
+### **Alterar Diretï¿½rio de Saï¿½da**
 
 ```powershell
 .\scripts\migration\Expand-To-100-Records.ps1 -OutputPath "C:\Temp\Migration"
@@ -149,9 +149,9 @@ Usinas        40
 
 ## ?? **TROUBLESHOOTING**
 
-### **Erro: "Backup não encontrado"**
+### **Erro: "Backup nï¿½o encontrado"**
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Verifique o caminho
 Get-Item "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
@@ -160,31 +160,31 @@ Get-Item "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
 .\scripts\migration\Expand-To-100-Records.ps1 -BackupPath "SEU_CAMINHO_AQUI"
 ```
 
-### **Erro: "Não foi possível conectar ao SQL Server Local"**
+### **Erro: "Nï¿½o foi possï¿½vel conectar ao SQL Server Local"**
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
-# Verificar se SQL Server Express está rodando
+# Verificar se SQL Server Express estï¿½ rodando
 Get-Service MSSQL* | Start-Service
 
-# Verificar instância
+# Verificar instï¿½ncia
 sqlcmd -S localhost\SQLEXPRESS -Q "SELECT @@VERSION"
 ```
 
-### **Erro: "Espaço insuficiente em disco"**
+### **Erro: "Espaï¿½o insuficiente em disco"**
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
-# Liberar espaço com limpeza de disco
+# Liberar espaï¿½o com limpeza de disco
 cleanmgr /sagerun:1
 
 # Ou executar em outro drive
 .\scripts\migration\Expand-To-100-Records.ps1 -BackupPath "D:\Backup_PDP_TST.bak"
 ```
 
-### **Erro: "SQL Server Docker não responde"**
+### **Erro: "SQL Server Docker nï¿½o responde"**
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Reiniciar container
 docker-compose -f docker-compose.full.yml restart sqlserver
@@ -195,7 +195,7 @@ timeout /t 60
 
 ---
 
-## ? **VALIDAÇÃO PÓS-EXECUÇÃO**
+## ? **VALIDAï¿½ï¿½O Pï¿½S-EXECUï¿½ï¿½O**
 
 ### **1. Verificar Contagens**
 
@@ -240,22 +240,22 @@ Testar:
 
 ---
 
-## ?? **BENEFÍCIOS**
+## ?? **BENEFï¿½CIOS**
 
 ### **Para Desenvolvimento:**
 - ? Mais dados para testar edge cases
 - ? Consultas mais realistas
-- ? Performance testing viável
+- ? Performance testing viï¿½vel
 
 ### **Para QA:**
 - ? Testes mais robustos
-- ? Cenários complexos
-- ? Validação de relacionamentos
+- ? Cenï¿½rios complexos
+- ? Validaï¿½ï¿½o de relacionamentos
 
 ### **Para Cliente:**
 - ? Demo mais realista
 - ? Dados reais (anonimizados)
-- ? Confiança no sistema
+- ? Confianï¿½a no sistema
 
 ---
 
@@ -269,7 +269,7 @@ Testar:
 
 ---
 
-## ?? **PRÓXIMOS PASSOS APÓS EXECUÇÃO**
+## ?? **PRï¿½XIMOS PASSOS APï¿½S EXECUï¿½ï¿½O**
 
 1. ? **Reiniciar Backend**
    ```powershell
@@ -293,9 +293,9 @@ Testar:
 
 ---
 
-**Boa sorte com a expansão! ??**
+**Boa sorte com a expansï¿½o! ??**
 
 **Tempo total:** 15-20 minutos  
 **Complexidade:** Baixa (script automatizado)  
-**Reversível:** Sim (basta dropar registros)
+**Reversï¿½vel:** Sim (basta dropar registros)
 

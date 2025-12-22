@@ -1,9 +1,9 @@
-# ??? ESTRUTURA BASE DO PROJETO - Clean Architecture
+ï»¿# ??? ESTRUTURA BASE DO PROJETO - Clean Architecture
 
 **Data:** 19/12/2024  
 **Arquitetura:** Clean Architecture + MVC  
 **Framework:** .NET 8  
-**Status:** ? Base existente + Expansão planejada
+**Status:** ? Base existente + Expansï¿½o planejada
 
 ---
 
@@ -20,7 +20,7 @@ PDPW (Solution)
 ?
 ??? frontend/                  (React + TypeScript)
 ?
-??? docs/                      (Documentação)
+??? docs/                      (Documentaï¿½ï¿½o)
 ?
 ??? docker-compose.yml         (Docker orchestration)
 ```
@@ -29,31 +29,31 @@ PDPW (Solution)
 
 ## ?? CLEAN ARCHITECTURE - CAMADAS
 
-### 1. DOMAIN LAYER (Núcleo)
+### 1. DOMAIN LAYER (Nï¿½cleo)
 
-**Responsabilidade:** Entidades de negócio, regras de domínio, interfaces
+**Responsabilidade:** Entidades de negï¿½cio, regras de domï¿½nio, interfaces
 
-**Localização:** `src/PDPW.Domain/`
+**Localizaï¿½ï¿½o:** `src/PDPW.Domain/`
 
 **Estrutura:**
 ```
 PDPW.Domain/
-??? Entities/              (Entidades de domínio)
-?   ??? BaseEntity.cs      ? (já existe)
-?   ??? DadoEnergetico.cs  ? (já existe)
+??? Entities/              (Entidades de domï¿½nio)
+?   ??? BaseEntity.cs      ? (jï¿½ existe)
+?   ??? DadoEnergetico.cs  ? (jï¿½ existe)
 ?   ??? Usina.cs           ?? (criar)
 ?   ??? Empresa.cs         ?? (criar)
 ?   ??? TipoUsina.cs       ?? (criar)
 ?   ??? UnidadeGeradora.cs ?? (criar)
 ?   ??? ... (29 entidades total)
 ?
-??? Interfaces/            (Contratos de repositório)
-?   ??? IDadoEnergeticoRepository.cs  ? (já existe)
+??? Interfaces/            (Contratos de repositï¿½rio)
+?   ??? IDadoEnergeticoRepository.cs  ? (jï¿½ existe)
 ?   ??? IUsinaRepository.cs           ?? (criar)
 ?   ??? IEmpresaRepository.cs         ?? (criar)
 ?   ??? ... (29 interfaces)
 ?
-??? Enums/                 (Enumerações do domínio)
+??? Enums/                 (Enumeraï¿½ï¿½es do domï¿½nio)
 ?   ??? StatusUsina.cs     ?? (criar)
 ?   ??? TipoEnergia.cs     ?? (criar)
 ?   ??? ...
@@ -63,15 +63,15 @@ PDPW.Domain/
     ??? ...
 ```
 
-**Dependências:** NENHUMA (camada mais interna)
+**Dependï¿½ncias:** NENHUMA (camada mais interna)
 
 ---
 
-### 2. APPLICATION LAYER (Serviços)
+### 2. APPLICATION LAYER (Serviï¿½os)
 
-**Responsabilidade:** Lógica de aplicação, DTOs, orquestração
+**Responsabilidade:** Lï¿½gica de aplicaï¿½ï¿½o, DTOs, orquestraï¿½ï¿½o
 
-**Localização:** `src/PDPW.Application/`
+**Localizaï¿½ï¿½o:** `src/PDPW.Application/`
 
 **Estrutura:**
 ```
@@ -87,13 +87,13 @@ PDPW.Application/
 ?   ?   ??? ...
 ?   ??? ... (29 grupos de DTOs)
 ?
-??? Services/              (Lógica de negócio)
+??? Services/              (Lï¿½gica de negï¿½cio)
 ?   ??? DadoEnergeticoService.cs    ? (existe)
 ?   ??? UsinaService.cs             ?? (criar)
 ?   ??? EmpresaService.cs           ?? (criar)
 ?   ??? ... (29 services)
 ?
-??? Interfaces/            (Contratos de serviço)
+??? Interfaces/            (Contratos de serviï¿½o)
 ?   ??? IDadoEnergeticoService.cs   ? (existe)
 ?   ??? IUsinaService.cs            ?? (criar)
 ?   ??? ...
@@ -108,7 +108,7 @@ PDPW.Application/
     ??? ...
 ```
 
-**Dependências:** PDPW.Domain
+**Dependï¿½ncias:** PDPW.Domain
 
 ---
 
@@ -116,7 +116,7 @@ PDPW.Application/
 
 **Responsabilidade:** Acesso a dados, EF Core, SQL Server
 
-**Localização:** `src/PDPW.Infrastructure/`
+**Localizaï¿½ï¿½o:** `src/PDPW.Infrastructure/`
 
 **Estrutura:**
 ```
@@ -137,16 +137,16 @@ PDPW.Infrastructure/
 ?       ??? EmpresaSeed.cs          ?? (criar)
 ?       ??? ... (seed para todas as entidades)
 ?
-??? Repositories/          (Implementações de repositório)
+??? Repositories/          (Implementaï¿½ï¿½es de repositï¿½rio)
 ?   ??? BaseRepository.cs           ?? (criar)
 ?   ??? DadoEnergeticoRepository.cs ? (existe)
 ?   ??? UsinaRepository.cs          ?? (criar)
 ?   ??? ... (29 repositories)
 ?
-??? DependencyInjection.cs (Injeção de dependências)
+??? DependencyInjection.cs (Injeï¿½ï¿½o de dependï¿½ncias)
 ```
 
-**Dependências:** PDPW.Domain, PDPW.Application
+**Dependï¿½ncias:** PDPW.Domain, PDPW.Application
 
 ---
 
@@ -154,7 +154,7 @@ PDPW.Infrastructure/
 
 **Responsabilidade:** Controllers, Routing, Swagger, Startup
 
-**Localização:** `src/PDPW.API/`
+**Localizaï¿½ï¿½o:** `src/PDPW.API/`
 
 **Estrutura:**
 ```
@@ -182,13 +182,13 @@ PDPW.API/
 ??? appsettings.Development.json
 ```
 
-**Dependências:** PDPW.Application, PDPW.Infrastructure
+**Dependï¿½ncias:** PDPW.Application, PDPW.Infrastructure
 
 ---
 
 ## ?? ESTRUTURA COMPLETA EXPANDIDA
 
-### Para 29 APIs, cada grupo terá:
+### Para 29 APIs, cada grupo terï¿½:
 
 ```
 API: Usina (exemplo)
@@ -221,7 +221,7 @@ API: Usina (exemplo)
 
 ---
 
-## ?? PADRÕES E CONVENÇÕES
+## ?? PADRï¿½ES E CONVENï¿½ï¿½ES
 
 ### Nomenclatura
 
@@ -280,7 +280,7 @@ namespace PDPW.API.Controllers;
 
 ## ?? ARQUIVOS BASE ESSENCIAIS
 
-### BaseEntity.cs (? Já existe)
+### BaseEntity.cs (? Jï¿½ existe)
 
 ```csharp
 public abstract class BaseEntity
@@ -427,7 +427,7 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         
-        // Aplicar todas as configurações
+        // Aplicar todas as configuraï¿½ï¿½es
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         
         // Aplicar seed data
@@ -438,7 +438,7 @@ public class ApplicationDbContext : DbContext
 
 ---
 
-## ?? DEPENDÊNCIAS ENTRE CAMADAS
+## ?? DEPENDï¿½NCIAS ENTRE CAMADAS
 
 ```
 ???????????????????????????????????????
@@ -455,7 +455,7 @@ public class ApplicationDbContext : DbContext
              ?
 ???????????????????????????????????????
 ?        PDPW.Domain                  ?  ? Domain (Core)
-?  (Entities, Interfaces, Enums)     ?  ? SEM DEPENDÊNCIAS
+?  (Entities, Interfaces, Enums)     ?  ? SEM DEPENDï¿½NCIAS
 ???????????????????????????????????????
              ?
              ? implementa interfaces
@@ -481,7 +481,7 @@ public class ApplicationDbContext : DbContext
 - [ ] `API/Middlewares/ErrorHandlingMiddleware.cs`
 - [ ] `API/Extensions/ServiceCollectionExtensions.cs`
 
-### Configurações
+### Configuraï¿½ï¿½es
 
 - [ ] `appsettings.json` - Connection strings
 - [ ] `Program.cs` - DI, Swagger, CORS
@@ -489,7 +489,7 @@ public class ApplicationDbContext : DbContext
 
 ---
 
-## ?? PACOTES NUGET NECESSÁRIOS
+## ?? PACOTES NUGET NECESSï¿½RIOS
 
 ```xml
 <!-- PDPW.Domain -->
@@ -511,19 +511,19 @@ public class ApplicationDbContext : DbContext
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 1. ? **Estrutura base documentada**
 2. ?? **Criar arquivos base** (BaseRepository, BaseController, etc.)
 3. ?? **Configurar Program.cs** (DI, Swagger, CORS)
-4. ?? **Começar primeira API** (Usina)
+4. ?? **Comeï¿½ar primeira API** (Usina)
 5. ?? **Distribuir APIs** entre DEV 1 e DEV 2
 
 ---
 
-**Documentação criada por:** GitHub Copilot  
+**Documentaï¿½ï¿½o criada por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO
 
-**Próximo:** Criar distribuição de APIs entre DEV 1 e DEV 2
+**Prï¿½ximo:** Criar distribuiï¿½ï¿½o de APIs entre DEV 1 e DEV 2

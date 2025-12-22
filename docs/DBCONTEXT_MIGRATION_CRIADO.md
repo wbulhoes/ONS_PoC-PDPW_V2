@@ -1,4 +1,4 @@
-# ? DBCONTEXT ATUALIZADO + MIGRATION CRIADA!
+ï»¿# ? DBCONTEXT ATUALIZADO + MIGRATION CRIADA!
 
 **Data:** 19/12/2024  
 **Status:** ? COMPLETO  
@@ -11,9 +11,9 @@
 ```
 ? PdpwDbContext atualizado
 ? 29 DbSets adicionados
-? Configurações Fluent API completas
+? Configuraï¿½ï¿½es Fluent API completas
 ? Migration InitialCreate criada
-? Compilação sem erros
+? Compilaï¿½ï¿½o sem erros
 ? Pronto para aplicar no banco de dados!
 ```
 
@@ -21,7 +21,7 @@
 
 ## ??? DBSETS ADICIONADOS (29)
 
-### Gestão de Ativos
+### Gestï¿½o de Ativos
 ```csharp
 public DbSet<TipoUsina> TiposUsina { get; set; }
 public DbSet<Empresa> Empresas { get; set; }
@@ -30,7 +30,7 @@ public DbSet<SemanaPMO> SemanasPMO { get; set; }
 public DbSet<EquipePDP> EquipesPDP { get; set; }
 ```
 
-### Unidades e Geração
+### Unidades e Geraï¿½ï¿½o
 ```csharp
 public DbSet<UnidadeGeradora> UnidadesGeradoras { get; set; }
 public DbSet<ParadaUG> ParadasUG { get; set; }
@@ -63,14 +63,14 @@ public DbSet<Arquivo> Arquivos { get; set; }
 public DbSet<Diretorio> Diretorios { get; set; }
 ```
 
-### Operação
+### Operaï¿½ï¿½o
 ```csharp
 public DbSet<Intercambio> Intercambios { get; set; }
 public DbSet<Balanco> Balancos { get; set; }
 public DbSet<Observacao> Observacoes { get; set; }
 ```
 
-### Térmicas
+### Tï¿½rmicas
 ```csharp
 public DbSet<ModalidadeOpTermica> ModalidadesOpTermica { get; set; }
 public DbSet<InflexibilidadeContratada> InflexibilidadesContratadas { get; set; }
@@ -80,32 +80,32 @@ public DbSet<UsinaConversora> UsinasConversoras { get; set; }
 
 ---
 
-## ?? CONFIGURAÇÕES FLUENT API
+## ?? CONFIGURAï¿½ï¿½ES FLUENT API
 
 ### Recursos Implementados
 
-**1. Chaves Primárias**
+**1. Chaves Primï¿½rias**
 ```csharp
 entity.HasKey(e => e.Id);
 ```
 
-**2. Propriedades Obrigatórias**
+**2. Propriedades Obrigatï¿½rias**
 ```csharp
 entity.Property(e => e.Nome).IsRequired().HasMaxLength(200);
 ```
 
-**3. Precisão Decimal**
+**3. Precisï¿½o Decimal**
 ```csharp
 entity.Property(e => e.CapacidadeInstalada).HasPrecision(18, 2);
 ```
 
-**4. Índices Únicos**
+**4. ï¿½ndices ï¿½nicos**
 ```csharp
 entity.HasIndex(e => e.Codigo).IsUnique();
 entity.HasIndex(e => e.Email).IsUnique();
 ```
 
-**5. Índices Compostos**
+**5. ï¿½ndices Compostos**
 ```csharp
 entity.HasIndex(e => new { e.Numero, e.Ano }).IsUnique();
 entity.HasIndex(e => new { e.DataReferencia, e.SubsistemaId });
@@ -147,29 +147,29 @@ entity.HasOne(e => e.DiretorioPai)
 
 ## ?? MIGRATION CRIADA
 
-### Localização
+### Localizaï¿½ï¿½o
 ```
 src/PDPW.Infrastructure/Data/Migrations/
 ??? <timestamp>_InitialCreate.cs
 ??? PdpwDbContextModelSnapshot.cs
 ```
 
-### Conteúdo da Migration
+### Conteï¿½do da Migration
 
-A migration `InitialCreate` contém:
-- ? Criação de 30 tabelas (29 novas + DadosEnergeticos)
-- ? Todas as chaves primárias
+A migration `InitialCreate` contï¿½m:
+- ? Criaï¿½ï¿½o de 30 tabelas (29 novas + DadosEnergeticos)
+- ? Todas as chaves primï¿½rias
 - ? Todas as chaves estrangeiras
-- ? Todos os índices
+- ? Todos os ï¿½ndices
 - ? Todas as constraints
-- ? Configurações de precisão decimal
+- ? Configuraï¿½ï¿½es de precisï¿½o decimal
 
 ---
 
-## ??? TABELAS QUE SERÃO CRIADAS
+## ??? TABELAS QUE SERï¿½O CRIADAS
 
 ```sql
--- Gestão de Ativos
+-- Gestï¿½o de Ativos
 CREATE TABLE TiposUsina
 CREATE TABLE Empresas
 CREATE TABLE Usinas
@@ -201,12 +201,12 @@ CREATE TABLE Relatorios
 CREATE TABLE Diretorios
 CREATE TABLE Arquivos
 
--- Operação
+-- Operaï¿½ï¿½o
 CREATE TABLE Intercambios
 CREATE TABLE Balancos
 CREATE TABLE Observacoes
 
--- Térmicas
+-- Tï¿½rmicas
 CREATE TABLE ModalidadesOpTermica
 CREATE TABLE InflexibilidadesContratadas
 CREATE TABLE RampasUsinasTermicas
@@ -220,9 +220,9 @@ CREATE TABLE DadosEnergeticos
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-### OPÇÃO A: Aplicar Migration no Banco (RECOMENDADO)
+### OPï¿½ï¿½O A: Aplicar Migration no Banco (RECOMENDADO)
 
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW\src\PDPW.Infrastructure
@@ -230,28 +230,28 @@ cd C:\temp\_ONS_PoC-PDPW\src\PDPW.Infrastructure
 # Aplicar migration
 dotnet ef database update --startup-project ..\PDPW.API
 
-# Isso irá:
-# ? Criar o banco de dados (se não existir)
+# Isso irï¿½:
+# ? Criar o banco de dados (se nï¿½o existir)
 # ? Criar todas as 30 tabelas
-# ? Criar todas as FKs e índices
+# ? Criar todas as FKs e ï¿½ndices
 # ? Deixar pronto para uso
 ```
 
-### OPÇÃO B: Verificar SQL Gerado
+### OPï¿½ï¿½O B: Verificar SQL Gerado
 
 ```powershell
-# Ver SQL que será executado
+# Ver SQL que serï¿½ executado
 dotnet ef migrations script --startup-project ..\PDPW.API --output migration.sql
 ```
 
-### OPÇÃO C: Começar Primeira API (Usina)
+### OPï¿½ï¿½O C: Comeï¿½ar Primeira API (Usina)
 
 Agora que temos:
 - ? Entidades criadas
 - ? DbContext configurado
 - ? Migration pronta
 
-Podemos começar a primeira API completa!
+Podemos comeï¿½ar a primeira API completa!
 
 ---
 
@@ -259,12 +259,12 @@ Podemos começar a primeira API completa!
 
 ### Problema com .NET 10
 
-**Solução aplicada:**
+**Soluï¿½ï¿½o aplicada:**
 ```powershell
 # Remover projeto HelloWorld (usa .NET 10)
 dotnet sln remove src\PDPW.Tools.HelloWorld\PDPW.Tools.HelloWorld.csproj
 
-# Atualizar dotnet-ef para versão 8.x
+# Atualizar dotnet-ef para versï¿½o 8.x
 dotnet tool uninstall -g dotnet-ef
 dotnet tool install -g dotnet-ef --version 8.0.11
 ```
@@ -291,15 +291,15 @@ dotnet ef migrations script --startup-project ..\PDPW.API --output migration.sql
 
 ---
 
-## ?? ESTATÍSTICAS
+## ?? ESTATï¿½STICAS
 
 ```
-Configurações Fluent API:
+Configuraï¿½ï¿½es Fluent API:
 ?? Entidades configuradas: 29
 ?? Relacionamentos 1:N: 18
 ?? Relacionamentos N:1: 23
-?? Índices únicos: 8
-?? Índices compostos: 5
+?? ï¿½ndices ï¿½nicos: 8
+?? ï¿½ndices compostos: 5
 ?? Cascade deletes: 10
 ?? Restrict deletes: 12
 ?? SetNull deletes: 2
@@ -308,19 +308,19 @@ Migration:
 ?? Tabelas a criar: 30
 ?? Colunas totais: ~250
 ?? Chaves estrangeiras: 23
-?? Índices: 20+
+?? ï¿½ndices: 20+
 ?? Constraints: 30+
 ```
 
 ---
 
-## ?? VALIDAÇÃO
+## ?? VALIDAï¿½ï¿½O
 
 ### Build
 ```
-? Construir êxito em 3,2s
+? Construir ï¿½xito em 3,2s
 ? PdpwDbContext compilado
-? Todas as configurações válidas
+? Todas as configuraï¿½ï¿½es vï¿½lidas
 ```
 
 ### Migration
@@ -330,10 +330,10 @@ Migration:
 ? Sem erros ou warnings
 ```
 
-### Próximo Teste
+### Prï¿½ximo Teste
 ```
 ? Aplicar migration no banco
-? Testar conexão
+? Testar conexï¿½o
 ? Verificar tabelas criadas
 ```
 
@@ -347,10 +347,10 @@ Migration:
 ??????????????????????????????????????????
 ? ? Domain Layer (29 entidades)         ?
 ? ? DbContext atualizado                ?
-? ? Configurações Fluent API            ?
+? ? Configuraï¿½ï¿½es Fluent API            ?
 ? ? Migration criada                    ?
 ?                                        ?
-? Próximo: Aplicar no banco!            ?
+? Prï¿½ximo: Aplicar no banco!            ?
 ??????????????????????????????????????????
 
 Progresso geral da PoC: 25% ????????????????
@@ -358,7 +358,7 @@ Progresso geral da PoC: 25% ????????????????
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
 ```powershell
 # Ver migrations
@@ -367,16 +367,16 @@ dotnet ef migrations list --startup-project ..\PDPW.API
 # Aplicar migration
 dotnet ef database update --startup-project ..\PDPW.API
 
-# Remover última migration
+# Remover ï¿½ltima migration
 dotnet ef migrations remove --startup-project ..\PDPW.API
 
 # Gerar script SQL
 dotnet ef migrations script --startup-project ..\PDPW.API --output migration.sql
 
-# Ver informações do banco
+# Ver informaï¿½ï¿½es do banco
 dotnet ef dbcontext info --startup-project ..\PDPW.API
 
-# Verificar se há migrations pendentes
+# Verificar se hï¿½ migrations pendentes
 dotnet ef migrations has-pending-model-changes --startup-project ..\PDPW.API
 ```
 
@@ -385,7 +385,7 @@ dotnet ef migrations has-pending-model-changes --startup-project ..\PDPW.API
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
 **Tempo:** 30 minutos  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO E VALIDADO
 
 **DBCONTEXT + MIGRATION PRONTOS! ??**

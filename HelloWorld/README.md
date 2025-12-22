@@ -1,37 +1,37 @@
-# ?? Hello World - Web Dashboard
+ï»¿# ?? Hello World - Web Dashboard
 
-## ? Versão Melhorada
+## ? Versï¿½o Melhorada
 
-Este projeto foi transformado em uma **aplicação web interativa** que exibe todas as informações do seu ambiente de desenvolvimento em uma página HTML moderna e responsiva!
+Este projeto foi transformado em uma **aplicaï¿½ï¿½o web interativa** que exibe todas as informaï¿½ï¿½es do seu ambiente de desenvolvimento em uma pï¿½gina HTML moderna e responsiva!
 
 ## ?? O que este projeto faz
 
 ### ?? Dashboard Completo com:
 
-? **Informações do Sistema**
-- Sistema Operacional e versão
+? **Informaï¿½ï¿½es do Sistema**
+- Sistema Operacional e versï¿½o
 - Plataforma e arquitetura
-- Nome da máquina e usuário
-- Número de processadores
-- Uso de memória
+- Nome da mï¿½quina e usuï¿½rio
+- Nï¿½mero de processadores
+- Uso de memï¿½ria
 
-? **Configuração .NET**
+? **Configuraï¿½ï¿½o .NET**
 - Runtime version (.NET 8)
 - Framework target
 - CLR Version
 - Assembly information
 - Runtime Identifier
-- Diretório de execução
+- Diretï¿½rio de execuï¿½ï¿½o
 
-? **Variáveis de Ambiente**
+? **Variï¿½veis de Ambiente**
 - Domain
 - Tipo de processo (64-bit)
-- Diretórios do sistema
+- Diretï¿½rios do sistema
 - System uptime
 
 ? **Funcionalidades C# Testadas**
-- Tipos básicos
-- Coleções e LINQ
+- Tipos bï¿½sicos
+- Coleï¿½ï¿½es e LINQ
 - Async/Await
 - Pattern Matching
 - Records (C# 9+)
@@ -44,22 +44,22 @@ Este projeto foi transformado em uma **aplicação web interativa** que exibe toda
 
 ## ?? Como Executar
 
-### Opção 1: Linha de Comando (Abre o navegador automaticamente)
+### Opï¿½ï¿½o 1: Linha de Comando (Abre o navegador automaticamente)
 
 ```powershell
 cd HelloWorld
 dotnet run
 ```
 
-O navegador será aberto automaticamente em `http://localhost:5555`
+O navegador serï¿½ aberto automaticamente em `http://localhost:5555`
 
-### Opção 2: Visual Studio
+### Opï¿½ï¿½o 2: Visual Studio
 
-1. Defina `HelloWorld` como projeto de inicialização
+1. Defina `HelloWorld` como projeto de inicializaï¿½ï¿½o
 2. Pressione F5
-3. O navegador abrirá automaticamente
+3. O navegador abrirï¿½ automaticamente
 
-### Opção 3: Executar e abrir manualmente
+### Opï¿½ï¿½o 3: Executar e abrir manualmente
 
 ```powershell
 dotnet run --project HelloWorld\HelloWorld.csproj
@@ -69,23 +69,23 @@ Acesse: http://localhost:5555
 
 ## ?? Interface
 
-A aplicação possui:
+A aplicaï¿½ï¿½o possui:
 
 - **Design Moderno** - Gradiente colorido e cards interativos
 - **Responsivo** - Funciona em qualquer tamanho de tela
-- **Animações** - Efeitos hover e transições suaves
-- **Layout em Grid** - Informações organizadas em cards
-- **Botão de Refresh** - Atualizar informações em tempo real
+- **Animaï¿½ï¿½es** - Efeitos hover e transiï¿½ï¿½es suaves
+- **Layout em Grid** - Informaï¿½ï¿½es organizadas em cards
+- **Botï¿½o de Refresh** - Atualizar informaï¿½ï¿½es em tempo real
 
-## ?? Exemplo de Informações Exibidas
+## ?? Exemplo de Informaï¿½ï¿½es Exibidas
 
 ### Sistema
 ```
 Sistema Operacional: Microsoft Windows NT 10.0.26200.0
 Plataforma: Windows
 Arquitetura: X64
-Nome da Máquina: ACT-F0RGP74
-Usuário: WillianCharantolaBul
+Nome da Mï¿½quina: ACT-F0RGP74
+Usuï¿½rio: WillianCharantolaBul
 Processadores: 8 cores
 ```
 
@@ -119,46 +119,46 @@ Runtime Identifier: win-x64
 - **HTML5/CSS3** - Interface moderna
 - **System.Diagnostics** - Abrir navegador automaticamente
 - **System.Reflection** - Metadados do assembly
-- **System.Runtime.InteropServices** - Informações da plataforma
+- **System.Runtime.InteropServices** - Informaï¿½ï¿½es da plataforma
 
 ## ?? Recursos
 
 ### ?? Design
 - Gradiente animado no fundo
-- Cards com efeito hover (elevação)
-- Badge de status com animação de pulso
+- Cards com efeito hover (elevaï¿½ï¿½o)
+- Badge de status com animaï¿½ï¿½o de pulso
 - Layout responsivo em grid
-- Ícones emoji para visual amigável
+- ï¿½cones emoji para visual amigï¿½vel
 
 ### ?? Funcionalidades
-- Detecção automática de projetos
-- Coleta de informações do sistema em tempo real
-- Abertura automática do navegador
-- Botão de refresh para atualizar dados
-- Exibição de caminho completo dos projetos
+- Detecï¿½ï¿½o automï¿½tica de projetos
+- Coleta de informaï¿½ï¿½es do sistema em tempo real
+- Abertura automï¿½tica do navegador
+- Botï¿½o de refresh para atualizar dados
+- Exibiï¿½ï¿½o de caminho completo dos projetos
 
-## ?? Diferenças da Versão Anterior
+## ?? Diferenï¿½as da Versï¿½o Anterior
 
-| Versão Console | Versão Web |
+| Versï¿½o Console | Versï¿½o Web |
 |----------------|------------|
-| Output em texto | Interface gráfica HTML |
+| Output em texto | Interface grï¿½fica HTML |
 | Apenas terminal | Navegador web |
-| Estático | Interativo e responsivo |
-| Sem refresh | Botão de atualizar |
-| Menos informações | Dashboard completo |
+| Estï¿½tico | Interativo e responsivo |
+| Sem refresh | Botï¿½o de atualizar |
+| Menos informaï¿½ï¿½es | Dashboard completo |
 
 ## ?? Como Funciona
 
 1. **Servidor Web**: Cria um servidor HTTP minimalista na porta 5555
-2. **Coleta de Dados**: Usa APIs do .NET para coletar informações do sistema
-3. **Geração HTML**: Cria dinamicamente uma página HTML com todas as informações
-4. **Abertura Automática**: Detecta o SO e abre o navegador apropriado
+2. **Coleta de Dados**: Usa APIs do .NET para coletar informaï¿½ï¿½es do sistema
+3. **Geraï¿½ï¿½o HTML**: Cria dinamicamente uma pï¿½gina HTML com todas as informaï¿½ï¿½es
+4. **Abertura Automï¿½tica**: Detecta o SO e abre o navegador apropriado
 5. **Refresh**: Permite atualizar os dados em tempo real
 
 ## ?? Dicas
 
 ### Mudar a Porta
-Edite a linha no código:
+Edite a linha no cï¿½digo:
 ```csharp
 var url = "http://localhost:5555";
 ```
@@ -168,9 +168,9 @@ Mude para:
 ```csharp
 var url = "http://0.0.0.0:5555";
 ```
-E acesse via IP da máquina: `http://192.168.x.x:5555`
+E acesse via IP da mï¿½quina: `http://192.168.x.x:5555`
 
-### Desabilitar Abertura Automática do Navegador
+### Desabilitar Abertura Automï¿½tica do Navegador
 Comente a linha:
 ```csharp
 // OpenBrowser(url);
@@ -178,10 +178,10 @@ Comente a linha:
 
 ## ?? Casos de Uso
 
-? **Validar ambiente de desenvolvimento** - Verificar se .NET está configurado  
-? **Apresentações** - Mostrar configuração do ambiente  
-? **Debugging** - Ver informações do sistema rapidamente  
-? **Documentação** - Compartilhar configuração do ambiente  
+? **Validar ambiente de desenvolvimento** - Verificar se .NET estï¿½ configurado  
+? **Apresentaï¿½ï¿½es** - Mostrar configuraï¿½ï¿½o do ambiente  
+? **Debugging** - Ver informaï¿½ï¿½es do sistema rapidamente  
+? **Documentaï¿½ï¿½o** - Compartilhar configuraï¿½ï¿½o do ambiente  
 ? **Onboarding** - Ajudar novos desenvolvedores a verificar setup  
 
 ## ?? Estrutura do Projeto
@@ -189,26 +189,26 @@ Comente a linha:
 ```
 HelloWorld/
 ??? HelloWorld.csproj     # Projeto Web (.NET 8)
-??? Program.cs            # Servidor web + lógica de coleta
-??? README.md            # Esta documentação
+??? Program.cs            # Servidor web + lï¿½gica de coleta
+??? README.md            # Esta documentaï¿½ï¿½o
 ```
 
 ## ?? Endpoints
 
 - **`/`** (raiz) - Dashboard completo em HTML
 
-## ? Validações Realizadas
+## ? Validaï¿½ï¿½es Realizadas
 
 Ao executar, o dashboard confirma que:
 
-- [x] .NET 8 SDK está instalado
-- [x] ASP.NET Core está funcionando
-- [x] Servidor HTTP está operacional
-- [x] System APIs estão acessíveis
-- [x] Projetos do workspace são detectados
-- [x] HTML/CSS rendering está OK
+- [x] .NET 8 SDK estï¿½ instalado
+- [x] ASP.NET Core estï¿½ funcionando
+- [x] Servidor HTTP estï¿½ operacional
+- [x] System APIs estï¿½o acessï¿½veis
+- [x] Projetos do workspace sï¿½o detectados
+- [x] HTML/CSS rendering estï¿½ OK
 
-## ?? Próximos Passos
+## ?? Prï¿½ximos Passos
 
 Agora que validou seu ambiente com este dashboard:
 

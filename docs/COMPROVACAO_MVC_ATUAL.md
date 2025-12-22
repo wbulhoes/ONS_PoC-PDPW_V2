@@ -1,14 +1,14 @@
-# ?? COMPROVAÇÃO: Projeto PDPW JÁ Segue MVC
+ï»¿# ?? COMPROVAï¿½ï¿½O: Projeto PDPW Jï¿½ Segue MVC
 
-**Documento:** Evidências Técnicas  
+**Documento:** Evidï¿½ncias Tï¿½cnicas  
 **Data:** 19/12/2024  
-**Objetivo:** Demonstrar que o projeto atual JÁ implementa MVC
+**Objetivo:** Demonstrar que o projeto atual Jï¿½ implementa MVC
 
 ---
 
 ## ? RESUMO EXECUTIVO
 
-**O projeto PDPW JÁ SEGUE O PADRÃO MVC:**
+**O projeto PDPW Jï¿½ SEGUE O PADRï¿½O MVC:**
 - ? **M**odel: Entities (Domain) + DTOs (Application)
 - ? **V**iew: Frontend React (separado)
 - ? **C**ontroller: Controllers na API
@@ -17,7 +17,7 @@
 
 ---
 
-## ?? EVIDÊNCIAS TÉCNICAS
+## ?? EVIDï¿½NCIAS Tï¿½CNICAS
 
 ### 1. CONTROLLER (C do MVC)
 
@@ -49,26 +49,26 @@ public class DadosEnergeticosController : ControllerBase  ? CONTROLLER do MVC
         return CreatedAtAction(nameof(GetById), new { id = resultado.Id }, resultado);
     }
     
-    // ... outros métodos
+    // ... outros mï¿½todos
 }
 ```
 
-**? Comprovação:**
+**? Comprovaï¿½ï¿½o:**
 - Classe herda de `ControllerBase` (base do MVC)
 - Usa atributos MVC: `[ApiController]`, `[Route]`, `[HttpGet]`, `[HttpPost]`
 - Recebe Models (DTOs) e retorna Models (DTOs)
-- Orquestra a lógica entre Service e Response
+- Orquestra a lï¿½gica entre Service e Response
 
 ---
 
 ### 2. MODEL (M do MVC)
 
-#### 2.1 Models de Domínio
+#### 2.1 Models de Domï¿½nio
 
 **Arquivo:** `src/PDPW.Domain/Entities/DadoEnergetico.cs`
 
 ```csharp
-public class DadoEnergetico  ? MODEL de domínio
+public class DadoEnergetico  ? MODEL de domï¿½nio
 {
     public int Id { get; set; }
     public DateTime DataReferencia { get; set; }
@@ -83,17 +83,17 @@ public class DadoEnergetico  ? MODEL de domínio
 }
 ```
 
-**? Comprovação:**
-- Representa entidade de negócio (Model)
+**? Comprovaï¿½ï¿½o:**
+- Representa entidade de negï¿½cio (Model)
 - Propriedades que mapeiam dados
 - Usado por Controllers e Services
 
-#### 2.2 Models de Transferência (DTOs)
+#### 2.2 Models de Transferï¿½ncia (DTOs)
 
 **Arquivo:** `src/PDPW.Application/DTOs/DadoEnergeticoDto.cs`
 
 ```csharp
-public class DadoEnergeticoDto  ? MODEL de entrada/saída
+public class DadoEnergeticoDto  ? MODEL de entrada/saï¿½da
 {
     public int Id { get; set; }
     public DateTime DataReferencia { get; set; }
@@ -113,16 +113,16 @@ public class CriarDadoEnergeticoDto  ? MODEL de entrada
 }
 ```
 
-**? Comprovação:**
-- DTOs são Models específicos para API (entrada/saída)
+**? Comprovaï¿½ï¿½o:**
+- DTOs sï¿½o Models especï¿½ficos para API (entrada/saï¿½da)
 - Usados pelos Controllers
-- Seguem padrão MVC de separação de Models
+- Seguem padrï¿½o MVC de separaï¿½ï¿½o de Models
 
 ---
 
 ### 3. VIEW (V do MVC)
 
-**Localização:** `frontend/src/` (React)
+**Localizaï¿½ï¿½o:** `frontend/src/` (React)
 
 **Exemplo de View (React Component):**
 
@@ -141,13 +141,13 @@ export const DadosEnergeticosList = () => {  ? VIEW (React)
 
   return (
     <div>
-      <h1>Dados Energéticos</h1>
+      <h1>Dados Energï¿½ticos</h1>
       <table>
         <thead>
           <tr>
             <th>Data</th>
             <th>Usina</th>
-            <th>Produção</th>
+            <th>Produï¿½ï¿½o</th>
           </tr>
         </thead>
         <tbody>
@@ -165,11 +165,11 @@ export const DadosEnergeticosList = () => {  ? VIEW (React)
 };
 ```
 
-**? Comprovação:**
+**? Comprovaï¿½ï¿½o:**
 - View (React) consome Controller (API)
 - View recebe Models (DTOs) em JSON
-- View renderiza dados para o usuário
-- Separação completa: View não conhece banco de dados
+- View renderiza dados para o usuï¿½rio
+- Separaï¿½ï¿½o completa: View nï¿½o conhece banco de dados
 
 ---
 
@@ -184,9 +184,9 @@ export const DadosEnergeticosList = () => {  ? VIEW (React)
 ? VIEW (V) - Frontend React                            ?
 ? ???????????????????????????????????????????????????  ?
 ? ? DadosEnergeticosList.tsx                        ?  ?
-? ? • Formulários                                   ?  ?
-? ? • Tabelas                                       ?  ?
-? ? • Botões                                        ?  ?
+? ? ï¿½ Formulï¿½rios                                   ?  ?
+? ? ï¿½ Tabelas                                       ?  ?
+? ? ï¿½ Botï¿½es                                        ?  ?
 ? ???????????????????????????????????????????????????  ?
 ????????????????????????????????????????????????????????
                     ? API Call (GET/POST/PUT/DELETE)
@@ -203,22 +203,22 @@ export const DadosEnergeticosList = () => {  ? VIEW (React)
 ? ? }                                               ?  ?
 ? ???????????????????????????????????????????????????  ?
 ????????????????????????????????????????????????????????
-                    ? Chama Service (Lógica)
+                    ? Chama Service (Lï¿½gica)
 ????????????????????????????????????????????????????????
 ? SERVICE - PDPW.Application                           ?
 ? ???????????????????????????????????????????????????  ?
 ? ? DadoEnergeticoService.cs                        ?  ?
-? ? • Validações                                    ?  ?
-? ? • Regras de negócio                             ?  ?
-? ? • Orquestração                                  ?  ?
+? ? ï¿½ Validaï¿½ï¿½es                                    ?  ?
+? ? ï¿½ Regras de negï¿½cio                             ?  ?
+? ? ï¿½ Orquestraï¿½ï¿½o                                  ?  ?
 ? ???????????????????????????????????????????????????  ?
 ????????????????????????????????????????????????????????
                     ? Usa Repository
 ????????????????????????????????????????????????????????
 ? MODEL (M) - PDPW.Domain + PDPW.Application           ?
 ? ???????????????????????????????????????????????????  ?
-? ? DadoEnergetico.cs (Entity) ? Model de domínio   ?  ?
-? ? DadoEnergeticoDto.cs ? Model de transferência   ?  ?
+? ? DadoEnergetico.cs (Entity) ? Model de domï¿½nio   ?  ?
+? ? DadoEnergeticoDto.cs ? Model de transferï¿½ncia   ?  ?
 ? ???????????????????????????????????????????????????  ?
 ????????????????????????????????????????????????????????
                     ? Persiste
@@ -226,8 +226,8 @@ export const DadosEnergeticosList = () => {  ? VIEW (React)
 ? REPOSITORY - PDPW.Infrastructure                     ?
 ? ???????????????????????????????????????????????????  ?
 ? ? DadoEnergeticoRepository.cs                     ?  ?
-? ? • Acesso ao banco                               ?  ?
-? ? • CRUD                                          ?  ?
+? ? ï¿½ Acesso ao banco                               ?  ?
+? ? ï¿½ CRUD                                          ?  ?
 ? ???????????????????????????????????????????????????  ?
 ????????????????????????????????????????????????????????
                     ?
@@ -238,24 +238,24 @@ export const DadosEnergeticosList = () => {  ? VIEW (React)
 
 ---
 
-## ?? COMPARAÇÃO: Atual vs. MVC Tradicional
+## ?? COMPARAï¿½ï¿½O: Atual vs. MVC Tradicional
 
 | Aspecto | PDPW Atual (Clean + MVC) | MVC Tradicional ASP.NET |
 |---------|--------------------------|------------------------|
 | **Controller** | ? `DadosEnergeticosController.cs` | ? `HomeController.cs` |
 | **Model** | ? `DadoEnergetico.cs` + `DadoEnergeticoDto.cs` | ? `Product.cs` |
 | **View** | ? React (separado) | ? `.cshtml` (Razor) |
-| **Separação Service** | ? Sim (`DadoEnergeticoService`) | ?? Opcional (geralmente no Controller) |
-| **Separação Repository** | ? Sim (`DadoEnergeticoRepository`) | ?? Opcional (geralmente no Controller) |
-| **Testabilidade** | ? ALTA (interfaces) | ?? MÉDIA |
-| **Manutenibilidade** | ? ALTA | ?? MÉDIA |
+| **Separaï¿½ï¿½o Service** | ? Sim (`DadoEnergeticoService`) | ?? Opcional (geralmente no Controller) |
+| **Separaï¿½ï¿½o Repository** | ? Sim (`DadoEnergeticoRepository`) | ?? Opcional (geralmente no Controller) |
+| **Testabilidade** | ? ALTA (interfaces) | ?? Mï¿½DIA |
+| **Manutenibilidade** | ? ALTA | ?? Mï¿½DIA |
 
-**Conclusão:**
-O projeto PDPW **MELHORA** o padrão MVC com Clean Architecture!
+**Conclusï¿½o:**
+O projeto PDPW **MELHORA** o padrï¿½o MVC com Clean Architecture!
 
 ---
 
-## ?? CÓDIGO COMPARATIVO
+## ?? Cï¿½DIGO COMPARATIVO
 
 ### MVC Tradicional (Tudo no Controller)
 
@@ -273,12 +273,12 @@ public class ProdutosController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        // ? Lógica de negócio no Controller
+        // ? Lï¿½gica de negï¿½cio no Controller
         var produtos = await _context.Produtos
             .Where(p => p.Ativo)
             .ToListAsync();
             
-        // ? Validações no Controller
+        // ? Validaï¿½ï¿½es no Controller
         if (produtos == null || !produtos.Any())
         {
             return NotFound("Nenhum produto encontrado");
@@ -290,10 +290,10 @@ public class ProdutosController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Produto produto)
     {
-        // ? Validação no Controller
+        // ? Validaï¿½ï¿½o no Controller
         if (produto.Preco <= 0)
         {
-            ModelState.AddModelError("Preco", "Preço inválido");
+            ModelState.AddModelError("Preco", "Preï¿½o invï¿½lido");
             return View(produto);
         }
         
@@ -308,9 +308,9 @@ public class ProdutosController : Controller
 
 **Problemas:**
 - ? Controller conhece banco de dados (acoplamento)
-- ? Difícil de testar (precisa de banco real)
-- ? Lógica de negócio misturada com apresentação
-- ? Difícil de reutilizar em API mobile
+- ? Difï¿½cil de testar (precisa de banco real)
+- ? Lï¿½gica de negï¿½cio misturada com apresentaï¿½ï¿½o
+- ? Difï¿½cil de reutilizar em API mobile
 
 ---
 
@@ -322,7 +322,7 @@ public class ProdutosController : Controller
 [Route("api/[controller]")]
 public class DadosEnergeticosController : ControllerBase
 {
-    private readonly IDadoEnergeticoService _service;  ? Interface (testável)
+    private readonly IDadoEnergeticoService _service;  ? Interface (testï¿½vel)
     
     public DadosEnergeticosController(IDadoEnergeticoService service)
     {
@@ -332,8 +332,8 @@ public class DadosEnergeticosController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<DadoEnergeticoDto>>> Get()
     {
-        // ? Controller só orquestra
-        // ? Lógica está no Service
+        // ? Controller sï¿½ orquestra
+        // ? Lï¿½gica estï¿½ no Service
         var dados = await _service.ObterTodosAsync();
         return Ok(dados);
     }
@@ -343,8 +343,8 @@ public class DadosEnergeticosController : ControllerBase
     {
         try
         {
-            // ? Validação no Service
-            // ? Controller só orquestra
+            // ? Validaï¿½ï¿½o no Service
+            // ? Controller sï¿½ orquestra
             var resultado = await _service.CriarAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = resultado.Id }, resultado);
         }
@@ -355,24 +355,24 @@ public class DadosEnergeticosController : ControllerBase
     }
 }
 
-// ? Service separado (testável, reutilizável)
+// ? Service separado (testï¿½vel, reutilizï¿½vel)
 public class DadoEnergeticoService : IDadoEnergeticoService
 {
     private readonly IDadoEnergeticoRepository _repository;
     
     public async Task<DadoEnergeticoDto> CriarAsync(CriarDadoEnergeticoDto dto)
     {
-        // ? Validações aqui
+        // ? Validaï¿½ï¿½es aqui
         if (dto.ProducaoMWh <= 0)
-            throw new ValidationException("Produção inválida");
+            throw new ValidationException("Produï¿½ï¿½o invï¿½lida");
         
-        // ? Lógica de negócio aqui
+        // ? Lï¿½gica de negï¿½cio aqui
         var entidade = new DadoEnergetico
         {
             // Mapeamento...
         };
         
-        // ? Repository faz persistência
+        // ? Repository faz persistï¿½ncia
         await _repository.AdicionarAsync(entidade);
         
         return MapearParaDto(entidade);
@@ -382,20 +382,20 @@ public class DadoEnergeticoService : IDadoEnergeticoService
 
 **Vantagens:**
 - ? Controller desacoplado do banco
-- ? Fácil de testar (mock do Service)
-- ? Lógica de negócio separada (Service)
-- ? Reutilizável (Service pode ser usado em API, Web, Mobile)
+- ? Fï¿½cil de testar (mock do Service)
+- ? Lï¿½gica de negï¿½cio separada (Service)
+- ? Reutilizï¿½vel (Service pode ser usado em API, Web, Mobile)
 
 ---
 
-## ?? REFERÊNCIAS DA MICROSOFT
+## ?? REFERï¿½NCIAS DA MICROSOFT
 
 ### Microsoft Recomenda Clean Architecture
 
-**Documentação oficial:**
+**Documentaï¿½ï¿½o oficial:**
 - [Clean Architecture with ASP.NET Core](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)
 
-**Citação:**
+**Citaï¿½ï¿½o:**
 ```
 "Clean architecture puts the business logic and application model 
 at the center of the application. Instead of having business logic 
@@ -403,41 +403,41 @@ depend on data access or other infrastructure concerns, this
 dependency is inverted: infrastructure and implementation details 
 depend on the Application Core."
 
-— Microsoft Docs
+ï¿½ Microsoft Docs
 ```
 
-### MVC e Clean Architecture SÃO COMPATÍVEIS
+### MVC e Clean Architecture Sï¿½O COMPATï¿½VEIS
 
-**Documentação oficial:**
+**Documentaï¿½ï¿½o oficial:**
 - [ASP.NET Core MVC Overview](https://learn.microsoft.com/en-us/aspnet/core/mvc/overview)
 
-**Citação:**
+**Citaï¿½ï¿½o:**
 ```
 "The Model-View-Controller (MVC) architectural pattern separates 
 an application into three main groups of components: Models, Views, 
 and Controllers. This pattern helps to achieve separation of concerns."
 
-— Microsoft Docs
+ï¿½ Microsoft Docs
 ```
 
-**Conclusão da Microsoft:**
-- MVC = Padrão de apresentação
-- Clean Architecture = Organização de camadas
+**Conclusï¿½o da Microsoft:**
+- MVC = Padrï¿½o de apresentaï¿½ï¿½o
+- Clean Architecture = Organizaï¿½ï¿½o de camadas
 - **Ambos devem ser usados juntos!**
 
 ---
 
-## ? COMPROVAÇÃO FINAL
+## ? COMPROVAï¿½ï¿½O FINAL
 
 ### Checklist: O Projeto Segue MVC?
 
 - [x] **Controller existe?** SIM (`DadosEnergeticosController`)
 - [x] **Model existe?** SIM (`DadoEnergetico`, `DadoEnergeticoDto`)
 - [x] **View existe?** SIM (Frontend React)
-- [x] **Separação de responsabilidades?** SIM
+- [x] **Separaï¿½ï¿½o de responsabilidades?** SIM
 - [x] **Usa atributos MVC?** SIM (`[ApiController]`, `[HttpGet]`, etc.)
 - [x] **Controller orquestra Model e View?** SIM
-- [x] **Segue padrão Microsoft?** SIM
+- [x] **Segue padrï¿½o Microsoft?** SIM
 
 **RESULTADO: ? PROJETO SEGUE MVC COMPLETAMENTE**
 
@@ -452,7 +452,7 @@ and Controllers. This pattern helps to achieve separation of concerns."
 **Resposta:**
 
 ```
-O projeto JÁ É MVC tradicional, com melhorias:
+O projeto Jï¿½ ï¿½ MVC tradicional, com melhorias:
 
 MVC Tradicional:
 ??? Controllers/ ? Temos
@@ -460,15 +460,15 @@ MVC Tradicional:
 ??? Views/       ? Temos (React)
 
 Clean Architecture adiciona:
-??? Separação de Services (boa prática)
-??? Separação de Repositories (boa prática)
-??? Interfaces para testes (boa prática)
-??? Organização em camadas (boa prática)
+??? Separaï¿½ï¿½o de Services (boa prï¿½tica)
+??? Separaï¿½ï¿½o de Repositories (boa prï¿½tica)
+??? Interfaces para testes (boa prï¿½tica)
+??? Organizaï¿½ï¿½o em camadas (boa prï¿½tica)
 
-Resultado: MVC + Boas Práticas = Clean Architecture + MVC
+Resultado: MVC + Boas Prï¿½ticas = Clean Architecture + MVC
 ```
 
-### "Mas isso é muito complexo!"
+### "Mas isso ï¿½ muito complexo!"
 
 **Resposta:**
 
@@ -481,16 +481,16 @@ Atual (4 projetos):
 ? PDPW.Domain (Entities)
 ? PDPW.Infrastructure (Repositories)
 
-Cada projeto tem propósito claro.
+Cada projeto tem propï¿½sito claro.
 Total: ~50 arquivos organizados
 
 MVC "puro" (1 projeto):
 ?? PDPW.MVC
 ?? Tudo misturado em 1 projeto
-?? Difícil de navegar
-?? Difícil de testar
+?? Difï¿½cil de navegar
+?? Difï¿½cil de testar
 
-Total: ~50 arquivos bagunçados
+Total: ~50 arquivos bagunï¿½ados
 ```
 
 ### "Mas Clean Architecture demora mais!"
@@ -502,41 +502,41 @@ Falso. Estrutura inicial pronta, desenvolvemos APIs rapidamente:
 
 Com Clean Architecture:
 ? Criar nova API: 2-3 horas
-? Estrutura reutilizável (BaseController, BaseService)
-? Testes fáceis (interfaces mockáveis)
+? Estrutura reutilizï¿½vel (BaseController, BaseService)
+? Testes fï¿½ceis (interfaces mockï¿½veis)
 
 Com MVC puro:
 ?? Criar nova API: 2-3 horas (mesmo tempo)
-?? Código duplicado
-?? Testes difíceis
+?? Cï¿½digo duplicado
+?? Testes difï¿½ceis
 
 Produtividade: IGUAL ou MAIOR com Clean Architecture
 ```
 
 ---
 
-## ?? CONCLUSÃO
+## ?? CONCLUSï¿½O
 
 **O projeto PDPW:**
-1. ? JÁ segue padrão MVC (Controller, Model, View)
-2. ? JÁ está dockerizado (docker-compose.yml)
+1. ? Jï¿½ segue padrï¿½o MVC (Controller, Model, View)
+2. ? Jï¿½ estï¿½ dockerizado (docker-compose.yml)
 3. ? MELHORA o MVC com Clean Architecture
-4. ? Segue recomendações da Microsoft
+4. ? Segue recomendaï¿½ï¿½es da Microsoft
 5. ? Preparado para testes automatizados
 6. ? Preparado para crescimento
 
-**Nenhuma mudança necessária!** ??
+**Nenhuma mudanï¿½a necessï¿½ria!** ??
 
-**Sugestão:**
+**Sugestï¿½o:**
 Agendar 30 minutos com o gestor para demonstrar:
-1. Dockerização funcionando
+1. Dockerizaï¿½ï¿½o funcionando
 2. Estrutura de pastas (Controllers, Models, Services)
-3. Como já seguimos MVC
-4. Benefícios da organização atual
+3. Como jï¿½ seguimos MVC
+4. Benefï¿½cios da organizaï¿½ï¿½o atual
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? COMPROVAÇÃO TÉCNICA COMPLETA
+**Versï¿½o:** 1.0  
+**Status:** ? COMPROVAï¿½ï¿½O Tï¿½CNICA COMPLETA

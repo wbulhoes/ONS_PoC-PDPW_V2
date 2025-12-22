@@ -1,4 +1,4 @@
-# ?? SOLUÇÃO: Erro "Can't add file" no Docker Build
+ï»¿# ?? SOLUï¿½ï¿½O: Erro "Can't add file" no Docker Build
 
 **Erro:** `Can't add file \\?\C:\temp\_ONS_PoC-PDPW\src\PDPW.Tools.HelloWorld\...`  
 **Causa:** Dockerfile estava copiando TODOS os projetos da pasta `src`, incluindo `PDPW.Tools.HelloWorld` que tem problemas  
@@ -16,15 +16,15 @@ COPY src/ .
 ```
 
 Isso copiava:
-- ? PDPW.API (necessário)
-- ? PDPW.Application (necessário)
-- ? PDPW.Domain (necessário)
-- ? PDPW.Infrastructure (necessário)
-- ? **PDPW.Tools.HelloWorld** (não necessário e problemático)
+- ? PDPW.API (necessï¿½rio)
+- ? PDPW.Application (necessï¿½rio)
+- ? PDPW.Domain (necessï¿½rio)
+- ? PDPW.Infrastructure (necessï¿½rio)
+- ? **PDPW.Tools.HelloWorld** (nï¿½o necessï¿½rio e problemï¿½tico)
 
 ---
 
-## ? SOLUÇÕES APLICADAS
+## ? SOLUï¿½ï¿½ES APLICADAS
 
 ### 1. Dockerfile.backend Atualizado
 
@@ -35,7 +35,7 @@ COPY src/ .  # ? Copia tudo
 
 **Depois:**
 ```dockerfile
-# ? Copia apenas os 4 projetos necessários
+# ? Copia apenas os 4 projetos necessï¿½rios
 COPY ["src/PDPW.API/", "PDPW.API/"]
 COPY ["src/PDPW.Application/", "PDPW.Application/"]
 COPY ["src/PDPW.Domain/", "PDPW.Domain/"]
@@ -44,10 +44,10 @@ COPY ["src/PDPW.Infrastructure/", "PDPW.Infrastructure/"]
 
 ### 2. Criado `.dockerignore`
 
-Arquivo que diz ao Docker o que **NÃO copiar**:
+Arquivo que diz ao Docker o que **Nï¿½O copiar**:
 
 ```
-# Projetos não necessários
+# Projetos nï¿½o necessï¿½rios
 src/PDPW.Tools.HelloWorld/
 HelloWorld/
 pdpw_act/
@@ -60,7 +60,7 @@ Backup/
 # Node modules
 **/node_modules/
 
-# Documentação
+# Documentaï¿½ï¿½o
 docs/
 *.md
 ```
@@ -91,13 +91,13 @@ docker-compose build --no-cache
 docker-compose build --no-cache --progress=plain
 ```
 
-### Passo 3: Iniciar Serviços (3 min)
+### Passo 3: Iniciar Serviï¿½os (3 min)
 
 ```powershell
 # Iniciar
 docker-compose up
 
-# Aguardar até ver:
+# Aguardar atï¿½ ver:
 # ? pdpw-sqlserver started
 # ? pdpw-backend started
 # ? pdpw-frontend started
@@ -113,7 +113,7 @@ docker-compose up
 
 ## ?? SE O ERRO CONTINUAR
 
-### Opção 1: Ver Logs Detalhados
+### Opï¿½ï¿½o 1: Ver Logs Detalhados
 
 ```powershell
 docker-compose build backend --no-cache --progress=plain 2>&1 | Tee-Object -FilePath build-log.txt
@@ -121,19 +121,19 @@ docker-compose build backend --no-cache --progress=plain 2>&1 | Tee-Object -File
 # Ver o arquivo build-log.txt para identificar o erro exato
 ```
 
-### Opção 2: Build em Etapas
+### Opï¿½ï¿½o 2: Build em Etapas
 
 ```powershell
-# Build só do backend
+# Build sï¿½ do backend
 docker-compose build backend --no-cache
 
 # Se funcionar, build do frontend
 docker-compose build frontend --no-cache
 ```
 
-### Opção 3: Verificar Projeto HelloWorld
+### Opï¿½ï¿½o 3: Verificar Projeto HelloWorld
 
-Se o projeto HelloWorld é realmente necessário:
+Se o projeto HelloWorld ï¿½ realmente necessï¿½rio:
 
 ```powershell
 # Ver o que tem nele
@@ -143,12 +143,12 @@ dir
 # Testar se compila local
 dotnet build
 
-# Se não compilar, corrigir ou remover
+# Se nï¿½o compilar, corrigir ou remover
 ```
 
-### Opção 4: Remover Projeto HelloWorld
+### Opï¿½ï¿½o 4: Remover Projeto HelloWorld
 
-Se não for necessário:
+Se nï¿½o for necessï¿½rio:
 
 ```powershell
 # Remover da solution
@@ -164,8 +164,8 @@ Move-Item src\PDPW.Tools.HelloWorld ..\_backup\PDPW.Tools.HelloWorld
 
 ### Erro: "no matching manifest for windows/amd64"
 
-**Causa:** Imagem não disponível para Windows  
-**Solução:** Trocar para imagem compatível ou usar Linux containers
+**Causa:** Imagem nï¿½o disponï¿½vel para Windows  
+**Soluï¿½ï¿½o:** Trocar para imagem compatï¿½vel ou usar Linux containers
 
 ```dockerfile
 # Se der este erro, trocar para:
@@ -175,8 +175,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2022 AS final
 
 ### Erro: "denied: requested access to the resource is denied"
 
-**Causa:** Sem permissão para baixar imagem  
-**Solução:** Login no Docker Hub
+**Causa:** Sem permissï¿½o para baixar imagem  
+**Soluï¿½ï¿½o:** Login no Docker Hub
 
 ```powershell
 docker login
@@ -185,7 +185,7 @@ docker login
 ### Erro: "failed to solve with frontend dockerfile.v0"
 
 **Causa:** Sintaxe incorreta no Dockerfile  
-**Solução:** Verificar linhas COPY estão corretas
+**Soluï¿½ï¿½o:** Verificar linhas COPY estï¿½o corretas
 
 ```dockerfile
 # ? Correto
@@ -197,11 +197,11 @@ COPY ["src/PDPW.API", "PDPW.API"]
 
 ---
 
-## ?? RECOMENDAÇÃO ALTERNATIVA
+## ?? RECOMENDAï¿½ï¿½O ALTERNATIVA
 
-### Se Windows Containers Continuarem Problemáticos
+### Se Windows Containers Continuarem Problemï¿½ticos
 
-**OPÇÃO: Desenvolvimento Local (MAIS RÁPIDO)**
+**OPï¿½ï¿½O: Desenvolvimento Local (MAIS Rï¿½PIDO)**
 
 ```powershell
 # 1. Backend local
@@ -222,21 +222,21 @@ npm run dev
 ```
 
 **Vantagens:**
-- ? Muito mais rápido (sem build de 30 min)
+- ? Muito mais rï¿½pido (sem build de 30 min)
 - ?? Menos problemas de ambiente
 - ?? Foco em desenvolver as 29 APIs
 - ?? Economiza tempo da PoC
 
 **Desvantagem:**
-- Não valida Docker
+- Nï¿½o valida Docker
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 - Desenvolver local (Dias 1-5)
-- Validar Docker no final (Dia 6) para apresentação
+- Validar Docker no final (Dia 6) para apresentaï¿½ï¿½o
 
 ---
 
-## ?? CHECKLIST DE VALIDAÇÃO
+## ?? CHECKLIST DE VALIDAï¿½ï¿½O
 
 ### Build Funcionando
 
@@ -249,9 +249,9 @@ npm run dev
 
 - [ ] `docker-compose up` inicia sem erros
 - [ ] `docker ps` mostra 3 containers (Up)
-- [ ] Logs não mostram crashes
+- [ ] Logs nï¿½o mostram crashes
 
-### Aplicação Funcional
+### Aplicaï¿½ï¿½o Funcional
 
 - [ ] http://localhost:5000/swagger abre
 - [ ] Swagger lista endpoints
@@ -259,7 +259,7 @@ npm run dev
 
 ---
 
-## ?? COMMIT DAS MUDANÇAS
+## ?? COMMIT DAS MUDANï¿½AS
 
 Se funcionou:
 
@@ -267,9 +267,9 @@ Se funcionou:
 git add Dockerfile.backend .dockerignore
 git commit -m "[DOCKER] fix: corrige build removendo HelloWorld
 
-- Copia apenas 4 projetos necessários (API, Application, Domain, Infrastructure)
-- Adiciona .dockerignore para excluir arquivos desnecessários
-- Remove cópia do projeto PDPW.Tools.HelloWorld problemático
+- Copia apenas 4 projetos necessï¿½rios (API, Application, Domain, Infrastructure)
+- Adiciona .dockerignore para excluir arquivos desnecessï¿½rios
+- Remove cï¿½pia do projeto PDPW.Tools.HelloWorld problemï¿½tico
 - Otimiza build removendo docs, node_modules, etc."
 
 git push origin develop
@@ -277,11 +277,11 @@ git push origin develop
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Se Build Funcionar ?
 
-1. **Testar aplicação**
+1. **Testar aplicaï¿½ï¿½o**
    ```powershell
    docker-compose up
    # Acessar http://localhost:5000/swagger
@@ -293,7 +293,7 @@ git push origin develop
    git push -u origin feature/gestao-ativos
    ```
 
-3. **Começar desenvolvimento das APIs**
+3. **Comeï¿½ar desenvolvimento das APIs**
 
 ### Se Build Continuar Falhando ?
 
@@ -322,10 +322,10 @@ git push origin develop
 ### Comandos de Debug
 
 ```powershell
-# Ver versão do Docker
+# Ver versï¿½o do Docker
 docker version
 
-# Ver espaço em disco
+# Ver espaï¿½o em disco
 docker system df
 
 # Ver logs de build
@@ -335,15 +335,15 @@ docker-compose build --no-cache --progress=plain
 docker system prune -a --volumes
 ```
 
-### Informações Úteis
+### Informaï¿½ï¿½es ï¿½teis
 
 Para ajudar no debug, colete:
 
 ```powershell
-# Versão Windows
+# Versï¿½o Windows
 winver
 
-# Versão Docker
+# Versï¿½o Docker
 docker version
 
 # Modo Docker (Windows/Linux)
@@ -357,7 +357,7 @@ docker-compose build --no-cache 2>&1 | Out-File docker-error.txt
 
 **Documento criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? CORREÇÃO APLICADA
+**Versï¿½o:** 1.0  
+**Status:** ? CORREï¿½ï¿½O APLICADA
 
 **Execute os comandos e me avise se funcionou! ??**

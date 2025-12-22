@@ -1,4 +1,4 @@
-# ?? CORREÇÃO DO SWAGGER - TODAS AS APIs VISÍVEIS
+ï»¿# ?? CORREï¿½ï¿½O DO SWAGGER - TODAS AS APIs VISï¿½VEIS
 
 **Data:** 2025-01-20  
 **Problema Reportado:** QA informou que apenas Health endpoint aparece no Swagger  
@@ -6,19 +6,19 @@
 
 ---
 
-## ?? DIAGNÓSTICO
+## ?? DIAGNï¿½STICO
 
 ### Problema Identificado:
 1. ? **Swagger configurado corretamente** - AddSwaggerConfiguration() presente
 2. ? **Controllers existem** - 9 controllers criados
 3. ? **XML Comments habilitado** - GenerateDocumentationFile=true
-4. ?? **Banco em memória** - Não estava configurado corretamente
+4. ?? **Banco em memï¿½ria** - Nï¿½o estava configurado corretamente
 
 ---
 
-## ? CORREÇÕES APLICADAS
+## ? CORREï¿½ï¿½ES APLICADAS
 
-### 1. **Habilitado Banco em Memória**
+### 1. **Habilitado Banco em Memï¿½ria**
 **Arquivo:** `appsettings.Development.json`
 ```json
 {
@@ -29,7 +29,7 @@
 ### 2. **Atualizado ServiceCollectionExtensions**
 **Arquivo:** `src/PDPW.API/Extensions/ServiceCollectionExtensions.cs`
 
-Adicionado suporte a banco em memória:
+Adicionado suporte a banco em memï¿½ria:
 ```csharp
 public static IServiceCollection AddDatabaseConfiguration(
     this IServiceCollection services, 
@@ -72,7 +72,7 @@ dotnet add package Microsoft.EntityFrameworkCore.InMemory --version 8.0.0
 
 ---
 
-## ?? VERIFICAÇÃO
+## ?? VERIFICAï¿½ï¿½O
 
 ### Controllers Existentes:
 ```
@@ -119,7 +119,7 @@ http://localhost:5000/swagger
 
 ## ? RESULTADO ESPERADO
 
-Ao acessar http://localhost:5000/swagger, você deve ver:
+Ao acessar http://localhost:5000/swagger, vocï¿½ deve ver:
 
 ```
 PDPW API v1

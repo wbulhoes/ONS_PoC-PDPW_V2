@@ -1,4 +1,4 @@
-# ?? RESUMO EXECUTIVO - DEV 3 (Frontend) DIA 1
+ï»¿# ?? RESUMO EXECUTIVO - DEV 3 (Frontend) DIA 1
 
 **Dev:** DEV 3 (Frontend Developer)  
 **Data:** 19/12/2024 - Quinta-feira  
@@ -18,17 +18,17 @@ Criar a **estrutura completa** e **listagem funcional** da tela de Usinas.
 
 ```
 09:00 ????????????????????????????????????????????????
-      ? ? Setup e Validação (45 min)
+      ? ? Setup e Validaï¿½ï¿½o (45 min)
 10:00 ? - Git, Node.js, npm, VS Code
       ? - Branch feature/frontend-usinas
       ? - npm install + npm run dev
       ?
-      ? ?? Análise Tela Legada (2h)
+      ? ?? Anï¿½lise Tela Legada (2h)
 12:00 ? - Mapear campos
       ? - Definir componentes
       ? - Documentar fluxos
       ?
-      ? ??? ALMOÇO (1h)
+      ? ??? ALMOï¿½O (1h)
 13:00 ?
       ?
       ? ??? Estrutura de Componentes (1h)
@@ -41,9 +41,9 @@ Criar a **estrutura completa** e **listagem funcional** da tela de Usinas.
       ? - UsinasList
       ? - Hook useUsinas
       ?
-      ? ?? Formulário - Estrutura (2h)
-18:00 ? - Estrutura básica
-      ? - Navegação
+      ? ?? Formulï¿½rio - Estrutura (2h)
+18:00 ? - Estrutura bï¿½sica
+      ? - Navegaï¿½ï¿½o
       ?
       ? ?? Commit & Push (15 min)
 18:15 ????????????????????????????????????????????????
@@ -51,7 +51,7 @@ Criar a **estrutura completa** e **listagem funcional** da tela de Usinas.
 
 ---
 
-## ?? DOCUMENTAÇÃO CRIADA
+## ?? DOCUMENTAï¿½ï¿½O CRIADA
 
 ### 1. Checklist de Setup
 **Arquivo:** [`docs/DEV3_CHECKLIST_SETUP.md`](DEV3_CHECKLIST_SETUP.md)
@@ -59,7 +59,7 @@ Criar a **estrutura completa** e **listagem funcional** da tela de Usinas.
 **O que fazer:**
 - Validar ambiente (Git, Node, npm, VS Code)
 - Criar branch `feature/frontend-usinas`
-- Instalar dependências (`npm install`)
+- Instalar dependï¿½ncias (`npm install`)
 - Testar dev server (`npm run dev`)
 - Validar hot reload
 
@@ -67,13 +67,13 @@ Criar a **estrutura completa** e **listagem funcional** da tela de Usinas.
 
 ---
 
-### 2. Análise da Tela Legada
+### 2. Anï¿½lise da Tela Legada
 **Arquivo:** [`docs/DEV3_PARTE2_ANALISE_LEGADO.md`](DEV3_PARTE2_ANALISE_LEGADO.md)
 
 **O que fazer:**
 - Analisar `pdpw_act/pdpw/frmCadUsina.aspx`
-- Mapear campos e validações
-- Identificar APIs necessárias
+- Mapear campos e validaï¿½ï¿½es
+- Identificar APIs necessï¿½rias
 - Definir componentes React
 - Documentar fluxo de dados
 
@@ -90,10 +90,10 @@ Criar a **estrutura completa** e **listagem funcional** da tela de Usinas.
 ### 3. Guia Completo Dia 1
 **Arquivo:** [`docs/DEV3_GUIA_COMPLETO_DIA1.md`](DEV3_GUIA_COMPLETO_DIA1.md)
 
-**Conteúdo:**
+**Conteï¿½do:**
 - Parte 3: Estrutura de componentes
 - Parte 4: Componente de listagem
-- Parte 5: Componente de formulário (estrutura)
+- Parte 5: Componente de formulï¿½rio (estrutura)
 - Parte 6: Commit e push
 
 **Tempo:** 5 horas
@@ -108,7 +108,7 @@ frontend/src/
 ?   ??? Usinas/
 ?       ??? UsinasPage.tsx       ? Container principal
 ?       ??? UsinasList.tsx       ? Listagem
-?       ??? UsinaForm.tsx        ? Formulário (estrutura básica)
+?       ??? UsinaForm.tsx        ? Formulï¿½rio (estrutura bï¿½sica)
 ?
 ??? components/
 ?   ??? Usinas/
@@ -117,7 +117,7 @@ frontend/src/
 ?   ??? common/
 ?       ??? Loading.tsx          ? Spinner
 ?       ??? ErrorMessage.tsx     ? Erro
-?       ??? Button.tsx           ? Botão (opcional)
+?       ??? Button.tsx           ? Botï¿½o (opcional)
 ?
 ??? services/
 ?   ??? api/
@@ -130,7 +130,7 @@ frontend/src/
 ?   ??? useUsinas.ts             ? Hook customizado
 ?
 ??? utils/
-    ??? api.ts                   ? Configuração Axios
+    ??? api.ts                   ? Configuraï¿½ï¿½o Axios
 ```
 
 ---
@@ -201,9 +201,9 @@ export const useUsinas = () => {
 
 ### 4. Componentes
 
-**UsinaCard** ? Card com info da usina + botões editar/excluir  
-**UsinasList** ? Grid de cards + botão "Nova Usina"  
-**UsinasPage** ? Container principal com navegação  
+**UsinaCard** ? Card com info da usina + botï¿½es editar/excluir  
+**UsinasList** ? Grid de cards + botï¿½o "Nova Usina"  
+**UsinasPage** ? Container principal com navegaï¿½ï¿½o  
 **Loading** ? Spinner de carregamento
 
 ---
@@ -214,10 +214,10 @@ export const useUsinas = () => {
 
 - [ ] ? Ambiente configurado e validado
 - [ ] ? Branch `feature/frontend-usinas` criada
-- [ ] ? Documentação de análise completa (4 docs)
+- [ ] ? Documentaï¿½ï¿½o de anï¿½lise completa (4 docs)
 - [ ] ? Estrutura de pastas criada
 - [ ] ? Types TypeScript definidos
-- [ ] ? Configuração Axios
+- [ ] ? Configuraï¿½ï¿½o Axios
 - [ ] ? Service de Usinas implementado
 - [ ] ? Hook useUsinas criado
 - [ ] ? Componente Loading
@@ -228,8 +228,8 @@ export const useUsinas = () => {
 - [ ] ? Listagem funcionando
 - [ ] ? Loading state funcionando
 - [ ] ? Empty state funcionando
-- [ ] ? Exclusão funcionando
-- [ ] ? Navegação estruturada
+- [ ] ? Exclusï¿½o funcionando
+- [ ] ? Navegaï¿½ï¿½o estruturada
 - [ ] ? Commit e push realizado
 
 ---
@@ -244,19 +244,19 @@ export const useUsinas = () => {
    ?? Loading state (spinner)
    ?? Empty state (sem usinas)
    ?? Error handling
-   ?? Botão "Nova Usina"
+   ?? Botï¿½o "Nova Usina"
 
 ? Card de Usina
-   ?? Exibe todas as informações
+   ?? Exibe todas as informaï¿½ï¿½es
    ?? Status (Ativa/Inativa) visual
-   ?? Botão Editar
-   ?? Botão Excluir (com confirmação)
+   ?? Botï¿½o Editar
+   ?? Botï¿½o Excluir (com confirmaï¿½ï¿½o)
 
-? Navegação
+? Navegaï¿½ï¿½o
    ?? Lista ? Criar (estrutura)
    ?? Lista ? Editar (estrutura)
 
-? Integração API
+? Integraï¿½ï¿½o API
    ?? GET /api/usinas
    ?? DELETE /api/usinas/{id}
 ```
@@ -264,16 +264,16 @@ export const useUsinas = () => {
 ### ?? Estrutura Criada (Para DIA 2)
 
 ```
-?? Formulário de Usina
-   ?? Estrutura básica criada
-   ?? Navegação funcionando
-   ?? Campos serão implementados DIA 2
+?? Formulï¿½rio de Usina
+   ?? Estrutura bï¿½sica criada
+   ?? Navegaï¿½ï¿½o funcionando
+   ?? Campos serï¿½o implementados DIA 2
 
-?? Validações
-   ?? Serão implementadas DIA 2
+?? Validaï¿½ï¿½es
+   ?? Serï¿½o implementadas DIA 2
 
 ?? Filtros
-   ?? Serão implementados DIA 2
+   ?? Serï¿½o implementados DIA 2
 ```
 
 ---
@@ -285,11 +285,11 @@ export const useUsinas = () => {
 ? DIA 1 - PROGRESSO: 60%                  ?
 ???????????????????????????????????????????
 ? ? Setup e Ambiente      ? 100%         ?
-? ? Análise e Docs        ? 100%         ?
+? ? Anï¿½lise e Docs        ? 100%         ?
 ? ? Estrutura Base        ? 100%         ?
 ? ? Listagem              ? 90%          ?
-? ?? Formulário            ? 20%          ?
-? ? Validações            ? 0%           ?
+? ?? Formulï¿½rio            ? 20%          ?
+? ? Validaï¿½ï¿½es            ? 0%           ?
 ? ? Filtros               ? 0%           ?
 ???????????????????????????????????????????
 ? META DIA 1: ? ATINGIDA (60%)           ?
@@ -298,7 +298,7 @@ export const useUsinas = () => {
 
 ---
 
-## ?? COMANDOS RÁPIDOS
+## ?? COMANDOS Rï¿½PIDOS
 
 ### Iniciar Desenvolvimento
 
@@ -308,7 +308,7 @@ npm run dev
 # Acesso: http://localhost:5173/usinas
 ```
 
-### Ver Documentação
+### Ver Documentaï¿½ï¿½o
 
 ```powershell
 # Abrir VS Code na pasta docs
@@ -330,14 +330,14 @@ git push origin feature/frontend-usinas
 ### 1. Use Hot Reload
 
 ```
-Edite código ? Salve (Ctrl+S) ? Navegador atualiza automaticamente
-Não precisa recarregar manualmente! ??
+Edite cï¿½digo ? Salve (Ctrl+S) ? Navegador atualiza automaticamente
+Nï¿½o precisa recarregar manualmente! ??
 ```
 
-### 2. Backend Pode Não Estar Pronto
+### 2. Backend Pode Nï¿½o Estar Pronto
 
 ```typescript
-// Se API não estiver pronta, use mock temporário:
+// Se API nï¿½o estiver pronta, use mock temporï¿½rio:
 const usinasMock = [
   { id: 1, codigo: 'ITU001', nome: 'Itaipu', ... }
 ];
@@ -346,16 +346,16 @@ const usinasMock = [
 ### 3. Consulte DEV 1 e DEV 2
 
 ```
-APIs de Usina estão sendo criadas pelo DEV 1
-Pergunte status e quando estarão disponíveis
+APIs de Usina estï¿½o sendo criadas pelo DEV 1
+Pergunte status e quando estarï¿½o disponï¿½veis
 ```
 
 ### 4. Foco no Essencial
 
 ```
 DIA 1: Listagem funcionando ?
-DIA 2: Formulário completo
-Não se preocupe com perfeccionismo agora
+DIA 2: Formulï¿½rio completo
+Nï¿½o se preocupe com perfeccionismo agora
 ```
 
 ---
@@ -364,21 +364,21 @@ Não se preocupe com perfeccionismo agora
 
 ### Perguntar ao Copilot
 
-- Como criar um componente específico?
-- Como fazer validação de formulário?
+- Como criar um componente especï¿½fico?
+- Como fazer validaï¿½ï¿½o de formulï¿½rio?
 - Erro no TypeScript?
-- API não está respondendo?
+- API nï¿½o estï¿½ respondendo?
 - Git dando problema?
 
-### Comunicação com Squad
+### Comunicaï¿½ï¿½o com Squad
 
 **Daily Standup (09:00):**
 - Compartilhar progresso
-- Alinhar dependências de APIs
+- Alinhar dependï¿½ncias de APIs
 - Resolver bloqueios
 
 **Durante o dia:**
-- Teams/Slack para dúvidas rápidas
+- Teams/Slack para dï¿½vidas rï¿½pidas
 - Pair programming se travar
 
 ---
@@ -388,30 +388,30 @@ Não se preocupe com perfeccionismo agora
 ### Fim do DIA 1 (18:15)
 
 ```
-? Tela de Usinas acessível em /usinas
+? Tela de Usinas acessï¿½vel em /usinas
 ? Listagem de usinas funcionando
-? Cards com informações completas
-? Botões de ação (criar/editar/excluir)
+? Cards com informaï¿½ï¿½es completas
+? Botï¿½es de aï¿½ï¿½o (criar/editar/excluir)
 ? Loading states
 ? Error handling
-? Navegação estruturada
-? Código commitado e pushed
+? Navegaï¿½ï¿½o estruturada
+? Cï¿½digo commitado e pushed
 
 ?? 60% da tela completa
 ?? Meta do dia ATINGIDA
-?? Pronto para DIA 2 (formulário)
+?? Pronto para DIA 2 (formulï¿½rio)
 ```
 
 ---
 
-## ?? PRÓXIMO DIA (DIA 2 - 20/12)
+## ?? PRï¿½XIMO DIA (DIA 2 - 20/12)
 
-**Meta:** Completar formulário + validações (90% da tela)
+**Meta:** Completar formulï¿½rio + validaï¿½ï¿½es (90% da tela)
 
 **Atividades:**
-- Implementar formulário completo
-- Adicionar validações
-- Integração com APIs de criação/edição
+- Implementar formulï¿½rio completo
+- Adicionar validaï¿½ï¿½es
+- Integraï¿½ï¿½o com APIs de criaï¿½ï¿½o/ediï¿½ï¿½o
 - Filtros de busca
 - Mensagens de sucesso/erro
 - Polish e ajustes
@@ -420,7 +420,7 @@ Não se preocupe com perfeccionismo agora
 
 **Resumo criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? PRONTO PARA DEV 3
 
-**DEV 3: Siga a documentação passo a passo! Sucesso! ??**
+**DEV 3: Siga a documentaï¿½ï¿½o passo a passo! Sucesso! ??**

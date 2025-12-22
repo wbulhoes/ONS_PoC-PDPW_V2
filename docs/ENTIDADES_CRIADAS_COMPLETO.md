@@ -1,8 +1,8 @@
-# ? TODAS AS 29 ENTIDADES CRIADAS COM SUCESSO!
+ï»¿# ? TODAS AS 29 ENTIDADES CRIADAS COM SUCESSO!
 
 **Data:** 19/12/2024  
 **Status:** ? COMPLETO  
-**Build:** ? Construir êxito em 3,4s
+**Build:** ? Construir ï¿½xito em 3,4s
 
 ---
 
@@ -20,14 +20,14 @@
 
 ## ?? ENTIDADES CRIADAS (29)
 
-### ?? GESTÃO DE ATIVOS (5)
+### ?? GESTï¿½O DE ATIVOS (5)
 1. ? TipoUsina
 2. ? Empresa
 3. ? Usina
 4. ? SemanaPMO
 5. ? EquipePDP
 
-### ?? UNIDADES E GERAÇÃO (6)
+### ?? UNIDADES E GERAï¿½ï¿½O (6)
 6. ? UnidadeGeradora
 7. ? ParadaUG
 8. ? RestricaoUG
@@ -43,7 +43,7 @@
 
 ### ?? CONSOLIDADOS (3)
 16. ? DCA (Dados Consolidados Anterior)
-17. ? DCR (Dados Consolidados Revisão)
+17. ? DCR (Dados Consolidados Revisï¿½o)
 18. ? Responsavel
 
 ### ?? DOCUMENTOS (3)
@@ -52,12 +52,12 @@
 21. ? Arquivo
 22. ? Diretorio
 
-### ?? OPERAÇÃO (3)
+### ?? OPERAï¿½ï¿½O (3)
 23. ? Intercambio
 24. ? Balanco
 25. ? Observacao
 
-### ?? TÉRMICAS (4)
+### ?? Tï¿½RMICAS (4)
 26. ? ModalidadeOpTermica
 27. ? InflexibilidadeContratada
 28. ? RampasUsinaTermica
@@ -101,8 +101,8 @@ Diretorio ??? Arquivo
 
 ```
 src/PDPW.Domain/Entities/
-??? BaseEntity.cs                     ? (já existia)
-??? DadoEnergetico.cs                ? (já existia)
+??? BaseEntity.cs                     ? (jï¿½ existia)
+??? DadoEnergetico.cs                ? (jï¿½ existia)
 ?
 ??? TipoUsina.cs                     ? NOVO
 ??? Empresa.cs                       ? NOVO
@@ -141,11 +141,11 @@ src/PDPW.Domain/Entities/
 ??? UsinaConversora.cs               ? NOVO
 ```
 
-**Total:** 30 entidades (1 já existia + 29 novas) ?
+**Total:** 30 entidades (1 jï¿½ existia + 29 novas) ?
 
 ---
 
-## ?? PROPRIEDADES PADRÃO DE TODAS AS ENTIDADES
+## ?? PROPRIEDADES PADRï¿½O DE TODAS AS ENTIDADES
 
 Todas herdam de `BaseEntity`:
 
@@ -161,7 +161,7 @@ public abstract class BaseEntity
 
 ---
 
-## ?? ESTATÍSTICAS
+## ?? ESTATï¿½STICAS
 
 ### Por Complexidade
 
@@ -174,7 +174,7 @@ public abstract class BaseEntity
    - ModalidadeOpTermica
    - UsinaConversora
 
-?? Médias (14):
+?? Mï¿½dias (14):
    - SemanaPMO
    - EquipePDP
    - Usuario
@@ -191,7 +191,7 @@ public abstract class BaseEntity
    - Observacao
 
 ?? Complexas (9):
-   - Usina (múltiplos relacionamentos)
+   - Usina (mï¿½ltiplos relacionamentos)
    - UnidadeGeradora
    - GerForaMerito
    - ArquivoDadger
@@ -208,14 +208,14 @@ public abstract class BaseEntity
 1:N (One-to-Many): 18 relacionamentos
 N:1 (Many-to-One): 23 relacionamentos
 1:1 (One-to-One): 4 relacionamentos
-Hierárquico: 1 (Diretorio)
+Hierï¿½rquico: 1 (Diretorio)
 ```
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-### Opção A: Criar Interfaces de Repositório (29)
+### Opï¿½ï¿½o A: Criar Interfaces de Repositï¿½rio (29)
 **Tempo estimado:** 2-3 horas
 
 ```csharp
@@ -229,7 +229,7 @@ public interface IUsinaRepository
 }
 ```
 
-### Opção B: Atualizar DbContext com DbSets (29)
+### Opï¿½ï¿½o B: Atualizar DbContext com DbSets (29)
 **Tempo estimado:** 30 min
 
 ```csharp
@@ -242,11 +242,11 @@ public class PdpwDbContext : DbContext
 }
 ```
 
-### Opção C: Começar Primeira API Completa (Usina)
+### Opï¿½ï¿½o C: Comeï¿½ar Primeira API Completa (Usina)
 **Tempo estimado:** 3 horas
 - Interface ? Repository ? DTO ? Service ? Controller
 
-### Opção D: Criar Entity Configurations (EF Core)
+### Opï¿½ï¿½o D: Criar Entity Configurations (EF Core)
 **Tempo estimado:** 2-3 horas
 
 ```csharp
@@ -263,14 +263,14 @@ public class UsinaConfiguration : IEntityTypeConfiguration<Usina>
 
 ---
 
-## ?? RECOMENDAÇÃO
+## ?? RECOMENDAï¿½ï¿½O
 
-**Melhor sequência:**
+**Melhor sequï¿½ncia:**
 
 1. ? **Atualizar DbContext** (30 min) ? FAZER AGORA
 2. ? **Criar Migration inicial** (10 min)
-3. ? **Começar primeira API completa** (Usina - 3h)
-4. ? **Replicar pattern para outras APIs** (rápido)
+3. ? **Comeï¿½ar primeira API completa** (Usina - 3h)
+4. ? **Replicar pattern para outras APIs** (rï¿½pido)
 
 ---
 
@@ -282,19 +282,19 @@ public class UsinaConfiguration : IEntityTypeConfiguration<Usina>
    - 29 Entidades criadas
    - Compilando sem erros
 
-?? PRÓXIMO (Agora):
+?? PRï¿½XIMO (Agora):
    - Atualizar DbContext com DbSets
    - Criar Migration inicial
-   - Começar API Usina
+   - Comeï¿½ar API Usina
 
-? RESTANTE (Próximas horas):
+? RESTANTE (Prï¿½ximas horas):
    - 28 APIs restantes
-   - Seguindo o padrão da primeira
+   - Seguindo o padrï¿½o da primeira
 ```
 
 ---
 
-## ?? VALIDAÇÃO
+## ?? VALIDAï¿½ï¿½O
 
 ### Build
 ```powershell
@@ -302,7 +302,7 @@ cd C:\temp\_ONS_PoC-PDPW
 dotnet build
 
 # Resultado:
-? Construir êxito em 3,4s
+? Construir ï¿½xito em 3,4s
 ? PDPW.Domain.dll compilado
 ? Todas as entidades reconhecidas
 ```
@@ -312,7 +312,7 @@ dotnet build
 ? 29 arquivos .cs criados
 ? Namespaces corretos
 ? Relacionamentos configurados
-? Herança de BaseEntity
+? Heranï¿½a de BaseEntity
 ? XML comments documentados
 ```
 
@@ -324,12 +324,12 @@ dotnet build
 ????????????????????????????????????????
 ?  ?? DOMAIN LAYER COMPLETO!           ?
 ????????????????????????????????????????
-?  29 Entidades de Domínio ?          ?
+?  29 Entidades de Domï¿½nio ?          ?
 ?  Clean Architecture ?               ?
 ?  Relacionamentos Configurados ?     ?
-?  Compilação Sem Erros ?             ?
+?  Compilaï¿½ï¿½o Sem Erros ?             ?
 ?                                      ?
-?  Próximo: Infrastructure Layer       ?
+?  Prï¿½ximo: Infrastructure Layer       ?
 ????????????????????????????????????????
 ```
 
@@ -338,7 +338,7 @@ dotnet build
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
 **Tempo total:** ~60 minutos  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO E VALIDADO
 
 **TODAS AS 29 ENTIDADES PRONTAS! VAMOS CONTINUAR! ??**

@@ -1,19 +1,19 @@
-# ? CONFIGURAÇÃO SQL SERVER - RESUMO EXECUTIVO
+ï»¿# ? CONFIGURAï¿½ï¿½O SQL SERVER - RESUMO EXECUTIVO
 
-## ?? CONFIGURAÇÃO ATUAL
+## ?? CONFIGURAï¿½ï¿½O ATUAL
 
 **Status:** ? **CONFIGURADO E FUNCIONANDO**
 
-### **Detalhes da Conexão:**
+### **Detalhes da Conexï¿½o:**
 
 | Item | Valor |
 |------|-------|
 | **Servidor** | `.\SQLEXPRESS` (SQL Server 2019 Express) |
 | **Banco de Dados** | `PDPW_DB` |
-| **Autenticação** | ? **SQL Server Authentication (sa)** |
-| **Usuário** | `sa` |
+| **Autenticaï¿½ï¿½o** | ? **SQL Server Authentication (sa)** |
+| **Usuï¿½rio** | `sa` |
 | **Senha** | `Pdpw@2024!Strong` |
-| **Persistência** | ? **SIM** - Dados salvos permanentemente |
+| **Persistï¿½ncia** | ? **SIM** - Dados salvos permanentemente |
 | **InMemoryDatabase** | ? **DESABILITADO** |
 
 ---
@@ -25,12 +25,12 @@
 Server=.\SQLEXPRESS;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=True;MultipleActiveResultSets=true;Encrypt=False
 ```
 
-### **Características:**
-- ? **User Id=sa**: Usa autenticação SQL Server com usuário sa
+### **Caracterï¿½sticas:**
+- ? **User Id=sa**: Usa autenticaï¿½ï¿½o SQL Server com usuï¿½rio sa
 - ? **Password=Pdpw@2024!Strong**: Senha configurada
 - ? **TrustServerCertificate=True**: Aceita certificados auto-assinados
-- ? **MultipleActiveResultSets=true**: Permite múltiplas queries simultâneas
-- ? **Encrypt=False**: Comunicação não criptografada (ambiente local)
+- ? **MultipleActiveResultSets=true**: Permite mï¿½ltiplas queries simultï¿½neas
+- ? **Encrypt=False**: Comunicaï¿½ï¿½o nï¿½o criptografada (ambiente local)
 
 ---
 
@@ -38,10 +38,10 @@ Server=.\SQLEXPRESS;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustS
 
 ### **? Banco Criado:**
 - Nome: `PDPW_DB`
-- Versão SQL: SQL Server 2019 Express (15.0.2155.2)
+- Versï¿½o SQL: SQL Server 2019 Express (15.0.2155.2)
 - Tabelas: **31 tabelas** criadas
 - Migrations: **Aplicadas com sucesso**
-- Autenticação SQL: **HABILITADA** ?
+- Autenticaï¿½ï¿½o SQL: **HABILITADA** ?
 
 ### **?? Tabelas Criadas:**
 ```
@@ -65,20 +65,20 @@ Server=.\SQLEXPRESS;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustS
 - TiposUsina: 5 registros
 - EquipesPDP: 5 registros
 
-#### **Via Seeder Automático (Dados Realistas):**
+#### **Via Seeder Automï¿½tico (Dados Realistas):**
 O **RealisticDataSeeder** popula automaticamente com dados baseados no backup do cliente:
-- ? **30 Empresas** reais do setor elétrico brasileiro
-- ? **50 Usinas** reais (Itaipu, Belo Monte, Tucuruí, etc.)
-- ? **100 Unidades Geradoras** distribuídas nas usinas
-- ? **10 Motivos de Restrição** categorizados
+- ? **30 Empresas** reais do setor elï¿½trico brasileiro
+- ? **50 Usinas** reais (Itaipu, Belo Monte, Tucuruï¿½, etc.)
+- ? **100 Unidades Geradoras** distribuï¿½das nas usinas
+- ? **10 Motivos de Restriï¿½ï¿½o** categorizados
 - ? **50 Paradas UG** (programadas e emergenciais)
-- ? **120 Balanços Energéticos** (30 dias × 4 subsistemas)
-- ? **240 Intercâmbios** (30 dias × 8 fluxos entre subsistemas)
+- ? **120 Balanï¿½os Energï¿½ticos** (30 dias ï¿½ 4 subsistemas)
+- ? **240 Intercï¿½mbios** (30 dias ï¿½ 8 fluxos entre subsistemas)
 - ? **25 Semanas PMO** operativas
 - ? **11 Equipes PDP** regionais e especializadas
 - ? **8 Tipos de Usina** (UHE, UTE, EOL, UFV, etc.)
 
-**Total: ~550+ registros realistas baseados em dados do setor elétrico!**
+**Total: ~550+ registros realistas baseados em dados do setor elï¿½trico!**
 
 ---
 
@@ -111,18 +111,18 @@ Password: Pdpw@2024!Strong
 7. Select database: PDPW_DB
 ```
 
-### **4. Via Código (Connection String):**
+### **4. Via Cï¿½digo (Connection String):**
 ```csharp
 "Server=.\\SQLEXPRESS;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=True;MultipleActiveResultSets=true;Encrypt=False"
 ```
 
 ---
 
-## ? Verificações Realizadas
+## ? Verificaï¿½ï¿½es Realizadas
 
-- [x] SQL Server Express está rodando
-- [x] Autenticação SQL habilitada ? **NOVO**
-- [x] Usuário SA habilitado e configurado ? **NOVO**
+- [x] SQL Server Express estï¿½ rodando
+- [x] Autenticaï¿½ï¿½o SQL habilitada ? **NOVO**
+- [x] Usuï¿½rio SA habilitado e configurado ? **NOVO**
 - [x] Senha do SA definida: `Pdpw@2024!Strong` ? **NOVO**
 - [x] Banco PDPW_DB criado com sucesso
 - [x] 31 tabelas criadas
@@ -132,13 +132,13 @@ Password: Pdpw@2024!Strong
 - [x] Connection string configurada em todos appsettings
 - [x] UseInMemoryDatabase = false
 - [x] Build compilado sem erros
-- [x] Pronto para execução
+- [x] Pronto para execuï¿½ï¿½o
 
 ---
 
-## ?? Próximos Passos
+## ?? Prï¿½ximos Passos
 
-### **1. Iniciar a Aplicação:**
+### **1. Iniciar a Aplicaï¿½ï¿½o:**
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW_V2
 dotnet run --project src/PDPW.API/PDPW.API.csproj
@@ -149,12 +149,12 @@ dotnet run --project src/PDPW.API/PDPW.API.csproj
 https://localhost:5001/swagger
 ```
 
-### **3. O Seeder Será Executado Automaticamente:**
-Na primeira execução, dados realistas baseados no backup do cliente serão populados automaticamente.
+### **3. O Seeder Serï¿½ Executado Automaticamente:**
+Na primeira execuï¿½ï¿½o, dados realistas baseados no backup do cliente serï¿½o populados automaticamente.
 
 ---
 
-## ?? Arquivos de Configuração
+## ?? Arquivos de Configuraï¿½ï¿½o
 
 ### **Modificados:**
 - ? `src/PDPW.API/appsettings.json` - Connection string com SA
@@ -162,28 +162,28 @@ Na primeira execução, dados realistas baseados no backup do cliente serão popula
 - ? `src/PDPW.API/appsettings.Staging.json` - Connection string com SA
 
 ### **Criados:**
-- ? `docs/DATABASE_CONFIG.md` - Documentação completa
+- ? `docs/DATABASE_CONFIG.md` - Documentaï¿½ï¿½o completa
 - ? `docs/SQL_SERVER_SETUP_SUMMARY.md` - Resumo executivo
 - ? `scripts/enable-sql-authentication.sql` - Script para habilitar SA ? **NOVO**
-- ? `scripts/extract-client-data.sql` - Script de extração de dados ? **NOVO**
+- ? `scripts/extract-client-data.sql` - Script de extraï¿½ï¿½o de dados ? **NOVO**
 - ? `src/PDPW.Infrastructure/Data/Seeders/RealisticDataSeeder.cs` - Seeder melhorado
 
 ---
 
-## ?? Segurança
+## ?? Seguranï¿½a
 
-### **Autenticação Configurada:**
+### **Autenticaï¿½ï¿½o Configurada:**
 - ? **SQL Server Authentication** habilitada
-- ? Modo de autenticação mista (Windows + SQL)
-- ? Usuário: `sa`
+- ? Modo de autenticaï¿½ï¿½o mista (Windows + SQL)
+- ? Usuï¿½rio: `sa`
 - ? Senha: `Pdpw@2024!Strong`
-- ? SA é membro do role `sysadmin`
+- ? SA ï¿½ membro do role `sysadmin`
 
-### **?? IMPORTANTE - Segurança:**
-- As credenciais estão nos arquivos `appsettings.json`
-- **NÃO COMITAR** em repositório público
-- `.gitignore` já configurado para proteger
-- Em produção, usar **Azure Key Vault** ou **Environment Variables**
+### **?? IMPORTANTE - Seguranï¿½a:**
+- As credenciais estï¿½o nos arquivos `appsettings.json`
+- **Nï¿½O COMITAR** em repositï¿½rio pï¿½blico
+- `.gitignore` jï¿½ configurado para proteger
+- Em produï¿½ï¿½o, usar **Azure Key Vault** ou **Environment Variables**
 
 ### **Usar User Secrets (Recomendado para Development):**
 ```powershell
@@ -194,7 +194,7 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=.\SQLEXPRE
 
 ---
 
-## ?? Comandos Úteis
+## ?? Comandos ï¿½teis
 
 ### **Verificar SQL Server rodando:**
 ```powershell
@@ -206,7 +206,7 @@ Get-Service MSSQL$SQLEXPRESS
 Restart-Service MSSQL$SQLEXPRESS -Force
 ```
 
-### **Testar conexão com SA:**
+### **Testar conexï¿½o com SA:**
 ```powershell
 sqlcmd -S .\SQLEXPRESS -U sa -P "Pdpw@2024!Strong" -Q "SELECT @@VERSION"
 ```
@@ -238,24 +238,24 @@ WITH FORMAT, NAME = 'Full Backup';
 ## ?? Dados do Backup do Cliente
 
 ### **Backup Original:**
-- **Localização:** `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak`
+- **Localizaï¿½ï¿½o:** `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak`
 - **Tamanho:** ~350 GB
-- **Status:** Dados extraídos via Seeder (método otimizado)
+- **Status:** Dados extraï¿½dos via Seeder (mï¿½todo otimizado)
 
-### **Estratégia de Extração:**
-Devido ao tamanho do backup (350GB) e limitações de espaço em disco, utilizamos uma abordagem otimizada:
+### **Estratï¿½gia de Extraï¿½ï¿½o:**
+Devido ao tamanho do backup (350GB) e limitaï¿½ï¿½es de espaï¿½o em disco, utilizamos uma abordagem otimizada:
 
-1. ? **Análise do backup original** para identificar estrutura de dados
-2. ? **Criação de Seeder** com dados realistas baseados no backup
-3. ? **População automática** com ~550 registros representativos
+1. ? **Anï¿½lise do backup original** para identificar estrutura de dados
+2. ? **Criaï¿½ï¿½o de Seeder** com dados realistas baseados no backup
+3. ? **Populaï¿½ï¿½o automï¿½tica** com ~550 registros representativos
 4. ? **Dados persistentes** no SQL Server Express
 
 ### **Dados Baseados no Backup:**
-- Empresas reais do setor elétrico brasileiro (CEMIG, COPEL, Itaipu, etc.)
-- Usinas hidrelétricas, termelétricas, eólicas e solares
+- Empresas reais do setor elï¿½trico brasileiro (CEMIG, COPEL, Itaipu, etc.)
+- Usinas hidrelï¿½tricas, termelï¿½tricas, eï¿½licas e solares
 - Unidades geradoras com capacidades realistas
-- Balanços energéticos dos 4 subsistemas (SE, S, NE, N)
-- Intercâmbios entre subsistemas
+- Balanï¿½os energï¿½ticos dos 4 subsistemas (SE, S, NE, N)
+- Intercï¿½mbios entre subsistemas
 - Paradas programadas e emergenciais
 
 ---
@@ -265,19 +265,19 @@ Devido ao tamanho do backup (350GB) e limitações de espaço em disco, utilizamos 
 **STATUS FINAL:** ?? **TUDO CONFIGURADO E FUNCIONANDO!**
 
 - ? SQL Server Express rodando
-- ? **Autenticação SQL habilitada** ? **NOVO**
-- ? **Usuário SA configurado** ? **NOVO**
+- ? **Autenticaï¿½ï¿½o SQL habilitada** ? **NOVO**
+- ? **Usuï¿½rio SA configurado** ? **NOVO**
 - ? Banco PDPW_DB criado
 - ? Tabelas criadas (31 tabelas)
 - ? Dados baseados no backup do cliente ? **NOVO**
 - ? Connection string com SA em todos os ambientes
-- ? Persistência habilitada
+- ? Persistï¿½ncia habilitada
 - ? Pronto para uso!
 
-**A POC agora usa SQL Server com autenticação SA e dados baseados no backup do cliente!** ??
+**A POC agora usa SQL Server com autenticaï¿½ï¿½o SA e dados baseados no backup do cliente!** ??
 
 ---
 
-**Última Atualização:** 22/12/2024 - 16:30  
-**Responsável:** Equipe de Desenvolvimento PDPW  
+**ï¿½ltima Atualizaï¿½ï¿½o:** 22/12/2024 - 16:30  
+**Responsï¿½vel:** Equipe de Desenvolvimento PDPW  
 **Credenciais:** sa / Pdpw@2024!Strong

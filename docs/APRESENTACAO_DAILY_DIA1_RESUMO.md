@@ -1,6 +1,6 @@
-# ?? DAILY DIA 1 - POC PDPW (RESUMO EXECUTIVO)
+ï»¿# ?? DAILY DIA 1 - POC PDPW (RESUMO EXECUTIVO)
 
-**Data:** 19/12/2024 | **Duração:** 5 minutos
+**Data:** 19/12/2024 | **Duraï¿½ï¿½o:** 5 minutos
 
 ---
 
@@ -11,21 +11,21 @@
 ```
 ???????????????????????????????????????
 ? 29 APIs RESTful (.NET 8)            ? 80%
-? • Clean Architecture                ?
-? • SQL Server + EF Core              ?
-? • Swagger documentado               ?
+? ï¿½ Clean Architecture                ?
+? ï¿½ SQL Server + EF Core              ?
+? ï¿½ Swagger documentado               ?
 ???????????????????????????????????????
               ?
 ???????????????????????????????????????
 ? 1 Tela Frontend (React)             ? 20%
-? • CRUD Cadastro de Usinas           ?
-? • Prova de conceito integração      ?
+? ï¿½ CRUD Cadastro de Usinas           ?
+? ï¿½ Prova de conceito integraï¿½ï¿½o      ?
 ???????????????????????????????????????
 ```
 
-**Por quê?**
-- ? APIs = base crítica e reutilizável
-- ? 1 frontend = prova integração funciona
+**Por quï¿½?**
+- ? APIs = base crï¿½tica e reutilizï¿½vel
+- ? 1 frontend = prova integraï¿½ï¿½o funciona
 - ? Swagger = testes sem depender do frontend
 
 ---
@@ -44,13 +44,13 @@
 ```
 ? API Usina com 8 endpoints
 ? CRUD completo funcionando
-? Validações de negócio
+? Validaï¿½ï¿½es de negï¿½cio
 ? Dados reais: 10 usinas (41.493 MW)
 ```
 
-### Documentação 100%
+### Documentaï¿½ï¿½o 100%
 ```
-? 24 documentos técnicos
+? 24 documentos tï¿½cnicos
 ? Guias de desenvolvimento
 ? Estrutura de testes
 ? Cronograma 6 dias
@@ -58,10 +58,10 @@
 
 ---
 
-## ?? NÚMEROS DO DIA 1
+## ?? Nï¿½MEROS DO DIA 1
 
 ```
-16.000+ linhas de código
+16.000+ linhas de cï¿½digo
 75+ arquivos criados
 5 commits no GitHub
 8 endpoints funcionais
@@ -114,38 +114,38 @@ Hoje:   ??????????  50%
 ? **Dados Reais** - 10 usinas do SIN  
 ? **Pattern Estabelecido** - Replica 28x  
 ? **Swagger Completo** - Testa sem frontend  
-? **Documentação Rica** - 24 guias técnicos  
+? **Documentaï¿½ï¿½o Rica** - 24 guias tï¿½cnicos  
 
 ---
 
-## ? APROVAÇÃO NECESSÁRIA
+## ? APROVAï¿½ï¿½O NECESSï¿½RIA
 
-**Você aprova a estratégia 80% Backend + 20% Frontend?**
+**Vocï¿½ aprova a estratï¿½gia 80% Backend + 20% Frontend?**
 
 - ? **A) Sim, aprovar** (recomendado)
-- ?? B) Ajustar proporção
+- ?? B) Ajustar proporï¿½ï¿½o
 - ?? C) Reduzir escopo
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-**Hoje após daily:**
+**Hoje apï¿½s daily:**
 1. Iniciar 4 APIs novas em paralelo
 2. Setup do ambiente React
-3. Daily amanhã: Review de progresso
+3. Daily amanhï¿½: Review de progresso
 
 **Entrega final: 27/12 (Sexta)** ??
 
 ---
 
-**Equipe pronta! Aguardando aprovação para começar DIA 2! ??**
+**Equipe pronta! Aguardando aprovaï¿½ï¿½o para comeï¿½ar DIA 2! ??**
 
 ---
 
-## ?? DEMO DISPONÍVEL
+## ?? DEMO DISPONï¿½VEL
 
-**Swagger já funcionando:**
+**Swagger jï¿½ funcionando:**
 ```
 http://localhost:5000/swagger
 ```
@@ -153,7 +153,7 @@ http://localhost:5000/swagger
 **10 usinas reais cadastradas:**
 - Itaipu (14.000 MW)
 - Belo Monte (11.233 MW)
-- Tucuruí (8.370 MW)
+- Tucuruï¿½ (8.370 MW)
 - Angra I e II (Nuclear)
 - + 5 outras
 

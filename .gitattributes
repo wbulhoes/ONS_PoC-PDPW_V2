@@ -1,0 +1,48 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Arquivos de código sempre UTF-8 com CRLF (Windows)
+*.cs     text eol=crlf encoding=utf-8
+*.csproj text eol=crlf encoding=utf-8
+*.sln    text eol=crlf encoding=utf-8
+*.json   text eol=crlf encoding=utf-8
+*.xml    text eol=crlf encoding=utf-8
+*.config text eol=crlf encoding=utf-8
+
+# Documentação sempre UTF-8
+*.md     text eol=crlf encoding=utf-8
+*.txt    text eol=crlf encoding=utf-8
+*.yml    text eol=crlf encoding=utf-8
+*.yaml   text eol=crlf encoding=utf-8
+
+# Scripts PowerShell (UTF-8 com BOM)
+*.ps1    text eol=crlf encoding=utf-8
+
+# Scripts Bash (LF, UTF-8)
+*.sh     text eol=lf encoding=utf-8
+
+# Frontend (React/TypeScript)
+*.js     text eol=crlf encoding=utf-8
+*.jsx    text eol=crlf encoding=utf-8
+*.ts     text eol=crlf encoding=utf-8
+*.tsx    text eol=crlf encoding=utf-8
+*.css    text eol=crlf encoding=utf-8
+*.scss   text eol=crlf encoding=utf-8
+*.html   text eol=crlf encoding=utf-8
+
+# Arquivos binários
+*.dll    binary
+*.exe    binary
+*.pdb    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.zip    binary
+*.7z     binary
+*.ttf    binary
+*.woff   binary
+*.woff2  binary
+*.eot    binary

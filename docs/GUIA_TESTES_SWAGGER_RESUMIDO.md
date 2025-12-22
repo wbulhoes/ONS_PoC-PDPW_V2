@@ -1,10 +1,10 @@
-# ?? GUIA DE TESTES - SWAGGER UI
+ï»¿# ?? GUIA DE TESTES - SWAGGER UI
 
 **Acesso:** http://localhost:5001/swagger
 
 ---
 
-## ?? **INÍCIO RÁPIDO**
+## ?? **INï¿½CIO Rï¿½PIDO**
 
 ### **1. Abrir Swagger**
 ```
@@ -13,7 +13,7 @@ http://localhost:5001/swagger
 
 ### **2. Testar API (Exemplo: Empresas)**
 
-1. **Expandir** a seção `Empresas`
+1. **Expandir** a seï¿½ï¿½o `Empresas`
 2. **Clicar** em `GET /api/empresas`
 3. **Clicar** em `Try it out`
 4. **Clicar** em `Execute`

@@ -1,12 +1,12 @@
-# ?? SOLUÇÃO: Configuração para Windows Containers
+ï»¿# ?? SOLUï¿½ï¿½O: Configuraï¿½ï¿½o para Windows Containers
 
 **Erro inicial:** Docker estava tentando usar imagem inexistente  
-**Solicitação cliente:** Usar Windows containers (não Linux)  
+**Solicitaï¿½ï¿½o cliente:** Usar Windows containers (nï¿½o Linux)  
 **Status:** ? **CORRIGIDO E CONFIGURADO PARA WINDOWS**
 
 ---
 
-## ? CORREÇÕES APLICADAS
+## ? CORREï¿½ï¿½ES APLICADAS
 
 ### 1. Dockerfile.backend ? Windows Nano Server
 
@@ -30,23 +30,23 @@ FROM mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2022 AS fina
 
 ### 3. docker-compose.yml ? Windows Network
 
-**Alterações:**
+**Alteraï¿½ï¿½es:**
 - ? `isolation: process` (Windows process isolation)
 - ? `driver: nat` (Windows network driver)
 - ? Paths de volume Windows
 
 ---
 
-## ?? PRÉ-REQUISITOS CRÍTICOS
+## ?? PRï¿½-REQUISITOS CRï¿½TICOS
 
 ### 1. Sistema Operacional
 
-**? Compatível:**
+**? Compatï¿½vel:**
 - Windows 10 Pro (version 1809+)
 - Windows 11 Pro
 - Windows Server 2019+
 
-**? NÃO compatível:**
+**? Nï¿½O compatï¿½vel:**
 - Windows 10/11 Home
 - Linux
 - macOS
@@ -67,9 +67,9 @@ Server:
 ```
 
 **Se mostrar `linux/amd64`, trocar:**
-1. Clicar botão direito no Docker Desktop (system tray)
+1. Clicar botï¿½o direito no Docker Desktop (system tray)
 2. Selecionar "Switch to Windows containers..."
-3. Aguardar reinicialização (~30 seg)
+3. Aguardar reinicializaï¿½ï¿½o (~30 seg)
 4. Verificar novamente
 
 ### 3. Hyper-V Habilitado
@@ -78,11 +78,11 @@ Server:
 # Verificar (PowerShell Admin)
 Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V
 
-# Se não estiver habilitado:
+# Se nï¿½o estiver habilitado:
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Enable-WindowsOptionalFeature -Online -FeatureName Containers -All
 
-# Reiniciar após habilitar
+# Reiniciar apï¿½s habilitar
 Restart-Computer
 ```
 
@@ -97,9 +97,9 @@ Restart-Computer
 docker version
 
 # Se aparecer "linux/amd64":
-# 1. Botão direito no Docker Desktop (system tray)
+# 1. Botï¿½o direito no Docker Desktop (system tray)
 # 2. "Switch to Windows containers..."
-# 3. Aguardar reinicialização
+# 3. Aguardar reinicializaï¿½ï¿½o
 
 # Verificar novamente
 docker version
@@ -134,7 +134,7 @@ docker-compose build --no-cache --progress=plain
 - Frontend (Node + IIS): ~10-20 min
 - **TOTAL: 15-35 minutos**
 
-? **Aproveite para um café!**
+? **Aproveite para um cafï¿½!**
 
 ### PASSO 4: Iniciar (3-5 min)
 
@@ -142,7 +142,7 @@ docker-compose build --no-cache --progress=plain
 # Iniciar em foreground (ver logs)
 docker-compose up
 
-# Aguardar até ver:
+# Aguardar atï¿½ ver:
 # ? pdpw-sqlserver started
 # ? pdpw-backend started
 # ? pdpw-frontend started
@@ -162,21 +162,21 @@ docker-compose up
 
 ### ? Erro: "This version of Windows doesn't support..."
 
-**Causa:** Está tentando rodar Linux containers no modo Windows ou vice-versa
+**Causa:** Estï¿½ tentando rodar Linux containers no modo Windows ou vice-versa
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Trocar para Windows containers
-# Docker Desktop ? Botão direito ? "Switch to Windows containers..."
+# Docker Desktop ? Botï¿½o direito ? "Switch to Windows containers..."
 ```
 
 ---
 
 ### ? Erro: "Hyper-V is not enabled"
 
-**Causa:** Hyper-V não está habilitado
+**Causa:** Hyper-V nï¿½o estï¿½ habilitado
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # PowerShell Admin
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
@@ -190,15 +190,15 @@ Restart-Computer
 
 ### ? Erro: "insufficient memory"
 
-**Causa:** Windows containers precisam de MAIS memória que Linux
+**Causa:** Windows containers precisam de MAIS memï¿½ria que Linux
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 1. Docker Desktop ? Settings ? Resources
 2. Memory: Aumentar para **8 GB** ou mais
 3. Apply & Restart
 
 **Requisitos:**
-- Mínimo: 8 GB RAM
+- Mï¿½nimo: 8 GB RAM
 - Recomendado: 16 GB RAM
 
 ---
@@ -207,15 +207,15 @@ Restart-Computer
 
 **Causa:** SQL Server demora 2-3 minutos para iniciar
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Ver logs
 docker-compose logs sqlserver
 
-# Aguardar até ver:
+# Aguardar atï¿½ ver:
 # "SQL Server is now ready for client connections"
 
-# Se continuar falhando, verificar memória (precisa 2 GB+)
+# Se continuar falhando, verificar memï¿½ria (precisa 2 GB+)
 ```
 
 ---
@@ -224,20 +224,20 @@ docker-compose logs sqlserver
 
 **Causa:** Download do Node.js pode falhar em Windows containers
 
-**Solução 1: Usar imagem com Node pré-instalado**
+**Soluï¿½ï¿½o 1: Usar imagem com Node prï¿½-instalado**
 ```dockerfile
 # Trocar primeira linha do Dockerfile.frontend:
 FROM stefanscherer/node-windows:20-nanoserver-ltsc2022 AS build
 ```
 
-**Solução 2: Simplificar frontend (desenvolvimento local)**
+**Soluï¿½ï¿½o 2: Simplificar frontend (desenvolvimento local)**
 ```powershell
 # Usar frontend local para desenvolvimento
 cd frontend
 npm install
 npm run dev
 
-# Docker só para backend + SQL
+# Docker sï¿½ para backend + SQL
 ```
 ---
 
@@ -245,7 +245,7 @@ npm run dev
 
 **Causa:** Porta 5000, 3000 ou 1433 em uso
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Ver processo
 netstat -ano | findstr :5000
@@ -263,7 +263,7 @@ ports:
 
 **Causa:** Firewall ou proxy bloqueando download
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Criar/editar: C:\ProgramData\Docker\config\daemon.json
 
@@ -277,16 +277,16 @@ ports:
 ```
 ---
 
-## ?? RECOMENDAÇÃO PRÁTICA
+## ?? RECOMENDAï¿½ï¿½O PRï¿½TICA
 
 ### Para a PoC (6 dias):
 
-**? OPÇÃO A: Desenvolvimento Local + Docker Final (RECOMENDADO)**
+**? OPï¿½ï¿½O A: Desenvolvimento Local + Docker Final (RECOMENDADO)**
 
 ```
 Dias 1-5: Desenvolvimento local
-?? Backend: dotnet run (mais rápido)
-?? Frontend: npm run dev (mais rápido)
+?? Backend: dotnet run (mais rï¿½pido)
+?? Frontend: npm run dev (mais rï¿½pido)
 ?? SQL: InMemory ou local
 
 Dia 6: Validar Docker Windows
@@ -294,12 +294,12 @@ Dia 6: Validar Docker Windows
 ```
 
 **Vantagens:**
-- ? Desenvolvimento MUITO mais rápido
+- ? Desenvolvimento MUITO mais rï¿½pido
 - ?? Menos problemas de ambiente
 - ?? Foco na entrega das 29 APIs
 - ?? Economiza 15-30 min a cada rebuild
 
-**? OPÇÃO B: Docker desde início**
+**? OPï¿½ï¿½O B: Docker desde inï¿½cio**
 
 ```
 Todos os dias: docker-compose up
@@ -316,34 +316,34 @@ Todos os dias: docker-compose up
 
 ---
 
-## ?? COMPARAÇÃO: Linux vs Windows Containers
+## ?? COMPARAï¿½ï¿½O: Linux vs Windows Containers
 
 | Aspecto | Linux Containers | Windows Containers |
 |---------|-----------------|-------------------|
-| **Compatibilidade** | Win/Mac/Linux | **Só Windows Pro+** |
+| **Compatibilidade** | Win/Mac/Linux | **Sï¿½ Windows Pro+** |
 | **Tamanho imagens** | ~100-200 MB | **~500 MB - 5 GB** |
 | **Tempo build** | 5-10 min | **15-30 min** |
 | **Tempo startup** | 10-30 seg | **2-3 min** |
-| **RAM necessária** | 4 GB | **8-16 GB** |
+| **RAM necessï¿½ria** | 4 GB | **8-16 GB** |
 | **Performance** | Melhor | Boa |
-| **Mercado** | Padrão | Nicho MS |
+| **Mercado** | Padrï¿½o | Nicho MS |
 
 **Por que o cliente quer Windows containers?**
 - Ambiente MS puro (Windows Server)
-- Políticas corporativas
-- Integração com infraestrutura existente
+- Polï¿½ticas corporativas
+- Integraï¿½ï¿½o com infraestrutura existente
 - Suporte Microsoft
 
 ---
 
-## ? VALIDAÇÃO FINAL
+## ? VALIDAï¿½ï¿½O FINAL
 
-### Checklist para confirmar que está funcionando:
+### Checklist para confirmar que estï¿½ funcionando:
 
 #### 1. Docker Desktop
 - [ ] Docker Desktop rodando
 - [ ] Modo: **Windows containers** (`docker version` mostra `windows/amd64`)
-- [ ] Memória alocada: 8 GB+
+- [ ] Memï¿½ria alocada: 8 GB+
 
 #### 2. Build
 - [ ] `docker-compose build` completa sem erros
@@ -355,40 +355,40 @@ Todos os dias: docker-compose up
 - [ ] `docker ps` mostra 3 containers (Status: Up)
 - [ ] Nenhum container reiniciando constantemente
 
-#### 4. Aplicação
+#### 4. Aplicaï¿½ï¿½o
 - [ ] http://localhost:5000/swagger abre e mostra endpoints
 - [ ] http://localhost:3000 abre frontend React
 - [ ] Swagger consegue executar GET /api/dadosenergeticos
 - [ ] Frontend chama API sem erro CORS
 
 #### 5. Logs
-- [ ] `docker-compose logs` sem erros críticos
+- [ ] `docker-compose logs` sem erros crï¿½ticos
 - [ ] SQL Server: "ready for client connections"
 - [ ] Backend: "Now listening on: http://[::]:80"
 - [ ] Frontend: IIS servindo arquivos
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Se Docker Funcionar ?
 
 ```powershell
-# 1. Commit das mudanças
+# 1. Commit das mudanï¿½as
 git add .
 git commit -m "[DOCKER] Configura Windows containers
 
 - Atualiza Dockerfile.backend (nanoserver)
 - Atualiza Dockerfile.frontend (IIS)
 - Configura docker-compose para Windows
-- Adiciona documentação Windows containers"
+- Adiciona documentaï¿½ï¿½o Windows containers"
 git push origin develop
 
 # 2. Criar branches de desenvolvimento
 git checkout -b feature/gestao-ativos
 git push -u origin feature/gestao-ativos
 
-# 3. Começar desenvolvimento das APIs
+# 3. Comeï¿½ar desenvolvimento das APIs
 cd src\PDPW.API
 # ...
 ```
@@ -396,7 +396,7 @@ cd src\PDPW.API
 ### Se Docker Der Problemas ??
 
 ```powershell
-# 1. Documentar erro específico
+# 1. Documentar erro especï¿½fico
 docker-compose logs > docker-error.log
 
 # 2. Usar desenvolvimento local
@@ -410,16 +410,16 @@ npm run dev
 ```
 ---
 
-## ?? DOCUMENTAÇÃO COMPLETA
+## ?? DOCUMENTAï¿½ï¿½O COMPLETA
 
 Ver guia detalhado: **[`docs/GUIA_WINDOWS_CONTAINERS.md`](GUIA_WINDOWS_CONTAINERS.md)**
 
 **Inclui:**
-- ? Pré-requisitos detalhados
+- ? Prï¿½-requisitos detalhados
 - ? Troubleshooting completo
-- ? Comandos úteis
+- ? Comandos ï¿½teis
 - ? Alternativas e workarounds
-- ? Boas práticas Windows containers
+- ? Boas prï¿½ticas Windows containers
 
 ---
 
@@ -428,10 +428,10 @@ Ver guia detalhado: **[`docs/GUIA_WINDOWS_CONTAINERS.md`](GUIA_WINDOWS_CONTAINER
 **O QUE FOI FEITO:**
 1. ? Dockerfile.backend ? Windows Nano Server
 2. ? Dockerfile.frontend ? Windows IIS
-3. ? docker-compose.yml ? Configuração Windows
-4. ? Documentação completa criada
+3. ? docker-compose.yml ? Configuraï¿½ï¿½o Windows
+4. ? Documentaï¿½ï¿½o completa criada
 
-**O QUE VOCÊ PRECISA FAZER:**
+**O QUE VOCï¿½ PRECISA FAZER:**
 1. ?? Trocar Docker para modo Windows
 2. ?? Executar `docker-compose build`
 3. ?? Executar `docker-compose up`
@@ -443,7 +443,7 @@ Ver guia detalhado: **[`docs/GUIA_WINDOWS_CONTAINERS.md`](GUIA_WINDOWS_CONTAINER
 
 **Documento atualizado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 2.0 (Windows Containers)  
+**Versï¿½o:** 2.0 (Windows Containers)  
 **Status:** ? CONFIGURADO PARA WINDOWS
 
 **Execute os passos e me avise o resultado! ????**

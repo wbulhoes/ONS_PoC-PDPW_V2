@@ -1,8 +1,8 @@
-# ?? PATTERN - GET LISTA COMPLETA
+ï»¿# ?? PATTERN - GET LISTA COMPLETA
 
 **Pattern:** GET /api/{entidade}  
-**Descrição:** Retorna lista completa de registros  
-**Aplicável a:** Todas as APIs
+**Descriï¿½ï¿½o:** Retorna lista completa de registros  
+**Aplicï¿½vel a:** Todas as APIs
 
 ---
 
@@ -17,7 +17,7 @@ Testar endpoint que retorna **todos** os registros de uma entidade.
 ### Passos
 1. Expandir endpoint `GET /api/{entidade}`
 2. Clicar em **"Try it out"**
-3. (Não há parâmetros geralmente)
+3. (Nï¿½o hï¿½ parï¿½metros geralmente)
 4. Clicar em **"Execute"**
 
 ---
@@ -47,27 +47,27 @@ Testar endpoint que retorna **todos** os registros de uma entidade.
 
 ---
 
-## ? VALIDAÇÕES
+## ? VALIDAï¿½ï¿½ES
 
-### Básicas
+### Bï¿½sicas
 - [ ] Status Code: **200 OK**
-- [ ] Response é um array `[...]`
+- [ ] Response ï¿½ um array `[...]`
 - [ ] Cada item tem todos os campos esperados
-- [ ] IDs são únicos
+- [ ] IDs sï¿½o ï¿½nicos
 
 ### Relacionamentos
-- [ ] Campos de FK são resolvidos (ex: `tipoUsina` ao invés de `tipoUsinaId`)
-- [ ] Não traz objetos completos aninhados (só nomes/códigos)
+- [ ] Campos de FK sï¿½o resolvidos (ex: `tipoUsina` ao invï¿½s de `tipoUsinaId`)
+- [ ] Nï¿½o traz objetos completos aninhados (sï¿½ nomes/cï¿½digos)
 
 ### Performance
-- [ ] < 500ms para até 100 registros
-- [ ] < 1000ms para até 1000 registros
-- [ ] Paginação implementada (se > 1000 registros)
+- [ ] < 500ms para atï¿½ 100 registros
+- [ ] < 1000ms para atï¿½ 1000 registros
+- [ ] Paginaï¿½ï¿½o implementada (se > 1000 registros)
 
 ### Edge Cases
-- [ ] Lista vazia retorna `[]` e não erro
-- [ ] Registros inativos NÃO aparecem (se soft delete)
-- [ ] Ordenação padrão funciona (geralmente por nome ou data)
+- [ ] Lista vazia retorna `[]` e nï¿½o erro
+- [ ] Registros inativos Nï¿½O aparecem (se soft delete)
+- [ ] Ordenaï¿½ï¿½o padrï¿½o funciona (geralmente por nome ou data)
 
 ---
 
@@ -100,7 +100,7 @@ public async Task<List<T>> GetAllAsync()
     return await _dbSet.ToListAsync();
 }
 
-// ? CORRETO - Com paginação
+// ? CORRETO - Com paginaï¿½ï¿½o
 public async Task<List<T>> GetAllAsync(int page = 1, int pageSize = 50)
 {
     return await _dbSet
@@ -123,7 +123,7 @@ curl http://localhost:5000/api/usinas
 ### API TipoUsina
 ```bash
 curl http://localhost:5000/api/tiposusina
-# Retorna: 5 tipos (Hidrelétrica, Térmica, etc)
+# Retorna: 5 tipos (Hidrelï¿½trica, Tï¿½rmica, etc)
 ```
 
 ### API Empresa
@@ -137,18 +137,18 @@ curl http://localhost:5000/api/empresas
 ## ?? QUANDO USAR
 
 ? **Use este pattern quando:**
-- Quantidade de registros é pequena (< 1000)
+- Quantidade de registros ï¿½ pequena (< 1000)
 - Frontend precisa de lista completa (ex: dropdowns)
 - Dados mudam pouco (podem ser cacheados)
 
-? **NÃO use quando:**
+? **Nï¿½O use quando:**
 - Muitos registros (> 1000)
 - Dados grandes (ex: com BLOBs)
-- Atualizações frequentes
+- Atualizaï¿½ï¿½es frequentes
 
-**Alternativa:** Implementar paginação, filtros ou busca
+**Alternativa:** Implementar paginaï¿½ï¿½o, filtros ou busca
 
 ---
 
-**Aplicável a:** 29/29 APIs  
+**Aplicï¿½vel a:** 29/29 APIs  
 **Implementado em:** Usina ?

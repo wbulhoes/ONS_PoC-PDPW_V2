@@ -1,4 +1,4 @@
-# ?? PARTE 2: ANÁLISE DA TELA LEGADA (10:00 - 12:00)
+ï»¿# ?? PARTE 2: ANï¿½LISE DA TELA LEGADA (10:00 - 12:00)
 
 **Tempo:** 2 horas  
 **Objetivo:** Entender funcionalidades da tela antiga para replicar no React
@@ -9,7 +9,7 @@
 
 Analisar a tela antiga de cadastro de usinas (`pdpw_act/pdpw/frmCadUsina.aspx`) para:
 1. Mapear todos os campos
-2. Entender validações
+2. Entender validaï¿½ï¿½es
 3. Identificar funcionalidades principais
 4. Definir estrutura dos componentes React
 
@@ -25,12 +25,12 @@ dir pdpw_act\pdpw
 
 # Arquivos principais:
 # - frmCadUsina.aspx (interface)
-# - frmCadUsina.aspx.cs (código behind - se existir)
+# - frmCadUsina.aspx.cs (cï¿½digo behind - se existir)
 ```
 
 ---
 
-## ?? PASSO 1: MAPEAR CAMPOS DO FORMULÁRIO (30 min)
+## ?? PASSO 1: MAPEAR CAMPOS DO FORMULï¿½RIO (30 min)
 
 ### Abrir e Analisar frmCadUsina.aspx
 
@@ -38,7 +38,7 @@ dir pdpw_act\pdpw
 - `<asp:TextBox>` ? Campos de texto
 - `<asp:DropDownList>` ? Seletores
 - `<asp:CheckBox>` ? Checkboxes
-- `<asp:Button>` ? Botões
+- `<asp:Button>` ? Botï¿½es
 - `<asp:GridView>` ? Tabelas/Listas
 
 ### Criar Documento de Mapeamento
@@ -46,89 +46,89 @@ dir pdpw_act\pdpw
 **Criar:** `docs/ANALISE_TELA_USINAS_LEGADA.md`
 
 ```markdown
-# Análise: Tela de Cadastro de Usinas (Legado)
+# Anï¿½lise: Tela de Cadastro de Usinas (Legado)
 
-## Campos do Formulário
+## Campos do Formulï¿½rio
 
-| Campo | Tipo | Obrigatório | Validação | Observações |
+| Campo | Tipo | Obrigatï¿½rio | Validaï¿½ï¿½o | Observaï¿½ï¿½es |
 |-------|------|-------------|-----------|-------------|
-| Código | TextBox | ? Sim | Alfanumérico, max 10 | Único |
+| Cï¿½digo | TextBox | ? Sim | Alfanumï¿½rico, max 10 | ï¿½nico |
 | Nome | TextBox | ? Sim | Texto, max 100 | - |
 | Tipo Usina | DropDown | ? Sim | FK TipoUsina | Lista fixa |
 | Empresa | DropDown | ? Sim | FK Empresa | Lista do BD |
-| Capacidade (MW) | TextBox | ? Sim | Numérico, > 0 | Decimal |
-| Localização | TextBox | ? Não | Texto, max 200 | Opcional |
-| Data Operação | DatePicker | ? Sim | Data válida | Não pode ser futura |
+| Capacidade (MW) | TextBox | ? Sim | Numï¿½rico, > 0 | Decimal |
+| Localizaï¿½ï¿½o | TextBox | ? Nï¿½o | Texto, max 200 | Opcional |
+| Data Operaï¿½ï¿½o | DatePicker | ? Sim | Data vï¿½lida | Nï¿½o pode ser futura |
 | Ativa | CheckBox | ? Sim | Boolean | Default: true |
 
 ## Funcionalidades
 
 ### Listagem
 - [ ] Tabela com todas as usinas
-- [ ] Colunas: Código, Nome, Tipo, Empresa, Capacidade, Ativa
-- [ ] Paginação (10, 25, 50 por página)
-- [ ] Ordenação por coluna
+- [ ] Colunas: Cï¿½digo, Nome, Tipo, Empresa, Capacidade, Ativa
+- [ ] Paginaï¿½ï¿½o (10, 25, 50 por pï¿½gina)
+- [ ] Ordenaï¿½ï¿½o por coluna
 - [ ] Filtros: Nome, Tipo, Empresa, Status (Ativa/Inativa)
-- [ ] Busca rápida (pesquisa em múltiplos campos)
+- [ ] Busca rï¿½pida (pesquisa em mï¿½ltiplos campos)
 
-### Ações
-- [ ] Novo: Abre formulário em branco
-- [ ] Editar: Abre formulário preenchido
+### Aï¿½ï¿½es
+- [ ] Novo: Abre formulï¿½rio em branco
+- [ ] Editar: Abre formulï¿½rio preenchido
 - [ ] Excluir: Confirma e remove (soft delete?)
 - [ ] Visualizar: Modo leitura
 
-### Validações
-1. Código não pode ser duplicado
-2. Nome é obrigatório (min 3 caracteres)
+### Validaï¿½ï¿½es
+1. Cï¿½digo nï¿½o pode ser duplicado
+2. Nome ï¿½ obrigatï¿½rio (min 3 caracteres)
 3. Capacidade deve ser > 0
-4. Data operação não pode ser futura
-5. Ao editar, campos obrigatórios devem estar preenchidos
+4. Data operaï¿½ï¿½o nï¿½o pode ser futura
+5. Ao editar, campos obrigatï¿½rios devem estar preenchidos
 
 ### Mensagens
 - Sucesso: "Usina cadastrada com sucesso!"
 - Erro: "Erro ao cadastrar usina: [mensagem]"
-- Confirmação exclusão: "Deseja realmente excluir esta usina?"
-- Validação: "Campo [X] é obrigatório"
+- Confirmaï¿½ï¿½o exclusï¿½o: "Deseja realmente excluir esta usina?"
+- Validaï¿½ï¿½o: "Campo [X] ï¿½ obrigatï¿½rio"
 
-## Fluxo de Navegação
+## Fluxo de Navegaï¿½ï¿½o
 
 ```
 Lista de Usinas
     |
-    ?? [Novo] ? Formulário Vazio ? [Salvar] ? Lista
+    ?? [Novo] ? Formulï¿½rio Vazio ? [Salvar] ? Lista
     |               |
     |               ?? [Cancelar] ? Lista
     |
-    ?? [Editar] ? Formulário Preenchido ? [Salvar] ? Lista
+    ?? [Editar] ? Formulï¿½rio Preenchido ? [Salvar] ? Lista
     |               |
     |               ?? [Cancelar] ? Lista
     |
-    ?? [Excluir] ? Confirmação ? Lista
+    ?? [Excluir] ? Confirmaï¿½ï¿½o ? Lista
 ```
 
-## Notas Técnicas
+## Notas Tï¿½cnicas
 
 - ASP.NET WebForms (arquitetura antiga)
-- ViewState usado (não aplicável no React)
+- ViewState usado (nï¿½o aplicï¿½vel no React)
 - Postback completo (React usa SPA)
-- Validação mista: client-side (JS) + server-side (C#)
+- Validaï¿½ï¿½o mista: client-side (JS) + server-side (C#)
 
-## Decisões para React
+## Decisï¿½es para React
 
 1. **Single Page Application (SPA)**
    - Sem postbacks
-   - Navegação via React Router
+   - Navegaï¿½ï¿½o via React Router
 
 2. **Componentes Separados**
    - UsinasList (listagem)
-   - UsinaForm (formulário)
+   - UsinaForm (formulï¿½rio)
    - UsinaFilters (filtros)
 
 3. **Estado**
-   - React useState para formulário
+   - React useState para formulï¿½rio
    - React Query ou Context para cache de dados
 
-4. **Validação**
+4. **Validaï¿½ï¿½o**
    - Client-side com Zod ou Yup
    - Feedback em tempo real
    - Server-side via API (backend valida)
@@ -143,16 +143,16 @@ Lista de Usinas
 
 ---
 
-## ?? PASSO 2: IDENTIFICAR DEPENDÊNCIAS (30 min)
+## ?? PASSO 2: IDENTIFICAR DEPENDï¿½NCIAS (30 min)
 
-### APIs Necessárias
+### APIs Necessï¿½rias
 
-**Anotar quais endpoints serão usados:**
+**Anotar quais endpoints serï¿½o usados:**
 
 1. **Usinas**
    - `GET /api/usinas` - Listar todas
    - `GET /api/usinas/{id}` - Obter por ID
-   - `GET /api/usinas/codigo/{codigo}` - Buscar por código
+   - `GET /api/usinas/codigo/{codigo}` - Buscar por cï¿½digo
    - `POST /api/usinas` - Criar nova
    - `PUT /api/usinas/{id}` - Atualizar
    - `DELETE /api/usinas/{id}` - Remover
@@ -166,11 +166,11 @@ Lista de Usinas
 **Criar:** `docs/APIS_NECESSARIAS_FRONTEND.md`
 
 ```markdown
-# APIs Necessárias para Tela de Usinas
+# APIs Necessï¿½rias para Tela de Usinas
 
-## Status de Implementação
+## Status de Implementaï¿½ï¿½o
 
-| Endpoint | Método | Status | Dev Responsável | ETA |
+| Endpoint | Mï¿½todo | Status | Dev Responsï¿½vel | ETA |
 |----------|--------|--------|-----------------|-----|
 | `/api/usinas` | GET | ?? Em andamento | DEV 1 | Hoje 13h |
 | `/api/usinas/{id}` | GET | ?? Em andamento | DEV 1 | Hoje 13h |
@@ -182,7 +182,7 @@ Lista de Usinas
 
 ## Mocks para Desenvolvimento
 
-Enquanto APIs não estão prontas, usar dados mockados:
+Enquanto APIs nï¿½o estï¿½o prontas, usar dados mockados:
 
 ```typescript
 // src/mocks/usinasMock.ts
@@ -191,7 +191,7 @@ export const usinasMock = [
     id: 1,
     codigo: 'ITU001',
     nome: 'Usina de Itaipu',
-    tipoUsina: 'Hidrelétrica',
+    tipoUsina: 'Hidrelï¿½trica',
     empresa: 'Itaipu Binacional',
     capacidadeInstalada: 14000,
     ativa: true
@@ -202,9 +202,9 @@ export const usinasMock = [
 
 ## Plano B
 
-Se APIs não estiverem prontas:
+Se APIs nï¿½o estiverem prontas:
 1. Desenvolver com mocks
-2. Criar interface (TypeScript) compatível com API esperada
+2. Criar interface (TypeScript) compatï¿½vel com API esperada
 3. Quando API estiver pronta, trocar mock por chamada real
 ```
 
@@ -218,18 +218,18 @@ Se APIs não estiverem prontas:
 
 ```
 pages/Usinas/
-??? UsinasPage.tsx          (Página principal - container)
+??? UsinasPage.tsx          (Pï¿½gina principal - container)
 ?   ??? UsinasList.tsx      (Listagem de usinas)
 ?   ?   ??? UsinaCard.tsx   (Card individual na lista)
 ?   ?   ??? UsinaFilters.tsx (Filtros de busca)
-?   ??? UsinaForm.tsx       (Formulário criar/editar)
-?       ??? UsinaFormFields.tsx (Campos do formulário)
+?   ??? UsinaForm.tsx       (Formulï¿½rio criar/editar)
+?       ??? UsinaFormFields.tsx (Campos do formulï¿½rio)
 
 components/common/
-??? Button.tsx              (Botão reutilizável)
-??? Input.tsx               (Input reutilizável)
-??? Select.tsx              (Select reutilizável)
-??? Modal.tsx               (Modal genérico)
+??? Button.tsx              (Botï¿½o reutilizï¿½vel)
+??? Input.tsx               (Input reutilizï¿½vel)
+??? Select.tsx              (Select reutilizï¿½vel)
+??? Modal.tsx               (Modal genï¿½rico)
 ??? Loading.tsx             (Spinner de loading)
 ??? ErrorMessage.tsx        (Mensagem de erro)
 ??? SuccessMessage.tsx      (Mensagem de sucesso)
@@ -245,8 +245,8 @@ types/
 ??? empresa.ts
 
 hooks/
-??? useUsinas.ts            (Hook customizado para lógica)
-??? useForm.ts              (Hook para formulário)
+??? useUsinas.ts            (Hook customizado para lï¿½gica)
+??? useForm.ts              (Hook para formulï¿½rio)
 ??? useFilters.ts           (Hook para filtros)
 ```
 
@@ -303,7 +303,7 @@ UsinasPage (Container Principal)
 
 ### UsinasPage
 ```typescript
-// Sem props, é o container principal
+// Sem props, ï¿½ o container principal
 ```
 
 ### UsinasList
@@ -410,22 +410,22 @@ setUsinas(data)
 Renderiza lista de UsinaCard
 ```
 
-## Criação de Nova Usina
+## Criaï¿½ï¿½o de Nova Usina
 
 ```
-Usuário clica [Novo]
+Usuï¿½rio clica [Novo]
     ?
 setMode('create')
     ?
 UsinaForm renderizado (modo create)
     ?
-Usuário preenche campos
+Usuï¿½rio preenche campos
     ?
-Usuário clica [Salvar]
+Usuï¿½rio clica [Salvar]
     ?
 handleSubmit(formData)
     ?
-Validações client-side
+Validaï¿½ï¿½es client-side
     ?
 usinaService.create(formData)
     ?
@@ -442,10 +442,10 @@ setMode('list')
 loadUsinas() (atualiza lista)
 ```
 
-## Edição de Usina
+## Ediï¿½ï¿½o de Usina
 
 ```
-Usuário clica [Editar] em UsinaCard
+Usuï¿½rio clica [Editar] em UsinaCard
     ?
 onEdit(usina)
     ?
@@ -454,13 +454,13 @@ setMode('edit')
     ?
 UsinaForm renderizado (modo edit, initialValues=usina)
     ?
-Usuário edita campos
+Usuï¿½rio edita campos
     ?
-Usuário clica [Salvar]
+Usuï¿½rio clica [Salvar]
     ?
 handleSubmit(formData)
     ?
-Validações
+Validaï¿½ï¿½es
     ?
 usinaService.update(usina.id, formData)
     ?
@@ -475,14 +475,14 @@ setMode('list')
 loadUsinas()
 ```
 
-## Exclusão de Usina
+## Exclusï¿½o de Usina
 
 ```
-Usuário clica [Excluir] em UsinaCard
+Usuï¿½rio clica [Excluir] em UsinaCard
     ?
-Mostra confirmação
+Mostra confirmaï¿½ï¿½o
     ?
-Usuário confirma
+Usuï¿½rio confirma
     ?
 usinaService.delete(usina.id)
     ?
@@ -498,7 +498,7 @@ loadUsinas() (atualiza lista)
 ## Filtros
 
 ```
-Usuário digita em filtro de busca
+Usuï¿½rio digita em filtro de busca
     ?
 onChange ? setFilters({ ...filters, search: value })
     ?
@@ -518,16 +518,16 @@ Lista atualizada
 ## Tratamento de Erros
 
 ```
-Erro em requisição
+Erro em requisiï¿½ï¿½o
     ?
 catch (error)
     ?
 Identificar tipo de erro:
-    ?? 400: Validação ? Mostrar erros nos campos
-    ?? 401: Não autorizado ? Redirecionar login
-    ?? 404: Não encontrado ? Mensagem específica
-    ?? 500: Erro servidor ? Mensagem genérica
-    ?? Network: Sem conexão ? Mensagem de rede
+    ?? 400: Validaï¿½ï¿½o ? Mostrar erros nos campos
+    ?? 401: Nï¿½o autorizado ? Redirecionar login
+    ?? 404: Nï¿½o encontrado ? Mensagem especï¿½fica
+    ?? 500: Erro servidor ? Mensagem genï¿½rica
+    ?? Network: Sem conexï¿½o ? Mensagem de rede
     ?
 Mostrar ErrorMessage
 ```
@@ -537,7 +537,7 @@ Mostrar ErrorMessage
 
 ## ?? DELIVERABLE DA PARTE 2
 
-Ao final das 2 horas, você deve ter:
+Ao final das 2 horas, vocï¿½ deve ter:
 
 ### Documentos Criados:
 - [ ] `docs/ANALISE_TELA_USINAS_LEGADA.md`
@@ -546,24 +546,24 @@ Ao final das 2 horas, você deve ter:
 - [ ] `docs/FLUXO_DADOS_USINAS.md`
 
 ### Conhecimento Adquirido:
-- [ ] Entende todos os campos do formulário
-- [ ] Conhece as validações necessárias
-- [ ] Sabe quais APIs serão usadas
+- [ ] Entende todos os campos do formulï¿½rio
+- [ ] Conhece as validaï¿½ï¿½es necessï¿½rias
+- [ ] Sabe quais APIs serï¿½o usadas
 - [ ] Tem estrutura de componentes definida
 - [ ] Entende fluxo de dados completo
 
 ---
 
-## ?? PRÓXIMO PASSO
+## ?? PRï¿½XIMO PASSO
 
-**Após completar análise:**
+**Apï¿½s completar anï¿½lise:**
 
-? **??? ALMOÇO (12:00 - 13:00)**
+? **??? ALMOï¿½O (12:00 - 13:00)**
 
 ? **Depois: PARTE 3 - Estrutura de Componentes**
 
 ---
 
 **Tempo estimado:** 2 horas  
-**Status:** ? Preparado para execução  
-**Resultado:** Documentação completa para guiar desenvolvimento
+**Status:** ? Preparado para execuï¿½ï¿½o  
+**Resultado:** Documentaï¿½ï¿½o completa para guiar desenvolvimento

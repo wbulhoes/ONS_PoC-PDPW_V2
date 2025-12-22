@@ -1,6 +1,28 @@
 version: '3.8'
 
 services:
+  # SQL Server Database
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: pdpw-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pdpw@2024!Strong
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+    networks:
+      - pdpw-network
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -C -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # Backend API
   backend:
     build:
       context: .
@@ -8,10 +30,16 @@ services:
     container_name: pdpw-backend
     ports:
       - "5001:80"
+      - "5002:443"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
-      - UseInMemoryDatabase=true
+      - UseInMemoryDatabase=false
+      - EnableSensitiveDataLogging=true
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=True;MultipleActiveResultSets=true;Encrypt=False
     networks:
       - pdpw-network
     healthcheck:
@@ -19,7 +47,14 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 60s
+
+volumes:
+  sqldata:
+    driver: local
+    name: pdpw_sqldata
 
 networks:
   pdpw-network:
     driver: bridge
+    name: pdpw_network

@@ -1,26 +1,26 @@
-# ?? PLANO DE RESTAURAÇÃO DO BACKUP DO CLIENTE
+ï»¿# ?? PLANO DE RESTAURAï¿½ï¿½O DO BACKUP DO CLIENTE
 
-## ?? INFORMAÇÕES DO BACKUP
+## ?? INFORMAï¿½ï¿½ES DO BACKUP
 
 ```
 Arquivo: Backup_PDP_TST.bak
 Tamanho: 43.2 GB (46,424,975,872 bytes)
 Data: 18/12/2024 10:32:38
-Localização: C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak
+Localizaï¿½ï¿½o: C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak
 ```
 
 ---
 
-## ?? ESTRATÉGIA RECOMENDADA
+## ?? ESTRATï¿½GIA RECOMENDADA
 
-### Opção 1: RESTAURAÇÃO COMPLETA (Recomendada para Análise)
-Restaurar o backup em uma instância SQL Server separada para:
+### Opï¿½ï¿½o 1: RESTAURAï¿½ï¿½O COMPLETA (Recomendada para Anï¿½lise)
+Restaurar o backup em uma instï¿½ncia SQL Server separada para:
 - ? Analisar a estrutura real do banco legado
 - ? Entender os dados existentes
 - ? Mapear relacionamentos
 - ? Extrair dados para popular a POC
 
-### Opção 2: EXTRAÇÃO SELETIVA (Recomendada para POC)
+### Opï¿½ï¿½o 2: EXTRAï¿½ï¿½O SELETIVA (Recomendada para POC)
 Restaurar, extrair dados relevantes e popular o banco da POC:
 - ? Manter a estrutura da POC (EF Core)
 - ? Popular com dados reais do cliente
@@ -29,9 +29,9 @@ Restaurar, extrair dados relevantes e popular o banco da POC:
 
 ---
 
-## ?? PASSOS PARA RESTAURAÇÃO
+## ?? PASSOS PARA RESTAURAï¿½ï¿½O
 
-### Passo 1: Verificar Informações do Backup
+### Passo 1: Verificar Informaï¿½ï¿½es do Backup
 
 ```powershell
 # Conectar ao SQL Server e verificar o backup
@@ -77,33 +77,33 @@ ORDER BY p.rows DESC;
 
 ## ?? MAPEAMENTO DE DADOS
 
-### Tabelas Prioritárias para Extração
+### Tabelas Prioritï¿½rias para Extraï¿½ï¿½o
 
-Com base nas 5 APIs já implementadas, precisamos extrair dados de:
+Com base nas 5 APIs jï¿½ implementadas, precisamos extrair dados de:
 
 1. **TiposUsina** / **TB_TIPO_USINA** (ou similar)
    - Mapear tipos de usina do legado
    - Complementar nossos 5 tipos seed
 
 2. **Empresas** / **TB_EMPRESA** (ou similar)
-   - Extrair empresas reais do setor elétrico
+   - Extrair empresas reais do setor elï¿½trico
    - Manter CNPJ, contatos, etc.
 
 3. **Usinas** / **TB_USINA** (ou similar)
    - Todas as usinas do SIN (Sistema Interligado Nacional)
-   - Capacidade instalada, localização, etc.
+   - Capacidade instalada, localizaï¿½ï¿½o, etc.
 
 4. **SemanasPMO** / **TB_SEMANA_PMO** (ou similar)
-   - Histórico de semanas PMO
-   - Datas de referência
+   - Histï¿½rico de semanas PMO
+   - Datas de referï¿½ncia
 
 5. **EquipesPDP** / **TB_EQUIPE** (ou similar)
-   - Equipes de operação reais
+   - Equipes de operaï¿½ï¿½o reais
    - Coordenadores, contatos
 
 ---
 
-## ?? SCRIPT DE MIGRAÇÃO DE DADOS
+## ?? SCRIPT DE MIGRAï¿½ï¿½O DE DADOS
 
 ### Abordagem: SQL Server ? SQL Server (Mesmo Servidor)
 
@@ -112,7 +112,7 @@ USE PDPW_PoC;
 GO
 
 -- ============================================
--- MIGRAÇÃO DE DADOS DO LEGADO PARA POC
+-- MIGRAï¿½ï¿½O DE DADOS DO LEGADO PARA POC
 -- ============================================
 
 -- 1. TIPOS DE USINA
@@ -157,7 +157,7 @@ LEFT JOIN TiposUsina t ON l.TipoUsina = t.Nome
 LEFT JOIN Empresas e ON l.CNPJEmpresa = e.CNPJ
 WHERE l.CodigoUsina NOT IN (SELECT Codigo FROM Usinas);
 
--- 4. SEMANAS PMO (últimos 2 anos)
+-- 4. SEMANAS PMO (ï¿½ltimos 2 anos)
 INSERT INTO SemanasPMO (Numero, DataInicio, DataFim, Ano, DataCriacao, Ativo)
 SELECT 
     NumeroSemana,
@@ -189,11 +189,11 @@ WHERE NomeEquipe NOT IN (SELECT Nome FROM EquipesPDP);
 
 ---
 
-## ?? SCRIPT DE ANÁLISE DO LEGADO
+## ?? SCRIPT DE ANï¿½LISE DO LEGADO
 
 ```sql
 -- ============================================
--- ANÁLISE DO BANCO LEGADO
+-- ANï¿½LISE DO BANCO LEGADO
 -- ============================================
 
 USE PDPW_Legacy;
@@ -227,23 +227,23 @@ SELECT TOP 10 * FROM TB_EQUIPE;
 
 ---
 
-## ?? CONSIDERAÇÕES IMPORTANTES
+## ?? CONSIDERAï¿½ï¿½ES IMPORTANTES
 
 ### 1. Compatibilidade de Schema
 - ? **Nomes de colunas diferentes** - Precisamos mapear nomes legado ? POC
-- ? **Tipos de dados diferentes** - Validar conversões
+- ? **Tipos de dados diferentes** - Validar conversï¿½es
 - ? **Constraints diferentes** - Adaptar FKs e Unique constraints
-- ? **Dados faltantes** - Tratar NULLs e valores padrão
+- ? **Dados faltantes** - Tratar NULLs e valores padrï¿½o
 
 ### 2. Integridade Referencial
 - ? Inserir dados na ordem correta (respeitando FKs)
 - ? Validar IDs referenciados
-- ? Tratar registros órfãos
+- ? Tratar registros ï¿½rfï¿½os
 
 ### 3. Performance
-- ?? Backup de 43 GB pode ter milhões de registros
-- ?? Inserção em massa pode demorar
-- ?? Considerar inserção em lotes (batches)
+- ?? Backup de 43 GB pode ter milhï¿½es de registros
+- ?? Inserï¿½ï¿½o em massa pode demorar
+- ?? Considerar inserï¿½ï¿½o em lotes (batches)
 
 ### 4. Limpeza de Dados
 - ?? Remover dados de teste do legado
@@ -252,43 +252,43 @@ SELECT TOP 10 * FROM TB_EQUIPE;
 
 ---
 
-## ?? PLANO DE AÇÃO RECOMENDADO
+## ?? PLANO DE Aï¿½ï¿½O RECOMENDADO
 
-### Fase 1: ANÁLISE (30 min)
+### Fase 1: ANï¿½LISE (30 min)
 1. ? Restaurar backup em banco separado `PDPW_Legacy`
-2. ? Executar scripts de análise
+2. ? Executar scripts de anï¿½lise
 3. ? Documentar estrutura encontrada
 4. ? Identificar tabelas relevantes
 
 ### Fase 2: MAPEAMENTO (1 hora)
 1. ? Criar documento de mapeamento Legado ? POC
-2. ? Identificar transformações necessárias
+2. ? Identificar transformaï¿½ï¿½es necessï¿½rias
 3. ? Validar compatibilidade de dados
-4. ? Criar queries de extração
+4. ? Criar queries de extraï¿½ï¿½o
 
-### Fase 3: EXTRAÇÃO (2 horas)
-1. ? Executar scripts de migração
+### Fase 3: EXTRAï¿½ï¿½O (2 horas)
+1. ? Executar scripts de migraï¿½ï¿½o
 2. ? Validar integridade referencial
 3. ? Conferir contagens de registros
 4. ? Testar APIs com dados reais
 
-### Fase 4: VALIDAÇÃO (1 hora)
+### Fase 4: VALIDAï¿½ï¿½O (1 hora)
 1. ? Testar todos os endpoints
 2. ? Validar relacionamentos
 3. ? Conferir dados no Swagger
-4. ? Documentar discrepâncias
+4. ? Documentar discrepï¿½ncias
 
 ---
 
-## ?? COMANDOS PARA COMEÇAR
+## ?? COMANDOS PARA COMEï¿½AR
 
 ### 1. Verificar SQL Server Local
 
 ```powershell
-# Verificar se SQL Server está rodando
+# Verificar se SQL Server estï¿½ rodando
 Get-Service -Name "MSSQL*" | Select-Object Name, Status, DisplayName
 
-# Testar conexão
+# Testar conexï¿½o
 sqlcmd -S localhost -Q "SELECT @@VERSION"
 ```
 
@@ -340,15 +340,15 @@ ORDER BY RowCounts DESC
 
 ---
 
-## ?? ALTERNATIVAS SE NÃO HOUVER SQL SERVER LOCAL
+## ?? ALTERNATIVAS SE Nï¿½O HOUVER SQL SERVER LOCAL
 
-### Opção A: Usar SQL Server Express LocalDB
+### Opï¿½ï¿½o A: Usar SQL Server Express LocalDB
 ```powershell
-# Já está configurado no projeto
+# Jï¿½ estï¿½ configurado no projeto
 # Connection String: Server=(localdb)\\mssqllocaldb;Database=PDPW_PoC;...
 ```
 
-### Opção B: Usar SQL Server em Container Docker
+### Opï¿½ï¿½o B: Usar SQL Server em Container Docker
 ```powershell
 # Subir SQL Server 2022 em Docker
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Pdpw@2024!" `
@@ -365,7 +365,7 @@ docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd `
   -Q "RESTORE DATABASE PDPW_Legacy FROM DISK = '/backups/Backup_PDP_TST.bak' WITH MOVE 'PDP_TST' TO '/var/opt/mssql/data/PDPW_Legacy.mdf', MOVE 'PDP_TST_log' TO '/var/opt/mssql/data/PDPW_Legacy_log.ldf', REPLACE"
 ```
 
-### Opção C: Usar Azure SQL Database
+### Opï¿½ï¿½o C: Usar Azure SQL Database
 ```powershell
 # Fazer upload do backup para Azure Storage
 # Restaurar usando Azure Portal ou PowerShell
@@ -373,26 +373,26 @@ docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd `
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-1. **IMEDIATO**: Verificar se SQL Server está disponível
+1. **IMEDIATO**: Verificar se SQL Server estï¿½ disponï¿½vel
 2. **CURTO PRAZO**: Restaurar backup e analisar estrutura
-3. **MÉDIO PRAZO**: Criar scripts de migração de dados
+3. **Mï¿½DIO PRAZO**: Criar scripts de migraï¿½ï¿½o de dados
 4. **LONGO PRAZO**: Popular POC com dados reais
 
 ---
 
-## ? DECISÃO RÁPIDA
+## ? DECISï¿½O Rï¿½PIDA
 
 **Gostaria que eu:**
 
 **A)** Tente restaurar o backup agora e analisar a estrutura?  
-**B)** Crie apenas os scripts SQL para você executar manualmente?  
-**C)** Configure SQL Server em Docker e restaure lá?  
+**B)** Crie apenas os scripts SQL para vocï¿½ executar manualmente?  
+**C)** Configure SQL Server em Docker e restaure lï¿½?  
 **D)** Mantenha apenas os seed data e ignore o backup por enquanto?
 
 ---
 
 **Criado em**: 19/12/2024  
 **Arquivo de Backup**: Backup_PDP_TST.bak (43.2 GB)  
-**Status**: ? Aguardando decisão
+**Status**: ? Aguardando decisï¿½o

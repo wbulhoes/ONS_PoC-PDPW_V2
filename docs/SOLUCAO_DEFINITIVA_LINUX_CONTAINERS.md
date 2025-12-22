@@ -1,30 +1,30 @@
-# ?? SOLUÇÃO DEFINITIVA: Linux Containers
+ï»¿# ?? SOLUï¿½ï¿½O DEFINITIVA: Linux Containers
 
 **Erro:** `image operating system "linux" cannot be used on this platform`  
 **Causa:** SQL Server usa imagem Linux, mas Docker estava em modo Windows  
-**Solução:** Trocar para Linux containers (RECOMENDADO)  
+**Soluï¿½ï¿½o:** Trocar para Linux containers (RECOMENDADO)  
 **Status:** ? **CORRIGIDO E OTIMIZADO**
 
 ---
 
-## ?? DECISÃO FINAL: LINUX CONTAINERS
+## ?? DECISï¿½O FINAL: LINUX CONTAINERS
 
-Após múltiplas tentativas com Windows containers, a **solução definitiva** é usar **Linux containers**.
+Apï¿½s mï¿½ltiplas tentativas com Windows containers, a **soluï¿½ï¿½o definitiva** ï¿½ usar **Linux containers**.
 
 ### Por que Linux Containers?
 
 | Requisito | Linux Containers | Windows Containers |
 |-----------|-----------------|-------------------|
-| **SQL Server** | ? Imagem oficial | ? Não existe |
+| **SQL Server** | ? Imagem oficial | ? Nï¿½o existe |
 | **Build Speed** | ? 5-10 min | ?? 15-30 min |
 | **RAM** | 4 GB | 16 GB |
-| **Compatibilidade** | Universal | Só Windows Server |
-| **Produção** | ? Padrão mercado | ?? Nicho |
-| **Hot Reload** | ? Funciona bem | ?? Problemático |
+| **Compatibilidade** | Universal | Sï¿½ Windows Server |
+| **Produï¿½ï¿½o** | ? Padrï¿½o mercado | ?? Nicho |
+| **Hot Reload** | ? Funciona bem | ?? Problemï¿½tico |
 
 ---
 
-## ? MUDANÇAS APLICADAS
+## ? MUDANï¿½AS APLICADAS
 
 ### 1. Dockerfile.backend ? Linux (.NET 8)
 
@@ -40,10 +40,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 ```
 
-**Benefícios:**
-- ? Build 3x mais rápido
+**Benefï¿½cios:**
+- ? Build 3x mais rï¿½pido
 - ? Imagem 2x menor (~200 MB vs ~500 MB)
-- ? Compatível com SQL Server
+- ? Compatï¿½vel com SQL Server
 - ? Funciona em qualquer OS (Win/Mac/Linux)
 
 ---
@@ -62,11 +62,11 @@ FROM node:20-alpine
 FROM nginx:alpine
 ```
 
-**Benefícios:**
-- ? Build 5x mais rápido (3 min vs 15 min)
+**Benefï¿½cios:**
+- ? Build 5x mais rï¿½pido (3 min vs 15 min)
 - ? Imagem 30x menor (~50 MB vs ~1.5 GB)
 - ? Nginx = servidor web robusto e leve
-- ? Alpine = imagem mínima e segura
+- ? Alpine = imagem mï¿½nima e segura
 
 ---
 
@@ -86,16 +86,16 @@ networks:
 ```yaml
 services:
   backend:
-    # sem isolation (padrão Linux)
+    # sem isolation (padrï¿½o Linux)
 networks:
   pdpw-network:
     driver: bridge
 ```
 
-**Benefícios:**
-- ? Configuração mais simples
-- ? Networking mais rápido
-- ? Padrão Docker
+**Benefï¿½cios:**
+- ? Configuraï¿½ï¿½o mais simples
+- ? Networking mais rï¿½pido
+- ? Padrï¿½o Docker
 
 ---
 
@@ -104,9 +104,9 @@ networks:
 ### PASSO 1: Trocar Docker para Linux (30 segundos)
 
 **Via Interface:**
-1. Clicar **botão direito** no Docker Desktop (system tray)
+1. Clicar **botï¿½o direito** no Docker Desktop (system tray)
 2. Selecionar **"Switch to Linux containers..."**
-3. Aguardar reinicialização
+3. Aguardar reinicializaï¿½ï¿½o
 
 **Verificar:**
 ```powershell
@@ -139,7 +139,7 @@ docker system prune -a --volumes -f
 # Build sem cache
 docker-compose build --no-cache
 
-# MUITO mais rápido que Windows! (5-10 min vs 30 min)
+# MUITO mais rï¿½pido que Windows! (5-10 min vs 30 min)
 ```
 
 **Tempo esperado:**
@@ -156,7 +156,7 @@ docker-compose build --no-cache
 # Iniciar
 docker-compose up
 
-# Aguardar até ver:
+# Aguardar atï¿½ ver:
 # ? pdpw-sqlserver started
 # ? pdpw-backend started
 # ? pdpw-frontend started
@@ -178,7 +178,7 @@ docker-compose up
 
 ---
 
-## ?? COMPARAÇÃO FINAL
+## ?? COMPARAï¿½ï¿½O FINAL
 
 ### Build Time
 
@@ -193,7 +193,7 @@ Linux Containers:
 ?? Frontend: 2-3 min
 ?? Total:    ~8 min ?
 
-GANHO: 3.75x mais rápido!
+GANHO: 3.75x mais rï¿½pido!
 ```
 
 ### Image Size
@@ -223,67 +223,67 @@ GANHO: 3x menos RAM!
 
 ---
 
-## ?? EXPLICAÇÃO PARA O CLIENTE
+## ?? EXPLICAï¿½ï¿½O PARA O CLIENTE
 
-### "Por que não Windows Containers?"
+### "Por que nï¿½o Windows Containers?"
 
-**Resposta técnica:**
+**Resposta tï¿½cnica:**
 
 ```
 Caro Cliente,
 
-Após análise técnica detalhada, recomendamos LINUX CONTAINERS pelos seguintes motivos:
+Apï¿½s anï¿½lise tï¿½cnica detalhada, recomendamos LINUX CONTAINERS pelos seguintes motivos:
 
 1. SQL SERVER
    ? Microsoft fornece SQL Server APENAS para Linux containers
-   ? Não existe imagem oficial para Windows containers
+   ? Nï¿½o existe imagem oficial para Windows containers
    
 2. PERFORMANCE
-   ? Linux: Build 3-5x mais rápido
+   ? Linux: Build 3-5x mais rï¿½pido
    ? Linux: Imagens 5-10x menores
    ? Linux: Usa 50% menos RAM
    
 3. COMPATIBILIDADE
    ? Linux containers rodam em Windows, Mac, Linux
-   ? É o padrão de mercado (95% dos containers)
+   ? ï¿½ o padrï¿½o de mercado (95% dos containers)
    
-4. PRODUÇÃO
+4. PRODUï¿½ï¿½O
    ? Azure, AWS, GCP: todos otimizados para Linux
    ? Kubernetes: melhor suporte para Linux
-   ? Custo: Linux é mais barato em cloud
+   ? Custo: Linux ï¿½ mais barato em cloud
 
-5. CÓDIGO .NET
+5. Cï¿½DIGO .NET
    ? .NET 8 funciona PERFEITAMENTE em Linux
    ? Performance IGUAL ou MELHOR que Windows
    ? Microsoft recomenda Linux para containers
 
-CONCLUSÃO:
-Linux containers são a escolha técnica correta.
-A aplicação .NET funciona identicamente.
+CONCLUSï¿½O:
+Linux containers sï¿½o a escolha tï¿½cnica correta.
+A aplicaï¿½ï¿½o .NET funciona identicamente.
 Ganhos significativos em velocidade e custo.
 
 Att,
-Equipe Técnica
+Equipe Tï¿½cnica
 ```
 
 ---
 
 ## ?? TROUBLESHOOTING
 
-### Erro: "Switch to Linux containers" não aparece
+### Erro: "Switch to Linux containers" nï¿½o aparece
 
-**Causa:** Já está em Linux  
-**Solução:** Verificar com `docker version`
+**Causa:** Jï¿½ estï¿½ em Linux  
+**Soluï¿½ï¿½o:** Verificar com `docker version`
 
 ---
 
 ### Erro: "Cannot connect to Docker daemon"
 
-**Causa:** Docker Desktop não está rodando  
-**Solução:** 
+**Causa:** Docker Desktop nï¿½o estï¿½ rodando  
+**Soluï¿½ï¿½o:** 
 ```powershell
 # Abrir Docker Desktop manualmente
-# Aguardar até status: "Docker Desktop is running"
+# Aguardar atï¿½ status: "Docker Desktop is running"
 ```
 
 ---
@@ -291,7 +291,7 @@ Equipe Técnica
 ### Erro: "port is already allocated"
 
 **Causa:** Porta em uso  
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Ver processos
 netstat -ano | findstr :5000
@@ -302,10 +302,10 @@ taskkill /PID <numero> /F
 
 ---
 
-### Erro: SQL Server não inicia
+### Erro: SQL Server nï¿½o inicia
 
 **Causa:** SQL demora 2-3 min na primeira vez  
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Ver logs
 docker-compose logs sqlserver
@@ -316,7 +316,7 @@ docker-compose logs sqlserver
 
 ---
 
-## ? CHECKLIST DE VALIDAÇÃO
+## ? CHECKLIST DE VALIDAï¿½ï¿½O
 
 ### Docker Configurado
 
@@ -337,9 +337,9 @@ docker-compose logs sqlserver
 - [ ] `docker-compose up` inicia 3 containers
 - [ ] `docker ps` mostra Status: Up
 - [ ] Nenhum container reiniciando
-- [ ] Logs sem erros críticos
+- [ ] Logs sem erros crï¿½ticos
 
-### Aplicação Funcional
+### Aplicaï¿½ï¿½o Funcional
 
 - [ ] http://localhost:5000/swagger abre
 - [ ] Swagger lista endpoints
@@ -349,7 +349,7 @@ docker-compose logs sqlserver
 
 ---
 
-## ?? COMMIT DAS MUDANÇAS
+## ?? COMMIT DAS MUDANï¿½AS
 
 ```powershell
 git add Dockerfile.backend Dockerfile.frontend docker-compose.yml
@@ -357,33 +357,33 @@ git commit -m "[DOCKER] Migra para Linux containers (definitivo)
 
 BREAKING CHANGE: Troca de Windows para Linux containers
 
-Razões:
-- SQL Server não tem imagem oficial Windows
-- Build 3-5x mais rápido
+Razï¿½es:
+- SQL Server nï¿½o tem imagem oficial Windows
+- Build 3-5x mais rï¿½pido
 - Imagens 5-10x menores
 - Usa 50% menos RAM
-- Padrão de mercado
+- Padrï¿½o de mercado
 
-Mudanças:
+Mudanï¿½as:
 - Dockerfile.backend: .NET 8 Linux
 - Dockerfile.frontend: Node Alpine + Nginx
 - docker-compose.yml: driver bridge
 - Remove isolation process (Windows only)
 
-Benefícios:
+Benefï¿½cios:
 - Build: 30 min ? 8 min
 - Size: 2 GB ? 250 MB
 - RAM: 16 GB ? 6 GB
 - Compatibilidade: Universal
 
-Código .NET funciona identicamente em Linux."
+Cï¿½digo .NET funciona identicamente em Linux."
 
 git push origin develop
 ```
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### 1. Validar Docker Funcionando ?
 
@@ -410,24 +410,24 @@ git push -u origin feature/frontend-usinas
 
 ### 3. Iniciar Desenvolvimento
 
-**RECOMENDAÇÃO:** Mesmo com Docker funcionando, use **desenvolvimento local** para velocidade:
+**RECOMENDAï¿½ï¿½O:** Mesmo com Docker funcionando, use **desenvolvimento local** para velocidade:
 
 ```powershell
 # Backend
 cd src\PDPW.API
 dotnet watch run
-# Hot reload! Edita código, vê mudanças instantâneas
+# Hot reload! Edita cï¿½digo, vï¿½ mudanï¿½as instantï¿½neas
 
 # Frontend
 cd frontend
 npm run dev
-# Hot reload! Super rápido
+# Hot reload! Super rï¿½pido
 ```
 
 **Docker para:**
-- ? Validação final (Dia 6)
-- ? Apresentação (Dia 8)
-- ? Verificar integração completa
+- ? Validaï¿½ï¿½o final (Dia 6)
+- ? Apresentaï¿½ï¿½o (Dia 8)
+- ? Verificar integraï¿½ï¿½o completa
 
 ---
 
@@ -438,7 +438,7 @@ npm run dev
 - Windows containers muito lentos
 - Build de 30 minutos
 
-**SOLUÇÃO:**
+**SOLUï¿½ï¿½O:**
 - ? Linux containers
 - ? Build de 8 minutos
 - ? Imagens 8x menores
@@ -446,15 +446,15 @@ npm run dev
 
 **RESULTADO:**
 - ? Docker funcional
-- ? 3-5x mais rápido
+- ? 3-5x mais rï¿½pido
 - ? Pronto para desenvolvimento
-- ? Padrão de mercado
+- ? Padrï¿½o de mercado
 
 ---
 
 **Documento criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** FINAL  
-**Status:** ? SOLUÇÃO DEFINITIVA
+**Versï¿½o:** FINAL  
+**Status:** ? SOLUï¿½ï¿½O DEFINITIVA
 
-**Esta é a configuração FINAL e RECOMENDADA!** ???
+**Esta ï¿½ a configuraï¿½ï¿½o FINAL e RECOMENDADA!** ???

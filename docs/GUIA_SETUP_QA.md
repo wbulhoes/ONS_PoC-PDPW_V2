@@ -1,28 +1,28 @@
-# ?? GUIA DE SETUP E TESTES AUTOMATIZADOS - POC PDPw
+ï»¿# ?? GUIA DE SETUP E TESTES AUTOMATIZADOS - POC PDPw
 
-**Projeto:** POC de Migração PDPw (VB.NET ? .NET 8 + React)  
-**Versão:** 2.0  
+**Projeto:** POC de Migraï¿½ï¿½o PDPw (VB.NET ? .NET 8 + React)  
+**Versï¿½o:** 2.0  
 **Data:** 20/12/2024  
-**Responsável Backend:** Willian Bulhões  
+**Responsï¿½vel Backend:** Willian Bulhï¿½es  
 **Para:** Equipe de QA
 
 ---
 
-## ?? ÍNDICE
+## ?? ï¿½NDICE
 
-1. [Visão Geral](#visão-geral)
-2. [Repositórios](#repositórios)
-3. [Pré-requisitos](#pré-requisitos)
+1. [Visï¿½o Geral](#visï¿½o-geral)
+2. [Repositï¿½rios](#repositï¿½rios)
+3. [Prï¿½-requisitos](#prï¿½-requisitos)
 4. [Setup do Ambiente](#setup-do-ambiente)
 5. [Estrutura do Projeto](#estrutura-do-projeto)
 6. [Executando Testes Automatizados](#executando-testes-automatizados)
 7. [Banco de Dados](#banco-de-dados)
-8. [APIs Disponíveis](#apis-disponíveis)
+8. [APIs Disponï¿½veis](#apis-disponï¿½veis)
 9. [Troubleshooting](#troubleshooting)
 
 ---
 
-## ?? VISÃO GERAL
+## ?? VISï¿½O GERAL
 
 ### **O que foi implementado:**
 
@@ -31,19 +31,19 @@
 - 62+ endpoints documentados no Swagger
 - Entity Framework Core com SQL Server
 - Repository Pattern + DTOs + AutoMapper
-- Validações com Data Annotations
+- Validaï¿½ï¿½es com Data Annotations
 
 ? **Banco de Dados (SQL Server)**
 - 201 registros reais (backup do cliente)
-- 58 registros fictícios (dados de teste)
+- 58 registros fictï¿½cios (dados de teste)
 - 10 tabelas principais
 - Migrations automatizadas
 
 ? **Sistema de Testes Automatizados**
 - 55 testes automatizados (PowerShell)
 - Coverage completo: GET, POST, PUT, DELETE, PATCH
-- Validações de dados inválidos
-- Relatórios em Markdown
+- Validaï¿½ï¿½es de dados invï¿½lidos
+- Relatï¿½rios em Markdown
 
 ? **Infraestrutura**
 - Docker Compose (SQL Server + Backend)
@@ -53,37 +53,37 @@
 
 ---
 
-## ?? REPOSITÓRIOS
+## ?? REPOSITï¿½RIOS
 
-### **Repositório Principal (Branch: feature/backend)**
+### **Repositï¿½rio Principal (Branch: feature/backend)**
 ```
 https://github.com/wbulhoes/ONS_PoC-PDPW_V2/tree/feature/backend
 ```
 
-**Contém:**
-- Código-fonte completo do backend (.NET 8)
+**Contï¿½m:**
+- Cï¿½digo-fonte completo do backend (.NET 8)
 - Docker Compose
 - Migrations do EF Core
 - Scripts SQL
-- Documentação
+- Documentaï¿½ï¿½o
 
-### **Repositório Fork (Branch: feature/apis-implementadas)**
+### **Repositï¿½rio Fork (Branch: feature/apis-implementadas)**
 ```
 https://github.com/wbulhoes/POCMigracaoPDPw/tree/feature/apis-implementadas
 ```
 
-**Contém:**
-- Mesmo código sincronizado
+**Contï¿½m:**
+- Mesmo cï¿½digo sincronizado
 - Scripts de teste automatizados
-- Relatórios de teste
+- Relatï¿½rios de teste
 
 ---
 
-## ?? PRÉ-REQUISITOS
+## ?? PRï¿½-REQUISITOS
 
-### **Software Necessário:**
+### **Software Necessï¿½rio:**
 
-| Software | Versão Mínima | Link | Obrigatório |
+| Software | Versï¿½o Mï¿½nima | Link | Obrigatï¿½rio |
 |----------|---------------|------|-------------|
 | **Docker Desktop** | 4.25+ | https://www.docker.com/products/docker-desktop | ? Sim |
 | **Git** | 2.40+ | https://git-scm.com/downloads | ? Sim |
@@ -93,7 +93,7 @@ https://github.com/wbulhoes/POCMigracaoPDPw/tree/feature/apis-implementadas
 
 *Opcional se usar apenas Docker
 
-### **Extensões VS Code Recomendadas:**
+### **Extensï¿½es VS Code Recomendadas:**
 - C# Dev Kit
 - Docker
 - PowerShell
@@ -103,15 +103,15 @@ https://github.com/wbulhoes/POCMigracaoPDPw/tree/feature/apis-implementadas
 
 ## ??? SETUP DO AMBIENTE
 
-### **PASSO 1: Clonar o Repositório**
+### **PASSO 1: Clonar o Repositï¿½rio**
 
 ```powershell
-# Opção 1: Repositório Principal
+# Opï¿½ï¿½o 1: Repositï¿½rio Principal
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW_V2.git
 cd ONS_PoC-PDPW_V2
 git checkout feature/backend
 
-# OU Opção 2: Repositório Fork
+# OU Opï¿½ï¿½o 2: Repositï¿½rio Fork
 git clone https://github.com/wbulhoes/POCMigracaoPDPw.git
 cd POCMigracaoPDPw
 git checkout feature/apis-implementadas
@@ -120,11 +120,11 @@ git checkout feature/apis-implementadas
 ### **PASSO 2: Verificar Docker**
 
 ```powershell
-# Verificar se Docker está rodando
+# Verificar se Docker estï¿½ rodando
 docker --version
 docker-compose --version
 
-# Deve retornar versões similares a:
+# Deve retornar versï¿½es similares a:
 # Docker version 24.0.x
 # Docker Compose version 2.23.x
 ```
@@ -132,19 +132,19 @@ docker-compose --version
 ### **PASSO 3: Subir o Ambiente Completo**
 
 ```powershell
-# Navegar até a raiz do projeto
+# Navegar atï¿½ a raiz do projeto
 cd C:\temp\_ONS_PoC-PDPW_V2
 
 # Subir containers (SQL Server + Backend)
 docker-compose -f docker-compose.full.yml up -d
 
-# Aguardar ~2 minutos para inicialização completa
+# Aguardar ~2 minutos para inicializaï¿½ï¿½o completa
 ```
 
 ### **PASSO 4: Verificar Status dos Containers**
 
 ```powershell
-# Verificar se os containers estão rodando
+# Verificar se os containers estï¿½o rodando
 docker ps
 
 # Deve mostrar:
@@ -156,7 +156,7 @@ docker ps
 
 Abra o navegador em: **http://localhost:5001/swagger**
 
-? Se ver a interface do Swagger, o ambiente está OK!
+? Se ver a interface do Swagger, o ambiente estï¿½ OK!
 
 ---
 
@@ -165,22 +165,22 @@ Abra o navegador em: **http://localhost:5001/swagger**
 ```
 ONS_PoC-PDPW_V2/
 ?
-??? src/                                # Código-fonte .NET 8
+??? src/                                # Cï¿½digo-fonte .NET 8
 ?   ??? PDPW.API/                      # Controllers + Swagger
 ?   ??? PDPW.Application/              # Services + DTOs
 ?   ??? PDPW.Domain/                   # Entities + Interfaces
 ?   ??? PDPW.Infrastructure/           # Repositories + EF Core
 ?
-??? scripts/                            # Scripts de automação
+??? scripts/                            # Scripts de automaï¿½ï¿½o
 ?   ??? sql/                           # Scripts SQL
 ?   ?   ??? seed-data.sql              # Dados reais (201 registros)
-?   ?   ??? generate-test-data.sql     # Dados fictícios (58 registros)
+?   ?   ??? generate-test-data.sql     # Dados fictï¿½cios (58 registros)
 ?   ?   ??? ...
 ?   ??? test/                          # Scripts de teste
-?       ??? Test-AllApis.ps1           # Testes básicos (37 testes)
+?       ??? Test-AllApis.ps1           # Testes bï¿½sicos (37 testes)
 ?       ??? Test-AllApis-Complete.ps1  # Testes completos (55 testes)
 ?
-??? docs/                               # Documentação
+??? docs/                               # Documentaï¿½ï¿½o
 ?   ??? RELATORIO_VALIDACAO_COMPLETA.md
 ?   ??? relatorio-testes-automatizados.md
 ?   ??? relatorio-testes-completos.md
@@ -189,35 +189,35 @@ ONS_PoC-PDPW_V2/
 ?
 ??? docker-compose.full.yml            # Docker Compose completo
 ??? Dockerfile                         # Build do backend
-??? README.md                          # Documentação principal
+??? README.md                          # Documentaï¿½ï¿½o principal
 ```
 
 ---
 
 ## ?? EXECUTANDO TESTES AUTOMATIZADOS
 
-### **OPÇÃO 1: Testes Básicos (37 testes)**
+### **OPï¿½ï¿½O 1: Testes Bï¿½sicos (37 testes)**
 
 ```powershell
-# Executar testes básicos
+# Executar testes bï¿½sicos
 .\scripts\test\Test-AllApis.ps1
 
-# Relatório gerado em:
+# Relatï¿½rio gerado em:
 # docs/relatorio-testes-automatizados.md
 ```
 
 **Cobertura:**
 - GET, POST endpoints
 - Leitura de dados
-- Criação de registros
+- Criaï¿½ï¿½o de registros
 
-### **OPÇÃO 2: Testes Completos (55 testes) ? RECOMENDADO**
+### **OPï¿½ï¿½O 2: Testes Completos (55 testes) ? RECOMENDADO**
 
 ```powershell
 # Executar suite completa
 .\scripts\test\Test-AllApis-Complete.ps1
 
-# Relatório gerado em:
+# Relatï¿½rio gerado em:
 # docs/relatorio-testes-completos.md
 ```
 
@@ -227,9 +227,9 @@ ONS_PoC-PDPW_V2/
 - ? PUT (2 testes)
 - ? DELETE (6 testes)
 - ? PATCH (1 teste)
-- ? Validações (9 testes)
+- ? Validaï¿½ï¿½es (9 testes)
 
-### **OPÇÃO 3: Testes Manuais via Swagger**
+### **OPï¿½ï¿½O 3: Testes Manuais via Swagger**
 
 1. Acesse: http://localhost:5001/swagger
 2. Escolha uma API (ex: Cargas)
@@ -241,28 +241,28 @@ ONS_PoC-PDPW_V2/
 ### **Resultado Esperado dos Testes:**
 
 ```
-?? ESTATÍSTICAS FINAIS:
-  • Total de Testes: 55
-  • Sucessos: 49 (?)
-  • Falhas: 6 (??)
-  • Taxa de Sucesso: 89.09%
-  • Tempo Médio: 10.27ms
-  • Duração Total: 0.75s
+?? ESTATï¿½STICAS FINAIS:
+  ï¿½ Total de Testes: 55
+  ï¿½ Sucessos: 49 (?)
+  ï¿½ Falhas: 6 (??)
+  ï¿½ Taxa de Sucesso: 89.09%
+  ï¿½ Tempo Mï¿½dio: 10.27ms
+  ï¿½ Duraï¿½ï¿½o Total: 0.75s
 
 ? Coverage:
-  • CRUD Completo: CREATE, READ, UPDATE, DELETE
-  • PATCH Operations: Processar arquivos
-  • Validações: Dados inválidos, duplicações, ranges
-  • Filtros: Por ID, data, relacionamentos, status
+  ï¿½ CRUD Completo: CREATE, READ, UPDATE, DELETE
+  ï¿½ PATCH Operations: Processar arquivos
+  ï¿½ Validaï¿½ï¿½es: Dados invï¿½lidos, duplicaï¿½ï¿½es, ranges
+  ï¿½ Filtros: Por ID, data, relacionamentos, status
 ```
 
 ---
 
 ## ??? BANCO DE DADOS
 
-### **Conexão SQL Server**
+### **Conexï¿½o SQL Server**
 
-**String de Conexão:**
+**String de Conexï¿½o:**
 ```
 Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=True;
 ```
@@ -273,9 +273,9 @@ Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;Trus
 - DBeaver
 - VS Code + SQL Server Extension
 
-### **Dados Disponíveis**
+### **Dados Disponï¿½veis**
 
-| Tabela | Registros Reais | Registros Fictícios | Total |
+| Tabela | Registros Reais | Registros Fictï¿½cios | Total |
 |--------|-----------------|---------------------|-------|
 | Empresas | 25 | 5 | 30 |
 | Usinas | 40 | 10 | 50 |
@@ -289,10 +289,10 @@ Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;Trus
 | RestricoesUG | 25 | 10 | 35 |
 | **TOTAL** | **201** | **58** | **259** |
 
-### **Gerar Dados Fictícios (Opcional)**
+### **Gerar Dados Fictï¿½cios (Opcional)**
 
 ```powershell
-# Executar script de geração de dados de teste
+# Executar script de geraï¿½ï¿½o de dados de teste
 Get-Content ".\scripts\sql\generate-test-data.sql" -Raw | `
   docker exec -i pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd `
   -S localhost -U sa -P "Pdpw@2024!Strong" -C -d PDPW_DB
@@ -309,7 +309,7 @@ docker exec pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd `
 
 ---
 
-## ?? APIs DISPONÍVEIS
+## ?? APIs DISPONï¿½VEIS
 
 ### **Base URL**
 ```
@@ -347,7 +347,7 @@ PUT    /api/cargas/{id}                           # Atualizar
 DELETE /api/cargas/{id}                           # Remover
 GET    /api/cargas/subsistema/{id}               # Por subsistema
 GET    /api/cargas/data/{data}                    # Por data
-GET    /api/cargas/periodo?dataInicio=&dataFim=   # Por período
+GET    /api/cargas/periodo?dataInicio=&dataFim=   # Por perï¿½odo
 ```
 
 #### **API ArquivosDadger**
@@ -366,18 +366,18 @@ GET    /api/arquivosdadger/processados?processado= # Por status
 ```http
 GET    /api/semanaspmo                            # Listar todas
 GET    /api/semanaspmo/atual                      # Semana atual
-GET    /api/semanaspmo/proximas?quantidade=N      # Próximas N semanas
+GET    /api/semanaspmo/proximas?quantidade=N      # Prï¿½ximas N semanas
 GET    /api/semanaspmo/ano/{ano}                  # Por ano
-GET    /api/semanaspmo/numero/{num}/ano/{ano}    # Específica
+GET    /api/semanaspmo/numero/{num}/ano/{ano}    # Especï¿½fica
 ```
 
-### **IDs Válidos para Testes**
+### **IDs Vï¿½lidos para Testes**
 
 | Entidade | Range de IDs | Exemplo |
 |----------|--------------|---------|
 | Empresas | 1-8, 101-117, 200-204 | 101 |
 | Usinas | 1-10, 201-230, 300-309 | 201 |
-| TiposUsina | 1-8 | 1 (Hidrelétrica) |
+| TiposUsina | 1-8 | 1 (Hidrelï¿½trica) |
 | SemanasPMO | 1-69, 100-104 | 3 (atual) |
 | Cargas | 1-20, 100-109 | 1 |
 | ArquivosDadger | 1-15, 100-104 | 1 |
@@ -388,7 +388,7 @@ GET    /api/semanaspmo/numero/{num}/ano/{ano}    # Específica
 
 ## ?? TROUBLESHOOTING
 
-### **Problema 1: Container não inicia**
+### **Problema 1: Container nï¿½o inicia**
 
 ```powershell
 # Verificar logs
@@ -405,23 +405,23 @@ docker-compose -f docker-compose.full.yml up -d
 
 ### **Problema 2: Erro 500 ao criar registro**
 
-**Causa:** Foreign Key inválida (ex: `semanaPMOId: 0`)
+**Causa:** Foreign Key invï¿½lida (ex: `semanaPMOId: 0`)
 
-**Solução:** Use IDs válidos conforme tabela acima
+**Soluï¿½ï¿½o:** Use IDs vï¿½lidos conforme tabela acima
 
 **Exemplo correto:**
 ```json
 {
   "nomeArquivo": "teste.dat",
-  "semanaPMOId": 3,  // ? ID válido
+  "semanaPMOId": 3,  // ? ID vï¿½lido
   "dataImportacao": "2025-12-21T10:00:00.000Z"
 }
 ```
 
-### **Problema 3: Swagger não carrega**
+### **Problema 3: Swagger nï¿½o carrega**
 
 ```powershell
-# Verificar se backend está rodando
+# Verificar se backend estï¿½ rodando
 docker ps | findstr pdpw-backend
 
 # Verificar porta
@@ -442,11 +442,11 @@ docker exec pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd `
 ### **Problema 5: Testes PowerShell falham**
 
 ```powershell
-# Verificar versão do PowerShell
+# Verificar versï¿½o do PowerShell
 $PSVersionTable.PSVersion
 # Deve ser >= 7.0
 
-# Verificar política de execução
+# Verificar polï¿½tica de execuï¿½ï¿½o
 Get-ExecutionPolicy
 # Se Restricted, executar:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -454,48 +454,48 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ---
 
-## ?? RELATÓRIOS DISPONÍVEIS
+## ?? RELATï¿½RIOS DISPONï¿½VEIS
 
-### **1. Relatório de Validação Completa**
+### **1. Relatï¿½rio de Validaï¿½ï¿½o Completa**
 ?? `docs/RELATORIO_VALIDACAO_COMPLETA.md`
 
-**Contém:**
+**Contï¿½m:**
 - Status de todos os componentes
 - 201 registros do banco
 - 8 APIs validadas
 - Exemplos de uso
 
-### **2. Relatório de Testes Automatizados**
+### **2. Relatï¿½rio de Testes Automatizados**
 ?? `docs/relatorio-testes-automatizados.md`
 
-**Contém:**
-- 37 testes básicos
+**Contï¿½m:**
+- 37 testes bï¿½sicos
 - Taxa de sucesso: 72.97%
-- Análise por API
+- Anï¿½lise por API
 - Detalhamento de falhas
 
-### **3. Relatório de Testes Completos** ?
+### **3. Relatï¿½rio de Testes Completos** ?
 ?? `docs/relatorio-testes-completos.md`
 
-**Contém:**
+**Contï¿½m:**
 - 55 testes completos
 - Taxa de sucesso: 89.09%
 - Coverage CRUD completo
-- Validações e performance
+- Validaï¿½ï¿½es e performance
 
-### **4. Guia de Correção de Erros**
+### **4. Guia de Correï¿½ï¿½o de Erros**
 ?? `docs/CORRECAO_ERRO_TESTE_API.md`
 
-**Contém:**
-- Erros comuns e soluções
-- IDs válidos para cada API
+**Contï¿½m:**
+- Erros comuns e soluï¿½ï¿½es
+- IDs vï¿½lidos para cada API
 - Exemplos de requests corretos
 
 ---
 
-## ?? CENÁRIOS DE TESTE RECOMENDADOS
+## ?? CENï¿½RIOS DE TESTE RECOMENDADOS
 
-### **Cenário 1: CRUD Completo de Cargas**
+### **Cenï¿½rio 1: CRUD Completo de Cargas**
 
 ```powershell
 # 1. Listar todas
@@ -524,11 +524,11 @@ PUT /api/cargas/{id}
 # 5. Deletar
 DELETE /api/cargas/{id}
 
-# 6. Verificar remoção
+# 6. Verificar remoï¿½ï¿½o
 GET /api/cargas/{id}  # Deve retornar 404
 ```
 
-### **Cenário 2: Processamento de Arquivo DADGER**
+### **Cenï¿½rio 2: Processamento de Arquivo DADGER**
 
 ```powershell
 # 1. Criar arquivo
@@ -547,10 +547,10 @@ GET /api/arquivosdadger/{id}
 # Deve retornar: "processado": true
 ```
 
-### **Cenário 3: Validações de Dados Inválidos**
+### **Cenï¿½rio 3: Validaï¿½ï¿½es de Dados Invï¿½lidos**
 
 ```powershell
-# 1. Subsistema inválido
+# 1. Subsistema invï¿½lido
 POST /api/cargas { "subsistemaId": "XX" }
 # Esperado: 400 Bad Request
 
@@ -565,71 +565,71 @@ POST /api/restricoesug { "dataInicio": "2025-12-30", "dataFim": "2025-12-20" }
 
 ---
 
-## ?? DOCUMENTAÇÃO ADICIONAL
+## ?? DOCUMENTAï¿½ï¿½O ADICIONAL
 
-### **Links Úteis**
+### **Links ï¿½teis**
 
 - **Swagger UI:** http://localhost:5001/swagger
-- **Repositório Principal:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2/tree/feature/backend
-- **Repositório Fork:** https://github.com/wbulhoes/POCMigracaoPDPw/tree/feature/apis-implementadas
+- **Repositï¿½rio Principal:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2/tree/feature/backend
+- **Repositï¿½rio Fork:** https://github.com/wbulhoes/POCMigracaoPDPw/tree/feature/apis-implementadas
 
 ### **Arquivos Importantes**
 
-| Arquivo | Descrição |
+| Arquivo | Descriï¿½ï¿½o |
 |---------|-----------|
-| `docker-compose.full.yml` | Configuração Docker completa |
-| `appsettings.json` | Configuração da aplicação |
+| `docker-compose.full.yml` | Configuraï¿½ï¿½o Docker completa |
+| `appsettings.json` | Configuraï¿½ï¿½o da aplicaï¿½ï¿½o |
 | `scripts/test/Test-AllApis-Complete.ps1` | Suite completa de testes |
-| `docs/RELATORIO_VALIDACAO_COMPLETA.md` | Relatório de validação |
+| `docs/RELATORIO_VALIDACAO_COMPLETA.md` | Relatï¿½rio de validaï¿½ï¿½o |
 
 ---
 
 ## ? CHECKLIST DE SETUP
 
-Use este checklist para garantir que tudo está funcionando:
+Use este checklist para garantir que tudo estï¿½ funcionando:
 
 - [ ] Docker Desktop instalado e rodando
 - [ ] Git instalado
 - [ ] PowerShell 7+ instalado
-- [ ] Repositório clonado
+- [ ] Repositï¿½rio clonado
 - [ ] Containers criados (`docker-compose up -d`)
 - [ ] Containers rodando (`docker ps`)
-- [ ] Swagger acessível (http://localhost:5001/swagger)
+- [ ] Swagger acessï¿½vel (http://localhost:5001/swagger)
 - [ ] Banco com dados (`SELECT COUNT(*) FROM Empresas` > 0)
 - [ ] Testes executados com sucesso (>80% sucesso)
-- [ ] Relatórios gerados em `docs/`
+- [ ] Relatï¿½rios gerados em `docs/`
 
 ---
 
-## ?? CONCLUSÃO
+## ?? CONCLUSï¿½O
 
 **Sistema 100% funcional e pronto para testes!**
 
 ? **Backend:** 8 APIs com 62+ endpoints  
-? **Banco:** 259 registros (201 reais + 58 fictícios)  
+? **Banco:** 259 registros (201 reais + 58 fictï¿½cios)  
 ? **Testes:** 55 testes automatizados (89% sucesso)  
-? **Docs:** Relatórios completos e atualizados  
+? **Docs:** Relatï¿½rios completos e atualizados  
 ? **Infra:** Docker + SQL Server configurados  
 
 **Taxa de Sucesso Esperada:** ~89%  
-**Performance:** ~10ms por requisição  
+**Performance:** ~10ms por requisiï¿½ï¿½o  
 **Uptime:** Containers com health checks  
 
 ---
 
 ## ?? SUPORTE
 
-**Em caso de dúvidas:**
+**Em caso de dï¿½vidas:**
 
-1. Consulte os relatórios em `docs/`
+1. Consulte os relatï¿½rios em `docs/`
 2. Verifique o Troubleshooting acima
 3. Analise os logs: `docker logs pdpw-backend`
-4. Entre em contato com Willian Bulhões
+4. Entre em contato com Willian Bulhï¿½es
 
 ---
 
-**Última Atualização:** 20/12/2024 22:30  
-**Versão do Documento:** 1.0  
+**ï¿½ltima Atualizaï¿½ï¿½o:** 20/12/2024 22:30  
+**Versï¿½o do Documento:** 1.0  
 **Status:** ? Validado e Testado
 
 ?? **Bons testes!**

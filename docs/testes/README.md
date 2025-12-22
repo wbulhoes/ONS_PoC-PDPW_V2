@@ -1,26 +1,26 @@
-# ?? GUIA DE TESTES - ESTRUTURA MODULAR
+ï»¿# ?? GUIA DE TESTES - ESTRUTURA MODULAR
 
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Data:** 19/12/2024  
 **Status:** ? Implementado
 
 ---
 
-## ?? ESTRUTURA DE DIRETÓRIOS
+## ?? ESTRUTURA DE DIRETï¿½RIOS
 
 ```
 docs/testes/
 ??? README.md (este arquivo)
 ??? _TEMPLATE_TESTES_API.md (template para criar novos testes)
 ?
-??? patterns/ (patterns reutilizáveis)
+??? patterns/ (patterns reutilizï¿½veis)
 ?   ??? PATTERN_GET_LISTA.md
 ?   ??? PATTERN_GET_ID.md
 ?   ??? PATTERN_POST_CREATE.md (TODO)
 ?   ??? PATTERN_PUT_UPDATE.md (TODO)
 ?   ??? PATTERN_DELETE.md (TODO)
 ?
-??? apis/ (testes específicos por API)
+??? apis/ (testes especï¿½ficos por API)
     ??? API_USINA_TESTES.md ?
     ??? API_TIPO_USINA_TESTES.md (TODO)
     ??? API_EMPRESA_TESTES.md (TODO)
@@ -41,46 +41,46 @@ docs/testes/
 2. **Substituir placeholders:**
    - `{NOME_API}` ? Nome da API (ex: "TipoUsina")
    - `{Entidade}` ? Nome da entidade (ex: "TipoUsina")
-   - `{QUANTIDADE}` ? Número de endpoints (ex: "5")
-   - `{DATA}` ? Data de criação
+   - `{QUANTIDADE}` ? Nï¿½mero de endpoints (ex: "5")
+   - `{DATA}` ? Data de criaï¿½ï¿½o
    - `{entidade}` ? nome em lowercase (ex: "tiposusina")
 
-3. **Preencher seções específicas:**
-   - Dados de teste disponíveis
+3. **Preencher seï¿½ï¿½es especï¿½ficas:**
+   - Dados de teste disponï¿½veis
    - Endpoints customizados
-   - Validações específicas da API
+   - Validaï¿½ï¿½es especï¿½ficas da API
 
 4. **Referenciar patterns:**
-   - Adicionar links para patterns aplicáveis
+   - Adicionar links para patterns aplicï¿½veis
    - Exemplo: "Ver `patterns/PATTERN_GET_LISTA.md`"
 
 ---
 
-## ?? PATTERNS DISPONÍVEIS
+## ?? PATTERNS DISPONï¿½VEIS
 
 ### 1. PATTERN_GET_LISTA.md
-**Aplicável a:** Todas as APIs  
-**Descrição:** GET /api/{entidade} - Lista completa  
+**Aplicï¿½vel a:** Todas as APIs  
+**Descriï¿½ï¿½o:** GET /api/{entidade} - Lista completa  
 **Status:** ? Documentado
 
 ### 2. PATTERN_GET_ID.md
-**Aplicável a:** Todas as APIs  
-**Descrição:** GET /api/{entidade}/{id} - Buscar por ID  
+**Aplicï¿½vel a:** Todas as APIs  
+**Descriï¿½ï¿½o:** GET /api/{entidade}/{id} - Buscar por ID  
 **Status:** ? Documentado
 
 ### 3. PATTERN_POST_CREATE.md
-**Aplicável a:** Todas as APIs  
-**Descrição:** POST /api/{entidade} - Criar registro  
+**Aplicï¿½vel a:** Todas as APIs  
+**Descriï¿½ï¿½o:** POST /api/{entidade} - Criar registro  
 **Status:** ? TODO
 
 ### 4. PATTERN_PUT_UPDATE.md
-**Aplicável a:** Todas as APIs  
-**Descrição:** PUT /api/{entidade}/{id} - Atualizar  
+**Aplicï¿½vel a:** Todas as APIs  
+**Descriï¿½ï¿½o:** PUT /api/{entidade}/{id} - Atualizar  
 **Status:** ? TODO
 
 ### 5. PATTERN_DELETE.md
-**Aplicável a:** Todas as APIs  
-**Descrição:** DELETE /api/{entidade}/{id} - Deletar (soft)  
+**Aplicï¿½vel a:** Todas as APIs  
+**Descriï¿½ï¿½o:** DELETE /api/{entidade}/{id} - Deletar (soft)  
 **Status:** ? TODO
 
 ---
@@ -111,12 +111,12 @@ docs/testes/
 2. Copiar template de testes
    cp _TEMPLATE_TESTES_API.md apis/API_NOVA_TESTES.md
    ?
-3. Preencher template com dados específicos
+3. Preencher template com dados especï¿½ficos
    - Seed data
    - Endpoints customizados
-   - Validações específicas
+   - Validaï¿½ï¿½es especï¿½ficas
    ?
-4. Referenciar patterns aplicáveis
+4. Referenciar patterns aplicï¿½veis
    - PATTERN_GET_LISTA.md
    - PATTERN_GET_ID.md
    - etc...
@@ -130,9 +130,9 @@ docs/testes/
 
 ## ?? EXEMPLO DE USO
 
-### Cenário: Testar API Usina
+### Cenï¿½rio: Testar API Usina
 
-1. **Abrir guia específico:**
+1. **Abrir guia especï¿½fico:**
    ```
    docs/testes/apis/API_USINA_TESTES.md
    ```
@@ -151,57 +151,57 @@ docs/testes/
 4. **Seguir checklist:**
    - [ ] Teste 1: GET lista todas
    - [ ] Teste 2: GET por ID
-   - [ ] Teste 3: GET por código
+   - [ ] Teste 3: GET por cï¿½digo
    - [ ] ... (6 mais)
 
-5. **Consultar patterns se necessário:**
-   - Dúvida sobre GET lista? Ver `patterns/PATTERN_GET_LISTA.md`
-   - Dúvida sobre 404? Ver `patterns/PATTERN_GET_ID.md`
+5. **Consultar patterns se necessï¿½rio:**
+   - Dï¿½vida sobre GET lista? Ver `patterns/PATTERN_GET_LISTA.md`
+   - Dï¿½vida sobre 404? Ver `patterns/PATTERN_GET_ID.md`
 
 ---
 
-## ?? BENEFÍCIOS DESTA ESTRUTURA
+## ?? BENEFï¿½CIOS DESTA ESTRUTURA
 
-### ? Organização
+### ? Organizaï¿½ï¿½o
 - Cada API tem seu arquivo dedicado
-- Fácil de encontrar e navegar
-- Histórico de testes documentado
+- Fï¿½cil de encontrar e navegar
+- Histï¿½rico de testes documentado
 
-### ? Reutilização
-- Patterns eliminam duplicação
-- Template acelera criação de novos testes
+### ? Reutilizaï¿½ï¿½o
+- Patterns eliminam duplicaï¿½ï¿½o
+- Template acelera criaï¿½ï¿½o de novos testes
 - Conhecimento centralizado
 
-### ? Consistência
+### ? Consistï¿½ncia
 - Todos os testes seguem mesmo formato
 - Checklist padronizado
-- Validações consistentes
+- Validaï¿½ï¿½es consistentes
 
 ### ? Escalabilidade
 - Estrutura suporta 29 APIs facilmente
 - Adicionar nova API = copiar template
 - Patterns crescem com necessidades
 
-### ? Manutenção
+### ? Manutenï¿½ï¿½o
 - Atualizar pattern = atualiza todas as APIs
-- Fácil identificar o que está documentado
+- Fï¿½cil identificar o que estï¿½ documentado
 - Status claro (? ou ?)
 
 ---
 
 ## ?? CHECKLIST DE PATTERNS
 
-### Patterns Básicos (todos os CRUDs)
+### Patterns Bï¿½sicos (todos os CRUDs)
 - [x] ? PATTERN_GET_LISTA.md
 - [x] ? PATTERN_GET_ID.md
 - [ ] ? PATTERN_POST_CREATE.md
 - [ ] ? PATTERN_PUT_UPDATE.md
 - [ ] ? PATTERN_DELETE.md
 
-### Patterns Avançados (casos específicos)
-- [ ] ? PATTERN_GET_BUSCA_CUSTOMIZADA.md (ex: por código, CPF, etc)
+### Patterns Avanï¿½ados (casos especï¿½ficos)
+- [ ] ? PATTERN_GET_BUSCA_CUSTOMIZADA.md (ex: por cï¿½digo, CPF, etc)
 - [ ] ? PATTERN_GET_LISTA_FILTRADA.md (ex: por tipo, empresa, etc)
-- [ ] ? PATTERN_POST_VALIDACAO.md (validações complexas)
+- [ ] ? PATTERN_POST_VALIDACAO.md (validaï¿½ï¿½es complexas)
 - [ ] ? PATTERN_RELACIONAMENTOS.md (Include, navigation)
 - [ ] ? PATTERN_PAGINACAO.md (quando implementar)
 - [ ] ? PATTERN_AUTENTICACAO.md (quando implementar)
@@ -209,23 +209,23 @@ docs/testes/
 
 ---
 
-## ?? ESTATÍSTICAS
+## ?? ESTATï¿½STICAS
 
 ```
 Patterns documentados:    2/12 (17%)
 APIs documentadas:        1/29 (3%)
 Endpoints testados:       8/200+ (4%)
-Cobertura de testes:      0% (ainda não automatizado)
+Cobertura de testes:      0% (ainda nï¿½o automatizado)
 
-Próximas prioridades:
-1. Completar 5 patterns básicos
+Prï¿½ximas prioridades:
+1. Completar 5 patterns bï¿½sicos
 2. Documentar APIs TipoUsina e Empresa
 3. Criar testes automatizados (xUnit)
 ```
 
 ---
 
-## ?? CONVENÇÕES
+## ?? CONVENï¿½ï¿½ES
 
 ### Nomenclatura
 ```
@@ -239,27 +239,27 @@ Template:             _TEMPLATE_{TIPO}.md
 ? = Completo e validado
 ? = TODO / Pendente
 ?? = Em progresso
-? = Bloqueado / Não aplicável
+? = Bloqueado / Nï¿½o aplicï¿½vel
 ```
 
 ### Estrutura do arquivo de teste
 ```markdown
 1. Header (API, Entidade, Endpoints, Data)
-2. Checklist rápido
-3. Dados de teste disponíveis
+2. Checklist rï¿½pido
+3. Dados de teste disponï¿½veis
 4. Testes numerados (1, 2, 3...)
 5. Comandos curl
 6. Checklist completo
-7. Observações
+7. Observaï¿½ï¿½es
 ```
 
 ---
 
-## ?? LINKS ÚTEIS
+## ?? LINKS ï¿½TEIS
 
-### Documentação Geral
+### Documentaï¿½ï¿½o Geral
 - [Guia Completo Swagger](../GUIA_TESTES_API_USINA_SWAGGER.md)
-- [Testes Rápidos CURL](../TESTES_RAPIDOS_CURL.md)
+- [Testes Rï¿½pidos CURL](../TESTES_RAPIDOS_CURL.md)
 - [Resumo DIA 1](../RESUMO_FINAL_DIA1.md)
 
 ### APIs Relacionadas
@@ -276,37 +276,37 @@ Template:             _TEMPLATE_{TIPO}.md
 
 ### Para testar rapidamente:
 1. Use o **Swagger UI** (mais visual)
-2. Consulte a **API específica** em `apis/`
-3. Para dúvidas de pattern, veja `patterns/`
+2. Consulte a **API especï¿½fica** em `apis/`
+3. Para dï¿½vidas de pattern, veja `patterns/`
 
 ### Para criar novos testes:
 1. Copie o **template**
 2. Substitua os **placeholders**
-3. Adicione **casos específicos**
-4. Referencie **patterns** aplicáveis
+3. Adicione **casos especï¿½ficos**
+4. Referencie **patterns** aplicï¿½veis
 
 ### Para manter atualizado:
 1. Marque como ? quando validado
-2. Adicione novos patterns conforme necessário
-3. Atualize estatísticas neste README
+2. Adicione novos patterns conforme necessï¿½rio
+3. Atualize estatï¿½sticas neste README
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Imediato (DIA 1)
-- [x] ? Criar estrutura de diretórios
+- [x] ? Criar estrutura de diretï¿½rios
 - [x] ? Criar template base
 - [x] ? Documentar 2 patterns (GET)
 - [x] ? Documentar API Usina completa
 - [x] ? Criar este README
 
 ### Curto Prazo (DIA 2-3)
-- [ ] Completar 5 patterns básicos (POST, PUT, DELETE)
+- [ ] Completar 5 patterns bï¿½sicos (POST, PUT, DELETE)
 - [ ] Documentar APIs TipoUsina e Empresa
-- [ ] Criar 3 patterns avançados
+- [ ] Criar 3 patterns avanï¿½ados
 
-### Médio Prazo (SEMANA 1)
+### Mï¿½dio Prazo (SEMANA 1)
 - [ ] Documentar 10 APIs principais
 - [ ] Criar testes automatizados (xUnit)
 - [ ] Implementar CI/CD com testes
@@ -318,20 +318,20 @@ Template:             _TEMPLATE_{TIPO}.md
 
 ---
 
-## ? VALIDAÇÃO
+## ? VALIDAï¿½ï¿½O
 
 Este sistema de testes foi validado com:
 - ? API Usina (8 endpoints testados)
 - ? 10 usinas reais do SIN
 - ? Swagger UI funcionando
 - ? CRUD completo testado
-- ? Validações de negócio testadas
+- ? Validaï¿½ï¿½es de negï¿½cio testadas
 
 ---
 
 **Criado por:** GitHub Copilot + Desenvolvedor  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? IMPLEMENTADO
 
-**ESTRUTURA DE TESTES MODULAR E ESCALÁVEL! ??**
+**ESTRUTURA DE TESTES MODULAR E ESCALï¿½VEL! ??**

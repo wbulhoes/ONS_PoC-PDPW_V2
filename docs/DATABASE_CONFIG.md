@@ -1,4 +1,4 @@
-# ??? CONFIGURAÇÃO DO BANCO DE DADOS - PDPW
+ï»¿# ??? CONFIGURAï¿½ï¿½O DO BANCO DE DADOS - PDPW
 
 ## ?? Credenciais de Acesso SQL Server
 
@@ -8,7 +8,7 @@
 Servidor:         localhost,1433
 Banco de Dados:   PDPW_DB
 Tipo de Auth:     SQL Server Authentication
-Usuário:          sa
+Usuï¿½rio:          sa
 Senha:            Pdpw@2024!Strong
 ```
 
@@ -43,28 +43,28 @@ Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;Trus
 ### **SQL Server Management Studio (SSMS)**
 - Download: https://aka.ms/ssmsfullsetup
 - Ferramenta oficial da Microsoft
-- Recursos completos de administração
+- Recursos completos de administraï¿½ï¿½o
 
 ### **DBeaver**
 - Download: https://dbeaver.io/download/
 - Open source e gratuito
-- Suporta múltiplos bancos de dados
+- Suporta mï¿½ltiplos bancos de dados
 
 ### **VS Code + SQL Server Extension**
-- Extensão: `ms-mssql.mssql`
+- Extensï¿½o: `ms-mssql.mssql`
 - Integrado ao VS Code
-- Leve e prático
+- Leve e prï¿½tico
 
 ---
 
-## ?? Configurações Importantes
+## ?? Configuraï¿½ï¿½es Importantes
 
-| Configuração | Valor | Descrição |
+| Configuraï¿½ï¿½o | Valor | Descriï¿½ï¿½o |
 |--------------|-------|-----------|
 | **UseInMemoryDatabase** | `false` | Desabilitado - usa SQL Server real |
 | **EnableSensitiveDataLogging** | `true` (dev) / `false` (prod) | Logs detalhados em dev |
 | **TrustServerCertificate** | `true` | Aceita certificados auto-assinados |
-| **MultipleActiveResultSets** | `true` | Permite múltiplas queries simultâneas |
+| **MultipleActiveResultSets** | `true` | Permite mï¿½ltiplas queries simultï¿½neas |
 
 ---
 
@@ -92,7 +92,7 @@ Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;Trus
 3. Clicar em "Connect"
 
 ### **3. VS Code (SQL Server Extension)**
-1. Instalar extensão `ms-mssql.mssql`
+1. Instalar extensï¿½o `ms-mssql.mssql`
 2. Pressionar `Ctrl+Shift+P`
 3. Digitar "MS SQL: Connect"
 4. Criar novo perfil:
@@ -107,7 +107,7 @@ Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;Trus
 
 ## ?? Aplicar Migrations
 
-### **Primeira execução (criar banco de dados):**
+### **Primeira execuï¿½ï¿½o (criar banco de dados):**
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW_V2
 dotnet ef database update --project src/PDPW.Infrastructure --startup-project src/PDPW.API
@@ -127,15 +127,15 @@ dotnet ef migrations add NomeDaMigration --project src/PDPW.Infrastructure --sta
 
 ## ?? Popular Banco com Dados Realistas
 
-O banco será **automaticamente populado** com dados realistas na primeira execução:
+O banco serï¿½ **automaticamente populado** com dados realistas na primeira execuï¿½ï¿½o:
 
-- ? **30 Empresas** reais do setor elétrico
+- ? **30 Empresas** reais do setor elï¿½trico
 - ? **50 Usinas** reais (Itaipu, Belo Monte, etc.)
 - ? **100 Unidades Geradoras**
-- ? **10 Motivos de Restrição**
+- ? **10 Motivos de Restriï¿½ï¿½o**
 - ? **50 Paradas UG**
-- ? **120 Balanços**
-- ? **240 Intercâmbios**
+- ? **120 Balanï¿½os**
+- ? **240 Intercï¿½mbios**
 - ? **25 Semanas PMO**
 - ? **11 Equipes PDP**
 - ? **8 Tipos de Usina**
@@ -144,12 +144,12 @@ O banco será **automaticamente populado** com dados realistas na primeira execuç
 
 ---
 
-## ?? Segurança
+## ?? Seguranï¿½a
 
 ?? **IMPORTANTE:**
-- As credenciais estão nos arquivos `appsettings.json`
-- **NÃO COMITAR** senhas em produção no Git
-- Em produção, usar **Azure Key Vault**, **Environment Variables** ou **User Secrets**
+- As credenciais estï¿½o nos arquivos `appsettings.json`
+- **Nï¿½O COMITAR** senhas em produï¿½ï¿½o no Git
+- Em produï¿½ï¿½o, usar **Azure Key Vault**, **Environment Variables** ou **User Secrets**
 
 ### **Usar User Secrets (Development):**
 ```powershell
@@ -160,11 +160,11 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost,
 
 ---
 
-## ? Checklist de Verificação
+## ? Checklist de Verificaï¿½ï¿½o
 
 - [x] SQL Server rodando na porta 1433
-- [x] Usuário `sa` configurado
-- [x] Banco `PDPW_DB` será criado automaticamente
+- [x] Usuï¿½rio `sa` configurado
+- [x] Banco `PDPW_DB` serï¿½ criado automaticamente
 - [x] Connection string configurada em todos os ambientes
 - [x] UseInMemoryDatabase = false
 - [x] Migrations prontas para aplicar
@@ -178,12 +178,12 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost,
 - Executar migrations: `dotnet ef database update`
 
 ### **Erro: "Login failed for user 'sa'"**
-- Verificar se a senha está correta: `Pdpw@2024!Strong`
-- Verificar se SQL Server está rodando
+- Verificar se a senha estï¿½ correta: `Pdpw@2024!Strong`
+- Verificar se SQL Server estï¿½ rodando
 
 ### **Erro: "A network-related or instance-specific error"**
-- Verificar se SQL Server está rodando
-- Verificar se a porta 1433 está aberta
+- Verificar se SQL Server estï¿½ rodando
+- Verificar se a porta 1433 estï¿½ aberta
 - Verificar firewall
 
 ### **Limpar banco e repopular:**
@@ -197,4 +197,4 @@ DROP DATABASE PDPW_DB;
 
 ## ?? Suporte
 
-Para dúvidas sobre configuração do banco de dados, consulte a equipe de infraestrutura ou o README principal do projeto.
+Para dï¿½vidas sobre configuraï¿½ï¿½o do banco de dados, consulte a equipe de infraestrutura ou o README principal do projeto.

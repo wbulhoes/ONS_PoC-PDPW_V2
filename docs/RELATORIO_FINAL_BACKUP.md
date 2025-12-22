@@ -1,105 +1,105 @@
-# ?? RELATÓRIO FINAL - ANÁLISE DO BACKUP DO CLIENTE
+ï»¿# ?? RELATï¿½RIO FINAL - ANï¿½LISE DO BACKUP DO CLIENTE
 
 **Data**: 19/12/2024  
-**Status**: ?? RESTAURAÇÃO NÃO VIÁVEL POR LIMITAÇÃO DE ESPAÇO  
-**Decisão**: Manter Seed Data e continuar desenvolvimento
+**Status**: ?? RESTAURAï¿½ï¿½O Nï¿½O VIï¿½VEL POR LIMITAï¿½ï¿½O DE ESPAï¿½O  
+**Decisï¿½o**: Manter Seed Data e continuar desenvolvimento
 
 ---
 
 ## ? O QUE FOI REALIZADO
 
-### 1. Análise Completa do Backup
+### 1. Anï¿½lise Completa do Backup
 - ? Backup verificado e analisado (43.2 GB compactado)
 - ? Estrutura do backup mapeada:
   - Banco: **PDP** (Sistema de Teste do ONS)
   - Tamanho: **~350 GB** descompactado
   - Data: 30/09/2024
-  - Usuário: victor.araujo (ONS)
+  - Usuï¿½rio: victor.araujo (ONS)
   - Servidor Original: TST-SQL2019-07
 
-### 2. Tentativas de Restauração
-- ? **Restauração Completa**: Testada - Falhou (espaço insuficiente)
-- ? **Extração Seletiva**: Testada - Falhou (SQL Server valida espaço total antes)
-- ? **Análise sem Restaurar**: Realizada com sucesso
+### 2. Tentativas de Restauraï¿½ï¿½o
+- ? **Restauraï¿½ï¿½o Completa**: Testada - Falhou (espaï¿½o insuficiente)
+- ? **Extraï¿½ï¿½o Seletiva**: Testada - Falhou (SQL Server valida espaï¿½o total antes)
+- ? **Anï¿½lise sem Restaurar**: Realizada com sucesso
 
 ### 3. Scripts Criados
-- ? `Restore-LegacyBackup.ps1` - Restauração completa
-- ? `Analyze-LegacyDatabase.ps1` - Análise pós-restauração
-- ? `Analyze-Backup-NoRestore.ps1` - Análise do header do backup
-- ? `Extract-LegacyData-Selective.ps1` - Extração seletiva (não viável)
+- ? `Restore-LegacyBackup.ps1` - Restauraï¿½ï¿½o completa
+- ? `Analyze-LegacyDatabase.ps1` - Anï¿½lise pï¿½s-restauraï¿½ï¿½o
+- ? `Analyze-Backup-NoRestore.ps1` - Anï¿½lise do header do backup
+- ? `Extract-LegacyData-Selective.ps1` - Extraï¿½ï¿½o seletiva (nï¿½o viï¿½vel)
 
-### 4. Documentação Criada
+### 4. Documentaï¿½ï¿½o Criada
 - ? `PLANO_RESTAURACAO_BACKUP.md` - Plano detalhado
 - ? `GUIA_RAPIDO_RESTAURACAO.md` - Guia de uso
-- ? `SITUACAO_BACKUP_CLIENTE.md` - Análise da situação
-- ? `GUIA_EXTRACAO_SELETIVA.md` - Guia de extração
-- ? `RELATORIO_FINAL_BACKUP.md` - Este relatório
+- ? `SITUACAO_BACKUP_CLIENTE.md` - Anï¿½lise da situaï¿½ï¿½o
+- ? `GUIA_EXTRACAO_SELETIVA.md` - Guia de extraï¿½ï¿½o
+- ? `RELATORIO_FINAL_BACKUP.md` - Este relatï¿½rio
 
 ---
 
 ## ? PROBLEMA IDENTIFICADO
 
-### Constraint de Espaço em Disco
+### Constraint de Espaï¿½o em Disco
 
 ```
-Espaço necessário:    ~350 GB (banco descompactado)
-Espaço disponível:    ~236 GB (disco C:)
-Déficit:             ~114 GB
+Espaï¿½o necessï¿½rio:    ~350 GB (banco descompactado)
+Espaï¿½o disponï¿½vel:    ~236 GB (disco C:)
+Dï¿½ficit:             ~114 GB
 ```
 
-**Conclusão**: Impossível restaurar o backup no ambiente atual, mesmo com extração seletiva, pois o SQL Server valida o espaço total antes de iniciar a restauração.
+**Conclusï¿½o**: Impossï¿½vel restaurar o backup no ambiente atual, mesmo com extraï¿½ï¿½o seletiva, pois o SQL Server valida o espaï¿½o total antes de iniciar a restauraï¿½ï¿½o.
 
 ---
 
-## ?? SOLUÇÕES AVALIADAS
+## ?? SOLUï¿½ï¿½ES AVALIADAS
 
-### ? Opção A: Restauração Completa
-- **Status**: Inviável
-- **Motivo**: Espaço insuficiente (faltam 114 GB)
+### ? Opï¿½ï¿½o A: Restauraï¿½ï¿½o Completa
+- **Status**: Inviï¿½vel
+- **Motivo**: Espaï¿½o insuficiente (faltam 114 GB)
 
-### ? Opção B: Extração Seletiva  
-- **Status**: Inviável no momento
-- **Motivo**: SQL Server valida espaço total mesmo para restauração parcial
+### ? Opï¿½ï¿½o B: Extraï¿½ï¿½o Seletiva  
+- **Status**: Inviï¿½vel no momento
+- **Motivo**: SQL Server valida espaï¿½o total mesmo para restauraï¿½ï¿½o parcial
 
-### ? Opção C: Liberar Espaço
+### ? Opï¿½ï¿½o C: Liberar Espaï¿½o
 - **Status**: Arriscado
-- **Motivo**: Difícil liberar 120 GB sem remover arquivos importantes
+- **Motivo**: Difï¿½cil liberar 120 GB sem remover arquivos importantes
 
-### ? Opção D: Ambiente Externo
-- **Status**: Viável mas requer setup adicional
-- **Opções**:
-  - Máquina/servidor com disco maior
-  - Azure VM temporária
+### ? Opï¿½ï¿½o D: Ambiente Externo
+- **Status**: Viï¿½vel mas requer setup adicional
+- **Opï¿½ï¿½es**:
+  - Mï¿½quina/servidor com disco maior
+  - Azure VM temporï¿½ria
   - AWS RDS
   - Docker em outro host
 
-### ? **OPÇÃO E: MANTER SEED DATA (ESCOLHIDA)**
+### ? **OPï¿½ï¿½O E: MANTER SEED DATA (ESCOLHIDA)**
 - **Status**: ? IMPLEMENTADA E FUNCIONAL
-- **Motivo**: Seed data atual é suficiente para POC
+- **Motivo**: Seed data atual ï¿½ suficiente para POC
 
 ---
 
-## ?? DECISÃO FINAL
+## ?? DECISï¿½O FINAL
 
 ### **Manter Seed Data Atual e Continuar Desenvolvimento**
 
 **Justificativa**:
 
-1. **Dados Seed São Realistas**:
-   - ? 10 usinas reais (Itaipu, Belo Monte, Tucuruí, etc.)
-   - ? 8 empresas do setor elétrico brasileiro
-   - ? 5 tipos de usina (Hidrelétrica, Térmica, Eólica, Solar, Nuclear)
+1. **Dados Seed Sï¿½o Realistas**:
+   - ? 10 usinas reais (Itaipu, Belo Monte, Tucuruï¿½, etc.)
+   - ? 8 empresas do setor elï¿½trico brasileiro
+   - ? 5 tipos de usina (Hidrelï¿½trica, Tï¿½rmica, Eï¿½lica, Solar, Nuclear)
    - ? 5 equipes PDP regionais
    - ? Dados com relacionamentos corretos
 
-2. **Não Bloqueia Desenvolvimento**:
-   - ? 5 APIs já funcionando perfeitamente
-   - ? 39 endpoints testáveis
+2. **Nï¿½o Bloqueia Desenvolvimento**:
+   - ? 5 APIs jï¿½ funcionando perfeitamente
+   - ? 39 endpoints testï¿½veis
    - ? Pode continuar implementando as 24 APIs restantes
 
-3. **Dados Reais Virão Depois**:
-   - ? Quando houver ambiente com mais espaço
-   - ? Scripts já criados e prontos
+3. **Dados Reais Virï¿½o Depois**:
+   - ? Quando houver ambiente com mais espaï¿½o
+   - ? Scripts jï¿½ criados e prontos
    - ? Processo documentado
 
 4. **Baixo Risco**:
@@ -111,38 +111,38 @@ Déficit:             ~114 GB
 
 ## ?? DADOS ATUAIS NA POC
 
-### Estatísticas do Banco PDPW_PoC:
+### Estatï¿½sticas do Banco PDPW_PoC:
 
-| Tabela | Registros | Descrição |
+| Tabela | Registros | Descriï¿½ï¿½o |
 |--------|-----------|-----------|
-| **TiposUsina** | 5 | Tipos principais de geração |
-| **Empresas** | 8 | Principais empresas do setor elétrico |
+| **TiposUsina** | 5 | Tipos principais de geraï¿½ï¿½o |
+| **Empresas** | 8 | Principais empresas do setor elï¿½trico |
 | **Usinas** | 10 | Usinas mais representativas do SIN |
-| **EquipesPDP** | 5 | Equipes regionais de operação |
-| **SemanasPMO** | 0 | A popular conforme necessário |
-| **Usuarios** | 0 | A popular conforme necessário |
+| **EquipesPDP** | 5 | Equipes regionais de operaï¿½ï¿½o |
+| **SemanasPMO** | 0 | A popular conforme necessï¿½rio |
+| **Usuarios** | 0 | A popular conforme necessï¿½rio |
 
 **Total de dados seed**: ~25 registros nas tabelas principais
 
 ---
 
-## ?? MIGRAÇÃO FUTURA DE DADOS REAIS
+## ?? MIGRAï¿½ï¿½O FUTURA DE DADOS REAIS
 
-### Quando for possível (com mais espaço):
+### Quando for possï¿½vel (com mais espaï¿½o):
 
-#### Cenário 1: Novo Ambiente/Máquina
+#### Cenï¿½rio 1: Novo Ambiente/Mï¿½quina
 ```powershell
-# 1. Em máquina com >400 GB livre
+# 1. Em mï¿½quina com >400 GB livre
 .\scripts\Restore-LegacyBackup.ps1
 
 # 2. Analisar dados
 .\scripts\Analyze-LegacyDatabase.ps1
 
-# 3. Criar scripts de migração específicos
-# Extrair dados reais conforme necessário
+# 3. Criar scripts de migraï¿½ï¿½o especï¿½ficos
+# Extrair dados reais conforme necessï¿½rio
 ```
 
-#### Cenário 2: Azure VM Temporária
+#### Cenï¿½rio 2: Azure VM Temporï¿½ria
 ```bash
 # 1. Criar VM Standard D4s v3 (500 GB SSD)
 # 2. Upload do backup via Azure Storage
@@ -151,66 +151,66 @@ Déficit:             ~114 GB
 # 5. Destruir VM
 ```
 
-#### Cenário 3: Extração Via SSMS
+#### Cenï¿½rio 3: Extraï¿½ï¿½o Via SSMS
 ```
 # 1. Abrir SQL Server Management Studio
 # 2. Tools > Import Data
 # 3. Source: From backup file
-# 4. Selecionar tabelas específicas
+# 4. Selecionar tabelas especï¿½ficas
 # 5. Destination: PDPW_PoC
 ```
 
 ---
 
-## ?? LIÇÕES APRENDIDAS
+## ?? LIï¿½ï¿½ES APRENDIDAS
 
 ### O Que Funcionou:
-1. ? Análise do header do backup sem restaurar
-2. ? Identificação rápida do problema de espaço
-3. ? Criação de scripts reutilizáveis
-4. ? Documentação completa do processo
+1. ? Anï¿½lise do header do backup sem restaurar
+2. ? Identificaï¿½ï¿½o rï¿½pida do problema de espaï¿½o
+3. ? Criaï¿½ï¿½o de scripts reutilizï¿½veis
+4. ? Documentaï¿½ï¿½o completa do processo
 5. ? Seed data bem projetado como fallback
 
-### O Que Não Funcionou:
-1. ? Extração seletiva (SQL Server valida espaço total)
-2. ? Restauração em espaço limitado
+### O Que Nï¿½o Funcionou:
+1. ? Extraï¿½ï¿½o seletiva (SQL Server valida espaï¿½o total)
+2. ? Restauraï¿½ï¿½o em espaï¿½o limitado
 3. ? NORECOVERY com acesso parcial
 
 ### Melhorias Futuras:
 1. ?? Solicitar ao cliente um subset menor do backup
-2. ?? Pedir exportação SQL de tabelas específicas
-3. ?? Usar Azure SQL Database para análise
+2. ?? Pedir exportaï¿½ï¿½o SQL de tabelas especï¿½ficas
+3. ?? Usar Azure SQL Database para anï¿½lise
 4. ?? Ferramenta terceira para leitura direta do backup
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Imediato (Hoje):
 1. ? Commit dos scripts criados no Git
-2. ? Documentação consolidada
+2. ? Documentaï¿½ï¿½o consolidada
 3. ? Continuar implementando APIs restantes
 
 ### Curto Prazo (Esta Semana):
 1. ? Implementar mais 3-4 APIs simples
-2. ? Popular SemanasPMO manualmente (últimas 10 semanas)
-3. ? Criar usuários de teste para EquipesPDP
+2. ? Popular SemanasPMO manualmente (ï¿½ltimas 10 semanas)
+3. ? Criar usuï¿½rios de teste para EquipesPDP
 
-### Médio Prazo (Próximas 2 Semanas):
+### Mï¿½dio Prazo (Prï¿½ximas 2 Semanas):
 1. ? Completar todas as 29 APIs
-2. ? Testes de integração
+2. ? Testes de integraï¿½ï¿½o
 3. ? Performance tuning
 
 ### Longo Prazo (Futuro):
 1. ? Avaliar necessidade real de dados legados completos
-2. ? Se necessário, provisionar ambiente adequado
-3. ? Migração de dados históricos (se aprovado)
+2. ? Se necessï¿½rio, provisionar ambiente adequado
+3. ? Migraï¿½ï¿½o de dados histï¿½ricos (se aprovado)
 
 ---
 
 ## ?? ARQUIVOS CRIADOS
 
-### Documentação:
+### Documentaï¿½ï¿½o:
 - ? `docs/PLANO_RESTAURACAO_BACKUP.md`
 - ? `docs/GUIA_RAPIDO_RESTAURACAO.md`
 - ? `docs/SITUACAO_BACKUP_CLIENTE.md`
@@ -230,33 +230,33 @@ Déficit:             ~114 GB
 
 ---
 
-## ?? COMUNICAÇÃO COM O CLIENTE (ONS)
+## ?? COMUNICAï¿½ï¿½O COM O CLIENTE (ONS)
 
 ### Mensagem Sugerida:
 
 ```
-Assunto: Status da Análise do Backup PDP_TST
+Assunto: Status da Anï¿½lise do Backup PDP_TST
 
 Prezado time ONS,
 
-Realizamos análise detalhada do backup Backup_PDP_TST.bak fornecido.
+Realizamos anï¿½lise detalhada do backup Backup_PDP_TST.bak fornecido.
 
-SITUAÇÃO ATUAL:
+SITUAï¿½ï¿½O ATUAL:
 - ? Backup validado e estrutura analisada
-- ??  Restauração completa não viável no ambiente atual (limitação de espaço)
+- ??  Restauraï¿½ï¿½o completa nï¿½o viï¿½vel no ambiente atual (limitaï¿½ï¿½o de espaï¿½o)
 - ? POC funcionando com dados seed realistas
 
 DADOS NA POC:
 - 10 usinas representativas do SIN
-- 8 empresas do setor elétrico
+- 8 empresas do setor elï¿½trico
 - 5 APIs completas (39 endpoints)
 
 ALTERNATIVAS PARA DADOS REAIS:
 1. Fornecer subset menor do backup (~20-30 GB)
 2. Exportar apenas tabelas principais em formato SQL
-3. Provisionar ambiente com >400 GB para análise completa
+3. Provisionar ambiente com >400 GB para anï¿½lise completa
 
-Por enquanto, seguiremos com seed data para não bloquear o desenvolvimento.
+Por enquanto, seguiremos com seed data para nï¿½o bloquear o desenvolvimento.
 
 Att,
 Equipe de Desenvolvimento
@@ -264,19 +264,19 @@ Equipe de Desenvolvimento
 
 ---
 
-## ?? CONCLUSÃO
+## ?? CONCLUSï¿½O
 
-**Status Final**: ? **ANÁLISE COMPLETA - DESENVOLVIMENTO PROSSEGUE COM SEED DATA**
+**Status Final**: ? **ANï¿½LISE COMPLETA - DESENVOLVIMENTO PROSSEGUE COM SEED DATA**
 
 ### Resumo:
 - ? Backup analisado e documentado
-- ? Scripts de restauração criados (para uso futuro)
+- ? Scripts de restauraï¿½ï¿½o criados (para uso futuro)
 - ? Seed data suficiente para POC
-- ? Desenvolvimento não bloqueado
-- ? Processo documentado para migração futura
+- ? Desenvolvimento nï¿½o bloqueado
+- ? Processo documentado para migraï¿½ï¿½o futura
 
-### Próxima Ação:
-**Continuar implementação das 24 APIs restantes com dados seed atuais**
+### Prï¿½xima Aï¿½ï¿½o:
+**Continuar implementaï¿½ï¿½o das 24 APIs restantes com dados seed atuais**
 
 ---
 
@@ -284,4 +284,4 @@ Equipe de Desenvolvimento
 **Desenvolvedor**: Willian  
 **Data**: 19/12/2024  
 **Tempo Investido**: ~2 horas  
-**Resultado**: ? Análise completa + Scripts prontos + Decisão tomada
+**Resultado**: ? Anï¿½lise completa + Scripts prontos + Decisï¿½o tomada

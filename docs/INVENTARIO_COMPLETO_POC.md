@@ -1,9 +1,9 @@
-# ?? INVENTÁRIO COMPLETO DA POC - APIs E ESTRUTURAS
+ï»¿# ?? INVENTï¿½RIO COMPLETO DA POC - APIs E ESTRUTURAS
 
-**Projeto:** PDPw - Programação Diária de Produção  
-**Cliente:** ONS (Operador Nacional do Sistema Elétrico)  
+**Projeto:** PDPw - Programaï¿½ï¿½o Diï¿½ria de Produï¿½ï¿½o  
+**Cliente:** ONS (Operador Nacional do Sistema Elï¿½trico)  
 **Data:** 2025-01-20  
-**Repositório:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2  
+**Repositï¿½rio:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2  
 **Status:** 31% Completo
 
 ---
@@ -53,7 +53,7 @@ DELETE /api/tiposusina/{id}               - Deletar
 - ? Service: `ITipoUsinaService` + `TipoUsinaService`
 - ? Repository: `ITipoUsinaRepository` + `TipoUsinaRepository`
 - ? Entity: `TipoUsina` (Domain)
-- ? Seed Data: 5 tipos (Hidrelétrica, Térmica, Eólica, Solar, Nuclear)
+- ? Seed Data: 5 tipos (Hidrelï¿½trica, Tï¿½rmica, Eï¿½lica, Solar, Nuclear)
 
 ---
 
@@ -64,7 +64,7 @@ DELETE /api/tiposusina/{id}               - Deletar
 ```http
 GET    /api/usinas                        - Lista todas
 GET    /api/usinas/{id}                   - Por ID
-GET    /api/usinas/codigo/{codigo}        - Por código ONS
+GET    /api/usinas/codigo/{codigo}        - Por cï¿½digo ONS
 GET    /api/usinas/tipo/{tipoId}          - Por tipo
 GET    /api/usinas/empresa/{empresaId}    - Por empresa
 POST   /api/usinas                        - Criar
@@ -77,7 +77,7 @@ DELETE /api/usinas/{id}                   - Deletar
 - ? Service: `IUsinaService` + `UsinaService`
 - ? Repository: `IUsinaRepository` + `UsinaRepository`
 - ? Entity: `Usina` (Domain)
-- ? Seed Data: 10 usinas (Itaipu, Belo Monte, Tucuruí, Angra I, Angra II, Santo Antônio, Jirau, Sobradinho, Furnas, Estreito)
+- ? Seed Data: 10 usinas (Itaipu, Belo Monte, Tucuruï¿½, Angra I, Angra II, Santo Antï¿½nio, Jirau, Sobradinho, Furnas, Estreito)
 - ? Testes: `UsinaServiceTests.cs` (completo)
 
 ---
@@ -91,8 +91,8 @@ GET    /api/semanaspmo                         - Lista todas
 GET    /api/semanaspmo/{id}                    - Por ID
 GET    /api/semanaspmo/ano/{ano}               - Por ano
 GET    /api/semanaspmo/atual                   - Semana atual
-GET    /api/semanaspmo/proximas?quantidade=N   - Próximas N semanas
-GET    /api/semanaspmo/numero/{num}/ano/{ano} - Específica
+GET    /api/semanaspmo/proximas?quantidade=N   - Prï¿½ximas N semanas
+GET    /api/semanaspmo/numero/{num}/ano/{ano} - Especï¿½fica
 POST   /api/semanaspmo                         - Criar
 PUT    /api/semanaspmo/{id}                    - Atualizar
 DELETE /api/semanaspmo/{id}                    - Deletar
@@ -106,9 +106,9 @@ DELETE /api/semanaspmo/{id}                    - Deletar
 - ? Seed Data: 3 semanas de 2025
 
 **Funcionalidades Especiais:**
-- ? Cálculo automático de semana atual
-- ? Busca de próximas N semanas
-- ? Validação de duplicidade (número + ano)
+- ? Cï¿½lculo automï¿½tico de semana atual
+- ? Busca de prï¿½ximas N semanas
+- ? Validaï¿½ï¿½o de duplicidade (nï¿½mero + ano)
 
 ---
 
@@ -134,14 +134,14 @@ DELETE /api/equipespdp/{id}               - Deletar
 
 ---
 
-### ? **6. Dados Energéticos**
+### ? **6. Dados Energï¿½ticos**
 **Controller:** `DadosEnergeticosController.cs`  
 **Endpoints:** 6
 
 ```http
 GET    /api/dadosenergeticos                        - Lista todos
 GET    /api/dadosenergeticos/{id}                   - Por ID
-GET    /api/dadosenergeticos/periodo?dataInicio=&dataFim= - Por período
+GET    /api/dadosenergeticos/periodo?dataInicio=&dataFim= - Por perï¿½odo
 POST   /api/dadosenergeticos                        - Criar
 PUT    /api/dadosenergeticos/{id}                   - Atualizar
 DELETE /api/dadosenergeticos/{id}                   - Deletar
@@ -155,7 +155,7 @@ DELETE /api/dadosenergeticos/{id}                   - Deletar
 
 ---
 
-### ? **7. Cargas Elétricas** ? NOVA
+### ? **7. Cargas Elï¿½tricas** ? NOVA
 **Controller:** `CargasController.cs`  
 **Endpoints:** 8
 
@@ -163,8 +163,8 @@ DELETE /api/dadosenergeticos/{id}                   - Deletar
 GET    /api/cargas                              - Lista todas
 GET    /api/cargas/{id}                         - Por ID
 GET    /api/cargas/subsistema/{subsistemaId}   - Por subsistema
-GET    /api/cargas/periodo?dataInicio=&dataFim= - Por período
-GET    /api/cargas/data/{data}                  - Por data específica
+GET    /api/cargas/periodo?dataInicio=&dataFim= - Por perï¿½odo
+GET    /api/cargas/data/{data}                  - Por data especï¿½fica
 POST   /api/cargas                              - Criar
 PUT    /api/cargas/{id}                         - Atualizar
 DELETE /api/cargas/{id}                         - Deletar
@@ -179,8 +179,8 @@ DELETE /api/cargas/{id}                         - Deletar
 
 **Funcionalidades Especiais:**
 - ? Query otimizada por subsistema (SE, NE, S, N)
-- ? Filtros avançados por período
-- ? Validações de consistência de dados
+- ? Filtros avanï¿½ados por perï¿½odo
+- ? Validaï¿½ï¿½es de consistï¿½ncia de dados
 
 ---
 
@@ -193,7 +193,7 @@ GET    /api/arquivosdadger                        - Lista todos
 GET    /api/arquivosdadger/{id}                   - Por ID
 GET    /api/arquivosdadger/semana/{semanaPMOId}  - Por semana PMO
 GET    /api/arquivosdadger/processados?processado=true - Por status
-GET    /api/arquivosdadger/periodo?dataInicio=&dataFim= - Por período
+GET    /api/arquivosdadger/periodo?dataInicio=&dataFim= - Por perï¿½odo
 GET    /api/arquivosdadger/nome/{nomeArquivo}    - Por nome
 POST   /api/arquivosdadger                        - Criar
 PUT    /api/arquivosdadger/{id}                   - Atualizar
@@ -211,12 +211,12 @@ DELETE /api/arquivosdadger/{id}                   - Deletar
 **Funcionalidades Especiais:**
 - ? Endpoint PATCH para marcar como processado
 - ? Controle de status de processamento
-- ? Vínculo com Semanas PMO
-- ? Validação de SemanaPMO existente
+- ? Vï¿½nculo com Semanas PMO
+- ? Validaï¿½ï¿½o de SemanaPMO existente
 
 ---
 
-### ? **9. Restrições UG** ? NOVA
+### ? **9. Restriï¿½ï¿½es UG** ? NOVA
 **Controller:** `RestricoesUGController.cs`  
 **Endpoints:** 9
 
@@ -225,7 +225,7 @@ GET    /api/restricoesug                           - Lista todas
 GET    /api/restricoesug/{id}                      - Por ID
 GET    /api/restricoesug/unidade/{unidadeGeradoraId} - Por unidade
 GET    /api/restricoesug/ativas?dataReferencia=2025-01-20 ? - Ativas em data
-GET    /api/restricoesug/periodo?dataInicio=&dataFim= - Por período
+GET    /api/restricoesug/periodo?dataInicio=&dataFim= - Por perï¿½odo
 GET    /api/restricoesug/motivo/{motivoRestricaoId} - Por motivo
 POST   /api/restricoesug                           - Criar
 PUT    /api/restricoesug/{id}                      - Atualizar
@@ -240,47 +240,47 @@ DELETE /api/restricoesug/{id}                      - Deletar
 - ? Relacionamento: RestricaoUG ? UnidadeGeradora ? Usina ? Empresa
 
 **Funcionalidades Especiais:**
-- ? Query de restrições ativas por data (DataInicio ? data ? DataFim)
-- ? Validação de datas (início/fim)
-- ? Filtros por motivo de restrição
-- ? Relacionamentos complexos navegáveis
+- ? Query de restriï¿½ï¿½es ativas por data (DataInicio ? data ? DataFim)
+- ? Validaï¿½ï¿½o de datas (inï¿½cio/fim)
+- ? Filtros por motivo de restriï¿½ï¿½o
+- ? Relacionamentos complexos navegï¿½veis
 
 ---
 
 ## ??? ENTIDADES DO DOMAIN (COMPLETAS)
 
 ### ? **Entidades com APIs Implementadas:**
-1. `Empresa` - Agentes do setor elétrico
+1. `Empresa` - Agentes do setor elï¿½trico
 2. `TipoUsina` - Categorias de usinas
 3. `Usina` - Usinas geradoras
 4. `SemanaPMO` - Semanas operativas
-5. `EquipePDP` - Equipes de programação
-6. `DadoEnergetico` - Dados energéticos
-7. `Carga` - Cargas elétricas do sistema
+5. `EquipePDP` - Equipes de programaï¿½ï¿½o
+6. `DadoEnergetico` - Dados energï¿½ticos
+7. `Carga` - Cargas elï¿½tricas do sistema
 8. `ArquivoDadger` - Arquivos DADGER
-9. `RestricaoUG` - Restrições de unidades geradoras
+9. `RestricaoUG` - Restriï¿½ï¿½es de unidades geradoras
 
 ### ? **Entidades Relacionadas (Sem API ainda):**
 10. `UnidadeGeradora` - Unidades geradoras das usinas
-11. `MotivoRestricao` - Motivos de restrição operacional
-12. `ParadaUG` - Paradas programadas/forçadas
-13. `RestricaoUS` - Restrições de usinas
-14. `GerForaMerito` - Gerações fora de mérito
+11. `MotivoRestricao` - Motivos de restriï¿½ï¿½o operacional
+12. `ParadaUG` - Paradas programadas/forï¿½adas
+13. `RestricaoUS` - Restriï¿½ï¿½es de usinas
+14. `GerForaMerito` - Geraï¿½ï¿½es fora de mï¿½rito
 15. `ArquivoDadgerValor` - Valores dos arquivos DADGER
-16. `Usuario` - Usuários do sistema
+16. `Usuario` - Usuï¿½rios do sistema
 17. `DCA` - Dados de Controle de Armazenamento
 18. `DCR` - Dados de Controle de Reserva
-19. `Responsavel` - Responsáveis por ações
+19. `Responsavel` - Responsï¿½veis por aï¿½ï¿½es
 20. `Upload` - Uploads de arquivos
-21. `Relatorio` - Relatórios do sistema
+21. `Relatorio` - Relatï¿½rios do sistema
 22. `Arquivo` - Arquivos gerais
-23. `Diretorio` - Estrutura de diretórios
-24. `Intercambio` - Intercâmbios entre subsistemas
-25. `Balanco` - Balanços energéticos
-26. `Observacao` - Observações do sistema
-27. `ModalidadeOpTermica` - Modalidades de operação térmica
+23. `Diretorio` - Estrutura de diretï¿½rios
+24. `Intercambio` - Intercï¿½mbios entre subsistemas
+25. `Balanco` - Balanï¿½os energï¿½ticos
+26. `Observacao` - Observaï¿½ï¿½es do sistema
+27. `ModalidadeOpTermica` - Modalidades de operaï¿½ï¿½o tï¿½rmica
 28. `InflexibilidadeContratada` - Inflexibilidades contratuais
-29. `RampasUsinaTermica` - Rampas de usinas térmicas
+29. `RampasUsinaTermica` - Rampas de usinas tï¿½rmicas
 30. `UsinaConversora` - Usinas conversoras (AC/DC)
 
 ---
@@ -289,9 +289,9 @@ DELETE /api/restricoesug/{id}                      - Deletar
 
 ### ? **Classes Auxiliares:**
 ```csharp
-// Paginação
+// Paginaï¿½ï¿½o
 Common/
-??? PaginationParameters.cs    // Parâmetros (PageNumber, PageSize, OrderBy)
+??? PaginationParameters.cs    // Parï¿½metros (PageNumber, PageSize, OrderBy)
 ??? PagedResult<T>.cs          // Resultado paginado com metadata
 ??? Result.cs                  // Pattern Result para tratamento de erros
 ```
@@ -304,14 +304,14 @@ Domain/
 
 // Infrastructure
 Infrastructure/
-??? BaseRepository<T>.cs       // CRUD genérico com soft delete
+??? BaseRepository<T>.cs       // CRUD genï¿½rico com soft delete
 ```
 
 ### ? **Extensions:**
 ```csharp
 API/Extensions/
-??? ServiceCollectionExtensions.cs  // Configuração de DI
-??? SwaggerConfiguration.cs         // Configuração Swagger/OpenAPI
+??? ServiceCollectionExtensions.cs  // Configuraï¿½ï¿½o de DI
+??? SwaggerConfiguration.cs         // Configuraï¿½ï¿½o Swagger/OpenAPI
 ??? ResultExtensions.cs             // Extensions para Result Pattern
 ```
 
@@ -319,7 +319,7 @@ API/Extensions/
 
 ## ?? TESTES IMPLEMENTADOS
 
-### ? **Testes Unitários (xUnit + Moq):**
+### ? **Testes Unitï¿½rios (xUnit + Moq):**
 ```
 tests/PDPW.UnitTests/
 ??? Services/
@@ -344,7 +344,7 @@ tests/PDPW.UnitTests/
     ??? TestDataBuilder.cs        - Builder de dados para testes
 ```
 
-### ? **Testes de Integração:**
+### ? **Testes de Integraï¿½ï¿½o:**
 ```
 tests/PDPW.IntegrationTests/
 ??? Controllers/
@@ -354,7 +354,7 @@ tests/PDPW.IntegrationTests/
     ??? CustomWebApplicationFactory.cs - Factory para testes
 ```
 
-**Resultado:** 15/15 testes unitários PASSING ?
+**Resultado:** 15/15 testes unitï¿½rios PASSING ?
 
 ---
 
@@ -364,29 +364,29 @@ tests/PDPW.IntegrationTests/
 
 ```csharp
 // 1. Tipos de Usina (5 registros)
-- Hidrelétrica (potência renovável)
-- Térmica (combustíveis fósseis)
-- Eólica (energia dos ventos)
+- Hidrelï¿½trica (potï¿½ncia renovï¿½vel)
+- Tï¿½rmica (combustï¿½veis fï¿½sseis)
+- Eï¿½lica (energia dos ventos)
 - Solar (energia fotovoltaica)
-- Nuclear (fissão nuclear)
+- Nuclear (fissï¿½o nuclear)
 
 // 2. Empresas (8 registros)
 - Itaipu Binacional (50% BR, 50% PY)
-- Eletronorte (Região Norte)
+- Eletronorte (Regiï¿½o Norte)
 - Furnas (Sudeste/Centro-Oeste)
 - Chesf (Nordeste)
-- CESP (São Paulo)
-- COPEL (Paraná)
+- CESP (Sï¿½o Paulo)
+- COPEL (Paranï¿½)
 - Cemig (Minas Gerais)
 - Eletrosul (Sul)
 
 // 3. Usinas (10 registros)
 - Itaipu (14.000 MW - maior do Brasil)
 - Belo Monte (11.233 MW)
-- Tucuruí (8.370 MW)
+- Tucuruï¿½ (8.370 MW)
 - Angra I (640 MW - Nuclear)
 - Angra II (1.350 MW - Nuclear)
-- Santo Antônio (3.568 MW)
+- Santo Antï¿½nio (3.568 MW)
 - Jirau (3.750 MW)
 - Sobradinho (1.050 MW)
 - Furnas (1.216 MW)
@@ -404,12 +404,12 @@ tests/PDPW.IntegrationTests/
 - Semana 2/2025 (13/01 a 19/01)
 - Semana 3/2025 (20/01 a 26/01)
 
-// 6. Motivos de Restrição (5 registros)
-- Manutenção Preventiva
-- Manutenção Corretiva
+// 6. Motivos de Restriï¿½ï¿½o (5 registros)
+- Manutenï¿½ï¿½o Preventiva
+- Manutenï¿½ï¿½o Corretiva
 - Falha de Equipamento
-- Restrição Hidráulica
-- Restrição Ambiental
+- Restriï¿½ï¿½o Hidrï¿½ulica
+- Restriï¿½ï¿½o Ambiental
 ```
 
 **Arquivo:** `src/PDPW.Infrastructure/Data/Seed/DbSeeder.cs`
@@ -430,7 +430,7 @@ Migrations/
 ```csharp
 PdpwDbContext.cs
 - 30 DbSets configurados
-- Relacionamentos mapeados (FK, navegação)
+- Relacionamentos mapeados (FK, navegaï¿½ï¿½o)
 - Soft Delete implementado
 - Auditoria configurada
 - Seed data aplicado
@@ -459,48 +459,48 @@ InflexibilidadesContratadas, RampasUsinasTermicas
 
 ---
 
-## ?? DOCUMENTAÇÃO
+## ?? DOCUMENTAï¿½ï¿½O
 
-### ? **Documentação Técnica (14 arquivos):**
+### ? **Documentaï¿½ï¿½o Tï¿½cnica (14 arquivos):**
 ```
 docs/
 ??? INVENTARIO_COMPLETO_POC.md        - Este arquivo
 ??? RELATORIO_EXECUTIVO_POC.md        - Para squad/gerente
-??? README_ANALISE.md                 - Análise geral
-??? RELATORIO_VALIDACAO_POC.md        - Relatório de validação
+??? README_ANALISE.md                 - Anï¿½lise geral
+??? RELATORIO_VALIDACAO_POC.md        - Relatï¿½rio de validaï¿½ï¿½o
 ??? RESUMO_EXECUTIVO_VALIDACAO.md     - Resumo executivo
 ??? DASHBOARD_STATUS.md               - Dashboard de progresso
 ??? CHECKLIST_STATUS_ATUAL.md         - Checklist
-??? PLANO_DE_ACAO_48H.md             - Plano de ação
-??? INDICE_ANALISE.md                 - Índice geral
+??? PLANO_DE_ACAO_48H.md             - Plano de aï¿½ï¿½o
+??? INDICE_ANALISE.md                 - ï¿½ndice geral
 ??? APIS_PENDENTES.md                 - APIs a implementar
-??? GLOSSARIO_LINGUAGEM_UBIQUA.md    - Glossário PDP
+??? GLOSSARIO_LINGUAGEM_UBIQUA.md    - Glossï¿½rio PDP
 ??? V2_ROADMAP.md                     - Roadmap completo
 ??? STATUS_FASE1.md                   - Status Fase 1
-??? ANALISE_INTEGRACAO_SQUAD.md      - Análise para PR
+??? ANALISE_INTEGRACAO_SQUAD.md      - Anï¿½lise para PR
 ??? PULL_REQUEST_TEMPLATE.md         - Template de PR
 ??? GUIA_CRIAR_PR.md                 - Guia de PR
-??? BACKUP_COMPLETO.md               - Backup e inventário
+??? BACKUP_COMPLETO.md               - Backup e inventï¿½rio
 ```
 
 ### ? **README.md:**
-- ? Documentação completa das 9 APIs
+- ? Documentaï¿½ï¿½o completa das 9 APIs
 - ? Exemplos de request/response
-- ? Guias de instalação (Redis, Serilog)
+- ? Guias de instalaï¿½ï¿½o (Redis, Serilog)
 - ? Arquitetura explicada
 - ? Roadmap do projeto
-- ? 444 linhas de documentação
+- ? 444 linhas de documentaï¿½ï¿½o
 
 ### ? **Swagger/OpenAPI:**
 - ? XML Comments em todos os endpoints
 - ? Schemas de DTOs documentados
 - ? Exemplos de payloads
-- ? Códigos de status HTTP
+- ? Cï¿½digos de status HTTP
 - ? Tipos de resposta
 
 ---
 
-## ?? PADRÕES IMPLEMENTADOS
+## ?? PADRï¿½ES IMPLEMENTADOS
 
 ### ? **Arquitetura:**
 ```
@@ -519,30 +519,30 @@ docs/
 ### ? **Qualidade:**
 ```
 ? DTOs separados (Create, Update, Response)
-? Validações (Data Annotations)
+? Validaï¿½ï¿½es (Data Annotations)
 ? Soft Delete (flag Ativo)
 ? Auditoria (DataCriacao, DataAtualizacao)
 ? Logging estruturado (ILogger)
 ? Swagger completo (XML Comments)
 ? Conventional Commits
-? Testes unitários (xUnit + Moq)
+? Testes unitï¿½rios (xUnit + Moq)
 ```
 
-### ? **Boas Práticas:**
+### ? **Boas Prï¿½ticas:**
 ```
-? Linguagem ubíqua do domínio PDP
-? Nomenclatura em Português (entidades)
-? Código auto-documentado
-? Separação de responsabilidades
+? Linguagem ubï¿½qua do domï¿½nio PDP
+? Nomenclatura em Portuguï¿½s (entidades)
+? Cï¿½digo auto-documentado
+? Separaï¿½ï¿½o de responsabilidades
 ? SOLID principles
 ? DRY (Don't Repeat Yourself)
 ```
 
 ---
 
-## ?? ESTATÍSTICAS FINAIS
+## ?? ESTATï¿½STICAS FINAIS
 
-| Métrica | Valor | Percentual | Status |
+| Mï¿½trica | Valor | Percentual | Status |
 |---------|-------|------------|--------|
 | **APIs Implementadas** | 9 de 29 | 31% | ? |
 | **Endpoints** | 65 de 154 | 42% | ? |
@@ -551,49 +551,49 @@ docs/
 | **Services** | 9 | Implementados | ? |
 | **Controllers** | 9 | Implementados | ? |
 | **DTOs** | 27 | Criados | ? |
-| **Testes Unitários** | 15+ | 100% passing | ? |
+| **Testes Unitï¿½rios** | 15+ | 100% passing | ? |
 | **Seed Data** | 6 entidades | Configurado | ? |
 | **Migrations** | 3 | Aplicadas | ? |
-| **Documentação** | 14 arquivos | Completa | ? |
+| **Documentaï¿½ï¿½o** | 14 arquivos | Completa | ? |
 | **Build** | SUCCESS | - | ? |
 | **Cobertura** | 100% | CargaService | ? |
 
 ---
 
-## ?? PRÓXIMAS APIs SUGERIDAS
+## ?? PRï¿½XIMAS APIs SUGERIDAS
 
 ### **Alta Prioridade (Backend Core):**
 ```
-1. UnidadesGeradoras    - Unidades de geração das usinas
+1. UnidadesGeradoras    - Unidades de geraï¿½ï¿½o das usinas
 2. SubsistemaEletrico   - Subsistemas (SE, NE, S, N)
 3. MotivosRestricao     - API completa para motivos
-4. ParadasUG            - Paradas programadas/forçadas
-5. RestricoesUS         - Restrições de usinas
+4. ParadasUG            - Paradas programadas/forï¿½adas
+5. RestricoesUS         - Restriï¿½ï¿½es de usinas
 ```
 
-### **Média Prioridade (Operacionais):**
+### **Mï¿½dia Prioridade (Operacionais):**
 ```
-6. GerForaMerito        - Gerações fora de mérito
-7. Intercambios         - Intercâmbios entre subsistemas
-8. Balancos             - Balanços energéticos
+6. GerForaMerito        - Geraï¿½ï¿½es fora de mï¿½rito
+7. Intercambios         - Intercï¿½mbios entre subsistemas
+8. Balancos             - Balanï¿½os energï¿½ticos
 9. DCA                  - Dados de Controle de Armazenamento
 10. DCR                 - Dados de Controle de Reserva
 ```
 
 ### **Baixa Prioridade (Administrativas):**
 ```
-11. Usuarios            - Gestão de usuários
-12. Responsaveis        - Responsáveis por ações
-13. Relatorios          - Sistema de relatórios
-14. Uploads             - Gestão de uploads
-15. Observacoes         - Sistema de observações
+11. Usuarios            - Gestï¿½o de usuï¿½rios
+12. Responsaveis        - Responsï¿½veis por aï¿½ï¿½es
+13. Relatorios          - Sistema de relatï¿½rios
+14. Uploads             - Gestï¿½o de uploads
+15. Observacoes         - Sistema de observaï¿½ï¿½es
 ```
 
 ---
 
-## ?? RECURSOS PREPARADOS (NÃO IMPLEMENTADOS)
+## ?? RECURSOS PREPARADOS (Nï¿½O IMPLEMENTADOS)
 
-### ? **Paginação:**
+### ? **Paginaï¿½ï¿½o:**
 ```csharp
 // Classes prontas para uso
 PaginationParameters  // PageNumber, PageSize, OrderBy, OrderDirection
@@ -602,17 +602,17 @@ PagedResult<T>        // TotalPages, HasNext, HasPrevious, Data
 
 ### ? **Cache (Redis):**
 ```markdown
-Guia completo disponível no README.md
-- Instalação do pacote
-- Configuração no Program.cs
+Guia completo disponï¿½vel no README.md
+- Instalaï¿½ï¿½o do pacote
+- Configuraï¿½ï¿½o no Program.cs
 - Exemplo de uso nos Services
 ```
 
 ### ? **Logging (Serilog):**
 ```markdown
-Guia completo disponível no README.md
-- Instalação dos pacotes
-- Configuração estruturada
+Guia completo disponï¿½vel no README.md
+- Instalaï¿½ï¿½o dos pacotes
+- Configuraï¿½ï¿½o estruturada
 - Logs em arquivo + console
 ```
 
@@ -621,21 +621,21 @@ Guia completo disponível no README.md
 ## ? STATUS GERAL
 
 ```
-?? PRONTO PARA PRODUÇÃO (31%):
+?? PRONTO PARA PRODUï¿½ï¿½O (31%):
 ? 9 APIs funcionais e testadas
 ? 65 endpoints documentados
 ? Arquitetura Clean consolidada
-? Testes unitários (15+)
+? Testes unitï¿½rios (15+)
 ? Seed data configurado
-? Documentação completa
+? Documentaï¿½ï¿½o completa
 ? Build: SUCCESS
 ? Swagger: Completo
 
 ?? EM DESENVOLVIMENTO (69%):
 ? 20 APIs restantes
 ? Frontend React
-? Autenticação JWT
-? Migração de dados legados
+? Autenticaï¿½ï¿½o JWT
+? Migraï¿½ï¿½o de dados legados
 ? Testes E2E
 ```
 
@@ -643,19 +643,19 @@ Guia completo disponível no README.md
 
 ## ?? CONTATOS E LINKS
 
-**Repositório:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2  
+**Repositï¿½rio:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2  
 **Branch Ativa:** feature/backend  
-**Desenvolvedor:** Willian Bulhões
+**Desenvolvedor:** Willian Bulhï¿½es
 
-**Documentação:**
+**Documentaï¿½ï¿½o:**
 - [README Principal](https://github.com/wbulhoes/ONS_PoC-PDPW_V2/blob/main/README.md)
 - [APIs Documentadas](https://github.com/wbulhoes/ONS_PoC-PDPW_V2/blob/feature/backend/README.md#-apis-implementadas)
-- [Swagger](http://localhost:5000/swagger) (após `docker-compose up`)
+- [Swagger](http://localhost:5000/swagger) (apï¿½s `docker-compose up`)
 
 ---
 
 **?? POC 31% COMPLETA E TOTALMENTE FUNCIONAL! ??**
 
 **Data:** 2025-01-20  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? ATIVO

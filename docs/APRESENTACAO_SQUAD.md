@@ -1,17 +1,17 @@
-# ?? POC PDPW - Apresentação para o Squad
+ï»¿# ?? POC PDPW - Apresentaï¿½ï¿½o para o Squad
 
-## Migração .NET Framework ? .NET 8 + React
+## Migraï¿½ï¿½o .NET Framework ? .NET 8 + React
 
-**Apresentador:** Wellington Bulhões  
-**Data:** 22/12/2024  
-**Prazo:** 29/12/2024 (7 dias restantes)
+**Apresentador:** Willian Bulhï¿½es  
+**Data:** 22/12/2025  
+**Prazo:** 30/12/2025 (7 dias restantes)
 
 ---
 
-## ?? SLIDE 1: VISÃO GERAL
+## ?? SLIDE 1: VISï¿½O GERAL
 
-### **O que é a POC?**
-Prova de Conceito para migração do sistema PDPW (Programação Diária de Produção) do stack legado para tecnologias modernas.
+### **O que ï¿½ a POC?**
+Prova de Conceito para migraï¿½ï¿½o do sistema PDPW (Programaï¿½ï¿½o Diï¿½ria de Produï¿½ï¿½o) do stack legado para tecnologias modernas.
 
 ### **Stack Atual (Legado)**
 - VB.NET + .NET Framework 4.x
@@ -29,17 +29,16 @@ Prova de Conceito para migração do sistema PDPW (Programação Diária de Produção)
 
 ## ?? SLIDE 2: OBJETIVOS DA POC
 
-### **Objetivos Técnicos:**
-? Validar viabilidade da migração  
+### **Objetivos Tï¿½cnicos:**
+? Validar viabilidade da migraï¿½ï¿½o  
 ? Definir arquitetura moderna (Clean Architecture)  
 ? Implementar APIs REST principais  
-? Criar frontend React básico  
-? Estabelecer pipeline CI/CD  
+? Criar frontend React bï¿½sico  
 
-### **Objetivos de Negócio:**
-? Reduzir custos de manutenção  
+### **Objetivos de Negï¿½cio:**
+? Reduzir custos de manutenï¿½ï¿½o  
 ? Melhorar performance  
-? Facilitar evolução futura  
+? Facilitar evoluï¿½ï¿½o futura  
 ? Atrair novos desenvolvedores  
 ? Modernizar UX/UI  
 
@@ -56,7 +55,7 @@ Prova de Conceito para migração do sistema PDPW (Programação Diária de Produção)
 ? Banco de Dados     ? ????????? ? 100% ?    ?
 ? Testes             ? ????????? ? 10% ??     ?
 ? CI/CD              ? ????????? ?  0% ??     ?
-? Documentação       ? ????????? ? 85% ?     ?
+? Documentaï¿½ï¿½o       ? ????????? ? 85% ?     ?
 ???????????????????????????????????????????????
 ? TOTAL GERAL        ? ????????? ? 63% ??     ?
 ???????????????????????????????????????????????
@@ -128,13 +127,13 @@ Prova de Conceito para migração do sistema PDPW (Programação Diária de Produção)
 
 ## ?? SLIDE 6: APIS NOVAS (5 APIS) ?
 
-### **Grupo 2: Operação Energética (5 APIs) ?**
+### **Grupo 2: Operaï¿½ï¿½o Energï¿½tica (5 APIs) ?**
 | API | Endpoints | Funcionalidade |
 |-----|-----------|----------------|
 | **UnidadesGeradoras** | 8 | Gerenciar UGs por usina |
 | **ParadasUG** | 9 | Paradas programadas/emergenciais |
-| **MotivosRestricao** | 6 | Categorias de restrições |
-| **Balancos** | 8 | Balanço energético por subsistema |
+| **MotivosRestricao** | 6 | Categorias de restriï¿½ï¿½es |
+| **Balancos** | 8 | Balanï¿½o energï¿½tico por subsistema |
 | **Intercambios** | 9 | Fluxos entre subsistemas |
 
 **Subtotal: 40 novos endpoints ?**
@@ -145,27 +144,27 @@ Prova de Conceito para migração do sistema PDPW (Programação Diária de Produção)
 
 ## ??? SLIDE 7: BANCO DE DADOS
 
-### **Configuração:**
+### **Configuraï¿½ï¿½o:**
 ```yaml
 Servidor:     .\SQLEXPRESS
 Banco:        PDPW_DB
 Auth:         SQL Server (sa)
 Tabelas:      31 tabelas
 Dados:        ~550 registros realistas
-Persistência: ? Habilitada
+Persistï¿½ncia: ? Habilitada
 ```
 
 ### **Dados Populados:**
 - ? 30 Empresas (CEMIG, COPEL, Itaipu, FURNAS, etc.)
-- ? 50 Usinas (Itaipu, Belo Monte, Tucuruí, etc.)
+- ? 50 Usinas (Itaipu, Belo Monte, Tucuruï¿½, etc.)
 - ? 100 Unidades Geradoras
-- ? 120 Balanços Energéticos (4 subsistemas × 30 dias)
-- ? 240 Intercâmbios (8 fluxos × 30 dias)
+- ? 120 Balanï¿½os Energï¿½ticos (4 subsistemas ï¿½ 30 dias)
+- ? 240 Intercï¿½mbios (8 fluxos ï¿½ 30 dias)
 - ? 50 Paradas UG
 - ? 25 Semanas PMO
 - ? 11 Equipes PDP
 
-**Dados baseados no setor elétrico brasileiro real!**
+**Dados baseados no setor elï¿½trico brasileiro real!**
 
 ---
 
@@ -174,19 +173,19 @@ Persistência: ? Habilitada
 ### **Status Atual:**
 | Tipo | Cobertura | Meta | Status |
 |------|-----------|------|--------|
-| Testes Unitários | 10% | 60% | ?? |
-| Testes Integração | 0% | 40% | ?? |
+| Testes Unitï¿½rios | 10% | 60% | ?? |
+| Testes Integraï¿½ï¿½o | 0% | 40% | ?? |
 | Testes E2E | 0% | 20% | ?? |
 
-### **Validações Implementadas:**
+### **Validaï¿½ï¿½es Implementadas:**
 ? Data Annotations nos DTOs  
 ? Exception Handling global  
 ? Logging estruturado  
 ? Soft Delete  
-? Validações de negócio  
+? Validaï¿½ï¿½es de negï¿½cio  
 
-### **Próximos Passos (23/12):**
-- Implementar testes unitários (Services)
+### **Prï¿½ximos Passos (23/12):**
+- Implementar testes unitï¿½rios (Services)
 - Target: 40% de cobertura
 
 ---
@@ -198,25 +197,25 @@ Persistência: ? Habilitada
 ? DIA   ? ATIVIDADE                    ? ENTREGA      ?
 ???????????????????????????????????????????????????????
 ? 23/12 ? Testes Backend               ? 25+ testes   ?
-? SEG   ? Validação APIs               ? Cobertura 40%?
+? SEG   ? Validaï¿½ï¿½o APIs               ? Cobertura 40%?
 ???????????????????????????????????????????????????????
 ? 24/12 ? Setup React                  ? 3 telas      ?
-? TER   ? Login + Dashboard + Usinas   ? Integração OK?
+? TER   ? Login + Dashboard + Usinas   ? Integraï¿½ï¿½o OK?
 ???????????????????????????????????????????????????????
 ? 25/12 ? CRUD Unidades Geradoras      ? 3 telas CRUD ?
-? QUA   ? Dashboard com Gráficos       ? 1 dashboard  ?
+? QUA   ? Dashboard com Grï¿½ficos       ? 1 dashboard  ?
 ???????????????????????????????????????????????????????
-? 26/12 ? Integração Frontend/Backend  ? E2E básico   ?
+? 26/12 ? Integraï¿½ï¿½o Frontend/Backend  ? E2E bï¿½sico   ?
 ? QUI   ? Testes E2E                   ? 10+ testes   ?
 ???????????????????????????????????????????????????????
 ? 27/12 ? CI/CD GitHub Actions         ? Pipeline OK  ?
 ? SEX   ? Deploy Staging               ? Deploy auto  ?
 ???????????????????????????????????????????????????????
-? 28/12 ? Documentação Final           ? Docs 100%    ?
-? SAB   ? Vídeo Demo + Apresentação    ? PPT + Vídeo  ?
+? 28/12 ? Documentaï¿½ï¿½o Final           ? Docs 100%    ?
+? SAB   ? Vï¿½deo Demo + Apresentaï¿½ï¿½o    ? PPT + Vï¿½deo  ?
 ???????????????????????????????????????????????????????
-? 29/12 ? Revisão Final + Entrega      ? POC 100%     ?
-? DOM   ? Tag Release v1.0.0-poc       ? Apresentação ?
+? 29/12 ? Revisï¿½o Final + Entrega      ? POC 100%     ?
+? DOM   ? Tag Release v1.0.0-poc       ? Apresentaï¿½ï¿½o ?
 ???????????????????????????????????????????????????????
 ```
 
@@ -224,17 +223,17 @@ Persistência: ? Habilitada
 
 ## ?? SLIDE 10: PRIORIDADES
 
-### **?? PRIORIDADE ALTA (Crítico)**
+### **?? PRIORIDADE ALTA (Crï¿½tico)**
 1. Frontend React com 5 telas funcionais (24-25/12)
-2. Integração Backend ? Frontend (26/12)
-3. Testes unitários básicos (23/12)
-4. Documentação completa (28/12)
-5. Apresentação final (29/12)
+2. Integraï¿½ï¿½o Backend ? Frontend (26/12)
+3. Testes unitï¿½rios bï¿½sicos (23/12)
+4. Documentaï¿½ï¿½o completa (28/12)
+5. Apresentaï¿½ï¿½o final (29/12)
 
-### **?? PRIORIDADE MÉDIA (Importante)**
-- CI/CD básico (27/12)
-- Testes E2E básicos (26/12)
-- Vídeo demonstrativo (28/12)
+### **?? PRIORIDADE Mï¿½DIA (Importante)**
+- CI/CD bï¿½sico (27/12)
+- Testes E2E bï¿½sicos (26/12)
+- Vï¿½deo demonstrativo (28/12)
 
 ### **?? PRIORIDADE BAIXA (Nice to have)**
 - Docker
@@ -243,35 +242,35 @@ Persistência: ? Habilitada
 
 ---
 
-## ?? SLIDE 11: RISCOS E MITIGAÇÕES
+## ?? SLIDE 11: RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Prob. | Impacto | Mitigação |
+| Risco | Prob. | Impacto | Mitigaï¿½ï¿½o |
 |-------|-------|---------|-----------|
 | **Feriados (24-25/12)** | Alta | Alto | Trabalho remoto planejado ? |
-| **Complexidade Frontend** | Média | Médio | Templates prontos ?? |
-| **Bugs última hora** | Média | Alto | Testes contínuos ?? |
+| **Complexidade Frontend** | Mï¿½dia | Mï¿½dio | Templates prontos ?? |
+| **Bugs ï¿½ltima hora** | Mï¿½dia | Alto | Testes contï¿½nuos ?? |
 | **Escopo aumentar** | Baixa | Alto | Foco no MVP ?? |
 
-### **Plano de Contingência:**
+### **Plano de Contingï¿½ncia:**
 - Daily check-ins via Discord/Teams
-- Pair programming para tarefas críticas
-- Code review rápido (< 2h)
-- Priorização clara (HIGH/MEDIUM/LOW)
+- Pair programming para tarefas crï¿½ticas
+- Code review rï¿½pido (< 2h)
+- Priorizaï¿½ï¿½o clara (HIGH/MEDIUM/LOW)
 
 ---
 
-## ?? SLIDE 12: MÉTRICAS DE SUCESSO
+## ?? SLIDE 12: Mï¿½TRICAS DE SUCESSO
 
 ```
 ?????????????????????????????????????????????????
-? MÉTRICA                  ? META ? ATUAL ? % ?
+? Mï¿½TRICA                  ? META ? ATUAL ? % ?
 ?????????????????????????????????????????????????
 ? APIs Backend             ?  15  ?  15   ?? ?
 ? Endpoints REST           ? 100+ ? 107   ?? ?
 ? Cobertura Testes         ?  60% ?  10%  ??? ?
 ? Telas Frontend           ?   5  ?   0   ??? ?
-? Integração Backend/Front ? 100% ?   0%  ??? ?
-? Documentação             ? 100% ?  85%  ??? ?
+? Integraï¿½ï¿½o Backend/Front ? 100% ?   0%  ??? ?
+? Documentaï¿½ï¿½o             ? 100% ?  85%  ??? ?
 ? CI/CD                    ?  ?  ?  ?   ??? ?
 ?????????????????????????????????????????????????
 ? STATUS GERAL             ?      ?       ?85%?
@@ -282,32 +281,32 @@ Persistência: ? Habilitada
 
 ---
 
-## ?? SLIDE 13: LIÇÕES APRENDIDAS
+## ?? SLIDE 13: LIï¿½ï¿½ES APRENDIDAS
 
 ### **? O que funcionou bem:**
-- Clean Architecture ? Fácil manutenção
-- AutoMapper ? Menos código boilerplate
-- Swagger ? Testes de API rápidos
-- Seeder automático ? Economizou horas
-- Git 3 remotes ? Colaboração eficiente
+- Clean Architecture ? Fï¿½cil manutenï¿½ï¿½o
+- AutoMapper ? Menos cï¿½digo boilerplate
+- Swagger ? Testes de API rï¿½pidos
+- Seeder automï¿½tico ? Economizou horas
+- Git 3 remotes ? Colaboraï¿½ï¿½o eficiente
 
 ### **?? Desafios enfrentados:**
 - Backup cliente 350GB (muito grande)
-- Configuração SQL Server Auth
+- Configuraï¿½ï¿½o SQL Server Auth
 - Conflitos de merge
 - Tempo limitado para testes
 
 ### **?? Melhorias futuras:**
-- TDD desde o início
+- TDD desde o inï¿½cio
 - CI/CD no dia 1
-- Docker desde o início
+- Docker desde o inï¿½cio
 - Planejamento mais detalhado
 
 ---
 
 ## ??? SLIDE 14: COMO EXECUTAR
 
-### **Setup Rápido (5 minutos):**
+### **Setup Rï¿½pido (5 minutos):**
 ```powershell
 # 1. Clonar
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW_V2.git
@@ -332,62 +331,62 @@ dotnet run --project src/PDPW.API/PDPW.API.csproj
 
 ---
 
-## ?? SLIDE 15: DOCUMENTAÇÃO
+## ?? SLIDE 15: DOCUMENTAï¿½ï¿½O
 
 ### **Documentos Criados:**
 | Documento | Status |
 |-----------|--------|
 | README Principal | ? |
 | Setup Banco de Dados | ? |
-| Configuração Final | ? |
+| Configuraï¿½ï¿½o Final | ? |
 | Guia QA | ? |
 | Schema do Banco | ? |
 | Quadro Resumo POC | ? |
 | Status e Roadmap | ? ? **NOVO** |
-| Apresentação Squad | ? ? **NOVO** |
+| Apresentaï¿½ï¿½o Squad | ? ? **NOVO** |
 
-### **Localização:**
-`/docs/` - Toda documentação técnica
+### **Localizaï¿½ï¿½o:**
+`/docs/` - Toda documentaï¿½ï¿½o tï¿½cnica
 
 ---
 
-## ?? SLIDE 16: DEFINIÇÃO DE PRONTO
+## ?? SLIDE 16: DEFINIï¿½ï¿½O DE PRONTO
 
-Uma tarefa é **PRONTA** quando:
+Uma tarefa ï¿½ **PRONTA** quando:
 
-- [x] Código commitado e pushed
+- [x] Cï¿½digo commitado e pushed
 - [x] Build passando sem erros
-- [x] Testes unitários (quando aplicável)
-- [x] Documentação atualizada
-- [x] Code review (self-review mínimo)
+- [x] Testes unitï¿½rios (quando aplicï¿½vel)
+- [x] Documentaï¿½ï¿½o atualizada
+- [x] Code review (self-review mï¿½nimo)
 - [x] Validado no Swagger/Browser
 
 **Regra de ouro: Nada sobe sem passar pelo Definition of Done!**
 
 ---
 
-## ?? SLIDE 17: PAPÉIS E RESPONSABILIDADES
+## ?? SLIDE 17: PAPï¿½IS E RESPONSABILIDADES
 
-### **Wellington Bulhões (Você)**
+### **Wellington Bulhï¿½es (Vocï¿½)**
 - Desenvolvimento Backend ?
-- Arquitetura da solução ?
-- Configuração de infraestrutura ?
-- Documentação técnica ?
-- **Próximo:** Testes + Frontend
+- Arquitetura da soluï¿½ï¿½o ?
+- Configuraï¿½ï¿½o de infraestrutura ?
+- Documentaï¿½ï¿½o tï¿½cnica ?
+- **Prï¿½ximo:** Testes + Frontend
 
-### **Squad (Colaboração)**
+### **Squad (Colaboraï¿½ï¿½o)**
 - Code review
-- Testes de integração
-- Validação de requisitos
-- Feedback contínuo
+- Testes de integraï¿½ï¿½o
+- Validaï¿½ï¿½o de requisitos
+- Feedback contï¿½nuo
 
 ### **Stakeholders**
-- Aprovação da POC (29/12)
-- Definição de próximos passos
+- Aprovaï¿½ï¿½o da POC (29/12)
+- Definiï¿½ï¿½o de prï¿½ximos passos
 
 ---
 
-## ?? SLIDE 18: REPOSITÓRIOS E LINKS
+## ?? SLIDE 18: REPOSITï¿½RIOS E LINKS
 
 ### **Git Repositories:**
 - **Origin:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2
@@ -403,15 +402,15 @@ Uma tarefa é **PRONTA** quando:
 
 ---
 
-## ?? SLIDE 19: PRÓXIMOS PASSOS IMEDIATOS
+## ?? SLIDE 19: PRï¿½XIMOS PASSOS IMEDIATOS
 
-### **Segunda-feira (23/12) - AMANHÃ:**
-1. **Manhã (4h):**
-   - Implementar testes unitários (Services)
+### **Segunda-feira (23/12) - AMANHï¿½:**
+1. **Manhï¿½ (4h):**
+   - Implementar testes unitï¿½rios (Services)
    - Target: UnidadesGeradoras, ParadasUG, MotivosRestricao
 
 2. **Tarde (4h):**
-   - Implementar testes unitários (Balancos, Intercambios)
+   - Implementar testes unitï¿½rios (Balancos, Intercambios)
    - Validar todas as APIs no Swagger
    - Criar Collection Postman
 
@@ -423,11 +422,11 @@ Uma tarefa é **PRONTA** quando:
 
 ### **O que precisamos do Squad:**
 
-1. **Review de Código** (23-24/12)
+1. **Review de Cï¿½digo** (23-24/12)
    - PRs das 5 novas APIs
-   - Feedback rápido (< 4h)
+   - Feedback rï¿½pido (< 4h)
 
-2. **Validação de Requisitos** (26/12)
+2. **Validaï¿½ï¿½o de Requisitos** (26/12)
    - Testar fluxos no Swagger
    - Validar dados populados
 
@@ -435,9 +434,9 @@ Uma tarefa é **PRONTA** quando:
    - Pair programming
    - Templates React
 
-4. **Preparação da Apresentação** (28/12)
-   - Feedback no conteúdo
-   - Sugestões de melhorias
+4. **Preparaï¿½ï¿½o da Apresentaï¿½ï¿½o** (28/12)
+   - Feedback no conteï¿½do
+   - Sugestï¿½es de melhorias
 
 ---
 
@@ -446,21 +445,21 @@ Uma tarefa é **PRONTA** quando:
 ### **Onde Estamos:**
 - ? Backend 85% completo (15 APIs, 107 endpoints)
 - ? Banco configurado e populado (~550 registros)
-- ? Documentação 85% completa
-- ?? Frontend 0% (início 24/12)
+- ? Documentaï¿½ï¿½o 85% completa
+- ?? Frontend 0% (inï¿½cio 24/12)
 - ?? Testes 10% (meta 23/12: 40%)
-- ?? CI/CD 0% (meta 27/12: básico)
+- ?? CI/CD 0% (meta 27/12: bï¿½sico)
 
 ### **Para Onde Vamos:**
 - ?? POC 100% funcional em 29/12/2024
-- ?? Apresentação para stakeholders
-- ?? Decisão sobre continuidade do projeto
+- ?? Apresentaï¿½ï¿½o para stakeholders
+- ?? Decisï¿½o sobre continuidade do projeto
 
-### **Como Vamos Chegar Lá:**
+### **Como Vamos Chegar Lï¿½:**
 - ?? Roadmap detalhado de 7 dias
 - ?? Prioridades claras
-- ?? Colaboração do squad
-- ?? Foco e execução disciplinada
+- ?? Colaboraï¿½ï¿½o do squad
+- ?? Foco e execuï¿½ï¿½o disciplinada
 
 ---
 
@@ -468,46 +467,46 @@ Uma tarefa é **PRONTA** quando:
 
 ### **Obrigado ao Squad!**
 
-Pela colaboração, paciência e apoio durante esta POC.
+Pela colaboraï¿½ï¿½o, paciï¿½ncia e apoio durante esta POC.
 
-Vamos **finalizar com excelência** e demonstrar a viabilidade técnica desta migração! ??
+Vamos **finalizar com excelï¿½ncia** e demonstrar a viabilidade tï¿½cnica desta migraï¿½ï¿½o! ??
 
-### **Próxima Reunião:**
+### **Prï¿½xima Reuniï¿½o:**
 - **Data:** 26/12/2024 (Check-point)
-- **Objetivo:** Validar integração Frontend/Backend
-- **Duração:** 30 minutos
+- **Objetivo:** Validar integraï¿½ï¿½o Frontend/Backend
+- **Duraï¿½ï¿½o:** 30 minutos
 
 ---
 
 ## ? SLIDE 23: PERGUNTAS?
 
-### **Dúvidas Frequentes:**
+### **Dï¿½vidas Frequentes:**
 
-**Q: E se não der tempo de fazer tudo?**  
-A: Temos priorização clara (HIGH/MEDIUM/LOW). Foco no MVP.
+**Q: E se nï¿½o der tempo de fazer tudo?**  
+A: Temos priorizaï¿½ï¿½o clara (HIGH/MEDIUM/LOW). Foco no MVP.
 
 **Q: Precisa trabalhar nos feriados?**  
-A: Sim, mas remoto e com flexibilidade de horários.
+A: Sim, mas remoto e com flexibilidade de horï¿½rios.
 
 **Q: Como podemos ajudar?**  
-A: Code review rápido, testes de validação, feedback contínuo.
+A: Code review rï¿½pido, testes de validaï¿½ï¿½o, feedback contï¿½nuo.
 
-**Q: Após a POC, o que acontece?**  
-A: Apresentação para stakeholders ? Decisão de continuidade.
+**Q: Apï¿½s a POC, o que acontece?**  
+A: Apresentaï¿½ï¿½o para stakeholders ? Decisï¿½o de continuidade.
 
 ---
 
 ## ?? SLIDE 24: CONTATOS
 
-### **Wellington Bulhões**
+### **Wellington Bulhï¿½es**
 - ?? Email: [seu email]
 - ?? Teams/Discord: @wellington
 - ?? GitHub: @wbulhoes
 
-### **Repositório Principal:**
+### **Repositï¿½rio Principal:**
 https://github.com/wbulhoes/ONS_PoC-PDPW_V2
 
-### **Documentação:**
+### **Documentaï¿½ï¿½o:**
 `/docs/POC_STATUS_E_ROADMAP.md`
 
 ---
@@ -532,14 +531,14 @@ https://github.com/wbulhoes/ONS_PoC-PDPW_V2
 ```
 
 ### **?? Comprometimento Total**
-### **?? Execução Disciplinada**
-### **?? Entrega com Excelência**
+### **?? Execuï¿½ï¿½o Disciplinada**
+### **?? Entrega com Excelï¿½ncia**
 
 **VAMOS JUNTOS! ??**
 
 ---
 
-**FIM DA APRESENTAÇÃO**
+**FIM DA APRESENTAï¿½ï¿½O**
 
-*Última atualização: 22/12/2024*  
-*Próxima revisão: 26/12/2024*
+*ï¿½ltima atualizaï¿½ï¿½o: 22/12/2024*  
+*Prï¿½xima revisï¿½o: 26/12/2024*

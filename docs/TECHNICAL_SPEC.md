@@ -1,11 +1,11 @@
-# Especificação Técnica - PDPW (Programação Diária da Produção Web)
+ï»¿# Especificaï¿½ï¿½o Tï¿½cnica - PDPW (Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o Web)
 
-## ?? Informações do Projeto
+## ?? Informaï¿½ï¿½es do Projeto
 
 | Campo | Valor |
 |-------|-------|
-| **Nome** | PDPW - Programação Diária da Produção Web |
-| **Repositório** | https://github.com/wbulhoes/ONS_PoC-PDPW |
+| **Nome** | PDPW - Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o Web |
+| **Repositï¿½rio** | https://github.com/wbulhoes/ONS_PoC-PDPW |
 | **Branch Principal** | develop |
 | **Tecnologia** | .NET 8, ASP.NET Core, Entity Framework Core |
 | **Status** | Em Desenvolvimento (PoC) |
@@ -13,27 +13,27 @@
 
 ---
 
-## ?? Visão Geral
+## ?? Visï¿½o Geral
 
-### Propósito
+### Propï¿½sito
 
-API REST moderna para gerenciamento de dados energéticos de usinas hidrelétricas, substituindo sistemas legados e fornecendo uma interface web atualizada para a Programação Diária da Produção.
+API REST moderna para gerenciamento de dados energï¿½ticos de usinas hidrelï¿½tricas, substituindo sistemas legados e fornecendo uma interface web atualizada para a Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o.
 
 ### Objetivos
 
 - ? Modernizar sistema legado
 - ? Fornecer API REST documentada
-- ? Suportar múltiplas opções de banco de dados
-- ? Facilitar integração com frontend moderno
+- ? Suportar mï¿½ltiplas opï¿½ï¿½es de banco de dados
+- ? Facilitar integraï¿½ï¿½o com frontend moderno
 - ? Implementar Clean Architecture
 
 ---
 
 ## ??? Arquitetura
 
-### Padrão Arquitetural
+### Padrï¿½o Arquitetural
 
-**Clean Architecture** com separação em 4 camadas:
+**Clean Architecture** com separaï¿½ï¿½o em 4 camadas:
 
 ```
 ???????????????????????????????????????
@@ -50,37 +50,37 @@ API REST moderna para gerenciamento de dados energéticos de usinas hidrelétricas
 ### Componentes Principais
 
 #### 1. PDPW.API
-- **Responsabilidade**: Camada de apresentação
+- **Responsabilidade**: Camada de apresentaï¿½ï¿½o
 - **Tecnologias**: ASP.NET Core 8, Swagger
 - **Componentes**:
   - Controllers REST
-  - Configuração de CORS
+  - Configuraï¿½ï¿½o de CORS
   - Health Checks
-  - Middleware de exceções
+  - Middleware de exceï¿½ï¿½es
 
 #### 2. PDPW.Application
-- **Responsabilidade**: Lógica de negócio
-- **Padrões**: Service Layer, DTOs
+- **Responsabilidade**: Lï¿½gica de negï¿½cio
+- **Padrï¿½es**: Service Layer, DTOs
 - **Componentes**:
-  - Services de domínio
+  - Services de domï¿½nio
   - Mapeamento de DTOs
-  - Validações de negócio
+  - Validaï¿½ï¿½es de negï¿½cio
 
 #### 3. PDPW.Domain
-- **Responsabilidade**: Core do domínio
+- **Responsabilidade**: Core do domï¿½nio
 - **Componentes**:
-  - Entidades de domínio
-  - Interfaces de repositórios
-  - Regras de negócio
+  - Entidades de domï¿½nio
+  - Interfaces de repositï¿½rios
+  - Regras de negï¿½cio
 
 #### 4. PDPW.Infrastructure
-- **Responsabilidade**: Persistência de dados
+- **Responsabilidade**: Persistï¿½ncia de dados
 - **Tecnologias**: Entity Framework Core 8
 - **Componentes**:
   - DbContext
-  - Repositórios concretos
+  - Repositï¿½rios concretos
   - Migrations
-  - Configurações de entidades
+  - Configuraï¿½ï¿½es de entidades
 
 ---
 
@@ -105,7 +105,7 @@ public class DadoEnergetico
 
 ### Relacionamentos
 
-- Entidade única (por enquanto)
+- Entidade ï¿½nica (por enquanto)
 - Indexado por `DataReferencia`
 - Soft delete implementado
 
@@ -119,18 +119,18 @@ Development: https://localhost:65417
 Production: [A definir]
 ```
 
-### Endpoints Disponíveis
+### Endpoints Disponï¿½veis
 
-| Método | Endpoint | Descrição | Autenticação |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o | Autenticaï¿½ï¿½o |
 |--------|----------|-----------|--------------|
-| GET | `/api/DadosEnergeticos` | Listar todos os dados | Não |
-| GET | `/api/DadosEnergeticos/{id}` | Buscar por ID | Não |
-| GET | `/api/DadosEnergeticos/periodo` | Buscar por período | Não |
-| POST | `/api/DadosEnergeticos` | Criar novo dado | Não |
-| PUT | `/api/DadosEnergeticos/{id}` | Atualizar dado | Não |
-| DELETE | `/api/DadosEnergeticos/{id}` | Remover dado (soft delete) | Não |
-| GET | `/health` | Health check | Não |
-| GET | `/` | Status da API | Não |
+| GET | `/api/DadosEnergeticos` | Listar todos os dados | Nï¿½o |
+| GET | `/api/DadosEnergeticos/{id}` | Buscar por ID | Nï¿½o |
+| GET | `/api/DadosEnergeticos/periodo` | Buscar por perï¿½odo | Nï¿½o |
+| POST | `/api/DadosEnergeticos` | Criar novo dado | Nï¿½o |
+| PUT | `/api/DadosEnergeticos/{id}` | Atualizar dado | Nï¿½o |
+| DELETE | `/api/DadosEnergeticos/{id}` | Remover dado (soft delete) | Nï¿½o |
+| GET | `/health` | Health check | Nï¿½o |
+| GET | `/` | Status da API | Nï¿½o |
 
 ### Exemplos de Request/Response
 
@@ -145,7 +145,7 @@ Response 200 OK:
     "producaoMWh": 1500.50,
     "capacidadeDisponivel": 2000.00,
     "status": "Operacional",
-    "observacoes": "Produção normal"
+    "observacoes": "Produï¿½ï¿½o normal"
   }
 ]
 ```
@@ -159,7 +159,7 @@ Request:
   "producaoMWh": 1500.50,
   "capacidadeDisponivel": 2000.00,
   "status": "Operacional",
-  "observacoes": "Produção normal"
+  "observacoes": "Produï¿½ï¿½o normal"
 }
 
 Response 201 Created:
@@ -170,7 +170,7 @@ Response 201 Created:
   "producaoMWh": 1500.50,
   "capacidadeDisponivel": 2000.00,
   "status": "Operacional",
-  "observacoes": "Produção normal"
+  "observacoes": "Produï¿½ï¿½o normal"
 }
 ```
 
@@ -178,13 +178,13 @@ Response 201 Created:
 
 ## ?? Banco de Dados
 
-### Opções Suportadas
+### Opï¿½ï¿½es Suportadas
 
-| Opção | Configuração | Persistência | Uso Recomendado |
+| Opï¿½ï¿½o | Configuraï¿½ï¿½o | Persistï¿½ncia | Uso Recomendado |
 |-------|-------------|--------------|-----------------|
-| InMemory | `UseInMemoryDatabase: true` | ? Temporária | Desenvolvimento, Testes |
+| InMemory | `UseInMemoryDatabase: true` | ? Temporï¿½ria | Desenvolvimento, Testes |
 | LocalDB | Connection string LocalDB | ? Persistente | Desenvolvimento Local |
-| SQL Server | Connection string SQL | ? Persistente | Produção, Staging |
+| SQL Server | Connection string SQL | ? Persistente | Produï¿½ï¿½o, Staging |
 
 ### Connection Strings
 
@@ -195,26 +195,26 @@ Response 201 Created:
 // SQL Server
 "Server=localhost;Database=PDPW_DB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true"
 
-// SQL Server com autenticação
+// SQL Server com autenticaï¿½ï¿½o
 "Server=localhost;Database=PDPW_DB;User Id=usuario;Password=senha;TrustServerCertificate=True;MultipleActiveResultSets=true"
 ```
 
 ### Migrations
 
 ```powershell
-# Criar migração
+# Criar migraï¿½ï¿½o
 dotnet ef migrations add NomeDaMigracao --project src\PDPW.Infrastructure --startup-project src\PDPW.API
 
-# Aplicar migrações
+# Aplicar migraï¿½ï¿½es
 dotnet ef database update --project src\PDPW.Infrastructure --startup-project src\PDPW.API
 
-# Reverter migração
+# Reverter migraï¿½ï¿½o
 dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --startup-project src\PDPW.API
 ```
 
 ---
 
-## ?? Configuração
+## ?? Configuraï¿½ï¿½o
 
 ### appsettings.json
 
@@ -247,10 +247,10 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 
 ## ?? Testes
 
-### Estratégia de Testes
+### Estratï¿½gia de Testes
 
-- [ ] **Testes Unitários** - Services e Domain
-- [ ] **Testes de Integração** - Repositories
+- [ ] **Testes Unitï¿½rios** - Services e Domain
+- [ ] **Testes de Integraï¿½ï¿½o** - Repositories
 - [ ] **Testes de API** - Endpoints
 - [ ] **Testes E2E** - Fluxos completos
 
@@ -263,11 +263,11 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 
 ---
 
-## ?? Dependências
+## ?? Dependï¿½ncias
 
 ### Pacotes NuGet Principais
 
-| Pacote | Versão | Projeto | Uso |
+| Pacote | Versï¿½o | Projeto | Uso |
 |--------|--------|---------|-----|
 | Microsoft.EntityFrameworkCore | 8.0.0 | Infrastructure | ORM |
 | Microsoft.EntityFrameworkCore.SqlServer | 8.0.0 | Infrastructure | Provider SQL Server |
@@ -298,20 +298,20 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 
 ---
 
-## ?? Segurança
+## ?? Seguranï¿½a
 
 ### Implementado
 
 - ? CORS configurado
 - ? HTTPS redirection
 - ? Health checks
-- ? Logging de exceções
+- ? Logging de exceï¿½ï¿½es
 - ? Connection string em appsettings
 
 ### A Implementar
 
-- [ ] Autenticação JWT
-- [ ] Autorização por roles
+- [ ] Autenticaï¿½ï¿½o JWT
+- [ ] Autorizaï¿½ï¿½o por roles
 - [ ] Rate limiting
 - [ ] API Keys
 - [ ] Secrets em Azure Key Vault
@@ -323,10 +323,10 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 ### Logs
 
 - **Provider**: Console, Debug, EventLog
-- **Níveis**: Information, Warning, Error, Critical
+- **Nï¿½veis**: Information, Warning, Error, Critical
 - **Destino**: Application Insights (futuro)
 
-### Métricas
+### Mï¿½tricas
 
 - Health check endpoint: `/health`
 - Status endpoint: `/`
@@ -335,24 +335,24 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 
 ---
 
-## ?? Documentação
+## ?? Documentaï¿½ï¿½o
 
-### Disponível
+### Disponï¿½vel
 
-| Documento | Descrição |
+| Documento | Descriï¿½ï¿½o |
 |-----------|-----------|
-| `README.md` | Visão geral do projeto |
-| `DATABASE_SETUP.md` | Configuração de banco de dados |
-| `TROUBLESHOOTING.md` | Solução de problemas |
+| `README.md` | Visï¿½o geral do projeto |
+| `DATABASE_SETUP.md` | Configuraï¿½ï¿½o de banco de dados |
+| `TROUBLESHOOTING.md` | Soluï¿½ï¿½o de problemas |
 | `IMPROVEMENTS.md` | Melhorias implementadas |
 | `SHARING_GUIDE.md` | Guia de compartilhamento |
-| `QUICK_START_INMEMORY.md` | Início rápido |
+| `QUICK_START_INMEMORY.md` | Inï¿½cio rï¿½pido |
 
 ### Swagger/OpenAPI
 
 - URL: https://localhost:65417/swagger
-- Documentação interativa de todos os endpoints
-- Try-it-out disponível
+- Documentaï¿½ï¿½o interativa de todos os endpoints
+- Try-it-out disponï¿½vel
 
 ---
 
@@ -361,30 +361,30 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 ### Fase 1 - MVP (Atual)
 - [x] Estrutura Clean Architecture
 - [x] CRUD de DadosEnergeticos
-- [x] Suporte a múltiplos bancos
-- [x] Documentação Swagger
+- [x] Suporte a mï¿½ltiplos bancos
+- [x] Documentaï¿½ï¿½o Swagger
 - [x] Health checks
 - [x] Logging
 
 ### Fase 2 - Melhorias
-- [ ] Autenticação/Autorização
-- [ ] Validações avançadas
+- [ ] Autenticaï¿½ï¿½o/Autorizaï¿½ï¿½o
+- [ ] Validaï¿½ï¿½es avanï¿½adas
 - [ ] Cache (Redis)
-- [ ] Paginação
-- [ ] Filtros avançados
+- [ ] Paginaï¿½ï¿½o
+- [ ] Filtros avanï¿½ados
 
-### Fase 3 - Produção
+### Fase 3 - Produï¿½ï¿½o
 - [ ] Testes automatizados
 - [ ] CI/CD pipeline
-- [ ] Containerização (Docker)
+- [ ] Containerizaï¿½ï¿½o (Docker)
 - [ ] Monitoring (App Insights)
 - [ ] Performance optimization
 
-### Fase 4 - Expansão
+### Fase 4 - Expansï¿½o
 - [ ] Frontend React/Angular
-- [ ] Relatórios
-- [ ] Exportação de dados
-- [ ] APIs de integração
+- [ ] Relatï¿½rios
+- [ ] Exportaï¿½ï¿½o de dados
+- [ ] APIs de integraï¿½ï¿½o
 - [ ] Dashboard analytics
 
 ---
@@ -401,7 +401,7 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 
 - **Issues**: https://github.com/wbulhoes/ONS_PoC-PDPW/issues
 - **Pull Requests**: https://github.com/wbulhoes/ONS_PoC-PDPW/pulls
-- **Documentação**: Ver arquivos `.md` na raiz do projeto
+- **Documentaï¿½ï¿½o**: Ver arquivos `.md` na raiz do projeto
 
 ---
 
@@ -411,15 +411,15 @@ dotnet ef database update PreviousMigration --project src\PDPW.Infrastructure --
 - Estrutura inicial do projeto
 - CRUD de DadosEnergeticos
 - Suporte InMemory/SQL Server
-- Documentação completa
+- Documentaï¿½ï¿½o completa
 
 ---
 
-## ?? Licença
+## ?? Licenï¿½a
 
-[Definir licença]
+[Definir licenï¿½a]
 
 ---
 
-**Última atualização:** 17/12/2025
-**Versão da especificação:** 1.0
+**ï¿½ltima atualizaï¿½ï¿½o:** 17/12/2025
+**Versï¿½o da especificaï¿½ï¿½o:** 1.0

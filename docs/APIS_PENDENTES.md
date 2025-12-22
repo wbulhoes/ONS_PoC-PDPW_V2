@@ -1,19 +1,19 @@
-# ?? 24 APIs PENDENTES - Detalhamento Completo
+ï»¿# ?? 24 APIs PENDENTES - Detalhamento Completo
 
-**Status:** ? Não iniciado  
+**Status:** ? Nï¿½o iniciado  
 **Branch:** `feature/backend`  
 **Objetivo:** Implementar backend completo do PDPw
 
 ---
 
-## ?? VISÃO GERAL
+## ?? VISï¿½O GERAL
 
 | Categoria | Quantidade | Status |
 |-----------|------------|--------|
-| **Operação Energética** | 5 APIs | ? |
-| **Cargas e Balanço** | 3 APIs | ? |
+| **Operaï¿½ï¿½o Energï¿½tica** | 5 APIs | ? |
+| **Cargas e Balanï¿½o** | 3 APIs | ? |
 | **Consolidados** | 3 APIs | ? |
-| **Térmicas e Contratos** | 4 APIs | ? |
+| **Tï¿½rmicas e Contratos** | 4 APIs | ? |
 | **Paradas e Motivos** | 2 APIs | ? |
 | **Documentos** | 4 APIs | ? |
 | **Administrativo** | 2 APIs | ? |
@@ -22,7 +22,7 @@
 
 ---
 
-## ?? GRUPO A: OPERAÇÃO ENERGÉTICA (Prioridade ALTA)
+## ?? GRUPO A: OPERAï¿½ï¿½O ENERGï¿½TICA (Prioridade ALTA)
 
 ### 1. **ArquivoDadger API** ???
 **Arquivo:** `ArquivosDadgerController.cs`  
@@ -48,15 +48,15 @@ DELETE /api/arquivos-dadger/{id}         # Remover
 **Complexidade:**
 - Relacionamento com SemanaPMO
 - Parsing de arquivo DADGER
-- Múltiplos valores por arquivo
-- Cálculos de inflexibilidade
+- Mï¿½ltiplos valores por arquivo
+- Cï¿½lculos de inflexibilidade
 
 ---
 
 ### 2. **UnidadeGeradora API** ???
 **Arquivo:** `UnidadesGeradorasController.cs`  
 **Prioridade:** ALTA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 1 dia
 
 **Entidade:** `UnidadeGeradora`
@@ -65,12 +65,12 @@ DELETE /api/arquivos-dadger/{id}         # Remover
 ```
 GET    /api/unidades-geradoras                    # Listar todas
 GET    /api/unidades-geradoras/{id}               # Buscar por ID
-GET    /api/unidades-geradoras/codigo/{codigo}    # Por código
+GET    /api/unidades-geradoras/codigo/{codigo}    # Por cï¿½digo
 GET    /api/unidades-geradoras/usina/{usinaId}    # Por usina
 POST   /api/unidades-geradoras                    # Criar
 PUT    /api/unidades-geradoras/{id}               # Atualizar
 DELETE /api/unidades-geradoras/{id}               # Remover
-GET    /api/unidades-geradoras/verificar-codigo/{codigo} # Validar código
+GET    /api/unidades-geradoras/verificar-codigo/{codigo} # Validar cï¿½digo
 ```
 
 **Legado:** `UnidadeGeradoraDAO.vb`
@@ -85,7 +85,7 @@ GET    /api/unidades-geradoras/verificar-codigo/{codigo} # Validar código
 ### 3. **RestricaoUG API** ???
 **Arquivo:** `RestricoesUGController.cs`  
 **Prioridade:** ALTA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 1 dia
 
 **Entidade:** `RestricaoUG`
@@ -95,7 +95,7 @@ GET    /api/unidades-geradoras/verificar-codigo/{codigo} # Validar código
 GET    /api/restricoes-ug                     # Listar todas
 GET    /api/restricoes-ug/{id}                # Buscar por ID
 GET    /api/restricoes-ug/unidade/{ugId}      # Por unidade geradora
-GET    /api/restricoes-ug/periodo             # Por período (query params)
+GET    /api/restricoes-ug/periodo             # Por perï¿½odo (query params)
 POST   /api/restricoes-ug                     # Criar
 DELETE /api/restricoes-ug/{id}                # Remover
 ```
@@ -111,7 +111,7 @@ DELETE /api/restricoes-ug/{id}                # Remover
 ### 4. **RestricaoUS API** ???
 **Arquivo:** `RestricoesUSController.cs`  
 **Prioridade:** ALTA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 1 dia
 
 **Entidade:** `RestricaoUS`
@@ -121,7 +121,7 @@ DELETE /api/restricoes-ug/{id}                # Remover
 GET    /api/restricoes-us                 # Listar todas
 GET    /api/restricoes-us/{id}            # Buscar por ID
 GET    /api/restricoes-us/usina/{usinaId} # Por usina
-GET    /api/restricoes-us/periodo         # Por período
+GET    /api/restricoes-us/periodo         # Por perï¿½odo
 POST   /api/restricoes-us                 # Criar
 DELETE /api/restricoes-us/{id}            # Remover
 ```
@@ -137,7 +137,7 @@ DELETE /api/restricoes-us/{id}            # Remover
 ### 5. **GerForaMerito API** ???
 **Arquivo:** `GeracoesForaMeritoController.cs`  
 **Prioridade:** ALTA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 1 dia
 
 **Entidade:** `GerForaMerito`
@@ -147,7 +147,7 @@ DELETE /api/restricoes-us/{id}            # Remover
 GET    /api/geracoes-fora-merito                # Listar todas
 GET    /api/geracoes-fora-merito/{id}           # Buscar por ID
 GET    /api/geracoes-fora-merito/usina/{usinaId} # Por usina
-GET    /api/geracoes-fora-merito/periodo        # Por período
+GET    /api/geracoes-fora-merito/periodo        # Por perï¿½odo
 POST   /api/geracoes-fora-merito                # Criar
 DELETE /api/geracoes-fora-merito/{id}           # Remover
 ```
@@ -159,12 +159,12 @@ DELETE /api/geracoes-fora-merito/{id}           # Remover
 
 ---
 
-## ? GRUPO B: CARGAS E BALANÇO (Prioridade ALTA)
+## ? GRUPO B: CARGAS E BALANï¿½O (Prioridade ALTA)
 
 ### 6. **Carga API** ???
 **Arquivo:** `CargasController.cs`  
 **Prioridade:** ALTA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 1 dia
 
 **Entidade:** `Carga`
@@ -174,9 +174,9 @@ DELETE /api/geracoes-fora-merito/{id}           # Remover
 GET    /api/cargas                      # Listar todas
 GET    /api/cargas/{id}                 # Buscar por ID
 GET    /api/cargas/subsistema/{id}      # Por subsistema
-GET    /api/cargas/periodo              # Por período
+GET    /api/cargas/periodo              # Por perï¿½odo
 GET    /api/cargas/verificada           # Carga verificada
-GET    /api/cargas/previsao             # Previsão de carga
+GET    /api/cargas/previsao             # Previsï¿½o de carga
 POST   /api/cargas                      # Criar
 PUT    /api/cargas/{id}                 # Atualizar
 ```
@@ -194,7 +194,7 @@ PUT    /api/cargas/{id}                 # Atualizar
 ### 7. **Intercambio API** ???
 **Arquivo:** `IntercambiosController.cs`  
 **Prioridade:** ALTA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 1 dia
 
 **Entidade:** `Intercambio`
@@ -205,7 +205,7 @@ GET    /api/intercambios                # Listar todos
 GET    /api/intercambios/{id}           # Buscar por ID
 GET    /api/intercambios/origem/{id}    # Por subsistema origem
 GET    /api/intercambios/destino/{id}   # Por subsistema destino
-GET    /api/intercambios/periodo        # Por período
+GET    /api/intercambios/periodo        # Por perï¿½odo
 GET    /api/intercambios/fluxo          # Fluxo entre subsistemas
 POST   /api/intercambios                # Criar
 PUT    /api/intercambios/{id}           # Atualizar
@@ -213,9 +213,9 @@ PUT    /api/intercambios/{id}           # Atualizar
 
 **Legado:** `IntercambioDAO.vb`
 
-**Lógica especial:**
+**Lï¿½gica especial:**
 - Fluxo bidirecional entre subsistemas
-- Cálculo de perdas
+- Cï¿½lculo de perdas
 
 ---
 
@@ -232,30 +232,30 @@ PUT    /api/intercambios/{id}           # Atualizar
 GET    /api/balancos                    # Listar todos
 GET    /api/balancos/{id}               # Buscar por ID
 GET    /api/balancos/subsistema/{id}    # Por subsistema
-GET    /api/balancos/periodo            # Por período
-GET    /api/balancos/calcular           # Calcular balanço
-GET    /api/balancos/deficit            # Análise de déficit
+GET    /api/balancos/periodo            # Por perï¿½odo
+GET    /api/balancos/calcular           # Calcular balanï¿½o
+GET    /api/balancos/deficit            # Anï¿½lise de dï¿½ficit
 POST   /api/balancos                    # Criar
 PUT    /api/balancos/{id}               # Atualizar
 ```
 
 **Legado:** `BalancoDAO.vb`
 
-**Cálculos:**
-- Geração - Carga + Intercâmbio - Perdas = Déficit
-- Agregação de dados de múltiplas fontes
+**Cï¿½lculos:**
+- Geraï¿½ï¿½o - Carga + Intercï¿½mbio - Perdas = Dï¿½ficit
+- Agregaï¿½ï¿½o de dados de mï¿½ltiplas fontes
 
 ---
 
-## ?? GRUPO C: CONSOLIDADOS (Prioridade MÉDIA)
+## ?? GRUPO C: CONSOLIDADOS (Prioridade Mï¿½DIA)
 
 ### 9. **DCA API** ??
 **Arquivo:** `DCAsController.cs`  
-**Prioridade:** MÉDIA  
-**Complexidade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
-**Entidade:** `DCA` (Declaração de Carga Agregada)
+**Entidade:** `DCA` (Declaraï¿½ï¿½o de Carga Agregada)
 
 **Endpoints (8):**
 ```
@@ -279,11 +279,11 @@ DELETE /api/dcas/{id}                   # Remover
 
 ### 10. **DCR API** ??
 **Arquivo:** `DCRsController.cs`  
-**Prioridade:** MÉDIA  
-**Complexidade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
-**Entidade:** `DCR` (Declaração de Carga Revisada)
+**Entidade:** `DCR` (Declaraï¿½ï¿½o de Carga Revisada)
 
 **Endpoints (8):**
 ```
@@ -291,7 +291,7 @@ GET    /api/dcrs                        # Listar todos
 GET    /api/dcrs/{id}                   # Buscar por ID
 GET    /api/dcrs/dca/{dcaId}            # Por DCA
 GET    /api/dcrs/semana/{id}            # Por semana PMO
-GET    /api/dcrs/revisoes               # Histórico de revisões
+GET    /api/dcrs/revisoes               # Histï¿½rico de revisï¿½es
 POST   /api/dcrs                        # Criar
 PUT    /api/dcrs/{id}                   # Atualizar
 DELETE /api/dcrs/{id}                   # Remover
@@ -307,7 +307,7 @@ DELETE /api/dcrs/{id}                   # Remover
 
 ### 11. **Responsavel API** ??
 **Arquivo:** `ResponsaveisController.cs`  
-**Prioridade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
 **Complexidade:** BAIXA  
 **Estimativa:** 0.5 dia
 
@@ -327,12 +327,12 @@ DELETE /api/responsaveis/{id}           # Remover
 
 ---
 
-## ?? GRUPO D: TÉRMICAS E CONTRATOS (Prioridade MÉDIA)
+## ?? GRUPO D: Tï¿½RMICAS E CONTRATOS (Prioridade Mï¿½DIA)
 
 ### 12. **ModalidadeOpTermica API** ??
 **Arquivo:** `ModalidadesOpTermicaController.cs`  
-**Prioridade:** MÉDIA  
-**Complexidade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
 **Entidade:** `ModalidadeOpTermica`
@@ -345,8 +345,8 @@ GET    /api/modalidades-op-termica/nome/{nome} # Por nome
 POST   /api/modalidades-op-termica      # Criar
 PUT    /api/modalidades-op-termica/{id} # Atualizar
 DELETE /api/modalidades-op-termica/{id} # Remover
-GET    /api/modalidades-op-termica/custos # Análise de custos
-GET    /api/modalidades-op-termica/potencias # Faixas de potência
+GET    /api/modalidades-op-termica/custos # Anï¿½lise de custos
+GET    /api/modalidades-op-termica/potencias # Faixas de potï¿½ncia
 ```
 
 **Legado:** `ModalidadeOpTermicaDAO.vb`
@@ -355,8 +355,8 @@ GET    /api/modalidades-op-termica/potencias # Faixas de potência
 
 ### 13. **InflexibilidadeContratada API** ??
 **Arquivo:** `InflexibilidadesContratadasController.cs`  
-**Prioridade:** MÉDIA  
-**Complexidade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
 **Entidade:** `InflexibilidadeContratada`
@@ -366,7 +366,7 @@ GET    /api/modalidades-op-termica/potencias # Faixas de potência
 GET    /api/inflexibilidades-contratadas           # Listar todas
 GET    /api/inflexibilidades-contratadas/{id}      # Buscar por ID
 GET    /api/inflexibilidades-contratadas/usina/{usinaId} # Por usina
-GET    /api/inflexibilidades-contratadas/periodo   # Por período
+GET    /api/inflexibilidades-contratadas/periodo   # Por perï¿½odo
 GET    /api/inflexibilidades-contratadas/ativas    # Contratos ativos
 POST   /api/inflexibilidades-contratadas           # Criar
 PUT    /api/inflexibilidades-contratadas/{id}      # Atualizar
@@ -379,8 +379,8 @@ DELETE /api/inflexibilidades-contratadas/{id}      # Remover
 
 ### 14. **RampasUsinaTermica API** ??
 **Arquivo:** `RampasUsinasTermicasController.cs`  
-**Prioridade:** MÉDIA  
-**Complexidade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
 **Entidade:** `RampasUsinaTermica`
@@ -394,7 +394,7 @@ GET    /api/rampas-usinas-termicas/validar   # Validar rampas
 POST   /api/rampas-usinas-termicas           # Criar
 PUT    /api/rampas-usinas-termicas/{id}      # Atualizar
 DELETE /api/rampas-usinas-termicas/{id}      # Remover
-GET    /api/rampas-usinas-termicas/tempos    # Análise de tempos
+GET    /api/rampas-usinas-termicas/tempos    # Anï¿½lise de tempos
 ```
 
 **Legado:** `RampasUsinaTermicaDAO.vb`
@@ -409,7 +409,7 @@ GET    /api/rampas-usinas-termicas/tempos    # Análise de tempos
 
 ### 15. **UsinaConversora API** ??
 **Arquivo:** `UsinasConversorasController.cs`  
-**Prioridade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
 **Complexidade:** BAIXA  
 **Estimativa:** 0.5 dia
 
@@ -429,11 +429,11 @@ DELETE /api/usinas-conversoras/{id}         # Remover
 
 ---
 
-## ?? GRUPO E: PARADAS E MOTIVOS (Prioridade MÉDIA)
+## ?? GRUPO E: PARADAS E MOTIVOS (Prioridade Mï¿½DIA)
 
 ### 16. **ParadaUG API** ??
 **Arquivo:** `ParadasUGController.cs`  
-**Prioridade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
 **Complexidade:** BAIXA  
 **Estimativa:** 0.5 dia
 
@@ -444,9 +444,9 @@ DELETE /api/usinas-conversoras/{id}         # Remover
 GET    /api/paradas-ug                      # Listar todas
 GET    /api/paradas-ug/{id}                 # Buscar por ID
 GET    /api/paradas-ug/unidade/{ugId}       # Por unidade geradora
-GET    /api/paradas-ug/periodo              # Por período
+GET    /api/paradas-ug/periodo              # Por perï¿½odo
 GET    /api/paradas-ug/programadas          # Paradas programadas
-GET    /api/paradas-ug/forcadas             # Paradas forçadas
+GET    /api/paradas-ug/forcadas             # Paradas forï¿½adas
 POST   /api/paradas-ug                      # Criar
 PUT    /api/paradas-ug/{id}                 # Atualizar
 ```
@@ -457,7 +457,7 @@ PUT    /api/paradas-ug/{id}                 # Atualizar
 
 ### 17. **MotivoRestricao API** ??
 **Arquivo:** `MotivosRestricaoController.cs`  
-**Prioridade:** MÉDIA  
+**Prioridade:** Mï¿½DIA  
 **Complexidade:** BAIXA  
 **Estimativa:** 0.5 dia
 
@@ -504,7 +504,7 @@ GET    /api/uploads/tipos/{tipo}    # Por tipo de arquivo
 ### 19. **Relatorio API** ?
 **Arquivo:** `RelatoriosController.cs`  
 **Prioridade:** BAIXA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
 **Entidade:** `Relatorio`
@@ -514,7 +514,7 @@ GET    /api/uploads/tipos/{tipo}    # Por tipo de arquivo
 GET    /api/relatorios                  # Listar todos
 GET    /api/relatorios/{id}             # Buscar por ID
 GET    /api/relatorios/tipo/{tipo}      # Por tipo
-GET    /api/relatorios/gerar            # Gerar relatório
+GET    /api/relatorios/gerar            # Gerar relatï¿½rio
 GET    /api/relatorios/{id}/exportar    # Exportar (PDF/Excel)
 POST   /api/relatorios                  # Criar
 PUT    /api/relatorios/{id}             # Atualizar
@@ -537,12 +537,12 @@ DELETE /api/relatorios/{id}             # Remover
 ```
 GET    /api/arquivos                    # Listar todos
 GET    /api/arquivos/{id}               # Buscar por ID
-GET    /api/arquivos/diretorio/{dirId}  # Por diretório
+GET    /api/arquivos/diretorio/{dirId}  # Por diretï¿½rio
 GET    /api/arquivos/{id}/download      # Download
 POST   /api/arquivos                    # Upload
 PUT    /api/arquivos/{id}               # Atualizar metadados
 DELETE /api/arquivos/{id}               # Remover
-GET    /api/arquivos/buscar             # Busca por nome/extensão
+GET    /api/arquivos/buscar             # Busca por nome/extensï¿½o
 ```
 
 **Legado:** `ArquivoDAO.vb`
@@ -562,8 +562,8 @@ GET    /api/arquivos/buscar             # Busca por nome/extensão
 GET    /api/diretorios                  # Listar todos
 GET    /api/diretorios/{id}             # Buscar por ID
 GET    /api/diretorios/{id}/subdiretorios # Subdiretorios
-GET    /api/diretorios/{id}/arquivos    # Arquivos do diretório
-GET    /api/diretorios/raiz             # Diretório raiz
+GET    /api/diretorios/{id}/arquivos    # Arquivos do diretï¿½rio
+GET    /api/diretorios/raiz             # Diretï¿½rio raiz
 POST   /api/diretorios                  # Criar
 PUT    /api/diretorios/{id}             # Atualizar
 DELETE /api/diretorios/{id}             # Remover
@@ -578,7 +578,7 @@ DELETE /api/diretorios/{id}             # Remover
 ### 22. **Usuario API** ?
 **Arquivo:** `UsuariosController.cs`  
 **Prioridade:** BAIXA  
-**Complexidade:** MÉDIA  
+**Complexidade:** Mï¿½DIA  
 **Estimativa:** 0.5 dia
 
 **Entidade:** `Usuario`
@@ -597,7 +597,7 @@ DELETE /api/usuarios/{id}               # Remover
 
 **Legado:** `UsuarioDAO.vb`
 
-**Nota:** Sem autenticação completa na POC
+**Nota:** Sem autenticaï¿½ï¿½o completa na POC
 
 ---
 
@@ -613,8 +613,8 @@ DELETE /api/usuarios/{id}               # Remover
 ```
 GET    /api/observacoes                 # Listar todas
 GET    /api/observacoes/{id}            # Buscar por ID
-GET    /api/observacoes/buscar          # Busca por título/conteúdo
-GET    /api/observacoes/periodo         # Por período
+GET    /api/observacoes/buscar          # Busca por tï¿½tulo/conteï¿½do
+GET    /api/observacoes/periodo         # Por perï¿½odo
 GET    /api/observacoes/autor/{autor}   # Por autor
 POST   /api/observacoes                 # Criar
 PUT    /api/observacoes/{id}            # Atualizar
@@ -633,7 +633,7 @@ DELETE /api/observacoes/{id}            # Remover
 **Complexidade:** BAIXA  
 **Estimativa:** 0.5 dia
 
-**Ação:** Refatorar para usar Result<T> e linguagem ubíqua
+**Aï¿½ï¿½o:** Refatorar para usar Result<T> e linguagem ubï¿½qua
 
 ---
 
@@ -642,44 +642,44 @@ DELETE /api/observacoes/{id}            # Remover
 ### **Total de Trabalho:**
 - **24 APIs** a implementar
 - **~170 endpoints** a criar
-- **Estimativa total:** ~20 dias úteis
-- **Com testes:** ~30 dias úteis
+- **Estimativa total:** ~20 dias ï¿½teis
+- **Com testes:** ~30 dias ï¿½teis
 
-### **Distribuição por Prioridade:**
+### **Distribuiï¿½ï¿½o por Prioridade:**
 - ??? **ALTA:** 8 APIs (33%)
-- ?? **MÉDIA:** 11 APIs (46%)
+- ?? **Mï¿½DIA:** 11 APIs (46%)
 - ? **BAIXA:** 5 APIs (21%)
 
-### **Distribuição por Complexidade:**
+### **Distribuiï¿½ï¿½o por Complexidade:**
 - **ALTA:** 3 APIs (12%)
-- **MÉDIA:** 13 APIs (54%)
+- **Mï¿½DIA:** 13 APIs (54%)
 - **BAIXA:** 8 APIs (34%)
 
 ---
 
-## ?? ESTRATÉGIA DE IMPLEMENTAÇÃO
+## ?? ESTRATï¿½GIA DE IMPLEMENTAï¿½ï¿½O
 
 ### **Abordagem Recomendada:**
 
-1. **Semana 1-2:** Grupo A + B (8 APIs críticas)
-2. **Semana 3:** Grupo C + D (7 APIs de negócio)
+1. **Semana 1-2:** Grupo A + B (8 APIs crï¿½ticas)
+2. **Semana 3:** Grupo C + D (7 APIs de negï¿½cio)
 3. **Semana 4:** Grupo E + F + G + H (9 APIs complementares)
-4. **Semana 5:** Testes, refatoração e documentação
+4. **Semana 5:** Testes, refatoraï¿½ï¿½o e documentaï¿½ï¿½o
 
 ### **Velocidade Esperada:**
 - **Com foco:** 2-3 APIs/dia (APIs simples)
 - **Com qualidade:** 1-2 APIs/dia (com testes)
-- **Realista:** 1.5 APIs/dia (média ponderada)
+- **Realista:** 1.5 APIs/dia (mï¿½dia ponderada)
 
 ### **Marco de Sucesso:**
 ? 29 APIs implementadas  
 ? ~200 endpoints funcionando  
 ? >80% cobertura de testes  
-? Documentação completa  
-? Backend pronto para produção  
+? Documentaï¿½ï¿½o completa  
+? Backend pronto para produï¿½ï¿½o  
 
 ---
 
 **Criado em:** 20/12/2024  
 **Branch:** `feature/backend`  
-**Próximo passo:** Implementar Fase 1 (Fundação)
+**Prï¿½ximo passo:** Implementar Fase 1 (Fundaï¿½ï¿½o)

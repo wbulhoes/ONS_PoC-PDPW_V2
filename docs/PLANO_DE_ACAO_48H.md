@@ -1,52 +1,52 @@
-# ?? PLANO DE AÇÃO - POC PDPW (19-21/12/2024)
+ï»¿# ?? PLANO DE Aï¿½ï¿½O - POC PDPW (19-21/12/2024)
 
 ---
 
 ## ? TIMELINE EXECUTIVA
 
 ```
-DIA 19 (Hoje)        DIA 20 (Sexta)       DIA 21 (Sábado)      DIA 26 (Apresentação)
+DIA 19 (Hoje)        DIA 20 (Sexta)       DIA 21 (Sï¿½bado)      DIA 26 (Apresentaï¿½ï¿½o)
      ?                    ?                    ?                     ?
      ?                    ?                    ?                     ?
 ????????????       ????????????       ????????????          ????????????
-? ANÁLISE  ???????>? DEV FULL ???????>?  AJUSTES ?????...??>?  DEMO    ?
+? ANï¿½LISE  ???????>? DEV FULL ???????>?  AJUSTES ?????...??>?  DEMO    ?
 ? COMPLETA ?       ?  SPRINT  ?       ?   FINAIS ?          ? CLIENTE  ?
 ????????????       ????????????       ????????????          ????????????
-  14h-18h             09h-18h            09h-13h              Horário TBD
+  14h-18h             09h-18h            09h-13h              Horï¿½rio TBD
 ```
 
 ---
 
-## ?? DIA 19 (HOJE) - ANÁLISE E PLANEJAMENTO
+## ?? DIA 19 (HOJE) - ANï¿½LISE E PLANEJAMENTO
 
-### ? CONCLUÍDO (14h-18h)
-- [x] Análise completa do código
-- [x] Validação de arquitetura
-- [x] Criação de relatórios:
+### ? CONCLUï¿½DO (14h-18h)
+- [x] Anï¿½lise completa do cï¿½digo
+- [x] Validaï¿½ï¿½o de arquitetura
+- [x] Criaï¿½ï¿½o de relatï¿½rios:
   - [x] `RELATORIO_VALIDACAO_POC.md` (completo)
   - [x] `RESUMO_EXECUTIVO_VALIDACAO.md` (executivo)
   - [x] `CHECKLIST_STATUS_ATUAL.md` (visual)
   - [x] `PLANO_DE_ACAO.md` (este arquivo)
 
-### ?? PRÓXIMOS PASSOS (18h-22h)
-- [ ] **Tech Lead:** Reunião com squad (30 min)
-  - Apresentar análise e gaps
+### ?? PRï¿½XIMOS PASSOS (18h-22h)
+- [ ] **Tech Lead:** Reuniï¿½o com squad (30 min)
+  - Apresentar anï¿½lise e gaps
   - Distribuir tarefas urgentes
   - Alinhar expectativas
   
 - [ ] **DEV Frontend:** Setup local
-  - Clonar repositório
+  - Clonar repositï¿½rio
   - Testar `npm install`
-  - Rodar backend local para integração
+  - Rodar backend local para integraï¿½ï¿½o
 
 - [ ] **DEV 1 (Backend):** Setup local
   - Testar `docker-compose up`
   - Validar Swagger funcionando
   - Preparar ambiente para dev
 
-- [ ] **DEV 2 (Backend):** Análise de código
+- [ ] **DEV 2 (Backend):** Anï¿½lise de cï¿½digo
   - Revisar repositories existentes
-  - Identificar padrão a seguir
+  - Identificar padrï¿½o a seguir
   - Preparar templates
 
 ---
@@ -60,10 +60,10 @@ DIA 19 (Hoje)        DIA 20 (Sexta)       DIA 21 (Sábado)      DIA 26 (Apresenta
 
 ### ?? DEV FRONTEND (8 horas)
 
-#### ? MANHÃ (09h-13h) - Estrutura Base
-**Objetivo:** Criar componentes básicos da Tela de Usinas
+#### ? MANHï¿½ (09h-13h) - Estrutura Base
+**Objetivo:** Criar componentes bï¿½sicos da Tela de Usinas
 
-##### 09h-10h30: Setup e Dependências
+##### 09h-10h30: Setup e Dependï¿½ncias
 ```bash
 cd frontend
 npm install ag-grid-react ag-grid-community
@@ -74,13 +74,13 @@ npm install react-toastify axios
 ##### 10h30-13h: Criar UsinasLista.tsx
 **Checklist:**
 - [ ] Componente com AG Grid
-- [ ] Colunas: Código, Nome, Tipo, Empresa, Capacidade, Ações
-- [ ] Botão "Nova Usina" (abre modal)
-- [ ] Botões de ação por linha (Editar, Excluir)
+- [ ] Colunas: Cï¿½digo, Nome, Tipo, Empresa, Capacidade, Aï¿½ï¿½es
+- [ ] Botï¿½o "Nova Usina" (abre modal)
+- [ ] Botï¿½es de aï¿½ï¿½o por linha (Editar, Excluir)
 - [ ] Loading state (skeleton)
 - [ ] Error handling (toast)
 
-**Código Exemplo:**
+**Cï¿½digo Exemplo:**
 ```typescript
 // frontend/src/components/Usinas/UsinasLista.tsx
 import { useEffect, useState } from 'react';
@@ -111,7 +111,7 @@ export const UsinasLista = () => {
   }, []);
 
   const columnDefs = [
-    { field: 'codigo', headerName: 'Código', width: 150 },
+    { field: 'codigo', headerName: 'Cï¿½digo', width: 150 },
     { field: 'nome', headerName: 'Nome', width: 300 },
     // ... demais colunas
   ];
@@ -130,19 +130,19 @@ export const UsinasLista = () => {
 
 ---
 
-#### ? TARDE (14h-18h) - Formulário e Integração
+#### ? TARDE (14h-18h) - Formulï¿½rio e Integraï¿½ï¿½o
 **Objetivo:** Implementar CRUD completo
 
 ##### 14h-16h: Criar UsinasForm.tsx
 **Checklist:**
-- [ ] Formulário com React Hook Form
-- [ ] Campos: Código, Nome, Tipo (select), Empresa (select), Capacidade, Localização, Data Operação
-- [ ] Validações com Yup
+- [ ] Formulï¿½rio com React Hook Form
+- [ ] Campos: Cï¿½digo, Nome, Tipo (select), Empresa (select), Capacidade, Localizaï¿½ï¿½o, Data Operaï¿½ï¿½o
+- [ ] Validaï¿½ï¿½es com Yup
 - [ ] Submit para POST `/api/usinas` (criar)
 - [ ] Submit para PUT `/api/usinas/{id}` (editar)
 - [ ] Toast de sucesso/erro
 
-**Código Exemplo:**
+**Cï¿½digo Exemplo:**
 ```typescript
 // frontend/src/components/Usinas/UsinasForm.tsx
 import { useForm } from 'react-hook-form';
@@ -150,10 +150,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 const schema = yup.object({
-  codigo: yup.string().required('Código é obrigatório'),
-  nome: yup.string().required('Nome é obrigatório'),
-  tipoUsinaId: yup.number().required('Tipo é obrigatório'),
-  empresaId: yup.number().required('Empresa é obrigatória'),
+  codigo: yup.string().required('Cï¿½digo ï¿½ obrigatï¿½rio'),
+  nome: yup.string().required('Nome ï¿½ obrigatï¿½rio'),
+  tipoUsinaId: yup.number().required('Tipo ï¿½ obrigatï¿½rio'),
+  empresaId: yup.number().required('Empresa ï¿½ obrigatï¿½ria'),
   capacidadeInstalada: yup.number().positive().required(),
   // ... demais campos
 });
@@ -185,7 +185,7 @@ export const UsinasForm = ({ usinaId, onSuccess }: Props) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('codigo')} placeholder="Código" />
+      <input {...register('codigo')} placeholder="Cï¿½digo" />
       {errors.codigo && <span>{errors.codigo.message}</span>}
       
       {/* ... demais campos */}
@@ -196,7 +196,7 @@ export const UsinasForm = ({ usinaId, onSuccess }: Props) => {
 };
 ```
 
-##### 16h-18h: Integração e Testes
+##### 16h-18h: Integraï¿½ï¿½o e Testes
 - [ ] Integrar UsinasLista + UsinasForm
 - [ ] Testar fluxo completo (CRUD)
 - [ ] Ajustar layout/estilos
@@ -207,7 +207,7 @@ export const UsinasForm = ({ usinaId, onSuccess }: Props) => {
 
 ### ?? DEV 1 - BACKEND SENIOR (8 horas)
 
-#### ? MANHÃ (09h-13h) - APIs Críticas
+#### ? MANHï¿½ (09h-13h) - APIs Crï¿½ticas
 
 ##### 09h-11h: ArquivoDadgerController
 **Checklist:**
@@ -261,7 +261,7 @@ public class ArquivoDadgerRepository : IArquivoDadgerRepository
             .ToListAsync();
     }
 
-    // ... demais métodos (Adicionar, Atualizar, Remover)
+    // ... demais mï¿½todos (Adicionar, Atualizar, Remover)
 }
 ```
 
@@ -273,7 +273,7 @@ public class ArquivoDadgerRepository : IArquivoDadgerRepository
 - [ ] Criar `CargaController.cs` com 7 endpoints:
   - `GET /api/cargas` (listar)
   - `GET /api/cargas/{id}` (por ID)
-  - `GET /api/cargas/periodo` (por período)
+  - `GET /api/cargas/periodo` (por perï¿½odo)
   - `GET /api/cargas/subsistema/{subsistemaId}` (por subsistema)
   - `POST /api/cargas` (criar)
   - `PUT /api/cargas/{id}` (atualizar)
@@ -292,19 +292,19 @@ public class ArquivoDadgerRepository : IArquivoDadgerRepository
 
 ##### 16h-18h: IntercambioController (Opcional)
 - [ ] Se tempo permitir, implementar
-- [ ] Caso contrário, revisar/testar APIs criadas
+- [ ] Caso contrï¿½rio, revisar/testar APIs criadas
 - [ ] Commit + push
 
 ---
 
 ### ?? DEV 2 - BACKEND PLENO (8 horas)
 
-#### ? MANHÃ (09h-13h) - Repositories e Services
+#### ? MANHï¿½ (09h-13h) - Repositories e Services
 
 ##### 09h-11h: EmpresaRepository + EmpresaService
 **Checklist:**
 - [ ] Criar `EmpresaRepository.cs` (implementar IEmpresaRepository)
-- [ ] Métodos:
+- [ ] Mï¿½todos:
   - `ObterTodosAsync()`
   - `ObterPorIdAsync(int id)`
   - `ObterPorCNPJAsync(string cnpj)`
@@ -384,14 +384,14 @@ public class EmpresaRepository : IEmpresaRepository
 ```
 
 - [ ] Criar `EmpresaService.cs` (implementar IEmpresaService)
-- [ ] Adicionar validações de negócio:
-  - CNPJ único
-  - Nome obrigatório
+- [ ] Adicionar validaï¿½ï¿½es de negï¿½cio:
+  - CNPJ ï¿½nico
+  - Nome obrigatï¿½rio
   - Validar formato CNPJ
 
 ##### 11h-13h: TipoUsinaRepository + TipoUsinaService
-- [ ] Seguir mesmo padrão de EmpresaRepository
-- [ ] Implementar métodos básicos
+- [ ] Seguir mesmo padrï¿½o de EmpresaRepository
+- [ ] Implementar mï¿½todos bï¿½sicos
 
 ---
 
@@ -399,11 +399,11 @@ public class EmpresaRepository : IEmpresaRepository
 
 ##### 14h-15h30: UsinaRepository + UsinaService
 - [ ] Implementar com relacionamentos (Empresa, TipoUsina)
-- [ ] Método `ObterComDetalhesAsync()` (eager loading completo)
+- [ ] Mï¿½todo `ObterComDetalhesAsync()` (eager loading completo)
 
 ##### 15h30-17h: SemanaPMO + EquipePDP Repositories/Services
-- [ ] Criar ambos seguindo padrão
-- [ ] Validações específicas
+- [ ] Criar ambos seguindo padrï¿½o
+- [ ] Validaï¿½ï¿½es especï¿½ficas
 
 ##### 17h-18h: Registrar DI + Testar
 - [ ] Registrar todos os repositories/services no `Program.cs`:
@@ -431,7 +431,7 @@ builder.Services.AddScoped<IEquipePDPService, EquipePDPService>();
 ---
 
 #### ? NOITE (19h-21h - Opcional) - Seed Data
-**Se houver tempo disponível:**
+**Se houver tempo disponï¿½vel:**
 
 ##### Criar Seed para 5 Entidades Principais
 **Checklist:**
@@ -439,7 +439,7 @@ builder.Services.AddScoped<IEquipePDPService, EquipePDPService>();
 - [ ] ArquivoDadger (5 arquivos)
 - [ ] Carga (30 registros)
 - [ ] UnidadeGeradora (20 unidades para usinas existentes)
-- [ ] Usuario (5 usuários)
+- [ ] Usuario (5 usuï¿½rios)
 
 **Template de Migration:**
 ```csharp
@@ -448,7 +448,7 @@ public partial class SeedDataExtended : Migration
 {
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        // Semanas PMO (últimas 10 semanas de 2024)
+        // Semanas PMO (ï¿½ltimas 10 semanas de 2024)
         migrationBuilder.InsertData(
             table: "SemanasPMO",
             columns: new[] { "Numero", "DataInicio", "DataFim", "Ano", "Ativo", "DataCriacao" },
@@ -483,7 +483,7 @@ public partial class SeedDataExtended : Migration
         // Cargas (exemplo para SE/NE/S/N)
         // ... (30 registros)
 
-        // Usuários
+        // Usuï¿½rios
         migrationBuilder.InsertData(
             table: "Usuarios",
             columns: new[] { "Nome", "Email", "Perfil", "Ativo", "DataCriacao" },
@@ -491,7 +491,7 @@ public partial class SeedDataExtended : Migration
             {
                 { "Admin Sistema", "admin@ons.gov.br", "Administrador", true, DateTime.UtcNow },
                 { "Operador 1", "op1@ons.gov.br", "Operador", true, DateTime.UtcNow },
-                // ... 3 usuários restantes
+                // ... 3 usuï¿½rios restantes
             });
     }
 
@@ -507,30 +507,30 @@ public partial class SeedDataExtended : Migration
 
 ---
 
-## ?? DIA 21 (SÁBADO) - AJUSTES E POLISH
+## ?? DIA 21 (Sï¿½BADO) - AJUSTES E POLISH
 
 ### ?? Meta do Dia
-**Validar 100% das implementações do Dia 20**
+**Validar 100% das implementaï¿½ï¿½es do Dia 20**
 
 ---
 
-### ? MANHÃ (09h-13h) - VALIDAÇÃO GERAL
+### ? MANHï¿½ (09h-13h) - VALIDAï¿½ï¿½O GERAL
 
 #### ?? TODO O SQUAD
 
 ##### 09h-10h: Daily + Review
 - [ ] **Tech Lead:** Validar entregas do Dia 20
 - [ ] Cada dev apresenta o que foi feito
-- [ ] Identificar bloqueios/pendências
+- [ ] Identificar bloqueios/pendï¿½ncias
 
 ##### 10h-11h: Testes Manuais
 - [ ] **DEV Frontend:** Testar tela de Usinas (todos os fluxos)
 - [ ] **DEV 1:** Testar APIs no Swagger (ArquivoDadger, Carga, RestricaoUG)
 - [ ] **DEV 2:** Testar endpoints existentes com repositories/services novos
 
-##### 11h-13h: Correções
+##### 11h-13h: Correï¿½ï¿½es
 - [ ] Corrigir bugs encontrados
-- [ ] Ajustar validações
+- [ ] Ajustar validaï¿½ï¿½es
 - [ ] Melhorar mensagens de erro
 - [ ] Commit + push
 
@@ -545,17 +545,17 @@ public partial class SeedDataExtended : Migration
 - [ ] **DEV 2:** Criar 8 testes para EmpresaService
 - [ ] Executar `dotnet test` e validar
 
-##### 15h-17h: Documentação
+##### 15h-17h: Documentaï¿½ï¿½o
 - [ ] Atualizar README.md com status real
 - [ ] Criar CHANGELOG.md
-- [ ] Atualizar Swagger (comentários XML)
+- [ ] Atualizar Swagger (comentï¿½rios XML)
 - [ ] Screenshots da tela de Usinas
 
 ---
 
 ## ?? DIA 22-25 (DOMINGO-QUARTA) - OPCIONAL
 
-### Se houver tempo e disposição:
+### Se houver tempo e disposiï¿½ï¿½o:
 
 #### Melhorias Adicionais
 - [ ] Implementar mais 2-3 APIs (BalancoController, DCAController)
@@ -565,18 +565,18 @@ public partial class SeedDataExtended : Migration
 
 ---
 
-## ?? DIA 26 (QUINTA) - APRESENTAÇÃO
+## ?? DIA 26 (QUINTA) - APRESENTAï¿½ï¿½O
 
-### ? MANHÃ (09h-12h) - PREPARAÇÃO FINAL
+### ? MANHï¿½ (09h-12h) - PREPARAï¿½ï¿½O FINAL
 
-#### 09h-10h: Validação Completa
+#### 09h-10h: Validaï¿½ï¿½o Completa
 - [ ] `docker-compose up --build` (testar do zero)
-- [ ] Swagger: validar 10-12 APIs visíveis
+- [ ] Swagger: validar 10-12 APIs visï¿½veis
 - [ ] Frontend: testar tela de Usinas
 - [ ] Banco: validar seed data carregado
 
 #### 10h-11h: Preparar Demo
-- [ ] Criar script de apresentação (passo a passo)
+- [ ] Criar script de apresentaï¿½ï¿½o (passo a passo)
 - [ ] Preparar dados de exemplo (criar 2-3 usinas novas)
 - [ ] Testar fluxo completo 2-3 vezes
 - [ ] Preparar plano B (se algo falhar)
@@ -585,24 +585,24 @@ public partial class SeedDataExtended : Migration
 - [ ] Criar 5-7 slides simples:
   1. Contexto (legado ? moderno)
   2. Arquitetura (Clean + MVC)
-  3. Demonstração (live demo)
+  3. Demonstraï¿½ï¿½o (live demo)
   4. Resultados (10-12 APIs, 1 tela)
-  5. Próximos passos (12 semanas)
+  5. Prï¿½ximos passos (12 semanas)
 
 ---
 
-### ? APRESENTAÇÃO (Horário TBD)
+### ? APRESENTAï¿½ï¿½O (Horï¿½rio TBD)
 
 #### Roteiro Sugerido (15 minutos)
 
 ##### 1. Abertura (2 min)
 **Contexto:**
 - Sistema legado PDPW (VB.NET + WebForms)
-- Necessidade de modernização
-- Objetivo da PoC: Provar viabilidade técnica
+- Necessidade de modernizaï¿½ï¿½o
+- Objetivo da PoC: Provar viabilidade tï¿½cnica
 
 ##### 2. Arquitetura (3 min)
-**Decisões Técnicas:**
+**Decisï¿½es Tï¿½cnicas:**
 - Clean Architecture + MVC
 - .NET 8 + React + SQL Server
 - Docker + Entity Framework Core
@@ -610,7 +610,7 @@ public partial class SeedDataExtended : Migration
 
 **Mostrar:** Diagrama de camadas (se houver slide)
 
-##### 3. Demonstração (8 min)
+##### 3. Demonstraï¿½ï¿½o (8 min)
 
 **3.1. Docker Compose (1 min)**
 ```bash
@@ -624,7 +624,7 @@ docker-compose up
 **3.2. Swagger - APIs REST (3 min)**
 - Abrir: http://localhost:5000/swagger
 - Mostrar lista de endpoints (10-12 APIs)
-- "Try it out" em 2-3 operações:
+- "Try it out" em 2-3 operaï¿½ï¿½es:
   - `GET /api/usinas` (listar usinas)
   - `POST /api/usinas` (criar nova usina)
   - `GET /api/usinas/{id}` (buscar usina criada)
@@ -634,89 +634,89 @@ docker-compose up
 - Abrir: http://localhost:3000 (ou porta configurada)
 - Mostrar listagem de usinas (AG Grid)
 - Aplicar filtro (buscar por nome)
-- Criar nova usina (formulário)
+- Criar nova usina (formulï¿½rio)
 - Editar usina existente
-- Destacar: "Integração completa React ? API"
+- Destacar: "Integraï¿½ï¿½o completa React ? API"
 
 **3.4. Banco de Dados (1 min)**
 - Abrir SQL Server Management Studio (ou Azure Data Studio)
 - Mostrar 30 tabelas criadas
 - Mostrar seed data (10 usinas, 8 empresas, 5 tipos)
-- Destacar: "Schema completo do domínio"
+- Destacar: "Schema completo do domï¿½nio"
 
-##### 4. Resultados e Próximos Passos (2 min)
+##### 4. Resultados e Prï¿½ximos Passos (2 min)
 
-**O Que Foi Alcançado:**
+**O Que Foi Alcanï¿½ado:**
 - ? Arquitetura moderna implementada (Clean + MVC)
 - ? 10-12 APIs funcionais (40% do total planejado)
-- ? 30 entidades de domínio completas (100%)
+- ? 30 entidades de domï¿½nio completas (100%)
 - ? 1 tela frontend completa (Usinas)
 - ? Docker funcional (SQL Server + API)
 - ? Migrations + Seed data
 
-**Próxima Fase (12-14 semanas):**
+**Prï¿½xima Fase (12-14 semanas):**
 1. **Sprints 1-4 (8 sem):** Implementar 17 APIs restantes + 20 telas frontend
-2. **Sprints 5-6 (4 sem):** Finalizar 10 telas + integração com sistema legado
-3. **Sprint 7 (2 sem):** Homologação + deploy em produção
+2. **Sprints 5-6 (4 sem):** Finalizar 10 telas + integraï¿½ï¿½o com sistema legado
+3. **Sprint 7 (2 sem):** Homologaï¿½ï¿½o + deploy em produï¿½ï¿½o
 
 **Estimativa de Equipe:**
 - 4-5 desenvolvedores (2 backend, 2 frontend, 1 QA)
 - Sprints de 2 semanas
 - Demos quinzenais com cliente
 
-##### 5. Q&A (Variável)
+##### 5. Q&A (Variï¿½vel)
 
 **Perguntas Esperadas:**
 
 **P: "Por que apenas 10-12 APIs se o planejamento era 29?"**  
-R: "Focamos em qualidade vs quantidade nesta PoC. Cada API está:
+R: "Focamos em qualidade vs quantidade nesta PoC. Cada API estï¿½:
 - Completa (controller + repository + service + DTOs)
 - Testada e funcional
 - Documentada no Swagger
-- Seguindo padrão arquitetural
-A estrutura está pronta e validada. Implementar as 17 restantes será apenas replicar o padrão estabelecido."
+- Seguindo padrï¿½o arquitetural
+A estrutura estï¿½ pronta e validada. Implementar as 17 restantes serï¿½ apenas replicar o padrï¿½o estabelecido."
 
 **P: "Quanto tempo real para completar?"**  
 R: "12-14 semanas com equipe de 4-5 devs:
-- Já temos 100% das entidades (30)
-- Já temos 40% das APIs (12)
-- Já temos arquitetura validada
+- Jï¿½ temos 100% das entidades (30)
+- Jï¿½ temos 40% das APIs (12)
+- Jï¿½ temos arquitetura validada
 - Falta 'apenas' implementar controllers, telas e testes
-A PoC provou que não há risco técnico. É questão de execução disciplinada."
+A PoC provou que nï¿½o hï¿½ risco tï¿½cnico. ï¿½ questï¿½o de execuï¿½ï¿½o disciplinada."
 
-**P: "E o código legado? Como ficará a migração de dados?"**  
-R: "Analisamos o código VB.NET (doc: ANALISE_TECNICA_CODIGO_LEGADO.md):
+**P: "E o cï¿½digo legado? Como ficarï¿½ a migraï¿½ï¿½o de dados?"**  
+R: "Analisamos o cï¿½digo VB.NET (doc: ANALISE_TECNICA_CODIGO_LEGADO.md):
 - Sistema tem 473 arquivos VB.NET
 - Arquitetura em 3 camadas (DAO/Business/DTO)
-- Código bem estruturado
-Migração de dados:
-- Schema novo é compatível com legado
-- ETL será desenvolvido na Fase 2
-- Período de migração gradual (não será 'big bang')"
+- Cï¿½digo bem estruturado
+Migraï¿½ï¿½o de dados:
+- Schema novo ï¿½ compatï¿½vel com legado
+- ETL serï¿½ desenvolvido na Fase 2
+- Perï¿½odo de migraï¿½ï¿½o gradual (nï¿½o serï¿½ 'big bang')"
 
-**P: "Há riscos técnicos?"**  
-R: "Não. Esta PoC provou que:
-- .NET Framework 4.8 ? .NET 8 (viável)
-- VB.NET ? C# (viável)
-- WebForms ? React (viável)
+**P: "Hï¿½ riscos tï¿½cnicos?"**  
+R: "Nï¿½o. Esta PoC provou que:
+- .NET Framework 4.8 ? .NET 8 (viï¿½vel)
+- VB.NET ? C# (viï¿½vel)
+- WebForms ? React (viï¿½vel)
 - SQL Server mantido (compatibilidade total)
 - Docker funciona perfeitamente
-O maior risco agora é organizacional (prazos, recursos), não técnico."
+O maior risco agora ï¿½ organizacional (prazos, recursos), nï¿½o tï¿½cnico."
 
 ---
 
-## ?? MÉTRICAS DE SUCESSO
+## ?? Mï¿½TRICAS DE SUCESSO
 
-### Antes da Apresentação, Validar:
+### Antes da Apresentaï¿½ï¿½o, Validar:
 
 #### ? Backend
-- [ ] **Mínimo:** 10 APIs funcionais (35% do planejado)
+- [ ] **Mï¿½nimo:** 10 APIs funcionais (35% do planejado)
 - [ ] **Ideal:** 12 APIs funcionais (40%)
-- [ ] Swagger acessível e documentado
+- [ ] Swagger acessï¿½vel e documentado
 - [ ] Todos os endpoints testados (Try it out)
 
 #### ? Frontend
-- [ ] **Mínimo:** 1 tela completa (Usinas)
+- [ ] **Mï¿½nimo:** 1 tela completa (Usinas)
 - [ ] **Ideal:** 1 tela + estrutura para segunda
 - [ ] CRUD completo funcionando
 - [ ] UI responsiva e moderna
@@ -727,50 +727,50 @@ O maior risco agora é organizacional (prazos, recursos), não técnico."
 - [ ] Seed data carregado (10 usinas, 8 empresas, 5 tipos)
 - [ ] Health checks funcionando
 
-#### ? Documentação
+#### ? Documentaï¿½ï¿½o
 - [ ] README.md atualizado com status real
 - [ ] CHANGELOG.md criado
 - [ ] Swagger 100% documentado (XML comments)
 - [ ] Screenshots da tela de Usinas
 
 #### ? Testes (Opcional)
-- [ ] 20-30 testes unitários implementados
+- [ ] 20-30 testes unitï¿½rios implementados
 - [ ] `dotnet test` executado sem erros
-- [ ] Cobertura: 30-40% (mínimo aceitável)
+- [ ] Cobertura: 30-40% (mï¿½nimo aceitï¿½vel)
 
 ---
 
 ## ?? PLANO B - SE ALGO FALHAR
 
-### Cenário 1: Frontend Não Completado
-**Ação:**
+### Cenï¿½rio 1: Frontend Nï¿½o Completado
+**Aï¿½ï¿½o:**
 - Focar apenas no Swagger
 - Apresentar: "10-12 APIs REST completas"
-- Argumento: "Frontend é UI/UX, backend é arquitetura. Arquitetura está validada."
+- Argumento: "Frontend ï¿½ UI/UX, backend ï¿½ arquitetura. Arquitetura estï¿½ validada."
 
-### Cenário 2: Apenas 7-8 APIs Prontas
-**Ação:**
+### Cenï¿½rio 2: Apenas 7-8 APIs Prontas
+**Aï¿½ï¿½o:**
 - Destacar qualidade vs quantidade
 - Mostrar 1 API completa (Usina) com todos os detalhes:
   - Controller
   - Repository
   - Service
   - DTOs
-  - Validações
+  - Validaï¿½ï¿½es
   - Swagger doc
 - Argumento: "7 APIs completas e arquitetura robusta > 29 APIs mal feitas"
 
-### Cenário 3: Docker Não Funciona
-**Ação:**
+### Cenï¿½rio 3: Docker Nï¿½o Funciona
+**Aï¿½ï¿½o:**
 - Rodar localmente (`dotnet run`)
 - Mostrar Swagger em http://localhost:5000
-- Argumento: "Docker será configurado em produção. Local prova conceito."
+- Argumento: "Docker serï¿½ configurado em produï¿½ï¿½o. Local prova conceito."
 
-### Cenário 4: Bugs em Produção Durante Demo
-**Ação:**
-- Ter vídeo gravado da demo funcionando (backup)
+### Cenï¿½rio 4: Bugs em Produï¿½ï¿½o Durante Demo
+**Aï¿½ï¿½o:**
+- Ter vï¿½deo gravado da demo funcionando (backup)
 - Ou screenshots de cada etapa
-- Mostrar vídeo e explicar: "Demo ao vivo pode ter imprevistos, aqui está funcionando"
+- Mostrar vï¿½deo e explicar: "Demo ao vivo pode ter imprevistos, aqui estï¿½ funcionando"
 
 ---
 
@@ -784,38 +784,38 @@ O maior risco agora é organizacional (prazos, recursos), não técnico."
 
 ### Stakeholders ONS
 - **Product Owner:** [Nome] - [Email/Tel]
-- **Representante Técnico:** [Nome] - [Email/Tel]
+- **Representante Tï¿½cnico:** [Nome] - [Email/Tel]
 
 ### Suporte
 - **GitHub:** https://github.com/wbulhoes/ONS_PoC-PDPW
-- **Documentação:** `/docs`
-- **Relatório Completo:** `docs/RELATORIO_VALIDACAO_POC.md`
+- **Documentaï¿½ï¿½o:** `/docs`
+- **Relatï¿½rio Completo:** `docs/RELATORIO_VALIDACAO_POC.md`
 
 ---
 
-## ? CHECKLIST FINAL (26/12 - Manhã)
+## ? CHECKLIST FINAL (26/12 - Manhï¿½)
 
-### Antes da Apresentação:
+### Antes da Apresentaï¿½ï¿½o:
 - [ ] `docker-compose up --build` testado (sem erros)
-- [ ] Swagger acessível (http://localhost:5000/swagger)
-- [ ] Frontend acessível (http://localhost:3000 ou porta)
+- [ ] Swagger acessï¿½vel (http://localhost:5000/swagger)
+- [ ] Frontend acessï¿½vel (http://localhost:3000 ou porta)
 - [ ] Seed data carregado (verificar SQL Server)
 - [ ] Tela de Usinas funcionando (CRUD completo)
 - [ ] Script de demo escrito (passo a passo)
-- [ ] Plano B preparado (vídeo/screenshots)
-- [ ] Slides prontos (se aplicável)
+- [ ] Plano B preparado (vï¿½deo/screenshots)
+- [ ] Slides prontos (se aplicï¿½vel)
 - [ ] Respostas para Q&A ensaiadas
-- [ ] Ambiente de apresentação testado (projetor, microfone, etc.)
+- [ ] Ambiente de apresentaï¿½ï¿½o testado (projetor, microfone, etc.)
 
 ---
 
 **BOA SORTE! ??**
 
-*"A preparação é a chave do sucesso. Com este plano, vocês têm tudo para uma apresentação impecável."*
+*"A preparaï¿½ï¿½o ï¿½ a chave do sucesso. Com este plano, vocï¿½s tï¿½m tudo para uma apresentaï¿½ï¿½o impecï¿½vel."*
 
 ---
 
 **Documento criado em:** 19/12/2024  
-**Última atualização:** 19/12/2024  
-**Responsável:** GitHub Copilot AI  
-**Status:** ? PRONTO PARA EXECUÇÃO
+**ï¿½ltima atualizaï¿½ï¿½o:** 19/12/2024  
+**Responsï¿½vel:** GitHub Copilot AI  
+**Status:** ? PRONTO PARA EXECUï¿½ï¿½O

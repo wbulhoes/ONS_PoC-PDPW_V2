@@ -1,15 +1,15 @@
-# ?? GUIA DOCKER - PDPW API
+ï»¿# ?? GUIA DOCKER - PDPW API
 
 **Data:** 2025-01-20  
-**Versão:** 1.0
+**Versï¿½o:** 1.0
 
 ---
 
-## ?? OPÇÕES DISPONÍVEIS
+## ?? OPï¿½ï¿½ES DISPONï¿½VEIS
 
-### **OPÇÃO 1: Docker Compose Simples (Banco em Memória)** ? RECOMENDADO
+### **OPï¿½ï¿½O 1: Docker Compose Simples (Banco em Memï¿½ria)** ? RECOMENDADO
 
-Usa banco de dados em memória - mais rápido e sem dependências.
+Usa banco de dados em memï¿½ria - mais rï¿½pido e sem dependï¿½ncias.
 
 ```sh
 docker-compose up --build
@@ -22,9 +22,9 @@ Acessar:
 
 ---
 
-### **OPÇÃO 2: Docker Compose Completo (SQL Server)**
+### **OPï¿½ï¿½O 2: Docker Compose Completo (SQL Server)**
 
-Usa SQL Server containerizado - para testes com persistência.
+Usa SQL Server containerizado - para testes com persistï¿½ncia.
 
 ```sh
 docker-compose -f docker-compose.full.yml up --build
@@ -38,14 +38,14 @@ Acessar:
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
 ### Build e Start
 ```sh
-# Opção 1 (Banco em Memória)
+# Opï¿½ï¿½o 1 (Banco em Memï¿½ria)
 docker-compose up --build
 
-# Opção 2 (SQL Server)
+# Opï¿½ï¿½o 2 (SQL Server)
 docker-compose -f docker-compose.full.yml up --build
 
 # Modo detached (background)
@@ -75,7 +75,7 @@ docker-compose -f docker-compose.full.yml logs -f sqlserver
 
 ### Rebuild
 ```sh
-# Rebuild forçado
+# Rebuild forï¿½ado
 docker-compose up --build --force-recreate
 
 # Rebuild apenas do backend
@@ -88,7 +88,7 @@ docker-compose up --build backend
 
 ### Erro: "port is already allocated"
 ```sh
-# Verificar o que está usando a porta 5000
+# Verificar o que estï¿½ usando a porta 5000
 netstat -ano | findstr :5000
 
 # Matar o processo (substitua PID)
@@ -108,10 +108,10 @@ cd C:\temp\_ONS_PoC-PDPW_V2
 dir docker-compose.yml
 ```
 
-### Erro: SQL Server não inicia
+### Erro: SQL Server nï¿½o inicia
 ```sh
-# Aumentar memória do Docker Desktop
-# Settings > Resources > Memory: 4GB mínimo
+# Aumentar memï¿½ria do Docker Desktop
+# Settings > Resources > Memory: 4GB mï¿½nimo
 
 # Verificar logs
 docker-compose -f docker-compose.full.yml logs sqlserver
@@ -126,7 +126,7 @@ docker-compose -f docker-compose.full.yml up --build
 # Verificar se existe
 dir src\PDPW.API\Dockerfile
 
-# Se não existir, o arquivo foi criado nesta correção
+# Se nï¿½o existir, o arquivo foi criado nesta correï¿½ï¿½o
 ```
 
 ### Erro: Build falha
@@ -141,7 +141,7 @@ docker-compose up
 
 ---
 
-## ?? VERIFICAR SE ESTÁ FUNCIONANDO
+## ?? VERIFICAR SE ESTï¿½ FUNCIONANDO
 
 ### 1. Verificar containers rodando
 ```sh
@@ -178,9 +178,9 @@ Deve mostrar **9 controllers** com todos os endpoints.
 ### Estrutura:
 ```
 C:\temp\_ONS_PoC-PDPW_V2\
-??? docker-compose.yml              ? Simples (Banco em Memória)
+??? docker-compose.yml              ? Simples (Banco em Memï¿½ria)
 ??? docker-compose.full.yml         ? Completo (SQL Server)
-??? .dockerignore                   ? Otimização de build
+??? .dockerignore                   ? Otimizaï¿½ï¿½o de build
 ??? src/
     ??? PDPW.API/
         ??? Dockerfile              ? Build da API
@@ -188,7 +188,7 @@ C:\temp\_ONS_PoC-PDPW_V2\
 
 ---
 
-## ?? CONFIGURAÇÕES
+## ?? CONFIGURAï¿½ï¿½ES
 
 ### docker-compose.yml (Simples)
 ```yaml
@@ -200,7 +200,7 @@ services:
     ports:
       - "5000:80"
     environment:
-      - UseInMemoryDatabase=true  # Banco em memória
+      - UseInMemoryDatabase=true  # Banco em memï¿½ria
 ```
 
 ### docker-compose.full.yml (Completo)
@@ -223,37 +223,37 @@ services:
 
 ---
 
-## ?? QUANDO USAR CADA OPÇÃO
+## ?? QUANDO USAR CADA OPï¿½ï¿½O
 
-### Banco em Memória (docker-compose.yml)
+### Banco em Memï¿½ria (docker-compose.yml)
 ? **Use quando:**
-- Desenvolvimento rápido
+- Desenvolvimento rï¿½pido
 - Testes locais
-- Demonstrações
-- Não precisa de persistência
+- Demonstraï¿½ï¿½es
+- Nï¿½o precisa de persistï¿½ncia
 
-? **Não use quando:**
+? **Nï¿½o use quando:**
 - Precisa manter dados entre restarts
 - Quer testar migrations
 - Desenvolvimento de longo prazo
 
 ### SQL Server (docker-compose.full.yml)
 ? **Use quando:**
-- Precisa de persistência
+- Precisa de persistï¿½ncia
 - Quer testar com dados reais
 - Desenvolvimento de funcionalidades complexas
-- Testes de integração
+- Testes de integraï¿½ï¿½o
 
-? **Não use quando:**
-- Quer algo rápido
+? **Nï¿½o use quando:**
+- Quer algo rï¿½pido
 - Recursos de hardware limitados
 - Apenas testando endpoints
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-Após subir o Docker:
+Apï¿½s subir o Docker:
 
 1. ? Acessar Swagger: http://localhost:5000/swagger
 2. ? Testar endpoints
@@ -262,7 +262,7 @@ Após subir o Docker:
 
 ---
 
-## ?? LINKS ÚTEIS
+## ?? LINKS ï¿½TEIS
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Docker Compose Docs](https://docs.docker.com/compose/)
@@ -271,4 +271,4 @@ Após subir o Docker:
 ---
 
 **Status:** ? PRONTO PARA USO  
-**Última Atualização:** 2025-01-20
+**ï¿½ltima Atualizaï¿½ï¿½o:** 2025-01-20

@@ -1,36 +1,36 @@
-# ?? Plano de Migração PDPW
+ï»¿# ?? Plano de Migraï¿½ï¿½o PDPW
 
-## ?? Projeto: PDPW - Programação Diária da Produção Web
+## ?? Projeto: PDPW - Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o Web
 
-### Informações do Projeto
+### Informaï¿½ï¿½es do Projeto
 
 | Item | Detalhes |
 |------|----------|
-| **Repositório Legado** | https://github.com/ONSArquitetura/pdpw_act |
-| **Repositório Novo** | https://github.com/wbulhoes/ONS_PoC-PDPW |
+| **Repositï¿½rio Legado** | https://github.com/ONSArquitetura/pdpw_act |
+| **Repositï¿½rio Novo** | https://github.com/wbulhoes/ONS_PoC-PDPW |
 | **Status** | PoC - Prova de Conceito |
-| **Cliente** | ONS (Operador Nacional do Sistema Elétrico) |
+| **Cliente** | ONS (Operador Nacional do Sistema Elï¿½trico) |
 
 ---
 
-## ?? Cenário Atual (Legado)
+## ?? Cenï¿½rio Atual (Legado)
 
 ### Tecnologias do Sistema Legado
 
-| Tecnologia | Versão/Tipo | Status |
+| Tecnologia | Versï¿½o/Tipo | Status |
 |------------|-------------|--------|
 | Framework | .NET Framework | ? Obsoleto |
 | Interface | WebForms | ? Obsoleto |
 | Linguagem | VB.NET | ? Obsoleto |
-| Arquitetura | Monolítica | ? Antiga |
-| Containerização | Nenhuma | ? |
+| Arquitetura | Monolï¿½tica | ? Antiga |
+| Containerizaï¿½ï¿½o | Nenhuma | ? |
 
 **Problemas identificados:**
-- ? Stack tecnológica considerada antiga pelo ONS
-- ? Manutenção difícil
+- ? Stack tecnolï¿½gica considerada antiga pelo ONS
+- ? Manutenï¿½ï¿½o difï¿½cil
 - ? Baixa produtividade
-- ? Integração complicada
-- ? Difícil de testar
+- ? Integraï¿½ï¿½o complicada
+- ? Difï¿½cil de testar
 - ? Sem suporte a containers
 
 ---
@@ -39,57 +39,57 @@
 
 ### Objetivos Principais
 
-1. **Migrar a aplicação** para stack moderna:
+1. **Migrar a aplicaï¿½ï¿½o** para stack moderna:
    - Backend: .NET 8
-   - Frontend: React (última versão)
-   - Containerização: Windows Container (compatibilidade com legado)
+   - Frontend: React (ï¿½ltima versï¿½o)
+   - Containerizaï¿½ï¿½o: Windows Container (compatibilidade com legado)
    - Arquitetura: Clean Architecture (modular e atualizada)
 
-2. **Manter fidelidade máxima**:
+2. **Manter fidelidade mï¿½xima**:
    - ? Funcionalidades preservadas
    - ? UI modernizada mas familiar
-   - ? Experiência de usuário aprimorada
+   - ? Experiï¿½ncia de usuï¿½rio aprimorada
 
-3. **Migração flexível**:
+3. **Migraï¿½ï¿½o flexï¿½vel**:
    - Vertical slice: fluxos completos end-to-end
-   - Horizontal slice: camadas específicas (backend/frontend separados)
+   - Horizontal slice: camadas especï¿½ficas (backend/frontend separados)
 
 ---
 
-## ?? Entregáveis da PoC
+## ?? Entregï¿½veis da PoC
 
-### 1. Código Migrado
-- ? Repositório GitHub atualizado
+### 1. Cï¿½digo Migrado
+- ? Repositï¿½rio GitHub atualizado
 - ? Commits organizados e documentados
-- ? Histórico de migração rastreável
+- ? Histï¿½rico de migraï¿½ï¿½o rastreï¿½vel
 
-### 2. Documentação
+### 2. Documentaï¿½ï¿½o
 - ? README completo
 - ? Guias de setup
 - ? Troubleshooting
-- ? Documentação de APIs (Swagger)
-- ? Decisões arquiteturais (ADRs)
+- ? Documentaï¿½ï¿½o de APIs (Swagger)
+- ? Decisï¿½es arquiteturais (ADRs)
 
-### 3. Apresentação
-- Demonstração da solução
+### 3. Apresentaï¿½ï¿½o
+- Demonstraï¿½ï¿½o da soluï¿½ï¿½o
 - Comparativo legado vs novo
-- ROI e benefícios
+- ROI e benefï¿½cios
 
-### 4. Automação e IA
-- Uso de ferramentas de aceleração
+### 4. Automaï¿½ï¿½o e IA
+- Uso de ferramentas de aceleraï¿½ï¿½o
 - GitHub Copilot
-- Automação de testes
+- Automaï¿½ï¿½o de testes
 
 ---
 
 ## ??? Arquitetura Proposta
 
-### Stack Tecnológica Nova
+### Stack Tecnolï¿½gica Nova
 
 ```
 ???????????????????????????????????????????
 ?           Frontend (React)              ?
-?    - React 18+ (última versão)          ?
+?    - React 18+ (ï¿½ltima versï¿½o)          ?
 ?    - TypeScript                         ?
 ?    - Vite/Next.js                       ?
 ?    - Material-UI/Ant Design             ?
@@ -122,7 +122,7 @@
 ???????????????????????????????????????????
 ```
 
-### Containerização
+### Containerizaï¿½ï¿½o
 
 ```dockerfile
 # Windows Container (compatibilidade com legado)
@@ -133,49 +133,49 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2022
 
 ---
 
-## ?? Análise do Sistema Legado
+## ?? Anï¿½lise do Sistema Legado
 
 ### Funcionalidades Principais (a identificar)
 
-Com base na descrição, o PDPW realiza:
+Com base na descriï¿½ï¿½o, o PDPW realiza:
 
-1. **Coleta de dados energéticos**
-   - Entrada manual/automática
-   - Validações de dados
+1. **Coleta de dados energï¿½ticos**
+   - Entrada manual/automï¿½tica
+   - Validaï¿½ï¿½es de dados
    - Armazenamento
 
-2. **Envio de insumos para modelos matemáticos**
+2. **Envio de insumos para modelos matemï¿½ticos**
    - Processamento de dados
-   - Formatação para modelos
-   - Integração com sistemas externos
+   - Formataï¿½ï¿½o para modelos
+   - Integraï¿½ï¿½o com sistemas externos
 
-3. **Apoio a previsões e fluxos de produção**
-   - Cálculos e simulações
-   - Geração de relatórios
-   - Visualização de dados
+3. **Apoio a previsï¿½es e fluxos de produï¿½ï¿½o**
+   - Cï¿½lculos e simulaï¿½ï¿½es
+   - Geraï¿½ï¿½o de relatï¿½rios
+   - Visualizaï¿½ï¿½o de dados
 
-### Fluxos Críticos (a mapear)
+### Fluxos Crï¿½ticos (a mapear)
 
 ```
 ???????????????      ???????????????      ???????????????
-?   Entrada   ? ???> ? Processamento? ???> ?   Saída     ?
-?   de Dados  ?      ?   e Validação?      ? (Modelos)   ?
+?   Entrada   ? ???> ? Processamento? ???> ?   Saï¿½da     ?
+?   de Dados  ?      ?   e Validaï¿½ï¿½o?      ? (Modelos)   ?
 ???????????????      ???????????????      ???????????????
 ```
 
 ---
 
-## ??? Plano de Migração
+## ??? Plano de Migraï¿½ï¿½o
 
-### Fase 1: Análise e Preparação (1-2 semanas)
+### Fase 1: Anï¿½lise e Preparaï¿½ï¿½o (1-2 semanas)
 
-#### 1.1. Análise do Código Legado
-- [ ] Clonar repositório legado
+#### 1.1. Anï¿½lise do Cï¿½digo Legado
+- [ ] Clonar repositï¿½rio legado
 - [ ] Mapear estrutura de pastas
 - [ ] Identificar WebForms (.aspx)
 - [ ] Mapear Models (VB.NET)
 - [ ] Identificar DAL (Data Access Layer)
-- [ ] Mapear regras de negócio
+- [ ] Mapear regras de negï¿½cio
 - [ ] Documentar fluxos principais
 
 #### 1.2. Mapeamento de Banco de Dados
@@ -183,12 +183,12 @@ Com base na descrição, o PDPW realiza:
 - [ ] Identificar tabelas principais
 - [ ] Mapear relacionamentos
 - [ ] Documentar stored procedures
-- [ ] Identificar dados de migração
+- [ ] Identificar dados de migraï¿½ï¿½o
 
-#### 1.3. Definição de Prioridades
+#### 1.3. Definiï¿½ï¿½o de Prioridades
 - [ ] Selecionar fluxo para vertical slice
 - [ ] Definir camadas para horizontal slice
-- [ ] Estabelecer critérios de sucesso
+- [ ] Estabelecer critï¿½rios de sucesso
 
 ### Fase 2: Setup Inicial (1 semana)
 
@@ -197,8 +197,8 @@ Com base na descrição, o PDPW realiza:
 - [x] Configurar Clean Architecture
 - [x] Setup Entity Framework Core
 - [x] Configurar Swagger
-- [ ] Setup de testes unitários
-- [ ] Configurar CI/CD básico
+- [ ] Setup de testes unitï¿½rios
+- [ ] Configurar CI/CD bï¿½sico
 
 #### 2.2. Frontend (React)
 - [ ] Inicializar projeto React
@@ -213,112 +213,112 @@ Com base na descrição, o PDPW realiza:
 - [ ] docker-compose.yml
 - [ ] Scripts de deploy
 
-### Fase 3: Migração - Vertical Slice (2-3 semanas)
+### Fase 3: Migraï¿½ï¿½o - Vertical Slice (2-3 semanas)
 
-**Fluxo Selecionado:** [A definir - ex: Cadastro de Dados Energéticos]
+**Fluxo Selecionado:** [A definir - ex: Cadastro de Dados Energï¿½ticos]
 
 #### 3.1. Backend
-- [ ] Criar entidades de domínio
-- [ ] Implementar repositórios
+- [ ] Criar entidades de domï¿½nio
+- [ ] Implementar repositï¿½rios
 - [ ] Desenvolver services
 - [ ] Criar DTOs
 - [ ] Implementar controllers
-- [ ] Adicionar validações
-- [ ] Testes unitários
+- [ ] Adicionar validaï¿½ï¿½es
+- [ ] Testes unitï¿½rios
 
 #### 3.2. Frontend
-- [ ] Criar páginas/componentes
-- [ ] Implementar formulários
+- [ ] Criar pï¿½ginas/componentes
+- [ ] Implementar formulï¿½rios
 - [ ] Integrar com API
-- [ ] Validações no cliente
+- [ ] Validaï¿½ï¿½es no cliente
 - [ ] Feedback visual
 - [ ] Testes de componentes
 
-#### 3.3. Integração
-- [ ] Testes de integração E2E
-- [ ] Validação com usuários
+#### 3.3. Integraï¿½ï¿½o
+- [ ] Testes de integraï¿½ï¿½o E2E
+- [ ] Validaï¿½ï¿½o com usuï¿½rios
 - [ ] Ajustes de UX
 
-### Fase 4: Migração - Horizontal Slice (2-3 semanas)
+### Fase 4: Migraï¿½ï¿½o - Horizontal Slice (2-3 semanas)
 
-#### 4.1. Migração de Mais Entidades
+#### 4.1. Migraï¿½ï¿½o de Mais Entidades
 - [ ] Mapear entidades restantes
 - [ ] Implementar CRUD completo
 - [ ] APIs documentadas
 - [ ] Testes de unidade
 
 #### 4.2. Frontend Adicional
-- [ ] Telas secundárias
+- [ ] Telas secundï¿½rias
 - [ ] Dashboards
-- [ ] Relatórios
-- [ ] Componentes reutilizáveis
+- [ ] Relatï¿½rios
+- [ ] Componentes reutilizï¿½veis
 
-### Fase 5: Refinamento e Otimização (1-2 semanas)
+### Fase 5: Refinamento e Otimizaï¿½ï¿½o (1-2 semanas)
 
-#### 5.1. Qualidade de Código
+#### 5.1. Qualidade de Cï¿½digo
 - [ ] Code review completo
-- [ ] Refatoração
-- [ ] Otimizações de performance
-- [ ] Segurança (OWASP Top 10)
+- [ ] Refatoraï¿½ï¿½o
+- [ ] Otimizaï¿½ï¿½es de performance
+- [ ] Seguranï¿½a (OWASP Top 10)
 
-#### 5.2. Documentação
+#### 5.2. Documentaï¿½ï¿½o
 - [ ] README completo
 - [ ] Swagger/OpenAPI atualizado
 - [ ] Guias de setup
 - [ ] Troubleshooting
 - [ ] ADRs (Architecture Decision Records)
 
-#### 5.3. Deploy e Containerização
+#### 5.3. Deploy e Containerizaï¿½ï¿½o
 - [ ] Build de containers
 - [ ] Testes de container
 - [ ] Pipeline CI/CD
-- [ ] Deploy em ambiente de homologação
+- [ ] Deploy em ambiente de homologaï¿½ï¿½o
 
-### Fase 6: Apresentação (1 semana)
+### Fase 6: Apresentaï¿½ï¿½o (1 semana)
 
-#### 6.1. Preparação
-- [ ] Slides da apresentação
-- [ ] Demonstração ao vivo
+#### 6.1. Preparaï¿½ï¿½o
+- [ ] Slides da apresentaï¿½ï¿½o
+- [ ] Demonstraï¿½ï¿½o ao vivo
 - [ ] Comparativo legado vs novo
-- [ ] ROI e benefícios
+- [ ] ROI e benefï¿½cios
 
 #### 6.2. Entrega
-- [ ] Apresentação ao cliente
+- [ ] Apresentaï¿½ï¿½o ao cliente
 - [ ] Coleta de feedback
-- [ ] Documentação final
-- [ ] Handover (se aplicável)
+- [ ] Documentaï¿½ï¿½o final
+- [ ] Handover (se aplicï¿½vel)
 
 ---
 
-## ?? Estratégias de Migração
+## ?? Estratï¿½gias de Migraï¿½ï¿½o
 
-### Opção 1: Vertical Slice (Recomendado para PoC)
+### Opï¿½ï¿½o 1: Vertical Slice (Recomendado para PoC)
 
 **Vantagens:**
-- ? Entrega rápida de valor
-- ? Feedback rápido do cliente
-- ? Demonstração de fluxo completo
+- ? Entrega rï¿½pida de valor
+- ? Feedback rï¿½pido do cliente
+- ? Demonstraï¿½ï¿½o de fluxo completo
 - ? Menos risco
 
 **Exemplo de Fluxo:**
 ```
-Cadastro de Dados Energéticos
+Cadastro de Dados Energï¿½ticos
 ??? Backend
 ?   ??? API REST
-?   ??? Validações
-?   ??? Persistência
-?   ??? Lógica de negócio
+?   ??? Validaï¿½ï¿½es
+?   ??? Persistï¿½ncia
+?   ??? Lï¿½gica de negï¿½cio
 ??? Frontend
-    ??? Formulário de entrada
-    ??? Validações
+    ??? Formulï¿½rio de entrada
+    ??? Validaï¿½ï¿½es
     ??? Feedback visual
-    ??? Integração com API
+    ??? Integraï¿½ï¿½o com API
 ```
 
-### Opção 2: Horizontal Slice
+### Opï¿½ï¿½o 2: Horizontal Slice
 
 **Vantagens:**
-- ? Migração completa de uma camada
+- ? Migraï¿½ï¿½o completa de uma camada
 - ? Pode ser dividido entre equipes
 - ? Backend independente de frontend
 
@@ -330,19 +330,19 @@ Backend Completo
 ??? Todos os services
 ??? Testes completos
 
-Frontend Básico (MVP)
+Frontend Bï¿½sico (MVP)
 ??? Telas principais
-??? Navegação básica
-??? Integração com APIs principais
+??? Navegaï¿½ï¿½o bï¿½sica
+??? Integraï¿½ï¿½o com APIs principais
 ```
 
 ---
 
-## ?? Processo de Conversão
+## ?? Processo de Conversï¿½o
 
 ### De VB.NET para C# (.NET 8)
 
-#### Exemplo de Conversão
+#### Exemplo de Conversï¿½o
 
 **Legado (VB.NET):**
 ```vb
@@ -374,7 +374,7 @@ public class DadoEnergetico
 
 ### De WebForms para React
 
-#### Exemplo de Conversão
+#### Exemplo de Conversï¿½o
 
 **Legado (WebForms .aspx):**
 ```aspx
@@ -408,71 +408,71 @@ const DadosEnergeticosPage: React.FC = () => {
 
 ### Backend
 
-| Ferramenta | Versão | Uso |
+| Ferramenta | Versï¿½o | Uso |
 |------------|--------|-----|
-| .NET SDK | 8.0 | Runtime e compilação |
+| .NET SDK | 8.0 | Runtime e compilaï¿½ï¿½o |
 | Entity Framework Core | 8.0 | ORM |
 | SQL Server | 2019+ / LocalDB | Banco de dados |
-| Swagger/OpenAPI | 3.0 | Documentação de API |
-| xUnit | Última | Testes unitários |
-| FluentValidation | Última | Validações |
+| Swagger/OpenAPI | 3.0 | Documentaï¿½ï¿½o de API |
+| xUnit | ï¿½ltima | Testes unitï¿½rios |
+| FluentValidation | ï¿½ltima | Validaï¿½ï¿½es |
 
 ### Frontend
 
-| Ferramenta | Versão | Uso |
+| Ferramenta | Versï¿½o | Uso |
 |------------|--------|-----|
 | React | 18+ | Framework UI |
 | TypeScript | 5.x | Linguagem |
-| Vite/Next.js | Última | Build/SSR |
-| Ant Design / Material-UI | Última | Componentes |
-| Axios | Última | HTTP Client |
-| React Query | Última | State management |
-| Jest + Testing Library | Última | Testes |
+| Vite/Next.js | ï¿½ltima | Build/SSR |
+| Ant Design / Material-UI | ï¿½ltima | Componentes |
+| Axios | ï¿½ltima | HTTP Client |
+| React Query | ï¿½ltima | State management |
+| Jest + Testing Library | ï¿½ltima | Testes |
 
 ### DevOps
 
 | Ferramenta | Uso |
 |------------|-----|
-| Docker | Containerização |
+| Docker | Containerizaï¿½ï¿½o |
 | GitHub Actions | CI/CD |
 | Azure DevOps | (Opcional) Pipeline |
-| SonarQube | Qualidade de código |
+| SonarQube | Qualidade de cï¿½digo |
 
-### Ferramentas de IA e Aceleração
+### Ferramentas de IA e Aceleraï¿½ï¿½o
 
 | Ferramenta | Uso |
 |------------|-----|
-| GitHub Copilot | Assistência de código |
-| ChatGPT | Consultoria e revisão |
+| GitHub Copilot | Assistï¿½ncia de cï¿½digo |
+| ChatGPT | Consultoria e revisï¿½o |
 | Tabnine | Autocomplete inteligente |
 
 ---
 
-## ? Critérios de Sucesso
+## ? Critï¿½rios de Sucesso
 
-### Técnicos
+### Tï¿½cnicos
 
-- [ ] Código compilando sem erros
-- [ ] Testes unitários > 70% cobertura
-- [ ] Testes de integração passando
+- [ ] Cï¿½digo compilando sem erros
+- [ ] Testes unitï¿½rios > 70% cobertura
+- [ ] Testes de integraï¿½ï¿½o passando
 - [ ] Performance similar ou melhor que legado
-- [ ] Sem regressões de funcionalidade
-- [ ] Documentação completa
+- [ ] Sem regressï¿½es de funcionalidade
+- [ ] Documentaï¿½ï¿½o completa
 - [ ] Swagger 100% documentado
 
-### Negócio
+### Negï¿½cio
 
 - [ ] Funcionalidades principais migradas
 - [ ] UI moderna e responsiva
-- [ ] Experiência de usuário aprovada
+- [ ] Experiï¿½ncia de usuï¿½rio aprovada
 - [ ] Feedback do cliente positivo
-- [ ] Demonstração bem-sucedida
+- [ ] Demonstraï¿½ï¿½o bem-sucedida
 
 ### Qualidade
 
 - [ ] Clean Code
 - [ ] SOLID principles
-- [ ] Segurança (OWASP)
+- [ ] Seguranï¿½a (OWASP)
 - [ ] Acessibilidade (WCAG)
 - [ ] Performance otimizada
 
@@ -480,23 +480,23 @@ const DadosEnergeticosPage: React.FC = () => {
 
 ## ?? Cronograma Estimado
 
-| Fase | Duração | Marco |
+| Fase | Duraï¿½ï¿½o | Marco |
 |------|---------|-------|
-| Análise e Preparação | 1-2 semanas | Setup completo |
+| Anï¿½lise e Preparaï¿½ï¿½o | 1-2 semanas | Setup completo |
 | Setup Inicial | 1 semana | Projetos criados |
 | Vertical Slice | 2-3 semanas | Fluxo completo |
 | Horizontal Slice | 2-3 semanas | APIs completas |
 | Refinamento | 1-2 semanas | Qualidade |
-| Apresentação | 1 semana | Entrega |
-| **TOTAL** | **8-12 semanas** | **PoC Concluída** |
+| Apresentaï¿½ï¿½o | 1 semana | Entrega |
+| **TOTAL** | **8-12 semanas** | **PoC Concluï¿½da** |
 
 ---
 
-## ?? Próximos Passos
+## ?? Prï¿½ximos Passos
 
 ### Imediatos (Esta Semana)
 
-1. **Análise do Repositório Legado**
+1. **Anï¿½lise do Repositï¿½rio Legado**
    ```bash
    git clone https://github.com/ONSArquitetura/pdpw_act
    cd pdpw_act
@@ -505,14 +505,14 @@ const DadosEnergeticosPage: React.FC = () => {
 
 2. **Mapear Funcionalidades**
    - Documentar fluxos principais
-   - Identificar telas críticas
+   - Identificar telas crï¿½ticas
    - Mapear modelos de dados
 
 3. **Definir Prioridades**
    - Escolher fluxo para vertical slice
    - Validar com cliente/stakeholder
 
-### Curto Prazo (Próximas 2 Semanas)
+### Curto Prazo (Prï¿½ximas 2 Semanas)
 
 1. **Iniciar Frontend React**
    ```bash
@@ -524,25 +524,25 @@ const DadosEnergeticosPage: React.FC = () => {
 2. **Implementar Primeiro Fluxo**
    - Backend API
    - Frontend componentes
-   - Integração
+   - Integraï¿½ï¿½o
 
-3. **Configurar CI/CD Básico**
+3. **Configurar CI/CD Bï¿½sico**
    - GitHub Actions
-   - Build automático
-   - Testes automáticos
+   - Build automï¿½tico
+   - Testes automï¿½ticos
 
 ---
 
-## ?? Recursos e Referências
+## ?? Recursos e Referï¿½ncias
 
-### Documentação Oficial
+### Documentaï¿½ï¿½o Oficial
 
 - [.NET 8 Documentation](https://learn.microsoft.com/dotnet/)
 - [React Documentation](https://react.dev/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [Entity Framework Core](https://learn.microsoft.com/ef/core/)
 
-### Guias de Migração
+### Guias de Migraï¿½ï¿½o
 
 - [Migrating from .NET Framework to .NET 8](https://learn.microsoft.com/dotnet/core/porting/)
 - [WebForms to Blazor/React](https://learn.microsoft.com/aspnet/core/migration/)
@@ -554,25 +554,25 @@ const DadosEnergeticosPage: React.FC = () => {
 
 ---
 
-## ?? Considerações de Segurança
+## ?? Consideraï¿½ï¿½es de Seguranï¿½a
 
 ### Backend
 
-- [ ] Autenticação JWT
-- [ ] Autorização baseada em roles
-- [ ] Validação de entrada
-- [ ] Proteção contra SQL Injection (EF Core)
+- [ ] Autenticaï¿½ï¿½o JWT
+- [ ] Autorizaï¿½ï¿½o baseada em roles
+- [ ] Validaï¿½ï¿½o de entrada
+- [ ] Proteï¿½ï¿½o contra SQL Injection (EF Core)
 - [ ] Rate limiting
 - [ ] CORS configurado corretamente
-- [ ] HTTPS obrigatório
+- [ ] HTTPS obrigatï¿½rio
 
 ### Frontend
 
 - [ ] XSS protection
 - [ ] CSRF tokens
-- [ ] Sanitização de inputs
-- [ ] Validação no cliente
-- [ ] Secrets não expostos
+- [ ] Sanitizaï¿½ï¿½o de inputs
+- [ ] Validaï¿½ï¿½o no cliente
+- [ ] Secrets nï¿½o expostos
 
 ---
 
@@ -588,24 +588,24 @@ const DadosEnergeticosPage: React.FC = () => {
 
 ## ?? Notas Importantes
 
-### Decisões Arquiteturais
+### Decisï¿½es Arquiteturais
 
 1. **Clean Architecture**: Escolhida para garantir manutenibilidade e testabilidade
-2. **Entity Framework Core**: Para facilitar migrações e manutenção
+2. **Entity Framework Core**: Para facilitar migraï¿½ï¿½es e manutenï¿½ï¿½o
 3. **React + TypeScript**: Stack moderna e demandada pelo mercado
 4. **Windows Container**: Compatibilidade com sistemas legados do ONS
 
 ### Riscos Identificados
 
-| Risco | Impacto | Mitigação |
+| Risco | Impacto | Mitigaï¿½ï¿½o |
 |-------|---------|-----------|
-| Complexidade do legado | Alto | Análise detalhada prévia |
-| Integração com sistemas externos | Médio | Mapeamento de APIs |
-| Curva de aprendizado React | Baixo | Documentação e treinamento |
-| Performance | Médio | Testes de carga |
+| Complexidade do legado | Alto | Anï¿½lise detalhada prï¿½via |
+| Integraï¿½ï¿½o com sistemas externos | Mï¿½dio | Mapeamento de APIs |
+| Curva de aprendizado React | Baixo | Documentaï¿½ï¿½o e treinamento |
+| Performance | Mï¿½dio | Testes de carga |
 
 ---
 
-**Última atualização:** 17/12/2025  
-**Versão:** 1.0  
+**ï¿½ltima atualizaï¿½ï¿½o:** 17/12/2025  
+**Versï¿½o:** 1.0  
 **Status:** ?? Pronto para Iniciar

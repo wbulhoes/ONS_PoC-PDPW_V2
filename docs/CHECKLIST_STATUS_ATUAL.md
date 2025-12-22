@@ -1,20 +1,20 @@
-# ? CHECKLIST DE STATUS - POC PDPW (19/12/2024)
+ï»¿# ? CHECKLIST DE STATUS - POC PDPW (19/12/2024)
 
 ---
 
-## ?? VISÃO GERAL
+## ?? VISï¿½O GERAL
 
 | Categoria | Status | % Completo | Nota |
 |-----------|--------|------------|------|
 | **1. Arquitetura** | ? | 100% | Excelente |
 | **2. Backend - Entidades** | ? | 100% | Completo |
-| **3. Backend - APIs** | ?? | 24% | Crítico |
+| **3. Backend - APIs** | ?? | 24% | Crï¿½tico |
 | **4. Backend - Repositories** | ?? | 30% | Incompleto |
 | **5. Backend - Services** | ?? | 30% | Incompleto |
-| **6. Frontend** | ? | 10% | Crítico |
+| **6. Frontend** | ? | 10% | Crï¿½tico |
 | **7. Docker** | ? | 100% | Funcional |
-| **8. Testes** | ? | 50% | Não validado |
-| **9. Documentação** | ? | 100% | Excelente |
+| **8. Testes** | ? | 50% | Nï¿½o validado |
+| **9. Documentaï¿½ï¿½o** | ? | 100% | Excelente |
 | **GERAL** | ?? | **59.3%** | Aprovado c/ ressalvas |
 
 ---
@@ -28,18 +28,18 @@
 - [x] **API** - Controllers + Extensions + Middlewares
 - [x] **Tests** - Projetos criados (UnitTests + IntegrationTests)
 
-### ? Padrões Implementados (100%)
+### ? Padrï¿½es Implementados (100%)
 - [x] Repository Pattern
 - [x] Dependency Injection
 - [x] AutoMapper (configurado)
 - [x] SOLID Principles (seguidos)
-- [x] Separação de Concerns (clara)
+- [x] Separaï¿½ï¿½o de Concerns (clara)
 
 ---
 
-## ??? 2. ENTIDADES DE DOMÍNIO (100% ?)
+## ??? 2. ENTIDADES DE DOMï¿½NIO (100% ?)
 
-### ? Gestão de Ativos (6/6)
+### ? Gestï¿½o de Ativos (6/6)
 - [x] Usina
 - [x] Empresa
 - [x] TipoUsina
@@ -52,23 +52,23 @@
 - [x] ArquivoDadgerValor
 - [x] Carga
 
-### ? Restrições e Paradas (4/4)
+### ? Restriï¿½ï¿½es e Paradas (4/4)
 - [x] RestricaoUG
 - [x] RestricaoUS
 - [x] MotivoRestricao
 - [x] ParadaUG
 
-### ? Operação (4/4)
+### ? Operaï¿½ï¿½o (4/4)
 - [x] Intercambio
 - [x] Balanco
 - [x] GerForaMerito
 - [x] ModalidadeOpTermica
 
 ### ? Consolidados (2/2)
-- [x] DCA (Declaração de Carga Agregada)
-- [x] DCR (Declaração de Carga Revisada)
+- [x] DCA (Declaraï¿½ï¿½o de Carga Agregada)
+- [x] DCR (Declaraï¿½ï¿½o de Carga Revisada)
 
-### ? Equipes e Usuários (2/2)
+### ? Equipes e Usuï¿½rios (2/2)
 - [x] Usuario
 - [x] Responsavel
 
@@ -98,14 +98,14 @@
 - [x] **EquipesPdpController** - CRUD completo
 - [x] **BaseController** - Classe base (abstrata)
 
-### ?? PRIORIDADE ALTA - NÃO Implementados (5/22)
+### ?? PRIORIDADE ALTA - Nï¿½O Implementados (5/22)
 - [ ] **ArquivoDadgerController** ? URGENTE
 - [ ] **ArquivoDadgerValorController** ? URGENTE
 - [ ] **CargaController** ? URGENTE
 - [ ] **RestricaoUGController** ? URGENTE
 - [ ] **IntercambioController** ?? Importante
 
-### ?? PRIORIDADE MÉDIA - NÃO Implementados (10/22)
+### ?? PRIORIDADE Mï¿½DIA - Nï¿½O Implementados (10/22)
 - [ ] RestricaoUSController
 - [ ] MotivoRestricaoController
 - [ ] ParadaUGController
@@ -117,7 +117,7 @@
 - [ ] UsuarioController
 - [ ] ResponsavelController
 
-### ?? PRIORIDADE BAIXA - NÃO Implementados (7/22)
+### ?? PRIORIDADE BAIXA - Nï¿½O Implementados (7/22)
 - [ ] ArquivoController
 - [ ] DiretorioController
 - [ ] UploadController
@@ -133,7 +133,7 @@
 ## ??? 4. REPOSITORIES (30% ??)
 
 ### ? Implementados (2/30)
-- [x] DadoEnergeticoRepository - Com filtros por período
+- [x] DadoEnergeticoRepository - Com filtros por perï¿½odo
 - [x] BaseRepository - (Infraestrutura base)
 
 ### ? URGENTE - Criar para APIs Existentes (5/30)
@@ -157,8 +157,8 @@
 ## ?? 5. SERVICES (30% ??)
 
 ### ? Implementados (2/30)
-- [x] DadoEnergeticoService - Com validações
-- [x] (Provável: outros não verificados)
+- [x] DadoEnergeticoService - Com validaï¿½ï¿½es
+- [x] (Provï¿½vel: outros nï¿½o verificados)
 
 ### ? URGENTE - Criar para APIs Existentes (5/30)
 - [ ] **EmpresaService** ?
@@ -189,8 +189,8 @@
 - [x] DadosEnergeticosLista.tsx
 
 ### ? URGENTE - Componentes Faltando (90%)
-- [ ] **UsinasLista.tsx** ? CRÍTICO
-- [ ] **UsinasForm.tsx** ? CRÍTICO
+- [ ] **UsinasLista.tsx** ? CRï¿½TICO
+- [ ] **UsinasForm.tsx** ? CRï¿½TICO
 - [ ] EmpresasLista.tsx
 - [ ] EmpresasForm.tsx
 - [ ] ArquivoDadgerConsulta.tsx
@@ -226,7 +226,7 @@
 - [x] PDPW.UnitTests (projeto criado)
 - [x] PDPW.IntegrationTests (projeto criado)
 
-### ? Implementação (0% - Não Validado)
+### ? Implementaï¿½ï¿½o (0% - Nï¿½o Validado)
 - [ ] **UsinaServiceTests.cs** ? Criar 10 testes
 - [ ] **EmpresaServiceTests.cs** ? Criar 8 testes
 - [ ] **DadoEnergeticoServiceTests.cs** ? Criar 10 testes
@@ -235,14 +235,14 @@
 
 ### ? Cobertura (Desconhecida)
 - [ ] Executar `dotnet test`
-- [ ] Gerar relatório de cobertura
+- [ ] Gerar relatï¿½rio de cobertura
 - [ ] Meta: 60% de cobertura
 
-**TOTAL:** ? **Não validado (assumido 0%)**
+**TOTAL:** ? **Nï¿½o validado (assumido 0%)**
 
 ---
 
-## ?? 9. DOCUMENTAÇÃO (100% ?)
+## ?? 9. DOCUMENTAï¿½ï¿½O (100% ?)
 
 ### ? Documentos Executivos (100%)
 - [x] README.md
@@ -250,7 +250,7 @@
 - [x] docs/APRESENTACAO_DAILY_DIA1.md
 - [x] docs/APRESENTACAO_REUNIAO_SQUAD.md
 
-### ? Documentos Técnicos (100%)
+### ? Documentos Tï¿½cnicos (100%)
 - [x] SETUP.md
 - [x] DOCKER_README.md
 - [x] docs/ANALISE_TECNICA_CODIGO_LEGADO.md
@@ -272,31 +272,31 @@
 
 ---
 
-## ?? AÇÕES URGENTES (Próximas 48h)
+## ?? Aï¿½ï¿½ES URGENTES (Prï¿½ximas 48h)
 
-### ? PRIORIDADE MÁXIMA
+### ? PRIORIDADE Mï¿½XIMA
 
 #### 1. Frontend - Tela de Usinas
 - [ ] Criar `UsinasLista.tsx` (listagem com AG Grid)
-- [ ] Criar `UsinasForm.tsx` (formulário com validações)
+- [ ] Criar `UsinasForm.tsx` (formulï¿½rio com validaï¿½ï¿½es)
 - [ ] Integrar com API `/api/usinas`
 - [ ] Adicionar filtros (nome, tipo, empresa)
 - [ ] Testar fluxo completo (CRUD)
 
-**Responsável:** DEV Frontend  
+**Responsï¿½vel:** DEV Frontend  
 **Prazo:** 24 horas  
 **Estimativa:** 6-8 horas
 
 ---
 
-#### 2. Backend - Completar 3-5 APIs Críticas
+#### 2. Backend - Completar 3-5 APIs Crï¿½ticas
 - [ ] ArquivoDadgerController + Repository + Service
 - [ ] CargaController + Repository + Service
 - [ ] RestricaoUGController + Repository + Service
 - [ ] (Opcional) IntercambioController + Repository + Service
 - [ ] (Opcional) BalancoController + Repository + Service
 
-**Responsável:** DEV 1 (Backend Senior)  
+**Responsï¿½vel:** DEV 1 (Backend Senior)  
 **Prazo:** 48 horas  
 **Estimativa:** 12-16 horas
 
@@ -309,7 +309,7 @@
 - [ ] SemanaPMORepository + SemanaPMOService
 - [ ] EquipePDPRepository + EquipePDPService
 
-**Responsável:** DEV 2 (Backend Pleno)  
+**Responsï¿½vel:** DEV 2 (Backend Pleno)  
 **Prazo:** 24 horas  
 **Estimativa:** 4-6 horas
 
@@ -320,15 +320,15 @@
 - [ ] Seed para ArquivoDadger (5 arquivos)
 - [ ] Seed para Carga (30 registros)
 - [ ] Seed para UnidadeGeradora (20 unidades)
-- [ ] Seed para Usuario (5 usuários)
+- [ ] Seed para Usuario (5 usuï¿½rios)
 
-**Responsável:** DEV 2 (Backend Pleno)  
+**Responsï¿½vel:** DEV 2 (Backend Pleno)  
 **Prazo:** 12 horas  
 **Estimativa:** 2-3 horas
 
 ---
 
-## ?? PROJEÇÃO DE COMPLETUDE
+## ?? PROJEï¿½ï¿½O DE COMPLETUDE
 
 ### ?? Hoje (19/12/2024)
 ```
@@ -341,7 +341,7 @@
 ???????????????????????????????????????????
 ```
 
-### ?? Com Ações Urgentes (21/12/2024)
+### ?? Com Aï¿½ï¿½es Urgentes (21/12/2024)
 ```
 ???????????????????????????????????????????
 ? Backend:   ????????????????????? 40%  ?
@@ -352,7 +352,7 @@
 ???????????????????????????????????????????
 ```
 
-### ?? Ideal para Apresentação (26/12/2024)
+### ?? Ideal para Apresentaï¿½ï¿½o (26/12/2024)
 ```
 ???????????????????????????????????????????
 ? Backend:   ????????????????????? 50%  ?
@@ -367,20 +367,20 @@
 
 ## ? STATUS FINAL
 
-| Critério | Status | Decisão |
+| Critï¿½rio | Status | Decisï¿½o |
 |----------|--------|---------|
-| **Viabilidade Técnica** | ? Provada | Aprovar |
+| **Viabilidade Tï¿½cnica** | ? Provada | Aprovar |
 | **Arquitetura** | ? Validada | Aprovar |
 | **Funcionalidade** | ?? Parcial (24%) | Ressalvas |
-| **Frontend** | ? Crítico (10%) | Ação urgente |
-| **Documentação** | ? Excelente | Aprovar |
-| **DECISÃO GERAL** | ?? | ? **APROVAR C/ RESSALVAS** |
+| **Frontend** | ? Crï¿½tico (10%) | Aï¿½ï¿½o urgente |
+| **Documentaï¿½ï¿½o** | ? Excelente | Aprovar |
+| **DECISï¿½O GERAL** | ?? | ? **APROVAR C/ RESSALVAS** |
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-### Fase 2 - Implementação Completa (12-14 semanas)
+### Fase 2 - Implementaï¿½ï¿½o Completa (12-14 semanas)
 
 #### Sprint 1-2 (4 semanas)
 - [ ] Completar 15 APIs restantes (total: 22/29)
@@ -390,7 +390,7 @@
 #### Sprint 3-4 (4 semanas)
 - [ ] Completar 7 APIs restantes (total: 29/29)
 - [ ] Criar 10 telas frontend (total: 22/30)
-- [ ] Integração com sistema legado (dados reais)
+- [ ] Integraï¿½ï¿½o com sistema legado (dados reais)
 
 #### Sprint 5-6 (4 semanas)
 - [ ] Criar 8 telas frontend restantes (total: 30/30)
@@ -398,21 +398,21 @@
 - [ ] Ajustes de UX/UI
 
 #### Sprint 7 (2 semanas)
-- [ ] Homologação com cliente
-- [ ] Correção de bugs
-- [ ] Deploy em produção
+- [ ] Homologaï¿½ï¿½o com cliente
+- [ ] Correï¿½ï¿½o de bugs
+- [ ] Deploy em produï¿½ï¿½o
 
 ---
 
-**Atualizado em:** 19/12/2024 às 14:30  
-**Responsável:** Tech Lead  
-**Próxima Revisão:** 21/12/2024 (após ações urgentes)
+**Atualizado em:** 19/12/2024 ï¿½s 14:30  
+**Responsï¿½vel:** Tech Lead  
+**Prï¿½xima Revisï¿½o:** 21/12/2024 (apï¿½s aï¿½ï¿½es urgentes)
 
 ---
 
 ? = Completo  
-?? = Parcial/Atenção  
-? = Crítico/Faltando  
-? = Não Validado  
+?? = Parcial/Atenï¿½ï¿½o  
+? = Crï¿½tico/Faltando  
+? = Nï¿½o Validado  
 ? = Urgente  
 ?? = Importante

@@ -1,17 +1,17 @@
-# ?? TEMPLATE - TESTES DE API
+ï»¿# ?? TEMPLATE - TESTES DE API
 
 **API:** {NOME_API}  
 **Entidade:** {Entidade}  
 **Endpoints:** {QUANTIDADE}  
-**Data criação:** {DATA}
+**Data criaï¿½ï¿½o:** {DATA}
 
 ---
 
-## ?? CHECKLIST RÁPIDO
+## ?? CHECKLIST Rï¿½PIDO
 
 - [ ] GET /{entidade} - Listar todos
 - [ ] GET /{entidade}/{id} - Buscar por ID
-- [ ] GET /{entidade}/{campo}/{valor} - Buscas específicas
+- [ ] GET /{entidade}/{campo}/{valor} - Buscas especï¿½ficas
 - [ ] POST /{entidade} - Criar
 - [ ] PUT /{entidade}/{id} - Atualizar
 - [ ] DELETE /{entidade}/{id} - Deletar
@@ -20,7 +20,7 @@
 
 ## ?? DADOS DE TESTE
 
-### Seed Data Disponível
+### Seed Data Disponï¿½vel
 ```
 {ENTIDADE}s no banco: X registros
 ```
@@ -55,7 +55,7 @@
 ]
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **X registros**
 - [ ] Todos os campos preenchidos
@@ -85,7 +85,7 @@
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Dados corretos retornados
 - [ ] Relacionamentos carregados
@@ -125,16 +125,16 @@
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **201 Created**
 - [ ] ID gerado automaticamente
 - [ ] DataCriacao preenchida
 - [ ] Location header presente
 
-### Testes de Validação
-- [ ] Campo obrigatório vazio: **400 Bad Request**
-- [ ] Valor inválido: **400 Bad Request**
-- [ ] Duplicidade: **400 Bad Request** (se aplicável)
+### Testes de Validaï¿½ï¿½o
+- [ ] Campo obrigatï¿½rio vazio: **400 Bad Request**
+- [ ] Valor invï¿½lido: **400 Bad Request**
+- [ ] Duplicidade: **400 Bad Request** (se aplicï¿½vel)
 
 ---
 
@@ -169,7 +169,7 @@
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Dados atualizados
 - [ ] DataAtualizacao preenchida
@@ -196,7 +196,7 @@ Status Code: 204 No Content
 (Sem corpo na resposta)
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **204 No Content**
 - [ ] GET retorna **404 Not Found** depois
 - [ ] Soft delete (Ativo = false no banco)
@@ -206,7 +206,7 @@ Status Code: 204 No Content
 
 ---
 
-## ?? TESTES ESPECÍFICOS
+## ?? TESTES ESPECï¿½FICOS
 
 ### {DESCREVER ENDPOINTS CUSTOMIZADOS}
 
@@ -252,45 +252,45 @@ curl -X DELETE "http://localhost:5000/api/{entidade}/1"
 
 ## ? CHECKLIST COMPLETO
 
-### Testes Básicos
+### Testes Bï¿½sicos
 - [ ] GET lista todos
 - [ ] GET por ID (existente)
 - [ ] GET por ID (inexistente) ? 404
-- [ ] POST criar (válido) ? 201
-- [ ] POST criar (inválido) ? 400
+- [ ] POST criar (vï¿½lido) ? 201
+- [ ] POST criar (invï¿½lido) ? 400
 - [ ] PUT atualizar (existente) ? 200
 - [ ] PUT atualizar (inexistente) ? 404
 - [ ] DELETE (existente) ? 204
 - [ ] DELETE (inexistente) ? 404
 
-### Testes de Validação
-- [ ] Campo obrigatório vazio
+### Testes de Validaï¿½ï¿½o
+- [ ] Campo obrigatï¿½rio vazio
 - [ ] Valor fora do range
 - [ ] String muito grande
-- [ ] Data inválida
+- [ ] Data invï¿½lida
 - [ ] FK inexistente
 
-### Testes Específicos
+### Testes Especï¿½ficos
 - [ ] {ENDPOINT_CUSTOMIZADO_1}
 - [ ] {ENDPOINT_CUSTOMIZADO_2}
 - [ ] ...
 
 ---
 
-## ?? OBSERVAÇÕES
+## ?? OBSERVAï¿½ï¿½ES
 
 ### Relacionamentos
 - Esta API depende de: {ENTIDADES_PAI}
-- Esta API é usada por: {ENTIDADES_FILHO}
+- Esta API ï¿½ usada por: {ENTIDADES_FILHO}
 
 ### Performance
 - Tempo esperado GET lista: < 500ms
 - Tempo esperado GET ID: < 200ms
 - Tempo esperado POST: < 1000ms
 
-### Segurança
-- [ ] Autenticação funcionando (se implementada)
-- [ ] Autorização funcionando (se implementada)
+### Seguranï¿½a
+- [ ] Autenticaï¿½ï¿½o funcionando (se implementada)
+- [ ] Autorizaï¿½ï¿½o funcionando (se implementada)
 
 ---
 

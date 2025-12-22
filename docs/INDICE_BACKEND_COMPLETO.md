@@ -1,6 +1,6 @@
-# ?? ÍNDICE - Documentação Backend Completo
+ï»¿# ?? ï¿½NDICE - Documentaï¿½ï¿½o Backend Completo
 
-**Projeto:** PDPW PoC - Cenário Backend Completo  
+**Projeto:** PDPW PoC - Cenï¿½rio Backend Completo  
 **Data:** 19/12/2024  
 **Criado por:** GitHub Copilot
 
@@ -8,28 +8,28 @@
 
 ## ?? DOCUMENTOS PRINCIPAIS
 
-### 1?? Para Tomada de Decisão
+### 1?? Para Tomada de Decisï¿½o
 
-| Documento | Descrição | Público-Alvo | Tempo Leitura |
+| Documento | Descriï¿½ï¿½o | Pï¿½blico-Alvo | Tempo Leitura |
 |-----------|-----------|--------------|---------------|
-| **[COMPARATIVO_CENARIOS.md](COMPARATIVO_CENARIOS.md)** | Comparação visual entre Vertical Slice e Backend Completo | Stakeholders, Tech Lead | 10 min |
-| **[RESUMO_EXECUTIVO_BACKEND_COMPLETO.md](RESUMO_EXECUTIVO_BACKEND_COMPLETO.md)** | Resumo executivo com cronograma e métricas | Executivos, Gerentes | 15 min |
-| **[CENARIO_BACKEND_COMPLETO_ANALISE.md](CENARIO_BACKEND_COMPLETO_ANALISE.md)** | Análise técnica completa e detalhada | Tech Lead, Arquitetos | 30 min |
+| **[COMPARATIVO_CENARIOS.md](COMPARATIVO_CENARIOS.md)** | Comparaï¿½ï¿½o visual entre Vertical Slice e Backend Completo | Stakeholders, Tech Lead | 10 min |
+| **[RESUMO_EXECUTIVO_BACKEND_COMPLETO.md](RESUMO_EXECUTIVO_BACKEND_COMPLETO.md)** | Resumo executivo com cronograma e mï¿½tricas | Executivos, Gerentes | 15 min |
+| **[CENARIO_BACKEND_COMPLETO_ANALISE.md](CENARIO_BACKEND_COMPLETO_ANALISE.md)** | Anï¿½lise tï¿½cnica completa e detalhada | Tech Lead, Arquitetos | 30 min |
 
-### 2?? Para Implementação
+### 2?? Para Implementaï¿½ï¿½o
 
-| Documento | Descrição | Público-Alvo | Tempo Leitura |
+| Documento | Descriï¿½ï¿½o | Pï¿½blico-Alvo | Tempo Leitura |
 |-----------|-----------|--------------|---------------|
-| **[SWAGGER_ESTRUTURA_COMPLETA.md](SWAGGER_ESTRUTURA_COMPLETA.md)** | Guia completo de configuração do Swagger | Backend Devs | 20 min |
-| **[CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md](CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md)** | Checklist operacional dia a dia | Tech Lead | Referência |
+| **[SWAGGER_ESTRUTURA_COMPLETA.md](SWAGGER_ESTRUTURA_COMPLETA.md)** | Guia completo de configuraï¿½ï¿½o do Swagger | Backend Devs | 20 min |
+| **[CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md](CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md)** | Checklist operacional dia a dia | Tech Lead | Referï¿½ncia |
 
 ### 3?? Documentos Anteriores (Contexto)
 
-| Documento | Descrição | Público-Alvo |
+| Documento | Descriï¿½ï¿½o | Pï¿½blico-Alvo |
 |-----------|-----------|--------------|
-| [SQUAD_BRIEFING_19DEC.md](SQUAD_BRIEFING_19DEC.md) | Briefing original do squad (cenário vertical slice) | Todo o time |
-| [ANALISE_TECNICA_CODIGO_LEGADO.md](ANALISE_TECNICA_CODIGO_LEGADO.md) | Análise do código VB.NET legado | Backend Devs |
-| [VERTICAL_SLICES_DECISION.md](../VERTICAL_SLICES_DECISION.md) | Decisão original de vertical slices | Arquitetos |
+| [SQUAD_BRIEFING_19DEC.md](SQUAD_BRIEFING_19DEC.md) | Briefing original do squad (cenï¿½rio vertical slice) | Todo o time |
+| [ANALISE_TECNICA_CODIGO_LEGADO.md](ANALISE_TECNICA_CODIGO_LEGADO.md) | Anï¿½lise do cï¿½digo VB.NET legado | Backend Devs |
+| [VERTICAL_SLICES_DECISION.md](../VERTICAL_SLICES_DECISION.md) | Decisï¿½o original de vertical slices | Arquitetos |
 | [RESUMO_EXECUTIVO.md](../RESUMO_EXECUTIVO.md) | Resumo executivo do projeto geral | Executivos |
 
 ---
@@ -40,27 +40,27 @@
 
 ```
 1. COMPARATIVO_CENARIOS.md (10 min)
-   ??> Entender diferença entre cenários
+   ??> Entender diferenï¿½a entre cenï¿½rios
    
 2. RESUMO_EXECUTIVO_BACKEND_COMPLETO.md (10 min)
    ??> Ver cronograma e entregas
 
-DECISÃO: Aprovar ou não o Cenário B
+DECISï¿½O: Aprovar ou nï¿½o o Cenï¿½rio B
 ```
 
 ### Para Tech Lead (60 minutos)
 
 ```
 1. COMPARATIVO_CENARIOS.md (10 min)
-   ??> Entender vantagens do Cenário B
+   ??> Entender vantagens do Cenï¿½rio B
    
 2. CENARIO_BACKEND_COMPLETO_ANALISE.md (30 min)
-   ??> Análise técnica completa
+   ??> Anï¿½lise tï¿½cnica completa
    
 3. CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md (20 min)
-   ??> Preparar execução
+   ??> Preparar execuï¿½ï¿½o
 
-AÇÃO: Preparar kick-off com o squad
+Aï¿½ï¿½O: Preparar kick-off com o squad
 ```
 
 ### Para Backend Devs (40 minutos)
@@ -70,12 +70,12 @@ AÇÃO: Preparar kick-off com o squad
    ??> Entender o que vai ser feito
    
 2. SWAGGER_ESTRUTURA_COMPLETA.md (20 min)
-   ??> Aprender configuração Swagger
+   ??> Aprender configuraï¿½ï¿½o Swagger
    
 3. CENARIO_BACKEND_COMPLETO_ANALISE.md (10 min)
-   ??> Ver priorização de APIs
+   ??> Ver priorizaï¿½ï¿½o de APIs
 
-AÇÃO: Começar desenvolvimento
+Aï¿½ï¿½O: Comeï¿½ar desenvolvimento
 ```
 
 ### Para Frontend Dev (15 minutos)
@@ -84,10 +84,10 @@ AÇÃO: Começar desenvolvimento
 1. RESUMO_EXECUTIVO_BACKEND_COMPLETO.md (10 min)
    ??> Entender escopo reduzido (1 tela)
    
-2. SQUAD_BRIEFING_19DEC.md - Seção Frontend (5 min)
-   ??> Ver tarefas específicas
+2. SQUAD_BRIEFING_19DEC.md - Seï¿½ï¿½o Frontend (5 min)
+   ??> Ver tarefas especï¿½ficas
 
-AÇÃO: Focar 100% na tela de Usinas
+Aï¿½ï¿½O: Focar 100% na tela de Usinas
 ```
 
 ---
@@ -99,12 +99,12 @@ AÇÃO: Focar 100% na tela de Usinas
 ```
 ? Estrutura do projeto (.NET 8 + React)
 ? Arquitetura definida (Clean Architecture)
-? Código legado analisado (473 arquivos VB.NET)
-? Documentação completa de cenários
-? Plano de execução detalhado
+? Cï¿½digo legado analisado (473 arquivos VB.NET)
+? Documentaï¿½ï¿½o completa de cenï¿½rios
+? Plano de execuï¿½ï¿½o detalhado
 ```
 
-### O que teremos em 26/12 (Cenário B)
+### O que teremos em 26/12 (Cenï¿½rio B)
 
 ```
 ? 27-29 APIs backend completas
@@ -119,18 +119,18 @@ AÇÃO: Focar 100% na tela de Usinas
 
 ---
 
-## ?? COMPARAÇÃO RÁPIDA
+## ?? COMPARAï¿½ï¿½O Rï¿½PIDA
 
-| Métrica | Cenário A<br/>(Vertical Slice) | Cenário B<br/>(Backend Completo) |
+| Mï¿½trica | Cenï¿½rio A<br/>(Vertical Slice) | Cenï¿½rio B<br/>(Backend Completo) |
 |---------|-------------------------------|----------------------------------|
 | **APIs** | 2 | **29** ? |
 | **Endpoints** | 15 | **145-160** ? |
 | **Frontend** | 2 telas | 1 tela |
-| **Swagger** | Básico | **100% completo** ? |
+| **Swagger** | Bï¿½sico | **100% completo** ? |
 | **Valor** | ??? | **?????** ? |
-| **Risco** | Médio | **Baixo** ? |
+| **Risco** | Mï¿½dio | **Baixo** ? |
 
-**? RECOMENDADO: CENÁRIO B**
+**? RECOMENDADO: CENï¿½RIO B**
 
 ---
 
@@ -138,182 +138,182 @@ AÇÃO: Focar 100% na tela de Usinas
 
 ### COMPARATIVO_CENARIOS.md
 
-**Conteúdo:**
-- Comparação lado a lado
-- Gráficos de valor x tempo
-- Análise de risco
-- Demonstração na apresentação
-- Matriz de decisão
-- Recomendação final
+**Conteï¿½do:**
+- Comparaï¿½ï¿½o lado a lado
+- Grï¿½ficos de valor x tempo
+- Anï¿½lise de risco
+- Demonstraï¿½ï¿½o na apresentaï¿½ï¿½o
+- Matriz de decisï¿½o
+- Recomendaï¿½ï¿½o final
 
 **Use quando:**
 - Precisa convencer stakeholders
-- Quer entender diferenças rapidamente
+- Quer entender diferenï¿½as rapidamente
 - Precisa justificar escolha
 
 ### RESUMO_EXECUTIVO_BACKEND_COMPLETO.md
 
-**Conteúdo:**
-- Resposta rápida: quantas APIs/dia
+**Conteï¿½do:**
+- Resposta rï¿½pida: quantas APIs/dia
 - Cronograma dia a dia
-- Organização do Swagger
-- Métricas de sucesso
-- Exemplo de demonstração
-- Próximos passos
+- Organizaï¿½ï¿½o do Swagger
+- Mï¿½tricas de sucesso
+- Exemplo de demonstraï¿½ï¿½o
+- Prï¿½ximos passos
 
 **Use quando:**
-- Precisa de visão geral rápida
+- Precisa de visï¿½o geral rï¿½pida
 - Quer ver cronograma detalhado
-- Precisa preparar apresentação
+- Precisa preparar apresentaï¿½ï¿½o
 
 ### CENARIO_BACKEND_COMPLETO_ANALISE.md
 
-**Conteúdo:**
-- Análise de produtividade (tempo/API)
+**Conteï¿½do:**
+- Anï¿½lise de produtividade (tempo/API)
 - 29 APIs identificadas e priorizadas
 - Cronograma completo (6 dias)
 - Estrutura do Swagger proposta
 - Exemplos de seed data
-- Riscos e mitigações
-- Vantagens técnicas
+- Riscos e mitigaï¿½ï¿½es
+- Vantagens tï¿½cnicas
 
 **Use quando:**
-- Precisa de análise técnica profunda
+- Precisa de anï¿½lise tï¿½cnica profunda
 - Quer entender tempo de cada API
 - Precisa planejar desenvolvimento
 
 ### SWAGGER_ESTRUTURA_COMPLETA.md
 
-**Conteúdo:**
-- Organização por categorias
+**Conteï¿½do:**
+- Organizaï¿½ï¿½o por categorias
 - Detalhamento de todos os endpoints
-- Configuração completa do Swagger
+- Configuraï¿½ï¿½o completa do Swagger
 - Exemplo de controller documentado
-- DTOs com anotações
+- DTOs com anotaï¿½ï¿½es
 - Como testar pelo Swagger
-- Exportar especificação OpenAPI
+- Exportar especificaï¿½ï¿½o OpenAPI
 
 **Use quando:**
 - Vai configurar Swagger no projeto
 - Precisa documentar APIs
-- Quer exemplos de código
+- Quer exemplos de cï¿½digo
 
 ### CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md
 
-**Conteúdo:**
-- Checklist de aprovação
-- Preparação do ambiente
-- Priorização de APIs
+**Conteï¿½do:**
+- Checklist de aprovaï¿½ï¿½o
+- Preparaï¿½ï¿½o do ambiente
+- Priorizaï¿½ï¿½o de APIs
 - Daily standup template
-- Validação de entrega
-- Plano de contingência
-- Critérios de sucesso
+- Validaï¿½ï¿½o de entrega
+- Plano de contingï¿½ncia
+- Critï¿½rios de sucesso
 
 **Use quando:**
-- É o Tech Lead do projeto
+- ï¿½ o Tech Lead do projeto
 - Precisa coordenar o time
-- Quer acompanhar progresso diário
+- Quer acompanhar progresso diï¿½rio
 - Precisa validar entregas
 
 ---
 
-## ?? GLOSSÁRIO RÁPIDO
+## ?? GLOSSï¿½RIO Rï¿½PIDO
 
 | Termo | Significado |
 |-------|-------------|
 | **Vertical Slice** | Entregar um fluxo E2E completo (backend + frontend) |
 | **Backend Completo** | Entregar TODAS as APIs, frontend limitado |
-| **Swagger** | Documentação interativa de APIs (OpenAPI) |
+| **Swagger** | Documentaï¿½ï¿½o interativa de APIs (OpenAPI) |
 | **Clean Architecture** | Arquitetura em camadas (Domain/Application/Infrastructure/API) |
-| **DTO** | Data Transfer Object (objeto de entrada/saída) |
-| **InMemory Database** | Banco de dados em memória (sem SQL Server) |
+| **DTO** | Data Transfer Object (objeto de entrada/saï¿½da) |
+| **InMemory Database** | Banco de dados em memï¿½ria (sem SQL Server) |
 | **Seed Data** | Dados iniciais populados no banco |
 | **CRUD** | Create, Read, Update, Delete |
 
 ---
 
-## ? DECISÃO RÁPIDA
+## ? DECISï¿½O Rï¿½PIDA
 
-### Se você tem 5 minutos:
+### Se vocï¿½ tem 5 minutos:
 
 ```
-Leia: COMPARATIVO_CENARIOS.md ? Seção "RECOMENDAÇÃO FINAL"
+Leia: COMPARATIVO_CENARIOS.md ? Seï¿½ï¿½o "RECOMENDAï¿½ï¿½O FINAL"
 
 RESULTADO:
-? Cenário B (Backend Completo) é o recomendado
+? Cenï¿½rio B (Backend Completo) ï¿½ o recomendado
 ? 29 APIs vs 2 APIs = 1.350% mais valor
-? Swagger = demonstração poderosa
+? Swagger = demonstraï¿½ï¿½o poderosa
 ? Risco baixo, valor alto
 ```
 
-### Se você tem 15 minutos:
+### Se vocï¿½ tem 15 minutos:
 
 ```
 Leia: RESUMO_EXECUTIVO_BACKEND_COMPLETO.md
 
 RESULTADO:
 ? Cronograma dia a dia definido
-? Distribuição de trabalho clara
-? Métricas de sucesso estabelecidas
-? Pronto para começar desenvolvimento
+? Distribuiï¿½ï¿½o de trabalho clara
+? Mï¿½tricas de sucesso estabelecidas
+? Pronto para comeï¿½ar desenvolvimento
 ```
 
-### Se você tem 1 hora:
+### Se vocï¿½ tem 1 hora:
 
 ```
 Leia: Todos os documentos na ordem recomendada
 
 RESULTADO:
-? Compreensão completa do cenário
-? Justificativa técnica sólida
-? Plano de execução detalhado
+? Compreensï¿½o completa do cenï¿½rio
+? Justificativa tï¿½cnica sï¿½lida
+? Plano de execuï¿½ï¿½o detalhado
 ? Pronto para liderar o projeto
 ```
 
 ---
 
-## ?? ESTATÍSTICAS DOS DOCUMENTOS
+## ?? ESTATï¿½STICAS DOS DOCUMENTOS
 
-| Documento | Páginas | Palavras | Tempo Leitura |
+| Documento | Pï¿½ginas | Palavras | Tempo Leitura |
 |-----------|---------|----------|---------------|
 | COMPARATIVO_CENARIOS.md | 15 | ~4.500 | 10 min |
 | RESUMO_EXECUTIVO_BACKEND_COMPLETO.md | 18 | ~5.000 | 15 min |
 | CENARIO_BACKEND_COMPLETO_ANALISE.md | 25 | ~8.000 | 30 min |
 | SWAGGER_ESTRUTURA_COMPLETA.md | 20 | ~6.500 | 20 min |
-| CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md | 22 | ~5.500 | Referência |
+| CHECKLIST_TECH_LEAD_BACKEND_COMPLETO.md | 22 | ~5.500 | Referï¿½ncia |
 | **TOTAL** | **100** | **~29.500** | **75 min** |
 
 ---
 
-## ?? PRÓXIMAS AÇÕES
+## ?? PRï¿½XIMAS Aï¿½ï¿½ES
 
-### ? Você já tem tudo que precisa para:
+### ? Vocï¿½ jï¿½ tem tudo que precisa para:
 
-1. **Tomar a decisão** (ler COMPARATIVO_CENARIOS.md)
+1. **Tomar a decisï¿½o** (ler COMPARATIVO_CENARIOS.md)
 2. **Apresentar para stakeholders** (usar RESUMO_EXECUTIVO)
 3. **Planejar desenvolvimento** (usar CENARIO_BACKEND_COMPLETO_ANALISE)
 4. **Configurar Swagger** (usar SWAGGER_ESTRUTURA_COMPLETA)
 5. **Gerenciar o projeto** (usar CHECKLIST_TECH_LEAD)
 
-### ?? Se precisar de mais informações:
+### ?? Se precisar de mais informaï¿½ï¿½es:
 
 - Consulte os documentos anteriores (SQUAD_BRIEFING, ANALISE_TECNICA_CODIGO_LEGADO)
-- Revise o código legado em `pdpw_act/pdpw/`
+- Revise o cï¿½digo legado em `pdpw_act/pdpw/`
 - Analise a estrutura atual do projeto em `src/`
 
 ---
 
-## ? RECOMENDAÇÃO FINAL
+## ? RECOMENDAï¿½ï¿½O FINAL
 
 ```
 ??????????????????????????????????????????????
-?  ?? INICIAR DESENVOLVIMENTO COM CENÁRIO B    ?
+?  ?? INICIAR DESENVOLVIMENTO COM CENï¿½RIO B    ?
 ?                                              ?
-?  Próximos Passos:                           ?
+?  Prï¿½ximos Passos:                           ?
 ?  1. ? Aprovar com stakeholders             ?
 ?  2. ? Comunicar ao squad                   ?
 ?  3. ? Seguir CHECKLIST_TECH_LEAD           ?
-?  4. ? Começar desenvolvimento (Dia 1)      ?
+?  4. ? Comeï¿½ar desenvolvimento (Dia 1)      ?
 ?                                              ?
 ?  Entrega: 26/12/2024 ?                      ?
 ??????????????????????????????????????????????
@@ -321,8 +321,8 @@ RESULTADO:
 
 ---
 
-**Índice criado por:** GitHub Copilot  
+**ï¿½ndice criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 
 **BOA SORTE NO PROJETO! ??**

@@ -1,4 +1,4 @@
-# ?? SOLUÇÃO: Erro "npm ci" no Frontend Build
+ï»¿# ?? SOLUï¿½ï¿½O: Erro "npm ci" no Frontend Build
 
 **Erro:** `npm ERR! The 'npm ci' command can only install with an existing package-lock.json`  
 **Causa:** Faltava o arquivo `package-lock.json` na pasta `frontend/`  
@@ -15,22 +15,22 @@ COPY frontend/package*.json ./
 RUN npm ci  # ? Requer package-lock.json
 ```
 
-**Diferença entre comandos:**
+**Diferenï¿½a entre comandos:**
 
 | Comando | Quando usar | Requer package-lock.json |
 |---------|-------------|-------------------------|
-| `npm install` | Desenvolvimento, primeira instalação | ? Não |
-| `npm ci` | CI/CD, builds reproduzíveis | ? Sim |
+| `npm install` | Desenvolvimento, primeira instalaï¿½ï¿½o | ? Nï¿½o |
+| `npm ci` | CI/CD, builds reproduzï¿½veis | ? Sim |
 
-**Benefícios do `npm ci`:**
-- ? Mais rápido (até 2x)
-- ?? Determinístico (mesmas versões sempre)
-- ?? Seguro (não modifica package-lock.json)
+**Benefï¿½cios do `npm ci`:**
+- ? Mais rï¿½pido (atï¿½ 2x)
+- ?? Determinï¿½stico (mesmas versï¿½es sempre)
+- ?? Seguro (nï¿½o modifica package-lock.json)
 - ? Ideal para Docker
 
 ---
 
-## ? SOLUÇÕES APLICADAS
+## ? SOLUï¿½ï¿½ES APLICADAS
 
 ### 1. Gerado `package-lock.json`
 
@@ -42,8 +42,8 @@ npm install
 
 **Resultado:**
 - ? Criado `frontend/package-lock.json`
-- ? Instaladas 226 dependências
-- ?? 2 vulnerabilidades moderadas (não crítico)
+- ? Instaladas 226 dependï¿½ncias
+- ?? 2 vulnerabilidades moderadas (nï¿½o crï¿½tico)
 
 ### 2. Dockerfile.frontend Mantido com `npm ci`
 
@@ -73,7 +73,7 @@ git commit -m "[FRONTEND] fix: gera package-lock.json para npm ci
 
 - Gera package-lock.json no frontend
 - Corrige erro de build no Docker
-- Mantém npm ci para builds determinísticos"
+- Mantï¿½m npm ci para builds determinï¿½sticos"
 
 # Push
 git push origin develop
@@ -95,17 +95,17 @@ docker-compose build frontend --no-cache
 # Build completo
 docker-compose build --no-cache
 
-# Ou apenas frontend se backend já funcionou
+# Ou apenas frontend se backend jï¿½ funcionou
 docker-compose build frontend --no-cache
 ```
 
-### Passo 4: Iniciar Serviços (3 min)
+### Passo 4: Iniciar Serviï¿½os (3 min)
 
 ```powershell
 # Iniciar
 docker-compose up
 
-# Aguardar até ver:
+# Aguardar atï¿½ ver:
 # ? pdpw-backend started
 # ? pdpw-frontend started
 # ? pdpw-sqlserver started
@@ -124,7 +124,7 @@ docker-compose up
 ### Erro 1: "Cannot find module 'vite'"
 
 **Causa:** Build do Vite falhou  
-**Solução:** Verificar se `npm run build` funciona local
+**Soluï¿½ï¿½o:** Verificar se `npm run build` funciona local
 
 ```powershell
 cd frontend
@@ -132,18 +132,18 @@ npm install
 npm run build
 
 # Se falhar local, corrigir primeiro
-# Se funcionar local, problema é no Docker
+# Se funcionar local, problema ï¿½ no Docker
 ```
 
 ### Erro 2: "ENOENT: no such file or directory, open 'dist'"
 
-**Causa:** Build não gerou pasta `dist`  
-**Solução:** Verificar script de build
+**Causa:** Build nï¿½o gerou pasta `dist`  
+**Soluï¿½ï¿½o:** Verificar script de build
 
 ```powershell
 cd frontend
 
-# Ver scripts disponíveis
+# Ver scripts disponï¿½veis
 npm run
 
 # Testar build local
@@ -156,26 +156,26 @@ dir dist
 ### Erro 3: Download do Node.js falha no Docker
 
 **Causa:** Timeout ou firewall  
-**Solução:** Usar imagem com Node.js pré-instalado
+**Soluï¿½ï¿½o:** Usar imagem com Node.js prï¿½-instalado
 
 ```dockerfile
 # Trocar primeira linha do Dockerfile.frontend:
 FROM stefanscherer/node-windows:20-nanoserver-ltsc2022 AS build
 
-# Remover seção de instalação do Node.js
+# Remover seï¿½ï¿½o de instalaï¿½ï¿½o do Node.js
 ```
 
 ### Erro 4: "npm install" demora muito
 
 **Causa:** Windows containers + Node.js = lento  
-**Solução:** Considerar Linux containers ou dev local
+**Soluï¿½ï¿½o:** Considerar Linux containers ou dev local
 
 ```powershell
-# OPÇÃO A: Trocar para Linux containers
+# OPï¿½ï¿½O A: Trocar para Linux containers
 # Docker Desktop ? Switch to Linux containers
 # Usar Dockerfile.frontend com imagens Linux
 
-# OPÇÃO B: Desenvolvimento local (RECOMENDADO)
+# OPï¿½ï¿½O B: Desenvolvimento local (RECOMENDADO)
 cd frontend
 npm run dev
 # Acesso: http://localhost:5173
@@ -183,13 +183,13 @@ npm run dev
 
 ---
 
-## ?? RECOMENDAÇÃO FORTE
+## ?? RECOMENDAï¿½ï¿½O FORTE
 
 ### ? Desenvolvimento Local para Frontend
 
 **Windows containers + Node.js = MUITO LENTO (10-20 min de build)**
 
-**Alternativa MUITO mais rápida:**
+**Alternativa MUITO mais rï¿½pida:**
 
 ```powershell
 # 1. Backend em Docker (ou local)
@@ -197,36 +197,36 @@ cd src\PDPW.API
 dotnet run
 # Acesso: http://localhost:5000
 
-# 2. Frontend LOCAL (100x mais rápido)
+# 2. Frontend LOCAL (100x mais rï¿½pido)
 cd frontend
 npm install
 npm run dev
 # Acesso: http://localhost:5173
 
-# 3. Hot reload funcionando! Edita código e vê mudanças instantâneas
+# 3. Hot reload funcionando! Edita cï¿½digo e vï¿½ mudanï¿½as instantï¿½neas
 ```
 
 **Vantagens:**
-- ? Build instantâneo (vs 15 min Docker)
-- ?? Hot reload (edita código, vê mudanças na hora)
-- ?? Fácil de debugar
+- ? Build instantï¿½neo (vs 15 min Docker)
+- ?? Hot reload (edita cï¿½digo, vï¿½ mudanï¿½as na hora)
+- ?? Fï¿½cil de debugar
 - ?? Usa menos RAM (vs 16 GB Docker)
 
 **Quando usar Docker?**
-- Validação final (Dia 6)
+- Validaï¿½ï¿½o final (Dia 6)
 - Demo para cliente
-- Verificar integração completa
+- Verificar integraï¿½ï¿½o completa
 
 ---
 
-## ?? COMPARAÇÃO DE TEMPO
+## ?? COMPARAï¿½ï¿½O DE TEMPO
 
 ### Frontend em Docker Windows
 
 ```
 Build inicial:        15-30 min
-Rebuild com mudança:  10-15 min
-Hot reload:           ? Não tem
+Rebuild com mudanï¿½a:  10-15 min
+Hot reload:           ? Nï¿½o tem
 RAM usada:            ~4 GB
 ```
 
@@ -234,16 +234,16 @@ RAM usada:            ~4 GB
 
 ```
 Build inicial:        10-30 seg
-Rebuild com mudança:  1-2 seg (hot reload)
+Rebuild com mudanï¿½a:  1-2 seg (hot reload)
 Hot reload:           ? Sim
 RAM usada:            ~500 MB
 ```
 
-**Diferença:** **60-180x mais rápido no desenvolvimento!**
+**Diferenï¿½a:** **60-180x mais rï¿½pido no desenvolvimento!**
 
 ---
 
-## ?? ESTRATÉGIA RECOMENDADA PARA POC
+## ?? ESTRATï¿½GIA RECOMENDADA PARA POC
 
 ### Dias 1-5: Desenvolvimento Local
 
@@ -259,7 +259,7 @@ npm run dev
 # Hot reload do Vite
 
 # Desenvolver as 29 APIs + 1 tela
-# Tudo com hot reload = super rápido
+# Tudo com hot reload = super rï¿½pido
 ```
 
 ### Dia 6: Validar Docker
@@ -275,24 +275,24 @@ docker-compose up
 # - http://localhost:5000/swagger
 # - http://localhost:3000
 
-# Se funcionar, está pronto para apresentação
+# Se funcionar, estï¿½ pronto para apresentaï¿½ï¿½o
 ```
 
-### Dia 8: Apresentação
+### Dia 8: Apresentaï¿½ï¿½o
 
 ```powershell
 # Iniciar Docker
 docker-compose up
 
 # Mostrar funcionando
-# Demonstrar integração backend/frontend/SQL
+# Demonstrar integraï¿½ï¿½o backend/frontend/SQL
 
 # Cliente satisfeito! ?
 ```
 
 ---
 
-## ?? CHECKLIST DE VALIDAÇÃO
+## ?? CHECKLIST DE VALIDAï¿½ï¿½O
 
 ### Package Lock Gerado
 
@@ -310,48 +310,48 @@ docker-compose up
 ### Frontend Funcionando
 
 - [ ] `docker-compose up` inicia frontend
-- [ ] http://localhost:3000 acessível
+- [ ] http://localhost:3000 acessï¿½vel
 - [ ] Frontend carrega sem erro 404
 - [ ] Frontend chama API backend sem CORS error
 
 ### Desenvolvimento Local
 
 - [ ] `cd frontend && npm run dev` funciona
-- [ ] http://localhost:5173 acessível
-- [ ] Hot reload funciona (editar arquivo, ver mudança)
+- [ ] http://localhost:5173 acessï¿½vel
+- [ ] Hot reload funciona (editar arquivo, ver mudanï¿½a)
 - [ ] API calls funcionam
 
 ---
 
-## ?? DEBUG AVANÇADO
+## ?? DEBUG AVANï¿½ADO
 
-### Ver o que está sendo instalado
+### Ver o que estï¿½ sendo instalado
 
 ```powershell
 cd frontend
 
-# Listar dependências
+# Listar dependï¿½ncias
 npm list
 
-# Ver árvore completa
+# Ver ï¿½rvore completa
 npm list --depth=3
 
-# Ver apenas produção
+# Ver apenas produï¿½ï¿½o
 npm list --prod
 ```
 
-### Verificar versões
+### Verificar versï¿½es
 
 ```powershell
-# Versão do Node
+# Versï¿½o do Node
 node --version
 # Deve ser 20.x
 
-# Versão do npm
+# Versï¿½o do npm
 npm --version
 # Deve ser 10.x
 
-# Versão do Vite (no projeto)
+# Versï¿½o do Vite (no projeto)
 npm list vite
 ```
 
@@ -364,7 +364,7 @@ npm list vite
 # Ver primeiras linhas
 Get-Content frontend/package-lock.json -Head 20
 
-# Buscar pacote específico
+# Buscar pacote especï¿½fico
 Select-String -Path frontend/package-lock.json -Pattern "react"
 ```
 
@@ -375,22 +375,22 @@ Select-String -Path frontend/package-lock.json -Pattern "react"
 **O QUE FIZEMOS:**
 1. ? Identificamos que faltava `package-lock.json`
 2. ? Geramos o arquivo com `npm install`
-3. ? Mantivemos `npm ci` no Dockerfile (melhor prática)
+3. ? Mantivemos `npm ci` no Dockerfile (melhor prï¿½tica)
 4. ? Documentamos alternativa de dev local (recomendada)
 
-**O QUE VOCÊ DEVE FAZER:**
+**O QUE VOCï¿½ DEVE FAZER:**
 1. ? Commit do `package-lock.json`
 2. ? Rebuild do Docker
-3. ?? **CONSIDERAR**: Usar dev local para frontend (muito mais rápido)
+3. ?? **CONSIDERAR**: Usar dev local para frontend (muito mais rï¿½pido)
 
 **RESULTADO ESPERADO:**
 - ? Docker build funciona sem erro "npm ci"
-- ? Frontend roda em container (se necessário)
-- ? Desenvolvimento muito mais rápido com local dev
+- ? Frontend roda em container (se necessï¿½rio)
+- ? Desenvolvimento muito mais rï¿½pido com local dev
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Se Build Funcionar ?
 
@@ -402,7 +402,7 @@ docker-compose up
 
 # 2. Se funcionou, iniciar desenvolvimento
 git checkout -b feature/gestao-ativos
-# Começar APIs
+# Comeï¿½ar APIs
 ```
 
 ### Se Ainda Tiver Problemas ?
@@ -425,9 +425,9 @@ docker-compose build --no-cache --progress=plain > build-error.txt
 
 **Documento criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? CORREÇÃO APLICADA + PACKAGE-LOCK GERADO
+**Versï¿½o:** 1.0  
+**Status:** ? CORREï¿½ï¿½O APLICADA + PACKAGE-LOCK GERADO
 
 **Execute os comandos e me avise o resultado! ??**
 
-**?? DICA:** Para PoC de 6 dias, **desenvolvimento local é MUITO mais eficiente** que Windows containers!
+**?? DICA:** Para PoC de 6 dias, **desenvolvimento local ï¿½ MUITO mais eficiente** que Windows containers!

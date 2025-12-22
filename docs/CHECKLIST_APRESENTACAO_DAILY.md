@@ -1,17 +1,17 @@
-# ? CHECKLIST APRESENTAÇÃO DAILY
+ï»¿# ? CHECKLIST APRESENTAï¿½ï¿½O DAILY
 
 **Data:** 19/12/2024  
-**Duração:** 5-10 minutos  
-**Objetivo:** Aprovar estratégia da PoC
+**Duraï¿½ï¿½o:** 5-10 minutos  
+**Objetivo:** Aprovar estratï¿½gia da PoC
 
 ---
 
-## ?? PRÉ-DAILY
+## ?? PRï¿½-DAILY
 
-### Preparação (10 min antes)
+### Preparaï¿½ï¿½o (10 min antes)
 - [ ] Abrir este checklist
 - [ ] Abrir `APRESENTACAO_DAILY_DIA1_RESUMO.md`
-- [ ] Abrir `SLIDES_DAILY_DIA1.md` (para referência)
+- [ ] Abrir `SLIDES_DAILY_DIA1.md` (para referï¿½ncia)
 - [ ] Testar API (se for demonstrar)
   ```bash
   cd C:\temp\_ONS_PoC-PDPW\src\PDPW.API
@@ -32,61 +32,61 @@
 ### 1. Proposta (30 seg)
 ```
 "Proposta: 80% Backend (29 APIs) + 20% Frontend (1 tela CRUD).
-Por quê? APIs são base reutilizável. Frontend prova integração."
+Por quï¿½? APIs sï¿½o base reutilizï¿½vel. Frontend prova integraï¿½ï¿½o."
 ```
 
 ### 2. Realizado (1 min)
 ```
 "DIA 1 completo:
-• Infraestrutura 100%
-• 29 Entidades Domain
-• 30 Tabelas no banco
-• API Usina com 8 endpoints
-• 10 usinas reais cadastradas (41.493 MW)
-• 16.000 linhas de código"
+ï¿½ Infraestrutura 100%
+ï¿½ 29 Entidades Domain
+ï¿½ 30 Tabelas no banco
+ï¿½ API Usina com 8 endpoints
+ï¿½ 10 usinas reais cadastradas (41.493 MW)
+ï¿½ 16.000 linhas de cï¿½digo"
 ```
 
 ### 3. Cronograma (30 seg)
 ```
 "6 dias: 19/12 a 27/12
 Hoje: 40% (1 API)
-Amanhã: 50% (5 APIs)
+Amanhï¿½: 50% (5 APIs)
 Final: 100% (29 APIs + 1 frontend)"
 ```
 
 ### 4. Hoje (30 seg)
 ```
 "Meta hoje: passar de 1 para 5 APIs.
-3 devs em paralelo já sabem o que fazer.
-Aguardando apenas aprovação."
+3 devs em paralelo jï¿½ sabem o que fazer.
+Aguardando apenas aprovaï¿½ï¿½o."
 ```
 
 ### 5. Pergunta Final (30 seg)
 ```
-"Você aprova esta estratégia?
+"Vocï¿½ aprova esta estratï¿½gia?
 A) Sim, aprovar [RECOMENDADO]
-B) Ajustar proporção
+B) Ajustar proporï¿½ï¿½o
 C) Reduzir escopo"
 ```
 
 ---
 
-## ?? ROTEIRO DA APRESENTAÇÃO
+## ?? ROTEIRO DA APRESENTAï¿½ï¿½O
 
 ### Abertura (30 seg)
 - [ ] Bom dia! Vou apresentar o progresso da PoC PDPW
-- [ ] Duração: 5 minutos
-- [ ] Tema: Estratégia 80% Backend + 20% Frontend
+- [ ] Duraï¿½ï¿½o: 5 minutos
+- [ ] Tema: Estratï¿½gia 80% Backend + 20% Frontend
 
 ### Bloco 1: Proposta (1 min)
-- [ ] Explicar estratégia 80/20
+- [ ] Explicar estratï¿½gia 80/20
 - [ ] Por que backend first?
 - [ ] 29 APIs + 1 tela frontend
 
 ### Bloco 2: Realizado (2 min)
 - [ ] Infraestrutura 100%
 - [ ] API Usina completa
-- [ ] Números: 16k linhas, 75 arquivos
+- [ ] Nï¿½meros: 16k linhas, 75 arquivos
 - [ ] Demo (se tempo permitir)
 
 ### Bloco 3: Cronograma (1 min)
@@ -94,88 +94,88 @@ C) Reduzir escopo"
 - [ ] Progresso: 40% ? 100%
 - [ ] Meta hoje: 5 APIs
 
-### Bloco 4: Aprovação (30 seg)
+### Bloco 4: Aprovaï¿½ï¿½o (30 seg)
 - [ ] Pergunta direta: Aprova?
 - [ ] Aguardar resposta
 
 ### Encerramento (30 seg)
 - [ ] Obrigado!
-- [ ] Equipe pronta para começar
+- [ ] Equipe pronta para comeï¿½ar
 - [ ] Perguntas?
 
 ---
 
-## ?? POSSÍVEIS PERGUNTAS & RESPOSTAS
+## ?? POSSï¿½VEIS PERGUNTAS & RESPOSTAS
 
 ### Q: "Por que 80% backend?"
-**A:** "APIs são a base. Uma vez feitas, servem para Web, Mobile, Desktop. Frontend é só demonstração da integração."
+**A:** "APIs sï¿½o a base. Uma vez feitas, servem para Web, Mobile, Desktop. Frontend ï¿½ sï¿½ demonstraï¿½ï¿½o da integraï¿½ï¿½o."
 
-### Q: "6 dias é suficiente?"
-**A:** "Sim. DIA 1 fizemos 40% em 8h. Pattern estabelecido acelera os próximos. 3 devs em paralelo."
+### Q: "6 dias ï¿½ suficiente?"
+**A:** "Sim. DIA 1 fizemos 40% em 8h. Pattern estabelecido acelera os prï¿½ximos. 3 devs em paralelo."
 
 ### Q: "E se atrasar?"
-**A:** "Prioridade é backend. Se necessário, reduzimos escopo do frontend mas entregamos as 29 APIs."
+**A:** "Prioridade ï¿½ backend. Se necessï¿½rio, reduzimos escopo do frontend mas entregamos as 29 APIs."
 
 ### Q: "Posso ver funcionando?"
-**A:** "Sim! Swagger está rodando. Posso demonstrar os 8 endpoints agora mesmo."
+**A:** "Sim! Swagger estï¿½ rodando. Posso demonstrar os 8 endpoints agora mesmo."
 
 ### Q: "Quantos desenvolvedores?"
 **A:** "3 desenvolvedores em paralelo. DEV 1 e 2 no backend, DEV 3 no frontend."
 
 ### Q: "E testes automatizados?"
-**A:** "Começam no DIA 3. Por enquanto, testes manuais via Swagger são suficientes."
+**A:** "Comeï¿½am no DIA 3. Por enquanto, testes manuais via Swagger sï¿½o suficientes."
 
 ### Q: "Custo desta PoC?"
-**A:** "Informação não incluída. Foco em viabilidade técnica."
+**A:** "Informaï¿½ï¿½o nï¿½o incluï¿½da. Foco em viabilidade tï¿½cnica."
 
 ### Q: "E depois da PoC?"
-**A:** "Apresentação dia 27/12. Depois, planejamento do projeto completo com estimativas."
+**A:** "Apresentaï¿½ï¿½o dia 27/12. Depois, planejamento do projeto completo com estimativas."
 
 ---
 
-## ?? OBJEÇÕES E CONTRA-ARGUMENTOS
+## ?? OBJEï¿½ï¿½ES E CONTRA-ARGUMENTOS
 
-### Objeção: "Deveria ter mais frontend"
-**Resposta:** "Entendo. Mas para PoC, 1 tela completa é suficiente para provar integração. Depois expandimos."
+### Objeï¿½ï¿½o: "Deveria ter mais frontend"
+**Resposta:** "Entendo. Mas para PoC, 1 tela completa ï¿½ suficiente para provar integraï¿½ï¿½o. Depois expandimos."
 
-### Objeção: "6 dias é muito apertado"
-**Resposta:** "Concordo que é desafiador. Mas DIA 1 mostra que é viável. Pattern estabelecido acelera muito."
+### Objeï¿½ï¿½o: "6 dias ï¿½ muito apertado"
+**Resposta:** "Concordo que ï¿½ desafiador. Mas DIA 1 mostra que ï¿½ viï¿½vel. Pattern estabelecido acelera muito."
 
-### Objeção: "29 APIs é muito"
-**Resposta:** "São necessárias para o sistema completo. Mas podemos priorizar as 15 principais se preferir."
+### Objeï¿½ï¿½o: "29 APIs ï¿½ muito"
+**Resposta:** "Sï¿½o necessï¿½rias para o sistema completo. Mas podemos priorizar as 15 principais se preferir."
 
-### Objeção: "Falta testes automatizados"
-**Resposta:** "Vão começar no DIA 3. Temos Swagger para testes manuais agora. PoC não exige 100% cobertura."
+### Objeï¿½ï¿½o: "Falta testes automatizados"
+**Resposta:** "Vï¿½o comeï¿½ar no DIA 3. Temos Swagger para testes manuais agora. PoC nï¿½o exige 100% cobertura."
 
 ---
 
 ## ?? OBJETIVOS DA DAILY
 
-### Primário (MUST)
-- [ ] ? Aprovar estratégia 80% Backend + 20% Frontend
+### Primï¿½rio (MUST)
+- [ ] ? Aprovar estratï¿½gia 80% Backend + 20% Frontend
 - [ ] ? Confirmar cronograma de 6 dias
-- [ ] ? Autorizar início do DIA 2
+- [ ] ? Autorizar inï¿½cio do DIA 2
 
-### Secundário (NICE TO HAVE)
+### Secundï¿½rio (NICE TO HAVE)
 - [ ] Demonstrar Swagger funcionando
 - [ ] Mostrar dados reais cadastrados
 - [ ] Testar endpoint ao vivo
 
 ### Resultado Esperado
 ```
-APROVADO ? ? Começar DIA 2 imediatamente
+APROVADO ? ? Comeï¿½ar DIA 2 imediatamente
 ou
-AJUSTES ?? ? Alinhar mudanças e começar
+AJUSTES ?? ? Alinhar mudanï¿½as e comeï¿½ar
 ou
-PAUSAR ?? ? Aguardar decisão posterior
+PAUSAR ?? ? Aguardar decisï¿½o posterior
 ```
 
 ---
 
-## ?? DADOS PARA REFERENCE RÁPIDA
+## ?? DADOS PARA REFERENCE Rï¿½PIDA
 
-### Números-Chave
-- **16.000+** linhas de código
+### Nï¿½meros-Chave
+- **16.000+** linhas de cï¿½digo
 - **75+** arquivos criados
 - **5** commits GitHub
 - **29** entidades Domain
@@ -199,7 +199,7 @@ PAUSAR ?? ? Aguardar decisão posterior
 ## ?? DEMO SCRIPT (SE SOLICITADO)
 
 ### Setup (30 seg)
-1. API já está rodando
+1. API jï¿½ estï¿½ rodando
 2. Abrir navegador: http://localhost:PORTA/swagger
 3. Mostrar lista de endpoints
 
@@ -224,34 +224,34 @@ PAUSAR ?? ? Aguardar decisão posterior
 
 ---
 
-## ? PÓS-DAILY
+## ? Pï¿½S-DAILY
 
 ### Se APROVADO ?
-- [ ] Agradecer e confirmar início imediato
+- [ ] Agradecer e confirmar inï¿½cio imediato
 - [ ] Comunicar equipe (DEV 1, 2, 3)
 - [ ] Iniciar desenvolvimento DIA 2
-- [ ] Marcar daily para amanhã
+- [ ] Marcar daily para amanhï¿½
 
 ### Se AJUSTES ??
-- [ ] Anotar mudanças solicitadas
-- [ ] Replanejar se necessário
-- [ ] Comunicar nova estratégia
-- [ ] Reagendar apresentação ajustada
+- [ ] Anotar mudanï¿½as solicitadas
+- [ ] Replanejar se necessï¿½rio
+- [ ] Comunicar nova estratï¿½gia
+- [ ] Reagendar apresentaï¿½ï¿½o ajustada
 
 ### Se PAUSAR ??
 - [ ] Entender motivos
-- [ ] Aguardar nova orientação
-- [ ] Manter código commitado
+- [ ] Aguardar nova orientaï¿½ï¿½o
+- [ ] Manter cï¿½digo commitado
 - [ ] Preparar para retomar
 
 ---
 
-## ?? ANOTAÇÕES DURANTE DAILY
+## ?? ANOTAï¿½ï¿½ES DURANTE DAILY
 
-**Decisão:**
+**Decisï¿½o:**
 ```
-[ ] A) APROVADO - Começar DIA 2
-[ ] B) AJUSTES - Ações: _______________
+[ ] A) APROVADO - Comeï¿½ar DIA 2
+[ ] B) AJUSTES - Aï¿½ï¿½es: _______________
 [ ] C) PAUSAR - Motivo: _______________
 ```
 
@@ -262,7 +262,7 @@ ____________________________________________
 ____________________________________________
 ```
 
-**Ações imediatas:**
+**Aï¿½ï¿½es imediatas:**
 ```
 1. ______________________________________
 2. ______________________________________
@@ -271,7 +271,7 @@ ____________________________________________
 
 ---
 
-## ?? APÓS APROVAÇÃO - COMEÇAR DIA 2
+## ?? APï¿½S APROVAï¿½ï¿½O - COMEï¿½AR DIA 2
 
 ### DEV 1 (Imediato)
 ```bash
@@ -298,7 +298,7 @@ npm run dev
 
 ---
 
-## ?? CONTATOS DE EMERGÊNCIA
+## ?? CONTATOS DE EMERGï¿½NCIA
 
 **Se surgir bloqueio:**
 - Gestor: [INSERIR CONTATO]
@@ -307,14 +307,14 @@ npm run dev
 
 ---
 
-**BOA SORTE NA APRESENTAÇÃO! ??**
+**BOA SORTE NA APRESENTAï¿½ï¿½O! ??**
 
-**Você está preparado! ??**
+**Vocï¿½ estï¿½ preparado! ??**
 
 **Lembre-se:**
 - Seja confiante
-- Fale dos números
+- Fale dos nï¿½meros
 - Mostre o que funciona
-- Peça aprovação clara
+- Peï¿½a aprovaï¿½ï¿½o clara
 
 **SUCESSO! ??**

@@ -1,24 +1,24 @@
-# ?? ANÁLISE TÉCNICA DO CÓDIGO LEGADO PDPW
+ï»¿# ?? ANï¿½LISE Tï¿½CNICA DO Cï¿½DIGO LEGADO PDPW
 
 **Data:** 19/12/2024  
 **Fonte:** `C:\temp\_ONS_PoC-PDPW\pdpw_act\pdpw\`  
-**Versão:** 1.0
+**Versï¿½o:** 1.0
 
 ---
 
 ## ?? RESUMO EXECUTIVO
 
-### Estatísticas Gerais
+### Estatï¿½sticas Gerais
 - **Total de arquivos VB.NET:** 473
-- **Total de páginas ASPX:** 168
+- **Total de pï¿½ginas ASPX:** 168
 - **Tecnologia:** .NET Framework 4.8 + VB.NET + WebForms
 - **Banco de Dados:** SQL Server (migrado de Informix)
-- **Padrão arquitetural:** 3 camadas (DAO/Business/DTOs)
+- **Padrï¿½o arquitetural:** 3 camadas (DAO/Business/DTOs)
 
-### Conclusão Preliminar
-? **Código bem estruturado** com separação de responsabilidades  
-? **Padrões de projeto** identificados (Repository, DTO)  
-?? **Tecnologia legada** requer modernização completa  
+### Conclusï¿½o Preliminar
+? **Cï¿½digo bem estruturado** com separaï¿½ï¿½o de responsabilidades  
+? **Padrï¿½es de projeto** identificados (Repository, DTO)  
+?? **Tecnologia legada** requer modernizaï¿½ï¿½o completa  
 ?? **SQL inline** sem uso de ORM moderno
 
 ---
@@ -29,16 +29,16 @@
 
 ```
 ???????????????????????????????????????????
-?         Apresentação (*.aspx)           ?
+?         Apresentaï¿½ï¿½o (*.aspx)           ?
 ?     WebForms + Code-Behind (.vb)        ?
 ???????????????????????????????????????????
                  ?
 ???????????????????????????????????????????
 ?         Business Layer                  ?
 ?    (Business/*Business.vb)              ?
-?    - Lógica de negócio                  ?
-?    - Validações                         ?
-?    - Orquestração                       ?
+?    - Lï¿½gica de negï¿½cio                  ?
+?    - Validaï¿½ï¿½es                         ?
+?    - Orquestraï¿½ï¿½o                       ?
 ???????????????????????????????????????????
                  ?
 ???????????????????????????????????????????
@@ -59,13 +59,13 @@
 ?  DTOs/        - Data Transfer Objects   ?
 ?  Common/      - Classes base            ?
 ?  Model/       - Modelos auxiliares      ?
-?  Enums/       - Enumerações             ?
+?  Enums/       - Enumeraï¿½ï¿½es             ?
 ???????????????????????????????????????????
 ```
 
 ---
 
-## ?? ANÁLISE DETALHADA: SLICE 1 - Usinas
+## ?? ANï¿½LISE DETALHADA: SLICE 1 - Usinas
 
 ### Arquivo: `UsinaDAO.vb`
 
@@ -74,7 +74,7 @@
 Public Class UsinaDAO
     Inherits BaseDAO(Of UsinaDTO)
     
-    ' Métodos principais:
+    ' Mï¿½todos principais:
     - ListarUsina(codUsina As String)
     - ListarUsinasPorEmpresas(listaCodEmpre As List(Of String))
     - ListarUsinaPorEmpresa(codEmpre As String)
@@ -83,21 +83,21 @@ End Class
 ```
 
 #### ? Pontos Positivos
-1. **Herança de BaseDAO**: Reuso de código para operações comuns
-2. **Validação de entrada**: Null checks antes de executar queries
+1. **Heranï¿½a de BaseDAO**: Reuso de cï¿½digo para operaï¿½ï¿½es comuns
+2. **Validaï¿½ï¿½o de entrada**: Null checks antes de executar queries
 3. **Sistema de cache**: `CacheSelect()` e `CacheSave()`
-4. **Tratamento de exceções**: Try/Catch com mensagens customizadas
+4. **Tratamento de exceï¿½ï¿½es**: Try/Catch com mensagens customizadas
 5. **Limpeza de recursos**: `rs.Close()` e `FecharConexao()`
 
-#### ?? Pontos de Atenção
+#### ?? Pontos de Atenï¿½ï¿½o
 1. **SQL Inline**: Queries hardcoded nas strings
-2. **SQL Injection Risk**: Uso de interpolação de strings sem parametrização
-3. **Acoplamento ao SqlDataReader**: Lógica de mapeamento manual
-4. **Cache genérico**: Sem controle fino de expiração
+2. **SQL Injection Risk**: Uso de interpolaï¿½ï¿½o de strings sem parametrizaï¿½ï¿½o
+3. **Acoplamento ao SqlDataReader**: Lï¿½gica de mapeamento manual
+4. **Cache genï¿½rico**: Sem controle fino de expiraï¿½ï¿½o
 
-#### Código de Referência
+#### Cï¿½digo de Referï¿½ncia
 ```vb
-' Query SQL inline (vulnerável)
+' Query SQL inline (vulnerï¿½vel)
 Dim sql As String = "SELECT Trim(codusina) as CodUsina, 
                             nomusina, 
                             codempre, 
@@ -109,7 +109,7 @@ Dim sql As String = "SELECT Trim(codusina) as CodUsina,
                         FROM usina "
 
 If Not IsNothing(criterioWhere) Then
-    sql += $" Where {criterioWhere} "  ' Interpolação perigosa
+    sql += $" Where {criterioWhere} "  ' Interpolaï¿½ï¿½o perigosa
 End If
 
 ' Mapeamento manual
@@ -138,7 +138,7 @@ Public Class UsinaDTO
     Private _tpusinaId As String
     Private _usiBdtId As String
     
-    ' Propriedades públicas com Get/Set
+    ' Propriedades pï¿½blicas com Get/Set
     Public Property CodUsina() As String
     ' ...
 End Class
@@ -148,7 +148,7 @@ End Class
 1. **Encapsulamento**: Propriedades privadas com getters/setters
 2. **Tipos nullable**: `Nullable(Of Integer)` para campos opcionais
 3. **ToString() customizado**: Facilita debug
-4. **Herança de BaseDTO**: Provavelmente tem controle de estado
+4. **Heranï¿½a de BaseDTO**: Provavelmente tem controle de estado
 
 #### Mapeamento para C# (Proposta)
 ```csharp
@@ -173,7 +173,7 @@ public class Usina : BaseEntity
 
 ---
 
-## ?? ANÁLISE DETALHADA: SLICE 2 - Arquivo DADGER
+## ?? ANï¿½LISE DETALHADA: SLICE 2 - Arquivo DADGER
 
 ### Arquivo: `ArquivoDadgerValorDAO.vb`
 
@@ -182,7 +182,7 @@ public class Usina : BaseEntity
 Public Class ArquivoDadgerValorDAO
     Inherits BaseDAO(Of ArquivoDadgerValorDTO)
     
-    ' Métodos principais:
+    ' Mï¿½todos principais:
     - ListarPor_DataPDP_Usina(DataPDP, codUsina)
     - Listar(DataPDP As String)
     - ListarTodos(criterioWhere As String)
@@ -190,16 +190,16 @@ End Class
 ```
 
 #### ? Pontos Positivos
-1. **Relacionamentos**: JOINs entre múltiplas tabelas
+1. **Relacionamentos**: JOINs entre mï¿½ltiplas tabelas
 2. **Filtros complexos**: Por data, usina, semana PMO
 3. **Tratamento de valores null**: `IsDBNull()` checks
-4. **Métodos auxiliares**: `GetSemanaPMO()` para lógica de data
+4. **Mï¿½todos auxiliares**: `GetSemanaPMO()` para lï¿½gica de data
 
-#### ?? Pontos de Atenção
-1. **Queries extremamente complexas**: Múltiplos JOINs
-2. **Lógica de negócio no DAO**: Cálculo de semana PMO
-3. **Dependência de string de data**: Não usa tipos DateTime nativos
-4. **Comentário sobre bug**: "Problema com Importação..."
+#### ?? Pontos de Atenï¿½ï¿½o
+1. **Queries extremamente complexas**: Mï¿½ltiplos JOINs
+2. **Lï¿½gica de negï¿½cio no DAO**: Cï¿½lculo de semana PMO
+3. **Dependï¿½ncia de string de data**: Nï¿½o usa tipos DateTime nativos
+4. **Comentï¿½rio sobre bug**: "Problema com Importaï¿½ï¿½o..."
 
 #### Query SQL Complexa
 ```vb
@@ -229,7 +229,7 @@ public async Task<List<ArquivoDadgerValor>> ListarPorDataPDPEUsina(
         .FirstOrDefaultAsync();
         
     if (semanaPmo == null)
-        throw new NotFoundException($"Semana PMO não encontrada para {dataPDP}");
+        throw new NotFoundException($"Semana PMO nï¿½o encontrada para {dataPDP}");
         
     return await _context.ArquivosDadgerValor
         .Include(v => v.ArquivoDadger)
@@ -298,7 +298,7 @@ CREATE TABLE tb_semanapmo (
 
 ---
 
-## ?? CONFIGURAÇÕES DO WEB.CONFIG
+## ?? CONFIGURAï¿½ï¿½ES DO WEB.CONFIG
 
 ### Connection Strings
 ```xml
@@ -319,7 +319,7 @@ CREATE TABLE tb_semanapmo (
 -->
 ```
 
-### Autenticação (POP - Plataforma ONS)
+### Autenticaï¿½ï¿½o (POP - Plataforma ONS)
 ```xml
 <POPProvider enabled="true" defaultProvider="POPProvider">
   <providers>
@@ -352,7 +352,7 @@ CREATE TABLE tb_semanapmo (
 
 ---
 
-## ?? ANÁLISE DAS TELAS WEBFORMS
+## ?? ANï¿½LISE DAS TELAS WEBFORMS
 
 ### Arquivo: `frmCnsArquivo.aspx`
 
@@ -375,7 +375,7 @@ CREATE TABLE tb_semanapmo (
 #### ? Componentes Identificados
 1. **DropDownList** para filtros (Data PDP, Empresa)
 2. **ImageButton** para pesquisar
-3. **Table** dinâmica para resultados
+3. **Table** dinï¿½mica para resultados
 4. **Label** para mensagens
 
 #### Equivalente React (Proposta)
@@ -397,11 +397,11 @@ export function DadgerConsultaPage() {
       
       <div className="filtros">
         <select value={dataPdp} onChange={(e) => setDataPdp(e.target.value)}>
-          {/* Opções de data */}
+          {/* Opï¿½ï¿½es de data */}
         </select>
         
         <select value={empresa} onChange={(e) => setEmpresa(e.target.value)}>
-          {/* Opções de empresa */}
+          {/* Opï¿½ï¿½es de empresa */}
         </select>
         
         <button onClick={handlePesquisar}>Pesquisar</button>
@@ -410,10 +410,10 @@ export function DadgerConsultaPage() {
       <table className="resultados">
         <thead>
           <tr>
-            <th>Código Usina</th>
+            <th>Cï¿½digo Usina</th>
             <th>CVU</th>
             <th>Ifx Leve</th>
-            <th>Ifx Média</th>
+            <th>Ifx Mï¿½dia</th>
             <th>Ifx Pesada</th>
           </tr>
         </thead>
@@ -436,30 +436,30 @@ export function DadgerConsultaPage() {
 
 ---
 
-## ?? REGRAS DE NEGÓCIO IDENTIFICADAS
+## ?? REGRAS DE NEGï¿½CIO IDENTIFICADAS
 
-### 1. Validação de Usinas
+### 1. Validaï¿½ï¿½o de Usinas
 ```vb
 ' De UsinaDAO.vb
 If String.IsNullOrEmpty(codUsina) Then
-    Throw New NullReferenceException("Código Usina não informado")
+    Throw New NullReferenceException("Cï¿½digo Usina nï¿½o informado")
 End If
 ```
-**Regra:** Código de usina é obrigatório para consultas
+**Regra:** Cï¿½digo de usina ï¿½ obrigatï¿½rio para consultas
 
 ### 2. Filtro por Tipo de Usina
 ```vb
 ' De ArquivoDadgerValorDAO.vb
 left join Usina u on u.Dpp_Id = v.Dpp_Id and u.tpusina_id = 'UTE'
 ```
-**Regra:** Arquivos DADGER são relacionados apenas a Usinas Térmicas (UTE)
+**Regra:** Arquivos DADGER sï¿½o relacionados apenas a Usinas Tï¿½rmicas (UTE)
 
-### 3. Cálculo de Semana PMO
+### 3. Cï¿½lculo de Semana PMO
 ```vb
-' Lógica inferida
+' Lï¿½gica inferida
 Dim semanaPMO As SemanaPMO = GetSemanaPMO(Get_DataPDP_DateTime(DataPDP), ...)
 ```
-**Regra:** Data PDP deve estar dentro de uma Semana PMO válida
+**Regra:** Data PDP deve estar dentro de uma Semana PMO vï¿½lida
 
 ### 4. Cache de Dados
 ```vb
@@ -468,20 +468,20 @@ If Not IsNothing(listaCache) Then
     Return listaCache
 End If
 ```
-**Regra:** Dados de consulta são cacheados para performance
+**Regra:** Dados de consulta sï¿½o cacheados para performance
 
 ---
 
-## ?? DEPENDÊNCIAS IDENTIFICADAS
+## ?? DEPENDï¿½NCIAS IDENTIFICADAS
 
 ### Bibliotecas .NET
 ```xml
 <!-- De packages.config (inferido) -->
 - IBM.Data.Informix (9.0.0.2) - Banco Informix legado
-- CrystalDecisions.Web (13.0.2000.0) - Relatórios Crystal Reports
+- CrystalDecisions.Web (13.0.2000.0) - Relatï¿½rios Crystal Reports
 - log4net (2.0.14.0) - Logging
 - log4stash - ElasticSearch appender
-- ons.common.providers - Autenticação POP
+- ons.common.providers - Autenticaï¿½ï¿½o POP
 - OnsClasses - Classes compartilhadas ONS
 ```
 
@@ -494,7 +494,7 @@ End If
 
 ---
 
-## ?? ESTRATÉGIA DE MIGRAÇÃO
+## ?? ESTRATï¿½GIA DE MIGRAï¿½ï¿½O
 
 ### 1. Backend (.NET 8)
 
@@ -509,16 +509,16 @@ UsinaDAO.vb ? UsinaRepository.cs
 #### Business ? Services
 ```
 UsinaBusiness.vb ? UsinaService.cs
-- Manter lógica de validação
+- Manter lï¿½gica de validaï¿½ï¿½o
 - Adicionar DTOs modernos
-- Implementar padrão Unit of Work
+- Implementar padrï¿½o Unit of Work
 ```
 
 #### DTOs ? DTOs modernos
 ```
 UsinaDTO.vb ? UsinaRequestDTO.cs + UsinaResponseDTO.cs
 - Separar Request/Response
-- Usar Data Annotations para validação
+- Usar Data Annotations para validaï¿½ï¿½o
 - Adicionar AutoMapper
 ```
 
@@ -544,95 +544,95 @@ Queries inline ? DbContext + Migrations
 
 ---
 
-## ?? SEGURANÇA
+## ?? SEGURANï¿½A
 
 ### Vulnerabilidades Identificadas
 
 1. **SQL Injection**
 ```vb
-' VULNERÁVEL
+' VULNERï¿½VEL
 sql += $" Where {criterioWhere} "
 sql += $" CodEmpre = '{codEmpre}' "
 ```
-**Solução:** Usar parâmetros EF Core
+**Soluï¿½ï¿½o:** Usar parï¿½metros EF Core
 
 2. **Credenciais Hardcoded**
 ```xml
 <add key="pdpSQL" value="...Password=123456..." />
 ```
-**Solução:** Usar User Secrets / Azure Key Vault
+**Soluï¿½ï¿½o:** Usar User Secrets / Azure Key Vault
 
-3. **Autenticação Desabilitada na PoC**
+3. **Autenticaï¿½ï¿½o Desabilitada na PoC**
 ```xml
 <authentication mode="Forms">
   <!-- Complexo, desabilitar na PoC -->
 </authentication>
 ```
-**Solução:** Implementar autenticação básica ou JWT
+**Soluï¿½ï¿½o:** Implementar autenticaï¿½ï¿½o bï¿½sica ou JWT
 
 ---
 
-## ?? MÉTRICAS DE CÓDIGO
+## ?? Mï¿½TRICAS DE Cï¿½DIGO
 
 ### Complexidade
-| Métrica | Valor | Nível |
+| Mï¿½trica | Valor | Nï¿½vel |
 |---------|-------|-------|
-| **Linhas de código (estimado)** | ~50.000 | Alto |
-| **Cyclomatic Complexity** | Não medido | N/A |
-| **Duplicação de código** | Moderada | Médio |
+| **Linhas de cï¿½digo (estimado)** | ~50.000 | Alto |
+| **Cyclomatic Complexity** | Nï¿½o medido | N/A |
+| **Duplicaï¿½ï¿½o de cï¿½digo** | Moderada | Mï¿½dio |
 | **Cobertura de testes** | ~10% (estimado) | Baixo |
 
-### Padrões Identificados
+### Padrï¿½es Identificados
 - ? Repository Pattern
 - ? DTO Pattern
 - ? Base Class Pattern
-- ? Dependency Injection (não usado)
-- ? Unit of Work (não usado)
-- ? CQRS (não usado)
+- ? Dependency Injection (nï¿½o usado)
+- ? Unit of Work (nï¿½o usado)
+- ? CQRS (nï¿½o usado)
 
 ---
 
-## ?? RECOMENDAÇÕES FINAIS
+## ?? RECOMENDAï¿½ï¿½ES FINAIS
 
 ### Para a PoC (Curto Prazo)
 1. ? Focar em 2 vertical slices (Usinas + DADGER)
 2. ? Usar InMemory Database (evita complexidade de setup)
-3. ? Simplificar autenticação (sem POP)
-4. ? Manter fidelidade funcional, não visual exata
-5. ? Documentar decisões técnicas
+3. ? Simplificar autenticaï¿½ï¿½o (sem POP)
+4. ? Manter fidelidade funcional, nï¿½o visual exata
+5. ? Documentar decisï¿½es tï¿½cnicas
 
 ### Para Projeto Real (Longo Prazo)
 1. ?? Migrar todas as 168 telas
-2. ?? Implementar autenticação SSO (POP ou Azure AD)
+2. ?? Implementar autenticaï¿½ï¿½o SSO (POP ou Azure AD)
 3. ?? Migrar banco de dados completo
 4. ?? Criar suite de testes completa (>80% cobertura)
 5. ?? Implementar CI/CD pipeline
 6. ?? Adicionar monitoramento (Application Insights)
-7. ?? Criar documentação de API (OpenAPI 3.0)
-8. ?? Implementar internacionalização (i18n)
+7. ?? Criar documentaï¿½ï¿½o de API (OpenAPI 3.0)
+8. ?? Implementar internacionalizaï¿½ï¿½o (i18n)
 
 ---
 
-## ?? GLOSSÁRIO DE TERMOS DO DOMÍNIO
+## ?? GLOSSï¿½RIO DE TERMOS DO DOMï¿½NIO
 
 | Termo | Significado | Contexto |
 |-------|-------------|----------|
-| **PDP** | Programação Diária da Produção | Sistema principal |
-| **PDPW** | PDP Web | Módulo web do PDP |
-| **PMO** | Programa Mensal de Operação | Planejamento mensal |
+| **PDP** | Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o | Sistema principal |
+| **PDPW** | PDP Web | Mï¿½dulo web do PDP |
+| **PMO** | Programa Mensal de Operaï¿½ï¿½o | Planejamento mensal |
 | **DADGER** | Dados Gerais | Arquivo de entrada de modelos |
-| **CVU** | Custo Variável Unitário | Custo de geração (R$/MWh) |
-| **Inflexibilidade** | Geração Mínima Obrigatória | MW que deve ser gerado |
-| **UTE** | Usina Termelétrica | Tipo de usina |
-| **UHE** | Usina Hidrelétrica | Tipo de usina |
-| **EOL** | Usina Eólica | Tipo de usina |
-| **DPP** | Despacho de Potência e Preço | Sistema do ONS |
-| **BDT** | Banco de Dados Técnicos | Base de dados ONS |
-| **SAGIC** | Sistema de Acompanhamento de Geração | Web Service |
+| **CVU** | Custo Variï¿½vel Unitï¿½rio | Custo de geraï¿½ï¿½o (R$/MWh) |
+| **Inflexibilidade** | Geraï¿½ï¿½o Mï¿½nima Obrigatï¿½ria | MW que deve ser gerado |
+| **UTE** | Usina Termelï¿½trica | Tipo de usina |
+| **UHE** | Usina Hidrelï¿½trica | Tipo de usina |
+| **EOL** | Usina Eï¿½lica | Tipo de usina |
+| **DPP** | Despacho de Potï¿½ncia e Preï¿½o | Sistema do ONS |
+| **BDT** | Banco de Dados Tï¿½cnicos | Base de dados ONS |
+| **SAGIC** | Sistema de Acompanhamento de Geraï¿½ï¿½o | Web Service |
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? Análise Completa
+**Versï¿½o:** 1.0  
+**Status:** ? Anï¿½lise Completa

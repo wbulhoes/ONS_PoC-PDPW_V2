@@ -1,17 +1,17 @@
-# ?? APRESENTAÇÃO PARA REUNIÃO DO SQUAD
-## PoC PDPW - Modernização ONS
+ï»¿# ?? APRESENTAï¿½ï¿½O PARA REUNIï¿½O DO SQUAD
+## PoC PDPW - Modernizaï¿½ï¿½o ONS
 
 **Data:** 19/12/2024 - 15:00h  
-**Duração:** 45 minutos  
+**Duraï¿½ï¿½o:** 45 minutos  
 **Participantes:** 3 Devs + 1 QA + Tech Lead
 
 ---
 
-## ?? AGENDA DA REUNIÃO
+## ?? AGENDA DA REUNIï¿½O
 
 1. **Contexto do Projeto** (5 min)
-2. **Análise do Código Legado** (10 min)
-3. **Divisão de Tarefas** (15 min)
+2. **Anï¿½lise do Cï¿½digo Legado** (10 min)
+3. **Divisï¿½o de Tarefas** (15 min)
 4. **Setup do Ambiente** (10 min)
 5. **Cronograma e Entregas** (5 min)
 
@@ -22,9 +22,9 @@
 ### ?? Objetivo da PoC
 > Modernizar o sistema legado PDPW do ONS, migrando de .NET Framework/VB.NET/WebForms para .NET 8 + React + Docker
 
-### ?? Prazos Críticos
-- **Entrega do código:** 26/12/2024 (7 dias úteis)
-- **Apresentação:** 05/01/2025
+### ?? Prazos Crï¿½ticos
+- **Entrega do cï¿½digo:** 26/12/2024 (7 dias ï¿½teis)
+- **Apresentaï¿½ï¿½o:** 05/01/2025
 - **Estimativa completa:** 12/01/2025
 
 ### ?? Escopo da PoC
@@ -32,7 +32,7 @@
 1. Cadastro de Usinas (CRUD completo)
 2. Consulta de Arquivos DADGER (Leitura + Filtros)
 
-? **Stack Tecnológico:**
+? **Stack Tecnolï¿½gico:**
 - Backend: .NET 8 (Clean Architecture)
 - Frontend: React 18 + TypeScript
 - Banco: SQL Server (InMemory para PoC)
@@ -40,13 +40,13 @@
 
 ---
 
-## 2?? ANÁLISE DO CÓDIGO LEGADO (10 min)
+## 2?? ANï¿½LISE DO Cï¿½DIGO LEGADO (10 min)
 
-### ?? Estatísticas
+### ?? Estatï¿½sticas
 ```
-?? Estrutura do Repositório Legado
+?? Estrutura do Repositï¿½rio Legado
 ??? 473 arquivos VB.NET
-??? 168 páginas ASPX (WebForms)
+??? 168 pï¿½ginas ASPX (WebForms)
 ??? .NET Framework 4.8
 ??? SQL Server (migrado de Informix)
 ```
@@ -54,11 +54,11 @@
 ### ??? Arquitetura Atual
 ```
 ???????????????????????????????????????????
-?    Apresentação (WebForms + ASPX)       ? ? 168 páginas
+?    Apresentaï¿½ï¿½o (WebForms + ASPX)       ? ? 168 pï¿½ginas
 ???????????????????????????????????????????
                  ?
 ???????????????????????????????????????????
-?         Business Layer (VB.NET)         ? ? Lógica de negócio
+?         Business Layer (VB.NET)         ? ? Lï¿½gica de negï¿½cio
 ???????????????????????????????????????????
                  ?
 ???????????????????????????????????????????
@@ -71,20 +71,20 @@
 ```
 
 ### ? Pontos Positivos do Legado
-1. ? **Separação de camadas** bem definida (DAO/Business/DTO)
-2. ? **Padrões de projeto** implementados (Repository, DTO)
-3. ? **Testes unitários** existentes
+1. ? **Separaï¿½ï¿½o de camadas** bem definida (DAO/Business/DTO)
+2. ? **Padrï¿½es de projeto** implementados (Repository, DTO)
+3. ? **Testes unitï¿½rios** existentes
 4. ? **Logging estruturado** (Log4Net + ElasticSearch)
 5. ? **Sistema de cache** implementado
 
 ### ?? Desafios Identificados
-1. ?? **WebForms legado** (dificulta migração de UI)
-2. ?? **VB.NET** em vez de C# (requer conversão manual)
+1. ?? **WebForms legado** (dificulta migraï¿½ï¿½o de UI)
+2. ?? **VB.NET** em vez de C# (requer conversï¿½o manual)
 3. ?? **SQL inline** (sem ORM moderno)
-4. ?? **Autenticação complexa** (POP - fora do escopo da PoC)
-5. ?? **Banco de 350GB** (impossível restaurar - usaremos InMemory)
+4. ?? **Autenticaï¿½ï¿½o complexa** (POP - fora do escopo da PoC)
+5. ?? **Banco de 350GB** (impossï¿½vel restaurar - usaremos InMemory)
 
-### ?? Código Analisado
+### ?? Cï¿½digo Analisado
 
 #### SLICE 1: UsinaDAO.vb
 ```vb
@@ -124,12 +124,12 @@ End Class
 **Entidades relacionadas:**
 - ArquivoDadger (arquivo importado)
 - ArquivoDadgerValor (valores de inflexibilidade/CVU)
-- SemanaPMO (período do PMO)
-- Usina (relação com usinas térmicas)
+- SemanaPMO (perï¿½odo do PMO)
+- Usina (relaï¿½ï¿½o com usinas tï¿½rmicas)
 
 ---
 
-## 3?? DIVISÃO DE TAREFAS (15 min)
+## 3?? DIVISï¿½O DE TAREFAS (15 min)
 
 ### ?? Equipe
 
@@ -138,7 +138,7 @@ End Class
 | **DEV 1** | Backend Lead | SLICE 1: Cadastro de Usinas |
 | **DEV 2** | Backend | SLICE 2: Consulta DADGER |
 | **DEV 3** | Frontend Lead | UI React para ambos slices |
-| **QA** | Quality Assurance | Testes + Documentação |
+| **QA** | Quality Assurance | Testes + Documentaï¿½ï¿½o |
 
 ---
 
@@ -156,17 +156,17 @@ End Class
 
 #### Dia 2: 20/12 (Sexta) - 8h
 - ?? Criar DTOs (UsinaRequestDTO, UsinaResponseDTO)
-- ?? Implementar `UsinaService.cs` com validações
+- ?? Implementar `UsinaService.cs` com validaï¿½ï¿½es
 - ?? Criar `UsinasController.cs` com 6 endpoints:
   - `GET /api/usinas` (Listar todas)
   - `GET /api/usinas/{id}` (Buscar por ID)
-  - `GET /api/usinas/codigo/{codigo}` (Buscar por código)
+  - `GET /api/usinas/codigo/{codigo}` (Buscar por cï¿½digo)
   - `POST /api/usinas` (Criar)
   - `PUT /api/usinas/{id}` (Atualizar)
   - `DELETE /api/usinas/{id}` (Soft delete)
-- ?? Testes unitários básicos
+- ?? Testes unitï¿½rios bï¿½sicos
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? API REST funcionando
 - ? Swagger documentado
 - ? Testes passando
@@ -179,17 +179,17 @@ End Class
 
 #### Dia 1: 19/12 (Quinta) - 8h
 - ? Setup: .NET 8, Docker, Git
-- ?? Analisar código legado de ArquivoDadgerValorDAO
+- ?? Analisar cï¿½digo legado de ArquivoDadgerValorDAO
 - ?? Criar entidades:
   - `ArquivoDadger.cs`
   - `ArquivoDadgerValor.cs`
   - `SemanaPMO.cs`
-- ?? Criar interfaces de repositórios
+- ?? Criar interfaces de repositï¿½rios
 - ?? Configurar relacionamentos EF Core
 
-#### Dias 2-3: 21-22/12 (Sábado/Domingo) - 16h
-- ?? Implementar repositórios com JOINs complexos
-- ?? Criar services com filtros (por período, usina, semana)
+#### Dias 2-3: 21-22/12 (Sï¿½bado/Domingo) - 16h
+- ?? Implementar repositï¿½rios com JOINs complexos
+- ?? Criar services com filtros (por perï¿½odo, usina, semana)
 - ?? Criar DTOs
 - ?? Criar `ArquivosDadgerController.cs` com 5 endpoints:
   - `GET /api/arquivosdadger` (Listar todos)
@@ -197,9 +197,9 @@ End Class
   - `GET /api/arquivosdadger/semana/{idSemana}` (Por semana PMO)
   - `GET /api/arquivosdadger/usina/{codUsina}` (Por usina)
   - `GET /api/arquivosdadger/{id}/valores` (Valores do arquivo)
-- ?? Testes de integração
+- ?? Testes de integraï¿½ï¿½o
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? API REST funcionando
 - ? Relacionamentos funcionando
 - ? Filtros complexos implementados
@@ -211,7 +211,7 @@ End Class
 **Objetivo:** Implementar interfaces para ambos slices
 
 #### Dia 1: 19/12 (Quinta) - 8h
-- ? Setup: Node.js 20, VS Code, extensões
+- ? Setup: Node.js 20, VS Code, extensï¿½es
 - ?? Analisar telas legadas ASPX
 - ?? Criar estrutura de componentes React
 - ?? Configurar Axios para API
@@ -220,29 +220,29 @@ End Class
 #### Dia 2: 20/12 (Sexta) - 8h
 - ?? **SLICE 1: Usinas**
   - Componente `UsinasListPage.tsx` (listagem com filtros)
-  - Componente `UsinaFormPage.tsx` (formulário)
-  - Serviço `usinaService.ts` (integração API)
-  - Validações de formulário
+  - Componente `UsinaFormPage.tsx` (formulï¿½rio)
+  - Serviï¿½o `usinaService.ts` (integraï¿½ï¿½o API)
+  - Validaï¿½ï¿½es de formulï¿½rio
 
-#### Dia 3: 21/12 (Sábado) - 8h
+#### Dia 3: 21/12 (Sï¿½bado) - 8h
 - ?? **SLICE 2: DADGER**
   - Componente `DadgerConsultaPage.tsx`
-  - Filtros dinâmicos (período, usina, semana)
+  - Filtros dinï¿½micos (perï¿½odo, usina, semana)
   - Grid de resultados
-  - Serviço `dadgerService.ts`
+  - Serviï¿½o `dadgerService.ts`
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? 2 telas funcionais
-- ? Integração completa com backend
+- ? Integraï¿½ï¿½o completa com backend
 - ? UI responsiva e moderna
 
 ---
 
 ### ?? QA - Quality Assurance
 
-**Objetivo:** Garantir qualidade e criar documentação de testes
+**Objetivo:** Garantir qualidade e criar documentaï¿½ï¿½o de testes
 
-#### Diário (19-23/12) - 4h/dia
+#### Diï¿½rio (19-23/12) - 4h/dia
 - ?? **Dia 1 (19/12)**
   - Setup: Postman, Git, VS Code
   - Criar casos de teste para SLICE 1
@@ -255,41 +255,41 @@ End Class
 
 - ?? **Dia 3 (21/12)**
   - Criar casos de teste para SLICE 2
-  - Testar integração frontend/backend SLICE 1
+  - Testar integraï¿½ï¿½o frontend/backend SLICE 1
   - Validar responsividade
 
 - ?? **Dia 4 (22/12)**
   - Testar endpoints de DADGER
-  - Testar integração frontend/backend SLICE 2
+  - Testar integraï¿½ï¿½o frontend/backend SLICE 2
   - Validar filtros complexos
 
 - ?? **Dia 5 (23/12)**
-  - Testes de regressão completos
+  - Testes de regressï¿½o completos
   - Validar Docker Compose
-  - Criar checklist de validação
+  - Criar checklist de validaï¿½ï¿½o
 
 - ?? **Dia 6 (24/12)**
   - Testes finais
   - Sign-off da qualidade
-  - Relatório final
+  - Relatï¿½rio final
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? Plano de testes
 - ? Casos de teste executados
-- ? Relatório de qualidade
-- ? Checklist de validação
+- ? Relatï¿½rio de qualidade
+- ? Checklist de validaï¿½ï¿½o
 
 ---
 
 ## 4?? SETUP DO AMBIENTE (10 min)
 
-### Pré-requisitos (Todos)
+### Prï¿½-requisitos (Todos)
 ```powershell
 # 1. Instalar ferramentas
 winget install Git.Git
 winget install Microsoft.VisualStudioCode
 
-# 2. Clonar repositório
+# 2. Clonar repositï¿½rio
 cd C:\temp
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW.git
 cd ONS_PoC-PDPW
@@ -323,7 +323,7 @@ dotnet run
 # Instalar Node.js 20
 winget install OpenJS.NodeJS.LTS
 
-# Instalar extensões VS Code
+# Instalar extensï¿½es VS Code
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
@@ -340,7 +340,7 @@ npm run dev
 # Instalar Postman
 winget install Postman.Postman
 
-# Testar acesso ao repositório
+# Testar acesso ao repositï¿½rio
 git status
 ```
 
@@ -353,29 +353,29 @@ git status
 ### ?? Timeline
 
 ```
-19/12 (Qui) ????????????????? Kick-off + Setup + Início Dev
+19/12 (Qui) ????????????????? Kick-off + Setup + Inï¿½cio Dev
 20/12 (Sex) ????????????????? Desenvolver SLICE 1
-21/12 (Sáb) ????????????????? Integração SLICE 1 + Iniciar SLICE 2
+21/12 (Sï¿½b) ????????????????? Integraï¿½ï¿½o SLICE 1 + Iniciar SLICE 2
 22/12 (Dom) ????????????????? Desenvolver SLICE 2
-23/12 (Seg) ????????????????? Integração SLICE 2 + Ajustes
+23/12 (Seg) ????????????????? Integraï¿½ï¿½o SLICE 2 + Ajustes
 24/12 (Ter) ????????????????? Docker + Testes + Docs
 25/12 (Qua) ????????????????? FERIADO ??
-26/12 (Qui) ????????????????? Apresentação + Entrega
+26/12 (Qui) ????????????????? Apresentaï¿½ï¿½o + Entrega
 ```
 
 ### ?? Entregas por Slice
 
 #### SLICE 1: Cadastro de Usinas (Prazo: 20/12)
 - [ ] Backend: API REST com 6 endpoints
-- [ ] Frontend: Listagem + Formulário
+- [ ] Frontend: Listagem + Formulï¿½rio
 - [ ] Testes: Casos de teste executados
 - [ ] Docs: Swagger atualizado
 
 #### SLICE 2: Consulta DADGER (Prazo: 22/12)
 - [ ] Backend: API REST com 5 endpoints + JOINs
-- [ ] Frontend: Consulta + Filtros dinâmicos
-- [ ] Testes: Testes de integração
-- [ ] Docs: Documentação de filtros
+- [ ] Frontend: Consulta + Filtros dinï¿½micos
+- [ ] Testes: Testes de integraï¿½ï¿½o
+- [ ] Docs: Documentaï¿½ï¿½o de filtros
 
 #### Infraestrutura (Prazo: 24/12)
 - [ ] Docker Compose funcionando
@@ -383,53 +383,53 @@ git status
 - [ ] Frontend containerizado
 - [ ] README atualizado
 
-#### Apresentação (Prazo: 26/12)
+#### Apresentaï¿½ï¿½o (Prazo: 26/12)
 - [ ] Slides preparados
 - [ ] Demo funcional
-- [ ] Código no GitHub
-- [ ] Documentação completa
+- [ ] Cï¿½digo no GitHub
+- [ ] Documentaï¿½ï¿½o completa
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Prob. | Impacto | Mitigação |
+| Risco | Prob. | Impacto | Mitigaï¿½ï¿½o |
 |-------|-------|---------|-----------|
 | Prazo apertado | ?? ALTA | ?? ALTO | Escopo reduzido (2 slices) + trabalho aos fins de semana |
-| Complexidade do legado | ?? MÉDIA | ?? MÉDIO | ? Análise prévia concluída |
-| Falta de banco legado | ?? ALTA | ?? MÉDIO | ? RESOLVIDO: InMemory Database |
-| Problemas de integração | ?? MÉDIA | ?? ALTO | Testes contínuos + QA dedicado |
-| Bugs de última hora | ?? MÉDIA | ?? MÉDIO | Buffer de 1 dia (24/12) |
+| Complexidade do legado | ?? Mï¿½DIA | ?? Mï¿½DIO | ? Anï¿½lise prï¿½via concluï¿½da |
+| Falta de banco legado | ?? ALTA | ?? Mï¿½DIO | ? RESOLVIDO: InMemory Database |
+| Problemas de integraï¿½ï¿½o | ?? Mï¿½DIA | ?? ALTO | Testes contï¿½nuos + QA dedicado |
+| Bugs de ï¿½ltima hora | ?? Mï¿½DIA | ?? Mï¿½DIO | Buffer de 1 dia (24/12) |
 
 ---
 
-## ?? COMUNICAÇÃO DO SQUAD
+## ?? COMUNICAï¿½ï¿½O DO SQUAD
 
 ### Daily Standup
-- **Horário:** 09:00 (todos os dias)
-- **Duração:** 15 minutos
+- **Horï¿½rio:** 09:00 (todos os dias)
+- **Duraï¿½ï¿½o:** 15 minutos
 - **Formato:** O que fiz? O que vou fazer? Tenho bloqueios?
 
 ### Canais
 - **GitHub Issues:** Rastreamento de tarefas
 - **GitHub Projects:** Board Kanban
-- **Teams/Slack:** Comunicação assíncrona
+- **Teams/Slack:** Comunicaï¿½ï¿½o assï¿½ncrona
 
-### Padrão de Commits
+### Padrï¿½o de Commits
 ```bash
 [SLICE-1] feat: adiciona entidade Usina
 [SLICE-2] fix: corrige filtro de data DADGER
 [DOCS] docs: atualiza README
-[TEST] test: adiciona testes de integração
+[TEST] test: adiciona testes de integraï¿½ï¿½o
 ```
 
 ---
 
-## ?? AÇÕES IMEDIATAS (APÓS REUNIÃO)
+## ?? Aï¿½ï¿½ES IMEDIATAS (APï¿½S REUNIï¿½O)
 
 ### Todos
 1. ? Confirmar entendimento das tarefas
-2. ? Tirar dúvidas (agora!)
+2. ? Tirar dï¿½vidas (agora!)
 3. ?? Iniciar setup do ambiente
 4. ?? Criar branch pessoal
 
@@ -459,20 +459,20 @@ git status
 
 ---
 
-## ?? DOCUMENTAÇÃO DISPONÍVEL
+## ?? DOCUMENTAï¿½ï¿½O DISPONï¿½VEL
 
 ### Documentos Criados Hoje
 1. ? `docs/SQUAD_BRIEFING_19DEC.md` - Este documento
-2. ? `docs/ANALISE_TECNICA_CODIGO_LEGADO.md` - Análise detalhada
-3. ? `docs/SETUP_AMBIENTE_GUIA.md` - Guia de instalação
+2. ? `docs/ANALISE_TECNICA_CODIGO_LEGADO.md` - Anï¿½lise detalhada
+3. ? `docs/SETUP_AMBIENTE_GUIA.md` - Guia de instalaï¿½ï¿½o
 
 ### Documentos Existentes
-4. ? `README.md` - Visão geral do projeto
-5. ? `VERTICAL_SLICES_DECISION.md` - Decisões dos slices
+4. ? `README.md` - Visï¿½o geral do projeto
+5. ? `VERTICAL_SLICES_DECISION.md` - Decisï¿½es dos slices
 6. ? `RESUMO_EXECUTIVO.md` - Resumo executivo
-7. ? `GLOSSARIO.md` - Termos técnicos
+7. ? `GLOSSARIO.md` - Termos tï¿½cnicos
 
-### Código Legado de Referência
+### Cï¿½digo Legado de Referï¿½ncia
 8. `pdpw_act/pdpw/Dao/UsinaDAO.vb`
 9. `pdpw_act/pdpw/DTOs/UsinaDTO.vb`
 10. `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
@@ -485,38 +485,38 @@ git status
 ### Q1: Vamos usar SQL Server ou InMemory?
 **R:** InMemory Database para a PoC. Facilita setup e deploy. Para o projeto real, SQL Server.
 
-### Q2: Precisamos implementar autenticação?
-**R:** Não. Autenticação (POP) está fora do escopo da PoC.
+### Q2: Precisamos implementar autenticaï¿½ï¿½o?
+**R:** Nï¿½o. Autenticaï¿½ï¿½o (POP) estï¿½ fora do escopo da PoC.
 
-### Q3: Como será o deploy?
+### Q3: Como serï¿½ o deploy?
 **R:** Docker Compose com 3 containers: Backend, Frontend e (futuramente) SQL Server.
 
 ### Q4: Quantas telas precisamos migrar?
 **R:** 2 fluxos completos: Cadastro de Usinas + Consulta DADGER.
 
-### Q5: E se não der tempo de fazer tudo?
-**R:** Prioridade: SLICE 1 completo. SLICE 2 pode ser simplificado se necessário.
+### Q5: E se nï¿½o der tempo de fazer tudo?
+**R:** Prioridade: SLICE 1 completo. SLICE 2 pode ser simplificado se necessï¿½rio.
 
 ### Q6: Vamos trabalhar no fim de semana?
-**R:** Sim. O prazo é apertado e precisamos das 40-48 horas úteis para concluir.
+**R:** Sim. O prazo ï¿½ apertado e precisamos das 40-48 horas ï¿½teis para concluir.
 
 ---
 
 ## ? CHECKLIST DE ENTENDIMENTO
 
-Antes de sair da reunião, cada pessoa deve confirmar:
+Antes de sair da reuniï¿½o, cada pessoa deve confirmar:
 
 ### Todos
 - [ ] Entendi o objetivo da PoC
 - [ ] Entendi minhas responsabilidades
-- [ ] Sei qual é minha entrega
-- [ ] Sei quando é o prazo
-- [ ] Tirei todas as minhas dúvidas
-- [ ] Sei onde encontrar a documentação
+- [ ] Sei qual ï¿½ minha entrega
+- [ ] Sei quando ï¿½ o prazo
+- [ ] Tirei todas as minhas dï¿½vidas
+- [ ] Sei onde encontrar a documentaï¿½ï¿½o
 
 ### Backend Devs
 - [ ] Entendi qual slice vou desenvolver
-- [ ] Analisei o código legado correspondente
+- [ ] Analisei o cï¿½digo legado correspondente
 - [ ] Sei quais entidades devo criar
 - [ ] Sei quais endpoints devo implementar
 
@@ -524,13 +524,13 @@ Antes de sair da reunião, cada pessoa deve confirmar:
 - [ ] Entendi quais telas devo criar
 - [ ] Analisei as telas legadas
 - [ ] Sei como integrar com a API
-- [ ] Sei qual biblioteca UI usar (ou não)
+- [ ] Sei qual biblioteca UI usar (ou nï¿½o)
 
 ### QA
 - [ ] Entendi quais testes devo criar
 - [ ] Sei como documentar os testes
 - [ ] Sei quando testar cada slice
-- [ ] Sei os critérios de aceite
+- [ ] Sei os critï¿½rios de aceite
 
 ---
 
@@ -538,8 +538,8 @@ Antes de sair da reunião, cada pessoa deve confirmar:
 
 ### Somos um Time! ??
 
-Este é um projeto desafiador, mas temos:
-- ? Análise do legado completa
+Este ï¿½ um projeto desafiador, mas temos:
+- ? Anï¿½lise do legado completa
 - ? Arquitetura bem definida
 - ? Escopo realista
 - ? Cronograma detalhado
@@ -547,18 +547,18 @@ Este é um projeto desafiador, mas temos:
 
 ### Expectativas
 - ?? Entregas pontuais
-- ?? Comunicação constante
-- ?? Colaboração entre devs
-- ?? Feedbacks rápidos
-- ?? Documentação clara
+- ?? Comunicaï¿½ï¿½o constante
+- ?? Colaboraï¿½ï¿½o entre devs
+- ?? Feedbacks rï¿½pidos
+- ?? Documentaï¿½ï¿½o clara
 
 ### Vamos modernizar o PDPW! ??
 
 ---
 
-## ?? PRÓXIMA REUNIÃO
+## ?? PRï¿½XIMA REUNIï¿½O
 
-**Daily Standup - 20/12/2024 às 09:00**
+**Daily Standup - 20/12/2024 ï¿½s 09:00**
 
 Pauta:
 1. O que fiz ontem?
@@ -567,7 +567,7 @@ Pauta:
 
 ---
 
-**Apresentação preparada por:** Tech Lead  
+**Apresentaï¿½ï¿½o preparada por:** Tech Lead  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? Pronto para reunião das 15h
+**Versï¿½o:** 1.0  
+**Status:** ? Pronto para reuniï¿½o das 15h

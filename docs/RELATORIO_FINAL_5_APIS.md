@@ -1,6 +1,6 @@
-# ?? RELATÓRIO FINAL - IMPLEMENTAÇÃO BACKEND PDPW  
+ï»¿# ?? RELATï¿½RIO FINAL - IMPLEMENTAï¿½ï¿½O BACKEND PDPW  
 **Data**: 19 de Dezembro de 2024  
-**Desenvolvedor**: Willian (Dev 1) com assistência do GitHub Copilot  
+**Desenvolvedor**: Willian (Dev 1) com assistï¿½ncia do GitHub Copilot  
 
 ---
 
@@ -15,25 +15,25 @@ Foram implementadas com sucesso **5 APIs completas** do backend, totalizando **3
 ### 1?? **API USINAS** (8 endpoints)
 **Rota base**: `/api/usinas`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/usinas` | Lista todas as usinas |
 | GET | `/api/usinas/{id}` | Busca usina por ID |
-| GET | `/api/usinas/codigo/{codigo}` | Busca usina por código único |
+| GET | `/api/usinas/codigo/{codigo}` | Busca usina por cï¿½digo ï¿½nico |
 | GET | `/api/usinas/tipo/{tipoUsinaId}` | Lista usinas por tipo |
 | GET | `/api/usinas/empresa/{empresaId}` | Lista usinas por empresa |
 | POST | `/api/usinas` | Criar nova usina |
 | PUT | `/api/usinas/{id}` | Atualizar usina |
 | DELETE | `/api/usinas/{id}` | Remover usina (soft delete) |
 
-**Seed Data**: 10 usinas cadastradas (Itaipu, Belo Monte, Tucuruí, etc.)
+**Seed Data**: 10 usinas cadastradas (Itaipu, Belo Monte, Tucuruï¿½, etc.)
 
 ---
 
 ### 2?? **API TIPOS USINA** (6 endpoints)
 **Rota base**: `/api/tiposusina`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/tiposusina` | Lista todos os tipos |
 | GET | `/api/tiposusina/{id}` | Busca tipo por ID |
@@ -42,14 +42,14 @@ Foram implementadas com sucesso **5 APIs completas** do backend, totalizando **3
 | PUT | `/api/tiposusina/{id}` | Atualizar tipo |
 | DELETE | `/api/tiposusina/{id}` | Remover tipo (soft delete) |
 
-**Seed Data**: 5 tipos (Hidrelétrica, Térmica, Eólica, Solar, Nuclear)
+**Seed Data**: 5 tipos (Hidrelï¿½trica, Tï¿½rmica, Eï¿½lica, Solar, Nuclear)
 
 ---
 
 ### 3?? **API EMPRESAS** (8 endpoints)
 **Rota base**: `/api/empresas`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/empresas` | Lista todas as empresas |
 | GET | `/api/empresas/{id}` | Busca empresa por ID |
@@ -67,29 +67,29 @@ Foram implementadas com sucesso **5 APIs completas** do backend, totalizando **3
 ### 4?? **API SEMANAS PMO** (9 endpoints)
 **Rota base**: `/api/semanaspmo`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/semanaspmo` | Lista todas as semanas |
 | GET | `/api/semanaspmo/{id}` | Busca semana por ID |
 | GET | `/api/semanaspmo/atual` | Busca semana atual |
-| GET | `/api/semanaspmo/numero/{numero}/ano/{ano}` | Busca por número e ano |
+| GET | `/api/semanaspmo/numero/{numero}/ano/{ano}` | Busca por nï¿½mero e ano |
 | GET | `/api/semanaspmo/ano/{ano}` | Lista semanas de um ano |
-| GET | `/api/semanaspmo/periodo` | Lista semanas em período |
+| GET | `/api/semanaspmo/periodo` | Lista semanas em perï¿½odo |
 | POST | `/api/semanaspmo` | Criar nova semana |
 | PUT | `/api/semanaspmo/{id}` | Atualizar semana |
 | DELETE | `/api/semanaspmo/{id}` | Remover semana (soft delete) |
 
 **Features Especiais**:
-- Cálculo automático da semana PMO atual
-- Validação de overlapping de datas
-- Constraint único (Numero + Ano)
+- Cï¿½lculo automï¿½tico da semana PMO atual
+- Validaï¿½ï¿½o de overlapping de datas
+- Constraint ï¿½nico (Numero + Ano)
 
 ---
 
 ### 5?? **API EQUIPES PDP** (8 endpoints)  
 **Rota base**: `/api/equipespdp`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/equipespdp` | Lista todas as equipes |
 | GET | `/api/equipespdp/{id}` | Busca equipe por ID |
@@ -111,17 +111,17 @@ Foram implementadas com sucesso **5 APIs completas** do backend, totalizando **3
 ```
 ????????????????????????????????????????????????????
 ?  PDPW.API (Controllers)                          ?
-?  ?? Rotas REST, Validação, Documentação Swagger ?
+?  ?? Rotas REST, Validaï¿½ï¿½o, Documentaï¿½ï¿½o Swagger ?
 ????????????????????????????????????????????????????
                      ?
 ????????????????????????????????????????????????????
 ?  PDPW.Application (Services + DTOs)              ?
-?  ?? Lógica de Negócio, Mapeamentos              ?
+?  ?? Lï¿½gica de Negï¿½cio, Mapeamentos              ?
 ????????????????????????????????????????????????????
                      ?
 ????????????????????????????????????????????????????
 ?  PDPW.Domain (Entities + Interfaces)             ?
-?  ?? Modelo de Domínio, Contratos                ?
+?  ?? Modelo de Domï¿½nio, Contratos                ?
 ????????????????????????????????????????????????????
                      ?
 ????????????????????????????????????????????????????
@@ -130,24 +130,24 @@ Foram implementadas com sucesso **5 APIs completas** do backend, totalizando **3
 ????????????????????????????????????????????????????
 ```
 
-### Componentes por API (Padrão Consistente)
+### Componentes por API (Padrï¿½o Consistente)
 
 Para cada API foram criados:
 
 1. **Domain Layer**:
-   - `I{Nome}Repository.cs` - Interface do repositório
-   - `{Nome}.cs` - Entidade (já existente)
+   - `I{Nome}Repository.cs` - Interface do repositï¿½rio
+   - `{Nome}.cs` - Entidade (jï¿½ existente)
 
 2. **Infrastructure Layer**:
-   - `{Nome}Repository.cs` - Implementação EF Core
+   - `{Nome}Repository.cs` - Implementaï¿½ï¿½o EF Core
    - `{Nome}Seed.cs` - Dados iniciais
 
 3. **Application Layer**:
-   - `I{Nome}Service.cs` - Interface do serviço
-   - `{Nome}Service.cs` - Lógica de negócio
+   - `I{Nome}Service.cs` - Interface do serviï¿½o
+   - `{Nome}Service.cs` - Lï¿½gica de negï¿½cio
    - `{Nome}Dto.cs` - DTOs de leitura
-   - `Create{Nome}Dto.cs` - DTO de criação
-   - `Update{Nome}Dto.cs` - DTO de atualização
+   - `Create{Nome}Dto.cs` - DTO de criaï¿½ï¿½o
+   - `Update{Nome}Dto.cs` - DTO de atualizaï¿½ï¿½o
 
 4. **API Layer**:
    - `{Nome}sController.cs` - Endpoints REST
@@ -158,45 +158,45 @@ Para cada API foram criados:
 
 ---
 
-## ?? TECNOLOGIAS E PADRÕES
+## ?? TECNOLOGIAS E PADRï¿½ES
 
-### Stack Tecnológico
+### Stack Tecnolï¿½gico
 - ? .NET 8
 - ? Entity Framework Core 8
 - ? SQL Server (LocalDB para desenvolvimento)
 - ? AutoMapper
 - ? Swagger/OpenAPI
-- ? Data Annotations (validações)
+- ? Data Annotations (validaï¿½ï¿½es)
 
-### Padrões Implementados
+### Padrï¿½es Implementados
 - ? Repository Pattern
 - ? Service Layer Pattern
 - ? DTO Pattern
 - ? Dependency Injection
 - ? Soft Delete
 - ? Auditoria (DataCriacao, DataAtualizacao)
-- ? Validações robustas
+- ? Validaï¿½ï¿½es robustas
 - ? Tratamento de erros padronizado
 
 ---
 
-## ?? VALIDAÇÕES IMPLEMENTADAS
+## ?? VALIDAï¿½ï¿½ES IMPLEMENTADAS
 
-### Validações de Negócio
-- ? Nomes únicos (TipoUsina, Empresa, EquipePDP)
-- ? Códigos únicos (Usina)
-- ? CNPJ único e válido (Empresa)
-- ? Email válido (Empresa, EquipePDP)
-- ? Telefone válido (Empresa, EquipePDP)
-- ? Semana PMO única (Numero + Ano)
-- ? Não permite deletar entidades com dependências ativas
+### Validaï¿½ï¿½es de Negï¿½cio
+- ? Nomes ï¿½nicos (TipoUsina, Empresa, EquipePDP)
+- ? Cï¿½digos ï¿½nicos (Usina)
+- ? CNPJ ï¿½nico e vï¿½lido (Empresa)
+- ? Email vï¿½lido (Empresa, EquipePDP)
+- ? Telefone vï¿½lido (Empresa, EquipePDP)
+- ? Semana PMO ï¿½nica (Numero + Ano)
+- ? Nï¿½o permite deletar entidades com dependï¿½ncias ativas
 
-### Validações de Entrada
-- ? Campos obrigatórios
-- ? Tamanhos mínimo e máximo
+### Validaï¿½ï¿½es de Entrada
+- ? Campos obrigatï¿½rios
+- ? Tamanhos mï¿½nimo e mï¿½ximo
 - ? Formato de email e telefone
-- ? Datas válidas
-- ? Valores decimais com precisão
+- ? Datas vï¿½lidas
+- ? Valores decimais com precisï¿½o
 
 ---
 
@@ -218,14 +218,14 @@ Para cada API foram criados:
 ## ?? PROBLEMAS RESOLVIDOS
 
 ### Erro de Rotas Duplicadas
-**Problema**: Múltiplos controllers tinham endpoints `verificar-nome` com atributo `Name` igual.
+**Problema**: Mï¿½ltiplos controllers tinham endpoints `verificar-nome` com atributo `Name` igual.
 
 **Mensagem de erro**:
 ```
 Attribute routes with the same name 'VerificarNomeExiste' must have the same template
 ```
 
-**Solução**: Removido atributo `Name` dos endpoints problemáticos em:
+**Soluï¿½ï¿½o**: Removido atributo `Name` dos endpoints problemï¿½ticos em:
 - `TiposUsinaController.cs`
 - `EmpresasController.cs`
 
@@ -239,7 +239,7 @@ Attribute routes with the same name 'VerificarNomeExiste' must have the same tem
 ```
 ? Build succeeded
 ? 0 Errors
-? 1 Warning (não crítico)
+? 1 Warning (nï¿½o crï¿½tico)
 ```
 
 ### API Status
@@ -252,50 +252,50 @@ Attribute routes with the same name 'VerificarNomeExiste' must have the same tem
 
 ### Database Status
 ```
-? Conexão estabelecida
+? Conexï¿½o estabelecida
 ? Migrations aplicadas
 ? Seed data populado
 ```
 
 ---
 
-## ?? MÉTRICAS DO PROJETO
+## ?? Mï¿½TRICAS DO PROJETO
 
 ### Progresso Geral
 - **APIs Completas**: 5/29 (17.2%)
 - **Endpoints Implementados**: 39/154 (25.3%)
 - **Arquivos Criados Hoje**: ~45 arquivos
-- **Linhas de Código**: ~3.500 linhas
+- **Linhas de Cï¿½digo**: ~3.500 linhas
 
 ### Tempo Estimado
 - **Tempo gasto**: ~4 horas
-- **Velocidade média**: 1.25 API/hora
-- **Projeção para 29 APIs**: ~23 horas
+- **Velocidade mï¿½dia**: 1.25 API/hora
+- **Projeï¿½ï¿½o para 29 APIs**: ~23 horas
 
 ---
 
-## ?? PRÓXIMAS APIS (Backlog do Dev 1)
+## ?? PRï¿½XIMAS APIS (Backlog do Dev 1)
 
 ### Alta Prioridade
 1. ? **ArquivoDadger** (4h - Muito Complexa)
 2. ? **ArquivoDadgerValor** (4h - Muito Complexa)
 
-### Média Prioridade
-3. ? **Carga** (2.5h - Média)
+### Mï¿½dia Prioridade
+3. ? **Carga** (2.5h - Mï¿½dia)
 4. ? **Usuario** (2h - Simples)
 
 ---
 
-## ?? DOCUMENTAÇÃO GERADA
+## ?? DOCUMENTAï¿½ï¿½O GERADA
 
-### Arquivos de Documentação
+### Arquivos de Documentaï¿½ï¿½o
 - ? `docs/RESUMO_EQUIPE_PDP.md` - Resumo da API EquipePDP
-- ? `docs/RELATORIO_FINAL_5_APIS.md` - Este relatório
+- ? `docs/RELATORIO_FINAL_5_APIS.md` - Este relatï¿½rio
 
 ### Swagger/OpenAPI
-- ? Documentação automática de todos os 39 endpoints
+- ? Documentaï¿½ï¿½o automï¿½tica de todos os 39 endpoints
 - ? Exemplos de request/response
-- ? Códigos de status HTTP documentados
+- ? Cï¿½digos de status HTTP documentados
 - ? Schemas de DTOs documentados
 
 ---
@@ -313,8 +313,8 @@ Attribute routes with the same name 'VerificarNomeExiste' must have the same tem
    ```http
    GET /api/usinas                    # Listar (deve retornar 10)
    GET /api/usinas/1                  # Buscar Itaipu
-   GET /api/usinas/codigo/UHE-ITAIPU # Buscar por código
-   GET /api/usinas/tipo/1             # Listar hidrelétricas
+   GET /api/usinas/codigo/UHE-ITAIPU # Buscar por cï¿½digo
+   GET /api/usinas/tipo/1             # Listar hidrelï¿½tricas
    GET /api/usinas/empresa/1          # Listar usinas da Itaipu
    ```
 
@@ -332,46 +332,46 @@ Attribute routes with the same name 'VerificarNomeExiste' must have the same tem
 
 ---
 
-## ?? LIÇÕES APRENDIDAS
+## ?? LIï¿½ï¿½ES APRENDIDAS
 
-### Boas Práticas Adotadas
-1. ? **Consistência é fundamental** - Seguir sempre o mesmo padrão facilita manutenção
-2. ? **Seed Data é essencial** - Facilita testes e validação
-3. ? **Validações em múltiplas camadas** - Data Annotations + Service Layer
-4. ? **Documentação inline** - XML Comments melhoram a experiência no Swagger
-5. ? **Build incremental** - Testar compilação após cada API
+### Boas Prï¿½ticas Adotadas
+1. ? **Consistï¿½ncia ï¿½ fundamental** - Seguir sempre o mesmo padrï¿½o facilita manutenï¿½ï¿½o
+2. ? **Seed Data ï¿½ essencial** - Facilita testes e validaï¿½ï¿½o
+3. ? **Validaï¿½ï¿½es em mï¿½ltiplas camadas** - Data Annotations + Service Layer
+4. ? **Documentaï¿½ï¿½o inline** - XML Comments melhoram a experiï¿½ncia no Swagger
+5. ? **Build incremental** - Testar compilaï¿½ï¿½o apï¿½s cada API
 
 ### Problemas Evitados
 1. ? Evitar `Name` em atributos `[HttpGet]` para prevenir conflitos
 2. ? Sempre validar FK antes de deletar
-3. ? Usar soft delete para preservar histórico
+3. ? Usar soft delete para preservar histï¿½rico
 4. ? Testar migrations antes de aplicar
 
 ---
 
-## ?? PRÓXIMOS PASSOS RECOMENDADOS
+## ?? PRï¿½XIMOS PASSOS RECOMENDADOS
 
-### Imediato (Próxima Sessão)
+### Imediato (Prï¿½xima Sessï¿½o)
 1. ? Implementar **API ArquivoDadger** (complexa)
-2. ? Adicionar testes unitários para as 5 APIs
-3. ? Configurar CI/CD básico
+2. ? Adicionar testes unitï¿½rios para as 5 APIs
+3. ? Configurar CI/CD bï¿½sico
 
 ### Curto Prazo (Esta Semana)
 1. ? Implementar mais 3-4 APIs simples
-2. ? Criar coleção Postman/Insomnia para testes
-3. ? Documentação técnica adicional
+2. ? Criar coleï¿½ï¿½o Postman/Insomnia para testes
+3. ? Documentaï¿½ï¿½o tï¿½cnica adicional
 
-### Médio Prazo (Próximas 2 Semanas)
+### Mï¿½dio Prazo (Prï¿½ximas 2 Semanas)
 1. ? Completar todas as 29 APIs
-2. ? Implementar autenticação e autorização
+2. ? Implementar autenticaï¿½ï¿½o e autorizaï¿½ï¿½o
 3. ? Configurar logging estruturado (Serilog)
-4. ? Performance tuning e otimizações
+4. ? Performance tuning e otimizaï¿½ï¿½es
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
-### Build e Execução
+### Build e Execuï¿½ï¿½o
 ```powershell
 # Build do projeto
 dotnet build
@@ -409,19 +409,19 @@ dotnet test /p:CollectCoverage=true
 
 ---
 
-## ?? CONCLUSÃO
+## ?? CONCLUSï¿½O
 
-Foi realizada uma implementação sólida e profissional de 5 APIs REST completas, seguindo boas práticas de Clean Architecture, com validações robustas, documentação completa e seed data funcional.
+Foi realizada uma implementaï¿½ï¿½o sï¿½lida e profissional de 5 APIs REST completas, seguindo boas prï¿½ticas de Clean Architecture, com validaï¿½ï¿½es robustas, documentaï¿½ï¿½o completa e seed data funcional.
 
-O padrão estabelecido pode ser replicado facilmente para as 24 APIs restantes, garantindo consistência e qualidade em todo o projeto.
+O padrï¿½o estabelecido pode ser replicado facilmente para as 24 APIs restantes, garantindo consistï¿½ncia e qualidade em todo o projeto.
 
-**Status**: ? **PRONTO PARA PRODUÇÃO (5 APIs)**  
+**Status**: ? **PRONTO PARA PRODUï¿½ï¿½O (5 APIs)**  
 **Build**: ? **COMPILANDO SEM ERROS**  
-**API**: ? **RODANDO E TESTÁVEL**  
-**Documentação**: ? **COMPLETA**
+**API**: ? **RODANDO E TESTï¿½VEL**  
+**Documentaï¿½ï¿½o**: ? **COMPLETA**
 
 ---
 
 **Desenvolvido com ?? por Willian + GitHub Copilot**  
 **Data**: 19/12/2024  
-**Versão**: 1.0.0
+**Versï¿½o**: 1.0.0

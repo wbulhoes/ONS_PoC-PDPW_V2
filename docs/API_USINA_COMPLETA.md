@@ -1,4 +1,4 @@
-# ? API USINA COMPLETA - IMPLEMENTADA COM SUCESSO!
+ï»¿# ? API USINA COMPLETA - IMPLEMENTADA COM SUCESSO!
 
 **Data:** 19/12/2024  
 **Status:** ? COMPLETO  
@@ -14,10 +14,10 @@
 ? Clean Architecture implementada
 ? 8 endpoints criados
 ? CRUD completo
-? Validações implementadas
+? Validaï¿½ï¿½es implementadas
 ? AutoMapper configurado
 ? Swagger documentado
-? Compilação sem erros
+? Compilaï¿½ï¿½o sem erros
 ? Pattern estabelecido para replicar
 ```
 
@@ -28,8 +28,8 @@
 ### 1. Domain Layer
 ```
 ? IUsinaRepository.cs
-   - Interface com 11 métodos
-   - Operações CRUD + consultas específicas
+   - Interface com 11 mï¿½todos
+   - Operaï¿½ï¿½es CRUD + consultas especï¿½ficas
 ```
 
 ### 2. Infrastructure Layer
@@ -47,20 +47,20 @@
    - DTO de leitura com relacionamentos
 
 ? CreateUsinaDto.cs
-   - DTO de criação
-   - Data Annotations para validação
+   - DTO de criaï¿½ï¿½o
+   - Data Annotations para validaï¿½ï¿½o
 
 ? UpdateUsinaDto.cs
-   - DTO de atualização
-   - Data Annotations para validação
+   - DTO de atualizaï¿½ï¿½o
+   - Data Annotations para validaï¿½ï¿½o
 
 ? IUsinaService.cs
-   - Interface com 9 métodos
+   - Interface com 9 mï¿½todos
 
 ? UsinaService.cs
    - Implementa IUsinaService
-   - Lógica de negócio
-   - Validações (código único)
+   - Lï¿½gica de negï¿½cio
+   - Validaï¿½ï¿½es (cï¿½digo ï¿½nico)
    - Mapeamentos com AutoMapper
 
 ? AutoMapperProfile.cs (atualizado)
@@ -90,11 +90,11 @@
 
 ### Base URL: `/api/usinas`
 
-| Método | Endpoint | Descrição | Status Code |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o | Status Code |
 |--------|----------|-----------|-------------|
 | **GET** | `/` | Lista todas as usinas | 200 OK |
 | **GET** | `/{id}` | Busca usina por ID | 200 OK / 404 Not Found |
-| **GET** | `/codigo/{codigo}` | Busca por código único | 200 OK / 404 Not Found |
+| **GET** | `/codigo/{codigo}` | Busca por cï¿½digo ï¿½nico | 200 OK / 404 Not Found |
 | **GET** | `/tipo/{tipoUsinaId}` | Lista por tipo | 200 OK |
 | **GET** | `/empresa/{empresaId}` | Lista por empresa | 200 OK |
 | **POST** | `/` | Cria nova usina | 201 Created / 400 Bad Request |
@@ -102,14 +102,14 @@
 | **DELETE** | `/{id}` | Remove usina (soft delete) | 204 No Content / 404 Not Found |
 
 **Endpoint Extra:**
-| **GET** | `/verificar-codigo/{codigo}` | Verifica se código existe | 200 OK |
+| **GET** | `/verificar-codigo/{codigo}` | Verifica se cï¿½digo existe | 200 OK |
 
 ---
 
 ## ?? DETALHES DOS ENDPOINTS
 
 ### 1. GET /api/usinas
-**Descrição:** Retorna todas as usinas ativas
+**Descriï¿½ï¿½o:** Retorna todas as usinas ativas
 
 **Response 200 OK:**
 ```json
@@ -117,13 +117,13 @@
   {
     "id": 1,
     "codigo": "UHE001",
-    "nome": "Usina Hidrelétrica Itaipu",
+    "nome": "Usina Hidrelï¿½trica Itaipu",
     "tipoUsinaId": 1,
-    "tipoUsina": "Hidrelétrica",
+    "tipoUsina": "Hidrelï¿½trica",
     "empresaId": 1,
     "empresa": "Itaipu Binacional",
     "capacidadeInstalada": 14000.00,
-    "localizacao": "Foz do Iguaçu, PR",
+    "localizacao": "Foz do Iguaï¿½u, PR",
     "dataOperacao": "1984-05-05T00:00:00",
     "ativo": true,
     "dataCriacao": "2024-12-19T12:00:00",
@@ -135,9 +135,9 @@
 ---
 
 ### 2. GET /api/usinas/{id}
-**Descrição:** Busca usina específica por ID
+**Descriï¿½ï¿½o:** Busca usina especï¿½fica por ID
 
-**Parâmetros:**
+**Parï¿½metros:**
 - `id` (int, path) - ID da usina
 
 **Response 200 OK:** (igual ao anterior)
@@ -145,26 +145,26 @@
 **Response 404 Not Found:**
 ```json
 {
-  "message": "Recurso não encontrado"
+  "message": "Recurso nï¿½o encontrado"
 }
 ```
 
 ---
 
 ### 3. GET /api/usinas/codigo/{codigo}
-**Descrição:** Busca usina por código único
+**Descriï¿½ï¿½o:** Busca usina por cï¿½digo ï¿½nico
 
-**Parâmetros:**
-- `codigo` (string, path) - Código da usina (ex: "UHE001")
+**Parï¿½metros:**
+- `codigo` (string, path) - Cï¿½digo da usina (ex: "UHE001")
 
 **Response 200 OK:** (objeto usina)
 
 ---
 
 ### 4. GET /api/usinas/tipo/{tipoUsinaId}
-**Descrição:** Lista usinas por tipo
+**Descriï¿½ï¿½o:** Lista usinas por tipo
 
-**Parâmetros:**
+**Parï¿½metros:**
 - `tipoUsinaId` (int, path) - ID do tipo de usina
 
 **Response 200 OK:** (array de usinas)
@@ -172,9 +172,9 @@
 ---
 
 ### 5. GET /api/usinas/empresa/{empresaId}
-**Descrição:** Lista usinas por empresa
+**Descriï¿½ï¿½o:** Lista usinas por empresa
 
-**Parâmetros:**
+**Parï¿½metros:**
 - `empresaId` (int, path) - ID da empresa
 
 **Response 200 OK:** (array de usinas)
@@ -182,13 +182,13 @@
 ---
 
 ### 6. POST /api/usinas
-**Descrição:** Cria nova usina
+**Descriï¿½ï¿½o:** Cria nova usina
 
 **Request Body:**
 ```json
 {
   "codigo": "UHE002",
-  "nome": "Usina Hidrelétrica Belo Monte",
+  "nome": "Usina Hidrelï¿½trica Belo Monte",
   "tipoUsinaId": 1,
   "empresaId": 2,
   "capacidadeInstalada": 11233.00,
@@ -198,21 +198,21 @@
 }
 ```
 
-**Validações:**
-- `codigo`: obrigatório, max 50 caracteres, único
-- `nome`: obrigatório, 3-200 caracteres
-- `tipoUsinaId`: obrigatório, > 0
-- `empresaId`: obrigatório, > 0
-- `capacidadeInstalada`: obrigatória, > 0
+**Validaï¿½ï¿½es:**
+- `codigo`: obrigatï¿½rio, max 50 caracteres, ï¿½nico
+- `nome`: obrigatï¿½rio, 3-200 caracteres
+- `tipoUsinaId`: obrigatï¿½rio, > 0
+- `empresaId`: obrigatï¿½rio, > 0
+- `capacidadeInstalada`: obrigatï¿½ria, > 0
 - `localizacao`: opcional, max 500 caracteres
-- `dataOperacao`: obrigatória
+- `dataOperacao`: obrigatï¿½ria
 
 **Response 201 Created:**
 ```json
 {
   "id": 2,
   "codigo": "UHE002",
-  "nome": "Usina Hidrelétrica Belo Monte",
+  "nome": "Usina Hidrelï¿½trica Belo Monte",
   ...
 }
 ```
@@ -220,17 +220,17 @@
 **Response 400 Bad Request:**
 ```json
 {
-  "error": "Erro de validação",
-  "message": "Já existe uma usina com o código 'UHE002'"
+  "error": "Erro de validaï¿½ï¿½o",
+  "message": "Jï¿½ existe uma usina com o cï¿½digo 'UHE002'"
 }
 ```
 
 ---
 
 ### 7. PUT /api/usinas/{id}
-**Descrição:** Atualiza usina existente
+**Descriï¿½ï¿½o:** Atualiza usina existente
 
-**Parâmetros:**
+**Parï¿½metros:**
 - `id` (int, path) - ID da usina
 
 **Request Body:** (mesma estrutura do POST)
@@ -240,16 +240,16 @@
 **Response 404 Not Found:**
 ```json
 {
-  "message": "Usina com ID 999 não encontrada"
+  "message": "Usina com ID 999 nï¿½o encontrada"
 }
 ```
 
 ---
 
 ### 8. DELETE /api/usinas/{id}
-**Descrição:** Remove usina (soft delete - marca como inativo)
+**Descriï¿½ï¿½o:** Remove usina (soft delete - marca como inativo)
 
-**Parâmetros:**
+**Parï¿½metros:**
 - `id` (int, path) - ID da usina
 
 **Response 204 No Content** (sem body)
@@ -257,18 +257,18 @@
 **Response 404 Not Found:**
 ```json
 {
-  "message": "Usina com ID 999 não encontrada"
+  "message": "Usina com ID 999 nï¿½o encontrada"
 }
 ```
 
 ---
 
 ### 9. GET /api/usinas/verificar-codigo/{codigo}
-**Descrição:** Verifica se código já está em uso
+**Descriï¿½ï¿½o:** Verifica se cï¿½digo jï¿½ estï¿½ em uso
 
-**Parâmetros:**
-- `codigo` (string, path) - Código a verificar
-- `usinaId` (int, query, opcional) - ID da usina a excluir da verificação
+**Parï¿½metros:**
+- `codigo` (string, path) - Cï¿½digo a verificar
+- `usinaId` (int, query, opcional) - ID da usina a excluir da verificaï¿½ï¿½o
 
 **Response 200 OK:**
 ```json
@@ -281,7 +281,7 @@
 
 ## ??? ARQUITETURA IMPLEMENTADA
 
-### Fluxo de Requisição
+### Fluxo de Requisiï¿½ï¿½o
 
 ```
 HTTP Request
@@ -315,15 +315,15 @@ HTTP Response
 
 ---
 
-## ? VALIDAÇÕES IMPLEMENTADAS
+## ? VALIDAï¿½ï¿½ES IMPLEMENTADAS
 
-### 1. Validações de Entrada (Data Annotations)
+### 1. Validaï¿½ï¿½es de Entrada (Data Annotations)
 ```csharp
-[Required(ErrorMessage = "O código é obrigatório")]
-[StringLength(50, ErrorMessage = "O código deve ter no máximo 50 caracteres")]
+[Required(ErrorMessage = "O cï¿½digo ï¿½ obrigatï¿½rio")]
+[StringLength(50, ErrorMessage = "O cï¿½digo deve ter no mï¿½ximo 50 caracteres")]
 public string Codigo { get; set; }
 
-[Required(ErrorMessage = "O nome é obrigatório")]
+[Required(ErrorMessage = "O nome ï¿½ obrigatï¿½rio")]
 [StringLength(200, MinimumLength = 3)]
 public string Nome { get; set; }
 
@@ -331,24 +331,24 @@ public string Nome { get; set; }
 public decimal CapacidadeInstalada { get; set; }
 ```
 
-### 2. Validações de Negócio (Service)
+### 2. Validaï¿½ï¿½es de Negï¿½cio (Service)
 ```csharp
-// Código único
+// Cï¿½digo ï¿½nico
 if (await _repository.CodigoExisteAsync(createDto.Codigo))
 {
-    throw new InvalidOperationException($"Já existe uma usina com o código '{createDto.Codigo}'");
+    throw new InvalidOperationException($"Jï¿½ existe uma usina com o cï¿½digo '{createDto.Codigo}'");
 }
 
-// Existência de entidade
+// Existï¿½ncia de entidade
 if (usina == null)
 {
-    throw new KeyNotFoundException($"Usina com ID {id} não encontrada");
+    throw new KeyNotFoundException($"Usina com ID {id} nï¿½o encontrada");
 }
 ```
 
-### 3. Validações de Banco (Database)
+### 3. Validaï¿½ï¿½es de Banco (Database)
 ```sql
--- Índice único no código
+-- ï¿½ndice ï¿½nico no cï¿½digo
 CREATE UNIQUE INDEX IX_Usinas_Codigo ON Usinas (Codigo);
 
 -- Foreign Keys
@@ -373,7 +373,7 @@ ALTER TABLE Usinas ADD CONSTRAINT FK_Usinas_Empresa ...
 - Apenas ativos
 
 ? **GetByCodigoAsync(codigo)**
-- Busca por código único
+- Busca por cï¿½digo ï¿½nico
 - Inclui relacionamentos
 
 ? **GetByTipoAsync(tipoUsinaId)**
@@ -402,10 +402,10 @@ ALTER TABLE Usinas ADD CONSTRAINT FK_Usinas_Empresa ...
 
 ? **CodigoExisteAsync(codigo, usinaIdExcluir)**
 - Verifica duplicidade
-- Exclui usina atual na verificação
+- Exclui usina atual na verificaï¿½ï¿½o
 
 ? **ExistsAsync(id)**
-- Verifica existência
+- Verifica existï¿½ncia
 - Herda de BaseRepository
 
 ---
@@ -413,15 +413,15 @@ ALTER TABLE Usinas ADD CONSTRAINT FK_Usinas_Empresa ...
 ### Service (UsinaService)
 
 ? **GetAllAsync()**
-- Obtém todas as usinas
+- Obtï¿½m todas as usinas
 - Mapeia para UsinaDto
 
 ? **GetByIdAsync(id)**
-- Obtém por ID
+- Obtï¿½m por ID
 - Mapeia para UsinaDto
 
 ? **GetByCodigoAsync(codigo)**
-- Obtém por código
+- Obtï¿½m por cï¿½digo
 - Mapeia para UsinaDto
 
 ? **GetByTipoAsync(tipoUsinaId)**
@@ -433,22 +433,22 @@ ALTER TABLE Usinas ADD CONSTRAINT FK_Usinas_Empresa ...
 - Mapeia lista para DTOs
 
 ? **CreateAsync(createDto)**
-- Valida código único
+- Valida cï¿½digo ï¿½nico
 - Mapeia DTO ? Entity
 - Cria no banco
 - Recarrega com relacionamentos
 - Mapeia para UsinaDto
 
 ? **UpdateAsync(id, updateDto)**
-- Verifica existência
-- Valida código único (exceto própria usina)
+- Verifica existï¿½ncia
+- Valida cï¿½digo ï¿½nico (exceto prï¿½pria usina)
 - Atualiza propriedades
 - Salva no banco
 - Recarrega com relacionamentos
 - Mapeia para UsinaDto
 
 ? **DeleteAsync(id)**
-- Verifica existência
+- Verifica existï¿½ncia
 - Remove (soft delete)
 - Retorna boolean
 
@@ -466,8 +466,8 @@ _logger.LogInformation("Usina {UsinaId} atualizada com sucesso", id);
 _logger.LogInformation("Usina {UsinaId} removida com sucesso", id);
 
 // Avisos
-_logger.LogWarning(ex, "Erro de validação ao criar usina");
-_logger.LogWarning(ex, "Usina {UsinaId} não encontrada para atualização", id);
+_logger.LogWarning(ex, "Erro de validaï¿½ï¿½o ao criar usina");
+_logger.LogWarning(ex, "Usina {UsinaId} nï¿½o encontrada para atualizaï¿½ï¿½o", id);
 
 // Erros
 _logger.LogError(ex, "Erro ao buscar usina {UsinaId}", id);
@@ -482,7 +482,7 @@ _logger.LogError(ex, "Erro ao atualizar usina {UsinaId}", id);
 ### 1. Via Swagger UI
 
 ```
-1. Iniciar aplicação:
+1. Iniciar aplicaï¿½ï¿½o:
    cd src\PDPW.API
    dotnet run
 
@@ -548,18 +548,18 @@ curl -X DELETE "http://localhost:5000/api/usinas/1"
 
 ## ?? PATTERN ESTABELECIDO
 
-Este é o **pattern definitivo** para criar as outras 28 APIs:
+Este ï¿½ o **pattern definitivo** para criar as outras 28 APIs:
 
 ### Checklist por API
 
 ```
 Domain Layer:
 ?? [ ] Criar Interface I{Nome}Repository
-?? [ ] Definir métodos específicos (além dos do Base)
+?? [ ] Definir mï¿½todos especï¿½ficos (alï¿½m dos do Base)
 
 Infrastructure:
 ?? [ ] Criar {Nome}Repository : BaseRepository<{Entity}>
-?? [ ] Implementar métodos com Include() se necessário
+?? [ ] Implementar mï¿½todos com Include() se necessï¿½rio
 
 Application:
 ?? [ ] Criar {Nome}Dto.cs
@@ -578,38 +578,38 @@ Tempo estimado: 1.5h - 3h por API (dependendo da complexidade)
 
 ---
 
-## ?? COMPARAÇÃO: SIMPLES vs COMPLEXA
+## ?? COMPARAï¿½ï¿½O: SIMPLES vs COMPLEXA
 
 ### API Simples (ex: TipoUsina)
 **Tempo:** ~1.5h
 
 - Entidade sem relacionamentos complexos
-- CRUD básico
-- Poucas validações
-- Menos métodos customizados
+- CRUD bï¿½sico
+- Poucas validaï¿½ï¿½es
+- Menos mï¿½todos customizados
 
-### API Média (ex: Usina)
+### API Mï¿½dia (ex: Usina)
 **Tempo:** ~2.5h
 
 - 2-3 relacionamentos
 - CRUD completo
-- Validações de negócio
-- Métodos de busca específicos
+- Validaï¿½ï¿½es de negï¿½cio
+- Mï¿½todos de busca especï¿½ficos
 
 ### API Complexa (ex: ArquivoDadger)
 **Tempo:** ~3.5h
 
-- Múltiplos relacionamentos
-- Lógica de negócio complexa
-- Muitas validações
+- Mï¿½ltiplos relacionamentos
+- Lï¿½gica de negï¿½cio complexa
+- Muitas validaï¿½ï¿½es
 - Processamento de dados
-- Métodos customizados avançados
+- Mï¿½todos customizados avanï¿½ados
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-### Opção A: Criar Seed Data
+### Opï¿½ï¿½o A: Criar Seed Data
 **Tempo:** 30 min
 
 Criar dados iniciais para testar:
@@ -617,18 +617,18 @@ Criar dados iniciais para testar:
 - 8 Empresas
 - 10 Usinas
 
-### Opção B: Criar APIs TipoUsina e Empresa
+### Opï¿½ï¿½o B: Criar APIs TipoUsina e Empresa
 **Tempo:** 3h
 
-APIs necessárias para Usina funcionar completamente:
+APIs necessï¿½rias para Usina funcionar completamente:
 - TipoUsina (simples - 1.5h)
 - Empresa (simples - 1.5h)
 
-### Opção C: Criar 2ª API (UnidadeGeradora)
+### Opï¿½ï¿½o C: Criar 2ï¿½ API (UnidadeGeradora)
 **Tempo:** 3h
 
 Seguir o pattern estabelecido:
-- Depende de Usina ? (já existe)
+- Depende de Usina ? (jï¿½ existe)
 - Relacionamento 1:N
 - DEV 2 - Prioridade 1
 
@@ -659,13 +659,13 @@ Seguir o pattern estabelecido:
    Pattern estabelecido para 28 APIs
 
 ?? CLEAN ARCHITECTURE MASTER
-   Separação perfeita de responsabilidades
+   Separaï¿½ï¿½o perfeita de responsabilidades
 
 ?? RESTful API EXPERT
    8 endpoints bem estruturados
 
 ?? VALIDATION PRO
-   3 camadas de validação
+   3 camadas de validaï¿½ï¿½o
 ```
 
 ---
@@ -673,7 +673,7 @@ Seguir o pattern estabelecido:
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
 **Tempo:** 2h30min  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO E TESTADO
 
 **API USINA 100% FUNCIONAL! PATTERN ESTABELECIDO! ??**

@@ -1,23 +1,23 @@
-# ?? GUIA RÁPIDO - MIGRAÇÃO PARA SQL SERVER
+ï»¿# ?? GUIA Rï¿½PIDO - MIGRAï¿½ï¿½O PARA SQL SERVER
 
-## ? **PRÉ-REQUISITOS VERIFICADOS**
+## ? **PRï¿½-REQUISITOS VERIFICADOS**
 
-- ? **Espaço em disco:** 191 GB livres (necessário: 15-20 GB)
+- ? **Espaï¿½o em disco:** 191 GB livres (necessï¿½rio: 15-20 GB)
 - ? **Backup do cliente:** `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak` (43.2 GB)
 - ? **SQL Server:** Express instalado (localhost\SQLEXPRESS)
-- ? **Script de migração:** Criado e pronto
+- ? **Script de migraï¿½ï¿½o:** Criado e pronto
 
 ---
 
-## ?? **OPÇÕES DE IMPLEMENTAÇÃO**
+## ?? **OPï¿½ï¿½ES DE IMPLEMENTAï¿½ï¿½O**
 
-### **OPÇÃO 1: SQL Server via Docker (Recomendado)** ?
+### **OPï¿½ï¿½O 1: SQL Server via Docker (Recomendado)** ?
 
 ? **Vantagens:**
 - Isolado em container
-- Fácil de resetar
-- Não afeta SQL Server local
-- Configuração via docker-compose
+- Fï¿½cil de resetar
+- Nï¿½o afeta SQL Server local
+- Configuraï¿½ï¿½o via docker-compose
 
 **Como fazer:**
 
@@ -36,7 +36,7 @@ timeout /t 90
 cd src\PDPW.API
 dotnet ef database update
 
-# 5. Executar script de migração
+# 5. Executar script de migraï¿½ï¿½o
 cd ..\..
 .\scripts\migration\Migrate-Legacy-To-POC.ps1 -SqlServer "localhost" -SqlInstance "" -TargetDatabase "PDPW_DB"
 
@@ -48,7 +48,7 @@ start http://localhost:5001/swagger
 
 ---
 
-### **OPÇÃO 2: SQL Server Express Local**
+### **OPï¿½ï¿½O 2: SQL Server Express Local**
 
 ? **Vantagens:**
 - Mais performance
@@ -70,11 +70,11 @@ docker-compose down
 cd src\PDPW.API
 dotnet ef database update
 
-# 4. Executar script de migração
+# 4. Executar script de migraï¿½ï¿½o
 cd ..\..
 .\scripts\migration\Migrate-Legacy-To-POC.ps1
 
-# 5. Rodar aplicação
+# 5. Rodar aplicaï¿½ï¿½o
 cd src\PDPW.API
 dotnet run
 
@@ -86,7 +86,7 @@ start http://localhost:5001/swagger
 
 ---
 
-## ?? **PASSO A PASSO DETALHADO - OPÇÃO 1 (Docker)**
+## ?? **PASSO A PASSO DETALHADO - OPï¿½ï¿½O 1 (Docker)**
 
 ### **1. Preparar Ambiente**
 
@@ -94,7 +94,7 @@ start http://localhost:5001/swagger
 # Parar container atual
 docker-compose down
 
-# Verificar se SQL Server está no Docker
+# Verificar se SQL Server estï¿½ no Docker
 docker images | findstr mssql
 ```
 
@@ -106,7 +106,7 @@ Verificar se o arquivo existe:
 Get-Content docker-compose.full.yml
 ```
 
-Se não existir, criar com este conteúdo mínimo:
+Se nï¿½o existir, criar com este conteï¿½do mï¿½nimo:
 
 ```yaml
 version: '3.8'
@@ -155,10 +155,10 @@ networks:
 # Iniciar apenas SQL Server primeiro
 docker-compose -f docker-compose.full.yml up -d sqlserver
 
-# Aguardar inicialização
+# Aguardar inicializaï¿½ï¿½o
 timeout /t 60
 
-# Verificar se está rodando
+# Verificar se estï¿½ rodando
 docker ps
 docker logs pdpw-sqlserver --tail 20
 ```
@@ -168,7 +168,7 @@ docker logs pdpw-sqlserver --tail 20
 ```powershell
 cd src\PDPW.API
 
-# Configurar connection string temporária
+# Configurar connection string temporï¿½ria
 $env:ConnectionStrings__DefaultConnection="Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=true;"
 
 # Aplicar migrations
@@ -178,12 +178,12 @@ dotnet ef database update
 docker exec pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "SELECT name FROM sys.databases WHERE name = 'PDPW_DB'"
 ```
 
-### **5. Executar Migração de Dados**
+### **5. Executar Migraï¿½ï¿½o de Dados**
 
 ```powershell
 cd ..\..
 
-# Executar script de migração
+# Executar script de migraï¿½ï¿½o
 .\scripts\migration\Migrate-Legacy-To-POC.ps1 `
     -SqlServer "localhost,1433" `
     -SqlInstance "" `
@@ -193,9 +193,9 @@ cd ..\..
     -SemanasPMO 26
 ```
 
-**Durante a execução:**
+**Durante a execuï¿½ï¿½o:**
 - Responda **"S"** quando perguntado se deseja aplicar os dados
-- Responda **"S"** quando perguntado se deseja remover banco temporário
+- Responda **"S"** quando perguntado se deseja remover banco temporï¿½rio
 
 ### **6. Iniciar Backend**
 
@@ -206,7 +206,7 @@ docker-compose -f docker-compose.full.yml up -d backend
 # Verificar logs
 docker logs pdpw-backend --tail 50
 
-# Aguardar inicialização
+# Aguardar inicializaï¿½ï¿½o
 timeout /t 10
 ```
 
@@ -217,7 +217,7 @@ timeout /t 10
 start http://localhost:5001/swagger
 ```
 
-**Validações:**
+**Validaï¿½ï¿½es:**
 - ? GET /api/empresas deve retornar ~30 empresas
 - ? GET /api/usinas deve retornar ~50 usinas
 - ? Dados devem ser diferentes do InMemory
@@ -227,7 +227,7 @@ start http://localhost:5001/swagger
 
 ## ?? **TROUBLESHOOTING**
 
-### **Problema: SQL Server não inicia**
+### **Problema: SQL Server nï¿½o inicia**
 
 ```powershell
 # Ver logs detalhados
@@ -246,7 +246,7 @@ netstat -ano | findstr 1433
 # Verificar connection string
 echo $env:ConnectionStrings__DefaultConnection
 
-# Testar conexão manualmente
+# Testar conexï¿½o manualmente
 docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong"
 
 # Dropar e recriar banco
@@ -254,7 +254,7 @@ docker exec pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pd
 dotnet ef database update
 ```
 
-### **Problema: Script de migração falha**
+### **Problema: Script de migraï¿½ï¿½o falha**
 
 ```powershell
 # Verificar backup existe
@@ -267,10 +267,10 @@ Test-Path "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
 sqlcmd -S localhost,1433 -U sa -P "Pdpw@2024!Strong" -d PDPW_DB -i ".\scripts\migration\output\migrate-all.sql"
 ```
 
-### **Problema: Backend não conecta ao SQL Server**
+### **Problema: Backend nï¿½o conecta ao SQL Server**
 
 ```powershell
-# Verificar variáveis de ambiente
+# Verificar variï¿½veis de ambiente
 docker inspect pdpw-backend | findstr ConnectionStrings
 
 # Reiniciar backend
@@ -282,16 +282,16 @@ docker logs pdpw-backend --tail 100
 
 ---
 
-## ? **VALIDAÇÃO FINAL**
+## ? **VALIDAï¿½ï¿½O FINAL**
 
-### **Checklist Pós-Migração:**
+### **Checklist Pï¿½s-Migraï¿½ï¿½o:**
 
 ```powershell
 # 1. Verificar containers rodando
 docker ps
 # Deve mostrar: pdpw-sqlserver e pdpw-backend
 
-# 2. Testar conexão SQL Server
+# 2. Testar conexï¿½o SQL Server
 docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "USE PDPW_DB; SELECT COUNT(*) FROM Empresas; SELECT COUNT(*) FROM Usinas;"
 
 # 3. Testar APIs
@@ -310,45 +310,45 @@ start http://localhost:5001/swagger
 
 ---
 
-## ?? **PRÓXIMOS PASSOS**
+## ?? **PRï¿½XIMOS PASSOS**
 
-Após migração bem-sucedida:
+Apï¿½s migraï¿½ï¿½o bem-sucedida:
 
 1. ? **Atualizar QA** - Informar sobre nova base de dados
 2. ? **Executar testes** - Validar todos os endpoints
-3. ? **Documentar diferenças** - InMemory vs SQL Server
+3. ? **Documentar diferenï¿½as** - InMemory vs SQL Server
 4. ? **Backup da base** - Guardar estado atual
-5. ? **Planejar próximas migrações** - Mais tabelas se necessário
+5. ? **Planejar prï¿½ximas migraï¿½ï¿½es** - Mais tabelas se necessï¿½rio
 
 ---
 
-## ?? **COMPARAÇÃO: InMemory vs SQL Server**
+## ?? **COMPARAï¿½ï¿½O: InMemory vs SQL Server**
 
-| Característica | InMemory | SQL Server |
+| Caracterï¿½stica | InMemory | SQL Server |
 |----------------|----------|------------|
 | **Dados** | 69 registros | ~150 registros |
 | **Origem** | Seed manual | Backup real do cliente |
-| **Persistência** | Perdidos ao reiniciar | Mantidos em volumes |
-| **Performance** | Muito rápida | Rápida |
+| **Persistï¿½ncia** | Perdidos ao reiniciar | Mantidos em volumes |
+| **Performance** | Muito rï¿½pida | Rï¿½pida |
 | **Relacionamentos** | Simulados | Reais (FKs) |
-| **Validações** | Limitadas | Completas |
-| **Realismo** | Médio | Alto |
-| **Uso recomendado** | Desenvolvimento rápido | Testes QA |
+| **Validaï¿½ï¿½es** | Limitadas | Completas |
+| **Realismo** | Mï¿½dio | Alto |
+| **Uso recomendado** | Desenvolvimento rï¿½pido | Testes QA |
 
 ---
 
 ## ?? **SUPORTE**
 
-**Dúvidas ou problemas?**
+**Dï¿½vidas ou problemas?**
 - Consulte: `docs/PLANO_MIGRACAO_SQL_SERVER.md`
 - Verifique logs: `docker logs pdpw-backend`
 - Scripts em: `.\scripts\migration\output\`
 
 ---
 
-**Boa sorte com a migração! ??**
+**Boa sorte com a migraï¿½ï¿½o! ??**
 
 **Tempo total estimado:** 20-30 minutos  
-**Espaço necessário:** ~15 GB  
-**Dados extraídos:** ~150 registros reais  
+**Espaï¿½o necessï¿½rio:** ~15 GB  
+**Dados extraï¿½dos:** ~150 registros reais  
 

@@ -1,28 +1,28 @@
-# ?? MIGRAÇÃO: Clean Architecture ? MVC + Dockerização
+ï»¿# ?? MIGRAï¿½ï¿½O: Clean Architecture ? MVC + Dockerizaï¿½ï¿½o
 
-**Projeto:** PDPW PoC - Modernização ONS  
+**Projeto:** PDPW PoC - Modernizaï¿½ï¿½o ONS  
 **Data:** 19/12/2024  
 **Solicitante:** Gestor  
-**Status:** ?? ANÁLISE E RECOMENDAÇÃO
+**Status:** ?? ANï¿½LISE E RECOMENDAï¿½ï¿½O
 
 ---
 
-## ?? SOLICITAÇÕES RECEBIDAS
+## ?? SOLICITAï¿½ï¿½ES RECEBIDAS
 
-### 1. Dockerização
-? **JÁ IMPLEMENTADO!**
+### 1. Dockerizaï¿½ï¿½o
+? **Jï¿½ IMPLEMENTADO!**
 
-**Situação Atual:**
+**Situaï¿½ï¿½o Atual:**
 - ? `Dockerfile.backend` criado
 - ? `Dockerfile.frontend` criado
-- ? `docker-compose.yml` configurado com 3 serviços:
+- ? `docker-compose.yml` configurado com 3 serviï¿½os:
   - SQL Server 2022
   - Backend (.NET 8)
   - Frontend (React)
 - ? Networking configurado
 - ? Volumes persistentes
 
-**Comando de execução:**
+**Comando de execuï¿½ï¿½o:**
 ```bash
 docker-compose up --build
 ```
@@ -32,37 +32,37 @@ docker-compose up --build
 - Frontend: http://localhost:3000
 - SQL Server: localhost:1433
 
-### 2. Mudança de Arquitetura: Clean ? MVC
-?? **REQUER ANÁLISE CRÍTICA**
+### 2. Mudanï¿½a de Arquitetura: Clean ? MVC
+?? **REQUER ANï¿½LISE CRï¿½TICA**
 
 ---
 
-## ?? ANÁLISE CRÍTICA DA MUDANÇA SOLICITADA
+## ?? ANï¿½LISE CRï¿½TICA DA MUDANï¿½A SOLICITADA
 
-### ? ARGUMENTOS CONTRA A MUDANÇA
+### ? ARGUMENTOS CONTRA A MUDANï¿½A
 
-#### 1. Clean Architecture NÃO É INCOMPATÍVEL COM MVC
+#### 1. Clean Architecture Nï¿½O ï¿½ INCOMPATï¿½VEL COM MVC
 
 **Conceitos Diferentes:**
 
 ```
 ???????????????????????????????????????????????????????
-? MVC = PADRÃO DE APRESENTAÇÃO                        ?
+? MVC = PADRï¿½O DE APRESENTAï¿½ï¿½O                        ?
 ? (Model-View-Controller)                             ?
 ?                                                     ?
-? Clean Architecture = ORGANIZAÇÃO DE CAMADAS         ?
+? Clean Architecture = ORGANIZAï¿½ï¿½O DE CAMADAS         ?
 ? (Domain, Application, Infrastructure, Presentation) ?
 ?                                                     ?
 ? ? ELES PODEM (E DEVEM) COEXISTIR!                  ?
 ???????????????????????????????????????????????????????
 ```
 
-**Na prática:**
-- **Clean Architecture** organiza o código em camadas (Domain, Application, Infrastructure, API)
-- **MVC** é usado na camada de **Presentation** (API/Web)
-- O projeto JÁ USA MVC na camada API (Controllers)!
+**Na prï¿½tica:**
+- **Clean Architecture** organiza o cï¿½digo em camadas (Domain, Application, Infrastructure, API)
+- **MVC** ï¿½ usado na camada de **Presentation** (API/Web)
+- O projeto Jï¿½ USA MVC na camada API (Controllers)!
 
-#### 2. Código Atual JÁ SEGUE MVC
+#### 2. Cï¿½digo Atual Jï¿½ SEGUE MVC
 
 **Estrutura Atual do PDPW.API:**
 
@@ -70,90 +70,90 @@ docker-compose up --build
 src/PDPW.API/
 ??? Controllers/          ? C (Controller) do MVC ?
 ?   ??? DadosEnergeticosController.cs
-??? Program.cs            ? Configuração
+??? Program.cs            ? Configuraï¿½ï¿½o
 ??? PDPW.API.csproj
 
 src/PDPW.Application/
 ??? DTOs/                 ? M (Model) do MVC ?
 ?   ??? DadoEnergeticoDto.cs
-??? Services/             ? Lógica de negócio
+??? Services/             ? Lï¿½gica de negï¿½cio
 
 src/PDPW.Domain/
-??? Entities/             ? M (Model) do domínio ?
+??? Entities/             ? M (Model) do domï¿½nio ?
     ??? DadoEnergetico.cs
 ```
 
-**Onde está o V (View)?**
+**Onde estï¿½ o V (View)?**
 - No frontend React (separado)
-- APIs REST NÃO TÊM Views tradicionais
-- Retornam JSON (que é consumido pelo React)
+- APIs REST Nï¿½O Tï¿½M Views tradicionais
+- Retornam JSON (que ï¿½ consumido pelo React)
 
-#### 3. Perda de Benefícios da Clean Architecture
+#### 3. Perda de Benefï¿½cios da Clean Architecture
 
-**O que PERDERÍAMOS ao "simplificar" para MVC puro:**
+**O que PERDERï¿½AMOS ao "simplificar" para MVC puro:**
 
-| Benefício | Clean Architecture | MVC Tradicional |
+| Benefï¿½cio | Clean Architecture | MVC Tradicional |
 |-----------|-------------------|-----------------|
-| **Separação de responsabilidades** | ? EXCELENTE | ?? Misturado |
-| **Testabilidade** | ? ALTA (interfaces) | ? DIFÍCIL |
-| **Independência de framework** | ? SIM | ? NÃO |
-| **Manutenibilidade** | ? ALTA | ?? MÉDIA |
-| **Escalabilidade** | ? ALTA | ?? MÉDIA |
-| **Reuso de código** | ? ALTO | ? BAIXO |
+| **Separaï¿½ï¿½o de responsabilidades** | ? EXCELENTE | ?? Misturado |
+| **Testabilidade** | ? ALTA (interfaces) | ? DIFï¿½CIL |
+| **Independï¿½ncia de framework** | ? SIM | ? Nï¿½O |
+| **Manutenibilidade** | ? ALTA | ?? Mï¿½DIA |
+| **Escalabilidade** | ? ALTA | ?? Mï¿½DIA |
+| **Reuso de cï¿½digo** | ? ALTO | ? BAIXO |
 
-#### 4. Custo-Benefício da Mudança
+#### 4. Custo-Benefï¿½cio da Mudanï¿½a
 
-**Esforço Estimado:**
+**Esforï¿½o Estimado:**
 ```
 ??????????????????????????????????????????
-? Migração Clean ? MVC "puro":           ?
+? Migraï¿½ï¿½o Clean ? MVC "puro":           ?
 ?                                        ?
-? • Mesclar 4 projetos em 1             ?
-? • Reescrever injeção de dependências  ?
-? • Ajustar testes                      ?
-? • Atualizar documentação              ?
-? • Testar tudo novamente               ?
+? ï¿½ Mesclar 4 projetos em 1             ?
+? ï¿½ Reescrever injeï¿½ï¿½o de dependï¿½ncias  ?
+? ï¿½ Ajustar testes                      ?
+? ï¿½ Atualizar documentaï¿½ï¿½o              ?
+? ï¿½ Testar tudo novamente               ?
 ?                                        ?
 ? TEMPO: 3-4 dias de trabalho           ?
 ? RISCO: ALTO (pode quebrar tudo)       ?
-? BENEFÍCIO: ??? (nenhum aparente)      ?
+? BENEFï¿½CIO: ??? (nenhum aparente)      ?
 ??????????????????????????????????????????
 ```
 
 **Impacto no Cronograma:**
 - Planejado: 29 APIs em 6 dias
-- Com migração: 10-15 APIs em 6 dias ??
+- Com migraï¿½ï¿½o: 10-15 APIs em 6 dias ??
 
 ---
 
-## ? RECOMENDAÇÃO DO ARQUITETO
+## ? RECOMENDAï¿½ï¿½O DO ARQUITETO
 
-### OPÇÃO 1: MANTER CLEAN ARCHITECTURE (RECOMENDADO)
+### OPï¿½ï¿½O 1: MANTER CLEAN ARCHITECTURE (RECOMENDADO)
 
 **Justificativas:**
 
-1. **? Dockerização já está completa**
+1. **? Dockerizaï¿½ï¿½o jï¿½ estï¿½ completa**
    - Docker Compose funcionando
-   - Nenhuma mudança necessária
+   - Nenhuma mudanï¿½a necessï¿½ria
 
-2. **? Projeto JÁ segue MVC na camada de apresentação**
+2. **? Projeto Jï¿½ segue MVC na camada de apresentaï¿½ï¿½o**
    - Controllers = C do MVC
    - DTOs/Entities = M do MVC
    - React = V do MVC (separado)
 
-3. **? Clean Architecture é padrão de mercado**
+3. **? Clean Architecture ï¿½ padrï¿½o de mercado**
    - Microsoft recomenda
    - Grandes empresas usam (Google, Amazon, etc.)
    - ONS pode se beneficiar disso
 
-4. **? Facilita testes e manutenção**
-   - Código bem organizado
-   - Fácil de adicionar novas APIs
-   - Fácil de testar
+4. **? Facilita testes e manutenï¿½ï¿½o**
+   - Cï¿½digo bem organizado
+   - Fï¿½cil de adicionar novas APIs
+   - Fï¿½cil de testar
 
 5. **? Preparado para o futuro**
-   - Se quiser trocar React por Angular ? Só mexer no frontend
-   - Se quiser trocar SQL Server por outro DB ? Só mexer no Infrastructure
+   - Se quiser trocar React por Angular ? Sï¿½ mexer no frontend
+   - Se quiser trocar SQL Server por outro DB ? Sï¿½ mexer no Infrastructure
    - Se quiser adicionar app mobile ? Reutilizar Application e Domain
 
 **Argumentos para o Gestor:**
@@ -161,37 +161,37 @@ src/PDPW.Domain/
 ```
 "Caro [Nome do Gestor],
 
-Analisando o pedido, tenho boas notícias:
+Analisando o pedido, tenho boas notï¿½cias:
 
-1. ? DOCKERIZAÇÃO JÁ ESTÁ IMPLEMENTADA
+1. ? DOCKERIZAï¿½ï¿½O Jï¿½ ESTï¿½ IMPLEMENTADA
    - docker-compose.yml funcionando
-   - 3 serviços: Backend, Frontend, SQL Server
-   - Pronto para demonstração
+   - 3 serviï¿½os: Backend, Frontend, SQL Server
+   - Pronto para demonstraï¿½ï¿½o
 
-2. ? PROJETO JÁ SEGUE MVC (na camada de apresentação)
+2. ? PROJETO Jï¿½ SEGUE MVC (na camada de apresentaï¿½ï¿½o)
    - Controllers (C)
    - Models/DTOs (M)
    - React Views (V)
 
-3. ?? CLEAN ARCHITECTURE ? NÃO-MVC
-   - São conceitos complementares, não excludentes
-   - Clean Architecture organiza o código em camadas
-   - MVC é usado DENTRO da camada de apresentação
+3. ?? CLEAN ARCHITECTURE ? Nï¿½O-MVC
+   - Sï¿½o conceitos complementares, nï¿½o excludentes
+   - Clean Architecture organiza o cï¿½digo em camadas
+   - MVC ï¿½ usado DENTRO da camada de apresentaï¿½ï¿½o
    - Projeto atual = Clean Architecture + MVC
 
 4. ?? MUDAR PARA MVC 'PURO' TRARIA RISCOS:
    - 3-4 dias de retrabalho
    - Perda de testabilidade
-   - Perda de separação de responsabilidades
-   - Redução de 29 APIs ? 10-15 APIs entregues
+   - Perda de separaï¿½ï¿½o de responsabilidades
+   - Reduï¿½ï¿½o de 29 APIs ? 10-15 APIs entregues
 
-RECOMENDAÇÃO:
+RECOMENDAï¿½ï¿½O:
 ? Manter arquitetura atual (Clean + MVC)
 ? Focar em entregar as 29 APIs planejadas
-? Dockerização já está pronta
+? Dockerizaï¿½ï¿½o jï¿½ estï¿½ pronta
 
-Se houver dúvidas, posso apresentar a estrutura atual
-e mostrar como ela JÁ segue os princípios do MVC.
+Se houver dï¿½vidas, posso apresentar a estrutura atual
+e mostrar como ela Jï¿½ segue os princï¿½pios do MVC.
 
 Att,
 [Seu Nome]"
@@ -199,7 +199,7 @@ Att,
 
 ---
 
-## ?? OPÇÃO 2: MIGRAÇÃO PARA MVC PURO (NÃO RECOMENDADO)
+## ?? OPï¿½ï¿½O 2: MIGRAï¿½ï¿½O PARA MVC PURO (Nï¿½O RECOMENDADO)
 
 **Se, mesmo assim, o gestor insistir, segue o plano:**
 
@@ -209,22 +209,22 @@ Att,
 src/PDPW.MVC/
 ??? Controllers/          ? Todos os controllers aqui
 ??? Models/              ? Entities + DTOs aqui
-??? Services/            ? Lógica de negócio aqui
+??? Services/            ? Lï¿½gica de negï¿½cio aqui
 ??? Repositories/        ? Acesso a dados aqui
 ??? Data/                ? DbContext aqui
-??? Views/               ? (Não usado, API retorna JSON)
+??? Views/               ? (Nï¿½o usado, API retorna JSON)
 ??? Program.cs
 ??? PDPW.MVC.csproj
 ```
 
-### Passos da Migração
+### Passos da Migraï¿½ï¿½o
 
 1. **Criar novo projeto MVC**
 ```bash
 dotnet new webapi -n PDPW.MVC
 ```
 
-2. **Mover código:**
+2. **Mover cï¿½digo:**
    - `PDPW.Domain/Entities` ? `PDPW.MVC/Models`
    - `PDPW.Application/DTOs` ? `PDPW.MVC/Models/DTOs`
    - `PDPW.Application/Services` ? `PDPW.MVC/Services`
@@ -233,91 +233,91 @@ dotnet new webapi -n PDPW.MVC
    - `PDPW.Infrastructure/Data` ? `PDPW.MVC/Data`
    - `PDPW.API/Controllers` ? `PDPW.MVC/Controllers`
 
-3. **Atualizar injeção de dependências**
+3. **Atualizar injeï¿½ï¿½o de dependï¿½ncias**
    - Consolidar tudo em `Program.cs`
 
 4. **Atualizar Dockerfile**
-   - Apontar para projeto único
+   - Apontar para projeto ï¿½nico
 
 5. **Testar tudo novamente**
 
 **Tempo estimado:** 3-4 dias  
 **Risco:** ALTO  
-**Benefício:** Nenhum aparente  
+**Benefï¿½cio:** Nenhum aparente  
 
 ---
 
-## ?? COMPARAÇÃO FINAL
+## ?? COMPARAï¿½ï¿½O FINAL
 
-| Critério | Manter Clean | Migrar MVC Puro |
+| Critï¿½rio | Manter Clean | Migrar MVC Puro |
 |----------|-------------|-----------------|
-| **Dockerização** | ? Pronta | ? Precisará ajustar |
-| **Tempo de implementação** | 0 dias | 3-4 dias |
+| **Dockerizaï¿½ï¿½o** | ? Pronta | ? Precisarï¿½ ajustar |
+| **Tempo de implementaï¿½ï¿½o** | 0 dias | 3-4 dias |
 | **Risco** | BAIXO | ALTO |
 | **APIs entregues (6 dias)** | 27-29 APIs | 10-15 APIs |
-| **Testabilidade** | ? ALTA | ?? MÉDIA |
-| **Manutenibilidade** | ? ALTA | ?? MÉDIA |
-| **Padrão de mercado** | ? SIM | ?? Ultrapassado |
-| **Preparado para futuro** | ? SIM | ? NÃO |
-| **Custo-benefício** | ? EXCELENTE | ? RUIM |
+| **Testabilidade** | ? ALTA | ?? Mï¿½DIA |
+| **Manutenibilidade** | ? ALTA | ?? Mï¿½DIA |
+| **Padrï¿½o de mercado** | ? SIM | ?? Ultrapassado |
+| **Preparado para futuro** | ? SIM | ? Nï¿½O |
+| **Custo-benefï¿½cio** | ? EXCELENTE | ? RUIM |
 
 ---
 
-## ?? PROPOSTA DE COMUNICAÇÃO
+## ?? PROPOSTA DE COMUNICAï¿½ï¿½O
 
 ### Email para o Gestor
 
 ```
-Assunto: ? Dockerização Pronta + Esclarecimento sobre Arquitetura
+Assunto: ? Dockerizaï¿½ï¿½o Pronta + Esclarecimento sobre Arquitetura
 
 Caro [Nome],
 
-Seguem atualizações sobre suas solicitações:
+Seguem atualizaï¿½ï¿½es sobre suas solicitaï¿½ï¿½es:
 
-1. DOCKERIZAÇÃO ?
+1. DOCKERIZAï¿½ï¿½O ?
    Status: COMPLETA e funcionando
    
    Temos:
-   • docker-compose.yml configurado
-   • 3 serviços: Backend, Frontend, SQL Server
-   • Comandos prontos para demonstração
+   ï¿½ docker-compose.yml configurado
+   ï¿½ 3 serviï¿½os: Backend, Frontend, SQL Server
+   ï¿½ Comandos prontos para demonstraï¿½ï¿½o
    
    Para testar:
    $ docker-compose up --build
    
    Acesso:
-   • API: http://localhost:5000/swagger
-   • Frontend: http://localhost:3000
+   ï¿½ API: http://localhost:5000/swagger
+   ï¿½ Frontend: http://localhost:3000
 
 2. ARQUITETURA MVC
-   Status: JÁ IMPLEMENTADA (integrada à Clean Architecture)
+   Status: Jï¿½ IMPLEMENTADA (integrada ï¿½ Clean Architecture)
    
    Esclarecimento importante:
-   • Projeto atual usa MVC na camada de apresentação (Controllers)
-   • Clean Architecture organiza o código em camadas (boa prática)
-   • São conceitos COMPLEMENTARES, não excludentes
-   • Microsoft recomenda esta abordagem
+   ï¿½ Projeto atual usa MVC na camada de apresentaï¿½ï¿½o (Controllers)
+   ï¿½ Clean Architecture organiza o cï¿½digo em camadas (boa prï¿½tica)
+   ï¿½ Sï¿½o conceitos COMPLEMENTARES, nï¿½o excludentes
+   ï¿½ Microsoft recomenda esta abordagem
    
    Estrutura atual:
    ? Controllers (C do MVC)
    ? Models/DTOs (M do MVC)
    ? React Views (V do MVC)
-   ? + Clean Architecture (organização em camadas)
+   ? + Clean Architecture (organizaï¿½ï¿½o em camadas)
 
 3. IMPACTO DE MUDAR PARA MVC "PURO"
-   • Tempo: 3-4 dias de retrabalho
-   • Risco: Alto (refatoração completa)
-   • Entregas: Redução de 29 ? 10-15 APIs
-   • Benefício: Nenhum (já seguimos MVC)
+   ï¿½ Tempo: 3-4 dias de retrabalho
+   ï¿½ Risco: Alto (refatoraï¿½ï¿½o completa)
+   ï¿½ Entregas: Reduï¿½ï¿½o de 29 ? 10-15 APIs
+   ï¿½ Benefï¿½cio: Nenhum (jï¿½ seguimos MVC)
 
-RECOMENDAÇÃO:
-? Manter arquitetura atual (já dockerizada + MVC)
+RECOMENDAï¿½ï¿½O:
+? Manter arquitetura atual (jï¿½ dockerizada + MVC)
 ? Focar em entregar 29 APIs conforme planejado
 
-Estou disponível para:
-• Apresentar a estrutura atual
-• Mostrar como já seguimos MVC
-• Demonstrar dockerização funcionando
+Estou disponï¿½vel para:
+ï¿½ Apresentar a estrutura atual
+ï¿½ Mostrar como jï¿½ seguimos MVC
+ï¿½ Demonstrar dockerizaï¿½ï¿½o funcionando
 
 Aguardo seu retorno.
 
@@ -333,32 +333,32 @@ Att,
 
 ```
 ???????????????????????????????????????????????
-? CAMADA DE APRESENTAÇÃO (MVC)                ?
+? CAMADA DE APRESENTAï¿½ï¿½O (MVC)                ?
 ? ??????????????????????????????????????????  ?
 ? ? PDPW.API                               ?  ?
-? ? • Controllers (C)  ? Endpoints REST    ?  ?
-? ? • Startup/Config                       ?  ?
-? ? • Swagger                              ?  ?
+? ? ï¿½ Controllers (C)  ? Endpoints REST    ?  ?
+? ? ï¿½ Startup/Config                       ?  ?
+? ? ï¿½ Swagger                              ?  ?
 ? ??????????????????????????????????????????  ?
 ???????????????????????????????????????????????
               ? Usa
 ???????????????????????????????????????????????
-? CAMADA DE APLICAÇÃO                         ?
+? CAMADA DE APLICAï¿½ï¿½O                         ?
 ? ??????????????????????????????????????????  ?
 ? ? PDPW.Application                       ?  ?
-? ? • Services (Lógica de negócio)         ?  ?
-? ? • DTOs (M) ? Models de entrada/saída   ?  ?
-? ? • Interfaces                           ?  ?
+? ? ï¿½ Services (Lï¿½gica de negï¿½cio)         ?  ?
+? ? ï¿½ DTOs (M) ? Models de entrada/saï¿½da   ?  ?
+? ? ï¿½ Interfaces                           ?  ?
 ? ??????????????????????????????????????????  ?
 ???????????????????????????????????????????????
               ? Usa
 ???????????????????????????????????????????????
-? CAMADA DE DOMÍNIO                           ?
+? CAMADA DE DOMï¿½NIO                           ?
 ? ??????????????????????????????????????????  ?
 ? ? PDPW.Domain                            ?  ?
-? ? • Entities (M) ? Models de domínio     ?  ?
-? ? • Interfaces de repositório            ?  ?
-? ? • Regras de negócio core               ?  ?
+? ? ï¿½ Entities (M) ? Models de domï¿½nio     ?  ?
+? ? ï¿½ Interfaces de repositï¿½rio            ?  ?
+? ? ï¿½ Regras de negï¿½cio core               ?  ?
 ? ??????????????????????????????????????????  ?
 ???????????????????????????????????????????????
               ? Implementado por
@@ -366,31 +366,31 @@ Att,
 ? CAMADA DE INFRAESTRUTURA                    ?
 ? ??????????????????????????????????????????  ?
 ? ? PDPW.Infrastructure                    ?  ?
-? ? • Repositories (Acesso a dados)        ?  ?
-? ? • DbContext (EF Core)                  ?  ?
-? ? • Migrations                           ?  ?
+? ? ï¿½ Repositories (Acesso a dados)        ?  ?
+? ? ï¿½ DbContext (EF Core)                  ?  ?
+? ? ï¿½ Migrations                           ?  ?
 ? ??????????????????????????????????????????  ?
 ???????????????????????????????????????????????
 
 Frontend React (V do MVC) ? Consome API REST
 ```
 
-### MVC "Puro" (Não Recomendado)
+### MVC "Puro" (Nï¿½o Recomendado)
 
 ```
 ???????????????????????????????????????????????
-? PDPW.MVC (Projeto Único)                    ?
+? PDPW.MVC (Projeto ï¿½nico)                    ?
 ?                                             ?
 ? ??????????????????????????????????????????  ?
 ? ? Controllers/ (C)                       ?  ?
 ? ? Models/ (M) ? Tudo misturado           ?  ?
-? ? Services/ ? Lógica misturada           ?  ?
+? ? Services/ ? Lï¿½gica misturada           ?  ?
 ? ? Repositories/ ? Acesso misturado       ?  ?
 ? ? Data/ ? DbContext misturado            ?  ?
 ? ??????????????????????????????????????????  ?
 ?                                             ?
-? ? Difícil de testar                        ?
-? ? Difícil de manter                        ?
+? ? Difï¿½cil de testar                        ?
+? ? Difï¿½cil de manter                        ?
 ? ? Acoplado ao framework                    ?
 ???????????????????????????????????????????????
 
@@ -399,61 +399,61 @@ Frontend React (V) ? Consome API REST
 
 ---
 
-## ? DECISÃO RECOMENDADA
+## ? DECISï¿½O RECOMENDADA
 
 ### ? MANTER CLEAN ARCHITECTURE + MVC
 
-**Razões:**
-1. ? Dockerização já completa
-2. ? Projeto já segue MVC (na apresentação)
-3. ? Clean Architecture é boa prática
+**Razï¿½es:**
+1. ? Dockerizaï¿½ï¿½o jï¿½ completa
+2. ? Projeto jï¿½ segue MVC (na apresentaï¿½ï¿½o)
+3. ? Clean Architecture ï¿½ boa prï¿½tica
 4. ? Maximiza entregas (29 APIs)
 5. ? Minimiza riscos
 6. ? Preparado para o futuro
 
-**Próximos Passos:**
+**Prï¿½ximos Passos:**
 1. Apresentar estrutura atual ao gestor
-2. Demonstrar dockerização funcionando
-3. Mostrar como já seguimos MVC
+2. Demonstrar dockerizaï¿½ï¿½o funcionando
+3. Mostrar como jï¿½ seguimos MVC
 4. Continuar desenvolvimento das 29 APIs
 
 ---
 
-## ?? AÇÕES IMEDIATAS
+## ?? Aï¿½ï¿½ES IMEDIATAS
 
-### Para Você (Tech Lead)
+### Para Vocï¿½ (Tech Lead)
 
 1. **Revisar este documento**
-   - [ ] Validar argumentos técnicos
-   - [ ] Ajustar comunicação se necessário
+   - [ ] Validar argumentos tï¿½cnicos
+   - [ ] Ajustar comunicaï¿½ï¿½o se necessï¿½rio
 
-2. **Agendar reunião com gestor**
-   - [ ] Mostrar dockerização funcionando
+2. **Agendar reuniï¿½o com gestor**
+   - [ ] Mostrar dockerizaï¿½ï¿½o funcionando
    - [ ] Explicar Clean + MVC
-   - [ ] Demonstrar benefícios
+   - [ ] Demonstrar benefï¿½cios
 
-3. **Preparar demonstração**
+3. **Preparar demonstraï¿½ï¿½o**
    - [ ] Rodar `docker-compose up`
    - [ ] Mostrar Swagger
    - [ ] Mostrar estrutura de pastas
 
-4. **Documentar decisão**
+4. **Documentar decisï¿½o**
    - [ ] ADR (Architecture Decision Record)
    - [ ] Atualizar README
 
 ### Para o Gestor
 
 **Perguntas para esclarecer:**
-- Qual a preocupação específica com Clean Architecture?
+- Qual a preocupaï¿½ï¿½o especï¿½fica com Clean Architecture?
 - Houve algum problema relatado?
-- Alguém sugeriu MVC puro? Por quê?
-- Podemos agendar 30 min para demonstração?
+- Alguï¿½m sugeriu MVC puro? Por quï¿½?
+- Podemos agendar 30 min para demonstraï¿½ï¿½o?
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ?? AGUARDANDO DECISÃO DO GESTOR
+**Versï¿½o:** 1.0  
+**Status:** ?? AGUARDANDO DECISï¿½O DO GESTOR
 
-**RECOMENDAÇÃO: MANTER CLEAN ARCHITECTURE + ESCLARECER QUE JÁ SEGUE MVC** ?
+**RECOMENDAï¿½ï¿½O: MANTER CLEAN ARCHITECTURE + ESCLARECER QUE Jï¿½ SEGUE MVC** ?

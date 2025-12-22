@@ -1,27 +1,27 @@
-# ?? GUIA DOCKER - APRESENTAÇÃO DAILY
+ï»¿# ?? GUIA DOCKER - APRESENTAï¿½ï¿½O DAILY
 
 **Data:** 19/12/2024  
-**Objetivo:** Rodar API PDPW via Docker para demonstração  
+**Objetivo:** Rodar API PDPW via Docker para demonstraï¿½ï¿½o  
 **Tempo:** 5-10 minutos
 
 ---
 
-## ?? RESUMO RÁPIDO
+## ?? RESUMO Rï¿½PIDO
 
 ```bash
-# 1. Subir aplicação
+# 1. Subir aplicaï¿½ï¿½o
 .\docker-start.ps1
 
 # 2. Abrir Swagger
 http://localhost:5000/swagger
 
-# 3. Parar aplicação
+# 3. Parar aplicaï¿½ï¿½o
 .\docker-stop.ps1
 ```
 
 ---
 
-## ?? PRÉ-REQUISITOS
+## ?? PRï¿½-REQUISITOS
 
 ### 1. Docker Desktop Instalado
 - [ ] Docker Desktop instalado
@@ -30,7 +30,7 @@ http://localhost:5000/swagger
 
 **Download:** https://www.docker.com/products/docker-desktop
 
-### 2. Portas Disponíveis
+### 2. Portas Disponï¿½veis
 - [ ] Porta **5000** livre (API)
 - [ ] Porta **1433** livre (SQL Server)
 
@@ -40,8 +40,8 @@ netstat -ano | findstr :5000
 netstat -ano | findstr :1433
 ```
 
-### 3. Recursos Mínimos
-- RAM: 4 GB disponível
+### 3. Recursos Mï¿½nimos
+- RAM: 4 GB disponï¿½vel
 - Disco: 10 GB livres
 - CPU: 2 cores
 
@@ -52,7 +52,7 @@ netstat -ano | findstr :1433
 ### PASSO 1: Verificar Docker
 
 ```powershell
-# Verificar se Docker está rodando
+# Verificar se Docker estï¿½ rodando
 docker --version
 docker info
 
@@ -67,7 +67,7 @@ docker info
 cd C:\temp\_ONS_PoC-PDPW
 ```
 
-### PASSO 3: Subir aplicação
+### PASSO 3: Subir aplicaï¿½ï¿½o
 
 ```powershell
 .\docker-start.ps1
@@ -76,7 +76,7 @@ cd C:\temp\_ONS_PoC-PDPW
 **O que o script faz:**
 1. ? Verifica Docker
 2. ? Limpa containers antigos
-3. ? Build da aplicação
+3. ? Build da aplicaï¿½ï¿½o
 4. ? Sobe SQL Server
 5. ? Aguarda SQL inicializar
 6. ? Sobe API
@@ -85,7 +85,7 @@ cd C:\temp\_ONS_PoC-PDPW
 
 **Tempo:** ~3-5 minutos (primeira vez)
 
-### PASSO 4: Aguardar inicialização
+### PASSO 4: Aguardar inicializaï¿½ï¿½o
 
 ```
 ? SQL Server: 15-20 segundos
@@ -102,14 +102,14 @@ Total: ~40-45 segundos
 http://localhost:5000/swagger
 ```
 
-**Você deve ver:**
+**Vocï¿½ deve ver:**
 - ? Swagger UI carregado
 - ? Endpoints da API Usina
-- ? "Try it out" disponível
+- ? "Try it out" disponï¿½vel
 
 ---
 
-## ?? TESTES RÁPIDOS
+## ?? TESTES Rï¿½PIDOS
 
 ### Teste 1: Health Check
 ```
@@ -134,7 +134,7 @@ http://localhost:5000/api/usinas
   {
     "id": 1,
     "codigo": "UHE-ITAIPU",
-    "nome": "Usina Hidrelétrica de Itaipu",
+    "nome": "Usina Hidrelï¿½trica de Itaipu",
     ...
   }
 ]
@@ -151,14 +151,14 @@ http://localhost:5000/api/usinas
 
 ## ?? ROTEIRO PARA DAILY
 
-### Preparação (5 min antes)
+### Preparaï¿½ï¿½o (5 min antes)
 ```powershell
-# 1. Subir aplicação
+# 1. Subir aplicaï¿½ï¿½o
 cd C:\temp\_ONS_PoC-PDPW
 .\docker-start.ps1
 
 # 2. Aguardar logs
-# "? APLICAÇÃO RODANDO COM SUCESSO!"
+# "? APLICAï¿½ï¿½O RODANDO COM SUCESSO!"
 
 # 3. Testar Swagger
 start http://localhost:5000/swagger
@@ -173,7 +173,7 @@ start http://localhost:5000/swagger
 
 1. **Mostrar Swagger UI**
    ```
-   "Aqui está o Swagger com a documentação automática"
+   "Aqui estï¿½ o Swagger com a documentaï¿½ï¿½o automï¿½tica"
    ```
 
 2. **Testar GET lista**
@@ -188,7 +188,7 @@ start http://localhost:5000/swagger
    "Temos dados reais do SIN:
    - Itaipu (14.000 MW)
    - Belo Monte (11.233 MW)
-   - Tucuruí (8.370 MW)"
+   - Tucuruï¿½ (8.370 MW)"
    ```
 
 4. **Mostrar CRUD**
@@ -200,9 +200,9 @@ start http://localhost:5000/swagger
    - DELETE remover"
    ```
 
-### Após Daily
+### Apï¿½s Daily
 ```powershell
-# Parar aplicação (se necessário)
+# Parar aplicaï¿½ï¿½o (se necessï¿½rio)
 .\docker-stop.ps1
 
 # Ou manter rodando para mais testes
@@ -212,18 +212,18 @@ start http://localhost:5000/swagger
 
 ## ?? TROUBLESHOOTING
 
-### Problema: "Docker não está rodando"
+### Problema: "Docker nï¿½o estï¿½ rodando"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 1. Abrir Docker Desktop
 2. Aguardar inicializar completamente
 3. Tentar novamente
 
 ### Problema: "Port 5000 already in use"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
-# Ver o que está usando a porta
+# Ver o que estï¿½ usando a porta
 netstat -ano | findstr :5000
 
 # Matar processo (substitua PID)
@@ -235,7 +235,7 @@ taskkill /F /PID <PID>
 
 ### Problema: "Port 1433 already in use"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Parar SQL Server local
 Stop-Service MSSQLSERVER
@@ -246,7 +246,7 @@ Stop-Service MSSQLSERVER
 
 ### Problema: Build falhou
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Limpar tudo
 docker-compose down -v
@@ -256,9 +256,9 @@ docker system prune -a
 .\docker-start.ps1
 ```
 
-### Problema: Swagger não abre
+### Problema: Swagger nï¿½o abre
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Ver logs da API
 docker-compose logs -f api
@@ -271,9 +271,9 @@ docker ps
 # pdpw-sqlserver    Up
 ```
 
-### Problema: Dados não aparecem
+### Problema: Dados nï¿½o aparecem
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Entrar no container
 docker exec -it pdpw-api bash
@@ -289,7 +289,7 @@ docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd \
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
 ### Gerenciar Containers
 
@@ -326,7 +326,7 @@ docker exec -it pdpw-sqlserver bash
 docker exec pdpw-api dotnet --version
 ```
 
-### Verificar Saúde
+### Verificar Saï¿½de
 
 ```powershell
 # Health check da API
@@ -384,13 +384,13 @@ Server=localhost,1433;Database=PDPW_DB_Dev;User Id=sa;Password=Pdpw@2024!Strong;
 
 ---
 
-## ?? CHECKLIST PRÉ-DAILY
+## ?? CHECKLIST PRï¿½-DAILY
 
 ### 30 min antes
 - [ ] Docker Desktop rodando
 - [ ] Portas 5000 e 1433 livres
 - [ ] Executar `.\docker-start.ps1`
-- [ ] Aguardar "? APLICAÇÃO RODANDO"
+- [ ] Aguardar "? APLICAï¿½ï¿½O RODANDO"
 
 ### 10 min antes
 - [ ] Abrir Swagger: http://localhost:5000/swagger
@@ -403,9 +403,9 @@ Server=localhost,1433;Database=PDPW_DB_Dev;User Id=sa;Password=Pdpw@2024!Strong;
 - [ ] Mostrar Swagger UI
 - [ ] Executar GET /api/usinas
 - [ ] Destacar dados reais
-- [ ] Mostrar 8 endpoints disponíveis
+- [ ] Mostrar 8 endpoints disponï¿½veis
 
-### Após Daily
+### Apï¿½s Daily
 - [ ] Manter rodando (se mais demos)
 - [ ] Ou parar: `.\docker-stop.ps1`
 
@@ -414,22 +414,22 @@ Server=localhost,1433;Database=PDPW_DB_Dev;User Id=sa;Password=Pdpw@2024!Strong;
 ## ?? VANTAGENS DO DOCKER
 
 ### Para a Daily
-? **Isolado** - Não interfere com ambiente local  
-? **Reproduzível** - Funciona igual em qualquer máquina  
-? **Rápido** - Sobe em ~1 minuto  
+? **Isolado** - Nï¿½o interfere com ambiente local  
+? **Reproduzï¿½vel** - Funciona igual em qualquer mï¿½quina  
+? **Rï¿½pido** - Sobe em ~1 minuto  
 ? **Limpo** - Remove tudo com 1 comando  
 
 ### Para Desenvolvimento
 ? **Consistente** - Mesmo ambiente para todos  
-? **Portável** - Leva para qualquer lugar  
-? **Escalável** - Fácil adicionar serviços  
-? **Profissional** - Padrão da indústria  
+? **Portï¿½vel** - Leva para qualquer lugar  
+? **Escalï¿½vel** - Fï¿½cil adicionar serviï¿½os  
+? **Profissional** - Padrï¿½o da indï¿½stria  
 
 ---
 
-## ?? MÉTRICAS DE PERFORMANCE
+## ?? Mï¿½TRICAS DE PERFORMANCE
 
-### Primeira execução
+### Primeira execuï¿½ï¿½o
 ```
 Build:        2-3 minutos
 SQL Server:   15-20 segundos
@@ -438,7 +438,7 @@ Migrations:   5-10 segundos
 Total:        ~3-4 minutos
 ```
 
-### Execuções seguintes
+### Execuï¿½ï¿½es seguintes
 ```
 SQL Server:   15-20 segundos
 API:          10-15 segundos
@@ -469,14 +469,14 @@ CPU:          <10%
    docker system prune -a
    ```
 
-3. **Recomeçar:**
+3. **Recomeï¿½ar:**
    ```powershell
    .\docker-start.ps1
    ```
 
 ---
 
-## ? VERIFICAÇÃO FINAL
+## ? VERIFICAï¿½ï¿½O FINAL
 
 Antes da daily, confirme:
 
@@ -489,7 +489,7 @@ docker ps
 curl http://localhost:5000/health
 # Deve retornar: {"status":"Healthy"}
 
-# 3. Swagger acessível
+# 3. Swagger acessï¿½vel
 start http://localhost:5000/swagger
 # Deve abrir navegador com Swagger UI
 
@@ -502,7 +502,7 @@ curl http://localhost:5000/api/usinas
 
 ---
 
-## ?? COMANDOS DE EMERGÊNCIA
+## ?? COMANDOS DE EMERGï¿½NCIA
 
 ```powershell
 # Parar tudo IMEDIATAMENTE
@@ -512,7 +512,7 @@ docker-compose down
 docker-compose down -v
 docker system prune -a -f
 
-# Restart forçado
+# Restart forï¿½ado
 docker-compose restart --force-recreate
 
 # Logs em tempo real
@@ -523,7 +523,7 @@ docker-compose logs -f --tail=100
 
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? PRONTO PARA USO
 
 **BOA SORTE NA DAILY COM DOCKER! ????**

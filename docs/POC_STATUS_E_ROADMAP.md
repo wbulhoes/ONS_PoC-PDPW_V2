@@ -4,14 +4,14 @@
 
 **Data:** 22/12/2025  
 **Prazo Final:** 29/12/2025 (7 dias restantes)  
-**Responsável:** Willian Bulhões  
-**Status Geral:** 🟢 **85% CONCLUÍDO**
+**Respons�vel:** Willian Bulhões  
+**Status Geral:** 🟢 **85% CONCLU�DO**
 
 ---
 
-## 📋 SUMÁRIO EXECUTIVO
+## 📋 SUM�RIO EXECUTIVO
 
-Este documento apresenta o status atual da Prova de Conceito (POC) para migração do sistema PDPW (Programação Diária de Produção) do stack legado (.NET Framework/VB.NET) para a stack moderna (.NET 8/C#).
+Este documento apresenta o status atual da Prova de Conceito (POC) para migra��o do sistema PDPW (Programa��o Di�ria de Produ��o) do stack legado (.NET Framework/VB.NET) para a stack moderna (.NET 8/C#).
 
 ### **Principais Conquistas:**
 - ✅ Arquitetura Clean Architecture implementada
@@ -21,17 +21,16 @@ Este documento apresenta o status atual da Prova de Conceito (POC) para migraç�
 - ✅ Swagger documentado
 - ✅ Build pipeline funcional
 
-### **Próximos Passos:**
-- 🔄 Frontend React (início previsto)
+### **Pr�ximos Passos:**
+- 🔄 Frontend React (in�cio previsto)
 - 🔄 Testes automatizados
-- 🔄 CI/CD pipeline
-- 🔄 Documentação técnica final
+- 🔄 Documenta��o t�cnica final
 
 ---
 
-## 🏗️ ARQUITETURA DA SOLUÇÃO
+## 🏗️ ARQUITETURA DA SOLU��o
 
-### **Stack Tecnológico**
+### **Stack Tecnol�gico**
 
 | Camada | Tecnologia | Status |
 |--------|-----------|--------|
@@ -41,7 +40,6 @@ Este documento apresenta o status atual da Prova de Conceito (POC) para migraç�
 | **ORM** | Entity Framework Core 8 | ✅ 100% |
 | **API Docs** | Swagger/OpenAPI | ✅ 100% |
 | **Testes** | xUnit + Moq | 🚧 10% |
-| **CI/CD** | GitHub Actions | 🚧 0% |
 
 ### **Estrutura do Projeto**
 
@@ -53,20 +51,20 @@ PDPW_V2/
 │   ├── PDPW.Domain/           # Entities, Value Objects
 │   └── PDPW.Infrastructure/   # Repositories, DbContext, Migrations
 ├── tests/
-│   ├── PDPW.UnitTests/        # Testes unitários (em desenvolvimento)
-│   └── PDPW.IntegrationTests/ # Testes de integração (em desenvolvimento)
-├── docs/                      # Documentação técnica
+│   ├── PDPW.UnitTests/        # Testes unit�rios (em desenvolvimento)
+│   └── PDPW.IntegrationTests/ # Testes de integra��o (em desenvolvimento)
+├── docs/                      # Documenta��o t�cnica
 └── scripts/                   # Scripts SQL e PowerShell
 ```
 
-### **Princípios Arquiteturais Aplicados**
+### **Princ�pios Arquiteturais Aplicados**
 
-✅ **Clean Architecture** - Separação clara de responsabilidades  
-✅ **SOLID Principles** - Código modular e testável  
-✅ **Repository Pattern** - Abstração de acesso a dados  
-✅ **Dependency Injection** - Inversão de controle  
-✅ **DTOs** - Separação de modelos de domínio e API  
-✅ **AutoMapper** - Mapeamento automático de objetos  
+✅ **Clean Architecture** - Separa��o clara de responsabilidades  
+✅ **SOLID Principles** - C�digo modular e test�vel  
+✅ **Repository Pattern** - Abstra��o de acesso a dados  
+✅ **Dependency Injection** - Invers�o de controle  
+✅ **DTOs** - Separa��o de modelos de dom�nio e API  
+✅ **AutoMapper** - Mapeamento autom�tico de objetos  
 
 ---
 
@@ -74,63 +72,63 @@ PDPW_V2/
 
 ### **APIs Implementadas (15 APIs)**
 
-#### **🟢 APIs Iniciais (10 APIs) - 100% Concluídas**
+#### **🟢 APIs Iniciais (10 APIs) - 100% Conclu�das**
 
 | # | API | Endpoints | Status | Funcionalidades |
 |---|-----|-----------|--------|-----------------|
 | 1 | **Usinas** | 8 | ✅ | CRUD completo, filtros por tipo/empresa |
 | 2 | **Empresas** | 6 | ✅ | CRUD completo, filtro por CNPJ |
 | 3 | **TiposUsina** | 6 | ✅ | CRUD completo, contagem de usinas |
-| 4 | **SemanasPMO** | 7 | ✅ | CRUD completo, filtro por ano/número |
+| 4 | **SemanasPMO** | 7 | ✅ | CRUD completo, filtro por ano/n�mero |
 | 5 | **EquipesPDP** | 6 | ✅ | CRUD completo, contagem de membros |
 | 6 | **Cargas** | 7 | ✅ | CRUD completo, filtro por subsistema/data |
 | 7 | **ArquivosDadger** | 8 | ✅ | CRUD completo, processamento de arquivos |
 | 8 | **RestricoesUG** | 7 | ✅ | CRUD completo, filtro por UG/motivo |
 | 9 | **DadosEnergeticos** | 6 | ✅ | CRUD completo, filtro por data/usina |
-| 10 | **Usuarios** | 6 | ✅ | CRUD completo, gestão de perfis |
+| 10 | **Usuarios** | 6 | ✅ | CRUD completo, gest�o de perfis |
 
 **Total: 67 endpoints REST**
 
 ---
 
-#### **🟢 APIs Novas (5 APIs) - 100% Concluídas ⭐**
+#### **🟢 APIs Novas (5 APIs) - 100% Conclu�das ⭐**
 
 | # | API | Endpoints | Status | Funcionalidades |
 |---|-----|-----------|--------|-----------------|
 | 11 | **UnidadesGeradoras** | 8 | ✅ | CRUD, filtro por usina, potência, status |
-| 12 | **ParadasUG** | 9 | ✅ | CRUD, programadas/emergenciais, período |
-| 13 | **MotivosRestricao** | 6 | ✅ | CRUD, categorias, validação de uso |
-| 14 | **Balancos** | 8 | ✅ | CRUD, subsistema, cálculo automático |
-| 15 | **Intercambios** | 9 | ✅ | CRUD, origem/destino, período |
+| 12 | **ParadasUG** | 9 | ✅ | CRUD, programadas/emergenciais, per�odo |
+| 13 | **MotivosRestricao** | 6 | ✅ | CRUD, categorias, valida��o de uso |
+| 14 | **Balancos** | 8 | ✅ | CRUD, subsistema, c�lculo autom�tico |
+| 15 | **Intercambios** | 9 | ✅ | CRUD, origem/destino, per�odo |
 
 **Total: 40 novos endpoints REST ⭐**
 
 ---
 
-### **📈 Estatísticas Gerais do Backend**
+### **📈 Estat�sticas Gerais do Backend**
 
-| Métrica | Valor |
+| M�trica | Valor |
 |---------|-------|
 | **Total de APIs** | 15 |
 | **Total de Endpoints** | 107 |
-| **Entidades de Domínio** | 31 |
+| **Entidades de Dom�nio** | 31 |
 | **DTOs Criados** | ~45 |
 | **Services** | 15 |
 | **Repositories** | 15 |
 | **Migrations** | 3 |
-| **Linhas de Código** | ~8.500 |
+| **Linhas de C�digo** | ~8.500 |
 
 ---
 
 ## 🗄️ BANCO DE DADOS
 
-### **Configuração Atual**
+### **Configura��o Atual**
 
 ```yaml
 Servidor:         .\SQLEXPRESS
 Banco:            PDPW_DB
-Autenticação:     SQL Server (sa / Pdpw@2024!Strong)
-Versão:           SQL Server 2019 Express
+Autentica��o:     SQL Server (sa / Pdpw@2024!Strong)
+Vers�o:           SQL Server 2019 Express
 Persistência:     ✅ Habilitada
 Migrations:       ✅ Aplicadas (3 migrations)
 Tabelas:          31 tabelas criadas
@@ -144,19 +142,19 @@ Tabelas:          31 tabelas criadas
 - 5 Tipos de Usina
 - 5 Equipes PDP
 
-#### **Via Seeder Automático (Dados Realistas):**
-- ✅ 30 Empresas do setor elétrico brasileiro
-- ✅ 50 Usinas (Itaipu, Belo Monte, Tucuruí, etc.)
+#### **Via Seeder Autom�tico (Dados Realistas):**
+- ✅ 30 Empresas do setor el�trico brasileiro
+- ✅ 50 Usinas (Itaipu, Belo Monte, Tucuru�, etc.)
 - ✅ 100 Unidades Geradoras
-- ✅ 10 Motivos de Restrição
+- ✅ 10 Motivos de Restri��o
 - ✅ 50 Paradas UG
-- ✅ 120 Balanços Energéticos
+- ✅ 120 Balan�os Energ�ticos
 - ✅ 240 Intercâmbios
 - ✅ 25 Semanas PMO
 - ✅ 11 Equipes PDP
 - ✅ 8 Tipos de Usina
 
-**Total: ~550 registros realistas baseados no setor elétrico brasileiro**
+**Total: ~550 registros realistas baseados no setor el�trico brasileiro**
 
 ### **Tabelas Principais**
 
@@ -171,16 +169,16 @@ Tabelas:          31 tabelas criadas
 
 ---
 
-## 📝 DOCUMENTAÇÃO TÉCNICA CRIADA
+## 📝 DOCUMENTA��o T�CNICA CRIADA
 
-| Documento | Localização | Status |
+| Documento | Localiza��o | Status |
 |-----------|-------------|--------|
 | **README Principal** | `/README.md` | ✅ Atualizado |
 | **Setup de Banco de Dados** | `/docs/SQL_SERVER_SETUP_SUMMARY.md` | ✅ Completo |
-| **Configuração Final** | `/docs/SQL_SERVER_FINAL_SETUP.md` | ✅ Completo |
-| **Guia de Configuração** | `/docs/DATABASE_CONFIG.md` | ✅ Completo |
+| **Configura��o Final** | `/docs/SQL_SERVER_FINAL_SETUP.md` | ✅ Completo |
+| **Guia de Configura��o** | `/docs/DATABASE_CONFIG.md` | ✅ Completo |
 | **Schema do Banco** | `/docs/database_schema.sql` | ✅ Completo |
-| **Instruções GitHub Copilot** | `/.github/copilot-instructions.md` | ✅ Completo |
+| **Instru�ões GitHub Copilot** | `/.github/copilot-instructions.md` | ✅ Completo |
 | **Quadro de Resumo** | `/docs/QUADRO_RESUMO_POC.md` | ✅ Completo |
 | **Guia de Setup para QA** | `/docs/SETUP_GUIDE_QA.md` | ✅ Completo |
 
@@ -192,25 +190,25 @@ Tabelas:          31 tabelas criadas
 
 | Tipo de Teste | Cobertura | Status |
 |---------------|-----------|--------|
-| **Testes Unitários** | ~10% | 🟡 Em desenvolvimento |
-| **Testes de Integração** | 0% | 🔴 Pendente |
+| **Testes Unit�rios** | ~10% | 🟡 Em desenvolvimento |
+| **Testes de Integra��o** | 0% | 🔴 Pendente |
 | **Testes E2E** | 0% | 🔴 Pendente |
 | **Testes de Performance** | 0% | 🔴 Pendente |
 
-### **Validações Implementadas**
+### **Valida�ões Implementadas**
 
 ✅ Data Annotations nos DTOs  
 ✅ FluentValidation (preparado)  
 ✅ Exception Handling global  
 ✅ Logging estruturado (ILogger)  
 ✅ Soft Delete em todas as entidades  
-✅ Validações de negócio nos Services  
+✅ Valida�ões de neg�cio nos Services  
 
 ---
 
 ## 🚀 COMO EXECUTAR A POC
 
-### **Pré-requisitos**
+### **Pr�-requisitos**
 
 ```yaml
 - .NET 8 SDK
@@ -220,10 +218,10 @@ Tabelas:          31 tabelas criadas
 - Node.js 18+ (para o frontend, quando implementado)
 ```
 
-### **Setup Rápido**
+### **Setup R�pido**
 
 ```powershell
-# 1. Clonar repositório
+# 1. Clonar reposit�rio
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW_V2.git
 cd ONS_PoC-PDPW_V2
 
@@ -233,7 +231,7 @@ dotnet restore
 # 3. Aplicar migrations
 dotnet ef database update --project src/PDPW.Infrastructure --startup-project src/PDPW.API
 
-# 4. Executar aplicação
+# 4. Executar aplica��o
 dotnet run --project src/PDPW.API/PDPW.API.csproj
 
 # 5. Acessar Swagger
@@ -246,13 +244,13 @@ dotnet run --project src/PDPW.API/PDPW.API.csproj
 SQL Server:
   Servidor: .\SQLEXPRESS
   Banco: PDPW_DB
-  Usuário: sa
+  Usu�rio: sa
   Senha: Pdpw@2024!Strong
 
 Swagger:
   URL: https://localhost:5001/swagger
   
-Repositórios Git:
+Reposit�rios Git:
   Origin: https://github.com/wbulhoes/ONS_PoC-PDPW_V2
   Meu Fork: https://github.com/wbulhoes/POCMigracaoPDPw
   Squad: https://github.com/RafaelSuzanoACT/POCMigracaoPDPw
@@ -260,84 +258,35 @@ Repositórios Git:
 
 ---
 
-## 📊 CRONOGRAMA VISUAL
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│ DIA 22/12 (SEG) │ Testes Backend + Validação APIs              │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 23/12 (TER) │ Frontend React - Setup + 3 telas             │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 26/12 (SEX) │ Frontend React - CRUD + Dashboard            │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 27/12 (SAB) │ Integração + Testes E2E                      │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 29/12 (SEG) │ Documentação Final + Apresentação            │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 30/12 (TER) │ Revisão Final + Entrega                      │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-└─────────────────────────────────────────────────────────────────┘
+## 🚧 RISCOS E MITIGA�ÕES
 
-Total: 56 horas de trabalho
-```
-
----
-
-## 🎯 PRIORIDADES POR DIA
-
-### **Prioridade ALTA (Deve ser feito)**
-- ✅ Testes unitários básicos (23/12)
-- ✅ Frontend com 3 telas funcionais (24-25/12)
-- ✅ Integração Backend ↔ Frontend (26/12)
-- ✅ Documentação completa (28/12)
-- ✅ Apresentação final (29/12)
-
-### **Prioridade MÉDIA (Deveria ser feito)**
-- 🟡 CI/CD básico (27/12)
-- 🟡 Testes E2E básicos (26/12)
-- 🟡 Manual do usuário (28/12)
-
-### **Prioridade BAIXA (Pode ser feito se sobrar tempo)**
-- 🔵 Docker
-- 🔵 Deploy em nuvem
-- 🔵 Testes de performance
-- 🔵 Internacionalização
-
----
-
-## 🚧 RISCOS E MITIGAÇÕES
-
-| Risco | Probabilidade | Impacto | Mitigação |
+| Risco | Probabilidade | Impacto | Mitiga��o |
 |-------|---------------|---------|-----------|
 | **Feriados (24-25/12)** | Alta | Alto | Trabalho remoto planejado |
-| **Complexidade Frontend** | Média | Médio | Templates prontos, foco em funcionalidade |
-| **Integração complexa** | Baixa | Médio | APIs bem documentadas, Swagger |
-| **Bugs de última hora** | Média | Alto | Testes contínuos, revisões diárias |
+| **Complexidade Frontend** | M�dia | M�dio | Templates prontos, foco em funcionalidade |
+| **Integra��o complexa** | Baixa | M�dio | APIs bem documentadas, Swagger |
+| **Bugs de �ltima hora** | M�dia | Alto | Testes cont�nuos, revisões di�rias |
 | **Escopo aumentar** | Baixa | Alto | Manter foco no MVP da POC |
 
 ---
 
-## 📌 DEFINIÇÃO DE PRONTO (Definition of Done)
+## 📌 DEFINI��o DE PRONTO (Definition of Done)
 
-Uma tarefa é considerada **PRONTA** quando:
+Uma tarefa � considerada **PRONTA** quando:
 
-- [ ] Código commitado e pushed para `feature/backend`
+- [ ] C�digo commitado e pushed para `feature/backend`
 - [ ] Build passando sem erros
-- [ ] Testes unitários implementados (quando aplicável)
-- [ ] Documentação atualizada (README ou docs específicos)
-- [ ] Code review realizado (self-review mínimo)
+- [ ] Testes unit�rios implementados (quando aplic�vel)
+- [ ] Documenta��o atualizada (README ou docs espec�ficos)
+- [ ] Code review realizado (self-review m�nimo)
 - [ ] Funcionalidade validada no Swagger (Backend) ou Browser (Frontend)
 
 ---
 
 ## 📞 PONTOS DE CONTATO
 
-### **Repositórios Git:**
+### **Reposit�rios Git:**
 - **Origin:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2
 - **Fork Pessoal:** https://github.com/wbulhoes/POCMigracaoPDPw
 - **Squad:** https://github.com/RafaelSuzanoACT/POCMigracaoPDPw
@@ -351,23 +300,23 @@ Uma tarefa é considerada **PRONTA** quando:
 
 ---
 
-## 📈 MÉTRICAS DE SUCESSO DA POC
+## 📈 M�TRICAS DE SUCESSO DA POC
 
-| Métrica | Meta | Atual | Status |
+| M�trica | Meta | Atual | Status |
 |---------|------|-------|--------|
 | **APIs Backend** | 15 | 15 | ✅ 100% |
 | **Endpoints REST** | 100+ | 107 | ✅ 107% |
 | **Cobertura de Testes** | 60% | 10% | 🟡 17% |
 | **Telas Frontend** | 5 | 0 | 🔴 0% |
-| **Integração Backend/Frontend** | 100% | 0% | 🔴 0% |
-| **Documentação** | 100% | 85% | 🟢 85% |
-| **CI/CD** | Básico | 0% | 🔴 0% |
+| **Integra��o Backend/Frontend** | 100% | 0% | 🔴 0% |
+| **Documenta��o** | 100% | 85% | 🟢 85% |
+| **CI/CD** | B�sico | 0% | 🔴 0% |
 
-**Status Geral: 🟢 85% concluído**
+**Status Geral: 🟢 85% conclu�do**
 
 ---
 
-## ✅ CHECKLIST FINAL PARA 29/12
+## ✅ CHECKLIST FINAL PARA 30/12
 
 ### **Backend (85% → 95%)**
 - [x] 15 APIs implementadas
@@ -375,87 +324,75 @@ Uma tarefa é considerada **PRONTA** quando:
 - [x] Banco de dados configurado
 - [x] Migrations aplicadas
 - [x] Dados realistas populados
-- [ ] Testes unitários (40%+ cobertura)
-- [ ] Testes de integração (básicos)
+- [ ] Testes unit�rios (40%+ cobertura)
+- [ ] Testes de integra��o (b�sicos)
 - [x] Swagger documentado
 
 ### **Frontend (0% → 80%)**
 - [ ] Setup do projeto React
 - [ ] 5 telas principais implementadas
-- [ ] Integração com Backend
-- [ ] Validações de formulários
-- [ ] Dashboard com gráficos
+- [ ] Integra��o com Backend
+- [ ] Valida�ões de formul�rios
+- [ ] Dashboard com gr�ficos
 - [ ] Filtros e pesquisa funcionando
 
-### **DevOps (0% → 60%)**
-- [ ] GitHub Actions configurado
-- [ ] Build automático
-- [ ] Testes automáticos
-- [ ] Deploy staging (opcional)
-
-### **Documentação (85% → 100%)**
+### **Documenta��o (85% → 100%)**
 - [x] README atualizado
-- [x] Documentação técnica completa
-- [ ] Manual do usuário
-- [ ] Vídeo demonstrativo
-- [ ] Apresentação PowerPoint
+- [x] Documenta��o t�cnica completa
+- [ ] Manual do usu�rio
+- [ ] V�deo demonstrativo
+- [ ] Apresenta��o PowerPoint
 
 ### **Entrega (0% → 100%)**
 - [ ] Tag de release (v1.0.0-poc)
-- [ ] Apresentação preparada
+- [ ] Apresenta��o preparada
 - [ ] Demo funcional
-- [ ] Repositórios sincronizados
+- [ ] Reposit�rios sincronizados
 
 ---
 
-## 🎓 LIÇÕES APRENDIDAS
+## 🎓 LI�ÕES APRENDIDAS
 
 ### **O que funcionou bem:**
-✅ Clean Architecture facilitou manutenção  
-✅ AutoMapper reduziu código boilerplate  
+✅ Clean Architecture facilitou manuten��o  
+✅ AutoMapper reduziu c�digo boilerplate  
 ✅ Swagger acelerou testes de API  
-✅ Seeder automático economizou tempo  
-✅ Git com 3 remotes facilitou colaboração  
+✅ Seeder autom�tico economizou tempo  
+✅ Git com 3 remotes facilitou colabora��o  
 
 ### **Desafios enfrentados:**
 ⚠️ Backup do cliente muito grande (350GB)  
 ⚠️ Conflitos de merge em alguns arquivos  
-⚠️ Configuração inicial de SQL Server Authentication  
+⚠️ Configura��o inicial de SQL Server Authentication  
 ⚠️ Tempo limitado para testes automatizados  
 
-### **Melhorias para próxima iteração:**
-💡 Implementar TDD desde o início  
+### **Melhorias para pr�xima itera��o:**
+💡 Implementar TDD desde o in�cio  
 💡 Configurar CI/CD no dia 1  
-💡 Usar Docker desde o início  
+💡 Usar Docker desde o in�cio  
 💡 Planejamento mais detalhado do Frontend  
 
 ---
 
-## 🚀 CONCLUSÃO
+## 🚀 CONCLUS�o
 
-A POC está **85% concluída** e no caminho certo para entrega no prazo (29/12/2024). O backend está sólido com 15 APIs funcionais e ~550 registros de dados realistas. 
+A POC est� **85% conclu�da** e no caminho certo para entrega no prazo (29/12/2024). O backend est� s�lido com 15 APIs funcionais e ~550 registros de dados realistas. 
 
-**Próximos 7 dias são críticos** para implementar:
-1. Frontend React (3 dias)
-2. Testes automatizados (1 dia)
-3. CI/CD (1 dia)
-4. Documentação final (2 dias)
-
-Com foco e execução disciplinada do roadmap, a POC será entregue com sucesso demonstrando a viabilidade técnica da migração para .NET 8/React.
+Com foco e execu��o disciplinada do roadmap, a POC ser� entregue com sucesso demonstrando a viabilidade t�cnica da migra��o para .NET 8/React.
 
 ---
 
-**📅 Última Atualização:** 22/12/2024 - 17:00  
-**👤 Responsável:** Wellington Bulhões  
-**📧 Contato:** [seu email]  
-**🔗 Repositório:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2
+**📅 �ltima Atualiza��o:** 22/12/2025 - 12:00  
+**👤 Respons�vel:** Willian Bulhões  
+**📧 Contato:** willian.bulhoes@actdigital.com  
+**🔗 Reposit�rio:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2
 
 ---
 
 ## 📎 ANEXOS
 
 - [Setup de Banco de Dados](./SQL_SERVER_SETUP_SUMMARY.md)
-- [Guia de Configuração](./DATABASE_CONFIG.md)
+- [Guia de Configura��o](./DATABASE_CONFIG.md)
 - [Schema do Banco](./database_schema.sql)
 - [Quadro Resumo](./QUADRO_RESUMO_POC.md)
 - [Guia Setup QA](./SETUP_GUIDE_QA.md)

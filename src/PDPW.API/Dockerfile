@@ -25,8 +25,21 @@ RUN dotnet publish "PDPW.API.csproj" -c Release -o /app/publish /p:UseAppHost=fa
 # Estágio final - runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+
+# Instalar ferramentas necessárias (curl para health check)
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
 EXPOSE 80
 EXPOSE 443
 
+# Copiar arquivos publicados
 COPY --from=publish /app/publish .
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:80/health || exit 1
+
+# Migrations e Seeder serão executados automaticamente via Program.cs
 ENTRYPOINT ["dotnet", "PDPW.API.dll"]

@@ -1,91 +1,91 @@
-# ?? ANÁLISE: Backend Completo + Frontend Usinas Apenas
+ï»¿# ?? ANï¿½LISE: Backend Completo + Frontend Usinas Apenas
 
 **Data:** 19/12/2024  
-**Cenário:** Desenvolvimento de TODO o backend do PDPW + Frontend apenas de Cadastro de Usinas  
-**Objetivo:** Maximizar APIs entregues para demonstração no Swagger
+**Cenï¿½rio:** Desenvolvimento de TODO o backend do PDPW + Frontend apenas de Cadastro de Usinas  
+**Objetivo:** Maximizar APIs entregues para demonstraï¿½ï¿½o no Swagger
 
 ---
 
 ## ?? RESUMO EXECUTIVO
 
-### Estratégia Proposta
+### Estratï¿½gia Proposta
 ? **BACKEND COMPLETO:** Migrar TODAS as principais APIs do sistema legado  
 ? **FRONTEND LIMITADO:** Apenas tela de Cadastro de Usinas (CRUD funcional)  
-? **SWAGGER ROBUSTO:** Demonstração completa de capacidades técnicas via API
+? **SWAGGER ROBUSTO:** Demonstraï¿½ï¿½o completa de capacidades tï¿½cnicas via API
 
 ### Justificativa
-1. **Demonstração de Competência Técnica:** Swagger mostra TODAS as capacidades
-2. **Redução de Risco:** Frontend é mais trabalhoso e propenso a mudanças visuais
+1. **Demonstraï¿½ï¿½o de Competï¿½ncia Tï¿½cnica:** Swagger mostra TODAS as capacidades
+2. **Reduï¿½ï¿½o de Risco:** Frontend ï¿½ mais trabalhoso e propenso a mudanï¿½as visuais
 3. **Flexibilidade Futura:** Backend completo permite qualquer frontend depois
 4. **Valor para Cliente:** ONS pode testar APIs diretamente via Swagger/Postman
 
 ---
 
-## ?? ANÁLISE DE PRODUTIVIDADE
+## ?? ANï¿½LISE DE PRODUTIVIDADE
 
 ### Tempo por API (Baseado em Clean Architecture)
 
-| Componente | Tempo/API | Descrição |
+| Componente | Tempo/API | Descriï¿½ï¿½o |
 |------------|-----------|-----------|
 | **Entidade Domain** | 15-20 min | Classe POCO com propriedades |
-| **Interface Repository** | 10 min | Contrato do repositório |
-| **Repository** | 30-40 min | Implementação com EF Core |
-| **DTOs (Request/Response)** | 20-30 min | Classes de entrada/saída |
-| **Service** | 30-40 min | Lógica de negócio + validações |
-| **Controller** | 20-30 min | Endpoints REST + documentação |
+| **Interface Repository** | 10 min | Contrato do repositï¿½rio |
+| **Repository** | 30-40 min | Implementaï¿½ï¿½o com EF Core |
+| **DTOs (Request/Response)** | 20-30 min | Classes de entrada/saï¿½da |
+| **Service** | 30-40 min | Lï¿½gica de negï¿½cio + validaï¿½ï¿½es |
+| **Controller** | 20-30 min | Endpoints REST + documentaï¿½ï¿½o |
 | **Seed Data** | 15-20 min | Dados iniciais realistas |
-| **Testes Básicos** | 30 min | Testes unitários essenciais |
-| **TOTAL por API** | **2,5-3h** | **Tempo médio por entidade completa** |
+| **Testes Bï¿½sicos** | 30 min | Testes unitï¿½rios essenciais |
+| **TOTAL por API** | **2,5-3h** | **Tempo mï¿½dio por entidade completa** |
 
-### Produtividade Diária (Realista)
+### Produtividade Diï¿½ria (Realista)
 
-**Desenvolvedor Experiente (8h/dia úteis):**
-- **Desenvolvimento puro:** 6-7h (descontando reuniões, pausas, blockers)
+**Desenvolvedor Experiente (8h/dia ï¿½teis):**
+- **Desenvolvimento puro:** 6-7h (descontando reuniï¿½es, pausas, blockers)
 - **APIs/dia:** 2-3 APIs completas
-- **Com reutilização de código:** Até 3-4 APIs/dia (após as primeiras)
+- **Com reutilizaï¿½ï¿½o de cï¿½digo:** Atï¿½ 3-4 APIs/dia (apï¿½s as primeiras)
 
 **Time de 2 Backend Devs:**
 - **Produtividade combinada:** 4-6 APIs/dia
-- **Em 5 dias úteis:** 20-30 APIs possíveis
+- **Em 5 dias ï¿½teis:** 20-30 APIs possï¿½veis
 
 ---
 
-## ??? ENTIDADES IDENTIFICADAS NO CÓDIGO LEGADO
+## ??? ENTIDADES IDENTIFICADAS NO Cï¿½DIGO LEGADO
 
-### Análise do Diretório `pdpw_act/pdpw/Dao/`
+### Anï¿½lise do Diretï¿½rio `pdpw_act/pdpw/Dao/`
 
-Baseado nos 473 arquivos VB.NET e análise dos DAOs:
+Baseado nos 473 arquivos VB.NET e anï¿½lise dos DAOs:
 
 #### ?? PRIORIDADE ALTA (Core do Sistema) - 10 APIs
 
 | # | Entidade | Complexidade | Tempo | Endpoints | Valor |
 |---|----------|--------------|-------|-----------|-------|
-| 1 | **Usina** | ?? Média | 3h | 6 (CRUD + filtros) | ??? Alto |
+| 1 | **Usina** | ?? Mï¿½dia | 3h | 6 (CRUD + filtros) | ??? Alto |
 | 2 | **ArquivoDadger** | ??? Alta | 4h | 5 (com relacionamentos) | ??? Alto |
 | 3 | **ArquivoDadgerValor** | ??? Alta | 4h | 6 (com JOINs) | ??? Alto |
-| 4 | **SemanaPMO** | ?? Média | 2,5h | 5 (consultas período) | ??? Alto |
-| 5 | **Empresa** | ? Baixa | 2h | 5 (CRUD simples) | ?? Médio |
-| 6 | **TipoUsina** | ? Baixa | 1,5h | 4 (Enumeração) | ?? Médio |
-| 7 | **Carga** | ?? Média | 2,5h | 5 (Consulta por período) | ?? Médio |
+| 4 | **SemanaPMO** | ?? Mï¿½dia | 2,5h | 5 (consultas perï¿½odo) | ??? Alto |
+| 5 | **Empresa** | ? Baixa | 2h | 5 (CRUD simples) | ?? Mï¿½dio |
+| 6 | **TipoUsina** | ? Baixa | 1,5h | 4 (Enumeraï¿½ï¿½o) | ?? Mï¿½dio |
+| 7 | **Carga** | ?? Mï¿½dia | 2,5h | 5 (Consulta por perï¿½odo) | ?? Mï¿½dio |
 | 8 | **EquipePDP** | ? Baixa | 2h | 5 (CRUD simples) | ? Baixo |
-| 9 | **Usuario** | ?? Média | 2,5h | 5 (sem autenticação) | ? Baixo |
+| 9 | **Usuario** | ?? Mï¿½dia | 2,5h | 5 (sem autenticaï¿½ï¿½o) | ? Baixo |
 | 10 | **Responsavel** | ? Baixa | 2h | 5 (CRUD simples) | ? Baixo |
 | **TOTAL** | | | **26h** | **51 endpoints** | |
 
-#### ?? PRIORIDADE MÉDIA (Funcionalidades Importantes) - 10 APIs
+#### ?? PRIORIDADE Mï¿½DIA (Funcionalidades Importantes) - 10 APIs
 
 | # | Entidade | Complexidade | Tempo | Endpoints | Valor |
 |---|----------|--------------|-------|-----------|-------|
-| 11 | **UnidadeGeradora (UG)** | ?? Média | 2,5h | 5 | ?? Médio |
-| 12 | **ParadaUG** | ?? Média | 2,5h | 5 | ?? Médio |
-| 13 | **RestricaoUG** | ?? Média | 2,5h | 5 | ?? Médio |
-| 14 | **RestricaoUS** | ?? Média | 2,5h | 5 | ?? Médio |
+| 11 | **UnidadeGeradora (UG)** | ?? Mï¿½dia | 2,5h | 5 | ?? Mï¿½dio |
+| 12 | **ParadaUG** | ?? Mï¿½dia | 2,5h | 5 | ?? Mï¿½dio |
+| 13 | **RestricaoUG** | ?? Mï¿½dia | 2,5h | 5 | ?? Mï¿½dio |
+| 14 | **RestricaoUS** | ?? Mï¿½dia | 2,5h | 5 | ?? Mï¿½dio |
 | 15 | **MotivoRestricao** | ? Baixa | 1,5h | 4 | ? Baixo |
-| 16 | **Intercambio** | ?? Média | 2,5h | 5 | ?? Médio |
-| 17 | **Balanco** | ??? Alta | 3,5h | 5 | ?? Médio |
-| 18 | **GerForaMerito** | ?? Média | 2,5h | 5 | ?? Médio |
-| 19 | **DCA (Dados Agregados)** | ??? Alta | 3,5h | 6 | ?? Médio |
-| 20 | **DCR (Dados Consolidados)** | ??? Alta | 3,5h | 6 | ?? Médio |
+| 16 | **Intercambio** | ?? Mï¿½dia | 2,5h | 5 | ?? Mï¿½dio |
+| 17 | **Balanco** | ??? Alta | 3,5h | 5 | ?? Mï¿½dio |
+| 18 | **GerForaMerito** | ?? Mï¿½dia | 2,5h | 5 | ?? Mï¿½dio |
+| 19 | **DCA (Dados Agregados)** | ??? Alta | 3,5h | 6 | ?? Mï¿½dio |
+| 20 | **DCR (Dados Consolidados)** | ??? Alta | 3,5h | 6 | ?? Mï¿½dio |
 | **TOTAL** | | | **27h** | **51 endpoints** | |
 
 #### ?? PRIORIDADE BAIXA (Nice to Have) - 10 APIs
@@ -94,25 +94,25 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 |---|----------|--------------|-------|-----------|-------|
 | 21 | **Observacao** | ? Baixa | 2h | 5 | ? Baixo |
 | 22 | **Diretorio** | ? Baixa | 2h | 5 | ? Baixo |
-| 23 | **Arquivo** | ?? Média | 2,5h | 5 | ? Baixo |
-| 24 | **Upload** | ?? Média | 3h | 4 | ? Baixo |
-| 25 | **Relatorio** | ?? Média | 3h | 5 | ? Baixo |
-| 26 | **ModalidadeOpTermica** | ?? Média | 2,5h | 5 | ? Baixo |
-| 27 | **InflexibilidadeContratada** | ??? Alta | 3,5h | 6 | ?? Médio |
-| 28 | **RampasUsinaTermica** | ?? Média | 2,5h | 5 | ? Baixo |
-| 29 | **UsinaConversora** | ?? Média | 2,5h | 5 | ? Baixo |
-| 30 | **PDOC** | ??? Alta | 3,5h | 6 | ?? Médio |
+| 23 | **Arquivo** | ?? Mï¿½dia | 2,5h | 5 | ? Baixo |
+| 24 | **Upload** | ?? Mï¿½dia | 3h | 4 | ? Baixo |
+| 25 | **Relatorio** | ?? Mï¿½dia | 3h | 5 | ? Baixo |
+| 26 | **ModalidadeOpTermica** | ?? Mï¿½dia | 2,5h | 5 | ? Baixo |
+| 27 | **InflexibilidadeContratada** | ??? Alta | 3,5h | 6 | ?? Mï¿½dio |
+| 28 | **RampasUsinaTermica** | ?? Mï¿½dia | 2,5h | 5 | ? Baixo |
+| 29 | **UsinaConversora** | ?? Mï¿½dia | 2,5h | 5 | ? Baixo |
+| 30 | **PDOC** | ??? Alta | 3,5h | 6 | ?? Mï¿½dio |
 | **TOTAL** | | | **27h** | **51 endpoints** | |
 
 ---
 
 ## ?? CRONOGRAMA DE DESENVOLVIMENTO
 
-### Cenário: 2 Backend Devs + 1 Frontend Dev
+### Cenï¿½rio: 2 Backend Devs + 1 Frontend Dev
 
 #### **Time:**
 - **DEV 1 (Backend Senior):** APIs de Prioridade ALTA
-- **DEV 2 (Backend Pleno):** APIs de Prioridade MÉDIA
+- **DEV 2 (Backend Pleno):** APIs de Prioridade Mï¿½DIA
 - **DEV 3 (Frontend):** APENAS Cadastro de Usinas
 
 ---
@@ -125,23 +125,23 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
   - Entidade + Repository + Service + Controller + Seed
 - **14:00-18:00** - ? **API 2: Empresa** (2h) + **API 3: TipoUsina** (1,5h)
   
-**Entregáveis Dia 1 (DEV 1):** 3 APIs, 15 endpoints
+**Entregï¿½veis Dia 1 (DEV 1):** 3 APIs, 15 endpoints
 
 #### DEV 2 (Backend Pleno) - 8h
 - **09:00-10:00** - Setup ambiente + estrutura base
 - **10:00-13:00** - ? **API 11: UnidadeGeradora** (2,5h)
 - **14:00-16:30** - ? **API 12: ParadaUG** (2,5h)
-- **16:30-18:00** - Início **API 13: RestricaoUG** (1,5h de 2,5h)
+- **16:30-18:00** - Inï¿½cio **API 13: RestricaoUG** (1,5h de 2,5h)
 
-**Entregáveis Dia 1 (DEV 2):** 2 APIs completas + 1 parcial, 10 endpoints
+**Entregï¿½veis Dia 1 (DEV 2):** 2 APIs completas + 1 parcial, 10 endpoints
 
 #### DEV 3 (Frontend) - 8h
 - **09:00-10:00** - Setup Node.js, React, Vite
 - **10:00-12:00** - Analisar tela legada de Usinas (ASPX)
 - **13:00-15:00** - Criar componente de listagem
-- **15:00-18:00** - Criar formulário de cadastro/edição
+- **15:00-18:00** - Criar formulï¿½rio de cadastro/ediï¿½ï¿½o
 
-**Entregáveis Dia 1 (Frontend):** Estrutura inicial da tela
+**Entregï¿½veis Dia 1 (Frontend):** Estrutura inicial da tela
 
 #### ?? **TOTAL DIA 1: 5 APIs, 25 endpoints**
 
@@ -153,7 +153,7 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 - **09:00-13:00** - ? **API 4: SemanaPMO** (2,5h) + **API 8: EquipePDP** (2h)
 - **14:00-18:00** - ? **API 5: ArquivoDadger** (4h - complexa)
 
-**Entregáveis Dia 2 (DEV 1):** 3 APIs, 15 endpoints
+**Entregï¿½veis Dia 2 (DEV 1):** 3 APIs, 15 endpoints
 
 #### DEV 2 (Backend Pleno) - 8h
 - **09:00-10:30** - Concluir **API 13: RestricaoUG** (1h restante)
@@ -161,58 +161,58 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 - **14:00-16:30** - ? **API 15: MotivoRestricao** (1,5h) + **API 16: Intercambio** (1h de 2,5h)
 - **16:30-18:00** - Continuar API 16 (1,5h de 2,5h)
 
-**Entregáveis Dia 2 (DEV 2):** 3 APIs completas + 1 parcial, 14 endpoints
+**Entregï¿½veis Dia 2 (DEV 2):** 3 APIs completas + 1 parcial, 14 endpoints
 
 #### DEV 3 (Frontend) - 8h
-- **09:00-11:00** - Integração com API de Usinas (Axios)
-- **11:00-13:00** - Validações de formulário
+- **09:00-11:00** - Integraï¿½ï¿½o com API de Usinas (Axios)
+- **11:00-13:00** - Validaï¿½ï¿½es de formulï¿½rio
 - **14:00-16:00** - Filtros e busca
 - **16:00-18:00** - Mensagens de erro/sucesso + polish
 
-**Entregáveis Dia 2 (Frontend):** Tela de Usinas 90% completa
+**Entregï¿½veis Dia 2 (Frontend):** Tela de Usinas 90% completa
 
 #### ?? **TOTAL DIA 2: 6 APIs, 29 endpoints**
 #### ?? **ACUMULADO: 11 APIs, 54 endpoints**
 
 ---
 
-### ?? DIA 3: Sábado (21/12) - APIs Complexas
+### ?? DIA 3: Sï¿½bado (21/12) - APIs Complexas
 
 #### DEV 1 (Backend Senior) - 8h
 - **09:00-13:00** - ? **API 6: ArquivoDadgerValor** (4h - muito complexa)
 - **14:00-16:30** - ? **API 7: Carga** (2,5h)
 - **16:30-18:00** - ? **API 9: Usuario** (1,5h de 2,5h)
 
-**Entregáveis Dia 3 (DEV 1):** 2 APIs completas + 1 parcial, 16 endpoints
+**Entregï¿½veis Dia 3 (DEV 1):** 2 APIs completas + 1 parcial, 16 endpoints
 
 #### DEV 2 (Backend Pleno) - 8h
 - **09:00-10:00** - Concluir **API 16: Intercambio** (1h restante)
 - **10:00-13:30** - ? **API 17: Balanco** (3,5h)
 - **14:00-16:30** - ? **API 18: GerForaMerito** (2,5h)
-- **16:30-18:00** - Início **API 19: DCA** (1,5h de 3,5h)
+- **16:30-18:00** - Inï¿½cio **API 19: DCA** (1,5h de 3,5h)
 
-**Entregáveis Dia 3 (DEV 2):** 3 APIs completas + 1 parcial, 16 endpoints
+**Entregï¿½veis Dia 3 (DEV 2):** 3 APIs completas + 1 parcial, 16 endpoints
 
 #### DEV 3 (Frontend) - 8h
-- **09:00-13:00** - Finalizar tela de Usinas (últimos ajustes)
-- **14:00-18:00** - Testes E2E + Responsividade + Documentação
+- **09:00-13:00** - Finalizar tela de Usinas (ï¿½ltimos ajustes)
+- **14:00-18:00** - Testes E2E + Responsividade + Documentaï¿½ï¿½o
 
-**Entregáveis Dia 3 (Frontend):** Tela de Usinas 100% completa e testada
+**Entregï¿½veis Dia 3 (Frontend):** Tela de Usinas 100% completa e testada
 
 #### ?? **TOTAL DIA 3: 5 APIs, 32 endpoints**
 #### ?? **ACUMULADO: 16 APIs, 86 endpoints**
 
 ---
 
-### ?? DIA 4: Domingo (22/12) - Finalização Backend
+### ?? DIA 4: Domingo (22/12) - Finalizaï¿½ï¿½o Backend
 
 #### DEV 1 (Backend Senior) - 8h
 - **09:00-10:00** - Concluir **API 9: Usuario** (1h restante)
 - **10:00-12:00** - ? **API 10: Responsavel** (2h)
 - **13:00-16:30** - ? **API 20: DCR** (3,5h)
-- **16:30-18:00** - Testes de integração gerais
+- **16:30-18:00** - Testes de integraï¿½ï¿½o gerais
 
-**Entregáveis Dia 4 (DEV 1):** 3 APIs, 16 endpoints
+**Entregï¿½veis Dia 4 (DEV 1):** 3 APIs, 16 endpoints
 
 #### DEV 2 (Backend Pleno) - 8h
 - **09:00-11:00** - Concluir **API 19: DCA** (2h restantes)
@@ -220,11 +220,11 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 - **14:00-16:00** - ? **API 22: Diretorio** (2h)
 - **16:00-18:00** - ? **API 23: Arquivo** (2h de 2,5h)
 
-**Entregáveis Dia 4 (DEV 2):** 3 APIs completas + 1 parcial, 19 endpoints
+**Entregï¿½veis Dia 4 (DEV 2):** 3 APIs completas + 1 parcial, 19 endpoints
 
 #### DEV 3 (Frontend) - FOLGA ou Buffer
-- Tela de Usinas já está completa
-- Pode auxiliar em documentação ou QA
+- Tela de Usinas jï¿½ estï¿½ completa
+- Pode auxiliar em documentaï¿½ï¿½o ou QA
 
 #### ?? **TOTAL DIA 4: 6 APIs, 35 endpoints**
 #### ?? **ACUMULADO: 22 APIs, 121 endpoints**
@@ -236,9 +236,9 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 #### DEV 1 (Backend Senior) - 8h
 - **09:00-12:00** - ? **API 24: Upload** (3h)
 - **13:00-16:00** - ? **API 25: Relatorio** (3h)
-- **16:00-18:00** - Testes de integração + Code review
+- **16:00-18:00** - Testes de integraï¿½ï¿½o + Code review
 
-**Entregáveis Dia 5 (DEV 1):** 2 APIs, 9 endpoints
+**Entregï¿½veis Dia 5 (DEV 1):** 2 APIs, 9 endpoints
 
 #### DEV 2 (Backend Pleno) - 8h
 - **09:00-09:30** - Concluir **API 23: Arquivo** (0,5h restante)
@@ -246,32 +246,32 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 - **13:00-16:30** - ? **API 27: InflexibilidadeContratada** (3,5h)
 - **16:30-18:00** - Testes + ajustes
 
-**Entregáveis Dia 5 (DEV 2):** 3 APIs, 16 endpoints
+**Entregï¿½veis Dia 5 (DEV 2):** 3 APIs, 16 endpoints
 
 #### DEV 3 (Frontend) - 8h
-- **09:00-18:00** - QA intensivo da tela de Usinas + Documentação
+- **09:00-18:00** - QA intensivo da tela de Usinas + Documentaï¿½ï¿½o
 
 #### ?? **TOTAL DIA 5: 5 APIs, 25 endpoints**
 #### ?? **ACUMULADO: 27 APIs, 146 endpoints**
 
 ---
 
-### ?? DIA 6: Terça (24/12) - Finalização e Docker
+### ?? DIA 6: Terï¿½a (24/12) - Finalizaï¿½ï¿½o e Docker
 
-#### DEV 1 (Backend Senior) - 4h (meio período)
+#### DEV 1 (Backend Senior) - 4h (meio perï¿½odo)
 - **09:00-11:00** - ? **API 28: RampasUsinaTermica** (2h de 2,5h)
 - **11:00-13:00** - Docker Compose + Swagger final + Testes
 
-**Entregáveis Dia 6 (DEV 1):** 1 API parcial, 3 endpoints
+**Entregï¿½veis Dia 6 (DEV 1):** 1 API parcial, 3 endpoints
 
-#### DEV 2 (Backend Pleno) - 4h (meio período)
+#### DEV 2 (Backend Pleno) - 4h (meio perï¿½odo)
 - **09:00-11:30** - ? **API 29: UsinaConversora** (2,5h)
 - **11:30-13:00** - Testes finais + Seed data completo
 
-**Entregáveis Dia 6 (DEV 2):** 1 API, 5 endpoints
+**Entregï¿½veis Dia 6 (DEV 2):** 1 API, 5 endpoints
 
-#### DEV 3 (Frontend) - 4h (meio período)
-- **09:00-13:00** - Documentação final + Preparar demonstração
+#### DEV 3 (Frontend) - 4h (meio perï¿½odo)
+- **09:00-13:00** - Documentaï¿½ï¿½o final + Preparar demonstraï¿½ï¿½o
 
 #### ?? **TOTAL DIA 6: 2 APIs, 8 endpoints**
 #### ?? **ACUMULADO FINAL: 29 APIs, 154 endpoints**
@@ -280,36 +280,36 @@ Baseado nos 473 arquivos VB.NET e análise dos DAOs:
 
 ## ?? ENTREGA FINAL ESTIMADA
 
-### ?? Estatísticas Projetadas
+### ?? Estatï¿½sticas Projetadas
 
-| Métrica | Quantidade | Detalhes |
+| Mï¿½trica | Quantidade | Detalhes |
 |---------|------------|----------|
 | **APIs Completas** | 27-29 | Entidades com CRUD completo |
 | **Endpoints REST** | 145-160 | Todos documentados no Swagger |
 | **Controllers** | 29 | Um por entidade |
 | **Entidades Domain** | 29 | Classes no Domain Layer |
-| **Repositories** | 29 | Implementações + Interfaces |
-| **Services** | 29 | Com lógica de negócio |
+| **Repositories** | 29 | Implementaï¿½ï¿½es + Interfaces |
+| **Services** | 29 | Com lï¿½gica de negï¿½cio |
 | **DTOs** | 87 (3x29) | Request, Response, Update |
 | **Seed Data** | 29 tabelas | Dados realistas |
-| **Testes Unitários** | 150+ | Cobertura > 60% |
+| **Testes Unitï¿½rios** | 150+ | Cobertura > 60% |
 | **Frontend Completo** | 1 tela | Cadastro de Usinas |
 
 ---
 
 ## ?? SWAGGER - ESTRUTURA PROPOSTA
 
-### Organização por Tags (Grupos)
+### Organizaï¿½ï¿½o por Tags (Grupos)
 
 ```yaml
 Swagger UI - PDPW API v1.0
-??? ?? Gestão de Ativos (6 APIs)
+??? ?? Gestï¿½o de Ativos (6 APIs)
 ?   ??? Usinas (6 endpoints)
 ?   ??? Empresas (5 endpoints)
 ?   ??? Tipos de Usina (4 endpoints)
 ?   ??? Unidades Geradoras (5 endpoints)
 ?   ??? Usinas Conversoras (5 endpoints)
-?   ??? Rampas Usina Térmica (5 endpoints)
+?   ??? Rampas Usina Tï¿½rmica (5 endpoints)
 ?
 ??? ?? Arquivos e Dados (5 APIs)
 ?   ??? Arquivos DADGER (5 endpoints)
@@ -318,34 +318,34 @@ Swagger UI - PDPW API v1.0
 ?   ??? Cargas (5 endpoints)
 ?   ??? Uploads (4 endpoints)
 ?
-??? ?? Restrições e Paradas (6 APIs)
+??? ?? Restriï¿½ï¿½es e Paradas (6 APIs)
 ?   ??? Paradas UG (5 endpoints)
-?   ??? Restrições UG (5 endpoints)
-?   ??? Restrições US (5 endpoints)
-?   ??? Motivos de Restrição (4 endpoints)
+?   ??? Restriï¿½ï¿½es UG (5 endpoints)
+?   ??? Restriï¿½ï¿½es US (5 endpoints)
+?   ??? Motivos de Restriï¿½ï¿½o (4 endpoints)
 ?   ??? Inflexibilidade Contratada (6 endpoints)
-?   ??? Modalidade Op. Térmica (5 endpoints)
+?   ??? Modalidade Op. Tï¿½rmica (5 endpoints)
 ?
-??? ? Operação e Geração (4 APIs)
-?   ??? Intercâmbio (5 endpoints)
-?   ??? Balanço (5 endpoints)
-?   ??? Geração Fora Mérito (5 endpoints)
+??? ? Operaï¿½ï¿½o e Geraï¿½ï¿½o (4 APIs)
+?   ??? Intercï¿½mbio (5 endpoints)
+?   ??? Balanï¿½o (5 endpoints)
+?   ??? Geraï¿½ï¿½o Fora Mï¿½rito (5 endpoints)
 ?   ??? PDOC (6 endpoints)
 ?
 ??? ?? Dados Consolidados (2 APIs)
 ?   ??? DCA - Dados Agregados (6 endpoints)
 ?   ??? DCR - Dados Consolidados (6 endpoints)
 ?
-??? ?? Gestão de Equipes (3 APIs)
+??? ?? Gestï¿½o de Equipes (3 APIs)
 ?   ??? Equipes PDP (5 endpoints)
-?   ??? Usuários (5 endpoints)
-?   ??? Responsáveis (5 endpoints)
+?   ??? Usuï¿½rios (5 endpoints)
+?   ??? Responsï¿½veis (5 endpoints)
 ?
-??? ?? Documentos e Relatórios (3 APIs)
-    ??? Diretórios (5 endpoints)
+??? ?? Documentos e Relatï¿½rios (3 APIs)
+    ??? Diretï¿½rios (5 endpoints)
     ??? Arquivos (5 endpoints)
-    ??? Relatórios (5 endpoints)
-    ??? Observações (5 endpoints)
+    ??? Relatï¿½rios (5 endpoints)
+    ??? Observaï¿½ï¿½es (5 endpoints)
 
 TOTAL: 29 APIs, ~154 endpoints
 ```
@@ -363,7 +363,7 @@ TOTAL: 29 APIs, ~154 endpoints
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
-[Tags("?? Gestão de Ativos")]
+[Tags("?? Gestï¿½o de Ativos")]
 public class UsinasController : ControllerBase
 {
     /// <summary>
@@ -382,24 +382,24 @@ public class UsinasController : ControllerBase
     /// <param name="id">ID da usina</param>
     /// <returns>Dados da usina</returns>
     /// <response code="200">Retorna a usina encontrada</response>
-    /// <response code="404">Usina não encontrada</response>
+    /// <response code="404">Usina nï¿½o encontrada</response>
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(UsinaResponseDTO), 200)]
     [ProducesResponseType(404)]
     public async Task<ActionResult<UsinaResponseDTO>> GetById(int id)
     
     /// <summary>
-    /// Busca usinas por código
+    /// Busca usinas por cï¿½digo
     /// </summary>
-    /// <param name="codigo">Código da usina (ex: UTE001)</param>
-    /// <returns>Lista de usinas com o código especificado</returns>
+    /// <param name="codigo">Cï¿½digo da usina (ex: UTE001)</param>
+    /// <returns>Lista de usinas com o cï¿½digo especificado</returns>
     [HttpGet("codigo/{codigo}")]
     public async Task<ActionResult<IEnumerable<UsinaResponseDTO>>> GetByCodigo(string codigo)
     
     /// <summary>
     /// Busca usinas por empresa
     /// </summary>
-    /// <param name="codEmpre">Código da empresa</param>
+    /// <param name="codEmpre">Cï¿½digo da empresa</param>
     /// <returns>Lista de usinas da empresa</returns>
     [HttpGet("empresa/{codEmpre}")]
     public async Task<ActionResult<IEnumerable<UsinaResponseDTO>>> GetByEmpresa(string codEmpre)
@@ -410,7 +410,7 @@ public class UsinasController : ControllerBase
     /// <param name="request">Dados da usina</param>
     /// <returns>Usina criada</returns>
     /// <response code="201">Usina criada com sucesso</response>
-    /// <response code="400">Dados inválidos</response>
+    /// <response code="400">Dados invï¿½lidos</response>
     [HttpPost]
     [ProducesResponseType(typeof(UsinaResponseDTO), 201)]
     [ProducesResponseType(400)]
@@ -421,9 +421,9 @@ public class UsinasController : ControllerBase
     /// </summary>
     /// <param name="id">ID da usina</param>
     /// <param name="request">Novos dados</param>
-    /// <returns>Sem conteúdo</returns>
+    /// <returns>Sem conteï¿½do</returns>
     /// <response code="204">Atualizado com sucesso</response>
-    /// <response code="404">Usina não encontrada</response>
+    /// <response code="404">Usina nï¿½o encontrada</response>
     [HttpPut("{id}")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
@@ -433,9 +433,9 @@ public class UsinasController : ControllerBase
     /// Remove uma usina (soft delete)
     /// </summary>
     /// <param name="id">ID da usina</param>
-    /// <returns>Sem conteúdo</returns>
+    /// <returns>Sem conteï¿½do</returns>
     /// <response code="204">Removido com sucesso</response>
-    /// <response code="404">Usina não encontrada</response>
+    /// <response code="404">Usina nï¿½o encontrada</response>
     [HttpDelete("{id}")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
@@ -447,7 +447,7 @@ public class UsinasController : ControllerBase
 
 ## ?? EXEMPLOS DE SEED DATA
 
-### Dados Realistas para Demonstração
+### Dados Realistas para Demonstraï¿½ï¿½o
 
 ```csharp
 // Usinas
@@ -455,7 +455,7 @@ public class UsinasController : ControllerBase
 { CodUsina = "UTE002", NomeUsina = "Angra 2", TpUsinaId = "UTE", PotInstalada = 1350 },
 { CodUsina = "UHE001", NomeUsina = "Itaipu", TpUsinaId = "UHE", PotInstalada = 14000 },
 { CodUsina = "UHE002", NomeUsina = "Belo Monte", TpUsinaId = "UHE", PotInstalada = 11233 },
-{ CodUsina = "EOL001", NomeUsina = "Parque Eólico Lagoa dos Ventos", TpUsinaId = "EOL", PotInstalada = 716 },
+{ CodUsina = "EOL001", NomeUsina = "Parque Eï¿½lico Lagoa dos Ventos", TpUsinaId = "EOL", PotInstalada = 716 },
 
 // Empresas
 { CodEmpre = "EMP001", NomeEmpre = "Eletronuclear" },
@@ -477,9 +477,9 @@ public class UsinasController : ControllerBase
 
 ---
 
-## ?? SWAGGER - FEATURES AVANÇADAS
+## ?? SWAGGER - FEATURES AVANï¿½ADAS
 
-### Configuração Proposta
+### Configuraï¿½ï¿½o Proposta
 
 ```csharp
 // Program.cs
@@ -487,10 +487,10 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "PDPW API - PoC Modernização ONS",
+        Title = "PDPW API - PoC Modernizaï¿½ï¿½o ONS",
         Version = "v1.0",
         Description = @"
-            API REST para o sistema PDPW (Programação Diária da Produção).
+            API REST para o sistema PDPW (Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o).
             
             Migrado de .NET Framework/VB.NET/WebForms para .NET 8/C#/Clean Architecture.
             
@@ -502,7 +502,7 @@ builder.Services.AddSwaggerGen(options =>
             - Seed data realista
             - Cobertura de testes > 60%
             
-            **Código Legado:** pdpw_act/pdpw/ (473 arquivos VB.NET)
+            **Cï¿½digo Legado:** pdpw_act/pdpw/ (473 arquivos VB.NET)
             
             **Contato:** [Tech Lead do Projeto]
         ",
@@ -513,7 +513,7 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 
-    // XML Comments para documentação rica
+    // XML Comments para documentaï¿½ï¿½o rica
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     options.IncludeXmlComments(xmlPath);
@@ -535,7 +535,7 @@ builder.Services.AddSwaggerGen(options =>
 
 ---
 
-## ?? MÉTRICAS DE SUCESSO
+## ?? Mï¿½TRICAS DE SUCESSO
 
 ### KPIs da Entrega
 
@@ -551,62 +551,62 @@ builder.Services.AddSwaggerGen(options =>
 
 ---
 
-## ?? VANTAGENS DESTE CENÁRIO
+## ?? VANTAGENS DESTE CENï¿½RIO
 
 ### Para o Cliente (ONS)
 
-1. **? Demonstração Completa via Swagger**
+1. **? Demonstraï¿½ï¿½o Completa via Swagger**
    - Cliente pode testar TODAS as APIs sem depender de UI
    - Postman Collection pode ser gerada automaticamente
-   - Fácil integração com sistemas existentes
+   - Fï¿½cil integraï¿½ï¿½o com sistemas existentes
 
-2. **? Redução de Risco de UI**
-   - Frontend é mais sujeito a mudanças de requisitos visuais
+2. **? Reduï¿½ï¿½o de Risco de UI**
+   - Frontend ï¿½ mais sujeito a mudanï¿½as de requisitos visuais
    - Backend completo permite qualquer frontend depois
-   - Pode-se contratar outro time só para UI futuramente
+   - Pode-se contratar outro time sï¿½ para UI futuramente
 
-3. **? Valor Técnico Demonstrado**
-   - 29 APIs em 6 dias mostra capacidade técnica
+3. **? Valor Tï¿½cnico Demonstrado**
+   - 29 APIs em 6 dias mostra capacidade tï¿½cnica
    - Clean Architecture bem implementada
-   - Código pronto para produção
+   - Cï¿½digo pronto para produï¿½ï¿½o
 
 4. **? Flexibilidade Futura**
    - Pode-se criar app mobile com mesmo backend
-   - Pode-se criar múltiplos frontends (web, mobile, desktop)
+   - Pode-se criar mï¿½ltiplos frontends (web, mobile, desktop)
    - APIs podem ser consumidas por sistemas terceiros
 
 ### Para o Time de Desenvolvimento
 
 1. **? Foco em Backend** = Menos Contexto Switching
-2. **? Reutilização de Código** = Maior Produtividade
-3. **? Testes Automatizados** = Maior Confiança
-4. **? Documentação Automática** = Swagger gerado do código
+2. **? Reutilizaï¿½ï¿½o de Cï¿½digo** = Maior Produtividade
+3. **? Testes Automatizados** = Maior Confianï¿½a
+4. **? Documentaï¿½ï¿½o Automï¿½tica** = Swagger gerado do cï¿½digo
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Probabilidade | Impacto | Mitigação |
+| Risco | Probabilidade | Impacto | Mitigaï¿½ï¿½o |
 |-------|---------------|---------|-----------|
-| **Complexidade subestimada de APIs** | MÉDIA | ALTO | Priorizar APIs core; deixar Nice to Have para o fim |
-| **Bugs de integração EF Core** | MÉDIA | MÉDIO | Testes de integração desde dia 1 |
-| **Relacionamentos complexos** | ALTA | MÉDIO | Usar InMemory para facilitar; documentar bem |
-| **Fadiga do time (trabalho fim de semana)** | MÉDIA | MÉDIO | Definir metas diárias claras; celebrar pequenas vitórias |
-| **Mudanças de escopo de última hora** | BAIXA | ALTO | Travar escopo após kick-off; registrar tudo |
+| **Complexidade subestimada de APIs** | Mï¿½DIA | ALTO | Priorizar APIs core; deixar Nice to Have para o fim |
+| **Bugs de integraï¿½ï¿½o EF Core** | Mï¿½DIA | Mï¿½DIO | Testes de integraï¿½ï¿½o desde dia 1 |
+| **Relacionamentos complexos** | ALTA | Mï¿½DIO | Usar InMemory para facilitar; documentar bem |
+| **Fadiga do time (trabalho fim de semana)** | Mï¿½DIA | Mï¿½DIO | Definir metas diï¿½rias claras; celebrar pequenas vitï¿½rias |
+| **Mudanï¿½as de escopo de ï¿½ltima hora** | BAIXA | ALTO | Travar escopo apï¿½s kick-off; registrar tudo |
 
 ---
 
-## ?? RECOMENDAÇÃO FINAL
+## ?? RECOMENDAï¿½ï¿½O FINAL
 
-### ? CENÁRIO RECOMENDADO
+### ? CENï¿½RIO RECOMENDADO
 
-**ADOTAR** o cenário de **Backend Completo + Frontend Usinas**.
+**ADOTAR** o cenï¿½rio de **Backend Completo + Frontend Usinas**.
 
 **Justificativa:**
-1. ? Maximiza valor entregue (29 APIs vs 2 APIs no cenário original)
-2. ? Demonstração técnica muito mais robusta
-3. ? Swagger serve como "frontend temporário" para todas as APIs
-4. ? Risco controlado (1 tela de frontend é suficiente para demo)
+1. ? Maximiza valor entregue (29 APIs vs 2 APIs no cenï¿½rio original)
+2. ? Demonstraï¿½ï¿½o tï¿½cnica muito mais robusta
+3. ? Swagger serve como "frontend temporï¿½rio" para todas as APIs
+4. ? Risco controlado (1 tela de frontend ï¿½ suficiente para demo)
 5. ? Flexibilidade futura (backend completo permite qualquer UI depois)
 
 ### ?? Entrega Esperada (26/12)
@@ -620,32 +620,32 @@ builder.Services.AddSwaggerGen(options =>
 
 ---
 
-## ?? PRÓXIMOS PASSOS IMEDIATOS
+## ?? PRï¿½XIMOS PASSOS IMEDIATOS
 
-### Para Tech Lead (Após Reunião)
-1. ? Validar cenário com stakeholders
-2. ? Confirmar priorização de APIs (Alta ? Média ? Baixa)
-3. ? Definir divisão de trabalho entre DEV 1 e DEV 2
-4. ? Comunicar mudança de escopo para o squad
+### Para Tech Lead (Apï¿½s Reuniï¿½o)
+1. ? Validar cenï¿½rio com stakeholders
+2. ? Confirmar priorizaï¿½ï¿½o de APIs (Alta ? Mï¿½dia ? Baixa)
+3. ? Definir divisï¿½o de trabalho entre DEV 1 e DEV 2
+4. ? Comunicar mudanï¿½a de escopo para o squad
 
 ### Para DEV 1 e DEV 2 (Backend)
-1. ?? Começar pelas APIs de **Prioridade ALTA**
+1. ?? Comeï¿½ar pelas APIs de **Prioridade ALTA**
 2. ?? Criar estrutura base (BaseEntity, BaseRepository, BaseService)
-3. ?? Configurar Swagger com XML Comments desde o início
+3. ?? Configurar Swagger com XML Comments desde o inï¿½cio
 4. ?? Seed data em paralelo ao desenvolvimento
 
 ### Para DEV 3 (Frontend)
 1. ?? Focar 100% na tela de Cadastro de Usinas
-2. ?? Caprichar na UX (é a única tela que será apresentada)
-3. ?? Preparar demonstração (passo a passo do fluxo)
+2. ?? Caprichar na UX (ï¿½ a ï¿½nica tela que serï¿½ apresentada)
+3. ?? Preparar demonstraï¿½ï¿½o (passo a passo do fluxo)
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? Análise Completa
+**Versï¿½o:** 1.0  
+**Status:** ? Anï¿½lise Completa
 
-**APROVAÇÃO RECOMENDADA: SIM** ?
+**APROVAï¿½ï¿½O RECOMENDADA: SIM** ?
 
-**Este cenário maximiza o valor entregue e demonstra capacidade técnica superior!** ??
+**Este cenï¿½rio maximiza o valor entregue e demonstra capacidade tï¿½cnica superior!** ??

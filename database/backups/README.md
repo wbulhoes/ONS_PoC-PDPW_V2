@@ -1,14 +1,14 @@
-# ??? Banco de Dados - PDPW
+ï»¿# ??? Banco de Dados - PDPW
 
-## ?? Localização do Backup
+## ?? Localizaï¿½ï¿½o do Backup
 
-O backup do banco de dados fornecido pelo cliente ONS está armazenado em:
+O backup do banco de dados fornecido pelo cliente ONS estï¿½ armazenado em:
 
 **Caminho:** `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak`
 
 ---
 
-## ?? Informações do Banco de Dados
+## ?? Informaï¿½ï¿½es do Banco de Dados
 
 ### Banco de Dados Legado
 
@@ -24,8 +24,8 @@ O backup do banco de dados fornecido pelo cliente ONS está armazenado em:
 | Item | Detalhes |
 |------|----------|
 | **Tipo de Backup** | .bak (SQL Server Full Backup) |
-| **Localização** | C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak |
-| **Status** | ? Recebido e disponível |
+| **Localizaï¿½ï¿½o** | C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak |
+| **Status** | ? Recebido e disponï¿½vel |
 
 ---
 
@@ -37,34 +37,34 @@ C:\temp\_ONS_PoC-PDPW\
 ?   ??? Backup_PDP_TST.bak        ? ? Backup fornecido pelo cliente
 ?
 ??? database/
-?   ??? backups/                   ? Organização de backups
-?   ?   ??? original/              ? Backup original (não modificar!)
-?   ?   ??? working/               ? Cópia para trabalho
+?   ??? backups/                   ? Organizaï¿½ï¿½o de backups
+?   ?   ??? original/              ? Backup original (nï¿½o modificar!)
+?   ?   ??? working/               ? Cï¿½pia para trabalho
 ?   ?   ??? README.md              ? Este arquivo
 ?   ?
-?   ??? scripts/                   ? Scripts SQL úteis
-?   ?   ??? schema/                ? Scripts de criação de schema
+?   ??? scripts/                   ? Scripts SQL ï¿½teis
+?   ?   ??? schema/                ? Scripts de criaï¿½ï¿½o de schema
 ?   ?   ??? data/                  ? Scripts de dados de teste
-?   ?   ??? migrations/            ? Scripts de migração
+?   ?   ??? migrations/            ? Scripts de migraï¿½ï¿½o
 ?   ?
-?   ??? docs/                      ? Documentação do banco
-?       ??? schema.md              ? Documentação do schema
-?       ??? tables.md              ? Descrição das tabelas
+?   ??? docs/                      ? Documentaï¿½ï¿½o do banco
+?       ??? schema.md              ? Documentaï¿½ï¿½o do schema
+?       ??? tables.md              ? Descriï¿½ï¿½o das tabelas
 ?       ??? relationships.md       ? Relacionamentos
 ```
 
 ---
 
-## ?? Restauração Rápida
+## ?? Restauraï¿½ï¿½o Rï¿½pida
 
 ### ? Passo 1: Copiar para Working (Recomendado)
 
 ```powershell
-# Criar cópia para trabalho (não modificar o original!)
+# Criar cï¿½pia para trabalho (nï¿½o modificar o original!)
 Copy-Item "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak" "C:\temp\_ONS_PoC-PDPW\database\backups\working\Backup_PDP_TST.bak"
 ```
 
-### ? Passo 2: Executar Restauração Automatizada
+### ? Passo 2: Executar Restauraï¿½ï¿½o Automatizada
 
 ```powershell
 # Navegar para o projeto
@@ -75,35 +75,35 @@ cd C:\temp\_ONS_PoC-PDPW
 ```
 
 **O script vai:**
-- ? Verificar conexão com SQL Server
+- ? Verificar conexï¿½o com SQL Server
 - ? Analisar o backup
 - ? Restaurar o banco como `PDPW_DB`
 - ? Verificar integridade
-- ? Atualizar estatísticas
-- ? Exibir informações do banco
+- ? Atualizar estatï¿½sticas
+- ? Exibir informaï¿½ï¿½es do banco
 
 ---
 
 ## ?? Como Restaurar o Backup
 
-### Opção 1: Script PowerShell Automatizado (RECOMENDADO)
+### Opï¿½ï¿½o 1: Script PowerShell Automatizado (RECOMENDADO)
 
 ```powershell
-# Restauração completa com análise e geração de scripts
+# Restauraï¿½ï¿½o completa com anï¿½lise e geraï¿½ï¿½o de scripts
 .\database\restore-database.ps1 `
     -BackupPath "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak" `
     -DatabaseName "PDPW_DB" `
     -GenerateScripts
 ```
 
-### Opção 2: SQL Server Management Studio (SSMS)
+### Opï¿½ï¿½o 2: SQL Server Management Studio (SSMS)
 
 ```sql
 -- 1. Restaurar backup
 USE master;
 GO
 
--- Verificar conteúdo do backup
+-- Verificar conteï¿½do do backup
 RESTORE FILELISTONLY 
 FROM DISK = 'C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak';
 GO
@@ -119,7 +119,7 @@ WITH
     STATS = 10;
 GO
 
--- 2. Verificar restauração
+-- 2. Verificar restauraï¿½ï¿½o
 SELECT name, state_desc, recovery_model_desc 
 FROM sys.databases 
 WHERE name = 'PDPW_DB';
@@ -129,14 +129,14 @@ GO
 DBCC CHECKDB('PDPW_DB') WITH NO_INFOMSGS;
 GO
 
--- 4. Atualizar estatísticas
+-- 4. Atualizar estatï¿½sticas
 USE PDPW_DB;
 GO
 EXEC sp_updatestats;
 GO
 ```
 
-### Opção 3: PowerShell Manual
+### Opï¿½ï¿½o 3: PowerShell Manual
 
 ```powershell
 # Restaurar backup via PowerShell
@@ -144,7 +144,7 @@ $backupFile = "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
 $dataFile = "C:\temp\_ONS_PoC-PDPW\database\data\PDPW_DB.mdf"
 $logFile = "C:\temp\_ONS_PoC-PDPW\database\data\PDPW_DB_log.ldf"
 
-# Importar módulo SQL Server
+# Importar mï¿½dulo SQL Server
 Import-Module SqlServer
 
 # Restaurar
@@ -161,30 +161,30 @@ Restore-SqlDatabase `
 
 ---
 
-## ?? Checklist de Restauração
+## ?? Checklist de Restauraï¿½ï¿½o
 
 ### Antes de Restaurar
 
 - [x] Backup recebido do cliente
 - [x] Backup localizado em: `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak`
-- [ ] Verificar espaço em disco suficiente
+- [ ] Verificar espaï¿½o em disco suficiente
 - [ ] SQL Server instalado e rodando
-- [ ] Permissões adequadas configuradas
+- [ ] Permissï¿½es adequadas configuradas
 
-### Durante a Restauração
+### Durante a Restauraï¿½ï¿½o
 
-- [ ] Executar script de restauração
+- [ ] Executar script de restauraï¿½ï¿½o
 - [ ] Monitorar logs de erro
-- [ ] Verificar uso de recursos (CPU, memória)
-- [ ] Anotar tempo de restauração
+- [ ] Verificar uso de recursos (CPU, memï¿½ria)
+- [ ] Anotar tempo de restauraï¿½ï¿½o
 
-### Após a Restauração
+### Apï¿½s a Restauraï¿½ï¿½o
 
 - [ ] Verificar integridade do banco
   ```sql
   DBCC CHECKDB('PDPW_DB') WITH NO_INFOMSGS;
   ```
-- [ ] Atualizar estatísticas
+- [ ] Atualizar estatï¿½sticas
   ```sql
   EXEC sp_updatestats;
   ```
@@ -192,11 +192,11 @@ Restore-SqlDatabase `
   ```sql
   EXEC sp_change_users_login 'Report';
   ```
-- [ ] Documentar schema extraído
+- [ ] Documentar schema extraï¿½do
 
 ---
 
-## ?? Análise do Banco de Dados
+## ?? Anï¿½lise do Banco de Dados
 
 ### Extrair Schema
 
@@ -257,7 +257,7 @@ $server = "localhost"
 $database = "PDPW_DB"
 $outputPath = "C:\temp\_ONS_PoC-PDPW\database\scripts\schema\"
 
-# Criar diretório se não existir
+# Criar diretï¿½rio se nï¿½o existir
 if (-not (Test-Path $outputPath)) {
     New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
 }
@@ -295,10 +295,10 @@ $db.StoredProcedures | Where-Object { -not $_.IsSystemObject } | ForEach-Object 
 # Navegar para o projeto Infrastructure
 cd C:\temp\_ONS_PoC-PDPW\src\PDPW.Infrastructure
 
-# Instalar ferramenta EF (se necessário)
+# Instalar ferramenta EF (se necessï¿½rio)
 dotnet tool install --global dotnet-ef
 
-# Verificar instalação
+# Verificar instalaï¿½ï¿½o
 dotnet ef --version
 
 # Scaffold do banco de dados
@@ -316,9 +316,9 @@ PDPW.Infrastructure/
     ??? ...
 ```
 
-### Comparação: Legado vs Novo
+### Comparaï¿½ï¿½o: Legado vs Novo
 
-Após o scaffold, comparar entidades geradas com as do Domain:
+Apï¿½s o scaffold, comparar entidades geradas com as do Domain:
 
 ```
 Legado (Scaffold)         Novo (Clean Architecture)
@@ -342,7 +342,7 @@ FROM [SchemaName].[TableName]
 ORDER BY [DataColumn] DESC;
 
 -- Gerar script INSERT (usar SSMS)
--- Botão direito na tabela > Script Table as > INSERT To > New Query Window
+-- Botï¿½o direito na tabela > Script Table as > INSERT To > New Query Window
 ```
 
 ### Criar Dados de Teste
@@ -370,24 +370,24 @@ GO
 
 ---
 
-## ?? Segurança e Boas Práticas
+## ?? Seguranï¿½a e Boas Prï¿½ticas
 
 ### ?? IMPORTANTE
 
 1. **Backup Original**
    - ? **NUNCA** modificar o backup original fornecido pelo cliente
-   - ? Sempre trabalhar com uma cópia em `working/`
-   - ? Versionar apenas scripts SQL (não os .bak)
+   - ? Sempre trabalhar com uma cï¿½pia em `working/`
+   - ? Versionar apenas scripts SQL (nï¿½o os .bak)
    - ? Manter backup original em: `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak`
 
-2. **Dados Sensíveis**
-   - ? **NÃO** commitar backups para o Git
-   - ? **NÃO** commitar dados de produção
-   - ? Anonimizar dados se necessário
+2. **Dados Sensï¿½veis**
+   - ? **Nï¿½O** commitar backups para o Git
+   - ? **Nï¿½O** commitar dados de produï¿½ï¿½o
+   - ? Anonimizar dados se necessï¿½rio
    - ? Usar dados de teste/mock
 
 3. **Connection Strings**
-   - ? **NÃO** commitar connection strings com senhas
+   - ? **Nï¿½O** commitar connection strings com senhas
    - ? Usar User Secrets / Variables de ambiente
    - ? Documentar apenas o formato
 
@@ -411,7 +411,7 @@ appsettings.local.json
 
 ---
 
-## ?? Documentação do Schema
+## ?? Documentaï¿½ï¿½o do Schema
 
 ### Template: database/docs/tables.md
 
@@ -420,35 +420,35 @@ appsettings.local.json
 
 ## Tabela: [NomeDaTabela]
 
-**Descrição:** [O que esta tabela armazena]
+**Descriï¿½ï¿½o:** [O que esta tabela armazena]
 
 ### Colunas
 
-| Coluna | Tipo | Nullable | PK | FK | Descrição |
+| Coluna | Tipo | Nullable | PK | FK | Descriï¿½ï¿½o |
 |--------|------|----------|----|----|-----------|
-| Id | int | Não | Sim | - | Identificador único |
-| Nome | nvarchar(100) | Não | - | - | Nome do registro |
-| DataCriacao | datetime | Não | - | - | Data de criação |
+| Id | int | Nï¿½o | Sim | - | Identificador ï¿½nico |
+| Nome | nvarchar(100) | Nï¿½o | - | - | Nome do registro |
+| DataCriacao | datetime | Nï¿½o | - | - | Data de criaï¿½ï¿½o |
 | ... | ... | ... | ... | ... | ... |
 
 ### Relacionamentos
 
 - **FK_Tabela_OutraTabela**: Relacionamento com OutraTabela (muitos-para-um)
 
-### Índices
+### ï¿½ndices
 
-- **PK_Tabela**: Chave primária em `Id`
-- **IX_Tabela_Nome**: Índice em `Nome`
+- **PK_Tabela**: Chave primï¿½ria em `Id`
+- **IX_Tabela_Nome**: ï¿½ndice em `Nome`
 
-### Observações
+### Observaï¿½ï¿½es
 
-- Esta tabela é usada para...
-- Importante: campo X não pode ser nulo porque...
+- Esta tabela ï¿½ usada para...
+- Importante: campo X nï¿½o pode ser nulo porque...
 ```
 
 ---
 
-## ?? Próximos Passos
+## ?? Prï¿½ximos Passos
 
 ### ? 1. Restaurar o Banco
 
@@ -482,7 +482,7 @@ dotnet ef dbcontext scaffold "Server=localhost;Database=PDPW_DB;Trusted_Connecti
 
 - Criar `database/docs/tables.md`
 - Mapear entidades principais
-- Identificar fluxos críticos
+- Identificar fluxos crï¿½ticos
 - Documentar stored procedures
 
 ### ? 5. Atualizar appsettings.json
@@ -505,5 +505,5 @@ dotnet ef dbcontext scaffold "Server=localhost;Database=PDPW_DB;Trusted_Connecti
 
 ---
 
-**Última atualização:** 17/12/2025  
-**Status:** ? Backup disponível - Pronto para restauração!
+**ï¿½ltima atualizaï¿½ï¿½o:** 17/12/2025  
+**Status:** ? Backup disponï¿½vel - Pronto para restauraï¿½ï¿½o!

@@ -1,6 +1,6 @@
-# ?? RESUMO EXECUTIVO - 1 PÁGINA
+ï»¿# ?? RESUMO EXECUTIVO - 1 Pï¿½GINA
 
-**Reunião:** Kick-off Squad PoC PDPW  
+**Reuniï¿½o:** Kick-off Squad PoC PDPW  
 **Data/Hora:** 19/12/2024 - 15:00h (45 min)  
 **Objetivo:** Alinhar squad e iniciar desenvolvimento
 
@@ -8,30 +8,30 @@
 
 ## ?? CONTEXTO
 **Projeto:** Modernizar PDPW (ONS) de .NET Framework/VB.NET/WebForms ? .NET 8/React/Docker  
-**Prazo:** 7 dias úteis (entrega 26/12, apresentação 05/01)  
+**Prazo:** 7 dias ï¿½teis (entrega 26/12, apresentaï¿½ï¿½o 05/01)  
 **Escopo:** 2 vertical slices (Usinas + DADGER)
 
 ---
 
 ## ?? SQUAD E TAREFAS
 
-| Pessoa | Responsabilidade | Prazo | Entregável Principal |
+| Pessoa | Responsabilidade | Prazo | Entregï¿½vel Principal |
 |--------|------------------|-------|----------------------|
 | **DEV 1** | Backend: SLICE 1 (Usinas) | 20/12 | API REST 6 endpoints + Testes |
 | **DEV 2** | Backend: SLICE 2 (DADGER) | 22/12 | API REST 5 endpoints + JOINs |
 | **DEV 3** | Frontend: Ambos slices | 21/12 | 2 telas React completas |
-| **QA** | Testes + Documentação | 24/12 | Plano + Casos + Relatório |
+| **QA** | Testes + Documentaï¿½ï¿½o | 24/12 | Plano + Casos + Relatï¿½rio |
 
 ---
 
-## ?? CÓDIGO LEGADO
+## ?? Cï¿½DIGO LEGADO
 - **473** arquivos VB.NET
-- **168** páginas ASPX
+- **168** pï¿½ginas ASPX
 - **50+** DAOs analisados
 - **Arquitetura:** 3 camadas (DAO/Business/DTO)
 - **? Bem estruturado** | **?? Tecnologia antiga**
 
-**Referências:**
+**Referï¿½ncias:**
 - `pdpw_act/pdpw/Dao/UsinaDAO.vb` (SLICE 1)
 - `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb` (SLICE 2)
 
@@ -39,14 +39,14 @@
 
 ## ?? SLICES
 
-### SLICE 1: Cadastro de Usinas (?? Média)
+### SLICE 1: Cadastro de Usinas (?? Mï¿½dia)
 - **Backend:** Entidade Usina + Repository + Service + 6 endpoints
-- **Frontend:** Listagem + Formulário + Filtros
+- **Frontend:** Listagem + Formulï¿½rio + Filtros
 - **Prazo:** 2 dias
 
 ### SLICE 2: Consulta DADGER (??? Alta)
 - **Backend:** 3 entidades relacionadas + JOINs + Filtros + 5 endpoints
-- **Frontend:** Consulta + Filtros dinâmicos + Grid
+- **Frontend:** Consulta + Filtros dinï¿½micos + Grid
 - **Prazo:** 3 dias
 
 ---
@@ -55,11 +55,11 @@
 
 | Data | Atividade |
 |------|-----------|
-| 19/12 (Qui) | ? Kick-off + Setup + Início |
+| 19/12 (Qui) | ? Kick-off + Setup + Inï¿½cio |
 | 20/12 (Sex) | ?? SLICE 1 completo |
-| 21/12 (Sáb) | ?? Integração SLICE 1 + Início SLICE 2 |
+| 21/12 (Sï¿½b) | ?? Integraï¿½ï¿½o SLICE 1 + Inï¿½cio SLICE 2 |
 | 22/12 (Dom) | ?? SLICE 2 completo |
-| 23/12 (Seg) | ?? Integração SLICE 2 + Ajustes |
+| 23/12 (Seg) | ?? Integraï¿½ï¿½o SLICE 2 + Ajustes |
 | 24/12 (Ter) | ?? Docker + Testes + Docs |
 | 25/12 (Qua) | ?? FERIADO |
 | 26/12 (Qui) | ? ENTREGA |
@@ -68,7 +68,7 @@
 
 ---
 
-## ??? SETUP (30-45 min pós-reunião)
+## ??? SETUP (30-45 min pï¿½s-reuniï¿½o)
 
 ### Todos
 ```bash
@@ -101,71 +101,71 @@ winget install Git.Git
 
 ---
 
-## ? CRITÉRIOS DE SUCESSO
+## ? CRITï¿½RIOS DE SUCESSO
 
 **SLICE 1:**
 - [ ] 6 endpoints funcionando
 - [ ] Swagger documentado
-- [ ] Tela listagem + formulário
-- [ ] Validações implementadas
+- [ ] Tela listagem + formulï¿½rio
+- [ ] Validaï¿½ï¿½es implementadas
 - [ ] Testes > 70%
 
 **SLICE 2:**
 - [ ] 5 endpoints funcionando
 - [ ] JOINs funcionando
-- [ ] Filtros (período/usina/semana)
+- [ ] Filtros (perï¿½odo/usina/semana)
 - [ ] Tela consulta + grid
-- [ ] Testes de integração
+- [ ] Testes de integraï¿½ï¿½o
 
 **Infraestrutura:**
 - [ ] Docker Compose executando
 - [ ] Backend + Frontend containerizados
 - [ ] InMemory DB populado
 
-**Documentação:**
+**Documentaï¿½ï¿½o:**
 - [ ] README atualizado
-- [ ] Apresentação preparada
-- [ ] Código no GitHub
+- [ ] Apresentaï¿½ï¿½o preparada
+- [ ] Cï¿½digo no GitHub
 
 ---
 
-## ?? DOCUMENTAÇÃO DISPONÍVEL
+## ?? DOCUMENTAï¿½ï¿½O DISPONï¿½VEL
 
 | Documento | Finalidade |
 |-----------|------------|
-| `docs/CHECKLIST_REUNIAO_EXECUTIVO.md` | Checklist para conduzir reunião |
-| `docs/APRESENTACAO_REUNIAO_SQUAD.md` | Material de apresentação |
+| `docs/CHECKLIST_REUNIAO_EXECUTIVO.md` | Checklist para conduzir reuniï¿½o |
+| `docs/APRESENTACAO_REUNIAO_SQUAD.md` | Material de apresentaï¿½ï¿½o |
 | `docs/SQUAD_BRIEFING_19DEC.md` | Briefing completo do squad |
-| `docs/ANALISE_TECNICA_CODIGO_LEGADO.md` | Análise detalhada VB.NET |
-| `docs/SETUP_AMBIENTE_GUIA.md` | Guia de instalação |
+| `docs/ANALISE_TECNICA_CODIGO_LEGADO.md` | Anï¿½lise detalhada VB.NET |
+| `docs/SETUP_AMBIENTE_GUIA.md` | Guia de instalaï¿½ï¿½o |
 | `docs/RESUMO_VISUAL_APRESENTACAO.md` | Slides visuais |
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Mitigação |
+| Risco | Mitigaï¿½ï¿½o |
 |-------|-----------|
 | Prazo apertado (7 dias) | Escopo reduzido (2 slices) + trabalho fim de semana |
-| Complexidade legado | ? Análise prévia concluída |
+| Complexidade legado | ? Anï¿½lise prï¿½via concluï¿½da |
 | Banco 350GB | ? InMemory Database (RESOLVIDO) |
-| Integração frontend/backend | Testes contínuos + QA dedicado |
+| Integraï¿½ï¿½o frontend/backend | Testes contï¿½nuos + QA dedicado |
 
 ---
 
-## ?? COMUNICAÇÃO
+## ?? COMUNICAï¿½ï¿½O
 
 - **Daily Standup:** 09:00 (15 min)
-- **Teams/Slack:** Dúvidas assíncronas
+- **Teams/Slack:** Dï¿½vidas assï¿½ncronas
 - **GitHub Issues:** Tarefas
 - **GitHub Projects:** Board Kanban
 - **Commits:** `[SLICE-X] tipo: mensagem`
 
 ---
 
-## ?? PRÓXIMOS PASSOS (IMEDIATOS)
+## ?? PRï¿½XIMOS PASSOS (IMEDIATOS)
 
-### Após reunião (hoje, 19/12):
+### Apï¿½s reuniï¿½o (hoje, 19/12):
 1. ?? **16:00-17:00** - Todos fazem setup do ambiente
 2. ?? **17:00-18:00** - Devs iniciam desenvolvimento
    - DEV 1: Criar entidade `Usina.cs`
@@ -173,8 +173,8 @@ winget install Git.Git
    - DEV 3: Analisar telas legadas `.aspx`
    - QA: Criar `TEST_PLAN.md`
 
-### Amanhã (20/12):
-- **09:00** - Daily Standup (1º do projeto)
+### Amanhï¿½ (20/12):
+- **09:00** - Daily Standup (1ï¿½ do projeto)
 - **09:15-18:00** - Desenvolvimento intenso
 
 ---
@@ -182,25 +182,25 @@ winget install Git.Git
 ## ?? CONTATOS
 
 - **Tech Lead:** Teams/Slack (09:00-18:00)
-- **Suporte técnico:** GitHub Issues
-- **Documentação:** `/docs/*`
-- **Código legado:** `pdpw_act/pdpw/`
+- **Suporte tï¿½cnico:** GitHub Issues
+- **Documentaï¿½ï¿½o:** `/docs/*`
+- **Cï¿½digo legado:** `pdpw_act/pdpw/`
 
 ---
 
 ## ?? MENSAGEM FINAL
 
 **Temos tudo que precisamos:**
-? Análise do legado COMPLETA  
+? Anï¿½lise do legado COMPLETA  
 ? Arquitetura BEM DEFINIDA  
 ? Escopo REALISTA (2 slices)  
 ? Squad EXPERIENTE  
-? Documentação DETALHADA
+? Documentaï¿½ï¿½o DETALHADA
 
 **Vamos modernizar o PDPW! ??**
 
 ---
 
 **Preparado em:** 19/12/2024  
-**Versão:** 1.0  
-**Próxima reunião:** Daily Standup - 20/12 às 09:00
+**Versï¿½o:** 1.0  
+**Prï¿½xima reuniï¿½o:** Daily Standup - 20/12 ï¿½s 09:00

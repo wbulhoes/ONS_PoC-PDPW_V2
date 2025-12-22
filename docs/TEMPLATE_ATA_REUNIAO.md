@@ -1,7 +1,7 @@
-# ?? ATA DA REUNIÃO - KICK-OFF PoC PDPW
+ï»¿# ?? ATA DA REUNIï¿½O - KICK-OFF PoC PDPW
 
 **Data:** 19/12/2024  
-**Horário:** 15:00 - 15:45  
+**Horï¿½rio:** 15:00 - 15:45  
 **Local:** [Presencial / Teams / Sala]  
 **Objetivo:** Kick-off do desenvolvimento da PoC PDPW
 
@@ -21,77 +21,77 @@
 
 ## ?? AGENDA EXECUTADA
 
-| Tópico | Tempo Previsto | Tempo Real | Status |
+| Tï¿½pico | Tempo Previsto | Tempo Real | Status |
 |--------|----------------|------------|--------|
 | 1. Contexto do Projeto | 5 min | ___ min | ? / ?? / ? |
-| 2. Análise do Código Legado | 10 min | ___ min | ? / ?? / ? |
-| 3. Divisão de Tarefas | 15 min | ___ min | ? / ?? / ? |
+| 2. Anï¿½lise do Cï¿½digo Legado | 10 min | ___ min | ? / ?? / ? |
+| 3. Divisï¿½o de Tarefas | 15 min | ___ min | ? / ?? / ? |
 | 4. Setup do Ambiente | 10 min | ___ min | ? / ?? / ? |
-| 5. Cronograma e Comunicação | 5 min | ___ min | ? / ?? / ? |
+| 5. Cronograma e Comunicaï¿½ï¿½o | 5 min | ___ min | ? / ?? / ? |
 | **TOTAL** | **45 min** | **___ min** | |
 
 ---
 
-## ? DECISÕES TOMADAS
+## ? DECISï¿½ES TOMADAS
 
 ### Escopo
 - [x] **Definido:** 2 vertical slices (Usinas + DADGER)
 - [x] **Tecnologias:** .NET 8 + React 18 + Docker
 - [x] **Banco de dados:** InMemory Database para PoC
-- [x] **Autenticação:** Fora do escopo da PoC
+- [x] **Autenticaï¿½ï¿½o:** Fora do escopo da PoC
 
 ### Prazos
-- [x] **Entrega código:** 26/12/2024
-- [x] **Apresentação:** 05/01/2025
+- [x] **Entrega cï¿½digo:** 26/12/2024
+- [x] **Apresentaï¿½ï¿½o:** 05/01/2025
 - [x] **Estimativa completa:** 12/01/2025
 
-### Comunicação
+### Comunicaï¿½ï¿½o
 - [x] **Daily Standup:** 09:00 (15 minutos) - todos os dias
-- [x] **Canal:** Teams/Slack para comunicação assíncrona
+- [x] **Canal:** Teams/Slack para comunicaï¿½ï¿½o assï¿½ncrona
 - [x] **Rastreamento:** GitHub Issues + Projects
 
 ---
 
-## ?? DIVISÃO DE TAREFAS ACORDADA
+## ?? DIVISï¿½O DE TAREFAS ACORDADA
 
 ### ?? DEV 1 - Backend Lead (SLICE 1: Usinas)
-**Status de entendimento:** ? Claro / ?? Dúvidas / ? Não entendeu
+**Status de entendimento:** ? Claro / ?? Dï¿½vidas / ? Nï¿½o entendeu
 
 **Responsabilidades:**
 - [ ] Criar entidade `Usina` no Domain
 - [ ] Implementar Repository + Service
 - [ ] Criar Controller com 6 endpoints REST
-- [ ] Escrever testes unitários (> 70% cobertura)
+- [ ] Escrever testes unitï¿½rios (> 70% cobertura)
 
 **Prazo:** 20/12/2024 (Sexta)
 
-**Dúvidas levantadas:**
-- _[Registrar aqui qualquer dúvida levantada]_
+**Dï¿½vidas levantadas:**
+- _[Registrar aqui qualquer dï¿½vida levantada]_
 
-**Ações imediatas:**
+**Aï¿½ï¿½es imediatas:**
 - [ ] Fazer setup do ambiente (.NET 8 + Docker)
 - [ ] Criar branch `feature/slice-1-usinas`
 - [ ] Analisar `pdpw_act/pdpw/Dao/UsinaDAO.vb`
-- [ ] Começar a criar entidade `Usina.cs`
+- [ ] Comeï¿½ar a criar entidade `Usina.cs`
 
 ---
 
 ### ?? DEV 2 - Backend (SLICE 2: DADGER)
-**Status de entendimento:** ? Claro / ?? Dúvidas / ? Não entendeu
+**Status de entendimento:** ? Claro / ?? Dï¿½vidas / ? Nï¿½o entendeu
 
 **Responsabilidades:**
 - [ ] Criar 3 entidades relacionadas (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
-- [ ] Implementar repositórios com JOINs complexos
-- [ ] Criar Services com filtros (período, usina, semana)
+- [ ] Implementar repositï¿½rios com JOINs complexos
+- [ ] Criar Services com filtros (perï¿½odo, usina, semana)
 - [ ] Criar Controller com 5 endpoints REST
-- [ ] Escrever testes de integração
+- [ ] Escrever testes de integraï¿½ï¿½o
 
 **Prazo:** 22/12/2024 (Domingo)
 
-**Dúvidas levantadas:**
-- _[Registrar aqui qualquer dúvida levantada]_
+**Dï¿½vidas levantadas:**
+- _[Registrar aqui qualquer dï¿½vida levantada]_
 
-**Ações imediatas:**
+**Aï¿½ï¿½es imediatas:**
 - [ ] Fazer setup do ambiente (.NET 8 + Docker)
 - [ ] Criar branch `feature/slice-2-dadger`
 - [ ] Analisar `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
@@ -100,21 +100,21 @@
 ---
 
 ### ?? DEV 3 - Frontend Lead
-**Status de entendimento:** ? Claro / ?? Dúvidas / ? Não entendeu
+**Status de entendimento:** ? Claro / ?? Dï¿½vidas / ? Nï¿½o entendeu
 
 **Responsabilidades:**
-- [ ] Criar tela de listagem de Usinas + Formulário
-- [ ] Criar tela de consulta DADGER + Filtros dinâmicos
+- [ ] Criar tela de listagem de Usinas + Formulï¿½rio
+- [ ] Criar tela de consulta DADGER + Filtros dinï¿½micos
 - [ ] Integrar com API REST (Axios)
-- [ ] Implementar validações de formulário
+- [ ] Implementar validaï¿½ï¿½es de formulï¿½rio
 - [ ] UI responsiva e moderna
 
-**Prazo:** 21/12/2024 (Sábado)
+**Prazo:** 21/12/2024 (Sï¿½bado)
 
-**Dúvidas levantadas:**
-- _[Registrar aqui qualquer dúvida levantada]_
+**Dï¿½vidas levantadas:**
+- _[Registrar aqui qualquer dï¿½vida levantada]_
 
-**Ações imediatas:**
+**Aï¿½ï¿½es imediatas:**
 - [ ] Fazer setup do ambiente (Node.js 20)
 - [ ] Criar branch `feature/frontend-slices`
 - [ ] Analisar telas legadas (`.aspx`)
@@ -123,22 +123,22 @@
 ---
 
 ### ?? QA - Quality Assurance
-**Status de entendimento:** ? Claro / ?? Dúvidas / ? Não entendeu
+**Status de entendimento:** ? Claro / ?? Dï¿½vidas / ? Nï¿½o entendeu
 
 **Responsabilidades:**
 - [ ] Criar plano de testes (`TEST_PLAN.md`)
 - [ ] Criar casos de teste para SLICE 1 e SLICE 2
 - [ ] Testar endpoints via Postman/Swagger
-- [ ] Validar integração frontend/backend
+- [ ] Validar integraï¿½ï¿½o frontend/backend
 - [ ] Documentar bugs (se houver)
-- [ ] Relatório final de qualidade
+- [ ] Relatï¿½rio final de qualidade
 
-**Prazo:** Diário (19-24/12/2024)
+**Prazo:** Diï¿½rio (19-24/12/2024)
 
-**Dúvidas levantadas:**
-- _[Registrar aqui qualquer dúvida levantada]_
+**Dï¿½vidas levantadas:**
+- _[Registrar aqui qualquer dï¿½vida levantada]_
 
-**Ações imediatas:**
+**Aï¿½ï¿½es imediatas:**
 - [ ] Instalar Postman
 - [ ] Criar branch `docs/test-documentation`
 - [ ] Criar estrutura de documentos de teste
@@ -146,71 +146,71 @@
 
 ---
 
-## ?? CÓDIGO LEGADO - PRINCIPAIS CONCLUSÕES
+## ?? Cï¿½DIGO LEGADO - PRINCIPAIS CONCLUSï¿½ES
 
-### Estatísticas apresentadas
+### Estatï¿½sticas apresentadas
 - **473** arquivos VB.NET analisados
-- **168** páginas ASPX (WebForms)
+- **168** pï¿½ginas ASPX (WebForms)
 - **Arquitetura:** 3 camadas (DAO/Business/DTO)
 
 ### Pontos positivos identificados
-- ? Código bem estruturado
-- ? Separação de responsabilidades
-- ? Padrão Repository implementado
+- ? Cï¿½digo bem estruturado
+- ? Separaï¿½ï¿½o de responsabilidades
+- ? Padrï¿½o Repository implementado
 - ? Sistema de cache
-- ? Testes unitários existentes
+- ? Testes unitï¿½rios existentes
 
 ### Desafios identificados
 - ?? WebForms legado
-- ?? VB.NET (requer conversão)
+- ?? VB.NET (requer conversï¿½o)
 - ?? SQL inline (sem ORM)
-- ?? Banco de 350GB (impossível restaurar)
+- ?? Banco de 350GB (impossï¿½vel restaurar)
 
-### Solução adotada
+### Soluï¿½ï¿½o adotada
 - ? **InMemory Database** para PoC
 - ? **Seed data** criado manualmente
-- ? **Engenharia reversa** do código VB.NET concluída
+- ? **Engenharia reversa** do cï¿½digo VB.NET concluï¿½da
 
 ---
 
 ## ?? CRONOGRAMA ACORDADO
 
-| Data | Atividade Principal | Responsável |
+| Data | Atividade Principal | Responsï¿½vel |
 |------|---------------------|-------------|
-| 19/12 (Qui) | Setup + Início desenvolvimento | Todos |
+| 19/12 (Qui) | Setup + Inï¿½cio desenvolvimento | Todos |
 | 20/12 (Sex) | SLICE 1 (Usinas) completo | DEV 1 + DEV 3 |
-| 21/12 (Sáb) | Integração SLICE 1 + Início SLICE 2 | Todos |
+| 21/12 (Sï¿½b) | Integraï¿½ï¿½o SLICE 1 + Inï¿½cio SLICE 2 | Todos |
 | 22/12 (Dom) | SLICE 2 (DADGER) completo | DEV 2 + DEV 3 |
-| 23/12 (Seg) | Integração SLICE 2 + Ajustes | Todos |
-| 24/12 (Ter) | Docker + Testes + Documentação | Todos |
+| 23/12 (Seg) | Integraï¿½ï¿½o SLICE 2 + Ajustes | Todos |
+| 24/12 (Ter) | Docker + Testes + Documentaï¿½ï¿½o | Todos |
 | 25/12 (Qua) | FERIADO ?? | - |
-| 26/12 (Qui) | Apresentação + Entrega | Todos |
+| 26/12 (Qui) | Apresentaï¿½ï¿½o + Entrega | Todos |
 
 ---
 
-## ?? COMUNICAÇÃO DEFINIDA
+## ?? COMUNICAï¿½ï¿½O DEFINIDA
 
 ### Daily Standup
-- **Horário:** 09:00
-- **Duração:** 15 minutos
+- **Horï¿½rio:** 09:00
+- **Duraï¿½ï¿½o:** 15 minutos
 - **Formato:**
   1. O que eu fiz ontem?
   2. O que eu vou fazer hoje?
   3. Tenho algum bloqueio?
-- **Próximo:** 20/12/2024 às 09:00
+- **Prï¿½ximo:** 20/12/2024 ï¿½s 09:00
 
 ### Canais
-- **Teams/Slack:** Comunicação assíncrona
+- **Teams/Slack:** Comunicaï¿½ï¿½o assï¿½ncrona
 - **GitHub Issues:** Rastreamento de tarefas
 - **GitHub Projects:** Board Kanban
-- **Pull Requests:** Mínimo 1 revisor
+- **Pull Requests:** Mï¿½nimo 1 revisor
 
-### Padrão de Commits
+### Padrï¿½o de Commits
 ```
 [SLICE-1] feat: adiciona entidade Usina
 [SLICE-2] fix: corrige filtro de data
 [DOCS] docs: atualiza README
-[TEST] test: adiciona testes unitários
+[TEST] test: adiciona testes unitï¿½rios
 ```
 
 ---
@@ -218,30 +218,30 @@
 ## ??? SETUP DO AMBIENTE
 
 ### Status de setup acordado
-- [ ] Todos farão setup após a reunião (30-45 min)
-- [ ] Guia disponível: `docs/SETUP_AMBIENTE_GUIA.md`
-- [ ] Suporte disponível via Teams/Slack
+- [ ] Todos farï¿½o setup apï¿½s a reuniï¿½o (30-45 min)
+- [ ] Guia disponï¿½vel: `docs/SETUP_AMBIENTE_GUIA.md`
+- [ ] Suporte disponï¿½vel via Teams/Slack
 
-### Ferramentas necessárias
+### Ferramentas necessï¿½rias
 - **Backend Devs:** .NET 8 SDK, Visual Studio 2022, Docker
-- **Frontend Dev:** Node.js 20, VS Code, extensões
+- **Frontend Dev:** Node.js 20, VS Code, extensï¿½es
 - **QA:** Postman, Git
 
 ---
 
-## ?? DOCUMENTAÇÃO DISPONÍVEL
+## ?? DOCUMENTAï¿½ï¿½O DISPONï¿½VEL
 
 Documentos apresentados e disponibilizados:
 - ? `docs/SQUAD_BRIEFING_19DEC.md` - Briefing completo
-- ? `docs/ANALISE_TECNICA_CODIGO_LEGADO.md` - Análise VB.NET
-- ? `docs/SETUP_AMBIENTE_GUIA.md` - Guia de instalação
-- ? `docs/INDEX_DOCUMENTACAO.md` - Índice completo
-- ? `README.md` - Visão geral atualizada
-- ? `VERTICAL_SLICES_DECISION.md` - Decisões técnicas
+- ? `docs/ANALISE_TECNICA_CODIGO_LEGADO.md` - Anï¿½lise VB.NET
+- ? `docs/SETUP_AMBIENTE_GUIA.md` - Guia de instalaï¿½ï¿½o
+- ? `docs/INDEX_DOCUMENTACAO.md` - ï¿½ndice completo
+- ? `README.md` - Visï¿½o geral atualizada
+- ? `VERTICAL_SLICES_DECISION.md` - Decisï¿½es tï¿½cnicas
 
 ---
 
-## ? DÚVIDAS LEVANTADAS E RESPOSTAS
+## ? Dï¿½VIDAS LEVANTADAS E RESPOSTAS
 
 ### Pergunta 1: [Registrar pergunta]
 **Quem perguntou:** [Nome]  
@@ -258,35 +258,35 @@ Documentos apresentados e disponibilizados:
 **Resposta:** [Resposta dada]  
 **Status:** ? Resolvida / ?? Pendente / ?? Action item criado
 
-_[Adicionar mais perguntas conforme necessário]_
+_[Adicionar mais perguntas conforme necessï¿½rio]_
 
 ---
 
 ## ?? RISCOS DISCUTIDOS
 
-| Risco | Probabilidade | Impacto | Mitigação Acordada |
+| Risco | Probabilidade | Impacto | Mitigaï¿½ï¿½o Acordada |
 |-------|---------------|---------|-------------------|
 | Prazo apertado (7 dias) | ALTA | ALTO | Escopo reduzido + trabalho fim de semana |
-| Complexidade do legado | MÉDIA | MÉDIO | Análise prévia concluída ? |
-| Banco de dados (350GB) | ALTA | MÉDIO | InMemory Database (RESOLVIDO) ? |
-| Integração frontend/backend | MÉDIA | ALTO | Testes contínuos + QA dedicado |
-| Bugs de última hora | MÉDIA | MÉDIO | Buffer de 1 dia (24/12) |
+| Complexidade do legado | Mï¿½DIA | Mï¿½DIO | Anï¿½lise prï¿½via concluï¿½da ? |
+| Banco de dados (350GB) | ALTA | Mï¿½DIO | InMemory Database (RESOLVIDO) ? |
+| Integraï¿½ï¿½o frontend/backend | Mï¿½DIA | ALTO | Testes contï¿½nuos + QA dedicado |
+| Bugs de ï¿½ltima hora | Mï¿½DIA | Mï¿½DIO | Buffer de 1 dia (24/12) |
 
 ---
 
-## ?? ACTION ITEMS (PRÓXIMOS PASSOS)
+## ?? ACTION ITEMS (PRï¿½XIMOS PASSOS)
 
 ### Imediatos (Hoje, 19/12 - 16:00-18:00)
 
 #### Todos
 - [ ] Fazer setup do ambiente (30-45 min)
 - [ ] Criar branch pessoal no Git
-- [ ] Ler documentação relevante ao seu papel
+- [ ] Ler documentaï¿½ï¿½o relevante ao seu papel
 
 #### DEV 1
 - [ ] Verificar .NET 8 SDK instalado
 - [ ] Criar branch `feature/slice-1-usinas`
-- [ ] Começar a criar entidade `Usina.cs`
+- [ ] Comeï¿½ar a criar entidade `Usina.cs`
 
 #### DEV 2
 - [ ] Verificar .NET 8 SDK instalado
@@ -304,30 +304,30 @@ _[Adicionar mais perguntas conforme necessário]_
 - [ ] Criar `TEST_PLAN.md`
 
 ### Curto Prazo (20/12 - Sexta)
-- [ ] Daily Standup às 09:00
+- [ ] Daily Standup ï¿½s 09:00
 - [ ] DEV 1 concluir SLICE 1 (Backend Usinas)
 - [ ] DEV 3 desenvolver UI de Usinas
 - [ ] QA testar endpoints de Usinas
 
 ---
 
-## ? CRITÉRIOS DE SUCESSO ACORDADOS
+## ? CRITï¿½RIOS DE SUCESSO ACORDADOS
 
 ### SLICE 1: Cadastro de Usinas
 - [ ] 6 endpoints REST funcionando
 - [ ] Swagger documentado
 - [ ] Tela de listagem funcional
-- [ ] Formulário de cadastro funcional
-- [ ] Validações implementadas
-- [ ] Testes unitários > 70%
+- [ ] Formulï¿½rio de cadastro funcional
+- [ ] Validaï¿½ï¿½es implementadas
+- [ ] Testes unitï¿½rios > 70%
 
 ### SLICE 2: Consulta DADGER
 - [ ] 5 endpoints REST funcionando
 - [ ] Relacionamentos EF Core funcionando
-- [ ] Filtros complexos (período, usina, semana)
+- [ ] Filtros complexos (perï¿½odo, usina, semana)
 - [ ] Tela de consulta funcional
 - [ ] Grid de resultados funcional
-- [ ] Testes de integração passando
+- [ ] Testes de integraï¿½ï¿½o passando
 
 ### Infraestrutura
 - [ ] Docker Compose executando
@@ -335,15 +335,15 @@ _[Adicionar mais perguntas conforme necessário]_
 - [ ] Frontend containerizado
 - [ ] InMemory Database populado
 
-### Documentação
+### Documentaï¿½ï¿½o
 - [ ] README atualizado
 - [ ] Arquitetura documentada
-- [ ] Apresentação preparada
-- [ ] Código no GitHub
+- [ ] Apresentaï¿½ï¿½o preparada
+- [ ] Cï¿½digo no GitHub
 
 ---
 
-## ?? MÉTRICAS E INDICADORES
+## ?? Mï¿½TRICAS E INDICADORES
 
 ### Velocidade esperada
 - **SLICE 1:** 2 dias (19-20/12)
@@ -352,43 +352,43 @@ _[Adicionar mais perguntas conforme necessário]_
 
 ### Qualidade esperada
 - **Cobertura de testes:** > 70%
-- **Code review:** Mínimo 1 revisor
-- **Bugs críticos:** 0 na entrega
+- **Code review:** Mï¿½nimo 1 revisor
+- **Bugs crï¿½ticos:** 0 na entrega
 
 ---
 
-## ?? FEEDBACK DA REUNIÃO
+## ?? FEEDBACK DA REUNIï¿½O
 
-### Clima da reunião
+### Clima da reuniï¿½o
 - [ ] ?? Positivo - Time motivado
-- [ ] ?? Neutro - Time com dúvidas
+- [ ] ?? Neutro - Time com dï¿½vidas
 - [ ] ?? Negativo - Time preocupado
 
-### Clareza das informações
+### Clareza das informaï¿½ï¿½es
 - [ ] ? Todos entenderam suas tarefas
-- [ ] ?? Algumas dúvidas pendentes
-- [ ] ? Muita confusão
+- [ ] ?? Algumas dï¿½vidas pendentes
+- [ ] ? Muita confusï¿½o
 
-### Duração
+### Duraï¿½ï¿½o
 - **Previsto:** 45 minutos
 - **Real:** ___ minutos
 - [ ] ? No tempo / [ ] ?? Estourou um pouco / [ ] ? Muito longo
 
-### Comentários gerais
+### Comentï¿½rios gerais
 _[Registrar feedback geral do time]_
 
 ---
 
-## ?? OBSERVAÇÕES ADICIONAIS
+## ?? OBSERVAï¿½ï¿½ES ADICIONAIS
 
-_[Registrar qualquer observação relevante não coberta acima]_
+_[Registrar qualquer observaï¿½ï¿½o relevante nï¿½o coberta acima]_
 
 ---
 
 ## ?? ANEXOS
 
-- [x] Slides da apresentação (projetados)
-- [x] Documentação distribuída:
+- [x] Slides da apresentaï¿½ï¿½o (projetados)
+- [x] Documentaï¿½ï¿½o distribuï¿½da:
   - `docs/SQUAD_BRIEFING_19DEC.md`
   - `docs/SETUP_AMBIENTE_GUIA.md`
   - `docs/ANALISE_TECNICA_CODIGO_LEGADO.md`
@@ -423,22 +423,22 @@ Confirmo que entendi minhas responsabilidades e concordo com os prazos:
 
 ---
 
-## ?? PRÓXIMAS REUNIÕES
+## ?? PRï¿½XIMAS REUNIï¿½ES
 
-- **Daily Standup:** 20/12/2024 às 09:00 (15 min)
-- **Checkpoint:** 23/12/2024 às 15:00 (30 min) - se necessário
-- **Ensaio da apresentação:** 26/12/2024 às 10:00 (1 hora)
+- **Daily Standup:** 20/12/2024 ï¿½s 09:00 (15 min)
+- **Checkpoint:** 23/12/2024 ï¿½s 15:00 (30 min) - se necessï¿½rio
+- **Ensaio da apresentaï¿½ï¿½o:** 26/12/2024 ï¿½s 10:00 (1 hora)
 
 ---
 
 **Ata elaborada por:** [Nome do Tech Lead]  
-**Data de elaboração:** 19/12/2024  
-**Versão:** 1.0  
+**Data de elaboraï¿½ï¿½o:** 19/12/2024  
+**Versï¿½o:** 1.0  
 **Status:** ? Finalizada
 
 ---
 
-**Distribuição:**
+**Distribuiï¿½ï¿½o:**
 - [x] Tech Lead
 - [x] DEV 1
 - [x] DEV 2

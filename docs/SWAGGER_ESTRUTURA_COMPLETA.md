@@ -1,32 +1,32 @@
-# ?? SWAGGER - Estrutura Completa da Documentação
+ï»¿# ?? SWAGGER - Estrutura Completa da Documentaï¿½ï¿½o
 
-**Projeto:** PDPW PoC - Modernização ONS  
-**Objetivo:** Documentação interativa de 29 APIs com 154+ endpoints  
+**Projeto:** PDPW PoC - Modernizaï¿½ï¿½o ONS  
+**Objetivo:** Documentaï¿½ï¿½o interativa de 29 APIs com 154+ endpoints  
 **Acesso:** http://localhost:5000/swagger
 
 ---
 
-## ?? VISÃO GERAL
+## ?? VISï¿½O GERAL
 
-### O que é o Swagger?
+### O que ï¿½ o Swagger?
 
-Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
-- ? **Visualizar** todos os endpoints disponíveis
+Swagger (OpenAPI) ï¿½ uma **documentaï¿½ï¿½o interativa** da API que permite:
+- ? **Visualizar** todos os endpoints disponï¿½veis
 - ? **Testar** APIs diretamente no navegador (sem Postman)
 - ? **Entender** schemas de Request/Response
-- ? **Gerar** código cliente automaticamente
-- ? **Exportar** especificação OpenAPI JSON/YAML
+- ? **Gerar** cï¿½digo cliente automaticamente
+- ? **Exportar** especificaï¿½ï¿½o OpenAPI JSON/YAML
 
 ---
 
 ## ??? ESTRUTURA PROPOSTA
 
-### Layout de Navegação
+### Layout de Navegaï¿½ï¿½o
 
 ```
 ???????????????????????????????????????????????????????????????
-? PDPW API - PoC Modernização ONS                             ?
-? Versão 1.0                                                  ?
+? PDPW API - PoC Modernizaï¿½ï¿½o ONS                             ?
+? Versï¿½o 1.0                                                  ?
 ?                                                             ?
 ? Migrado de .NET Framework/VB.NET/WebForms                  ?
 ? para .NET 8/C#/Clean Architecture                          ?
@@ -34,30 +34,30 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 ? 29 APIs | 154+ Endpoints | Cobertura > 60%                ?
 ???????????????????????????????????????????????????????????????
 
-?? Gestão de Ativos (6 APIs, 31 endpoints) ?
+?? Gestï¿½o de Ativos (6 APIs, 31 endpoints) ?
    ?? Arquivos e Dados (5 APIs, 31 endpoints) ?
-   ?? Restrições e Paradas (6 APIs, 30 endpoints) ?
-   ? Operação e Geração (4 APIs, 21 endpoints) ?
+   ?? Restriï¿½ï¿½es e Paradas (6 APIs, 30 endpoints) ?
+   ? Operaï¿½ï¿½o e Geraï¿½ï¿½o (4 APIs, 21 endpoints) ?
    ?? Dados Consolidados (2 APIs, 12 endpoints) ?
-   ?? Gestão de Equipes (3 APIs, 15 endpoints) ?
-   ?? Documentos e Relatórios (4 APIs, 19 endpoints) ?
+   ?? Gestï¿½o de Equipes (3 APIs, 15 endpoints) ?
+   ?? Documentos e Relatï¿½rios (4 APIs, 19 endpoints) ?
 ```
 
 ---
 
 ## ?? CATEGORIAS E APIs
 
-### ?? 1. GESTÃO DE ATIVOS (31 endpoints)
+### ?? 1. GESTï¿½O DE ATIVOS (31 endpoints)
 
 #### 1.1 Usinas
-**Descrição:** Cadastro e consulta de usinas do sistema elétrico  
-**Código Legado:** `pdpw_act/pdpw/Dao/UsinaDAO.vb`
+**Descriï¿½ï¿½o:** Cadastro e consulta de usinas do sistema elï¿½trico  
+**Cï¿½digo Legado:** `pdpw_act/pdpw/Dao/UsinaDAO.vb`
 
-| Método | Endpoint | Descrição | Request | Response |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o | Request | Response |
 |--------|----------|-----------|---------|----------|
 | GET | `/api/usinas` | Lista todas as usinas | - | `UsinaResponseDTO[]` |
 | GET | `/api/usinas/{id}` | Busca usina por ID | `int id` | `UsinaResponseDTO` |
-| GET | `/api/usinas/codigo/{codigo}` | Busca por código | `string codigo` | `UsinaResponseDTO[]` |
+| GET | `/api/usinas/codigo/{codigo}` | Busca por cï¿½digo | `string codigo` | `UsinaResponseDTO[]` |
 | GET | `/api/usinas/empresa/{codEmpre}` | Busca por empresa | `string codEmpre` | `UsinaResponseDTO[]` |
 | POST | `/api/usinas` | Cria nova usina | `UsinaRequestDTO` | `UsinaResponseDTO` |
 | PUT | `/api/usinas/{id}` | Atualiza usina | `int id, UsinaUpdateDTO` | `204 No Content` |
@@ -83,7 +83,7 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
   "tpUsinaId": "UTE",
   "tipoUsina": {
     "id": "UTE",
-    "descricao": "Usina Termelétrica"
+    "descricao": "Usina Termelï¿½trica"
   },
   "empresa": {
     "codEmpre": "EMP001",
@@ -97,7 +97,7 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 
 #### 1.2 Empresas
 **Endpoints:** 5 (GET all, GET by id, GET by codigo, POST, PUT, DELETE)  
-**Código Legado:** `pdpw_act/pdpw/Dao/EmpresaDAO.vb`
+**Cï¿½digo Legado:** `pdpw_act/pdpw/Dao/EmpresaDAO.vb`
 
 #### 1.3 Tipos de Usina
 **Endpoints:** 4 (GET all, GET by id, POST, PUT)  
@@ -105,12 +105,12 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 
 #### 1.4 Unidades Geradoras (UG)
 **Endpoints:** 5 (CRUD completo + filtros por usina)  
-**Código Legado:** `pdpw_act/pdpw/Dao/UnidadeGeradoraDAO.vb`
+**Cï¿½digo Legado:** `pdpw_act/pdpw/Dao/UnidadeGeradoraDAO.vb`
 
 #### 1.5 Usinas Conversoras
 **Endpoints:** 5 (CRUD completo)
 
-#### 1.6 Rampas Usina Térmica
+#### 1.6 Rampas Usina Tï¿½rmica
 **Endpoints:** 5 (CRUD + consulta por usina)
 
 ---
@@ -118,10 +118,10 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 ### ?? 2. ARQUIVOS E DADOS (31 endpoints)
 
 #### 2.1 Arquivos DADGER
-**Descrição:** Arquivos de dados de geração  
-**Código Legado:** `pdpw_act/pdpw/Dao/ArquivoDadgerDAO.vb`
+**Descriï¿½ï¿½o:** Arquivos de dados de geraï¿½ï¿½o  
+**Cï¿½digo Legado:** `pdpw_act/pdpw/Dao/ArquivoDadgerDAO.vb`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/arquivos-dadger` | Lista todos os arquivos |
 | GET | `/api/arquivos-dadger/{id}` | Busca por ID |
@@ -149,16 +149,16 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 ```
 
 #### 2.2 Valores DADGER
-**Descrição:** Valores de CVU, inflexibilidade por usina/semana  
-**Código Legado:** `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
+**Descriï¿½ï¿½o:** Valores de CVU, inflexibilidade por usina/semana  
+**Cï¿½digo Legado:** `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/valores-dadger` | Lista todos os valores |
 | GET | `/api/valores-dadger/{id}` | Busca por ID |
 | GET | `/api/valores-dadger/arquivo/{idArquivo}` | Valores de um arquivo |
 | GET | `/api/valores-dadger/usina/{codUsina}` | Valores de uma usina |
-| GET | `/api/valores-dadger/periodo` | Consulta por período (query) |
+| GET | `/api/valores-dadger/periodo` | Consulta por perï¿½odo (query) |
 | POST | `/api/valores-dadger` | Cria novo valor |
 | PUT | `/api/valores-dadger/{id}` | Atualiza valor |
 
@@ -187,65 +187,65 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 **Endpoints:** 5 (GET all, GET by id, GET by periodo, POST, PUT)
 
 #### 2.4 Cargas
-**Endpoints:** 5 (CRUD + consulta por período)
+**Endpoints:** 5 (CRUD + consulta por perï¿½odo)
 
 #### 2.5 Uploads
 **Endpoints:** 4 (POST file, GET list, GET by id, DELETE)
 
 ---
 
-### ?? 3. RESTRIÇÕES E PARADAS (30 endpoints)
+### ?? 3. RESTRIï¿½ï¿½ES E PARADAS (30 endpoints)
 
 #### 3.1 Paradas UG
-**Descrição:** Paradas programadas de unidades geradoras
+**Descriï¿½ï¿½o:** Paradas programadas de unidades geradoras
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/paradas-ug` | Lista todas as paradas |
 | GET | `/api/paradas-ug/{id}` | Busca por ID |
 | GET | `/api/paradas-ug/usina/{codUsina}` | Paradas de uma usina |
-| GET | `/api/paradas-ug/periodo` | Paradas em um período |
+| GET | `/api/paradas-ug/periodo` | Paradas em um perï¿½odo |
 | POST | `/api/paradas-ug` | Registra nova parada |
 | PUT | `/api/paradas-ug/{id}` | Atualiza parada |
 | DELETE | `/api/paradas-ug/{id}` | Remove parada |
 
-#### 3.2 Restrições UG
+#### 3.2 Restriï¿½ï¿½es UG
 **Endpoints:** 5 (CRUD + filtros)
 
-#### 3.3 Restrições US (Usinas)
+#### 3.3 Restriï¿½ï¿½es US (Usinas)
 **Endpoints:** 5 (CRUD + filtros)
 
-#### 3.4 Motivos de Restrição
-**Endpoints:** 4 (enumeração + CRUD básico)
+#### 3.4 Motivos de Restriï¿½ï¿½o
+**Endpoints:** 4 (enumeraï¿½ï¿½o + CRUD bï¿½sico)
 
 #### 3.5 Inflexibilidade Contratada
 **Endpoints:** 6 (CRUD + consultas complexas)
 
-#### 3.6 Modalidade Operação Térmica
+#### 3.6 Modalidade Operaï¿½ï¿½o Tï¿½rmica
 **Endpoints:** 5 (CRUD completo)
 
 ---
 
-### ? 4. OPERAÇÃO E GERAÇÃO (21 endpoints)
+### ? 4. OPERAï¿½ï¿½O E GERAï¿½ï¿½O (21 endpoints)
 
-#### 4.1 Intercâmbio
-**Descrição:** Intercâmbio de energia entre subsistemas
+#### 4.1 Intercï¿½mbio
+**Descriï¿½ï¿½o:** Intercï¿½mbio de energia entre subsistemas
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/intercambio` | Lista todos |
 | GET | `/api/intercambio/{id}` | Busca por ID |
-| GET | `/api/intercambio/periodo` | Consulta por período |
-| POST | `/api/intercambio` | Registra intercâmbio |
+| GET | `/api/intercambio/periodo` | Consulta por perï¿½odo |
+| POST | `/api/intercambio` | Registra intercï¿½mbio |
 | PUT | `/api/intercambio/{id}` | Atualiza |
 
-#### 4.2 Balanço
+#### 4.2 Balanï¿½o
 **Endpoints:** 5 (CRUD + consulta por subsistema)
 
-#### 4.3 Geração Fora de Mérito
+#### 4.3 Geraï¿½ï¿½o Fora de Mï¿½rito
 **Endpoints:** 5 (CRUD + filtros)
 
-#### 4.4 PDOC (Programação Diária de Operação)
+#### 4.4 PDOC (Programaï¿½ï¿½o Diï¿½ria de Operaï¿½ï¿½o)
 **Endpoints:** 6 (CRUD + consultas especiais)
 
 ---
@@ -253,15 +253,15 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 ### ?? 5. DADOS CONSOLIDADOS (12 endpoints)
 
 #### 5.1 DCA - Dados Agregados
-**Descrição:** Dados consolidados agregados
+**Descriï¿½ï¿½o:** Dados consolidados agregados
 
-| Método | Endpoint | Descrição |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o |
 |--------|----------|-----------|
 | GET | `/api/dca` | Lista todos |
 | GET | `/api/dca/{id}` | Busca por ID |
-| GET | `/api/dca/periodo` | Consulta por período |
+| GET | `/api/dca/periodo` | Consulta por perï¿½odo |
 | GET | `/api/dca/usina/{codUsina}` | DCA de uma usina |
-| GET | `/api/dca/resumo` | Resumo estatístico |
+| GET | `/api/dca/resumo` | Resumo estatï¿½stico |
 | POST | `/api/dca` | Cria DCA |
 
 #### 5.2 DCR - Dados Consolidados Revisados
@@ -269,36 +269,36 @@ Swagger (OpenAPI) é uma **documentação interativa** da API que permite:
 
 ---
 
-### ?? 6. GESTÃO DE EQUIPES (15 endpoints)
+### ?? 6. GESTï¿½O DE EQUIPES (15 endpoints)
 
 #### 6.1 Equipes PDP
 **Endpoints:** 5 (CRUD completo)
 
-#### 6.2 Usuários
-**Endpoints:** 5 (CRUD sem autenticação na PoC)
+#### 6.2 Usuï¿½rios
+**Endpoints:** 5 (CRUD sem autenticaï¿½ï¿½o na PoC)
 
-#### 6.3 Responsáveis
+#### 6.3 Responsï¿½veis
 **Endpoints:** 5 (CRUD completo)
 
 ---
 
-### ?? 7. DOCUMENTOS E RELATÓRIOS (19 endpoints)
+### ?? 7. DOCUMENTOS E RELATï¿½RIOS (19 endpoints)
 
-#### 7.1 Diretórios
+#### 7.1 Diretï¿½rios
 **Endpoints:** 5 (estrutura de pastas)
 
 #### 7.2 Arquivos
 **Endpoints:** 5 (CRUD de arquivos)
 
-#### 7.3 Relatórios
-**Endpoints:** 5 (geração de relatórios)
+#### 7.3 Relatï¿½rios
+**Endpoints:** 5 (geraï¿½ï¿½o de relatï¿½rios)
 
-#### 7.4 Observações
-**Endpoints:** 4 (comentários gerais)
+#### 7.4 Observaï¿½ï¿½es
+**Endpoints:** 4 (comentï¿½rios gerais)
 
 ---
 
-## ?? CONFIGURAÇÃO DO SWAGGER
+## ?? CONFIGURAï¿½ï¿½O DO SWAGGER
 
 ### Program.cs - Setup Completo
 
@@ -308,53 +308,53 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ... outros serviços ...
+// ... outros serviï¿½os ...
 
 builder.Services.AddSwaggerGen(options =>
 {
-    // Informações da API
+    // Informaï¿½ï¿½es da API
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "PDPW API - PoC Modernização ONS",
+        Title = "PDPW API - PoC Modernizaï¿½ï¿½o ONS",
         Version = "v1.0",
         Description = @"
-# PDPW - Programação Diária da Produção
+# PDPW - Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o
 
-API REST para o sistema PDPW do ONS (Operador Nacional do Sistema Elétrico).
+API REST para o sistema PDPW do ONS (Operador Nacional do Sistema Elï¿½trico).
 
 ## ?? Sobre o Projeto
 
-Migração de sistema legado para arquitetura moderna:
+Migraï¿½ï¿½o de sistema legado para arquitetura moderna:
 - **Legado:** .NET Framework 4.8, VB.NET, WebForms, SQL Server
 - **Modernizado:** .NET 8, C#, Clean Architecture, EF Core
 
-## ?? Estatísticas
+## ?? Estatï¿½sticas
 
 - **29 APIs** completas
 - **154+ endpoints** REST
 - **InMemory Database** com seed data realista
 - **Cobertura de testes** > 60%
-- **Código Legado:** 473 arquivos VB.NET analisados
+- **Cï¿½digo Legado:** 473 arquivos VB.NET analisados
 
 ## ?? Como Usar
 
-1. Expanda uma categoria (ex: ?? Gestão de Ativos)
+1. Expanda uma categoria (ex: ?? Gestï¿½o de Ativos)
 2. Escolha um endpoint (ex: GET /api/usinas)
 3. Clique em **Try it out**
-4. Preencha os parâmetros (se necessário)
+4. Preencha os parï¿½metros (se necessï¿½rio)
 5. Clique em **Execute**
 6. Veja a resposta em tempo real
 
-## ?? Documentação Adicional
+## ?? Documentaï¿½ï¿½o Adicional
 
-- [Repositório GitHub](https://github.com/wbulhoes/ONS_PoC-PDPW)
-- [Análise do Código Legado](docs/ANALISE_TECNICA_CODIGO_LEGADO.md)
-- [Decisões Arquiteturais](VERTICAL_SLICES_DECISION.md)
+- [Repositï¿½rio GitHub](https://github.com/wbulhoes/ONS_PoC-PDPW)
+- [Anï¿½lise do Cï¿½digo Legado](docs/ANALISE_TECNICA_CODIGO_LEGADO.md)
+- [Decisï¿½es Arquiteturais](VERTICAL_SLICES_DECISION.md)
 
 ## ?? Contato
 
 **Equipe:** PDPW PoC Squad  
-**Período:** 19/12/2024 - 26/12/2024  
+**Perï¿½odo:** 19/12/2024 - 26/12/2024  
 **Cliente:** ONS
         ",
         Contact = new OpenApiContact
@@ -370,7 +370,7 @@ Migração de sistema legado para arquitetura moderna:
         }
     });
 
-    // XML Comments (documentação rica)
+    // XML Comments (documentaï¿½ï¿½o rica)
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     if (File.Exists(xmlPath))
@@ -401,7 +401,7 @@ Migração de sistema legado para arquitetura moderna:
     // Suporte a enums como strings
     options.SchemaFilter<EnumSchemaFilter>();
 
-    // Adicionar botão de autorização (se implementar JWT futuramente)
+    // Adicionar botï¿½o de autorizaï¿½ï¿½o (se implementar JWT futuramente)
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header usando o esquema Bearer. Exemplo: \"Bearer {token}\"",
@@ -424,7 +424,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "PDPW API v1.0");
         options.RoutePrefix = "swagger"; // Acesso via /swagger
         
-        // Configurações de UI
+        // Configuraï¿½ï¿½es de UI
         options.DocumentTitle = "PDPW API - Swagger";
         options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
         options.DefaultModelsExpandDepth(2);
@@ -459,27 +459,27 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace PDPW.API.Controllers;
 
 /// <summary>
-/// Gerenciamento de Usinas do Sistema Elétrico
+/// Gerenciamento de Usinas do Sistema Elï¿½trico
 /// </summary>
 /// <remarks>
 /// Migrado de: pdpw_act/pdpw/Dao/UsinaDAO.vb
 /// 
 /// Funcionalidades:
 /// - Cadastro de novas usinas (UTE, UHE, EOL, UFV, etc.)
-/// - Consulta de usinas por diversos critérios
-/// - Atualização de dados cadastrais
-/// - Remoção lógica (soft delete)
+/// - Consulta de usinas por diversos critï¿½rios
+/// - Atualizaï¿½ï¿½o de dados cadastrais
+/// - Remoï¿½ï¿½o lï¿½gica (soft delete)
 /// 
-/// Regras de Negócio:
-/// - Código da usina deve ser único
-/// - Potência instalada deve ser maior que zero
+/// Regras de Negï¿½cio:
+/// - Cï¿½digo da usina deve ser ï¿½nico
+/// - Potï¿½ncia instalada deve ser maior que zero
 /// - Empresa deve existir no cadastro
-/// - Tipo de usina deve ser válido
+/// - Tipo de usina deve ser vï¿½lido
 /// </remarks>
 [ApiController]
 [Route("api/[controller]")]
 [Produces("application/json")]
-[Tags("?? Gestão de Ativos")]
+[Tags("?? Gestï¿½o de Ativos")]
 public class UsinasController : ControllerBase
 {
     private readonly IUsinaService _service;
@@ -511,7 +511,7 @@ public class UsinasController : ControllerBase
         Summary = "Lista todas as usinas",
         Description = "Retorna lista completa de usinas ativas ordenadas por nome",
         OperationId = "Usinas_GetAll",
-        Tags = new[] { "?? Gestão de Ativos" }
+        Tags = new[] { "?? Gestï¿½o de Ativos" }
     )]
     public async Task<ActionResult<IEnumerable<UsinaResponseDTO>>> GetAll()
     {
@@ -533,35 +533,35 @@ public class UsinasController : ControllerBase
     /// <param name="id">ID da usina</param>
     /// <returns>Dados da usina</returns>
     /// <response code="200">Retorna a usina encontrada</response>
-    /// <response code="404">Usina não encontrada</response>
+    /// <response code="404">Usina nï¿½o encontrada</response>
     [HttpGet("{id:int}")]
     [ProducesResponseType(typeof(UsinaResponseDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [SwaggerOperation(
         Summary = "Busca usina por ID",
-        Description = "Retorna os detalhes de uma usina específica",
+        Description = "Retorna os detalhes de uma usina especï¿½fica",
         OperationId = "Usinas_GetById"
     )]
     public async Task<ActionResult<UsinaResponseDTO>> GetById(int id)
     {
         var usina = await _service.ObterPorIdAsync(id);
         if (usina == null)
-            return NotFound(new { message = $"Usina com ID {id} não encontrada" });
+            return NotFound(new { message = $"Usina com ID {id} nï¿½o encontrada" });
 
         return Ok(usina);
     }
 
     /// <summary>
-    /// Busca usinas por código
+    /// Busca usinas por cï¿½digo
     /// </summary>
-    /// <param name="codigo">Código da usina (ex: UTE001)</param>
-    /// <returns>Lista de usinas com o código especificado</returns>
+    /// <param name="codigo">Cï¿½digo da usina (ex: UTE001)</param>
+    /// <returns>Lista de usinas com o cï¿½digo especificado</returns>
     /// <response code="200">Retorna as usinas encontradas</response>
     [HttpGet("codigo/{codigo}")]
     [ProducesResponseType(typeof(IEnumerable<UsinaResponseDTO>), StatusCodes.Status200OK)]
     [SwaggerOperation(
-        Summary = "Busca por código",
-        Description = "Busca usinas pelo código (pode retornar múltiplas se houver histórico)",
+        Summary = "Busca por cï¿½digo",
+        Description = "Busca usinas pelo cï¿½digo (pode retornar mï¿½ltiplas se houver histï¿½rico)",
         OperationId = "Usinas_GetByCodigo"
     )]
     [SwaggerResponse(200, "Usinas encontradas", typeof(IEnumerable<UsinaResponseDTO>))]
@@ -577,8 +577,8 @@ public class UsinasController : ControllerBase
     /// <param name="request">Dados da usina</param>
     /// <returns>Usina criada</returns>
     /// <response code="201">Usina criada com sucesso</response>
-    /// <response code="400">Dados inválidos</response>
-    /// <response code="409">Código da usina já existe</response>
+    /// <response code="400">Dados invï¿½lidos</response>
+    /// <response code="409">Cï¿½digo da usina jï¿½ existe</response>
     /// <remarks>
     /// Exemplo de request:
     /// 
@@ -627,10 +627,10 @@ public class UsinasController : ControllerBase
     /// </summary>
     /// <param name="id">ID da usina</param>
     /// <param name="request">Novos dados</param>
-    /// <returns>Sem conteúdo</returns>
+    /// <returns>Sem conteï¿½do</returns>
     /// <response code="204">Atualizado com sucesso</response>
-    /// <response code="404">Usina não encontrada</response>
-    /// <response code="400">Dados inválidos</response>
+    /// <response code="404">Usina nï¿½o encontrada</response>
+    /// <response code="400">Dados invï¿½lidos</response>
     [HttpPut("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -665,12 +665,12 @@ public class UsinasController : ControllerBase
     /// Remove uma usina (soft delete)
     /// </summary>
     /// <param name="id">ID da usina</param>
-    /// <returns>Sem conteúdo</returns>
+    /// <returns>Sem conteï¿½do</returns>
     /// <response code="204">Removido com sucesso</response>
-    /// <response code="404">Usina não encontrada</response>
+    /// <response code="404">Usina nï¿½o encontrada</response>
     /// <remarks>
-    /// Realiza remoção lógica (soft delete).
-    /// A usina não é excluída do banco, apenas marcada como inativa.
+    /// Realiza remoï¿½ï¿½o lï¿½gica (soft delete).
+    /// A usina nï¿½o ï¿½ excluï¿½da do banco, apenas marcada como inativa.
     /// </remarks>
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -713,25 +713,25 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace PDPW.Application.DTOs;
 
 /// <summary>
-/// DTO para criação de uma nova usina
+/// DTO para criaï¿½ï¿½o de uma nova usina
 /// </summary>
-[SwaggerSchema(Description = "Dados necessários para cadastrar uma nova usina")]
+[SwaggerSchema(Description = "Dados necessï¿½rios para cadastrar uma nova usina")]
 public class UsinaRequestDTO
 {
     /// <summary>
-    /// Código único da usina
+    /// Cï¿½digo ï¿½nico da usina
     /// </summary>
     /// <example>UTE001</example>
-    [Required(ErrorMessage = "Código da usina é obrigatório")]
-    [StringLength(10, MinimumLength = 3, ErrorMessage = "Código deve ter entre 3 e 10 caracteres")]
-    [SwaggerSchema("Código identificador da usina (ex: UTE001, UHE002)")]
+    [Required(ErrorMessage = "Cï¿½digo da usina ï¿½ obrigatï¿½rio")]
+    [StringLength(10, MinimumLength = 3, ErrorMessage = "Cï¿½digo deve ter entre 3 e 10 caracteres")]
+    [SwaggerSchema("Cï¿½digo identificador da usina (ex: UTE001, UHE002)")]
     public string CodUsina { get; set; } = string.Empty;
 
     /// <summary>
     /// Nome da usina
     /// </summary>
     /// <example>Angra 1</example>
-    [Required(ErrorMessage = "Nome da usina é obrigatório")]
+    [Required(ErrorMessage = "Nome da usina ï¿½ obrigatï¿½rio")]
     [StringLength(100, MinimumLength = 3, ErrorMessage = "Nome deve ter entre 3 e 100 caracteres")]
     [SwaggerSchema("Nome completo da usina")]
     public string NomeUsina { get; set; } = string.Empty;
@@ -740,32 +740,32 @@ public class UsinaRequestDTO
     /// Tipo da usina
     /// </summary>
     /// <example>UTE</example>
-    [Required(ErrorMessage = "Tipo da usina é obrigatório")]
-    [SwaggerSchema("Tipo: UTE (Termelétrica), UHE (Hidrelétrica), EOL (Eólica), UFV (Fotovoltaica)")]
+    [Required(ErrorMessage = "Tipo da usina ï¿½ obrigatï¿½rio")]
+    [SwaggerSchema("Tipo: UTE (Termelï¿½trica), UHE (Hidrelï¿½trica), EOL (Eï¿½lica), UFV (Fotovoltaica)")]
     public string TpUsinaId { get; set; } = string.Empty;
 
     /// <summary>
-    /// Código da empresa proprietária
+    /// Cï¿½digo da empresa proprietï¿½ria
     /// </summary>
     /// <example>EMP001</example>
-    [Required(ErrorMessage = "Empresa é obrigatória")]
-    [SwaggerSchema("Código da empresa que opera a usina")]
+    [Required(ErrorMessage = "Empresa ï¿½ obrigatï¿½ria")]
+    [SwaggerSchema("Cï¿½digo da empresa que opera a usina")]
     public string CodEmpre { get; set; } = string.Empty;
 
     /// <summary>
-    /// Potência instalada em MW
+    /// Potï¿½ncia instalada em MW
     /// </summary>
     /// <example>640.0</example>
-    [Range(0.1, 99999.99, ErrorMessage = "Potência deve ser maior que zero")]
+    [Range(0.1, 99999.99, ErrorMessage = "Potï¿½ncia deve ser maior que zero")]
     [SwaggerSchema("Capacidade instalada em megawatts (MW)")]
     public decimal PotInstalada { get; set; }
 
     /// <summary>
-    /// Observações adicionais
+    /// Observaï¿½ï¿½es adicionais
     /// </summary>
     /// <example>Usina nuclear localizada em Angra dos Reis</example>
-    [StringLength(500, ErrorMessage = "Observações não podem ultrapassar 500 caracteres")]
-    [SwaggerSchema("Informações complementares sobre a usina", Nullable = true)]
+    [StringLength(500, ErrorMessage = "Observaï¿½ï¿½es nï¿½o podem ultrapassar 500 caracteres")]
+    [SwaggerSchema("Informaï¿½ï¿½es complementares sobre a usina", Nullable = true)]
     public string? Observacoes { get; set; }
 }
 ```
@@ -778,7 +778,7 @@ public class UsinaRequestDTO
 
 #### 1. Criar uma Usina (POST)
 
-1. Expanda **?? Gestão de Ativos**
+1. Expanda **?? Gestï¿½o de Ativos**
 2. Clique em **POST /api/usinas**
 3. Clique em **Try it out**
 4. Cole o JSON de exemplo:
@@ -829,7 +829,7 @@ public class UsinaRequestDTO
 
 ---
 
-## ?? EXPORTAR ESPECIFICAÇÃO
+## ?? EXPORTAR ESPECIFICAï¿½ï¿½O
 
 ### Baixar OpenAPI JSON
 
@@ -861,22 +861,22 @@ Se preferir usar Postman:
 1. Baixe: http://localhost:5000/swagger/v1/swagger.json
 2. Abra Postman
 3. **Import** ? Cole a URL ou selecione o arquivo
-4. Coleção completa criada automaticamente!
+4. Coleï¿½ï¿½o completa criada automaticamente!
 
 ---
 
-## ?? CHECKLIST DE VALIDAÇÃO
+## ?? CHECKLIST DE VALIDAï¿½ï¿½O
 
 ### Para cada API, validar no Swagger:
 
-- [ ] Todos os endpoints aparecem na documentação
-- [ ] Descrições estão claras e completas
-- [ ] Exemplos de Request estão corretos
+- [ ] Todos os endpoints aparecem na documentaï¿½ï¿½o
+- [ ] Descriï¿½ï¿½es estï¿½o claras e completas
+- [ ] Exemplos de Request estï¿½o corretos
 - [ ] Exemplos de Response correspondem aos DTOs
-- [ ] Códigos de resposta HTTP estão documentados
+- [ ] Cï¿½digos de resposta HTTP estï¿½o documentados
 - [ ] **Try it out** funciona sem erros
-- [ ] Validações de campos retornam 400 Bad Request
-- [ ] Entidades não encontradas retornam 404 Not Found
+- [ ] Validaï¿½ï¿½es de campos retornam 400 Bad Request
+- [ ] Entidades nï¿½o encontradas retornam 404 Not Found
 - [ ] Respostas de sucesso retornam dados corretos
 
 ---
@@ -885,21 +885,21 @@ Se preferir usar Postman:
 
 **Problemas comuns:**
 
-1. **Swagger não abre:**
-   - Verifique se a API está rodando: `dotnet run`
-   - Acesse: http://localhost:5000/swagger (não /swagger/index.html)
+1. **Swagger nï¿½o abre:**
+   - Verifique se a API estï¿½ rodando: `dotnet run`
+   - Acesse: http://localhost:5000/swagger (nï¿½o /swagger/index.html)
 
-2. **Endpoints não aparecem:**
-   - Verifique se Controllers têm `[ApiController]`
-   - Verifique se `[Route]` está correto
+2. **Endpoints nï¿½o aparecem:**
+   - Verifique se Controllers tï¿½m `[ApiController]`
+   - Verifique se `[Route]` estï¿½ correto
    - Rebuild o projeto: `dotnet build`
 
-3. **DTOs sem descrição:**
+3. **DTOs sem descriï¿½ï¿½o:**
    - Habilite XML Documentation no .csproj
-   - Adicione comentários `///` nas classes
+   - Adicione comentï¿½rios `///` nas classes
    - Rebuild
 
-4. **Try it out não funciona:**
+4. **Try it out nï¿½o funciona:**
    - Verifique CORS no backend
    - Veja console do navegador (F12)
    - Verifique logs da API
@@ -908,6 +908,6 @@ Se preferir usar Postman:
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0
+**Versï¿½o:** 1.0
 
-**Este Swagger será a vitrine técnica da PoC!** ????
+**Este Swagger serï¿½ a vitrine tï¿½cnica da PoC!** ????
