@@ -1,6 +1,6 @@
 # 🎉 RELEASE v1.0 - POC PDPW BACKEND COMPLETO
 
-**Data de Release**: 23/12/2024  
+**Data de Release**: 22/12/2025  
 **Versão**: 1.0 (POC)  
 **Branch**: `release/poc-v1.0`  
 **Tag**: `v1.0-poc`  
