@@ -76,11 +76,9 @@ try
             else
             {
                 // Popular com dados realistas se o banco estiver vazio
-                if (!await dbContext.Empresas.AnyAsync())
-                {
-                    logger.LogInformation("📊 Populando banco com dados realistas do setor elétrico brasileiro...");
-                    await RealisticDataSeeder.SeedAsync(dbContext);
-                }
+                // FORÇA SEED PARA POPULAR DADOS COMPLETOS
+                logger.LogInformation("📊 Forçando seed de dados realistas do setor elétrico brasileiro...");
+                await RealisticDataSeeder.SeedAsync(dbContext);
             }
         }
         else
