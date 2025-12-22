@@ -1,6 +1,6 @@
 # 🗄️ DIAGRAMA DE RELACIONAMENTOS - BANCO DE DADOS PDPw
 
-**Data**: 23/12/2024  
+**Data**: 22/12/2025  
 **Banco**: PDPW_DB  
 **Total de Tabelas**: 31  
 **Total de FKs**: 20
