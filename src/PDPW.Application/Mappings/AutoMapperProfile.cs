@@ -4,6 +4,17 @@ using PDPW.Application.DTOs.TipoUsina;
 using PDPW.Application.DTOs.Empresa;
 using PDPW.Application.DTOs.SemanaPmo;
 using PDPW.Application.DTOs.EquipePdp;
+using PDPW.Application.DTOs.UnidadeGeradora;
+using PDPW.Application.DTOs.ParadaUG;
+<<<<<<< HEAD
+<<<<<<< HEAD
+using PDPW.Application.DTOs.MotivoRestricao;
+using PDPW.Application.DTOs.Balanco;
+using PDPW.Application.DTOs.Intercambio;
+=======
+>>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
+=======
+>>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -141,5 +152,123 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.Membros, opt => opt.Ignore());
+
+        // === UNIDADE GERADORA MAPPINGS ===
+        
+        // UnidadeGeradora ? UnidadeGeradoraDto
+        CreateMap<UnidadeGeradora, UnidadeGeradoraDto>()
+            .ForMember(dest => dest.NomeUsina, opt => opt.MapFrom(src => src.Usina!.Nome))
+            .ForMember(dest => dest.CodigoUsina, opt => opt.MapFrom(src => src.Usina!.Codigo));
+
+        // CreateUnidadeGeradoraDto ? UnidadeGeradora
+        CreateMap<CreateUnidadeGeradoraDto, UnidadeGeradora>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.Restricoes, opt => opt.Ignore())
+            .ForMember(dest => dest.Paradas, opt => opt.Ignore());
+
+        // UpdateUnidadeGeradoraDto ? UnidadeGeradora
+        CreateMap<UpdateUnidadeGeradoraDto, UnidadeGeradora>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.Restricoes, opt => opt.Ignore())
+            .ForMember(dest => dest.Paradas, opt => opt.Ignore());
+
+        // === PARADA UG MAPPINGS ===
+        
+        // ParadaUG ? ParadaUGDto
+        CreateMap<ParadaUG, ParadaUGDto>()
+            .ForMember(dest => dest.UnidadeGeradora, opt => opt.MapFrom(src => src.UnidadeGeradora!.Nome))
+            .ForMember(dest => dest.CodigoUnidade, opt => opt.MapFrom(src => src.UnidadeGeradora!.Codigo));
+
+        // CreateParadaUGDto ? ParadaUG
+        CreateMap<CreateParadaUGDto, ParadaUG>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.UnidadeGeradora, opt => opt.Ignore());
+
+        // UpdateParadaUGDto ? ParadaUG
+        CreateMap<UpdateParadaUGDto, ParadaUG>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.UnidadeGeradora, opt => opt.Ignore());
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+        // === MOTIVO RESTRIÇÃO MAPPINGS ===
+        
+        // MotivoRestricao ? MotivoRestricaoDto
+        CreateMap<MotivoRestricao, MotivoRestricaoDto>()
+            .ForMember(dest => dest.QuantidadeRestricoesUG, 
+                opt => opt.MapFrom(src => src.RestricoesUG != null ? src.RestricoesUG.Count(r => r.Ativo) : 0))
+            .ForMember(dest => dest.QuantidadeRestricoesUS, 
+                opt => opt.MapFrom(src => src.RestricoesUS != null ? src.RestricoesUS.Count(r => r.Ativo) : 0));
+
+        // CreateMotivoRestricaoDto ? MotivoRestricao
+        CreateMap<CreateMotivoRestricaoDto, MotivoRestricao>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.RestricoesUG, opt => opt.Ignore())
+            .ForMember(dest => dest.RestricoesUS, opt => opt.Ignore());
+
+        // UpdateMotivoRestricaoDto ? MotivoRestricao
+        CreateMap<UpdateMotivoRestricaoDto, MotivoRestricao>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.RestricoesUG, opt => opt.Ignore())
+            .ForMember(dest => dest.RestricoesUS, opt => opt.Ignore());
+
+        // === BALANÇO MAPPINGS ===
+        
+        // Balanco ? BalancoDto
+        CreateMap<Balanco, BalancoDto>()
+            .ForMember(dest => dest.BalancoCalculado, 
+                opt => opt.MapFrom(src => src.Geracao - src.Carga + src.Intercambio - src.Perdas - src.Deficit));
+
+        // CreateBalancoDto ? Balanco
+        CreateMap<CreateBalancoDto, Balanco>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore());
+
+        // UpdateBalancoDto ? Balanco
+        CreateMap<UpdateBalancoDto, Balanco>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore());
+
+        // === INTERCÂMBIO MAPPINGS ===
+        
+        // Intercambio ? IntercambioDto
+        CreateMap<Intercambio, IntercambioDto>();
+
+        // CreateIntercambioDto ? Intercambio
+        CreateMap<CreateIntercambioDto, Intercambio>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore());
+
+        // UpdateIntercambioDto ? Intercambio
+        CreateMap<UpdateIntercambioDto, Intercambio>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore());
+=======
+>>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
+=======
+>>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
     }
 }
