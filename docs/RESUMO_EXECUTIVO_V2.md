@@ -1,4 +1,4 @@
-# ?? RESUMO EXECUTIVO - V2 Backend PDPw
+ï»¿# ?? RESUMO EXECUTIVO - V2 Backend PDPw
 
 **Data:** 20/12/2024  
 **Branch:** `feature/backend`  
@@ -12,52 +12,52 @@
 - ? **Result<T> Pattern** implementado
   - Tratamento de erros sem exceptions
   - Retornos tipados Success/Failure
-  - Integração automática com ActionResult
+  - Integraï¿½ï¿½o automï¿½tica com ActionResult
   
-- ? **Extensões para Controllers**
+- ? **Extensï¿½es para Controllers**
   - `ToActionResult()` - converte Result em HTTP response
-  - `ToCreatedAtActionResult()` - para operações POST
+  - `ToCreatedAtActionResult()` - para operaï¿½ï¿½es POST
   - Tratamento inteligente de NotFound, Conflict, ValidationErrors
 
-### 2. **Documentação Técnica Completa** ?
+### 2. **Documentaï¿½ï¿½o Tï¿½cnica Completa** ?
 - ? **V2_ROADMAP.md** (1200+ linhas)
-  - 5 fases de implementação
+  - 5 fases de implementaï¿½ï¿½o
   - Cronograma detalhado
-  - Métricas de sucesso
+  - Mï¿½tricas de sucesso
   
 - ? **APIS_PENDENTES.md** (800+ linhas)
   - 24 APIs detalhadas
   - ~170 endpoints mapeados
   - Estimativas de tempo
-  - Referências ao código legado
+  - Referï¿½ncias ao cï¿½digo legado
   
 - ? **GLOSSARIO_LINGUAGEM_UBIQUA.md** (500+ linhas)
   - Terminologia oficial ONS
   - Mapeamento: nomenclatura antiga ? nova
-  - Regras de padronização
+  - Regras de padronizaï¿½ï¿½o
 
-### 3. **Controle de Versão** ?
+### 3. **Controle de Versï¿½o** ?
 - ? Branch `feature/backend` criada
-- ? Código commitado (`f0373f5`)
-- ? Push para GitHub concluído
+- ? Cï¿½digo commitado (`f0373f5`)
+- ? Push para GitHub concluï¿½do
 - ?? https://github.com/wbulhoes/ONS_PoC-PDPW/tree/feature/backend
 
 ---
 
 ## ?? ESCOPO COMPLETO DA V2
 
-Conforme sua solicitação, a V2 contempla:
+Conforme sua solicitaï¿½ï¿½o, a V2 contempla:
 
 ### 1?? **Implementar 24 APIs Restantes** ?
-- **Status:** Documentadas, aguardando implementação
+- **Status:** Documentadas, aguardando implementaï¿½ï¿½o
 - **Total:** 29 APIs (5 prontas + 24 pendentes)
 - **Endpoints:** ~200 endpoints ao final
-- **Priorização:** 
-  - ??? ALTA: 8 APIs (operação energética)
-  - ?? MÉDIA: 11 APIs (negócio secundário)
+- **Priorizaï¿½ï¿½o:** 
+  - ??? ALTA: 8 APIs (operaï¿½ï¿½o energï¿½tica)
+  - ?? Mï¿½DIA: 11 APIs (negï¿½cio secundï¿½rio)
   - ? BAIXA: 5 APIs (administrativo)
 
-### 2?? **Testes Unitários (xUnit)** ?
+### 2?? **Testes Unitï¿½rios (xUnit)** ?
 - **Status:** Estrutura planejada
 - **Objetivo:** >80% cobertura
 - **Abordagem:**
@@ -66,30 +66,30 @@ Conforme sua solicitação, a V2 contempla:
   - Tests para Controllers
   - Fixtures e Builders
 
-### 3?? **Linguagem Ubíqua Completa** ??
-- **Status:** Glossário criado, refatoração pendente
-- **Mudanças principais:**
+### 3?? **Linguagem Ubï¿½qua Completa** ??
+- **Status:** Glossï¿½rio criado, refatoraï¿½ï¿½o pendente
+- **Mudanï¿½as principais:**
   - `Usina` ? `UsinaGeradora`
   - `Empresa` ? `AgenteSetorEletrico`
   - `TipoUsina` ? `TipoUsinaGeradora`
   - `EquipePDP` ? `EquipeProgramacaoDiaria`
-  - E mais 15+ renomeações
+  - E mais 15+ renomeaï¿½ï¿½es
 
 ### 4?? **Result<T> Pattern** ?
 - **Status:** ? Implementado e pronto para uso
-- **Benefícios:**
-  - Erros explícitos (sem exceptions ocultas)
-  - Código mais legível
+- **Benefï¿½cios:**
+  - Erros explï¿½citos (sem exceptions ocultas)
+  - Cï¿½digo mais legï¿½vel
   - Tratamento uniforme de erros
-  - Validações estruturadas
+  - Validaï¿½ï¿½es estruturadas
 
-### 5?? **Testes de Integração** ?
+### 5?? **Testes de Integraï¿½ï¿½o** ?
 - **Status:** Estrutura planejada
 - **Objetivo:** Validar fluxos end-to-end
 - **Abordagem:**
   - WebApplicationFactory
   - InMemory Database
-  - Cenários de negócio
+  - Cenï¿½rios de negï¿½cio
 
 ---
 
@@ -99,11 +99,11 @@ Conforme sua solicitação, a V2 contempla:
 
 | Fase | Atividades | Status | Progresso |
 |------|------------|--------|-----------|
-| **Fase 1: Fundação** | Result<T>, Docs, Testes | ?? | 58% |
-| **Fase 2: APIs Críticas** | 8 APIs prioritárias | ? | 0% |
-| **Fase 3: APIs Secundárias** | 16 APIs restantes | ? | 0% |
-| **Fase 4: Testes Integração** | E2E tests | ? | 0% |
-| **Fase 5: Finalização** | Review, docs | ? | 0% |
+| **Fase 1: Fundaï¿½ï¿½o** | Result<T>, Docs, Testes | ?? | 58% |
+| **Fase 2: APIs Crï¿½ticas** | 8 APIs prioritï¿½rias | ? | 0% |
+| **Fase 3: APIs Secundï¿½rias** | 16 APIs restantes | ? | 0% |
+| **Fase 4: Testes Integraï¿½ï¿½o** | E2E tests | ? | 0% |
+| **Fase 5: Finalizaï¿½ï¿½o** | Review, docs | ? | 0% |
 | **TOTAL** | | ?? | **12%** |
 
 ### Por Objetivo
@@ -111,18 +111,18 @@ Conforme sua solicitação, a V2 contempla:
 | Objetivo | Status | Progresso |
 |----------|--------|-----------|
 | 24 APIs implementadas | ? Pendente | 0/24 (0%) |
-| Testes unitários | ? Estrutura pendente | 0% |
-| Linguagem ubíqua | ?? Glossário pronto | 33% |
+| Testes unitï¿½rios | ? Estrutura pendente | 0% |
+| Linguagem ubï¿½qua | ?? Glossï¿½rio pronto | 33% |
 | Result<T> pattern | ? Implementado | 100% |
-| Testes integração | ? Estrutura pendente | 0% |
+| Testes integraï¿½ï¿½o | ? Estrutura pendente | 0% |
 
 ---
 
-## ?? PRÓXIMAS AÇÕES RECOMENDADAS
+## ?? PRï¿½XIMAS Aï¿½ï¿½ES RECOMENDADAS
 
-### **Opção A: Completar Fase 1** (Recomendado)
+### **Opï¿½ï¿½o A: Completar Fase 1** (Recomendado)
 **Tempo:** 4-6 horas  
-**Benefício:** Base sólida para desenvolvimento rápido
+**Benefï¿½cio:** Base sï¿½lida para desenvolvimento rï¿½pido
 
 **Tarefas:**
 1. ? Criar projetos de teste (xUnit)
@@ -131,67 +131,67 @@ Conforme sua solicitação, a V2 contempla:
 4. ? Aplicar Result<T> nos 5 Controllers atuais
 5. ? Escrever 10-20 testes exemplo
 
-**Resultado:** Fundação completa para escalar desenvolvimento
+**Resultado:** Fundaï¿½ï¿½o completa para escalar desenvolvimento
 
 ---
 
-### **Opção B: Implementar Primeira API Nova**
+### **Opï¿½ï¿½o B: Implementar Primeira API Nova**
 **Tempo:** 3-4 horas  
-**Benefício:** Entregar funcionalidade concreta
+**Benefï¿½cio:** Entregar funcionalidade concreta
 
 **Tarefas:**
 1. ? Implementar `UnidadeGeradora` (API #2 - prioridade ALTA)
 2. ? CRUD completo (8 endpoints)
-3. ? Testes unitários
-4. ? Documentação Swagger
+3. ? Testes unitï¿½rios
+4. ? Documentaï¿½ï¿½o Swagger
 
-**Resultado:** 6ª API funcionando (21% do total)
+**Resultado:** 6ï¿½ API funcionando (21% do total)
 
 ---
 
-### **Opção C: Ambas em Paralelo**
+### **Opï¿½ï¿½o C: Ambas em Paralelo**
 **Tempo:** 8-10 horas  
-**Benefício:** Maximizar progresso
+**Benefï¿½cio:** Maximizar progresso
 
-**Divisão:**
+**Divisï¿½o:**
 - Completar Fase 1 (4-6h)
 - Implementar UnidadeGeradora (3-4h)
 
-**Resultado:** Base sólida + nova funcionalidade
+**Resultado:** Base sï¿½lida + nova funcionalidade
 
 ---
 
-## ?? ESTIMATIVAS DE CONCLUSÃO
+## ?? ESTIMATIVAS DE CONCLUSï¿½O
 
-### **Cenário Conservador** (Qualidade >80%)
+### **Cenï¿½rio Conservador** (Qualidade >80%)
 - **Fase 1:** 2 dias
-- **Fase 2:** 10 dias (8 APIs críticas)
-- **Fase 3:** 16 dias (16 APIs secundárias)
-- **Fase 4:** 3 dias (testes integração)
-- **Fase 5:** 2 dias (finalização)
-- **TOTAL:** ~33 dias úteis (~7 semanas)
+- **Fase 2:** 10 dias (8 APIs crï¿½ticas)
+- **Fase 3:** 16 dias (16 APIs secundï¿½rias)
+- **Fase 4:** 3 dias (testes integraï¿½ï¿½o)
+- **Fase 5:** 2 dias (finalizaï¿½ï¿½o)
+- **TOTAL:** ~33 dias ï¿½teis (~7 semanas)
 
-### **Cenário Realista** (Qualidade ~70%)
+### **Cenï¿½rio Realista** (Qualidade ~70%)
 - **Fase 1:** 1 dia
 - **Fase 2:** 6 dias
 - **Fase 3:** 10 dias
 - **Fase 4:** 2 dias
 - **Fase 5:** 1 dia
-- **TOTAL:** ~20 dias úteis (~4 semanas)
+- **TOTAL:** ~20 dias ï¿½teis (~4 semanas)
 
-### **Cenário Agressivo** (Qualidade ~60%)
+### **Cenï¿½rio Agressivo** (Qualidade ~60%)
 - **Fase 1:** 0.5 dia
 - **Fase 2:** 4 dias
 - **Fase 3:** 7 dias
 - **Fase 4:** 1 dia
 - **Fase 5:** 0.5 dia
-- **TOTAL:** ~13 dias úteis (~2.5 semanas)
+- **TOTAL:** ~13 dias ï¿½teis (~2.5 semanas)
 
 ---
 
-## ?? RECOMENDAÇÕES
+## ?? RECOMENDAï¿½ï¿½ES
 
-### **Para Máxima Qualidade**
+### **Para Mï¿½xima Qualidade**
 1. ? Completar Fase 1 antes de APIs novas
 2. ? Manter cobertura >80% em testes
 3. ? Code review rigoroso
@@ -199,28 +199,28 @@ Conforme sua solicitação, a V2 contempla:
 
 ### **Para Velocidade**
 1. ? Implementar APIs simples primeiro (Grupo G, F)
-2. ? Testes básicos (>50% cobertura)
-3. ? Nomenclatura apenas em código novo
-4. ? Review pós-implementação
+2. ? Testes bï¿½sicos (>50% cobertura)
+3. ? Nomenclatura apenas em cï¿½digo novo
+4. ? Review pï¿½s-implementaï¿½ï¿½o
 
-### **Para Equilíbrio** (? Recomendado)
+### **Para Equilï¿½brio** (? Recomendado)
 1. ?? Completar Fase 1 (2 dias)
-2. ?? Implementar Grupo A (APIs críticas - 6 dias)
+2. ?? Implementar Grupo A (APIs crï¿½ticas - 6 dias)
 3. ?? Testes conforme implementa (>70%)
 4. ?? Refatorar nomenclatura no final
-5. ?? Review contínuo
+5. ?? Review contï¿½nuo
 
 ---
 
 ## ?? ARQUIVOS IMPORTANTES
 
-### Documentação
+### Documentaï¿½ï¿½o
 - ?? `docs/V2_ROADMAP.md` - Plano completo
 - ?? `docs/APIS_PENDENTES.md` - 24 APIs detalhadas
 - ?? `docs/GLOSSARIO_LINGUAGEM_UBIQUA.md` - Terminologia
 - ?? `docs/STATUS_FASE1.md` - Status atual
 
-### Código Novo
+### Cï¿½digo Novo
 - ?? `src/PDPW.Domain/Common/Result.cs` - Result Pattern
 - ?? `src/PDPW.API/Extensions/ResultExtensions.cs` - Helpers
 
@@ -234,53 +234,53 @@ Conforme sua solicitação, a V2 contempla:
 ## ?? PERGUNTAS FREQUENTES
 
 **Q: Devo implementar tudo sozinho?**  
-A: Não necessariamente. Você pode distribuir APIs entre devs (1-2 APIs por dev/dia).
+A: Nï¿½o necessariamente. Vocï¿½ pode distribuir APIs entre devs (1-2 APIs por dev/dia).
 
 **Q: Preciso refatorar nomenclatura agora?**  
-A: Não é obrigatório. Pode fazer gradualmente ou no final. O glossário já está pronto.
+A: Nï¿½o ï¿½ obrigatï¿½rio. Pode fazer gradualmente ou no final. O glossï¿½rio jï¿½ estï¿½ pronto.
 
 **Q: Result<T> substitui exceptions?**  
-A: Substitui exceptions de **negócio**. Exceptions técnicas (null reference, etc) continuam.
+A: Substitui exceptions de **negï¿½cio**. Exceptions tï¿½cnicas (null reference, etc) continuam.
 
 **Q: Qual API implementar primeiro?**  
-A: Recomendo **UnidadeGeradora** (relaciona com Usinas já prontas, ALTA prioridade).
+A: Recomendo **UnidadeGeradora** (relaciona com Usinas jï¿½ prontas, ALTA prioridade).
 
 **Q: Preciso de 80% de cobertura?**  
-A: É o ideal, mas 60-70% já é bom para POC. Foque em testes de Services.
+A: ï¿½ o ideal, mas 60-70% jï¿½ ï¿½ bom para POC. Foque em testes de Services.
 
 ---
 
-## ? CHECKLIST PARA VOCÊ
+## ? CHECKLIST PARA VOCï¿½
 
 ### Hoje (20/12)
 - [x] ? Result<T> implementado
-- [x] ? Documentação criada
+- [x] ? Documentaï¿½ï¿½o criada
 - [x] ? Branch no GitHub
-- [ ] ? Decidir próximo passo (Opção A, B ou C)
+- [ ] ? Decidir prï¿½ximo passo (Opï¿½ï¿½o A, B ou C)
 
 ### Esta Semana
 - [ ] ? Completar Fase 1
-- [ ] ? Implementar 2-3 APIs críticas
+- [ ] ? Implementar 2-3 APIs crï¿½ticas
 - [ ] ? Criar estrutura de testes
 
-### Este Mês
+### Este Mï¿½s
 - [ ] ? 10-15 APIs implementadas (50%)
 - [ ] ? Cobertura de testes >60%
-- [ ] ? Nomenclatura ubíqua aplicada
+- [ ] ? Nomenclatura ubï¿½qua aplicada
 
 ---
 
-## ?? PRÓXIMO PASSO SUGERIDO
+## ?? PRï¿½XIMO PASSO SUGERIDO
 
-**Recomendação:** **Opção A** (Completar Fase 1)
+**Recomendaï¿½ï¿½o:** **Opï¿½ï¿½o A** (Completar Fase 1)
 
 **Motivo:**
-- Base sólida evita retrabalho
-- Padrões definidos aceleram APIs futuras
-- Testes exemplo facilitam contribuições
-- Nomenclatura consistente desde o início
+- Base sï¿½lida evita retrabalho
+- Padrï¿½es definidos aceleram APIs futuras
+- Testes exemplo facilitam contribuiï¿½ï¿½es
+- Nomenclatura consistente desde o inï¿½cio
 
-**Comando para começar:**
+**Comando para comeï¿½ar:**
 ```bash
 cd C:\temp\_ONS_PoC-PDPW_V2
 
@@ -288,7 +288,7 @@ cd C:\temp\_ONS_PoC-PDPW_V2
 dotnet new xunit -n PDPW.UnitTests -o tests/PDPW.UnitTests
 dotnet sln add tests/PDPW.UnitTests/PDPW.UnitTests.csproj
 
-# Adicionar referências
+# Adicionar referï¿½ncias
 cd tests/PDPW.UnitTests
 dotnet add reference ../../src/PDPW.Domain/PDPW.Domain.csproj
 dotnet add reference ../../src/PDPW.Application/PDPW.Application.csproj
@@ -296,19 +296,19 @@ dotnet add reference ../../src/PDPW.Application/PDPW.Application.csproj
 
 ---
 
-## ?? PARABÉNS!
+## ?? PARABï¿½NS!
 
-Você já tem:
+Vocï¿½ jï¿½ tem:
 - ? Plano completo e detalhado
-- ? Fundação arquitetural (Result<T>)
-- ? Documentação exemplar (2500+ linhas)
-- ? Controle de versão estruturado
+- ? Fundaï¿½ï¿½o arquitetural (Result<T>)
+- ? Documentaï¿½ï¿½o exemplar (2500+ linhas)
+- ? Controle de versï¿½o estruturado
 
-**Próximos passos estão claros e bem definidos!** ??
+**Prï¿½ximos passos estï¿½o claros e bem definidos!** ??
 
 ---
 
 **Criado em:** 20/12/2024  
-**Responsável:** Willian + GitHub Copilot  
+**Responsï¿½vel:** Willian + GitHub Copilot  
 **Status:** ?? Em andamento  
 **Progresso Geral:** 12% (Fase 1: 58%)

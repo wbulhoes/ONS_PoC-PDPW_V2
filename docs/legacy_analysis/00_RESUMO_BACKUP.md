@@ -1,4 +1,4 @@
-# ?? AN�LISE DO BACKUP LEGADO (SEM RESTAURA��O)
+﻿# ?? AN�LISE DO BACKUP LEGADO (SEM RESTAURA��O)
 
 **Arquivo**: C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak
 **Tamanho**: 43.24 GB

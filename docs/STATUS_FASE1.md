@@ -1,4 +1,4 @@
-# ? FASE 1 INICIADA - Fundação da V2
+ï»¿# ? FASE 1 INICIADA - Fundaï¿½ï¿½o da V2
 
 **Branch:** `feature/backend`  
 **Commit:** `f0373f5`  
@@ -8,75 +8,75 @@
 
 ## ?? O QUE FOI FEITO
 
-### ? 1. Criação da Branch
+### ? 1. Criaï¿½ï¿½o da Branch
 ```bash
 git checkout -b feature/backend
 git remote add origin https://github.com/wbulhoes/ONS_PoC-PDPW.git
 ```
 
-**Status:** ? Concluído
+**Status:** ? Concluï¿½do
 
 ---
 
-### ? 2. Implementação do Result<T> Pattern
+### ? 2. Implementaï¿½ï¿½o do Result<T> Pattern
 
 **Arquivos criados:**
 - `src/PDPW.Domain/Common/Result.cs`
 - `src/PDPW.API/Extensions/ResultExtensions.cs`
 
 **Funcionalidades:**
-- ? `Result<T>` para operações com retorno
-- ? `Result` para operações sem retorno
-- ? Métodos `Success()`, `Failure()`, `NotFound()`, `Conflict()`, `ValidationFailure()`
-- ? Extensões `ToActionResult()` e `ToCreatedAtActionResult()`
+- ? `Result<T>` para operaï¿½ï¿½es com retorno
+- ? `Result` para operaï¿½ï¿½es sem retorno
+- ? Mï¿½todos `Success()`, `Failure()`, `NotFound()`, `Conflict()`, `ValidationFailure()`
+- ? Extensï¿½es `ToActionResult()` e `ToCreatedAtActionResult()`
 
 **Uso futuro:**
 ```csharp
-// Services retornam Result ao invés de throw exceptions
+// Services retornam Result ao invï¿½s de throw exceptions
 public async Task<Result<UsinaGeradoraDto>> CreateAsync(CreateUsinaGeradoraDto dto)
 {
     if (await CodigoExisteAsync(dto.Codigo))
-        return Result<UsinaGeradoraDto>.Conflict("Código já existe");
+        return Result<UsinaGeradoraDto>.Conflict("Cï¿½digo jï¿½ existe");
     
     // ...
     return Result<UsinaGeradoraDto>.Success(usinaDto);
 }
 
-// Controllers usam extensões
+// Controllers usam extensï¿½es
 var result = await _service.CreateAsync(dto);
 return result.ToCreatedAtActionResult(this, nameof(GetById), new { id = result.Value.Id });
 ```
 
-**Status:** ? Concluído
+**Status:** ? Concluï¿½do
 
 ---
 
-### ? 3. Documentação Completa
+### ? 3. Documentaï¿½ï¿½o Completa
 
 **Arquivos criados:**
 
 #### ?? `docs/V2_ROADMAP.md` (1200+ linhas)
 - Escopo completo das 5 melhorias
 - Cronograma em 5 fases
-- Métricas de qualidade
-- Convenções de commit
+- Mï¿½tricas de qualidade
+- Convenï¿½ï¿½es de commit
 - Checklist final
 
 #### ?? `docs/APIS_PENDENTES.md` (800+ linhas)
 - Detalhamento das 24 APIs pendentes
-- 8 grupos de priorização
+- 8 grupos de priorizaï¿½ï¿½o
 - ~170 endpoints a implementar
 - Estimativas de tempo
-- Referências ao código legado VB.NET
+- Referï¿½ncias ao cï¿½digo legado VB.NET
 
 #### ?? `docs/GLOSSARIO_LINGUAGEM_UBIQUA.md` (500+ linhas)
-- Terminologia completa do domínio PDPw
+- Terminologia completa do domï¿½nio PDPw
 - Alinhamento com nomenclatura ONS
 - Mapeamento: antiga ? nova nomenclatura
 - Regras de nomenclatura
-- Checklist de validação
+- Checklist de validaï¿½ï¿½o
 
-**Status:** ? Concluído
+**Status:** ? Concluï¿½do
 
 ---
 
@@ -89,7 +89,7 @@ git push -u origin feature/backend
 ```
 
 **Commit:** `f0373f5`  
-**Status:** ? Concluído e sincronizado com GitHub
+**Status:** ? Concluï¿½do e sincronizado com GitHub
 
 ---
 
@@ -102,28 +102,28 @@ git push -u origin feature/backend
 | Criar ResultExtensions | ? | 100% |
 | Documentar roadmap V2 | ? | 100% |
 | Documentar 24 APIs pendentes | ? | 100% |
-| Documentar linguagem ubíqua | ? | 100% |
+| Documentar linguagem ubï¿½qua | ? | 100% |
 | Commit e push no GitHub | ? | 100% |
 | **FASE 1 COMPLETA** | **?** | **100%** |
 
 ---
 
-## ?? PRÓXIMOS PASSOS (FASE 1 - Continuação)
+## ?? PRï¿½XIMOS PASSOS (FASE 1 - Continuaï¿½ï¿½o)
 
 ### ? 1. Criar Estrutura de Testes
 
 **Projetos a criar:**
 ```bash
-# Testes Unitários
+# Testes Unitï¿½rios
 dotnet new xunit -n PDPW.UnitTests -o tests/PDPW.UnitTests
 dotnet sln add tests/PDPW.UnitTests/PDPW.UnitTests.csproj
 
-# Testes de Integração
+# Testes de Integraï¿½ï¿½o
 dotnet new xunit -n PDPW.IntegrationTests -o tests/PDPW.IntegrationTests
 dotnet sln add tests/PDPW.IntegrationTests/PDPW.IntegrationTests.csproj
 ```
 
-**Pacotes NuGet necessários:**
+**Pacotes NuGet necessï¿½rios:**
 - xUnit
 - Moq
 - FluentAssertions
@@ -159,8 +159,8 @@ tests/
 | `SemanaPMO.cs` | `SemanaPMO` | `SemanaProgramaMensalOperacao` |
 
 **Impacto em cascata:**
-- Repositories (interfaces + implementações)
-- Services (interfaces + implementações)
+- Repositories (interfaces + implementaï¿½ï¿½es)
+- Services (interfaces + implementaï¿½ï¿½es)
 - Controllers
 - DTOs
 - DbContext
@@ -180,13 +180,13 @@ tests/
 - `EquipePdpService` ? `EquipeProgramacaoDiariaService`
 - `SemanaPMOService` ? `SemanaPMOService` (manter sigla)
 
-**Padrão:**
+**Padrï¿½o:**
 ```csharp
 // Antes
 public async Task<UsinaDto> CreateAsync(CreateUsinaDto dto)
 {
     if (await CodigoExisteAsync(dto.Codigo))
-        throw new InvalidOperationException("Código já existe");
+        throw new InvalidOperationException("Cï¿½digo jï¿½ existe");
     // ...
 }
 
@@ -194,7 +194,7 @@ public async Task<UsinaDto> CreateAsync(CreateUsinaDto dto)
 public async Task<Result<UsinaGeradoraDto>> CreateAsync(CreateUsinaGeradoraDto dto)
 {
     if (await CodigoExisteAsync(dto.Codigo))
-        return Result<UsinaGeradoraDto>.Conflict("Código já existe");
+        return Result<UsinaGeradoraDto>.Conflict("Cï¿½digo jï¿½ existe");
     // ...
 }
 ```
@@ -212,7 +212,7 @@ public async Task<Result<UsinaGeradoraDto>> CreateAsync(CreateUsinaGeradoraDto d
 - `EquipesPdpController` ? `EquipesProgramacaoDiariaController`
 - `SemanasPmoController` ? `SemanasPMOController`
 
-**Padrão:**
+**Padrï¿½o:**
 ```csharp
 // Antes
 try
@@ -239,42 +239,42 @@ return result.ToCreatedAtActionResult(this, nameof(GetById), new { id = result.V
 | Data | Atividade | Status |
 |------|-----------|--------|
 | **20/12 (Hoje)** | | |
-| ? Manhã | Result<T> pattern | ? Concluído |
-| ? Manhã | Documentação completa | ? Concluído |
-| ? Tarde | Commit e push | ? Concluído |
-| ? Tarde | Criar projetos de teste | ? Próximo |
-| ? Noite | Refatorar nomenclatura | ? Próximo |
-| **21/12 (Amanhã)** | | |
-| ? Manhã | Atualizar Services com Result<T> | ? Pendente |
+| ? Manhï¿½ | Result<T> pattern | ? Concluï¿½do |
+| ? Manhï¿½ | Documentaï¿½ï¿½o completa | ? Concluï¿½do |
+| ? Tarde | Commit e push | ? Concluï¿½do |
+| ? Tarde | Criar projetos de teste | ? Prï¿½ximo |
+| ? Noite | Refatorar nomenclatura | ? Prï¿½ximo |
+| **21/12 (Amanhï¿½)** | | |
+| ? Manhï¿½ | Atualizar Services com Result<T> | ? Pendente |
 | ? Tarde | Atualizar Controllers com Result<T> | ? Pendente |
-| ? Tarde | Escrever primeiros testes unitários | ? Pendente |
+| ? Tarde | Escrever primeiros testes unitï¿½rios | ? Pendente |
 | ? Noite | Commit "Fase 1 completa" | ? Pendente |
 
 ---
 
-## ?? MÉTRICAS ATUAIS
+## ?? Mï¿½TRICAS ATUAIS
 
-### Código
+### Cï¿½digo
 - ? Result<T> implementado
 - ? ResultExtensions implementado
-- ? 0 testes unitários (a criar)
-- ? 0 testes de integração (a criar)
+- ? 0 testes unitï¿½rios (a criar)
+- ? 0 testes de integraï¿½ï¿½o (a criar)
 
-### Documentação
+### Documentaï¿½ï¿½o
 - ? Roadmap completo (1200+ linhas)
 - ? APIs pendentes documentadas (800+ linhas)
-- ? Glossário ubíquo completo (500+ linhas)
-- ? Total: **2500+ linhas de documentação**
+- ? Glossï¿½rio ubï¿½quo completo (500+ linhas)
+- ? Total: **2500+ linhas de documentaï¿½ï¿½o**
 
 ### Git
 - ? Branch `feature/backend` criada
 - ? 1 commit realizado
-- ? Push para GitHub concluído
+- ? Push para GitHub concluï¿½do
 - ?? https://github.com/wbulhoes/ONS_PoC-PDPW/tree/feature/backend
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
 ### Ver status atual
 ```bash
@@ -288,7 +288,7 @@ git log --oneline
 # Criar projeto de testes
 dotnet new xunit -n PDPW.UnitTests -o tests/PDPW.UnitTests
 
-# Adicionar referências
+# Adicionar referï¿½ncias
 cd tests/PDPW.UnitTests
 dotnet add reference ../../src/PDPW.Domain/PDPW.Domain.csproj
 dotnet add reference ../../src/PDPW.Application/PDPW.Application.csproj
@@ -311,40 +311,40 @@ dotnet test
 
 Ao final da Fase 1 completa, teremos:
 
-### ? Fundação Sólida
+### ? Fundaï¿½ï¿½o Sï¿½lida
 - ? Result<T> pattern implementado
-- ? Nomenclatura ubíqua aplicada em todo código
+- ? Nomenclatura ubï¿½qua aplicada em todo cï¿½digo
 - ? Estrutura de testes configurada
 - ? Primeiros testes escritos (exemplo para outros)
 
-### ? Padrões Estabelecidos
-- ? Como tratar erros (Result ao invés de exceptions)
-- ? Como nomear entidades (linguagem ubíqua)
+### ? Padrï¿½es Estabelecidos
+- ? Como tratar erros (Result ao invï¿½s de exceptions)
+- ? Como nomear entidades (linguagem ubï¿½qua)
 - ? Como escrever testes (fixtures + builders)
 
-### ? Documentação Completa
+### ? Documentaï¿½ï¿½o Completa
 - ? Roadmap das 24 APIs
 - ? Detalhamento de cada API
-- ? Glossário do domínio
+- ? Glossï¿½rio do domï¿½nio
 
 ### ? Preparado para Fase 2
-- APIs críticas (Grupo A e B)
-- Desenvolvimento rápido e padronizado
-- Testes automáticos
+- APIs crï¿½ticas (Grupo A e B)
+- Desenvolvimento rï¿½pido e padronizado
+- Testes automï¿½ticos
 
 ---
 
-## ?? LIÇÕES APRENDIDAS
+## ?? LIï¿½ï¿½ES APRENDIDAS
 
 ### ? O que funcionou bem
-1. Result<T> pattern é simples e poderoso
-2. Documentação detalhada facilita planejamento
-3. Linguagem ubíqua traz clareza
+1. Result<T> pattern ï¿½ simples e poderoso
+2. Documentaï¿½ï¿½o detalhada facilita planejamento
+3. Linguagem ubï¿½qua traz clareza
 
-### ?? Atenção para próximos passos
-1. Refatoração de nomenclatura é trabalhosa (impacto em cascata)
-2. Migração gradual é melhor (service por service)
-3. Testar após cada refatoração
+### ?? Atenï¿½ï¿½o para prï¿½ximos passos
+1. Refatoraï¿½ï¿½o de nomenclatura ï¿½ trabalhosa (impacto em cascata)
+2. Migraï¿½ï¿½o gradual ï¿½ melhor (service por service)
+3. Testar apï¿½s cada refatoraï¿½ï¿½o
 
 ---
 
@@ -355,7 +355,7 @@ Ao final da Fase 1 completa, teremos:
 - [x] Criar ResultExtensions
 - [x] Documentar roadmap
 - [x] Documentar 24 APIs
-- [x] Documentar glossário
+- [x] Documentar glossï¿½rio
 - [x] Commit e push
 - [ ] Criar projetos de teste
 - [ ] Refatorar nomenclatura
@@ -370,12 +370,12 @@ Ao final da Fase 1 completa, teremos:
 ## ?? RESUMO
 
 **O que temos agora:**
-? Fundação arquitetural (Result<T>)  
-? Documentação completa (2500+ linhas)  
-? Plano claro de execução (24 APIs mapeadas)  
+? Fundaï¿½ï¿½o arquitetural (Result<T>)  
+? Documentaï¿½ï¿½o completa (2500+ linhas)  
+? Plano claro de execuï¿½ï¿½o (24 APIs mapeadas)  
 ? Branch sincronizada com GitHub  
 
-**Próximo passo:**
+**Prï¿½ximo passo:**
 ? Criar estrutura de testes e refatorar nomenclatura
 
 **Estimativa para Fase 1 completa:**
@@ -384,7 +384,7 @@ Ao final da Fase 1 completa, teremos:
 ---
 
 **Criado em:** 20/12/2024  
-**Última atualização:** 20/12/2024 (tarde)  
+**ï¿½ltima atualizaï¿½ï¿½o:** 20/12/2024 (tarde)  
 **Status:** ?? Fase 1 em andamento (58%)  
 **Branch:** `feature/backend`  
 **Commit:** `f0373f5`

@@ -1,12 +1,12 @@
-# ?? GUIA DE DEMONSTRAÇÃO - Dockerização PDPW
+ï»¿# ?? GUIA DE DEMONSTRAï¿½ï¿½O - Dockerizaï¿½ï¿½o PDPW
 
-**Objetivo:** Demonstrar ao gestor que a dockerização está completa e funcionando  
+**Objetivo:** Demonstrar ao gestor que a dockerizaï¿½ï¿½o estï¿½ completa e funcionando  
 **Tempo:** 10 minutos  
 **Data:** 19/12/2024
 
 ---
 
-## ? DEMO RÁPIDA (2 minutos)
+## ? DEMO Rï¿½PIDA (2 minutos)
 
 ### Comandos
 
@@ -14,11 +14,11 @@
 # 1. Navegar para o projeto
 cd C:\temp\_ONS_PoC-PDPW
 
-# 2. Iniciar todos os serviços
+# 2. Iniciar todos os serviï¿½os
 docker-compose up --build
 
 # 3. Aguardar ~2 minutos (primeira vez)
-# Logs vão aparecer mostrando:
+# Logs vï¿½o aparecer mostrando:
 # - SQL Server iniciando
 # - Backend compilando
 # - Frontend compilando
@@ -41,13 +41,13 @@ docker-compose up --build
 
 ---
 
-## ?? CHECKLIST DE DEMONSTRAÇÃO
+## ?? CHECKLIST DE DEMONSTRAï¿½ï¿½O
 
-### Preparação (5 minutos antes)
+### Preparaï¿½ï¿½o (5 minutos antes)
 
-- [ ] Docker Desktop está rodando
-- [ ] Nenhum outro serviço usando portas 5000, 3000, 1433
-- [ ] Código no branch correto (`develop`)
+- [ ] Docker Desktop estï¿½ rodando
+- [ ] Nenhum outro serviï¿½o usando portas 5000, 3000, 1433
+- [ ] Cï¿½digo no branch correto (`develop`)
 - [ ] Terminal limpo
 
 ### Durante a Demo
@@ -58,7 +58,7 @@ docker-compose up --build
 # Listar arquivos Docker
 ls Dockerfile*, docker-compose.yml
 
-# Saída esperada:
+# Saï¿½da esperada:
 # Dockerfile.backend
 # Dockerfile.frontend
 # docker-compose.yml
@@ -67,14 +67,14 @@ ls Dockerfile*, docker-compose.yml
 **Explicar:**
 "Temos 3 arquivos Docker prontos que configuram toda a infraestrutura."
 
-#### 2. Iniciar Serviços (30 segundos)
+#### 2. Iniciar Serviï¿½os (30 segundos)
 
 ```powershell
 docker-compose up -d
 ```
 
 **Explicar:**
-"Com um único comando, subimos 3 serviços: SQL Server, Backend .NET 8 e Frontend React."
+"Com um ï¿½nico comando, subimos 3 serviï¿½os: SQL Server, Backend .NET 8 e Frontend React."
 
 #### 3. Verificar Status (30 segundos)
 
@@ -82,7 +82,7 @@ docker-compose up -d
 docker-compose ps
 ```
 
-**Saída esperada:**
+**Saï¿½da esperada:**
 ```
 NAME                IMAGE                        STATUS
 pdpw-backend        ons_poc-pdpw-backend         Up
@@ -91,7 +91,7 @@ pdpw-sqlserver      mcr.microsoft.com/mssql...   Up
 ```
 
 **Explicar:**
-"Todos os 3 containers estão rodando e saudáveis."
+"Todos os 3 containers estï¿½o rodando e saudï¿½veis."
 
 #### 4. Testar Backend API (2 min)
 
@@ -101,8 +101,8 @@ http://localhost:5000/swagger
 ```
 
 **Demonstrar:**
-1. Página do Swagger abre
-2. Mostrar lista de endpoints disponíveis
+1. Pï¿½gina do Swagger abre
+2. Mostrar lista de endpoints disponï¿½veis
 3. Clicar em GET /api/dadosenergeticos
 4. Clicar "Try it out"
 5. Clicar "Execute"
@@ -121,7 +121,7 @@ http://localhost:3000
 **Demonstrar:**
 1. Frontend React carrega
 2. Mostrar interface
-3. Interagir com a aplicação
+3. Interagir com a aplicaï¿½ï¿½o
 
 **Explicar:**
 "Frontend React integrado e funcionando, consumindo a API."
@@ -133,9 +133,9 @@ docker-compose logs backend --tail=20
 ```
 
 **Explicar:**
-"Logs estruturados e acessíveis para debug."
+"Logs estruturados e acessï¿½veis para debug."
 
-#### 7. Parar Serviços (30 segundos)
+#### 7. Parar Serviï¿½os (30 segundos)
 
 ```powershell
 docker-compose down
@@ -170,36 +170,36 @@ docker-compose down
 ???????????????????????????????????????????
 ```
 
-### Slide 2: Benefícios
+### Slide 2: Benefï¿½cios
 
 ```
-? BENEFÍCIOS DA DOCKERIZAÇÃO:
+? BENEFï¿½CIOS DA DOCKERIZAï¿½ï¿½O:
 
 1. Ambiente Consistente
-   • Funciona igual em Dev/QA/Prod
-   • "Works on my machine" resolvido
+   ï¿½ Funciona igual em Dev/QA/Prod
+   ï¿½ "Works on my machine" resolvido
 
 2. Deploy Simplificado
-   • docker-compose up = tudo rodando
-   • Sem instalações manuais
+   ï¿½ docker-compose up = tudo rodando
+   ï¿½ Sem instalaï¿½ï¿½es manuais
 
 3. Isolamento
-   • Cada serviço em container isolado
-   • Sem conflitos de dependências
+   ï¿½ Cada serviï¿½o em container isolado
+   ï¿½ Sem conflitos de dependï¿½ncias
 
 4. Escalabilidade
-   • Fácil adicionar mais instâncias
-   • Load balancer futuro
+   ï¿½ Fï¿½cil adicionar mais instï¿½ncias
+   ï¿½ Load balancer futuro
 
 5. Portabilidade
-   • Roda em qualquer máquina
-   • Windows, Linux, Mac
+   ï¿½ Roda em qualquer mï¿½quina
+   ï¿½ Windows, Linux, Mac
 ```
 
 ### Slide 3: Comandos Essenciais
 
 ```
-COMANDOS BÁSICOS:
+COMANDOS Bï¿½SICOS:
 
 # Iniciar tudo
 docker-compose up -d
@@ -219,17 +219,17 @@ docker-compose up --build
 
 ---
 
-## ?? SCRIPT DE APRESENTAÇÃO
+## ?? SCRIPT DE APRESENTAï¿½ï¿½O
 
-### Introdução (30 segundos)
+### Introduï¿½ï¿½o (30 segundos)
 
 ```
-"Bom dia [Nome do Gestor]. Vou demonstrar a dockerização 
-completa do PDPW que você solicitou. Todo o ambiente está 
-containerizado e funcional. Levará cerca de 5 minutos."
+"Bom dia [Nome do Gestor]. Vou demonstrar a dockerizaï¿½ï¿½o 
+completa do PDPW que vocï¿½ solicitou. Todo o ambiente estï¿½ 
+containerizado e funcional. Levarï¿½ cerca de 5 minutos."
 ```
 
-### Demonstração (5 minutos)
+### Demonstraï¿½ï¿½o (5 minutos)
 
 ```
 "Primeiro, vou listar os arquivos Docker que criamos..."
@@ -239,11 +239,11 @@ containerizado e funcional. Levará cerca de 5 minutos."
 "Aqui temos 3 arquivos:
 - Dockerfile.backend: Configura API .NET 8
 - Dockerfile.frontend: Configura React
-- docker-compose.yml: Orquestra os 3 serviços"
+- docker-compose.yml: Orquestra os 3 serviï¿½os"
 
 ---
 
-"Agora vou iniciar todo o ambiente com um único comando..."
+"Agora vou iniciar todo o ambiente com um ï¿½nico comando..."
 
 [Executar: docker-compose up -d]
 
@@ -258,7 +258,7 @@ containerizado e funcional. Levará cerca de 5 minutos."
 
 [Executar: docker-compose ps]
 
-"Como pode ver, todos estão rodando (Status: Up)."
+"Como pode ver, todos estï¿½o rodando (Status: Up)."
 
 ---
 
@@ -266,7 +266,7 @@ containerizado e funcional. Levará cerca de 5 minutos."
 
 [Abrir: http://localhost:5000/swagger]
 
-"Aqui está o Swagger com toda a documentação da API.
+"Aqui estï¿½ o Swagger com toda a documentaï¿½ï¿½o da API.
 Vou testar um endpoint ao vivo..."
 
 [Clicar em GET /api/dadosenergeticos ? Try it out ? Execute]
@@ -290,16 +290,16 @@ Vou testar um endpoint ao vivo..."
 "Ambiente completo desce em segundos."
 ```
 
-### Conclusão (30 segundos)
+### Conclusï¿½o (30 segundos)
 
 ```
 "Resumindo:
-? Dockerização completa e funcional
-? 3 serviços containerizados
+? Dockerizaï¿½ï¿½o completa e funcional
+? 3 serviï¿½os containerizados
 ? Deploy com 1 comando
 ? Pronto para qualquer ambiente
 
-A arquitetura MVC também está implementada, 
+A arquitetura MVC tambï¿½m estï¿½ implementada, 
 conforme discutimos. Posso explicar mais detalhes?"
 ```
 
@@ -307,16 +307,16 @@ conforme discutimos. Posso explicar mais detalhes?"
 
 ## ? PERGUNTAS FREQUENTES
 
-### P1: "Isso funciona em produção?"
+### P1: "Isso funciona em produï¿½ï¿½o?"
 
 **R:** 
-"Sim. Os Dockerfiles estão configurados para produção. 
-Precisaríamos apenas:
+"Sim. Os Dockerfiles estï¿½o configurados para produï¿½ï¿½o. 
+Precisarï¿½amos apenas:
 1. Configurar certificados SSL
 2. Ajustar connection strings
 3. Configurar orquestrador (Kubernetes ou Docker Swarm)"
 
-### P2: "Quanto de memória usa?"
+### P2: "Quanto de memï¿½ria usa?"
 
 **R:**
 "Ambiente completo usa ~2-3 GB RAM:
@@ -328,9 +328,9 @@ Precisaríamos apenas:
 ### P3: "Como fazemos deploy?"
 
 **R:**
-"Temos 3 opções:
+"Temos 3 opï¿½ï¿½es:
 1. Docker Compose (simples, para dev/qa)
-2. Kubernetes (produção, escalável)
+2. Kubernetes (produï¿½ï¿½o, escalï¿½vel)
 3. Azure Container Apps (cloud, gerenciado)
 
 Recomendo Azure Container Apps para ONS."
@@ -340,14 +340,14 @@ Recomendo Azure Container Apps para ONS."
 **R:**
 "SQL Server usa volume persistente (sqlserver-data).
 Podemos configurar:
-1. Backup automático do volume
+1. Backup automï¿½tico do volume
 2. Backup interno do SQL Server
-3. Replicação para outro container"
+3. Replicaï¿½ï¿½o para outro container"
 
 ### P5: "Posso ver os logs?"
 
 **R:** [Executar: docker-compose logs backend --tail=50]
-"Logs estruturados e acessíveis em tempo real."
+"Logs estruturados e acessï¿½veis em tempo real."
 
 ---
 
@@ -356,29 +356,29 @@ Podemos configurar:
 ### Problema: Porta 5000 em uso
 
 ```powershell
-# Ver o que está usando a porta
+# Ver o que estï¿½ usando a porta
 netstat -ano | findstr :5000
 
 # Matar processo (substituir PID)
 taskkill /PID <numero_pid> /F
 ```
 
-### Problema: Docker Desktop não está rodando
+### Problema: Docker Desktop nï¿½o estï¿½ rodando
 
 ```powershell
-# Verificar se Docker está ativo
+# Verificar se Docker estï¿½ ativo
 docker --version
 
-# Se não funcionar, abrir Docker Desktop manualmente
+# Se nï¿½o funcionar, abrir Docker Desktop manualmente
 ```
 
-### Problema: Containers não iniciam
+### Problema: Containers nï¿½o iniciam
 
 ```powershell
 # Ver logs de erro
 docker-compose logs
 
-# Rebuild forçado
+# Rebuild forï¿½ado
 docker-compose down -v
 docker-compose up --build --force-recreate
 ```
@@ -386,35 +386,35 @@ docker-compose up --build --force-recreate
 ### Problema: SQL Server demora muito
 
 ```
-Primeira inicialização do SQL Server demora ~2 min.
-Aguardar até ver: "SQL Server is now ready for client connections"
+Primeira inicializaï¿½ï¿½o do SQL Server demora ~2 min.
+Aguardar atï¿½ ver: "SQL Server is now ready for client connections"
 ```
 
 ---
 
-## ?? ENTREGÁVEIS DA DOCKERIZAÇÃO
+## ?? ENTREGï¿½VEIS DA DOCKERIZAï¿½ï¿½O
 
 ### Arquivos Criados
 
-- [x] `Dockerfile.backend` - Containerização da API
-- [x] `Dockerfile.frontend` - Containerização do React
-- [x] `docker-compose.yml` - Orquestração dos serviços
-- [x] `.dockerignore` - Otimização de build (se existir)
+- [x] `Dockerfile.backend` - Containerizaï¿½ï¿½o da API
+- [x] `Dockerfile.frontend` - Containerizaï¿½ï¿½o do React
+- [x] `docker-compose.yml` - Orquestraï¿½ï¿½o dos serviï¿½os
+- [x] `.dockerignore` - Otimizaï¿½ï¿½o de build (se existir)
 
-### Configurações
+### Configuraï¿½ï¿½es
 
 - [x] SQL Server 2022 configurado
 - [x] Networking entre containers
 - [x] Volumes persistentes
-- [x] Variáveis de ambiente
+- [x] Variï¿½veis de ambiente
 - [x] Health checks
 - [x] Restart policies
 
-### Documentação
+### Documentaï¿½ï¿½o
 
 - [x] README.md atualizado com comandos Docker
-- [x] SETUP.md com instruções
-- [x] Este guia de demonstração
+- [x] SETUP.md com instruï¿½ï¿½es
+- [x] Este guia de demonstraï¿½ï¿½o
 
 ---
 
@@ -424,14 +424,14 @@ Aguardar até ver: "SQL Server is now ready for client connections"
 
 - [ ] Docker Desktop rodando
 - [ ] `docker-compose up` testado e funcionando
-- [ ] Swagger acessível em http://localhost:5000/swagger
-- [ ] Frontend acessível em http://localhost:3000
+- [ ] Swagger acessï¿½vel em http://localhost:5000/swagger
+- [ ] Frontend acessï¿½vel em http://localhost:3000
 - [ ] Logs limpos (sem erros)
 - [ ] Slides preparados (se usar)
-- [ ] Script de apresentação ensaiado
+- [ ] Script de apresentaï¿½ï¿½o ensaiado
 - [ ] Respostas para perguntas frequentes decoradas
 
-### Durante a apresentação:
+### Durante a apresentaï¿½ï¿½o:
 
 - [ ] Mostrar arquivos Docker
 - [ ] Executar docker-compose up -d
@@ -441,10 +441,10 @@ Aguardar até ver: "SQL Server is now ready for client connections"
 - [ ] Mostrar logs (docker-compose logs)
 - [ ] Executar docker-compose down
 
-### Após a apresentação:
+### Apï¿½s a apresentaï¿½ï¿½o:
 
 - [ ] Documentar feedback do gestor
-- [ ] Ajustar conforme necessário
+- [ ] Ajustar conforme necessï¿½rio
 - [ ] Atualizar ADR (Architecture Decision Record)
 
 ---
@@ -454,21 +454,21 @@ Aguardar até ver: "SQL Server is now ready for client connections"
 ```
 "Caro [Nome],
 
-A dockerização solicitada está completa e funcional.
+A dockerizaï¿½ï¿½o solicitada estï¿½ completa e funcional.
 
 ENTREGAS:
-? 3 serviços containerizados (SQL, Backend, Frontend)
+? 3 serviï¿½os containerizados (SQL, Backend, Frontend)
 ? Docker Compose configurado
 ? Deploy com 1 comando
-? Documentação completa
+? Documentaï¿½ï¿½o completa
 
-PRÓXIMOS PASSOS:
-1. Validar funcionamento (demonstração agendada)
+PRï¿½XIMOS PASSOS:
+1. Validar funcionamento (demonstraï¿½ï¿½o agendada)
 2. Aprovar arquitetura atual (Clean + MVC)
 3. Continuar desenvolvimento das 29 APIs
 
 DISPONIBILIDADE:
-Estou disponível para demonstração presencial a qualquer momento.
+Estou disponï¿½vel para demonstraï¿½ï¿½o presencial a qualquer momento.
 
 Att,
 [Seu Nome]"
@@ -478,7 +478,7 @@ Att,
 
 **Guia preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? PRONTO PARA DEMONSTRAÇÃO
+**Versï¿½o:** 1.0  
+**Status:** ? PRONTO PARA DEMONSTRAï¿½ï¿½O
 
-**BOA SORTE NA APRESENTAÇÃO! ????**
+**BOA SORTE NA APRESENTAï¿½ï¿½O! ????**

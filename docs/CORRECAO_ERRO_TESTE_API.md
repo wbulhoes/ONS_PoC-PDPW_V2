@@ -1,4 +1,4 @@
-# ?? GUIA DE CORREÇÃO - TESTE DE APIs
+ï»¿# ?? GUIA DE CORREï¿½ï¿½O - TESTE DE APIs
 
 ## ? **ERRO IDENTIFICADO**
 
@@ -6,15 +6,15 @@
 **Causa:** Foreign Key constraint violation  
 **Tabela:** ArquivosDadger  
 **Campo:** semanaPMOId  
-**Problema:** Você usou `semanaPMOId: 0`, que não existe no banco
+**Problema:** Vocï¿½ usou `semanaPMOId: 0`, que nï¿½o existe no banco
 
 ---
 
-## ? **SOLUÇÃO**
+## ? **SOLUï¿½ï¿½O**
 
-### **IDs Válidos de SemanaPMO**
+### **IDs Vï¿½lidos de SemanaPMO**
 
-Consulte sempre os IDs disponíveis antes de criar registros relacionados:
+Consulte sempre os IDs disponï¿½veis antes de criar registros relacionados:
 
 ```sql
 SELECT Id, Numero, Ano, DataInicio, DataFim 
@@ -23,7 +23,7 @@ WHERE Ativo = 1
 ORDER BY DataInicio DESC;
 ```
 
-**IDs disponíveis atualmente:** 1 a 69
+**IDs disponï¿½veis atualmente:** 1 a 69
 
 **Semanas mais recentes:**
 - ID **69**: Semana 11/2025 (15/03 a 21/03)
@@ -42,7 +42,7 @@ ORDER BY DataInicio DESC;
   "nomeArquivo": "TESTE WILL",
   "caminhoArquivo": "string",
   "dataImportacao": "2025-12-21T01:03:49.698Z",
-  "semanaPMOId": 0,  ? ERRO: ID 0 não existe
+  "semanaPMOId": 0,  ? ERRO: ID 0 nï¿½o existe
   "observacoes": "string"
 }
 ```
@@ -53,7 +53,7 @@ ORDER BY DataInicio DESC;
   "nomeArquivo": "TESTE_WILL_CORRIGIDO",
   "caminhoArquivo": "/uploads/2025/12/TESTE_WILL_CORRIGIDO.dat",
   "dataImportacao": "2025-12-21T03:49:00.000Z",
-  "semanaPMOId": 69,  ? CORRETO: ID válido
+  "semanaPMOId": 69,  ? CORRETO: ID vï¿½lido
   "observacoes": "Teste via Swagger - Corrigido"
 }
 ```
@@ -77,7 +77,7 @@ ORDER BY DataInicio DESC;
 
 ---
 
-## ?? **IDs VÁLIDOS PARA OUTRAS APIs**
+## ?? **IDs Vï¿½LIDOS PARA OUTRAS APIs**
 
 ### **1. Empresas (IDs: 1-8, 101-117)**
 ```json
@@ -92,16 +92,16 @@ POST /api/empresas
 
 ### **2. Usinas (IDs: 1-10, 201-230)**
 
-**Para criar nova usina, use IDs válidos:**
+**Para criar nova usina, use IDs vï¿½lidos:**
 ```json
 POST /api/usinas
 {
   "codigo": "TESTE",
   "nome": "Usina Teste",
-  "tipoUsinaId": 1,        ? IDs válidos: 1-8
-  "empresaId": 101,        ? IDs válidos: 1-8, 101-117
+  "tipoUsinaId": 1,        ? IDs vï¿½lidos: 1-8
+  "empresaId": 101,        ? IDs vï¿½lidos: 1-8, 101-117
   "capacidadeInstalada": 100.00,
-  "localizacao": "São Paulo, SP",
+  "localizacao": "Sï¿½o Paulo, SP",
   "dataOperacao": "2025-01-01"
 }
 ```
@@ -112,7 +112,7 @@ POST /api/usinas
 POST /api/cargas
 {
   "dataReferencia": "2025-12-21",
-  "subsistemaId": "SE",    ? Valores válidos: SE, S, NE, N
+  "subsistemaId": "SE",    ? Valores vï¿½lidos: SE, S, NE, N
   "cargaMWmed": 45000.00,
   "cargaVerificada": 44500.00,
   "previsaoCarga": 46000.00,
@@ -122,42 +122,42 @@ POST /api/cargas
 
 ### **4. RestricoesUG (IDs: 1-25)**
 
-**Para criar nova restrição:**
+**Para criar nova restriï¿½ï¿½o:**
 ```json
 POST /api/restricoesug
 {
-  "unidadeGeradoraId": 1,     ? IDs válidos: 1-30
+  "unidadeGeradoraId": 1,     ? IDs vï¿½lidos: 1-30
   "dataInicio": "2025-12-21",
   "dataFim": "2025-12-25",
-  "motivoRestricaoId": 1,     ? IDs válidos: 1-10
+  "motivoRestricaoId": 1,     ? IDs vï¿½lidos: 1-10
   "potenciaRestrita": 350.00,
-  "observacoes": "Teste de restrição"
+  "observacoes": "Teste de restriï¿½ï¿½o"
 }
 ```
 
-**IDs de UnidadesGeradoras disponíveis:**
+**IDs de UnidadesGeradoras disponï¿½veis:**
 - 1-3: Itaipu (G01, G02, G03)
 - 4-5: Belo Monte (G01, G02)
-- 6-8: Tucuruí (G01, G02, G03)
+- 6-8: Tucuruï¿½ (G01, G02, G03)
 - 9-10: Jirau (G01, G02)
-- 11-12: Santo Antônio (G01, G02)
+- 11-12: Santo Antï¿½nio (G01, G02)
 - 13-30: Outras usinas
 
-**IDs de MotivosRestricao disponíveis:**
-- 1: Manutenção Preventiva
-- 2: Manutenção Corretiva
+**IDs de MotivosRestricao disponï¿½veis:**
+- 1: Manutenï¿½ï¿½o Preventiva
+- 2: Manutenï¿½ï¿½o Corretiva
 - 3: Falha de Equipamento
-- 4: Restrição Hidráulica
-- 5: Restrição de Transmissão
-- 6: Restrição Ambiental
-- 7: Restrição de Combustível
+- 4: Restriï¿½ï¿½o Hidrï¿½ulica
+- 5: Restriï¿½ï¿½o de Transmissï¿½o
+- 6: Restriï¿½ï¿½o Ambiental
+- 7: Restriï¿½ï¿½o de Combustï¿½vel
 - 8: Teste/Comissionamento
 - 9: Desligamento Total
-- 10: Restrição Climática
+- 10: Restriï¿½ï¿½o Climï¿½tica
 
 ---
 
-## ?? **COMO CONSULTAR IDs VÁLIDOS**
+## ?? **COMO CONSULTAR IDs Vï¿½LIDOS**
 
 ### **Via SQL (Docker)**
 
@@ -174,7 +174,7 @@ docker exec pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "
 # Unidades Geradoras
 docker exec pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -C -d PDPW_DB -Q "SELECT Id, Codigo, Nome FROM UnidadesGeradoras WHERE Ativo = 1"
 
-# Motivos Restrição
+# Motivos Restriï¿½ï¿½o
 docker exec pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -C -d PDPW_DB -Q "SELECT Id, Nome, Categoria FROM MotivosRestricao WHERE Ativo = 1"
 ```
 
@@ -191,12 +191,12 @@ curl http://localhost:5001/api/empresas
 curl http://localhost:5001/api/tiposusina
 
 # Listar Unidades Geradoras (via RestricoesUG)
-# Não há endpoint direto, mas pode consultar via SQL
+# Nï¿½o hï¿½ endpoint direto, mas pode consultar via SQL
 ```
 
 ---
 
-## ?? **TABELA DE REFERÊNCIA RÁPIDA**
+## ?? **TABELA DE REFERï¿½NCIA Rï¿½PIDA**
 
 | Entidade | Range de IDs | Total | Endpoint GET |
 |----------|--------------|-------|--------------|
@@ -213,19 +213,19 @@ curl http://localhost:5001/api/tiposusina
 
 ---
 
-## ?? **VALIDAÇÕES IMPORTANTES**
+## ?? **VALIDAï¿½ï¿½ES IMPORTANTES**
 
 ### **ArquivosDadger**
-- ? `nomeArquivo`: Obrigatório, único
-- ? `caminhoArquivo`: Obrigatório
-- ? `dataImportacao`: Obrigatório, formato ISO 8601
+- ? `nomeArquivo`: Obrigatï¿½rio, ï¿½nico
+- ? `caminhoArquivo`: Obrigatï¿½rio
+- ? `dataImportacao`: Obrigatï¿½rio, formato ISO 8601
 - ? `semanaPMOId`: **DEVE EXISTIR** na tabela SemanasPMO (IDs 1-69)
 - ? `observacoes`: Opcional
 
 ### **Cargas**
 - ? `subsistemaId`: Apenas "SE", "S", "NE", "N"
 - ? `cargaMWmed`: Maior que zero
-- ? `dataReferencia`: Data válida
+- ? `dataReferencia`: Data vï¿½lida
 
 ### **RestricoesUG**
 - ? `unidadeGeradoraId`: IDs 1-30
@@ -237,12 +237,12 @@ curl http://localhost:5001/api/tiposusina
 
 ## ?? **TESTE VALIDADO - PASSO A PASSO**
 
-### **1. Verifique IDs disponíveis**
+### **1. Verifique IDs disponï¿½veis**
 ```bash
 curl http://localhost:5001/api/semanaspmo
 ```
 
-### **2. Use um ID válido no POST**
+### **2. Use um ID vï¿½lido no POST**
 ```json
 {
   "nomeArquivo": "MEU_TESTE",
@@ -255,17 +255,17 @@ curl http://localhost:5001/api/semanaspmo
 
 ### **3. Execute o POST**
 - Abra Swagger: http://localhost:5001/swagger
-- Vá em `ArquivosDadger`
+- Vï¿½ em `ArquivosDadger`
 - Expanda `POST /api/ArquivosDadger`
 - Clique em `Try it out`
 - Cole o JSON corrigido
 - Clique em `Execute`
 
 ### **4. Valide o resultado**
-- Código: **201 Created** ?
-- Response contém o ID do novo registro
-- `processado: false` (padrão)
-- `ativo: true` (padrão)
+- Cï¿½digo: **201 Created** ?
+- Response contï¿½m o ID do novo registro
+- `processado: false` (padrï¿½o)
+- `ativo: true` (padrï¿½o)
 
 ---
 
@@ -308,9 +308,9 @@ Content-Type: application/json
 
 Antes de fazer qualquer POST:
 
-- [ ] Consultei os IDs disponíveis via GET
-- [ ] Usei um ID válido que existe no banco
-- [ ] Validei o formato dos dados (datas, números, strings)
+- [ ] Consultei os IDs disponï¿½veis via GET
+- [ ] Usei um ID vï¿½lido que existe no banco
+- [ ] Validei o formato dos dados (datas, nï¿½meros, strings)
 - [ ] Testei primeiro com dados simples
 - [ ] Verifiquei o response code (201 = sucesso, 400/500 = erro)
 
@@ -337,6 +337,6 @@ curl -X POST "http://localhost:5001/api/ArquivosDadger" \
 
 ---
 
-**Agora você pode testar novamente com sucesso! ??**
+**Agora vocï¿½ pode testar novamente com sucesso! ??**
 
 Use `semanaPMOId: 3` (semana atual) ou qualquer ID de 1 a 69.

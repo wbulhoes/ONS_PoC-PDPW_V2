@@ -1,8 +1,8 @@
-# ? ARQUIVOS BASE CRIADOS COM SUCESSO
+ï»¿# ? ARQUIVOS BASE CRIADOS COM SUCESSO
 
 **Data:** 19/12/2024  
 **Status:** ? COMPLETO  
-**Próximo passo:** Começar primeira API (Usina)
+**Prï¿½ximo passo:** Comeï¿½ar primeira API (Usina)
 
 ---
 
@@ -10,20 +10,20 @@
 
 ### 1. Infrastructure Layer
 
-| # | Arquivo | Localização | Status |
+| # | Arquivo | Localizaï¿½ï¿½o | Status |
 |---|---------|-------------|--------|
 | 1 | BaseRepository.cs | `src/PDPW.Infrastructure/Repositories/` | ? |
 | 2 | DbSeeder.cs | `src/PDPW.Infrastructure/Data/Seed/` | ? |
 
 ### 2. Application Layer
 
-| # | Arquivo | Localização | Status |
+| # | Arquivo | Localizaï¿½ï¿½o | Status |
 |---|---------|-------------|--------|
 | 3 | AutoMapperProfile.cs | `src/PDPW.Application/Mappings/` | ? |
 
 ### 3. API Layer
 
-| # | Arquivo | Localização | Status |
+| # | Arquivo | Localizaï¿½ï¿½o | Status |
 |---|---------|-------------|--------|
 | 4 | BaseController.cs | `src/PDPW.API/Controllers/` | ? |
 | 5 | ValidationFilter.cs | `src/PDPW.API/Filters/` | ? |
@@ -31,9 +31,9 @@
 | 7 | ErrorHandlingMiddleware.cs | `src/PDPW.API/Middlewares/` | ? |
 | 8 | ServiceCollectionExtensions.cs | `src/PDPW.API/Extensions/` | ? |
 
-### 4. Configurações
+### 4. Configuraï¿½ï¿½es
 
-| # | Arquivo | Alteração | Status |
+| # | Arquivo | Alteraï¿½ï¿½o | Status |
 |---|---------|-----------|--------|
 | 9 | Program.cs | Atualizado com extensions e filters | ? |
 | 10 | PDPW.API.csproj | Adicionado XML docs e AutoMapper | ? |
@@ -71,7 +71,7 @@ src/
 ?           ??? DbSeeder.cs                ? NOVO
 ?
 ??? PDPW.Domain/
-    ??? (sem mudanças)
+    ??? (sem mudanï¿½as)
 ```
 
 ---
@@ -87,7 +87,7 @@ src/
 ? UpdateAsync(entity) - Atualizar
 ? DeleteAsync(id) - Soft delete
 ? HardDeleteAsync(id) - Hard delete
-? ExistsAsync(id) - Verificar existência
+? ExistsAsync(id) - Verificar existï¿½ncia
 ? CountAsync() - Contar registros
 ```
 
@@ -97,7 +97,7 @@ public class UsinaRepository : BaseRepository<Usina>, IUsinaRepository
 {
     public UsinaRepository(PdpwDbContext context) : base(context) { }
     
-    // Métodos específicos aqui
+    // Mï¿½todos especï¿½ficos aqui
 }
 ```
 
@@ -109,7 +109,7 @@ public class UsinaRepository : BaseRepository<Usina>, IUsinaRepository
 ? HandleResult<T>(result) - Retorna OK ou NotFound
 ? HandleCollectionResult<T>(result) - Para listas
 ? HandleError(exception) - Tratamento de erros
-? HandleValidationError(message) - Erros de validação
+? HandleValidationError(message) - Erros de validaï¿½ï¿½o
 ? HandleCreated<T>(...) - 201 Created
 ? HandleNoContent() - 204 No Content
 ```
@@ -136,7 +136,7 @@ public class UsinasController : BaseController
 - ? Retorna BadRequest com erros detalhados
 
 **ExceptionFilter:**
-- ? Captura exceções não tratadas
+- ? Captura exceï¿½ï¿½es nï¿½o tratadas
 - ? Loga erros
 - ? Retorna resposta padronizada
 
@@ -146,9 +146,9 @@ public class UsinasController : BaseController
 
 ```csharp
 ? Captura erros no pipeline
-? Loga exceções
+? Loga exceï¿½ï¿½es
 ? Retorna JSON padronizado
-? Oculta detalhes em produção
+? Oculta detalhes em produï¿½ï¿½o
 ```
 
 ---
@@ -164,13 +164,13 @@ public class UsinasController : BaseController
 - ? Registra profiles automaticamente
 
 **AddCorsConfiguration:**
-- ? Políticas Development e AllowAll
+- ? Polï¿½ticas Development e AllowAll
 - ? Permite localhost:5173 e :3000
 
 **AddSwaggerConfiguration:**
-- ? Documentação automática
+- ? Documentaï¿½ï¿½o automï¿½tica
 - ? Inclui XML comments
-- ? Ordenação por controller
+- ? Ordenaï¿½ï¿½o por controller
 
 ---
 
@@ -185,7 +185,7 @@ cd C:\temp\_ONS_PoC-PDPW
 dotnet restore
 ```
 
-### 2. Build da Solução
+### 2. Build da Soluï¿½ï¿½o
 
 ```powershell
 # Build completo
@@ -234,34 +234,34 @@ http://localhost:5000/swagger
 
 ---
 
-## ?? CHECKLIST DE VALIDAÇÃO
+## ?? CHECKLIST DE VALIDAï¿½ï¿½O
 
-### Compilação
+### Compilaï¿½ï¿½o
 - [ ] `dotnet restore` sem erros
 - [ ] `dotnet build` sem erros
 - [ ] Todos os projetos compilam
 
-### Execução
+### Execuï¿½ï¿½o
 - [ ] `dotnet run` inicia sem erros
 - [ ] Endpoint `/` retorna JSON
 - [ ] Endpoint `/health` retorna status
-- [ ] Swagger acessível em `/swagger`
+- [ ] Swagger acessï¿½vel em `/swagger`
 
 ### Logs
-- [ ] Mensagem "?? Iniciando aplicação PDPW API..."
-- [ ] Teste de conexão com banco executado
+- [ ] Mensagem "?? Iniciando aplicaï¿½ï¿½o PDPW API..."
+- [ ] Teste de conexï¿½o com banco executado
 - [ ] Swagger URL mostrada no log
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### 1. Validar Build
 ```powershell
 dotnet build
 ```
 
-### 2. Testar Execução
+### 2. Testar Execuï¿½ï¿½o
 ```powershell
 cd src\PDPW.API
 dotnet run
@@ -272,7 +272,7 @@ dotnet run
 http://localhost:5000/swagger
 ```
 
-### 4. Começar Primeira API
+### 4. Comeï¿½ar Primeira API
 **API:** Usina (DEV 1)
 - Entity
 - Repository
@@ -283,19 +283,19 @@ http://localhost:5000/swagger
 
 ---
 
-## ?? IMPACTO DAS MUDANÇAS
+## ?? IMPACTO DAS MUDANï¿½AS
 
 ```
 ANTES:
-?? Estrutura básica
+?? Estrutura bï¿½sica
 ?? 1 API (DadosEnergeticos)
-?? Configuração mínima
+?? Configuraï¿½ï¿½o mï¿½nima
 
 DEPOIS:
 ?? Estrutura completa Clean Architecture
-?? BaseRepository genérico
+?? BaseRepository genï¿½rico
 ?? BaseController com helpers
-?? Filtros de validação e exceção
+?? Filtros de validaï¿½ï¿½o e exceï¿½ï¿½o
 ?? Middleware de erro
 ?? Extension methods organizados
 ?? AutoMapper configurado
@@ -321,7 +321,7 @@ dotnet add src/PDPW.API package AutoMapper.Extensions.Microsoft.DependencyInject
 dotnet add src/PDPW.Application package FluentValidation
 ```
 
-### Erro: Compilação
+### Erro: Compilaï¿½ï¿½o
 
 ```powershell
 # Limpar e rebuild
@@ -332,7 +332,7 @@ dotnet build
 
 ---
 
-## ?? DOCUMENTAÇÃO DE REFERÊNCIA
+## ?? DOCUMENTAï¿½ï¿½O DE REFERï¿½NCIA
 
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - [AutoMapper Documentation](https://docs.automapper.org/)
@@ -343,7 +343,7 @@ dotnet build
 
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO
 
-**ESTRUTURA BASE PRONTA! VAMOS COMEÇAR A PRIMEIRA API! ??**
+**ESTRUTURA BASE PRONTA! VAMOS COMEï¿½AR A PRIMEIRA API! ??**

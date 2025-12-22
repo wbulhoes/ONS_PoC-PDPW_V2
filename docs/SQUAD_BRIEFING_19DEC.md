@@ -1,97 +1,97 @@
-# ?? BRIEFING DO SQUAD - PoC PDPW
+ï»¿# ?? BRIEFING DO SQUAD - PoC PDPW
 **Data:** 19/12/2024 - 15:00h  
-**Projeto:** Modernização PDPW - ONS  
+**Projeto:** Modernizaï¿½ï¿½o PDPW - ONS  
 **Prazo Final:** 26/12/2024
 
 ---
 
-## ?? OBJETIVO DA REUNIÃO
+## ?? OBJETIVO DA REUNIï¿½O
 
 1. ? Setup do ambiente de desenvolvimento completo
-2. ?? Análise das primeiras impressões do repositório legado
-3. ?? Estruturação e divisão das atividades entre devs
+2. ?? Anï¿½lise das primeiras impressï¿½es do repositï¿½rio legado
+3. ?? Estruturaï¿½ï¿½o e divisï¿½o das atividades entre devs
 4. ?? Alinhamento de cronograma e entregas
 
 ---
 
-## ?? ANÁLISE DO REPOSITÓRIO LEGADO
+## ?? ANï¿½LISE DO REPOSITï¿½RIO LEGADO
 
-### ?? Localização
+### ?? Localizaï¿½ï¿½o
 ```
 C:\temp\_ONS_PoC-PDPW\pdpw_act\pdpw\
 ```
 
-### ?? Estatísticas do Código Legado
+### ?? Estatï¿½sticas do Cï¿½digo Legado
 
-| Métrica | Quantidade | Observação |
+| Mï¿½trica | Quantidade | Observaï¿½ï¿½o |
 |---------|------------|------------|
-| **Arquivos VB.NET** | 473 | Código backend |
-| **Arquivos ASPX** | 168 | Páginas WebForms |
+| **Arquivos VB.NET** | 473 | Cï¿½digo backend |
+| **Arquivos ASPX** | 168 | Pï¿½ginas WebForms |
 | **Tecnologia** | .NET Framework | VB.NET + WebForms |
 | **Banco de Dados** | SQL Server | Anteriormente Informix |
-| **Arquitetura** | Monolítica | 3 camadas (DAO/Business/DTOs) |
+| **Arquitetura** | Monolï¿½tica | 3 camadas (DAO/Business/DTOs) |
 
-### ??? Estrutura do Código Legado
+### ??? Estrutura do Cï¿½digo Legado
 
 ```
 pdpw_act/pdpw/
-??? Business/          # Lógica de negócio
+??? Business/          # Lï¿½gica de negï¿½cio
 ??? Dao/               # Acesso a dados (Data Access Objects)
 ??? DTOs/              # Data Transfer Objects
-??? Common/            # Classes base e utilitários
+??? Common/            # Classes base e utilitï¿½rios
 ??? Model/             # Modelos auxiliares
-??? Enums/             # Enumerações
+??? Enums/             # Enumeraï¿½ï¿½es
 ??? Inteface/          # Interfaces
-??? ons.pdpw.test/     # Testes unitários
-??? *.aspx             # 168 páginas WebForms
-??? Web.config         # Configuração da aplicação
+??? ons.pdpw.test/     # Testes unitï¿½rios
+??? *.aspx             # 168 pï¿½ginas WebForms
+??? Web.config         # Configuraï¿½ï¿½o da aplicaï¿½ï¿½o
 ??? Connected Services # Web Services (SAGIC)
 ```
 
 ### ?? Arquitetura Legada Identificada
 
 #### ? PONTOS POSITIVOS
-- ? **Separação em camadas** (DAO/Business/DTO)
-- ? **Padrão Repository** implementado (BaseDAO)
-- ? **DTOs definidos** para transferência de dados
+- ? **Separaï¿½ï¿½o em camadas** (DAO/Business/DTO)
+- ? **Padrï¿½o Repository** implementado (BaseDAO)
+- ? **DTOs definidos** para transferï¿½ncia de dados
 - ? **Sistema de cache** implementado
-- ? **Testes unitários** existentes
+- ? **Testes unitï¿½rios** existentes
 - ? **Logging estruturado** (Log4Net + ElasticSearch)
-- ? **Uso de herança** para reuso de código
+- ? **Uso de heranï¿½a** para reuso de cï¿½digo
 
-#### ?? PONTOS DE ATENÇÃO
-- ?? **WebForms legado** (dificulta migração de UI)
-- ?? **VB.NET** em vez de C# (requer conversão)
+#### ?? PONTOS DE ATENï¿½ï¿½O
+- ?? **WebForms legado** (dificulta migraï¿½ï¿½o de UI)
+- ?? **VB.NET** em vez de C# (requer conversï¿½o)
 - ?? **SQL inline** nos DAOs (sem ORM)
-- ?? **Dependências antigas** (.NET Framework 4.8)
-- ?? **Autenticação complexa** (POP/Forms Authentication)
-- ?? **Configurações hardcoded** no Web.config
+- ?? **Dependï¿½ncias antigas** (.NET Framework 4.8)
+- ?? **Autenticaï¿½ï¿½o complexa** (POP/Forms Authentication)
+- ?? **Configuraï¿½ï¿½es hardcoded** no Web.config
 
 ---
 
 ## ?? VERTICAL SLICES DEFINIDOS
 
 ### **SLICE 1: Cadastro de Usinas** ???
-**Prioridade:** ALTA | **Complexidade:** MÉDIA | **Tempo:** 2 dias
+**Prioridade:** ALTA | **Complexidade:** Mï¿½DIA | **Tempo:** 2 dias
 
 #### Backend (2 devs - 1 dia)
-- [x] Análise do código legado concluída
+- [x] Anï¿½lise do cï¿½digo legado concluï¿½da
 - [ ] Entidade `Usina` no Domain
 - [ ] Interface `IUsinaRepository`
-- [ ] Implementação do repositório
+- [ ] Implementaï¿½ï¿½o do repositï¿½rio
 - [ ] DTOs (Request/Response)
-- [ ] Service com validações
+- [ ] Service com validaï¿½ï¿½es
 - [ ] Controller com 6 endpoints
-- [ ] Testes unitários
+- [ ] Testes unitï¿½rios
 
 #### Frontend (1 dev - 1 dia)
 - [ ] Componente de listagem
-- [ ] Componente de formulário
-- [ ] Serviço de integração com API
-- [ ] Validações de formulário
+- [ ] Componente de formulï¿½rio
+- [ ] Serviï¿½o de integraï¿½ï¿½o com API
+- [ ] Validaï¿½ï¿½es de formulï¿½rio
 - [ ] Filtros e busca
 
-#### Código Fonte Legado de Referência
+#### Cï¿½digo Fonte Legado de Referï¿½ncia
 - `pdpw_act/pdpw/Dao/UsinaDAO.vb` ?
 - `pdpw_act/pdpw/DTOs/UsinaDTO.vb` ?
 - `pdpw_act/pdpw/Business/UsinaBusiness.vb`
@@ -102,28 +102,28 @@ pdpw_act/pdpw/
 **Prioridade:** ALTA | **Complexidade:** ALTA | **Tempo:** 3 dias
 
 #### Backend (2 devs - 2 dias)
-- [x] Análise do código legado concluída
+- [x] Anï¿½lise do cï¿½digo legado concluï¿½da
 - [ ] Entidades: `ArquivoDadger`, `ArquivoDadgerValor`, `SemanaPMO`
-- [ ] Repositórios com JOINs complexos
+- [ ] Repositï¿½rios com JOINs complexos
 - [ ] Services com filtros
 - [ ] Controller com 5 endpoints
 - [ ] Seed data com relacionamentos
-- [ ] Testes de integração
+- [ ] Testes de integraï¿½ï¿½o
 
 #### Frontend (1 dev - 1 dia)
 - [ ] Componente de consulta
-- [ ] Filtros dinâmicos (período, usina, semana)
+- [ ] Filtros dinï¿½micos (perï¿½odo, usina, semana)
 - [ ] Grid com valores tabulares
 - [ ] Detalhamento de valores
 
-#### Código Fonte Legado de Referência
+#### Cï¿½digo Fonte Legado de Referï¿½ncia
 - `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb` ?
 - `pdpw_act/pdpw/DTOs/ArquivoDadgerValorDTO.vb`
 - `pdpw_act/pdpw/frmCnsArquivo.aspx` ?
 
 ---
 
-## ?? DIVISÃO DE TAREFAS POR PESSOA
+## ?? DIVISï¿½O DE TAREFAS POR PESSOA
 
 ### ?? **DEV 1 - Backend Lead (SLICE 1: Usinas)**
 **Responsabilidade:** Implementar CRUD completo de Usinas
@@ -132,16 +132,16 @@ pdpw_act/pdpw/
 - [ ] **09:00-10:00** - Setup ambiente (.NET 8 SDK, Docker)
 - [ ] **10:00-12:00** - Criar entidade `Usina` no Domain
 - [ ] **13:00-14:00** - Criar interface `IUsinaRepository`
-- [ ] **14:00-16:00** - Implementar repositório no Infrastructure
+- [ ] **14:00-16:00** - Implementar repositï¿½rio no Infrastructure
 - [ ] **16:00-18:00** - Configurar DbContext e seed data
 
 #### Dia 2 (20/12 - Sexta) - 8h
 - [ ] **09:00-11:00** - Criar DTOs e Mapper
-- [ ] **11:00-13:00** - Implementar Service com validações
+- [ ] **11:00-13:00** - Implementar Service com validaï¿½ï¿½es
 - [ ] **14:00-16:00** - Criar Controller com endpoints
-- [ ] **16:00-18:00** - Testes unitários básicos
+- [ ] **16:00-18:00** - Testes unitï¿½rios bï¿½sicos
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? API REST com 6 endpoints funcionando
 - ? Swagger documentado
 - ? Testes passando
@@ -164,20 +164,20 @@ src/PDPW.API/Controllers/UsinasController.cs
 
 #### Dia 1 (19/12 - Quinta) - 8h
 - [ ] **09:00-10:00** - Setup ambiente
-- [ ] **10:00-12:00** - Analisar código legado DADGER
+- [ ] **10:00-12:00** - Analisar cï¿½digo legado DADGER
 - [ ] **13:00-15:00** - Criar entidades (ArquivoDadger, ArquivoDadgerValor, SemanaPMO)
 - [ ] **15:00-18:00** - Criar interfaces e configurar relacionamentos EF
 
-#### Dia 2-3 (21-22/12 - Sábado/Domingo) - 16h
-- [ ] **Sábado Manhã** - Implementar repositórios com JOINs
-- [ ] **Sábado Tarde** - Criar services com filtros complexos
-- [ ] **Domingo Manhã** - Criar DTOs e controllers
-- [ ] **Domingo Tarde** - Testes de integração
+#### Dia 2-3 (21-22/12 - Sï¿½bado/Domingo) - 16h
+- [ ] **Sï¿½bado Manhï¿½** - Implementar repositï¿½rios com JOINs
+- [ ] **Sï¿½bado Tarde** - Criar services com filtros complexos
+- [ ] **Domingo Manhï¿½** - Criar DTOs e controllers
+- [ ] **Domingo Tarde** - Testes de integraï¿½ï¿½o
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? API REST com 5 endpoints
 - ? Relacionamentos funcionando
-- ? Filtros por período, usina e semana
+- ? Filtros por perï¿½odo, usina e semana
 - ? Seed data populado
 
 **Arquivos a criar:**
@@ -193,7 +193,7 @@ src/PDPW.API/Controllers/ArquivosDadgerController.cs
 ---
 
 ### ?? **DEV 3 - Frontend Lead (React + TypeScript)**
-**Responsabilidade:** Implementar interfaces de usuário
+**Responsabilidade:** Implementar interfaces de usuï¿½rio
 
 #### Dia 1 (19/12 - Quinta) - 8h
 - [ ] **09:00-10:00** - Setup ambiente (Node.js 20, VS Code)
@@ -203,16 +203,16 @@ src/PDPW.API/Controllers/ArquivosDadgerController.cs
 
 #### Dia 2 (20/12 - Sexta) - 8h
 - [ ] **09:00-13:00** - Criar componentes Usinas (lista + form)
-- [ ] **14:00-18:00** - Integração com API + validações
+- [ ] **14:00-18:00** - Integraï¿½ï¿½o com API + validaï¿½ï¿½es
 
-#### Dia 3 (21/12 - Sábado) - 8h
+#### Dia 3 (21/12 - Sï¿½bado) - 8h
 - [ ] **09:00-13:00** - Criar componentes DADGER (consulta + grid)
-- [ ] **14:00-18:00** - Implementar filtros dinâmicos
+- [ ] **14:00-18:00** - Implementar filtros dinï¿½micos
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? 2 telas funcionais (Usinas + DADGER)
-- ? Validações de formulário
-- ? Integração completa com backend
+- ? Validaï¿½ï¿½es de formulï¿½rio
+- ? Integraï¿½ï¿½o completa com backend
 - ? UI responsiva
 
 **Arquivos a criar:**
@@ -227,31 +227,31 @@ frontend/src/services/dadgerService.ts
 ---
 
 ### ?? **QA Specialist - Quality Assurance**
-**Responsabilidade:** Garantir qualidade e documentação
+**Responsabilidade:** Garantir qualidade e documentaï¿½ï¿½o
 
-#### Diário (19-23/12) - 4h/dia
-- [ ] **Manhã** - Testar features entregues do dia anterior
-- [ ] **Tarde** - Documentar bugs e validar correções
+#### Diï¿½rio (19-23/12) - 4h/dia
+- [ ] **Manhï¿½** - Testar features entregues do dia anterior
+- [ ] **Tarde** - Documentar bugs e validar correï¿½ï¿½es
 
-#### Atividades Específicas
+#### Atividades Especï¿½ficas
 - [ ] Criar casos de teste para SLICE 1 (Usinas)
 - [ ] Criar casos de teste para SLICE 2 (DADGER)
 - [ ] Validar endpoints da API via Swagger
-- [ ] Testar integração frontend/backend
+- [ ] Testar integraï¿½ï¿½o frontend/backend
 - [ ] Validar responsividade
 - [ ] Documentar fluxos de teste
-- [ ] Criar checklist de validação
+- [ ] Criar checklist de validaï¿½ï¿½o
 
-#### Dia Final (24/12 - Terça)
-- [ ] **09:00-13:00** - Testes de regressão completos
-- [ ] **14:00-18:00** - Validação Docker Compose
+#### Dia Final (24/12 - Terï¿½a)
+- [ ] **09:00-13:00** - Testes de regressï¿½o completos
+- [ ] **14:00-18:00** - Validaï¿½ï¿½o Docker Compose
 - [ ] **Final** - Sign-off da qualidade
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - ? Plano de testes documentado
 - ? Casos de teste executados
-- ? Relatório de bugs (se houver)
-- ? Checklist de validação final
+- ? Relatï¿½rio de bugs (se houver)
+- ? Checklist de validaï¿½ï¿½o final
 
 **Arquivos a criar:**
 ```
@@ -266,11 +266,11 @@ docs/QUALITY_CHECKLIST.md
 
 ## ??? SETUP DO AMBIENTE DE DESENVOLVIMENTO
 
-### Pré-requisitos
+### Prï¿½-requisitos
 
 #### Todos os Devs
 ```powershell
-# Verificar instalações
+# Verificar instalaï¿½ï¿½es
 node --version          # Deve ser >= 20.x
 dotnet --version        # Deve ser >= 8.0
 docker --version        # Deve estar instalado
@@ -297,19 +297,19 @@ winget install OpenJS.NodeJS.LTS
 # Instalar VS Code
 winget install Microsoft.VisualStudioCode
 
-# Extensões recomendadas
+# Extensï¿½es recomendadas
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode
 ```
 
-### Clonar o Repositório
+### Clonar o Repositï¿½rio
 
 ```powershell
-# Navegar para diretório de trabalho
+# Navegar para diretï¿½rio de trabalho
 cd C:\temp
 
-# Clonar (se não clonou ainda)
+# Clonar (se nï¿½o clonou ainda)
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW.git
 cd ONS_PoC-PDPW
 
@@ -346,11 +346,11 @@ docker-compose up --build
 
 ## ?? CRONOGRAMA DETALHADO
 
-| Data | Atividade | Responsável | Status |
+| Data | Atividade | Responsï¿½vel | Status |
 |------|-----------|-------------|--------|
 | **19/12 (Quinta)** | | | |
 | 09:00-10:00 | Setup de ambiente | Todos | ?? |
-| 10:00-12:00 | Kick-off + análise legado | Todos | ?? |
+| 10:00-12:00 | Kick-off + anï¿½lise legado | Todos | ?? |
 | 13:00-18:00 | Iniciar SLICE 1 (Backend) | DEV 1 | ?? |
 | 13:00-18:00 | Iniciar SLICE 2 (Backend) | DEV 2 | ?? |
 | 13:00-18:00 | Setup Frontend | DEV 3 | ?? |
@@ -359,43 +359,43 @@ docker-compose up --build
 | 09:00-18:00 | Desenvolver SLICE 2 | DEV 2 | ? |
 | 09:00-18:00 | Desenvolver UI Usinas | DEV 3 | ? |
 | 16:00-18:00 | Testar SLICE 1 | QA | ? |
-| **21/12 (Sábado)** | | | |
-| 09:00-13:00 | Integração Frontend/Backend | DEV 1 + DEV 3 | ? |
+| **21/12 (Sï¿½bado)** | | | |
+| 09:00-13:00 | Integraï¿½ï¿½o Frontend/Backend | DEV 1 + DEV 3 | ? |
 | 09:00-18:00 | Desenvolver SLICE 2 Backend | DEV 2 | ? |
 | 14:00-18:00 | Desenvolver UI DADGER | DEV 3 | ? |
 | **22/12 (Domingo)** | | | |
 | 09:00-18:00 | Concluir SLICE 2 Backend | DEV 2 | ? |
 | 09:00-13:00 | Concluir UI DADGER | DEV 3 | ? |
-| 14:00-18:00 | Integração SLICE 2 | DEV 2 + DEV 3 | ? |
+| 14:00-18:00 | Integraï¿½ï¿½o SLICE 2 | DEV 2 + DEV 3 | ? |
 | **23/12 (Segunda)** | | | |
-| 09:00-13:00 | Ajustes e correções | Todos | ? |
+| 09:00-13:00 | Ajustes e correï¿½ï¿½es | Todos | ? |
 | 14:00-18:00 | Testes integrados | QA + Todos | ? |
-| **24/12 (Terça)** | | | |
+| **24/12 (Terï¿½a)** | | | |
 | 09:00-13:00 | Docker Compose + Deploy | DEV 1 | ? |
 | 09:00-13:00 | Testes finais | QA | ? |
-| 14:00-18:00 | Documentação final | Todos | ? |
+| 14:00-18:00 | Documentaï¿½ï¿½o final | Todos | ? |
 | **25/12 (Quarta)** | **FERIADO** | - | ?? |
 | **26/12 (Quinta)** | | | |
-| 09:00-13:00 | Preparar apresentação | Todos | ? |
+| 09:00-13:00 | Preparar apresentaï¿½ï¿½o | Todos | ? |
 | 14:00-18:00 | Commit final + entrega | Todos | ? |
 
 ---
 
-## ?? MÉTRICAS DE SUCESSO
+## ?? Mï¿½TRICAS DE SUCESSO
 
 ### SLICE 1: Cadastro de Usinas
 - [ ] 6 endpoints REST funcionando
 - [ ] Swagger documentado
 - [ ] Tela de listagem funcional
-- [ ] Formulário de cadastro funcional
-- [ ] Validações implementadas
+- [ ] Formulï¿½rio de cadastro funcional
+- [ ] Validaï¿½ï¿½es implementadas
 - [ ] 5-10 usinas seed populadas
 - [ ] Cobertura de testes > 70%
 
 ### SLICE 2: Consulta DADGER
 - [ ] 5 endpoints REST funcionando
 - [ ] JOINs funcionando corretamente
-- [ ] Filtros por período, usina e semana
+- [ ] Filtros por perï¿½odo, usina e semana
 - [ ] Grid de consulta funcional
 - [ ] Dados seed com relacionamentos
 - [ ] Cobertura de testes > 70%
@@ -407,41 +407,41 @@ docker-compose up --build
 - [ ] InMemory Database funcionando
 - [ ] Logs estruturados
 
-### Documentação
+### Documentaï¿½ï¿½o
 - [ ] README atualizado
 - [ ] Arquitetura documentada
-- [ ] Decisões técnicas registradas
-- [ ] Apresentação preparada
+- [ ] Decisï¿½es tï¿½cnicas registradas
+- [ ] Apresentaï¿½ï¿½o preparada
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Probabilidade | Impacto | Mitigação |
+| Risco | Probabilidade | Impacto | Mitigaï¿½ï¿½o |
 |-------|--------------|---------|-----------|
-| Complexidade do código legado | ALTA | ALTO | Análise prévia concluída; foco em 2 slices |
-| Prazo apertado (7 dias úteis) | ALTA | ALTO | Trabalho aos finais de semana; escopo reduzido |
-| Falta de banco legado | ALTA | MÉDIO | ? RESOLVIDO: InMemory Database |
-| Problemas de integração | MÉDIA | ALTO | Testes contínuos; QA dedicado |
-| Bugs de última hora | MÉDIA | MÉDIO | Buffer de 1 dia para correções (24/12) |
-| Dependências externas | BAIXA | ALTO | Evitar integrações complexas na PoC |
+| Complexidade do cï¿½digo legado | ALTA | ALTO | Anï¿½lise prï¿½via concluï¿½da; foco em 2 slices |
+| Prazo apertado (7 dias ï¿½teis) | ALTA | ALTO | Trabalho aos finais de semana; escopo reduzido |
+| Falta de banco legado | ALTA | Mï¿½DIO | ? RESOLVIDO: InMemory Database |
+| Problemas de integraï¿½ï¿½o | Mï¿½DIA | ALTO | Testes contï¿½nuos; QA dedicado |
+| Bugs de ï¿½ltima hora | Mï¿½DIA | Mï¿½DIO | Buffer de 1 dia para correï¿½ï¿½es (24/12) |
+| Dependï¿½ncias externas | BAIXA | ALTO | Evitar integraï¿½ï¿½es complexas na PoC |
 
 ---
 
-## ?? COMUNICAÇÃO DO SQUAD
+## ?? COMUNICAï¿½ï¿½O DO SQUAD
 
 ### Daily Standup (15 minutos)
-- **Horário:** 09:00 (todos os dias)
+- **Horï¿½rio:** 09:00 (todos os dias)
 - **Formato:** O que fiz? O que vou fazer? Tenho bloqueios?
 
 ### Canais
-- **Teams/Slack:** Comunicação assíncrona
+- **Teams/Slack:** Comunicaï¿½ï¿½o assï¿½ncrona
 - **GitHub Issues:** Rastreamento de tarefas
 - **GitHub Projects:** Board Kanban
 
 ### Commits
 ```bash
-# Padrão de commit
+# Padrï¿½o de commit
 git commit -m "[SLICE-1] feat: adiciona entidade Usina"
 git commit -m "[SLICE-2] fix: corrige filtro de data"
 git commit -m "[DOCS] docs: atualiza README"
@@ -449,51 +449,51 @@ git commit -m "[TEST] test: adiciona testes de Usina"
 ```
 
 ### Pull Requests
-- **Mínimo 1 revisor**
+- **Mï¿½nimo 1 revisor**
 - **CI deve passar**
 - **Merge apenas se aprovado**
 
 ---
 
-## ?? AÇÕES IMEDIATAS PÓS-REUNIÃO
+## ?? Aï¿½ï¿½ES IMEDIATAS Pï¿½S-REUNIï¿½O
 
 ### Para DEV 1
 1. ? Verificar setup do .NET 8
-2. ? Clonar repositório
+2. ? Clonar repositï¿½rio
 3. ? Criar branch `feature/slice-1-usinas`
-4. ?? Iniciar criação da entidade `Usina.cs`
+4. ?? Iniciar criaï¿½ï¿½o da entidade `Usina.cs`
 
 ### Para DEV 2
 1. ? Verificar setup do .NET 8
-2. ? Clonar repositório
+2. ? Clonar repositï¿½rio
 3. ? Criar branch `feature/slice-2-dadger`
-4. ?? Analisar código legado de ArquivoDadgerValorDAO.vb
+4. ?? Analisar cï¿½digo legado de ArquivoDadgerValorDAO.vb
 
 ### Para DEV 3
 1. ? Verificar setup do Node.js 20
-2. ? Clonar repositório
+2. ? Clonar repositï¿½rio
 3. ? Criar branch `feature/frontend-slices`
 4. ?? Analisar telas legadas (frmCnsArquivo.aspx)
 
 ### Para QA
-1. ? Verificar acesso ao repositório
+1. ? Verificar acesso ao repositï¿½rio
 2. ? Instalar Postman/Insomnia
-3. ?? Criar estrutura de documentação de testes
+3. ?? Criar estrutura de documentaï¿½ï¿½o de testes
 4. ?? Preparar casos de teste para SLICE 1
 
 ---
 
-## ?? REFERÊNCIAS ÚTEIS
+## ?? REFERï¿½NCIAS ï¿½TEIS
 
-### Documentação do Projeto
+### Documentaï¿½ï¿½o do Projeto
 - [README.md](../README.md)
 - [VERTICAL_SLICES_DECISION.md](../VERTICAL_SLICES_DECISION.md)
 - [RESUMO_EXECUTIVO.md](../RESUMO_EXECUTIVO.md)
 - [GLOSSARIO.md](../GLOSSARIO.md)
 
-### Código Legado
-- `pdpw_act/pdpw/Dao/UsinaDAO.vb` - Referência para Usinas
-- `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb` - Referência para DADGER
+### Cï¿½digo Legado
+- `pdpw_act/pdpw/Dao/UsinaDAO.vb` - Referï¿½ncia para Usinas
+- `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb` - Referï¿½ncia para DADGER
 - `pdpw_act/pdpw/frmCnsArquivo.aspx` - Tela de consulta
 
 ### Tecnologias
@@ -504,29 +504,29 @@ git commit -m "[TEST] test: adiciona testes de Usina"
 
 ---
 
-## ? CHECKLIST PRÉ-INÍCIO
+## ? CHECKLIST PRï¿½-INï¿½CIO
 
-Antes de começar a desenvolver, cada dev deve confirmar:
+Antes de comeï¿½ar a desenvolver, cada dev deve confirmar:
 
 ### Backend Devs
 - [ ] .NET 8 SDK instalado e funcionando
 - [ ] Visual Studio 2022 ou Rider configurado
-- [ ] Repositório clonado
+- [ ] Repositï¿½rio clonado
 - [ ] Branch criada
-- [ ] Solução compila sem erros (`dotnet build`)
+- [ ] Soluï¿½ï¿½o compila sem erros (`dotnet build`)
 - [ ] API sobe sem erros (`dotnet run`)
 
 ### Frontend Dev
 - [ ] Node.js 20 instalado
-- [ ] VS Code com extensões instaladas
-- [ ] Repositório clonado
+- [ ] VS Code com extensï¿½es instaladas
+- [ ] Repositï¿½rio clonado
 - [ ] Branch criada
-- [ ] Dependências instaladas (`npm install`)
+- [ ] Dependï¿½ncias instaladas (`npm install`)
 - [ ] Dev server sobe (`npm run dev`)
 
 ### QA
 - [ ] Postman/Insomnia instalado
-- [ ] Acesso ao repositório
+- [ ] Acesso ao repositï¿½rio
 - [ ] Estrutura de testes criada
 - [ ] Casos de teste documentados
 
@@ -534,16 +534,16 @@ Antes de começar a desenvolver, cada dev deve confirmar:
 
 ## ?? MENSAGEM FINAL
 
-**Estamos prontos para começar!** ??
+**Estamos prontos para comeï¿½ar!** ??
 
-Este é um projeto desafiador mas muito bem planejado. Temos:
-- ? Análise do legado concluída
+Este ï¿½ um projeto desafiador mas muito bem planejado. Temos:
+- ? Anï¿½lise do legado concluï¿½da
 - ? Arquitetura definida
 - ? Escopo claro (2 slices)
 - ? Cronograma realista
 - ? Squad completo e alinhado
 
-**Sucesso é garantido com:** trabalho em equipe, comunicação constante e foco no objetivo.
+**Sucesso ï¿½ garantido com:** trabalho em equipe, comunicaï¿½ï¿½o constante e foco no objetivo.
 
 **Vamos modernizar o PDPW!** ??
 
@@ -551,5 +551,5 @@ Este é um projeto desafiador mas muito bem planejado. Temos:
 
 **Preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Próxima reunião:** Daily Standup - 20/12 às 09:00
+**Versï¿½o:** 1.0  
+**Prï¿½xima reuniï¿½o:** Daily Standup - 20/12 ï¿½s 09:00

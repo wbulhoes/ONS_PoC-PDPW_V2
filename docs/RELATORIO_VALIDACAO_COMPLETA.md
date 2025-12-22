@@ -1,8 +1,8 @@
-# ?? RELATÓRIO DE VALIDAÇÃO COMPLETA - POC PDPw
+ï»¿# ?? RELATï¿½RIO DE VALIDAï¿½ï¿½O COMPLETA - POC PDPw
 
 **Data:** 20/12/2024  
 **Hora:** 21:45  
-**Versão:** 2.0  
+**Versï¿½o:** 2.0  
 **Ambiente:** Docker Compose (SQL Server + .NET 8)
 
 ---
@@ -11,15 +11,15 @@
 
 | Componente | Status | Detalhes |
 |------------|--------|----------|
-| **SQL Server** | ?? HEALTHY | Container rodando há 9 minutos |
+| **SQL Server** | ?? HEALTHY | Container rodando hï¿½ 9 minutos |
 | **Backend API** | ?? RUNNING | Container rodando (unhealthy no health check, mas APIs funcionais) |
 | **Banco de Dados** | ? VALIDADO | 101 registros carregados |
-| **Swagger** | ? ACESSÍVEL | http://localhost:5001/swagger |
+| **Swagger** | ? ACESSï¿½VEL | http://localhost:5001/swagger |
 | **APIs REST** | ? FUNCIONAIS | 9 APIs testadas |
 
 ---
 
-## ?? **VALIDAÇÃO DO BANCO DE DADOS**
+## ?? **VALIDAï¿½ï¿½O DO BANCO DE DADOS**
 
 ### **Contagem de Registros (Meta: ~100)**
 
@@ -30,34 +30,34 @@
 | **SemanasPMO** | 20 | 20 | ? | Backup cliente |
 | **EquipesPDP** | 8 | 8 | ? | Backup cliente |
 | **TiposUsina** | 8 | 8 | ? | Backup cliente |
-| **Cargas** | 0 | - | ? | Não há dados (esperado) |
-| **ArquivosDadger** | 0 | - | ? | Não há dados (esperado) |
-| **RestricoesUG** | 0 | - | ? | Não há dados (esperado) |
+| **Cargas** | 0 | - | ? | Nï¿½o hï¿½ dados (esperado) |
+| **ArquivosDadger** | 0 | - | ? | Nï¿½o hï¿½ dados (esperado) |
+| **RestricoesUG** | 0 | - | ? | Nï¿½o hï¿½ dados (esperado) |
 | **TOTAL** | **101** | **101** | ? **META ATINGIDA** | - |
 
 ### **Amostra de Dados Carregados**
 
 #### **Empresas (Top 5)**
 1. Empresa de Energia do Amazonas (02341467000120)
-2. Companhia Energética de Pernambuco (10835932000108)
+2. Companhia Energï¿½tica de Pernambuco (10835932000108)
 3. Companhia de Eletricidade da Bahia (15139629000194)
-4. Companhia Energética do RN (08324196000181)
+4. Companhia Energï¿½tica do RN (08324196000181)
 5. CPFL Paulista (02429144000193)
 
 #### **Usinas (Top 5 por Capacidade)**
-1. UHE Tucuruí - 8.370 MW (Tucuruí, PA)
+1. UHE Tucuruï¿½ - 8.370 MW (Tucuruï¿½, PA)
 2. UHE Jirau - 3.750 MW (Porto Velho, RO)
-3. UHE Santo Antônio - 3.568 MW (Porto Velho, RO)
-4. UHE Itá - 1.450 MW (Itá, SC)
+3. UHE Santo Antï¿½nio - 3.568 MW (Porto Velho, RO)
+4. UHE Itï¿½ - 1.450 MW (Itï¿½, SC)
 5. UHE Angra 2 - 1.350 MW (Angra dos Reis, RJ)
 
 #### **Semanas PMO**
 - 2024: Semanas 44-52 (Novembro-Dezembro)
-- 2025: Semanas 1-11 (Janeiro-Março)
+- 2025: Semanas 1-11 (Janeiro-Marï¿½o)
 
 ---
 
-## ?? **VALIDAÇÃO DAS APIs**
+## ?? **VALIDAï¿½ï¿½O DAS APIs**
 
 ### **APIs Principais (8/8 Funcionais)**
 
@@ -70,7 +70,7 @@
 | 5 | **Equipes PDP** | `/api/equipespdp` | 8 | ? | ? |
 | 6 | **Cargas** | `/api/cargas` | 0 | ? | ? |
 | 7 | **Arquivos DADGER** | `/api/arquivosdadger` | 0 | ? | ? |
-| 8 | **Restrições UG** | `/api/restricoesug` | 0 | ? | ? |
+| 8 | **Restriï¿½ï¿½es UG** | `/api/restricoesug` | 0 | ? | ? |
 
 ### **Total de Endpoints Documentados**
 - **65+ endpoints** mapeados no Swagger
@@ -102,14 +102,14 @@
 
 ### **3. Teste Swagger UI**
 ```
-? Swagger UI acessível: http://localhost:5001/swagger
-? Swagger JSON válido: http://localhost:5001/swagger/v1/swagger.json
+? Swagger UI acessï¿½vel: http://localhost:5001/swagger
+? Swagger JSON vï¿½lido: http://localhost:5001/swagger/v1/swagger.json
 ? Try it out funcionando em todos os endpoints
 ```
 
 ---
 
-## ?? **ENDPOINTS TESTÁVEIS VIA SWAGGER**
+## ?? **ENDPOINTS TESTï¿½VEIS VIA SWAGGER**
 
 ### **Empresas (8 endpoints)**
 ```http
@@ -130,7 +130,7 @@ GET    /api/usinas/{id}                # Busca por ID
 POST   /api/usinas                     # Criar nova
 PUT    /api/usinas/{id}                # Atualizar
 DELETE /api/usinas/{id}                # Remover
-GET    /api/usinas/codigo/{codigo}     # Buscar por código
+GET    /api/usinas/codigo/{codigo}     # Buscar por cï¿½digo
 GET    /api/usinas/tipo/{tipoId}       # Filtrar por tipo
 GET    /api/usinas/empresa/{empresaId} # Filtrar por empresa
 ```
@@ -144,8 +144,8 @@ PUT    /api/semanaspmo/{id}                     # Atualizar
 DELETE /api/semanaspmo/{id}                     # Remover
 GET    /api/semanaspmo/ano/{ano}                # Filtrar por ano
 GET    /api/semanaspmo/atual                    # Semana atual
-GET    /api/semanaspmo/proximas?quantidade=4    # Próximas N semanas
-GET    /api/semanaspmo/numero/{numero}/ano/{ano} # Busca específica
+GET    /api/semanaspmo/proximas?quantidade=4    # Prï¿½ximas N semanas
+GET    /api/semanaspmo/numero/{numero}/ano/{ano} # Busca especï¿½fica
 ```
 
 ### **Cargas (8 endpoints)**
@@ -156,7 +156,7 @@ POST   /api/cargas                                    # Criar nova
 PUT    /api/cargas/{id}                               # Atualizar
 DELETE /api/cargas/{id}                               # Remover
 GET    /api/cargas/subsistema/{subsistemaId}         # Por subsistema
-GET    /api/cargas/periodo?dataInicio=&dataFim=       # Por período
+GET    /api/cargas/periodo?dataInicio=&dataFim=       # Por perï¿½odo
 GET    /api/cargas/data/{dataReferencia}             # Por data
 ```
 
@@ -169,11 +169,11 @@ PUT    /api/arquivosdadger/{id}                      # Atualizar
 DELETE /api/arquivosdadger/{id}                      # Remover
 GET    /api/arquivosdadger/semana/{semanaPMOId}     # Por semana
 GET    /api/arquivosdadger/processados?processado=  # Por status
-GET    /api/arquivosdadger/periodo?dataInicio=      # Por período
+GET    /api/arquivosdadger/periodo?dataInicio=      # Por perï¿½odo
 PATCH  /api/arquivosdadger/{id}/processar           # Marcar processado
 ```
 
-### **Restrições UG (9 endpoints)**
+### **Restriï¿½ï¿½es UG (9 endpoints)**
 ```http
 GET    /api/restricoesug                                # Lista todas
 GET    /api/restricoesug/{id}                           # Busca por ID
@@ -182,7 +182,7 @@ PUT    /api/restricoesug/{id}                           # Atualizar
 DELETE /api/restricoesug/{id}                           # Remover
 GET    /api/restricoesug/unidade/{unidadeGeradoraId}   # Por unidade
 GET    /api/restricoesug/ativas?dataReferencia=        # Ativas em data
-GET    /api/restricoesug/periodo?dataInicio=&dataFim=  # Por período
+GET    /api/restricoesug/periodo?dataInicio=&dataFim=  # Por perï¿½odo
 GET    /api/restricoesug/motivo/{motivoRestricaoId}    # Por motivo
 ```
 
@@ -209,7 +209,7 @@ GET /api/empresas
 ]
 ```
 
-### **Teste 2: Buscar Usina por Código**
+### **Teste 2: Buscar Usina por Cï¿½digo**
 ```http
 GET /api/usinas/codigo/TUCURUI
 ```
@@ -218,11 +218,11 @@ GET /api/usinas/codigo/TUCURUI
 {
   "id": 201,
   "codigo": "TUCURUI",
-  "nome": "UHE Tucuruí",
+  "nome": "UHE Tucuruï¿½",
   "tipoUsinaId": 1,
   "empresaId": 2,
   "capacidadeInstalada": 8370.00,
-  "localizacao": "Tucuruí, PA",
+  "localizacao": "Tucuruï¿½, PA",
   "ativo": true
 }
 ```
@@ -292,53 +292,53 @@ Content-Type: application/json
 
 ---
 
-## ?? **RECURSOS DISPONÍVEIS**
+## ?? **RECURSOS DISPONï¿½VEIS**
 
 ### **Filtros e Queries**
 - ? Filtro por ID
-- ? Filtro por código/CNPJ
+- ? Filtro por cï¿½digo/CNPJ
 - ? Filtro por relacionamentos (empresa, tipo, etc.)
-- ? Filtro por período (dataInicio, dataFim)
+- ? Filtro por perï¿½odo (dataInicio, dataFim)
 - ? Filtro por status (ativo/inativo)
 
-### **Validações**
+### **Validaï¿½ï¿½es**
 - ? Data Annotations
 - ? FluentValidation (preparado)
-- ? Mensagens de erro amigáveis
+- ? Mensagens de erro amigï¿½veis
 - ? HTTP Status corretos (200, 201, 400, 404, 500)
 
-### **Documentação**
+### **Documentaï¿½ï¿½o**
 - ? XML Comments em todos os endpoints
 - ? Exemplos de request/response
-- ? Descrição de parâmetros
+- ? Descriï¿½ï¿½o de parï¿½metros
 - ? Status codes documentados
 
 ---
 
-## ?? **OBSERVAÇÕES**
+## ?? **OBSERVAï¿½ï¿½ES**
 
 ### **Backend Container (Unhealthy)**
 **Status:** Container rodando mas marcado como "unhealthy"  
-**Causa:** Health check tentou criar um ArquivoDadger durante inicialização e falhou  
-**Impacto:** NENHUM - Todas as APIs estão funcionais  
-**Ação:** Opcional - ajustar health check para não executar operações de escrita
+**Causa:** Health check tentou criar um ArquivoDadger durante inicializaï¿½ï¿½o e falhou  
+**Impacto:** NENHUM - Todas as APIs estï¿½o funcionais  
+**Aï¿½ï¿½o:** Opcional - ajustar health check para nï¿½o executar operaï¿½ï¿½es de escrita
 
 ### **Tabelas Vazias**
-As seguintes tabelas estão vazias (comportamento esperado):
-- **Cargas** (0) - Dados operacionais, criados conforme necessário
-- **ArquivosDadger** (0) - Arquivos importados conforme necessário
-- **RestricoesUG** (0) - Restrições operacionais, criadas conforme necessário
+As seguintes tabelas estï¿½o vazias (comportamento esperado):
+- **Cargas** (0) - Dados operacionais, criados conforme necessï¿½rio
+- **ArquivosDadger** (0) - Arquivos importados conforme necessï¿½rio
+- **RestricoesUG** (0) - Restriï¿½ï¿½es operacionais, criadas conforme necessï¿½rio
 
 ### **Dados do Backup**
 - ? Dados reais do cliente
-- ? CNPJs válidos
-- ? Potências instaladas reais
-- ? Localizações corretas
+- ? CNPJs vï¿½lidos
+- ? Potï¿½ncias instaladas reais
+- ? Localizaï¿½ï¿½es corretas
 - ? Relacionamentos preservados
 
 ---
 
-## ? **CHECKLIST DE VALIDAÇÃO**
+## ? **CHECKLIST DE VALIDAï¿½ï¿½O**
 
 ### **Infraestrutura**
 - [x] SQL Server rodando (healthy)
@@ -351,15 +351,15 @@ As seguintes tabelas estão vazias (comportamento esperado):
 - [x] 101 registros carregados
 - [x] Dados do backup do cliente
 - [x] Integridade referencial OK
-- [x] Índices criados
+- [x] ï¿½ndices criados
 - [x] Constraints validadas
 
 ### **APIs**
 - [x] 8 APIs principais funcionais
 - [x] 65+ endpoints documentados
-- [x] Swagger UI acessível
+- [x] Swagger UI acessï¿½vel
 - [x] Try it out funcionando
-- [x] Validações ativas
+- [x] Validaï¿½ï¿½es ativas
 
 ### **Testes**
 - [x] APIs testadas via cURL
@@ -370,43 +370,43 @@ As seguintes tabelas estão vazias (comportamento esperado):
 
 ---
 
-## ?? **CONCLUSÃO**
+## ?? **CONCLUSï¿½O**
 
 ### **Status Geral: ? APROVADO PARA TESTES**
 
-| Critério | Status | Nota |
+| Critï¿½rio | Status | Nota |
 |----------|--------|------|
 | **Banco de Dados** | ? | 101 registros reais |
 | **APIs Funcionais** | ? | 8/8 APIs OK |
-| **Swagger Acessível** | ? | 100% documentado |
+| **Swagger Acessï¿½vel** | ? | 100% documentado |
 | **Dados do Cliente** | ? | Backup carregado |
-| **Testável** | ? | Pronto para QA |
+| **Testï¿½vel** | ? | Pronto para QA |
 
-### **Próximos Passos Recomendados**
+### **Prï¿½ximos Passos Recomendados**
 
 1. ? **Iniciar Testes Funcionais**
    - Testar CRUDs via Swagger
-   - Validar regras de negócio
+   - Validar regras de negï¿½cio
    - Testar relacionamentos
 
 2. ? **Popular Tabelas Operacionais**
    - Criar Cargas de teste
    - Importar ArquivosDadger
-   - Criar Restrições UG
+   - Criar Restriï¿½ï¿½es UG
 
-3. ? **Testes de Integração**
+3. ? **Testes de Integraï¿½ï¿½o**
    - Fluxos completos
-   - Validações de dados
+   - Validaï¿½ï¿½es de dados
    - Performance
 
 4. ? **Feedback do Cliente**
-   - Demonstração das APIs
-   - Validação de dados
-   - Ajustes necessários
+   - Demonstraï¿½ï¿½o das APIs
+   - Validaï¿½ï¿½o de dados
+   - Ajustes necessï¿½rios
 
 ---
 
-## ?? **ACESSO RÁPIDO**
+## ?? **ACESSO Rï¿½PIDO**
 
 - **Swagger UI:** http://localhost:5001/swagger
 - **API Base:** http://localhost:5001/api
@@ -417,9 +417,9 @@ As seguintes tabelas estão vazias (comportamento esperado):
 
 ---
 
-**Relatório gerado em:** 20/12/2024 21:50  
-**Responsável:** GitHub Copilot + Willian Bulhões  
+**Relatï¿½rio gerado em:** 20/12/2024 21:50  
+**Responsï¿½vel:** GitHub Copilot + Willian Bulhï¿½es  
 **Ambiente:** Docker Compose (Development)  
-**Versão API:** 2.0  
+**Versï¿½o API:** 2.0  
 **Status:** ? **SISTEMA VALIDADO E PRONTO PARA TESTES**
 

@@ -1,34 +1,34 @@
-# ?? INÍCIO IMEDIATO - PoC PDPW
+ï»¿# ?? INï¿½CIO IMEDIATO - PoC PDPW
 
 **Data:** 19/12/2024  
-**Prazo:** 26/12/2024 (6 dias úteis)  
+**Prazo:** 26/12/2024 (6 dias ï¿½teis)  
 **Meta:** 27-29 APIs + 1 tela frontend
 
 ---
 
-## ? 3 AÇÕES IMEDIATAS (30 minutos)
+## ? 3 Aï¿½ï¿½ES IMEDIATAS (30 minutos)
 
-### ? AÇÃO 1: Commit Documentação (5 min)
+### ? Aï¿½ï¿½O 1: Commit Documentaï¿½ï¿½o (5 min)
 
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW
 
 git status
 git add .
-git commit -m "[DOCS] Adiciona documentação completa PoC
+git commit -m "[DOCS] Adiciona documentaï¿½ï¿½o completa PoC
 
-- Cenário Backend Completo (29 APIs)
-- Dockerização completa
-- Comprovação MVC
-- Checklist de início
-- Guias e índices"
+- Cenï¿½rio Backend Completo (29 APIs)
+- Dockerizaï¿½ï¿½o completa
+- Comprovaï¿½ï¿½o MVC
+- Checklist de inï¿½cio
+- Guias e ï¿½ndices"
 
 git push origin develop
 ```
 
 ---
 
-### ? AÇÃO 2: Testar Ambiente (10 min)
+### ? Aï¿½ï¿½O 2: Testar Ambiente (10 min)
 
 ```powershell
 # Testar Docker
@@ -48,12 +48,12 @@ dotnet build
 
 cd ..\..\frontend
 npm install
-# Deve instalar dependências
+# Deve instalar dependï¿½ncias
 ```
 
 ---
 
-### ? AÇÃO 3: Criar Branches (5 min)
+### ? Aï¿½ï¿½O 3: Criar Branches (5 min)
 
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW
@@ -80,7 +80,7 @@ git checkout develop
 
 ---
 
-## ?? DISTRIBUIÇÃO DE TRABALHO
+## ?? DISTRIBUIï¿½ï¿½O DE TRABALHO
 
 ### ????? DEV 1 (Backend Senior)
 **Branch:** `feature/gestao-ativos`
@@ -107,14 +107,14 @@ git checkout develop
 **Dia 1 (19/12):**
 - API 11: UnidadeGeradora (2,5h)
 - API 12: ParadaUG (2,5h)
-- API 13: RestricaoUG (início - 1,5h)
+- API 13: RestricaoUG (inï¿½cio - 1,5h)
 - **Total:** 2 APIs completas
 
 **Dia 2 (20/12):**
-- API 13: RestricaoUG (conclusão - 1h)
+- API 13: RestricaoUG (conclusï¿½o - 1h)
 - API 14: RestricaoUS (2,5h)
 - API 15: MotivoRestricao (1,5h)
-- API 16: Intercambio (início)
+- API 16: Intercambio (inï¿½cio)
 - **Total:** 3 APIs completas
 
 **Meta Semana:** 10-12 APIs
@@ -127,13 +127,13 @@ git checkout develop
 **Dia 1 (19/12):**
 - Setup React + TypeScript
 - Estrutura de componentes
-- Listagem básica
+- Listagem bï¿½sica
 - **Total:** 40% da tela
 
 **Dia 2 (20/12):**
 - CRUD completo
-- Validações
-- Integração com API
+- Validaï¿½ï¿½es
+- Integraï¿½ï¿½o com API
 - **Total:** 90% da tela
 
 **Dia 3 (21/12):**
@@ -157,7 +157,7 @@ DIA 2 (20/12 Sex) ?????????????????????
 ?? DEV 3: CRUD completo 90%
 ?? TOTAL: 11 APIs, 54 endpoints (acumulado)
 
-DIA 3 (21/12 Sáb) ?????????????????????
+DIA 3 (21/12 Sï¿½b) ?????????????????????
 ?? DEV 1: 2 APIs ?
 ?? DEV 2: 3 APIs ?
 ?? DEV 3: Tela 100% ?
@@ -185,27 +185,27 @@ DIA 6 (24/12 Ter - MEIO) ??????????????
 FERIADO DE NATAL
 
 ?? DIA 8 (26/12 Qui) ??????????????????
-ENTREGA + APRESENTAÇÃO ?
+ENTREGA + APRESENTAï¿½ï¿½O ?
 ```
 
 ---
 
-## ?? DOCUMENTAÇÃO CRIADA
+## ?? DOCUMENTAï¿½ï¿½O CRIADA
 
-### Para Você (Tech Lead)
+### Para Vocï¿½ (Tech Lead)
 
 1. **[`CHECKLIST_INICIO_POC.md`](CHECKLIST_INICIO_POC.md)** ?
    - Checklist completo dia a dia
    - Cronograma detalhado
-   - Validação de entregas
+   - Validaï¿½ï¿½o de entregas
 
 2. **[`INDICE_BACKEND_COMPLETO.md`](INDICE_BACKEND_COMPLETO.md)**
-   - Índice da estratégia Backend Completo
-   - Navegação por documentos
+   - ï¿½ndice da estratï¿½gia Backend Completo
+   - Navegaï¿½ï¿½o por documentos
 
 3. **[`INDICE_RESPOSTA_GESTOR.md`](INDICE_RESPOSTA_GESTOR.md)**
-   - Resposta às solicitações do gestor
-   - Dockerização + MVC
+   - Resposta ï¿½s solicitaï¿½ï¿½es do gestor
+   - Dockerizaï¿½ï¿½o + MVC
 
 ### Para Desenvolvimento
 
@@ -215,14 +215,14 @@ ENTREGA + APRESENTAÇÃO ?
    - Seed data sugerido
 
 5. **[`SWAGGER_ESTRUTURA_COMPLETA.md`](SWAGGER_ESTRUTURA_COMPLETA.md)**
-   - Configuração do Swagger
-   - Exemplos de documentação
-   - Organização por categorias
+   - Configuraï¿½ï¿½o do Swagger
+   - Exemplos de documentaï¿½ï¿½o
+   - Organizaï¿½ï¿½o por categorias
 
-### Para Apresentação
+### Para Apresentaï¿½ï¿½o
 
 6. **[`GUIA_DEMONSTRACAO_DOCKER.md`](GUIA_DEMONSTRACAO_DOCKER.md)**
-   - Script de demonstração
+   - Script de demonstraï¿½ï¿½o
    - Comandos Docker
    - Troubleshooting
 
@@ -234,18 +234,18 @@ ENTREGA + APRESENTAÇÃO ?
 
 ## ?? PRIORIDADES DE HOJE (19/12)
 
-### Manhã (09:00-13:00)
+### Manhï¿½ (09:00-13:00)
 
 1. **Todos:** Daily standup (09:00-09:15)
-2. **Todos:** Setup e validação de ambiente (09:15-10:00)
-3. **DEV 1:** Começar API Usina (10:00-13:00)
-4. **DEV 2:** Começar API UnidadeGeradora (10:00-13:00)
+2. **Todos:** Setup e validaï¿½ï¿½o de ambiente (09:15-10:00)
+3. **DEV 1:** Comeï¿½ar API Usina (10:00-13:00)
+4. **DEV 2:** Comeï¿½ar API UnidadeGeradora (10:00-13:00)
 5. **DEV 3:** Setup React + analisar tela legada (10:00-13:00)
 
 ### Tarde (14:00-18:00)
 
-1. **DEV 1:** Completar Usina + começar Empresa (14:00-18:00)
-2. **DEV 2:** Completar UnidadeGeradora + começar ParadaUG (14:00-18:00)
+1. **DEV 1:** Completar Usina + comeï¿½ar Empresa (14:00-18:00)
+2. **DEV 2:** Completar UnidadeGeradora + comeï¿½ar ParadaUG (14:00-18:00)
 3. **DEV 3:** Criar componente de listagem (14:00-18:00)
 
 ### Fim do Dia (18:00)
@@ -258,15 +258,15 @@ ENTREGA + APRESENTAÇÃO ?
 
 ## ?? COMANDOS ESSENCIAIS
 
-### Git (Diário)
+### Git (Diï¿½rio)
 
 ```powershell
-# Início do dia
+# Inï¿½cio do dia
 git pull origin develop
 
 # Durante desenvolvimento
 git add .
-git commit -m "[CATEGORIA] descrição"
+git commit -m "[CATEGORIA] descriï¿½ï¿½o"
 
 # Fim do dia
 git push origin <sua-feature-branch>
@@ -291,7 +291,7 @@ dotnet run
 cd frontend
 npm run dev
 
-# Docker (validação)
+# Docker (validaï¿½ï¿½o)
 docker-compose up -d
 docker-compose logs -f
 docker-compose down
@@ -301,7 +301,7 @@ docker-compose down
 
 ## ?? DAILY STANDUP (09:00)
 
-### Template Rápido
+### Template Rï¿½pido
 
 ```
 DEV 1:
@@ -319,22 +319,22 @@ DEV 3:
 ?? Hoje: [Planejamento]
 ?? Bloqueios: [Se houver]
 
-DECISÕES: [Se houver]
+DECISï¿½ES: [Se houver]
 ```
 
 ---
 
 ## ?? ALERTAS IMPORTANTES
 
-### ?? NÃO FAÇA
+### ?? Nï¿½O FAï¿½A
 
-- ? Não trabalhar direto na branch `develop`
-- ? Não commitar código que não compila
-- ? Não commitar sem mensagem descritiva
-- ? Não fazer push sem pull antes
-- ? Não misturar múltiplas features em 1 commit
+- ? Nï¿½o trabalhar direto na branch `develop`
+- ? Nï¿½o commitar cï¿½digo que nï¿½o compila
+- ? Nï¿½o commitar sem mensagem descritiva
+- ? Nï¿½o fazer push sem pull antes
+- ? Nï¿½o misturar mï¿½ltiplas features em 1 commit
 
-### ? SEMPRE FAÇA
+### ? SEMPRE FAï¿½A
 
 - ? Trabalhar em feature branches
 - ? Testar antes de commitar
@@ -346,7 +346,7 @@ DECISÕES: [Se houver]
 
 ---
 
-## ?? META DIÁRIA
+## ?? META DIï¿½RIA
 
 ### Checklist Fim do Dia
 
@@ -354,9 +354,9 @@ DECISÕES: [Se houver]
 - [ ] Build sem erros
 - [ ] Swagger atualizado
 - [ ] Seed data adicionado
-- [ ] Código commitado e pushed
+- [ ] Cï¿½digo commitado e pushed
 - [ ] Status atualizado no GitHub
-- [ ] Daily do próximo dia agendado (09:00)
+- [ ] Daily do prï¿½ximo dia agendado (09:00)
 
 ---
 
@@ -380,11 +380,11 @@ Criar cards para cada API:
 
 ---
 
-## ?? VOCÊ ESTÁ PRONTO!
+## ?? VOCï¿½ ESTï¿½ PRONTO!
 
 ```
 ????????????????????????????????????????????
-? ? Documentação completa                 ?
+? ? Documentaï¿½ï¿½o completa                 ?
 ? ? Ambiente configurado                  ?
 ? ? Branches criadas                      ?
 ? ? Cronograma definido                   ?
@@ -394,18 +394,18 @@ Criar cards para cada API:
 ????????????????????????????????????????????
 ```
 
-### Próximos 5 Minutos
+### Prï¿½ximos 5 Minutos
 
-1. ? Commit documentação
+1. ? Commit documentaï¿½ï¿½o
 2. ? Testar docker-compose
 3. ? Criar branches
-4. ? Reunião de kick-off com squad
-5. ?? **COMEÇAR A DESENVOLVER!**
+4. ? Reuniï¿½o de kick-off com squad
+5. ?? **COMEï¿½AR A DESENVOLVER!**
 
 ---
 
 **Guia criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0
+**Versï¿½o:** 1.0
 
 **SUCESSO NA PoC! ????**

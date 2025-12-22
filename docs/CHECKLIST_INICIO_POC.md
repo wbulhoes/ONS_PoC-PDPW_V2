@@ -1,18 +1,18 @@
-# ?? CHECKLIST DE INÍCIO - PoC PDPW
+ï»¿# ?? CHECKLIST DE INï¿½CIO - PoC PDPW
 
 **Squad:** 2 Backend Devs + 1 Frontend Dev  
-**Data Início:** 19/12/2024  
+**Data Inï¿½cio:** 19/12/2024  
 **Data Entrega:** 26/12/2024
 
 ---
 
-## ? PRÉ-REQUISITOS (Validar Hoje)
+## ? PRï¿½-REQUISITOS (Validar Hoje)
 
 ### Ambiente de Desenvolvimento
 
 #### Todos os Devs
 - [ ] Git instalado e configurado
-- [ ] Acesso ao repositório: https://github.com/wbulhoes/ONS_PoC-PDPW
+- [ ] Acesso ao repositï¿½rio: https://github.com/wbulhoes/ONS_PoC-PDPW
 - [ ] Branch `develop` clonada localmente
 - [ ] Docker Desktop instalado e rodando
 - [ ] `docker-compose up` testado e funcionando
@@ -20,25 +20,25 @@
 #### Backend Devs (DEV 1 e DEV 2)
 - [ ] .NET 8 SDK instalado (`dotnet --version`)
 - [ ] Visual Studio 2022 ou Rider instalado
-- [ ] `dotnet build` na solução funciona sem erros
+- [ ] `dotnet build` na soluï¿½ï¿½o funciona sem erros
 - [ ] `dotnet run` na API funciona
-- [ ] Swagger acessível: http://localhost:5000/swagger
+- [ ] Swagger acessï¿½vel: http://localhost:5000/swagger
 
 #### Frontend Dev (DEV 3)
 - [ ] Node.js 20+ instalado (`node --version`)
 - [ ] VS Code instalado
 - [ ] `npm install` no frontend funciona
 - [ ] `npm run dev` funciona
-- [ ] App acessível: http://localhost:5173
+- [ ] App acessï¿½vel: http://localhost:5173
 
 ---
 
 ## ??? ESTRUTURA DE BRANCHES
 
-### Branch Estratégia
+### Branch Estratï¿½gia
 
 ```
-main (produção)
+main (produï¿½ï¿½o)
   ?? develop (desenvolvimento)
       ?? feature/gestao-ativos (APIs: Usina, Empresa, etc.)
       ?? feature/arquivos-dados (APIs: DADGER, SemanaPMO, etc.)
@@ -53,7 +53,7 @@ main (produção)
 ### Criar Branches Iniciais
 
 ```powershell
-# DEV 1 - Backend Senior (Gestão de Ativos)
+# DEV 1 - Backend Senior (Gestï¿½o de Ativos)
 git checkout develop
 git pull origin develop
 git checkout -b feature/gestao-ativos
@@ -79,7 +79,7 @@ git push -u origin feature/frontend-usinas
 #### DEV 1 (Backend Senior) - 8h
 **Branch:** `feature/gestao-ativos`
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-10:00 - Setup ambiente + estrutura base
 - [ ] 10:00-13:00 - **API 1: Usina** (entidade + repository + service + controller + seed)
 
@@ -87,11 +87,11 @@ git push -u origin feature/frontend-usinas
 - [ ] 14:00-16:00 - **API 2: Empresa**
 - [ ] 16:00-18:00 - **API 3: TipoUsina**
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs completas (15 endpoints)
 - [ ] Swagger documentado
 - [ ] Seed data populado
-- [ ] Testes básicos
+- [ ] Testes bï¿½sicos
 
 **Commit:**
 ```bash
@@ -100,25 +100,25 @@ git commit -m "[GESTAO-ATIVOS] feat: adiciona APIs Usina, Empresa e TipoUsina
 
 - Entidades domain criadas
 - Repositories implementados
-- Services com validações
+- Services com validaï¿½ï¿½es
 - Controllers com 15 endpoints
 - Seed data com dados realistas
-- Testes unitários básicos"
+- Testes unitï¿½rios bï¿½sicos"
 git push origin feature/gestao-ativos
 ```
 
 #### DEV 2 (Backend Pleno) - 8h
 **Branch:** `feature/arquivos-dados`
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-10:00 - Setup ambiente + estrutura base
 - [ ] 10:00-13:00 - **API 11: UnidadeGeradora**
 
 **Tarde (4h):**
 - [ ] 14:00-16:30 - **API 12: ParadaUG**
-- [ ] 16:30-18:00 - Início **API 13: RestricaoUG** (parcial)
+- [ ] 16:30-18:00 - Inï¿½cio **API 13: RestricaoUG** (parcial)
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 2 APIs completas (10 endpoints)
 - [ ] Swagger documentado
 - [ ] Seed data populado
@@ -139,31 +139,31 @@ git push origin feature/arquivos-dados
 #### DEV 3 (Frontend) - 8h
 **Branch:** `feature/frontend-usinas`
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-10:00 - Setup Node.js, React, Vite
 - [ ] 10:00-12:00 - Analisar tela legada (`pdpw_act/pdpw/frmCadUsina.aspx`)
 - [ ] 12:00-13:00 - Criar estrutura de componentes
 
 **Tarde (4h):**
 - [ ] 14:00-16:00 - Componente de listagem de usinas
-- [ ] 16:00-18:00 - Componente de formulário (estrutura)
+- [ ] 16:00-18:00 - Componente de formulï¿½rio (estrutura)
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] Estrutura de pastas criada
-- [ ] Serviço API (Axios) configurado
-- [ ] Componente de listagem (básico)
-- [ ] Componente de formulário (estrutura)
+- [ ] Serviï¿½o API (Axios) configurado
+- [ ] Componente de listagem (bï¿½sico)
+- [ ] Componente de formulï¿½rio (estrutura)
 
 **Commit:**
 ```bash
 git add .
 git commit -m "[FRONTEND] feat: estrutura inicial tela de Usinas
 
-- Configuração React + TypeScript
-- Serviço de API (Axios)
+- Configuraï¿½ï¿½o React + TypeScript
+- Serviï¿½o de API (Axios)
 - Componente de listagem
-- Componente de formulário (estrutura)
-- Integração com backend"
+- Componente de formulï¿½rio (estrutura)
+- Integraï¿½ï¿½o com backend"
 git push origin feature/frontend-usinas
 ```
 
@@ -174,14 +174,14 @@ git push origin feature/frontend-usinas
 #### DEV 1 (Backend Senior) - 8h
 **Branch:** `feature/gestao-ativos`
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-11:30 - **API 4: SemanaPMO**
 - [ ] 11:30-13:00 - **API 8: EquipePDP**
 
 **Tarde (4h):**
 - [ ] 14:00-18:00 - **API 5: ArquivoDadger** (complexa - 4h)
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs completas (15 endpoints)
 - [ ] Relacionamentos funcionando
 - [ ] Swagger atualizado
@@ -190,7 +190,7 @@ git push origin feature/frontend-usinas
 ```bash
 git commit -m "[GESTAO-ATIVOS] feat: adiciona APIs SemanaPMO, EquipePDP e ArquivoDadger
 
-- SemanaPMO com filtros por período
+- SemanaPMO com filtros por perï¿½odo
 - EquipePDP com CRUD completo
 - ArquivoDadger com relacionamentos complexos
 - Seed data enriquecido"
@@ -199,15 +199,15 @@ git commit -m "[GESTAO-ATIVOS] feat: adiciona APIs SemanaPMO, EquipePDP e Arquiv
 #### DEV 2 (Backend Pleno) - 8h
 **Branch:** `feature/restricoes` (nova branch)
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-10:30 - Concluir **API 13: RestricaoUG**
 - [ ] 10:30-13:00 - **API 14: RestricaoUS**
 
 **Tarde (4h):**
 - [ ] 14:00-15:30 - **API 15: MotivoRestricao**
-- [ ] 15:30-18:00 - Início **API 16: Intercambio**
+- [ ] 15:30-18:00 - Inï¿½cio **API 16: Intercambio**
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs completas (14 endpoints)
 
 **Commit:**
@@ -215,100 +215,100 @@ git commit -m "[GESTAO-ATIVOS] feat: adiciona APIs SemanaPMO, EquipePDP e Arquiv
 git checkout -b feature/restricoes
 git commit -m "[RESTRICOES] feat: adiciona APIs Restricao e Motivos
 
-- RestricaoUG com validações
+- RestricaoUG com validaï¿½ï¿½es
 - RestricaoUS implementada
-- MotivoRestricao (enumeração)
-- Filtros por usina e período"
+- MotivoRestricao (enumeraï¿½ï¿½o)
+- Filtros por usina e perï¿½odo"
 ```
 
 #### DEV 3 (Frontend) - 8h
 **Branch:** `feature/frontend-usinas`
 
-**Manhã (4h):**
-- [ ] 09:00-11:00 - Integração com API de Usinas (GET/POST/PUT/DELETE)
-- [ ] 11:00-13:00 - Validações de formulário
+**Manhï¿½ (4h):**
+- [ ] 09:00-11:00 - Integraï¿½ï¿½o com API de Usinas (GET/POST/PUT/DELETE)
+- [ ] 11:00-13:00 - Validaï¿½ï¿½es de formulï¿½rio
 
 **Tarde (4h):**
 - [ ] 14:00-16:00 - Filtros e busca
 - [ ] 16:00-18:00 - Mensagens de erro/sucesso + polish
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] Tela de Usinas 90% completa
 - [ ] CRUD funcional
-- [ ] Validações implementadas
+- [ ] Validaï¿½ï¿½es implementadas
 
 **Commit:**
 ```bash
 git commit -m "[FRONTEND] feat: CRUD de Usinas completo
 
 - Listagem com filtros
-- Formulário de criação/edição
-- Validações em tempo real
-- Integração completa com API
+- Formulï¿½rio de criaï¿½ï¿½o/ediï¿½ï¿½o
+- Validaï¿½ï¿½es em tempo real
+- Integraï¿½ï¿½o completa com API
 - Mensagens de feedback"
 ```
 
 ---
 
-### DIA 3: Sábado (21/12) - APIs Complexas
+### DIA 3: Sï¿½bado (21/12) - APIs Complexas
 
 #### DEV 1 (Backend Senior) - 8h
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-13:00 - **API 6: ArquivoDadgerValor** (muito complexa - 4h)
 
 **Tarde (4h):**
 - [ ] 14:00-16:30 - **API 7: Carga**
-- [ ] 16:30-18:00 - Início **API 9: Usuario**
+- [ ] 16:30-18:00 - Inï¿½cio **API 9: Usuario**
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 2 APIs completas + 1 parcial (16 endpoints)
 
 #### DEV 2 (Backend Pleno) - 8h
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-10:00 - Concluir **API 16: Intercambio**
 - [ ] 10:00-13:30 - **API 17: Balanco**
 
 **Tarde (4h):**
 - [ ] 14:00-16:30 - **API 18: GerForaMerito**
-- [ ] 16:30-18:00 - Início **API 19: DCA**
+- [ ] 16:30-18:00 - Inï¿½cio **API 19: DCA**
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs completas + 1 parcial (16 endpoints)
 
 #### DEV 3 (Frontend) - 8h
 
-**Manhã (4h):**
-- [ ] 09:00-13:00 - Finalizar tela de Usinas (últimos ajustes)
+**Manhï¿½ (4h):**
+- [ ] 09:00-13:00 - Finalizar tela de Usinas (ï¿½ltimos ajustes)
 
 **Tarde (4h):**
-- [ ] 14:00-18:00 - Testes E2E + Responsividade + Documentação
+- [ ] 14:00-18:00 - Testes E2E + Responsividade + Documentaï¿½ï¿½o
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] Tela de Usinas 100% completa e testada
 
 ---
 
-### DIA 4: Domingo (22/12) - Finalização Backend
+### DIA 4: Domingo (22/12) - Finalizaï¿½ï¿½o Backend
 
 #### DEV 1 (Backend Senior) - 8h
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-10:00 - Concluir **API 9: Usuario**
 - [ ] 10:00-12:00 - **API 10: Responsavel**
 - [ ] 12:00-13:00 - Buffer/ajustes
 
 **Tarde (4h):**
 - [ ] 14:00-17:30 - **API 20: DCR**
-- [ ] 17:30-18:00 - Testes de integração
+- [ ] 17:30-18:00 - Testes de integraï¿½ï¿½o
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs (16 endpoints)
 
 #### DEV 2 (Backend Pleno) - 8h
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-11:00 - Concluir **API 19: DCA**
 - [ ] 11:00-13:00 - **API 21: Observacao**
 
@@ -316,12 +316,12 @@ git commit -m "[FRONTEND] feat: CRUD de Usinas completo
 - [ ] 14:00-16:00 - **API 22: Diretorio**
 - [ ] 16:00-18:00 - **API 23: Arquivo** (parcial)
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs completas + 1 parcial (19 endpoints)
 
 #### DEV 3 (Frontend) - FOLGA
-- [ ] Tela de Usinas já completa
-- [ ] Pode auxiliar em documentação ou QA
+- [ ] Tela de Usinas jï¿½ completa
+- [ ] Pode auxiliar em documentaï¿½ï¿½o ou QA
 
 ---
 
@@ -329,19 +329,19 @@ git commit -m "[FRONTEND] feat: CRUD de Usinas completo
 
 #### DEV 1 (Backend Senior) - 8h
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-12:00 - **API 24: Upload**
 
 **Tarde (4h):**
 - [ ] 13:00-16:00 - **API 25: Relatorio**
-- [ ] 16:00-18:00 - Testes de integração + Code review
+- [ ] 16:00-18:00 - Testes de integraï¿½ï¿½o + Code review
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 2 APIs (9 endpoints)
 
 #### DEV 2 (Backend Pleno) - 8h
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-09:30 - Concluir **API 23: Arquivo**
 - [ ] 09:30-12:00 - **API 26: ModalidadeOpTermica**
 
@@ -349,38 +349,38 @@ git commit -m "[FRONTEND] feat: CRUD de Usinas completo
 - [ ] 13:00-16:30 - **API 27: InflexibilidadeContratada**
 - [ ] 16:30-18:00 - Testes + ajustes
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] 3 APIs (16 endpoints)
 
 #### DEV 3 (Frontend) - 8h
-- [ ] 09:00-18:00 - QA intensivo da tela de Usinas + Documentação
+- [ ] 09:00-18:00 - QA intensivo da tela de Usinas + Documentaï¿½ï¿½o
 
 ---
 
-### DIA 6: Terça (24/12) - Finalização e Docker
+### DIA 6: Terï¿½a (24/12) - Finalizaï¿½ï¿½o e Docker
 
-#### DEV 1 (Backend Senior) - 4h (meio período)
+#### DEV 1 (Backend Senior) - 4h (meio perï¿½odo)
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-11:00 - **API 28: RampasUsinaTermica** (parcial)
 - [ ] 11:00-13:00 - Docker Compose + Swagger final + Testes
 
-**Entregáveis:**
+**Entregï¿½veis:**
 - [ ] Docker funcionando
 - [ ] Swagger 100% documentado
 
-#### DEV 2 (Backend Pleno) - 4h (meio período)
+#### DEV 2 (Backend Pleno) - 4h (meio perï¿½odo)
 
-**Manhã (4h):**
+**Manhï¿½ (4h):**
 - [ ] 09:00-11:30 - **API 29: UsinaConversora**
 - [ ] 11:30-13:00 - Testes finais + Seed data completo
 
-**Entregáveis:**
-- [ ] Última API
+**Entregï¿½veis:**
+- [ ] ï¿½ltima API
 - [ ] Seed data validado
 
-#### DEV 3 (Frontend) - 4h (meio período)
-- [ ] 09:00-13:00 - Documentação final + Preparar demonstração
+#### DEV 3 (Frontend) - 4h (meio perï¿½odo)
+- [ ] 09:00-13:00 - Documentaï¿½ï¿½o final + Preparar demonstraï¿½ï¿½o
 
 ---
 
@@ -391,7 +391,7 @@ git commit -m "[FRONTEND] feat: CRUD de Usinas completo
 ```powershell
 # Exemplo: DEV 1 fim do Dia 1
 
-# Garantir que está atualizado
+# Garantir que estï¿½ atualizado
 git checkout develop
 git pull origin develop
 
@@ -400,7 +400,7 @@ git merge feature/gestao-ativos --no-ff
 
 # Resolver conflitos (se houver)
 
-# Testar que não quebrou nada
+# Testar que nï¿½o quebrou nada
 dotnet build
 dotnet test
 
@@ -417,7 +417,7 @@ git checkout feature/gestao-ativos
 1. Push feature branch
 2. Criar PR no GitHub
 3. Aguardar review
-4. Merge após aprovação
+4. Merge apï¿½s aprovaï¿½ï¿½o
 ```
 
 ---
@@ -467,40 +467,40 @@ DEV 3 (Frontend):
 
 ---
 
-DECISÕES:
+DECISï¿½ES:
 - [Se houver]
 
-AÇÕES:
-- [ ] Ação 1 (responsável)
+Aï¿½ï¿½ES:
+- [ ] Aï¿½ï¿½o 1 (responsï¿½vel)
 ```
 
 ---
 
-## ? VALIDAÇÃO DE ENTREGAS
+## ? VALIDAï¿½ï¿½O DE ENTREGAS
 
 ### Checklist por API
 
 Antes de considerar uma API "completa":
 
 - [ ] **Entidade** criada no Domain
-- [ ] **Interface** de repositório no Domain
+- [ ] **Interface** de repositï¿½rio no Domain
 - [ ] **Repository** implementado no Infrastructure
 - [ ] **DTOs** criados (Request, Response, Update)
-- [ ] **Service** implementado com validações
+- [ ] **Service** implementado com validaï¿½ï¿½es
 - [ ] **Controller** com todos os endpoints
 - [ ] **Swagger** documentado (XML comments)
 - [ ] **Seed data** populado (5-10 registros)
-- [ ] **Testes** básicos funcionando
+- [ ] **Testes** bï¿½sicos funcionando
 - [ ] **Build** sem erros
 - [ ] **Testado** via Swagger (Try it out)
 
 ---
 
-## ?? CRITÉRIOS DE SUCESSO
+## ?? CRITï¿½RIOS DE SUCESSO
 
-### Mínimo Aceitável (Dia 6 - 24/12)
+### Mï¿½nimo Aceitï¿½vel (Dia 6 - 24/12)
 
-- [ ] Mínimo 25 APIs backend completas
+- [ ] Mï¿½nimo 25 APIs backend completas
 - [ ] 130+ endpoints funcionando
 - [ ] Swagger 100% documentado
 - [ ] 1 tela frontend completa (Usinas)
@@ -521,19 +521,19 @@ Antes de considerar uma API "completa":
 
 ---
 
-## ?? COMUNICAÇÃO
+## ?? COMUNICAï¿½ï¿½O
 
 ### Canais
 
 - **GitHub Issues:** Rastreamento de tarefas
 - **GitHub Projects:** Board Kanban
-- **Teams/Slack:** Comunicação rápida
+- **Teams/Slack:** Comunicaï¿½ï¿½o rï¿½pida
 - **Daily Standup:** 09:00 (15 min)
 
-### Padrão de Commits
+### Padrï¿½o de Commits
 
 ```bash
-[CATEGORIA] tipo: descrição
+[CATEGORIA] tipo: descriï¿½ï¿½o
 
 Categorias:
 - [GESTAO-ATIVOS]
@@ -550,10 +550,10 @@ Categorias:
 
 Tipos:
 - feat: nova funcionalidade
-- fix: correção de bug
-- docs: documentação
+- fix: correï¿½ï¿½o de bug
+- docs: documentaï¿½ï¿½o
 - test: testes
-- refactor: refatoração
+- refactor: refatoraï¿½ï¿½o
 - chore: tarefas gerais
 ```
 
@@ -570,13 +570,13 @@ dotnet restore
 dotnet build
 ```
 
-### Docker Não Sobe
+### Docker Nï¿½o Sobe
 
 ```powershell
 # Ver logs
 docker-compose logs
 
-# Rebuild forçado
+# Rebuild forï¿½ado
 docker-compose down -v
 docker-compose up --build --force-recreate
 ```
@@ -588,7 +588,7 @@ docker-compose up --build --force-recreate
 git status
 
 # Editar manualmente
-# Aceitar changes de ambos os lados se possível
+# Aceitar changes de ambos os lados se possï¿½vel
 
 # Adicionar resolvidos
 git add .
@@ -599,7 +599,7 @@ git merge --continue
 
 ---
 
-## ?? CHECKPOINT 1 (21/12 - Sábado)
+## ?? CHECKPOINT 1 (21/12 - Sï¿½bado)
 
 ### Validar Progresso
 
@@ -613,9 +613,9 @@ git merge --continue
 
 ---
 
-## ?? CHECKPOINT 2 (24/12 - Terça Manhã)
+## ?? CHECKPOINT 2 (24/12 - Terï¿½a Manhï¿½)
 
-### Validação Final
+### Validaï¿½ï¿½o Final
 
 - [ ] 25+ APIs completas
 - [ ] 130+ endpoints funcionando
@@ -624,32 +624,32 @@ git merge --continue
 - [ ] Swagger 100% documentado
 - [ ] README atualizado
 
-**Se OK:** Preparar apresentação  
-**Se não:** Focar nas APIs mais importantes
+**Se OK:** Preparar apresentaï¿½ï¿½o  
+**Se nï¿½o:** Focar nas APIs mais importantes
 
 ---
 
 ## ?? ENTREGA (26/12 - Quinta)
 
-### Preparação da Apresentação (25/12 - Opcional)
+### Preparaï¿½ï¿½o da Apresentaï¿½ï¿½o (25/12 - Opcional)
 
-- [ ] Ensaiar demonstração
-- [ ] Testar todos os endpoints críticos
+- [ ] Ensaiar demonstraï¿½ï¿½o
+- [ ] Testar todos os endpoints crï¿½ticos
 - [ ] Verificar Docker
 - [ ] Revisar Swagger
 - [ ] Preparar slides (opcional)
 
-### Apresentação (26/12)
+### Apresentaï¿½ï¿½o (26/12)
 
 - [ ] Demo ao vivo (15 min)
 - [ ] Q&A (15 min)
-- [ ] Próximos passos (10 min)
+- [ ] Prï¿½ximos passos (10 min)
 
 ---
 
 **Checklist criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? PRONTO PARA INÍCIO
+**Versï¿½o:** 1.0  
+**Status:** ? PRONTO PARA INï¿½CIO
 
-**BORA COMEÇAR! ??**
+**BORA COMEï¿½AR! ??**

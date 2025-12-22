@@ -1,4 +1,4 @@
-# ?? TROUBLESHOOTING DOCKER - GUIA RÁPIDO
+ï»¿# ?? TROUBLESHOOTING DOCKER - GUIA Rï¿½PIDO
 
 **Problema:** Erro ao executar `docker-start.ps1`
 
@@ -8,22 +8,22 @@
 
 ```
 error during connect: Head "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/_ping": 
-open //./pipe/dockerDesktopLinuxEngine: O sistema não pode encontrar o arquivo especificado.
+open //./pipe/dockerDesktopLinuxEngine: O sistema nï¿½o pode encontrar o arquivo especificado.
 ```
 
-**Causa:** Docker Desktop não está rodando ou não está respondendo
+**Causa:** Docker Desktop nï¿½o estï¿½ rodando ou nï¿½o estï¿½ respondendo
 
 ---
 
-## ? SOLUÇÃO RÁPIDA (2 minutos)
+## ? SOLUï¿½ï¿½O Rï¿½PIDA (2 minutos)
 
-### PASSO 1: Executar diagnóstico
+### PASSO 1: Executar diagnï¿½stico
 
 ```powershell
 .\docker-diagnostico.ps1
 ```
 
-**Se mostrar ? Docker não está pronto:**
+**Se mostrar ? Docker nï¿½o estï¿½ pronto:**
 
 ### PASSO 2: Executar fix
 
@@ -39,7 +39,7 @@ open //./pipe/dockerDesktopLinuxEngine: O sistema não pode encontrar o arquivo e
 
 ---
 
-## ?? SOLUÇÃO MANUAL (5 minutos)
+## ?? SOLUï¿½ï¿½O MANUAL (5 minutos)
 
 ### 1. Fechar Docker Desktop
 
@@ -48,7 +48,7 @@ open //./pipe/dockerDesktopLinuxEngine: O sistema não pode encontrar o arquivo e
 Stop-Process -Name "Docker Desktop" -Force
 
 # Ou fechar manualmente:
-# - Clicar com botão direito no ícone Docker (bandeja)
+# - Clicar com botï¿½o direito no ï¿½cone Docker (bandeja)
 # - Escolher "Quit Docker Desktop"
 ```
 
@@ -74,12 +74,12 @@ Procurar e finalizar:
 Menu Iniciar ? Docker Desktop
 ```
 
-### 6. Aguardar inicialização
+### 6. Aguardar inicializaï¿½ï¿½o
 
-**Indicadores que está pronto:**
-- ? Ícone Docker na bandeja SEM animação
+**Indicadores que estï¿½ pronto:**
+- ? ï¿½cone Docker na bandeja SEM animaï¿½ï¿½o
 - ? Status: "Docker Desktop is running"
-- ? Verde no ícone
+- ? Verde no ï¿½cone
 
 **Tempo:** ~1-2 minutos
 
@@ -89,7 +89,7 @@ Menu Iniciar ? Docker Desktop
 docker info
 ```
 
-**Resultado esperado:** Informações do Docker (não erro)
+**Resultado esperado:** Informaï¿½ï¿½es do Docker (nï¿½o erro)
 
 ### 8. Tentar novamente
 
@@ -99,9 +99,9 @@ docker info
 
 ---
 
-## ?? SE AINDA NÃO FUNCIONAR
+## ?? SE AINDA Nï¿½O FUNCIONAR
 
-### Opção A: Reiniciar WSL2
+### Opï¿½ï¿½o A: Reiniciar WSL2
 
 ```powershell
 # Parar WSL
@@ -120,7 +120,7 @@ Start-Sleep -Seconds 60
 docker info
 ```
 
-### Opção B: Reiniciar Computador
+### Opï¿½ï¿½o B: Reiniciar Computador
 
 **Mais eficaz para problemas persistentes**
 
@@ -132,7 +132,7 @@ docker info
 
 ---
 
-## ?? VERIFICAÇÕES ESPECÍFICAS
+## ?? VERIFICAï¿½ï¿½ES ESPECï¿½FICAS
 
 ### Verificar Docker Desktop
 
@@ -153,7 +153,7 @@ docker version
 
 # Deve mostrar:
 # Client: ...
-# Server: ... ? IMPORTANTE: Esta seção deve aparecer
+# Server: ... ? IMPORTANTE: Esta seï¿½ï¿½o deve aparecer
 ```
 
 ### Verificar Portas
@@ -165,7 +165,7 @@ Get-NetTCPConnection -LocalPort 5000 -ErrorAction SilentlyContinue
 # Porta 1433 (SQL Server)
 Get-NetTCPConnection -LocalPort 1433 -ErrorAction SilentlyContinue
 
-# Se retornar algo, porta está ocupada
+# Se retornar algo, porta estï¿½ ocupada
 # Liberar porta:
 # netstat -ano | findstr :5000
 # taskkill /F /PID <PID>
@@ -173,12 +173,12 @@ Get-NetTCPConnection -LocalPort 1433 -ErrorAction SilentlyContinue
 
 ---
 
-## ?? CHECKLIST DE VERIFICAÇÃO
+## ?? CHECKLIST DE VERIFICAï¿½ï¿½O
 
 Antes de executar `docker-start.ps1`:
 
 - [ ] Docker Desktop aberto
-- [ ] Ícone Docker na bandeja (verde)
+- [ ] ï¿½cone Docker na bandeja (verde)
 - [ ] Status: "Docker Desktop is running"
 - [ ] `docker info` funciona
 - [ ] `docker version` mostra Client E Server
@@ -190,7 +190,7 @@ Antes de executar `docker-start.ps1`:
 
 ---
 
-## ?? COMANDOS DE DIAGNÓSTICO
+## ?? COMANDOS DE DIAGNï¿½STICO
 
 ```powershell
 # 1. Ver processos Docker
@@ -229,50 +229,50 @@ docker system prune -a -f --volumes
 # Limpar containers parados
 docker container prune -f
 
-# Limpar imagens não usadas
+# Limpar imagens nï¿½o usadas
 docker image prune -a -f
 
-# Limpar volumes não usados
+# Limpar volumes nï¿½o usados
 docker volume prune -f
 
-# Limpar redes não usadas
+# Limpar redes nï¿½o usadas
 docker network prune -f
 ```
 
 ---
 
-## ?? SCRIPTS DISPONÍVEIS
+## ?? SCRIPTS DISPONï¿½VEIS
 
 1. **docker-diagnostico.ps1** ?
-   - Verifica se tudo está OK
+   - Verifica se tudo estï¿½ OK
    - Identifica problemas
 
 2. **docker-fix.ps1** ?
    - Tenta corrigir automaticamente
-   - Reinicia Docker se necessário
+   - Reinicia Docker se necessï¿½rio
 
 3. **docker-start.ps1**
-   - Sobe a aplicação
+   - Sobe a aplicaï¿½ï¿½o
    - Agora com melhor tratamento de erros
 
 4. **docker-test.ps1**
-   - Testa se API está funcionando
+   - Testa se API estï¿½ funcionando
 
 5. **docker-stop.ps1**
    - Para containers
 
 ---
 
-## ?? ORDEM RECOMENDADA DE EXECUÇÃO
+## ?? ORDEM RECOMENDADA DE EXECUï¿½ï¿½O
 
 ```powershell
-# 1. SEMPRE: Diagnóstico primeiro
+# 1. SEMPRE: Diagnï¿½stico primeiro
 .\docker-diagnostico.ps1
 
 # 2. Se problemas: Fix
 .\docker-fix.ps1
 
-# 3. Subir aplicação
+# 3. Subir aplicaï¿½ï¿½o
 .\docker-start.ps1
 
 # 4. Testar
@@ -290,7 +290,7 @@ Se Docker continuar com problemas:
 
 ```powershell
 # Terminal 1: SQL Server LocalDB
-# (Já deve estar rodando localmente)
+# (Jï¿½ deve estar rodando localmente)
 
 # Terminal 2: API
 cd C:\temp\_ONS_PoC-PDPW\src\PDPW.API
@@ -306,20 +306,20 @@ start http://localhost:5000/swagger
 
 ### Para a Daily
 
-Se Docker não funcionar a tempo:
+Se Docker nï¿½o funcionar a tempo:
 1. Use API local (dotnet run)
-2. Ou use apresentação preparada
-3. Demonstre código ao invés de executar
+2. Ou use apresentaï¿½ï¿½o preparada
+3. Demonstre cï¿½digo ao invï¿½s de executar
 
-### Para Produção
+### Para Produï¿½ï¿½o
 
-- Docker é essencial
+- Docker ï¿½ essencial
 - Investir tempo para resolver
 - Garantir que funciona antes de apresentar
 
 ---
 
-## ?? RESUMO RÁPIDO
+## ?? RESUMO Rï¿½PIDO
 
 ```
 ERRO ? .\docker-diagnostico.ps1 ? .\docker-fix.ps1 ? .\docker-start.ps1
@@ -332,7 +332,7 @@ ERRO ? .\docker-diagnostico.ps1 ? .\docker-fix.ps1 ? .\docker-start.ps1
 ---
 
 **Criado:** 19/12/2024  
-**Última atualização:** 19/12/2024  
+**ï¿½ltima atualizaï¿½ï¿½o:** 19/12/2024  
 **Status:** ? TESTADO
 
 **BOA SORTE! ??**

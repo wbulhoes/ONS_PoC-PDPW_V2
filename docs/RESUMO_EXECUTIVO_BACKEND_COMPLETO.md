@@ -1,17 +1,17 @@
-# ?? RESUMO EXECUTIVO - Cenário Backend Completo
+ï»¿# ?? RESUMO EXECUTIVO - Cenï¿½rio Backend Completo
 
 **Data:** 19/12/2024  
-**Estratégia:** Backend COMPLETO + Frontend APENAS Usinas  
-**Período:** 6 dias úteis (19-24/12)  
-**Apresentação:** 26/12/2024
+**Estratï¿½gia:** Backend COMPLETO + Frontend APENAS Usinas  
+**Perï¿½odo:** 6 dias ï¿½teis (19-24/12)  
+**Apresentaï¿½ï¿½o:** 26/12/2024
 
 ---
 
-## ? RESPOSTA RÁPIDA
+## ? RESPOSTA Rï¿½PIDA
 
 ### Quantas APIs podemos entregar por dia?
 
-| Cenário | APIs/dia (2 devs) | Total em 6 dias |
+| Cenï¿½rio | APIs/dia (2 devs) | Total em 6 dias |
 |---------|-------------------|-----------------|
 | **Conservador** | 4 APIs | 24 APIs (~120 endpoints) |
 | **Realista** | 5 APIs | 27-29 APIs (~145 endpoints) |
@@ -32,21 +32,21 @@
 ?  ? 100% documentado no Swagger                         ?
 ?  ? Clean Architecture (4 camadas)                      ?
 ?  ? InMemory Database com seed data                     ?
-?  ? Testes unitários (cobertura > 60%)                  ?
+?  ? Testes unitï¿½rios (cobertura > 60%)                  ?
 ?                                                         ?
 ?  ?? FRONTEND LIMITADO                                   ?
 ?  ???????????????????????????????????????????????????  ?
 ?  ? 1 tela completa: Cadastro de Usinas                 ?
 ?  ? CRUD funcional (Create/Read/Update/Delete)          ?
-?  ? Filtros, busca e validações                         ?
-?  ? Integração 100% com API                             ?
+?  ? Filtros, busca e validaï¿½ï¿½es                         ?
+?  ? Integraï¿½ï¿½o 100% com API                             ?
 ?                                                         ?
 ?  ?? INFRAESTRUTURA                                      ?
 ?  ???????????????????????????????????????????????????  ?
 ?  ? Docker Compose funcional                            ?
 ?  ? Backend containerizado                              ?
 ?  ? Frontend containerizado                             ?
-?  ? README com instruções completas                     ?
+?  ? README com instruï¿½ï¿½es completas                     ?
 ???????????????????????????????????????????????????????????
 ```
 
@@ -54,7 +54,7 @@
 
 ## ?? CRONOGRAMA EXECUTIVO
 
-### Distribuição de Trabalho (2 Backend + 1 Frontend)
+### Distribuiï¿½ï¿½o de Trabalho (2 Backend + 1 Frontend)
 
 ```
 DIA 1 (19/12 Qui) ????????????????????????????
@@ -69,7 +69,7 @@ DEV 2 Backend: 3 APIs (RestricaoUG, RestricaoUS, MotivoRestricao)
 DEV 3 Frontend: Tela de Usinas 90% completa
 ?? TOTAL: 6 APIs, 29 endpoints | ACUMULADO: 11 APIs, 54 endpoints
 
-DIA 3 (21/12 Sáb) ????????????????????????????
+DIA 3 (21/12 Sï¿½b) ????????????????????????????
 DEV 1 Backend: 2 APIs (ArquivoDadgerValor, Carga)
 DEV 2 Backend: 3 APIs (Intercambio, Balanco, GerForaMerito)
 DEV 3 Frontend: Tela de Usinas 100% + testes
@@ -84,20 +84,20 @@ DEV 3 Frontend: FOLGA (tela pronta)
 DIA 5 (23/12 Seg) ????????????????????????????
 DEV 1 Backend: 2 APIs (Upload, Relatorio)
 DEV 2 Backend: 3 APIs (Arquivo, ModalidadeOpTermica, InflexibilidadeContratada)
-DEV 3 Frontend: QA + Documentação
+DEV 3 Frontend: QA + Documentaï¿½ï¿½o
 ?? TOTAL: 5 APIs, 25 endpoints | ACUMULADO: 27 APIs, 146 endpoints
 
-DIA 6 (24/12 Ter - MEIO PERÍODO) ?????????????
+DIA 6 (24/12 Ter - MEIO PERï¿½ODO) ?????????????
 DEV 1 Backend: Docker Compose + Testes finais
 DEV 2 Backend: 2 APIs extras (RampasUsinaTermica, UsinaConversora)
-DEV 3 Frontend: Preparar demonstração
+DEV 3 Frontend: Preparar demonstraï¿½ï¿½o
 ?? TOTAL: 2 APIs, 8 endpoints | ACUMULADO: 29 APIs, 154 endpoints
 
 ?? DIA 7 (25/12 Qua) ?????????????????????????
 FERIADO DE NATAL
 
 ?? DIA 8 (26/12 Qui) ?????????????????????????
-ENTREGA + APRESENTAÇÃO ?
+ENTREGA + APRESENTAï¿½ï¿½O ?
 ```
 
 ---
@@ -106,22 +106,22 @@ ENTREGA + APRESENTAÇÃO ?
 
 ### ?? PRIORIDADE ALTA (Core do Sistema) - 10 APIs
 
-| API | Complexidade | Tempo | Endpoints | Valor de Negócio |
+| API | Complexidade | Tempo | Endpoints | Valor de Negï¿½cio |
 |-----|--------------|-------|-----------|------------------|
-| **Usina** | ?? | 3h | 6 | ??? CRÍTICO |
-| **ArquivoDadger** | ??? | 4h | 5 | ??? CRÍTICO |
-| **ArquivoDadgerValor** | ??? | 4h | 6 | ??? CRÍTICO |
+| **Usina** | ?? | 3h | 6 | ??? CRï¿½TICO |
+| **ArquivoDadger** | ??? | 4h | 5 | ??? CRï¿½TICO |
+| **ArquivoDadgerValor** | ??? | 4h | 6 | ??? CRï¿½TICO |
 | **SemanaPMO** | ?? | 2,5h | 5 | ??? ALTO |
-| Empresa | ? | 2h | 5 | ?? MÉDIO |
-| TipoUsina | ? | 1,5h | 4 | ?? MÉDIO |
-| Carga | ?? | 2,5h | 5 | ?? MÉDIO |
+| Empresa | ? | 2h | 5 | ?? Mï¿½DIO |
+| TipoUsina | ? | 1,5h | 4 | ?? Mï¿½DIO |
+| Carga | ?? | 2,5h | 5 | ?? Mï¿½DIO |
 | EquipePDP | ? | 2h | 5 | ? BAIXO |
 | Usuario | ?? | 2,5h | 5 | ? BAIXO |
 | Responsavel | ? | 2h | 5 | ? BAIXO |
 
 **Subtotal:** 26h de desenvolvimento, 51 endpoints
 
-### ?? PRIORIDADE MÉDIA (Funcionalidades Importantes) - 10 APIs
+### ?? PRIORIDADE Mï¿½DIA (Funcionalidades Importantes) - 10 APIs
 
 | API | Complexidade | Tempo | Endpoints |
 |-----|--------------|-------|-----------|
@@ -156,7 +156,7 @@ ENTREGA + APRESENTAÇÃO ?
 
 ---
 
-## ?? SWAGGER - ORGANIZAÇÃO VISUAL
+## ?? SWAGGER - ORGANIZAï¿½ï¿½O VISUAL
 
 ### Categorias Propostas
 
@@ -164,52 +164,52 @@ ENTREGA + APRESENTAÇÃO ?
 http://localhost:5000/swagger
 
 ???????????????????????????????????????????????????
-? PDPW API v1.0 - PoC Modernização ONS            ?
+? PDPW API v1.0 - PoC Modernizaï¿½ï¿½o ONS            ?
 ???????????????????????????????????????????????????
 ?                                                 ?
-? ?? Gestão de Ativos (6 APIs, 31 endpoints)      ?
-?    • Usinas                                     ?
-?    • Empresas                                   ?
-?    • Tipos de Usina                             ?
-?    • Unidades Geradoras                         ?
-?    • Usinas Conversoras                         ?
-?    • Rampas Usina Térmica                       ?
+? ?? Gestï¿½o de Ativos (6 APIs, 31 endpoints)      ?
+?    ï¿½ Usinas                                     ?
+?    ï¿½ Empresas                                   ?
+?    ï¿½ Tipos de Usina                             ?
+?    ï¿½ Unidades Geradoras                         ?
+?    ï¿½ Usinas Conversoras                         ?
+?    ï¿½ Rampas Usina Tï¿½rmica                       ?
 ?                                                 ?
 ? ?? Arquivos e Dados (5 APIs, 31 endpoints)      ?
-?    • Arquivos DADGER                            ?
-?    • Valores DADGER                             ?
-?    • Semanas PMO                                ?
-?    • Cargas                                     ?
-?    • Uploads                                    ?
+?    ï¿½ Arquivos DADGER                            ?
+?    ï¿½ Valores DADGER                             ?
+?    ï¿½ Semanas PMO                                ?
+?    ï¿½ Cargas                                     ?
+?    ï¿½ Uploads                                    ?
 ?                                                 ?
-? ?? Restrições e Paradas (6 APIs, 30 endpoints)  ?
-?    • Paradas UG                                 ?
-?    • Restrições UG                              ?
-?    • Restrições US                              ?
-?    • Motivos de Restrição                       ?
-?    • Inflexibilidade Contratada                 ?
-?    • Modalidade Op. Térmica                     ?
+? ?? Restriï¿½ï¿½es e Paradas (6 APIs, 30 endpoints)  ?
+?    ï¿½ Paradas UG                                 ?
+?    ï¿½ Restriï¿½ï¿½es UG                              ?
+?    ï¿½ Restriï¿½ï¿½es US                              ?
+?    ï¿½ Motivos de Restriï¿½ï¿½o                       ?
+?    ï¿½ Inflexibilidade Contratada                 ?
+?    ï¿½ Modalidade Op. Tï¿½rmica                     ?
 ?                                                 ?
-? ? Operação e Geração (4 APIs, 21 endpoints)    ?
-?    • Intercâmbio                                ?
-?    • Balanço                                    ?
-?    • Geração Fora Mérito                        ?
-?    • PDOC                                       ?
+? ? Operaï¿½ï¿½o e Geraï¿½ï¿½o (4 APIs, 21 endpoints)    ?
+?    ï¿½ Intercï¿½mbio                                ?
+?    ï¿½ Balanï¿½o                                    ?
+?    ï¿½ Geraï¿½ï¿½o Fora Mï¿½rito                        ?
+?    ï¿½ PDOC                                       ?
 ?                                                 ?
 ? ?? Dados Consolidados (2 APIs, 12 endpoints)    ?
-?    • DCA - Dados Agregados                      ?
-?    • DCR - Dados Consolidados                   ?
+?    ï¿½ DCA - Dados Agregados                      ?
+?    ï¿½ DCR - Dados Consolidados                   ?
 ?                                                 ?
-? ?? Gestão de Equipes (3 APIs, 15 endpoints)     ?
-?    • Equipes PDP                                ?
-?    • Usuários                                   ?
-?    • Responsáveis                               ?
+? ?? Gestï¿½o de Equipes (3 APIs, 15 endpoints)     ?
+?    ï¿½ Equipes PDP                                ?
+?    ï¿½ Usuï¿½rios                                   ?
+?    ï¿½ Responsï¿½veis                               ?
 ?                                                 ?
-? ?? Documentos e Relatórios (4 APIs, 19 endpoints)?
-?    • Diretórios                                 ?
-?    • Arquivos                                   ?
-?    • Relatórios                                 ?
-?    • Observações                                ?
+? ?? Documentos e Relatï¿½rios (4 APIs, 19 endpoints)?
+?    ï¿½ Diretï¿½rios                                 ?
+?    ï¿½ Arquivos                                   ?
+?    ï¿½ Relatï¿½rios                                 ?
+?    ï¿½ Observaï¿½ï¿½es                                ?
 ?                                                 ?
 ? TOTAL: 29 APIs, 154 endpoints                  ?
 ???????????????????????????????????????????????????
@@ -217,47 +217,47 @@ http://localhost:5000/swagger
 
 ---
 
-## ?? VANTAGENS DESTE CENÁRIO
+## ?? VANTAGENS DESTE CENï¿½RIO
 
 ### ? Para o Cliente (ONS)
 
-| Vantagem | Descrição |
+| Vantagem | Descriï¿½ï¿½o |
 |----------|-----------|
-| **Demonstração Completa** | 29 APIs testáveis via Swagger sem depender de UI |
-| **Validação Técnica** | Cliente pode validar TODAS as funcionalidades backend |
-| **Integração Fácil** | APIs prontas para integração com sistemas existentes |
+| **Demonstraï¿½ï¿½o Completa** | 29 APIs testï¿½veis via Swagger sem depender de UI |
+| **Validaï¿½ï¿½o Tï¿½cnica** | Cliente pode validar TODAS as funcionalidades backend |
+| **Integraï¿½ï¿½o Fï¿½cil** | APIs prontas para integraï¿½ï¿½o com sistemas existentes |
 | **Flexibilidade Futura** | Backend completo permite qualquer frontend depois |
-| **Redução de Risco** | Menos dependência de mudanças visuais/UX |
-| **Postman Collection** | Exportação automática para testes |
-| **Geração de Clientes** | Código cliente TypeScript/Java/C# gerado automaticamente |
+| **Reduï¿½ï¿½o de Risco** | Menos dependï¿½ncia de mudanï¿½as visuais/UX |
+| **Postman Collection** | Exportaï¿½ï¿½o automï¿½tica para testes |
+| **Geraï¿½ï¿½o de Clientes** | Cï¿½digo cliente TypeScript/Java/C# gerado automaticamente |
 
 ### ? Para o Time de Desenvolvimento
 
-| Vantagem | Descrição |
+| Vantagem | Descriï¿½ï¿½o |
 |----------|-----------|
 | **Foco em Backend** | Menos context switching entre frontend/backend |
-| **Reutilização** | Estrutura base replicada em todas as APIs |
-| **Produtividade** | 3-5 APIs/dia após curva de aprendizado |
+| **Reutilizaï¿½ï¿½o** | Estrutura base replicada em todas as APIs |
+| **Produtividade** | 3-5 APIs/dia apï¿½s curva de aprendizado |
 | **Testes Automatizados** | Swagger = ferramenta de teste integrada |
-| **Documentação Automática** | Comentários XML viram documentação |
+| **Documentaï¿½ï¿½o Automï¿½tica** | Comentï¿½rios XML viram documentaï¿½ï¿½o |
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Probabilidade | Impacto | Mitigação |
+| Risco | Probabilidade | Impacto | Mitigaï¿½ï¿½o |
 |-------|---------------|---------|-----------|
-| Complexidade subestimada | MÉDIA | ALTO | Priorizar core; deixar Nice to Have para o fim |
-| Relacionamentos EF Core | MÉDIA | MÉDIO | InMemory Database facilita; testes desde dia 1 |
-| Fadiga do time | MÉDIA | MÉDIO | Metas diárias claras; celebrar vitórias |
-| Mudança de escopo | BAIXA | ALTO | Travar escopo após kick-off |
-| Bugs de última hora | MÉDIA | MÉDIO | Buffer de 1 dia (24/12 meio período) |
+| Complexidade subestimada | Mï¿½DIA | ALTO | Priorizar core; deixar Nice to Have para o fim |
+| Relacionamentos EF Core | Mï¿½DIA | Mï¿½DIO | InMemory Database facilita; testes desde dia 1 |
+| Fadiga do time | Mï¿½DIA | Mï¿½DIO | Metas diï¿½rias claras; celebrar vitï¿½rias |
+| Mudanï¿½a de escopo | BAIXA | ALTO | Travar escopo apï¿½s kick-off |
+| Bugs de ï¿½ltima hora | Mï¿½DIA | Mï¿½DIO | Buffer de 1 dia (24/12 meio perï¿½odo) |
 
-**Mitigação Geral:** Priorização rigorosa + desenvolvimento incremental
+**Mitigaï¿½ï¿½o Geral:** Priorizaï¿½ï¿½o rigorosa + desenvolvimento incremental
 
 ---
 
-## ?? MÉTRICAS DE SUCESSO
+## ?? Mï¿½TRICAS DE SUCESSO
 
 ### KPIs da Entrega
 
@@ -279,18 +279,18 @@ http://localhost:5000/swagger
 
 ---
 
-## ?? EXEMPLO DE DEMONSTRAÇÃO (26/12)
+## ?? EXEMPLO DE DEMONSTRAï¿½ï¿½O (26/12)
 
-### Roteiro de Apresentação (15 minutos)
+### Roteiro de Apresentaï¿½ï¿½o (15 minutos)
 
-#### 1. Introdução (2 min)
-- Mostrar repositório GitHub
+#### 1. Introduï¿½ï¿½o (2 min)
+- Mostrar repositï¿½rio GitHub
 - Explicar arquitetura (Clean Architecture)
 - Mostrar estrutura de pastas
 
 #### 2. Backend - Swagger (8 min)
 
-**2.1 Visão Geral (1 min)**
+**2.1 Visï¿½o Geral (1 min)**
 ```
 Abrir: http://localhost:5000/swagger
 Mostrar: 29 APIs, 154 endpoints organizados
@@ -302,7 +302,7 @@ Mostrar: 29 APIs, 154 endpoints organizados
 2. POST /api/usinas ? Criar nova (Swagger UI)
    JSON: { "codUsina": "UTE999", "nomeUsina": "Demo", ... }
 3. GET /api/usinas/6 ? Buscar a criada
-4. PUT /api/usinas/6 ? Atualizar potência
+4. PUT /api/usinas/6 ? Atualizar potï¿½ncia
 5. DELETE /api/usinas/6 ? Remover (soft delete)
 ```
 
@@ -311,7 +311,7 @@ Mostrar: 29 APIs, 154 endpoints organizados
 1. GET /api/valores-dadger ? Listar valores
 2. GET /api/valores-dadger/usina/UTE001 ? Filtrar por usina
 3. GET /api/valores-dadger/periodo?dataInicio=2024-12-01&dataFim=2024-12-31
-   ? Filtro por período
+   ? Filtro por perï¿½odo
 ```
 
 #### 3. Frontend - Cadastro de Usinas (4 min)
@@ -320,14 +320,14 @@ Mostrar: 29 APIs, 154 endpoints organizados
 Abrir: http://localhost:3000
 
 1. Listagem:
-   - Filtrar por código
+   - Filtrar por cï¿½digo
    - Buscar por nome
    - Ordenar por coluna
 
 2. Criar:
    - Clicar "Nova Usina"
-   - Preencher formulário
-   - Validações em tempo real
+   - Preencher formulï¿½rio
+   - Validaï¿½ï¿½es em tempo real
    - Salvar e ver na lista
 
 3. Editar:
@@ -353,40 +353,40 @@ docker-compose up -d
 
 ---
 
-## ?? COMPARAÇÃO DE CENÁRIOS
+## ?? COMPARAï¿½ï¿½O DE CENï¿½RIOS
 
-### Cenário Original vs. Proposto
+### Cenï¿½rio Original vs. Proposto
 
 | Aspecto | Original (Vertical Slice) | **Proposto (Backend Completo)** |
 |---------|---------------------------|--------------------------------|
 | **Backend** | 2 APIs (Usina, DADGER) | **29 APIs** ? |
 | **Endpoints** | ~15 endpoints | **145-160 endpoints** ? |
 | **Frontend** | 2 telas completas | 1 tela completa |
-| **Swagger** | Documentação básica | **100% documentado** ? |
+| **Swagger** | Documentaï¿½ï¿½o bï¿½sica | **100% documentado** ? |
 | **Tempo Dev Backend** | 3 dias | 5,5 dias |
 | **Tempo Dev Frontend** | 3 dias | 2 dias |
 | **Valor Demo** | Fluxo E2E completo | **API completa + 1 fluxo** ? |
-| **Flexibilidade Futura** | Média | **Alta** ? |
+| **Flexibilidade Futura** | Mï¿½dia | **Alta** ? |
 | **Risco de UI** | Alto | **Baixo** ? |
 
-**? RECOMENDAÇÃO: Cenário Proposto (Backend Completo)**
+**? RECOMENDAï¿½ï¿½O: Cenï¿½rio Proposto (Backend Completo)**
 
 **Justificativa:**
-- Demonstra capacidade técnica superior (29 APIs vs 2)
+- Demonstra capacidade tï¿½cnica superior (29 APIs vs 2)
 - Reduz risco de retrabalho em UI
-- Permite validação completa do backend pelo cliente
-- Swagger serve como "frontend temporário" para todas as APIs
+- Permite validaï¿½ï¿½o completa do backend pelo cliente
+- Swagger serve como "frontend temporï¿½rio" para todas as APIs
 - Backend completo possibilita qualquer frontend no futuro
 
 ---
 
-## ?? APROVAÇÃO RECOMENDADA
+## ?? APROVAï¿½ï¿½O RECOMENDADA
 
-### ? ESTE CENÁRIO MAXIMIZA O VALOR ENTREGUE
+### ? ESTE CENï¿½RIO MAXIMIZA O VALOR ENTREGUE
 
 **Entregas Garantidas (26/12):**
 - ? 27-29 APIs completas com CRUD
-- ? 145-160 endpoints REST testáveis
+- ? 145-160 endpoints REST testï¿½veis
 - ? Swagger 100% documentado e funcional
 - ? 1 tela frontend completa (Cadastro de Usinas)
 - ? Docker Compose funcional
@@ -395,50 +395,50 @@ docker-compose up -d
 - ? Clean Architecture bem implementada
 
 **Riscos Mitigados:**
-- ??? Priorização rigorosa (Alta ? Média ? Baixa)
+- ??? Priorizaï¿½ï¿½o rigorosa (Alta ? Mï¿½dia ? Baixa)
 - ??? Buffer de 1 dia para ajustes (24/12)
 - ??? Frontend simples (1 tela, menos risco)
-- ??? InMemory Database (sem dependência de SQL Server)
+- ??? InMemory Database (sem dependï¿½ncia de SQL Server)
 
 **Valor para ONS:**
-- ?? Backend completo = Integração imediata com sistemas existentes
-- ?? Swagger = Documentação interativa e sempre atualizada
-- ?? APIs testáveis = Validação sem depender de UI
-- ?? Arquitetura moderna = Preparado para produção
+- ?? Backend completo = Integraï¿½ï¿½o imediata com sistemas existentes
+- ?? Swagger = Documentaï¿½ï¿½o interativa e sempre atualizada
+- ?? APIs testï¿½veis = Validaï¿½ï¿½o sem depender de UI
+- ?? Arquitetura moderna = Preparado para produï¿½ï¿½o
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Imediato (Hoje - 19/12)
 
 1. **Tech Lead:**
-   - [ ] Validar cenário com stakeholders
-   - [ ] Confirmar aprovação do escopo
+   - [ ] Validar cenï¿½rio com stakeholders
+   - [ ] Confirmar aprovaï¿½ï¿½o do escopo
    - [ ] Comunicar ao squad
 
 2. **DEV 1 e DEV 2 (Backend):**
    - [ ] Criar estrutura base (BaseEntity, BaseRepository, BaseService)
    - [ ] Configurar Swagger com XML Comments
-   - [ ] Começar APIs de Prioridade ALTA
+   - [ ] Comeï¿½ar APIs de Prioridade ALTA
 
 3. **DEV 3 (Frontend):**
    - [ ] Analisar tela legada de Usinas (.aspx)
    - [ ] Criar estrutura de componentes React
    - [ ] Configurar Axios para API calls
 
-### Amanhã (20/12)
+### Amanhï¿½ (20/12)
 
 - [ ] Daily standup 09:00
 - [ ] Revisar progresso do Dia 1
-- [ ] Ajustar prioridades se necessário
+- [ ] Ajustar prioridades se necessï¿½rio
 - [ ] Continuar desenvolvimento conforme cronograma
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? PRONTO PARA APROVAÇÃO
+**Versï¿½o:** 1.0  
+**Status:** ? PRONTO PARA APROVAï¿½ï¿½O
 
-**RECOMENDAÇÃO FINAL: APROVAR E EXECUTAR** ???
+**RECOMENDAï¿½ï¿½O FINAL: APROVAR E EXECUTAR** ???

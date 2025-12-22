@@ -1,17 +1,17 @@
-# ? CHECKLIST TECH LEAD - Backend Completo
+ï»¿# ? CHECKLIST TECH LEAD - Backend Completo
 
-**Projeto:** PDPW PoC - Cenário Backend Completo  
+**Projeto:** PDPW PoC - Cenï¿½rio Backend Completo  
 **Data:** 19/12/2024  
 **Tech Lead:** [Nome]  
 **Prazo:** 26/12/2024
 
 ---
 
-## ?? APROVAÇÃO DO CENÁRIO
+## ?? APROVAï¿½ï¿½O DO CENï¿½RIO
 
-### Decisões Estratégicas
+### Decisï¿½es Estratï¿½gicas
 
-- [ ] **Revisar documentação completa:**
+- [ ] **Revisar documentaï¿½ï¿½o completa:**
   - [ ] `docs/CENARIO_BACKEND_COMPLETO_ANALISE.md`
   - [ ] `docs/SWAGGER_ESTRUTURA_COMPLETA.md`
   - [ ] `docs/RESUMO_EXECUTIVO_BACKEND_COMPLETO.md`
@@ -19,32 +19,32 @@
 - [ ] **Validar com stakeholders:**
   - [ ] Aprovar escopo: 27-29 APIs backend + 1 tela frontend
   - [ ] Confirmar prazo: 26/12/2024
-  - [ ] Validar distribuição: 2 backend devs + 1 frontend dev
+  - [ ] Validar distribuiï¿½ï¿½o: 2 backend devs + 1 frontend dev
 
 - [ ] **Confirmar recursos:**
-  - [ ] DEV 1 (Backend Senior) disponível 100%
-  - [ ] DEV 2 (Backend Pleno) disponível 100%
-  - [ ] DEV 3 (Frontend) disponível 100%
+  - [ ] DEV 1 (Backend Senior) disponï¿½vel 100%
+  - [ ] DEV 2 (Backend Pleno) disponï¿½vel 100%
+  - [ ] DEV 3 (Frontend) disponï¿½vel 100%
   - [ ] Trabalho em finais de semana confirmado (21-22/12)
 
 ---
 
-## ?? PREPARAÇÃO DO AMBIENTE
+## ?? PREPARAï¿½ï¿½O DO AMBIENTE
 
 ### Infraestrutura
 
-- [ ] **Repositório GitHub:**
+- [ ] **Repositï¿½rio GitHub:**
   - [ ] Branch `develop` criada
   - [ ] Proteger branch `main` (require PR)
   - [ ] Configurar GitHub Projects (Kanban)
   - [ ] Criar issues para cada API (template)
 
 - [ ] **Ambiente Local:**
-  - [ ] .NET 8 SDK instalado em todas as máquinas
+  - [ ] .NET 8 SDK instalado em todas as mï¿½quinas
   - [ ] Node.js 20 instalado
   - [ ] Docker Desktop instalado
   - [ ] Visual Studio 2022 / Rider configurado
-  - [ ] VS Code com extensões (para frontend)
+  - [ ] VS Code com extensï¿½es (para frontend)
 
 - [ ] **Ferramentas de Teste:**
   - [ ] Postman instalado
@@ -55,7 +55,7 @@
 
 ## ??? ESTRUTURA DO PROJETO
 
-### Organização de Pastas
+### Organizaï¿½ï¿½o de Pastas
 
 - [ ] **Criar estrutura de pastas para APIs:**
 ```
@@ -89,7 +89,7 @@ src/
 
 ---
 
-## ?? PRIORIZAÇÃO DE APIs
+## ?? PRIORIZAï¿½ï¿½O DE APIs
 
 ### Definir Ordem de Desenvolvimento
 
@@ -105,7 +105,7 @@ src/
   - [ ] 9. Usuario (DEV 1 - Dia 4)
   - [ ] 10. Responsavel (DEV 1 - Dia 4)
 
-- [ ] **PRIORIDADE MÉDIA (10 APIs) - DIAS 1-4:**
+- [ ] **PRIORIDADE Mï¿½DIA (10 APIs) - DIAS 1-4:**
   - [ ] 11. UnidadeGeradora (DEV 2 - Dia 1)
   - [ ] 12. ParadaUG (DEV 2 - Dia 1)
   - [ ] 13. RestricaoUG (DEV 2 - Dia 2)
@@ -122,14 +122,14 @@ src/
 
 ---
 
-## ?? CONFIGURAÇÃO DO SWAGGER
+## ?? CONFIGURAï¿½ï¿½O DO SWAGGER
 
 ### Setup Inicial
 
 - [ ] **Configurar Swagger no `Program.cs`:**
   - [ ] Adicionar XML Comments
   - [ ] Configurar Tags (categorias)
-  - [ ] Adicionar descrição rica da API
+  - [ ] Adicionar descriï¿½ï¿½o rica da API
   - [ ] Configurar exemplos de Request/Response
   - [ ] Habilitar filtros e busca
 
@@ -149,61 +149,61 @@ src/
 
 ---
 
-## ?? DIVISÃO DE TAREFAS
+## ?? DIVISï¿½O DE TAREFAS
 
-### Comunicação com o Squad
+### Comunicaï¿½ï¿½o com o Squad
 
-- [ ] **Reunião de Kick-off (19/12 - 15:00):**
-  - [ ] Apresentar cenário escolhido (Backend Completo)
+- [ ] **Reuniï¿½o de Kick-off (19/12 - 15:00):**
+  - [ ] Apresentar cenï¿½rio escolhido (Backend Completo)
   - [ ] Explicar justificativa (maximize valor, reduz risco UI)
   - [ ] Distribuir responsabilidades
   - [ ] Definir daily standup (09:00 todos os dias)
-  - [ ] Configurar canais de comunicação (Teams/Slack)
+  - [ ] Configurar canais de comunicaï¿½ï¿½o (Teams/Slack)
 
-- [ ] **Definir padrão de commits:**
+- [ ] **Definir padrï¿½o de commits:**
   ```bash
-  [CATEGORIA] tipo: descrição
+  [CATEGORIA] tipo: descriï¿½ï¿½o
   
   Exemplos:
   [GESTAO-ATIVOS] feat: adiciona entidade Usina
   [RESTRICOES] fix: corrige filtro de data em RestricaoUG
-  [DOCS] docs: atualiza README com instruções Docker
+  [DOCS] docs: atualiza README com instruï¿½ï¿½es Docker
   [TEST] test: adiciona testes para UsinaService
   ```
 
-- [ ] **Definir padrão de PRs:**
-  - [ ] Mínimo 1 revisor
+- [ ] **Definir padrï¿½o de PRs:**
+  - [ ] Mï¿½nimo 1 revisor
   - [ ] Build deve passar
   - [ ] Testes devem passar
-  - [ ] Cobertura não pode diminuir
+  - [ ] Cobertura nï¿½o pode diminuir
 
 ---
 
 ## ?? TESTES E QUALIDADE
 
-### Estratégia de Testes
+### Estratï¿½gia de Testes
 
 - [ ] **Configurar projeto de testes:**
   - [ ] `PDPW.Tests` com xUnit
   - [ ] `PDPW.IntegrationTests` (opcional)
 
-- [ ] **Definir padrão de testes:**
-  - [ ] Testes unitários para Services (mínimo)
-  - [ ] Testes de integração para Repositories (opcional)
-  - [ ] Cobertura mínima: 60%
+- [ ] **Definir padrï¿½o de testes:**
+  - [ ] Testes unitï¿½rios para Services (mï¿½nimo)
+  - [ ] Testes de integraï¿½ï¿½o para Repositories (opcional)
+  - [ ] Cobertura mï¿½nima: 60%
 
 - [ ] **Configurar CI (se tempo permitir):**
   - [ ] GitHub Actions para build
   - [ ] GitHub Actions para testes
-  - [ ] Relatório de cobertura
+  - [ ] Relatï¿½rio de cobertura
 
 ---
 
-## ?? ACOMPANHAMENTO DIÁRIO
+## ?? ACOMPANHAMENTO DIï¿½RIO
 
 ### Daily Standup (09:00 - 15 min)
 
-**Template de reunião:**
+**Template de reuniï¿½o:**
 
 ```
 DIA X - DD/MM/2024
@@ -220,19 +220,19 @@ DEV 2 (Backend Pleno):
 
 DEV 3 (Frontend):
   ? Ontem: [Progresso da tela]
-  ?? Hoje: [Próximos passos]
+  ?? Hoje: [Prï¿½ximos passos]
   ?? Bloqueios: [Se houver]
 
-DECISÕES:
-- [Decisão 1]
-- [Decisão 2]
+DECISï¿½ES:
+- [Decisï¿½o 1]
+- [Decisï¿½o 2]
 
-AÇÕES:
-- [ ] Ação 1 (responsável)
-- [ ] Ação 2 (responsável)
+Aï¿½ï¿½ES:
+- [ ] Aï¿½ï¿½o 1 (responsï¿½vel)
+- [ ] Aï¿½ï¿½o 2 (responsï¿½vel)
 ```
 
-### Checklist Diário do Tech Lead
+### Checklist Diï¿½rio do Tech Lead
 
 - [ ] **DIA 1 (19/12 Qui):**
   - [ ] Daily 09:00
@@ -245,11 +245,11 @@ AÇÕES:
 - [ ] **DIA 2 (20/12 Sex):**
   - [ ] Daily 09:00
   - [ ] Revisar APIs do Dia 1 (5 APIs)
-  - [ ] Testar integração frontend-backend (Usina)
+  - [ ] Testar integraï¿½ï¿½o frontend-backend (Usina)
   - [ ] Code review de PRs
   - [ ] Atualizar GitHub Projects
 
-- [ ] **DIA 3 (21/12 Sáb):**
+- [ ] **DIA 3 (21/12 Sï¿½b):**
   - [ ] Daily 09:00
   - [ ] Revisar APIs do Dia 2 (6 APIs)
   - [ ] Validar tela de Usinas completa
@@ -266,67 +266,67 @@ AÇÕES:
 - [ ] **DIA 5 (23/12 Seg):**
   - [ ] Daily 09:00
   - [ ] Revisar APIs do Dia 4 (6 APIs)
-  - [ ] Testes de integração gerais
+  - [ ] Testes de integraï¿½ï¿½o gerais
   - [ ] Code review de PRs
   - [ ] Preparar checklist de entrega
 
-- [ ] **DIA 6 (24/12 Ter - MEIO PERÍODO):**
+- [ ] **DIA 6 (24/12 Ter - MEIO PERï¿½ODO):**
   - [ ] Daily 09:00
   - [ ] Revisar APIs do Dia 5 (5 APIs)
   - [ ] Testar Docker Compose
   - [ ] Validar Swagger completo (29 APIs)
   - [ ] Atualizar README
-  - [ ] Preparar apresentação
+  - [ ] Preparar apresentaï¿½ï¿½o
 
 - [ ] **DIA 7 (25/12 Qua):**
   - [ ] FERIADO ??
 
 - [ ] **DIA 8 (26/12 Qui):**
-  - [ ] Última revisão (09:00-12:00)
-  - [ ] Ensaio de apresentação (13:00-14:00)
-  - [ ] **ENTREGA + APRESENTAÇÃO** (horário a definir)
+  - [ ] ï¿½ltima revisï¿½o (09:00-12:00)
+  - [ ] Ensaio de apresentaï¿½ï¿½o (13:00-14:00)
+  - [ ] **ENTREGA + APRESENTAï¿½ï¿½O** (horï¿½rio a definir)
 
 ---
 
-## ?? VALIDAÇÃO DE ENTREGA
+## ?? VALIDAï¿½ï¿½O DE ENTREGA
 
-### Checklist Final (26/12 manhã)
+### Checklist Final (26/12 manhï¿½)
 
 #### Backend
 
 - [ ] **APIs:**
-  - [ ] Mínimo 25 APIs completas (meta: 27-29)
+  - [ ] Mï¿½nimo 25 APIs completas (meta: 27-29)
   - [ ] Todos os endpoints funcionando
   - [ ] 100% documentados no Swagger
   - [ ] Seed data populado
 
 - [ ] **Swagger:**
-  - [ ] Acessível em http://localhost:5000/swagger
+  - [ ] Acessï¿½vel em http://localhost:5000/swagger
   - [ ] Organizado por categorias
   - [ ] Exemplos de Request/Response corretos
   - [ ] "Try it out" funciona em todas as APIs
-  - [ ] Exportação JSON funcionando
+  - [ ] Exportaï¿½ï¿½o JSON funcionando
 
 - [ ] **Qualidade:**
   - [ ] Build sem warnings
   - [ ] Testes passando (cobertura > 60%)
-  - [ ] Código seguindo padrões (Clean Architecture)
-  - [ ] Sem código comentado/debug
+  - [ ] Cï¿½digo seguindo padrï¿½es (Clean Architecture)
+  - [ ] Sem cï¿½digo comentado/debug
 
 #### Frontend
 
 - [ ] **Tela de Usinas:**
   - [ ] Listagem funcionando
   - [ ] Filtros/busca funcionando
-  - [ ] Formulário de cadastro funcionando
-  - [ ] Formulário de edição funcionando
-  - [ ] Remoção funcionando
-  - [ ] Validações implementadas
+  - [ ] Formulï¿½rio de cadastro funcionando
+  - [ ] Formulï¿½rio de ediï¿½ï¿½o funcionando
+  - [ ] Remoï¿½ï¿½o funcionando
+  - [ ] Validaï¿½ï¿½es implementadas
   - [ ] Mensagens de erro/sucesso
   - [ ] Responsiva (desktop/tablet)
 
-- [ ] **Integração:**
-  - [ ] Todas as operações CRUD funcionando
+- [ ] **Integraï¿½ï¿½o:**
+  - [ ] Todas as operaï¿½ï¿½es CRUD funcionando
   - [ ] Tratamento de erros da API
   - [ ] Loading states implementados
 
@@ -339,24 +339,24 @@ AÇÕES:
   - [ ] InMemory Database funcionando
   - [ ] Seed data sendo aplicado
 
-- [ ] **Documentação:**
+- [ ] **Documentaï¿½ï¿½o:**
   - [ ] README.md atualizado
-  - [ ] Instruções de setup claras
+  - [ ] Instruï¿½ï¿½es de setup claras
   - [ ] Comandos Docker documentados
   - [ ] Arquitetura documentada
 
 ---
 
-## ?? PREPARAÇÃO DA APRESENTAÇÃO
+## ?? PREPARAï¿½ï¿½O DA APRESENTAï¿½ï¿½O
 
 ### Roteiro (15 minutos)
 
 - [ ] **Criar slides (opcional):**
-  - [ ] Slide 1: Visão geral do projeto
+  - [ ] Slide 1: Visï¿½o geral do projeto
   - [ ] Slide 2: Arquitetura (Clean Architecture)
-  - [ ] Slide 3: Estatísticas (29 APIs, 154 endpoints)
-  - [ ] Slide 4: Demonstração ao vivo
-  - [ ] Slide 5: Próximos passos
+  - [ ] Slide 3: Estatï¿½sticas (29 APIs, 154 endpoints)
+  - [ ] Slide 4: Demonstraï¿½ï¿½o ao vivo
+  - [ ] Slide 5: Prï¿½ximos passos
 
 - [ ] **Preparar demo ao vivo:**
   - [ ] Roteiro escrito (passo a passo)
@@ -365,18 +365,18 @@ AÇÕES:
   - [ ] Plano B (se algo falhar)
 
 - [ ] **Ensaio geral:**
-  - [ ] Fazer apresentação completa para o squad
+  - [ ] Fazer apresentaï¿½ï¿½o completa para o squad
   - [ ] Cronometrar (deve caber em 15 min)
   - [ ] Ajustar conforme feedback
 
 ---
 
-## ?? COMUNICAÇÃO COM STAKEHOLDERS
+## ?? COMUNICAï¿½ï¿½O COM STAKEHOLDERS
 
-### Pontos de Sincronização
+### Pontos de Sincronizaï¿½ï¿½o
 
 - [ ] **Kick-off (19/12):**
-  - [ ] Apresentar cenário escolhido
+  - [ ] Apresentar cenï¿½rio escolhido
   - [ ] Validar expectativas
   - [ ] Confirmar data de entrega (26/12)
 
@@ -388,68 +388,68 @@ AÇÕES:
 - [ ] **Checkpoint 2 (24/12):**
   - [ ] Reportar progresso (90% APIs completas)
   - [ ] Mostrar Docker funcionando
-  - [ ] Confirmar horário de apresentação (26/12)
+  - [ ] Confirmar horï¿½rio de apresentaï¿½ï¿½o (26/12)
 
 - [ ] **Entrega (26/12):**
-  - [ ] Demonstração completa
+  - [ ] Demonstraï¿½ï¿½o completa
   - [ ] Q&A com stakeholders
   - [ ] Coletar feedback
 
 ---
 
-## ?? PLANO DE CONTINGÊNCIA
+## ?? PLANO DE CONTINGï¿½NCIA
 
 ### Se Algo Der Errado
 
-#### Cenário 1: Atraso no Desenvolvimento
+#### Cenï¿½rio 1: Atraso no Desenvolvimento
 
 **Indicador:** Menos de 20 APIs completas no Dia 4
 
-**Ação:**
+**Aï¿½ï¿½o:**
 - [ ] Congelar escopo em APIs de Prioridade ALTA (10 APIs)
 - [ ] Focar 100% em qualidade dessas APIs
 - [ ] Comunicar stakeholders sobre ajuste de escopo
 
-#### Cenário 2: Problemas Técnicos (Docker, EF Core, etc.)
+#### Cenï¿½rio 2: Problemas Tï¿½cnicos (Docker, EF Core, etc.)
 
-**Indicador:** Docker não funciona ou EF Core com bugs
+**Indicador:** Docker nï¿½o funciona ou EF Core com bugs
 
-**Ação:**
-- [ ] Simplificar para execução local (sem Docker)
+**Aï¿½ï¿½o:**
+- [ ] Simplificar para execuï¿½ï¿½o local (sem Docker)
 - [ ] Usar InMemory Database (sem SQL Server)
 - [ ] Documentar workarounds
 
-#### Cenário 3: Doença/Ausência de Dev
+#### Cenï¿½rio 3: Doenï¿½a/Ausï¿½ncia de Dev
 
 **Indicador:** Dev ausente por 1+ dia
 
-**Ação:**
+**Aï¿½ï¿½o:**
 - [ ] Redistribuir tarefas entre devs restantes
-- [ ] Priorizar APIs críticas (Usina, DADGER)
-- [ ] Pedir ajuda externa (se disponível)
+- [ ] Priorizar APIs crï¿½ticas (Usina, DADGER)
+- [ ] Pedir ajuda externa (se disponï¿½vel)
 
-#### Cenário 4: Frontend Não Completa a Tela
+#### Cenï¿½rio 4: Frontend Nï¿½o Completa a Tela
 
 **Indicador:** Tela de Usinas com bugs graves
 
-**Ação:**
+**Aï¿½ï¿½o:**
 - [ ] Focar 100% no Swagger (backend completo)
-- [ ] Usar apenas Swagger na apresentação
+- [ ] Usar apenas Swagger na apresentaï¿½ï¿½o
 - [ ] Argumentar que APIs completas > 1 tela com bugs
 
 ---
 
-## ?? CRITÉRIOS DE SUCESSO
+## ?? CRITï¿½RIOS DE SUCESSO
 
-### Mínimo Viável para Aprovação
+### Mï¿½nimo Viï¿½vel para Aprovaï¿½ï¿½o
 
-**OBRIGATÓRIO:**
-- [ ] Mínimo 20 APIs backend completas
+**OBRIGATï¿½RIO:**
+- [ ] Mï¿½nimo 20 APIs backend completas
 - [ ] Swagger 100% funcional e documentado
 - [ ] Docker Compose executando sem erros
-- [ ] Apresentação de 15 minutos preparada
+- [ ] Apresentaï¿½ï¿½o de 15 minutos preparada
 
-**DESEJÁVEL:**
+**DESEJï¿½VEL:**
 - [ ] 27-29 APIs backend completas ?
 - [ ] 1 tela frontend completa (Usinas) ?
 - [ ] Cobertura de testes > 60% ?
@@ -463,30 +463,30 @@ AÇÕES:
 
 ---
 
-## ? APROVAÇÃO FINAL
+## ? APROVAï¿½ï¿½O FINAL
 
-### Antes de Entregar (26/12 manhã)
+### Antes de Entregar (26/12 manhï¿½)
 
-- [ ] **Validação técnica completa:**
+- [ ] **Validaï¿½ï¿½o tï¿½cnica completa:**
   - [ ] Build sem erros
   - [ ] Testes passando
   - [ ] Docker funcionando
-  - [ ] Swagger acessível
+  - [ ] Swagger acessï¿½vel
 
-- [ ] **Validação funcional:**
+- [ ] **Validaï¿½ï¿½o funcional:**
   - [ ] Testar fluxo completo E2E (Usinas)
-  - [ ] Testar endpoints críticos no Swagger
+  - [ ] Testar endpoints crï¿½ticos no Swagger
   - [ ] Validar seed data
 
-- [ ] **Validação de documentação:**
+- [ ] **Validaï¿½ï¿½o de documentaï¿½ï¿½o:**
   - [ ] README completo
   - [ ] Swagger documentado
-  - [ ] Comentários no código
+  - [ ] Comentï¿½rios no cï¿½digo
   - [ ] ADRs atualizados (se houver)
 
 - [ ] **Sign-off do Tech Lead:**
   - [ ] Revisar entrega completa
-  - [ ] Aprovar para apresentação
+  - [ ] Aprovar para apresentaï¿½ï¿½o
   - [ ] Confirmar com stakeholders
 
 ---
@@ -513,7 +513,7 @@ AÇÕES:
 
 **Checklist criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? PRONTO PARA USO
 
 **BOA SORTE NA ENTREGA! ??**

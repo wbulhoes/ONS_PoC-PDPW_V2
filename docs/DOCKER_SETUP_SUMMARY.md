@@ -1,4 +1,4 @@
-# ? DOCKER + SQL SERVER - RESUMO FINAL
+ï»¿# ? DOCKER + SQL SERVER - RESUMO FINAL
 
 **Data:** 22/12/2024  
 **Status:** ?? **CONFIGURADO E TESTADO**
@@ -9,11 +9,11 @@
 
 ### ? **1. Docker Compose Atualizado**
 - **Arquivo:** `docker-compose.yml`
-- **Serviços:**
+- **Serviï¿½os:**
   - `pdpw-sqlserver` (SQL Server 2022)
   - `pdpw-backend` (.NET 8 API)
-- **Persistência:** Volume `pdpw_sqldata` para dados permanentes
-- **Network:** `pdpw_network` para comunicação entre containers
+- **Persistï¿½ncia:** Volume `pdpw_sqldata` para dados permanentes
+- **Network:** `pdpw_network` para comunicaï¿½ï¿½o entre containers
 
 ### ? **2. Dockerfile Otimizado**
 - **Arquivo:** `src/PDPW.API/Dockerfile`
@@ -21,16 +21,16 @@
 - **Health check** configurado
 - **Curl** instalado para health checks
 
-### ? **3. Configuração SQL Server**
+### ? **3. Configuraï¿½ï¿½o SQL Server**
 - **Imagem:** `mcr.microsoft.com/mssql/server:2022-latest`
 - **Porta:** 1433
 - **Credenciais:**
-  - Usuário: `sa`
+  - Usuï¿½rio: `sa`
   - Senha: `Pdpw@2024!Strong`
 - **Volume:** `pdpw_sqldata` (persistente)
 - **Health Check:** Configurado e funcionando
 
-### ? **4. Configuração Backend**
+### ? **4. Configuraï¿½ï¿½o Backend**
 - **Porta HTTP:** 5001
 - **Porta HTTPS:** 5002
 - **Environment Variables:**
@@ -39,10 +39,10 @@
   - Connection string apontando para `sqlserver`
 - **Depends On:** SQL Server (com health check)
 
-### ? **5. Documentação Criada**
+### ? **5. Documentaï¿½ï¿½o Criada**
 - **`docs/DOCKER_GUIDE.md`** - Guia completo de Docker
 - **Scripts de entrypoint** (simplificados)
-- **`.dockerignore`** - Otimização de build
+- **`.dockerignore`** - Otimizaï¿½ï¿½o de build
 
 ---
 
@@ -51,9 +51,9 @@
 | Item | Status | Detalhes |
 |------|--------|----------|
 | **Build da Imagem** | ? | Sucesso |
-| **SQL Server Container** | ? | Rodando e saudável |
+| **SQL Server Container** | ? | Rodando e saudï¿½vel |
 | **Backend Container** | ? | Rodando |
-| **Persistência de Dados** | ? | Volume configurado |
+| **Persistï¿½ncia de Dados** | ? | Volume configurado |
 | **Health Checks** | ?? | DB health check precisa ajuste |
 | **Migrations** | ?? | Executadas via Program.cs |
 | **Seeder** | ?? | Executado via Program.cs |
@@ -69,7 +69,7 @@ docker-compose up -d
 
 ### **Ver Logs**
 ```bash
-# Todos os serviços
+# Todos os serviï¿½os
 docker-compose logs -f
 
 # Apenas backend
@@ -110,21 +110,21 @@ docker-compose exec sqlserver /opt/mssql-tools18/bin/sqlcmd \
 
 ---
 
-## ?? VOLUMES E PERSISTÊNCIA
+## ?? VOLUMES E PERSISTï¿½NCIA
 
 ### **Volume Criado:**
 ```bash
 # Listar volumes
 docker volume ls | findstr pdpw
 
-# Saída esperada:
+# Saï¿½da esperada:
 # local     pdpw_sqldata
 ```
 
 ### **Dados Persistentes:**
 - ? Banco de dados SQL Server
 - ? Tabelas (31 tabelas)
-- ? Dados (~550 registros após seeder)
+- ? Dados (~550 registros apï¿½s seeder)
 - ? Migrations aplicadas
 
 ### **Backup do Volume:**
@@ -138,25 +138,25 @@ docker run --rm -v pdpw_sqldata:/data -v ${PWD}/backups:/backup `
 
 ## ?? TROUBLESHOOTING
 
-### **Problema: Backend não conecta no SQL Server**
+### **Problema: Backend nï¿½o conecta no SQL Server**
 **Sintoma:** Health check database falha
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```bash
-# 1. Verificar se SQL Server está healthy
+# 1. Verificar se SQL Server estï¿½ healthy
 docker-compose ps
 
 # 2. Verificar logs do backend
 docker-compose logs backend | findstr -i "error"
 
-# 3. Testar conexão manualmente
+# 3. Testar conexï¿½o manualmente
 docker-compose exec backend ping sqlserver
 ```
 
-### **Problema: Porta 1433 já em uso**
+### **Problema: Porta 1433 jï¿½ em uso**
 **Sintoma:** Erro ao iniciar SQL Server container
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```bash
 # Parar SQL Server local
 net stop MSSQL$SQLEXPRESS
@@ -166,22 +166,22 @@ ports:
   - "1434:1433"
 ```
 
-### **Problema: Migrations não aplicadas**
-**Sintoma:** Tabelas não existem
+### **Problema: Migrations nï¿½o aplicadas**
+**Sintoma:** Tabelas nï¿½o existem
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```bash
 # Ver logs do backend no startup
 docker-compose logs backend | Select-String -Pattern "Migration"
 
-# O Program.cs já aplica migrations automaticamente
-# Se necessário, reconstruir:
+# O Program.cs jï¿½ aplica migrations automaticamente
+# Se necessï¿½rio, reconstruir:
 docker-compose up -d --build
 ```
 
 ---
 
-## ? CHECKLIST DE VALIDAÇÃO
+## ? CHECKLIST DE VALIDAï¿½ï¿½O
 
 - [x] Docker Desktop instalado e rodando
 - [x] Build da imagem bem-sucedido
@@ -189,15 +189,15 @@ docker-compose up -d --build
 - [x] Backend container rodando
 - [x] Volume de dados criado
 - [x] Network criada
-- [x] Portas 1433 e 5001 acessíveis
-- [x] SQL Server acessível via SSMS
+- [x] Portas 1433 e 5001 acessï¿½veis
+- [x] SQL Server acessï¿½vel via SSMS
 - [ ] Health check do DB funcionando (precisa ajuste)
-- [x] Swagger acessível (após correção do health check)
+- [x] Swagger acessï¿½vel (apï¿½s correï¿½ï¿½o do health check)
 - [x] Dados persistindo entre restarts
 
 ---
 
-## ?? DOCUMENTAÇÃO RELACIONADA
+## ?? DOCUMENTAï¿½ï¿½O RELACIONADA
 
 - **Guia Completo:** [docs/DOCKER_GUIDE.md](./DOCKER_GUIDE.md)
 - **Setup SQL Server:** [docs/SQL_SERVER_SETUP_SUMMARY.md](./SQL_SERVER_SETUP_SUMMARY.md)
@@ -205,17 +205,17 @@ docker-compose up -d --build
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 1. **Ajustar Health Check do Database** (melhorar timeout/retry)
-2. **Testar Swagger** após backend estar 100% saudável
+2. **Testar Swagger** apï¿½s backend estar 100% saudï¿½vel
 3. **Validar Seeder** (verificar se ~550 registros foram criados)
-4. **Testar persistência** (restart containers e verificar dados)
+4. **Testar persistï¿½ncia** (restart containers e verificar dados)
 5. **Documentar processo** de backup/restore via Docker
 
 ---
 
-## ?? COMANDOS RÁPIDOS
+## ?? COMANDOS Rï¿½PIDOS
 
 ```bash
 # Iniciar
@@ -241,7 +241,7 @@ docker-compose down -v
 
 **? DOCKER CONFIGURADO COM SQL SERVER PERSISTENTE!**
 
-**Última Atualização:** 22/12/2024 - 17:30  
-**Responsável:** Wellington Bulhões  
+**ï¿½ltima Atualizaï¿½ï¿½o:** 22/12/2024 - 17:30  
+**Responsï¿½vel:** Wellington Bulhï¿½es  
 **Branch:** `develop`  
 **Commit:** `ead83fc`

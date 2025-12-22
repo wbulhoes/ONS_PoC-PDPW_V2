@@ -1,6 +1,6 @@
-# ?? GUIA RÁPIDO - RESTAURAÇÃO DO BACKUP LEGADO
+ï»¿# ?? GUIA Rï¿½PIDO - RESTAURAï¿½ï¿½O DO BACKUP LEGADO
 
-## ? EXECUÇÃO RÁPIDA (2 comandos)
+## ? EXECUï¿½ï¿½O Rï¿½PIDA (2 comandos)
 
 ### 1?? Restaurar Backup (10-30 minutos)
 ```powershell
@@ -17,28 +17,28 @@ cd C:\temp\_ONS_PoC-PDPW
 
 ## ?? RESULTADO ESPERADO
 
-Após a execução, você terá:
+Apï¿½s a execuï¿½ï¿½o, vocï¿½ terï¿½:
 
 1. ? **Banco `PDPW_Legacy` restaurado** no SQL Server Express
-2. ? **Pasta `docs/legacy_analysis/`** com análise completa:
+2. ? **Pasta `docs/legacy_analysis/`** com anï¿½lise completa:
    - Lista de todas as tabelas
    - Contagem de registros
    - Estrutura das principais tabelas
    - Amostras de dados
    - Relacionamentos (FKs)
-   - Índices e constraints
+   - ï¿½ndices e constraints
    - Resumo em Markdown
 
 ---
 
-## ?? PRÓXIMAS AÇÕES
+## ?? PRï¿½XIMAS Aï¿½ï¿½ES
 
-### Imediato (Após Análise)
+### Imediato (Apï¿½s Anï¿½lise)
 1. Revisar arquivo `docs/legacy_analysis/00_RESUMO_ANALISE.md`
-2. Identificar tabelas correspondentes à POC
-3. Planejar migração de dados
+2. Identificar tabelas correspondentes ï¿½ POC
+3. Planejar migraï¿½ï¿½o de dados
 
-### Scripts Adicionais (A criar conforme necessário)
+### Scripts Adicionais (A criar conforme necessï¿½rio)
 - `Migrate-TiposUsina.ps1` - Migrar tipos de usina
 - `Migrate-Empresas.ps1` - Migrar empresas
 - `Migrate-Usinas.ps1` - Migrar usinas
@@ -50,25 +50,25 @@ Após a execução, você terá:
 ## ?? IMPORTANTE
 
 ### Tempo Estimado
-- **Restauração**: 10-30 minutos (depende do hardware)
-- **Análise**: 2-5 minutos
+- **Restauraï¿½ï¿½o**: 10-30 minutos (depende do hardware)
+- **Anï¿½lise**: 2-5 minutos
 - **Total**: ~15-35 minutos
 
 ### Requisitos
 - ? SQL Server Express rodando
-- ? ~50 GB de espaço livre em disco
-- ? Permissões de administrador
+- ? ~50 GB de espaï¿½o livre em disco
+- ? Permissï¿½es de administrador
 - ? PowerShell 5.1+
 
 ### Em Caso de Erro
-- Verifique se SQL Server está rodando: `Get-Service MSSQL*`
-- Verifique espaço em disco: `Get-PSDrive C`
+- Verifique se SQL Server estï¿½ rodando: `Get-Service MSSQL*`
+- Verifique espaï¿½o em disco: `Get-PSDrive C`
 - Execute PowerShell como Administrador
 - Consulte logs em `docs/legacy_analysis/`
 
 ---
 
-## ?? PARÂMETROS OPCIONAIS
+## ?? PARï¿½METROS OPCIONAIS
 
 ### Restaurar em servidor diferente:
 ```powershell
@@ -80,7 +80,7 @@ Após a execução, você terá:
 .\scripts\Restore-LegacyBackup.ps1 -NewDatabaseName "OutroNome"
 ```
 
-### Salvar análise em outro local:
+### Salvar anï¿½lise em outro local:
 ```powershell
 .\scripts\Analyze-LegacyDatabase.ps1 -OutputPath "C:\MeuCaminho"
 ```
@@ -89,7 +89,7 @@ Após a execução, você terá:
 
 ## ?? SUPORTE
 
-Em caso de dúvidas:
+Em caso de dï¿½vidas:
 1. Consulte `docs/PLANO_RESTAURACAO_BACKUP.md`
 2. Revise logs de erro no PowerShell
 3. Verifique o SQL Server Error Log
@@ -98,4 +98,4 @@ Em caso de dúvidas:
 
 **Preparado por**: GitHub Copilot  
 **Data**: 19/12/2024  
-**Versão**: 1.0.0
+**Versï¿½o**: 1.0.0

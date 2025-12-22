@@ -1,45 +1,45 @@
-# ?? GUIA DOCKER - PDPW POC
+ï»¿# ?? GUIA DOCKER - PDPW POC
 
-## ?? Pré-requisitos
+## ?? Prï¿½-requisitos
 
 - Docker Desktop instalado e rodando
-- Docker Compose (incluído no Docker Desktop)
-- Mínimo 4GB RAM disponível
-- 10GB espaço em disco
+- Docker Compose (incluï¿½do no Docker Desktop)
+- Mï¿½nimo 4GB RAM disponï¿½vel
+- 10GB espaï¿½o em disco
 
 ---
 
-## ?? INÍCIO RÁPIDO
+## ?? INï¿½CIO Rï¿½PIDO
 
-### **1. Clonar o repositório**
+### **1. Clonar o repositï¿½rio**
 ```bash
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW_V2.git
 cd ONS_PoC-PDPW_V2
 ```
 
-### **2. Iniciar todos os serviços**
+### **2. Iniciar todos os serviï¿½os**
 ```bash
 docker-compose up -d
 ```
 
-### **3. Acessar a aplicação**
+### **3. Acessar a aplicaï¿½ï¿½o**
 - **Swagger API:** http://localhost:5001/swagger
 - **SQL Server:** localhost:1433 (sa / Pdpw@2024!Strong)
 
-### **4. Parar os serviços**
+### **4. Parar os serviï¿½os**
 ```bash
 docker-compose down
 ```
 
 ---
 
-## ?? SERVIÇOS DISPONÍVEIS
+## ?? SERVIï¿½OS DISPONï¿½VEIS
 
 ### **Docker Compose Principal** (`docker-compose.yml`)
-Inclui **Backend + SQL Server** com persistência.
+Inclui **Backend + SQL Server** com persistï¿½ncia.
 
 ```yaml
-Serviços:
+Serviï¿½os:
   - pdpw-sqlserver (SQL Server 2022)
     Porta: 1433
     Volume: pdpw_sqldata
@@ -50,13 +50,13 @@ Serviços:
 ```
 
 ### **Docker Compose Completo** (`docker-compose.full.yml`)
-Mesma configuração, mantido para compatibilidade.
+Mesma configuraï¿½ï¿½o, mantido para compatibilidade.
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
-### **Iniciar serviços**
+### **Iniciar serviï¿½os**
 ```bash
 # Iniciar em modo detached (background)
 docker-compose up -d
@@ -64,14 +64,14 @@ docker-compose up -d
 # Iniciar e acompanhar logs
 docker-compose up
 
-# Iniciar apenas um serviço
+# Iniciar apenas um serviï¿½o
 docker-compose up -d sqlserver
 docker-compose up -d backend
 ```
 
 ### **Ver logs**
 ```bash
-# Logs de todos os serviços
+# Logs de todos os serviï¿½os
 docker-compose logs -f
 
 # Logs apenas do backend
@@ -80,11 +80,11 @@ docker-compose logs -f backend
 # Logs apenas do SQL Server
 docker-compose logs -f sqlserver
 
-# Últimas 100 linhas
+# ï¿½ltimas 100 linhas
 docker-compose logs --tail=100 backend
 ```
 
-### **Parar serviços**
+### **Parar serviï¿½os**
 ```bash
 # Parar sem remover containers
 docker-compose stop
@@ -174,10 +174,10 @@ docker-compose exec sqlserver /opt/mssql-tools18/bin/sqlcmd \
 
 ---
 
-## ?? PERSISTÊNCIA DE DADOS
+## ?? PERSISTï¿½NCIA DE DADOS
 
 ### **Volumes Docker**
-Os dados do SQL Server são armazenados em um volume Docker nomeado:
+Os dados do SQL Server sï¿½o armazenados em um volume Docker nomeado:
 
 ```bash
 # Listar volumes
@@ -186,7 +186,7 @@ docker volume ls
 # Inspecionar volume
 docker volume inspect pdpw_sqldata
 
-# Localização física (Windows com WSL)
+# Localizaï¿½ï¿½o fï¿½sica (Windows com WSL)
 \\wsl$\docker-desktop-data\data\docker\volumes\pdpw_sqldata\_data
 ```
 
@@ -209,19 +209,19 @@ docker run --rm \
 
 ## ?? TROUBLESHOOTING
 
-### **Problema: Backend não inicia**
+### **Problema: Backend nï¿½o inicia**
 ```bash
 # Ver logs detalhados
 docker-compose logs backend
 
-# Verificar se SQL Server está saudável
+# Verificar se SQL Server estï¿½ saudï¿½vel
 docker-compose ps
 
 # Reiniciar apenas backend
 docker-compose restart backend
 ```
 
-### **Problema: SQL Server não está pronto**
+### **Problema: SQL Server nï¿½o estï¿½ pronto**
 ```bash
 # Verificar health check
 docker-compose ps
@@ -229,10 +229,10 @@ docker-compose ps
 # Ver logs do SQL Server
 docker-compose logs sqlserver
 
-# Esperar mais tempo (pode levar até 30s)
+# Esperar mais tempo (pode levar atï¿½ 30s)
 ```
 
-### **Problema: Migrations não são aplicadas**
+### **Problema: Migrations nï¿½o sï¿½o aplicadas**
 ```bash
 # Aplicar manualmente
 docker-compose exec backend dotnet ef database update \
@@ -240,9 +240,9 @@ docker-compose exec backend dotnet ef database update \
   --startup-project /app/PDPW.API.dll
 ```
 
-### **Problema: Porta 1433 já em uso**
+### **Problema: Porta 1433 jï¿½ em uso**
 ```bash
-# Verificar o que está usando a porta
+# Verificar o que estï¿½ usando a porta
 netstat -ano | findstr :1433
 
 # Parar SQL Server local
@@ -253,12 +253,12 @@ ports:
   - "1434:1433"  # Usar porta 1434 no host
 ```
 
-### **Problema: Containers não param**
+### **Problema: Containers nï¿½o param**
 ```bash
-# Forçar parada
+# Forï¿½ar parada
 docker-compose kill
 
-# Remover containers órfãos
+# Remover containers ï¿½rfï¿½os
 docker-compose down --remove-orphans
 
 # Limpar tudo (CUIDADO!)
@@ -267,13 +267,13 @@ docker system prune -a
 
 ---
 
-## ?? TESTES E VALIDAÇÃO
+## ?? TESTES E VALIDAï¿½ï¿½O
 
-### **1. Verificar saúde dos containers**
+### **1. Verificar saï¿½de dos containers**
 ```bash
 docker-compose ps
 
-# Saída esperada:
+# Saï¿½da esperada:
 # NAME              STATUS             PORTS
 # pdpw-backend      Up (healthy)       0.0.0.0:5001->80/tcp
 # pdpw-sqlserver    Up (healthy)       0.0.0.0:1433->1433/tcp
@@ -305,7 +305,7 @@ docker-compose exec sqlserver /opt/mssql-tools18/bin/sqlcmd \
 
 ### **Recursos dos containers**
 ```bash
-# Ver uso de CPU/Memória
+# Ver uso de CPU/Memï¿½ria
 docker stats
 
 # Ver uso de disco
@@ -316,17 +316,17 @@ docker-compose logs -f --tail=50
 ```
 
 ### **Logs estruturados**
-Os logs da aplicação seguem formato estruturado e incluem:
+Os logs da aplicaï¿½ï¿½o seguem formato estruturado e incluem:
 - Timestamp
-- Nível de log (Info, Warning, Error)
-- Contexto da operação
-- Dados sensíveis (apenas em Development)
+- Nï¿½vel de log (Info, Warning, Error)
+- Contexto da operaï¿½ï¿½o
+- Dados sensï¿½veis (apenas em Development)
 
 ---
 
-## ?? CI/CD e Produção
+## ?? CI/CD e Produï¿½ï¿½o
 
-### **Build de imagem para produção**
+### **Build de imagem para produï¿½ï¿½o**
 ```bash
 # Build otimizado
 docker build -f src/PDPW.API/Dockerfile \
@@ -340,7 +340,7 @@ docker tag pdpw-backend:latest seu-registry/pdpw-backend:latest
 docker push seu-registry/pdpw-backend:latest
 ```
 
-### **Variáveis de ambiente produção**
+### **Variï¿½veis de ambiente produï¿½ï¿½o**
 ```yaml
 environment:
   - ASPNETCORE_ENVIRONMENT=Production
@@ -354,24 +354,24 @@ environment:
 ## ?? CHECKLIST DE DEPLOY
 
 - [ ] Docker e Docker Compose instalados
-- [ ] Portas 1433 e 5001 disponíveis
-- [ ] Variáveis de ambiente configuradas
+- [ ] Portas 1433 e 5001 disponï¿½veis
+- [ ] Variï¿½veis de ambiente configuradas
 - [ ] Volumes criados
 - [ ] Build da imagem bem-sucedido
-- [ ] Containers iniciados e saudáveis
+- [ ] Containers iniciados e saudï¿½veis
 - [ ] Migrations aplicadas
 - [ ] Dados populados (via Seeder)
 - [ ] APIs respondendo
-- [ ] Swagger acessível
-- [ ] Banco de dados acessível
+- [ ] Swagger acessï¿½vel
+- [ ] Banco de dados acessï¿½vel
 
 ---
 
-## ?? LINKS ÚTEIS
+## ?? LINKS ï¿½TEIS
 
 - **Swagger API:** http://localhost:5001/swagger
 - **SQL Server:** localhost:1433
-- **Documentação:** [README.md](../README.md)
+- **Documentaï¿½ï¿½o:** [README.md](../README.md)
 - **Status POC:** [docs/POC_STATUS_E_ROADMAP.md](../docs/POC_STATUS_E_ROADMAP.md)
 
 ---
@@ -381,11 +381,11 @@ environment:
 Para problemas com Docker:
 1. Verificar logs: `docker-compose logs`
 2. Verificar health: `docker-compose ps`
-3. Consultar documentação: https://docs.docker.com/
+3. Consultar documentaï¿½ï¿½o: https://docs.docker.com/
 4. Issues no GitHub: https://github.com/wbulhoes/ONS_PoC-PDPW_V2/issues
 
 ---
 
 **? DOCKER CONFIGURADO E PRONTO PARA USO!**
 
-**Última atualização:** 22/12/2024
+**ï¿½ltima atualizaï¿½ï¿½o:** 22/12/2024

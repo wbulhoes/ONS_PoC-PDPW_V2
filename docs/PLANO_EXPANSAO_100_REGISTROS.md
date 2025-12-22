@@ -1,9 +1,9 @@
-# ?? PLANO DE EXPANSÃO - 100 REGISTROS REAIS
+ï»¿# ?? PLANO DE EXPANSï¿½O - 100 REGISTROS REAIS
 
 ## ?? **META: ~100 Registros na Base POC**
 
-### ?? **Situação Atual:**
-| Tabela | Atual | Meta | Diferença |
+### ?? **Situaï¿½ï¿½o Atual:**
+| Tabela | Atual | Meta | Diferenï¿½a |
 |--------|-------|------|-----------|
 | **Empresas** | 8 | 25 | +17 |
 | **Usinas** | 10 | 40 | +30 |
@@ -14,16 +14,16 @@
 
 ---
 
-## ?? **ESTRATÉGIA DE EXTRAÇÃO**
+## ?? **ESTRATï¿½GIA DE EXTRAï¿½ï¿½O**
 
 ### **Fase 1: Preparar Ambiente**
 1. ? SQL Server rodando via Docker
 2. ? Banco PDPW_DB criado
-3. ? Criar banco temporário para restaurar backup
+3. ? Criar banco temporï¿½rio para restaurar backup
 
 ### **Fase 2: Extrair Dados do Backup**
 
-Vamos extrair dados reais do backup `Backup_PDP_TST.bak` usando queries SQL específicas:
+Vamos extrair dados reais do backup `Backup_PDP_TST.bak` usando queries SQL especï¿½ficas:
 
 #### **1. Empresas (Top 25)**
 ```sql
@@ -76,7 +76,7 @@ WHERE Ativo = 1
 
 #### **4. Semanas PMO (6 meses)**
 ```sql
--- Últimas 26 semanas (6 meses)
+-- ï¿½ltimas 26 semanas (6 meses)
 SELECT TOP 26
     ROW_NUMBER() OVER (ORDER BY Ano DESC, Mes DESC, Numero DESC) + 50 as Id,
     Numero,
@@ -108,34 +108,34 @@ WHERE Ativa = 1
 
 ---
 
-## ??? **PASSOS PARA EXECUÇÃO**
+## ??? **PASSOS PARA EXECUï¿½ï¿½O**
 
-### **Opção A: Via Script PowerShell Automatizado** ? **RECOMENDADO**
+### **Opï¿½ï¿½o A: Via Script PowerShell Automatizado** ? **RECOMENDADO**
 
 Criar script que:
 1. Conecta no SQL Server local (SQLEXPRESS)
-2. Cria banco temporário `PDPW_BACKUP_TEMP`
+2. Cria banco temporï¿½rio `PDPW_BACKUP_TEMP`
 3. Restaura apenas estrutura do backup
 4. Extrai dados com as queries acima
 5. Gera scripts SQL INSERT
 6. Aplica no banco Docker (PDPW_DB)
-7. Remove banco temporário
+7. Remove banco temporï¿½rio
 
 **Tempo estimado:** 15-20 minutos
 
-### **Opção B: Via SQL Server Management Studio (SSMS)** 
+### **Opï¿½ï¿½o B: Via SQL Server Management Studio (SSMS)** 
 
 Passos manuais:
 1. Abrir SSMS e conectar em `localhost\SQLEXPRESS`
 2. Restaurar backup em `PDPW_BACKUP_TEMP`
-3. Executar queries de extração
+3. Executar queries de extraï¿½ï¿½o
 4. Exportar resultados como INSERT scripts
 5. Conectar no Docker SQL Server
 6. Executar scripts INSERT
 
 **Tempo estimado:** 30-40 minutos
 
-### **Opção C: Via BCP (Bulk Copy Program)**
+### **Opï¿½ï¿½o C: Via BCP (Bulk Copy Program)**
 
 Exportar dados em arquivos CSV e importar via BCP.
 
@@ -143,40 +143,40 @@ Exportar dados em arquivos CSV e importar via BCP.
 
 ---
 
-## ?? **VALIDAÇÕES NECESSÁRIAS**
+## ?? **VALIDAï¿½ï¿½ES NECESSï¿½RIAS**
 
-Após extração, validar:
+Apï¿½s extraï¿½ï¿½o, validar:
 
 1. ? **Integridade Referencial**
-   - Todas as Usinas têm EmpresaId válido
-   - Todas as Usinas têm TipoUsinaId válido
+   - Todas as Usinas tï¿½m EmpresaId vï¿½lido
+   - Todas as Usinas tï¿½m TipoUsinaId vï¿½lido
 
-2. ? **Dados Únicos**
+2. ? **Dados ï¿½nicos**
    - Sem CNPJs duplicados
-   - Sem códigos de usina duplicados
+   - Sem cï¿½digos de usina duplicados
 
-3. ? **Datas Válidas**
+3. ? **Datas Vï¿½lidas**
    - SemanasPMO com DataInicio < DataFim
-   - Sem sobreposições de semanas
+   - Sem sobreposiï¿½ï¿½es de semanas
 
-4. ? **Campos Obrigatórios**
+4. ? **Campos Obrigatï¿½rios**
    - Nenhum campo NOT NULL vazio
-   - Potências > 0
+   - Potï¿½ncias > 0
 
 ---
 
-## ?? **PRÓXIMA AÇÃO**
+## ?? **PRï¿½XIMA Aï¿½ï¿½O**
 
-**Qual opção você prefere?**
+**Qual opï¿½ï¿½o vocï¿½ prefere?**
 
 **A) ?? Script PowerShell Automatizado** (Recomendado)
 - Eu crio o script completo
-- Você executa um único comando
-- Tudo é feito automaticamente
+- Vocï¿½ executa um ï¿½nico comando
+- Tudo ï¿½ feito automaticamente
 
 **B) ?? Queries SQL Manuais**
-- Eu forneço todas as queries
-- Você executa via SSMS
+- Eu forneï¿½o todas as queries
+- Vocï¿½ executa via SSMS
 - Mais controle manual
 
 **C) ?? BCP + CSV**
@@ -188,14 +188,14 @@ Após extração, validar:
 
 ## ?? **IMPORTANTE**
 
-### Espaço em Disco:
+### Espaï¿½o em Disco:
 - Backup: 43.2 GB
-- Restauração temporária: ~15-20 GB
+- Restauraï¿½ï¿½o temporï¿½ria: ~15-20 GB
 - Scripts SQL: ~5 MB
 
-**Espaço livre atual:** 191 GB ? (Suficiente)
+**Espaï¿½o livre atual:** 191 GB ? (Suficiente)
 
-### Dependências:
+### Dependï¿½ncias:
 - SQL Server Express instalado ?
 - Docker rodando ?
 - PowerShell 5.1+ ?
@@ -204,7 +204,7 @@ Após extração, validar:
 
 ## ?? **RESULTADO ESPERADO**
 
-Após execução bem-sucedida:
+Apï¿½s execuï¿½ï¿½o bem-sucedida:
 
 ```
 Tabela           Antes  Depois  Incremento
@@ -222,5 +222,5 @@ TOTAL              42    101      +59
 
 ---
 
-**Aguardando sua decisão para prosseguir...** ??
+**Aguardando sua decisï¿½o para prosseguir...** ??
 

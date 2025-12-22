@@ -1,21 +1,21 @@
-# ?? CHECKLIST DE SETUP - DEV 3 (Frontend)
+ï»¿# ?? CHECKLIST DE SETUP - DEV 3 (Frontend)
 
 **Data:** 19/12/2024  
-**Responsável:** DEV 3  
-**Objetivo:** Validar ambiente antes de começar
+**Responsï¿½vel:** DEV 3  
+**Objetivo:** Validar ambiente antes de comeï¿½ar
 
 ---
 
-## ? PRÉ-REQUISITOS
+## ? PRï¿½-REQUISITOS
 
 ### 1. Git Configurado
 
 ```powershell
-# Verificar versão
+# Verificar versï¿½o
 git --version
 # Esperado: git version 2.x.x
 
-# Verificar configuração
+# Verificar configuraï¿½ï¿½o
 git config --list | Select-String "user"
 # Deve mostrar seu nome e email
 ```
@@ -32,18 +32,18 @@ git config --list | Select-String "user"
 ```powershell
 # Verificar Node.js
 node --version
-# Esperado: v20.x.x (mínimo v18.x)
+# Esperado: v20.x.x (mï¿½nimo v18.x)
 
 # Verificar npm
 npm --version
-# Esperado: 10.x.x (mínimo 9.x)
+# Esperado: 10.x.x (mï¿½nimo 9.x)
 ```
 
 **Checklist:**
 - [ ] Node.js 20+ instalado
 - [ ] npm 10+ instalado
 
-**Se não estiver instalado:**
+**Se nï¿½o estiver instalado:**
 ```powershell
 # Baixar e instalar Node.js 20 LTS
 # https://nodejs.org/en/download/
@@ -54,18 +54,18 @@ choco install nodejs-lts
 
 ---
 
-### 3. Editor de Código (VS Code)
+### 3. Editor de Cï¿½digo (VS Code)
 
 ```powershell
-# Verificar se VS Code está instalado
+# Verificar se VS Code estï¿½ instalado
 code --version
 ```
 
 **Checklist:**
 - [ ] VS Code instalado
-- [ ] Extensões recomendadas instaladas
+- [ ] Extensï¿½es recomendadas instaladas
 
-**Extensões Recomendadas:**
+**Extensï¿½es Recomendadas:**
 ```
 1. ES7+ React/Redux/React-Native snippets
 2. TypeScript Vue Plugin (Volar)
@@ -77,18 +77,18 @@ code --version
 
 **Instalar via VS Code:**
 ```
-Ctrl+Shift+X ? Buscar extensão ? Install
+Ctrl+Shift+X ? Buscar extensï¿½o ? Install
 ```
 
 ---
 
-### 4. Validar Repositório
+### 4. Validar Repositï¿½rio
 
 ```powershell
 # Navegar para o projeto
 cd C:\temp\_ONS_PoC-PDPW
 
-# Verificar repositório
+# Verificar repositï¿½rio
 git remote -v
 # Deve mostrar: origin  https://github.com/wbulhoes/ONS_PoC-PDPW
 
@@ -98,23 +98,23 @@ git branch
 ```
 
 **Checklist:**
-- [ ] Repositório clonado em `C:\temp\_ONS_PoC-PDPW`
+- [ ] Repositï¿½rio clonado em `C:\temp\_ONS_PoC-PDPW`
 - [ ] Remote origin configurado
-- [ ] Está na branch develop
+- [ ] Estï¿½ na branch develop
 
 ---
 
 ### 5. Criar Branch de Feature
 
 ```powershell
-# Garantir que está na develop atualizada
+# Garantir que estï¿½ na develop atualizada
 git checkout develop
 git pull origin develop
 
 # Criar nova branch para frontend
 git checkout -b feature/frontend-usinas
 
-# Verificar que está na branch correta
+# Verificar que estï¿½ na branch correta
 git branch
 # Deve mostrar: * feature/frontend-usinas
 
@@ -125,7 +125,7 @@ git push -u origin feature/frontend-usinas
 **Checklist:**
 - [ ] Branch `feature/frontend-usinas` criada
 - [ ] Branch enviada para o remote
-- [ ] Git está trackando a branch
+- [ ] Git estï¿½ trackando a branch
 
 ---
 
@@ -153,7 +153,7 @@ dir
 
 ---
 
-### 7. Instalar Dependências
+### 7. Instalar Dependï¿½ncias
 
 ```powershell
 # Dentro da pasta frontend
@@ -162,7 +162,7 @@ cd C:\temp\_ONS_PoC-PDPW\frontend
 # Limpar node_modules se existir (opcional)
 # Remove-Item -Recurse -Force node_modules
 
-# Instalar dependências
+# Instalar dependï¿½ncias
 npm install
 
 # Aguardar... deve instalar ~226 packages
@@ -171,7 +171,7 @@ npm install
 **Checklist:**
 - [ ] `npm install` executado sem erros
 - [ ] Pasta `node_modules/` criada
-- [ ] Nenhum erro crítico mostrado
+- [ ] Nenhum erro crï¿½tico mostrado
 
 **Se der erro:**
 ```powershell
@@ -204,12 +204,12 @@ npm run dev
 - [ ] `npm run dev` inicia sem erros
 - [ ] Servidor roda em `http://localhost:5173`
 - [ ] Navegador abre automaticamente (ou abrir manualmente)
-- [ ] Página React carrega sem erros
+- [ ] Pï¿½gina React carrega sem erros
 
 **Testar Hot Reload:**
 ```typescript
 // Editar: src/App.tsx
-// Trocar o título
+// Trocar o tï¿½tulo
 <h1>TESTE - Hot Reload Funcionando!</h1>
 
 // Salvar arquivo (Ctrl+S)
@@ -226,21 +226,21 @@ Ctrl+C no terminal
 ### 9. Validar Backend (DEV 1 e DEV 2 devem ter iniciado)
 
 ```powershell
-# Verificar se backend está rodando
+# Verificar se backend estï¿½ rodando
 # Abrir navegador: http://localhost:5000/swagger
 
 # Deve aparecer: Swagger UI com endpoints
 ```
 
 **Checklist:**
-- [ ] Backend está rodando
-- [ ] Swagger UI acessível
+- [ ] Backend estï¿½ rodando
+- [ ] Swagger UI acessï¿½vel
 - [ ] Consegue ver endpoints (mesmo que poucos ainda)
 
-**Se backend não estiver rodando:**
+**Se backend nï¿½o estiver rodando:**
 ```powershell
 # Avisar DEV 1 ou DEV 2
-# Ou iniciar você mesmo:
+# Ou iniciar vocï¿½ mesmo:
 cd C:\temp\_ONS_PoC-PDPW\src\PDPW.API
 dotnet run
 ```
@@ -270,7 +270,7 @@ dotnet run
 
 ---
 
-## ? VALIDAÇÃO FINAL
+## ? VALIDAï¿½ï¿½O FINAL
 
 ### Checklist Completo
 
@@ -278,22 +278,22 @@ dotnet run
 - [ ] ? Node.js 20+ instalado
 - [ ] ? npm 10+ instalado
 - [ ] ? VS Code instalado e configurado
-- [ ] ? Extensões recomendadas instaladas
-- [ ] ? Repositório clonado
+- [ ] ? Extensï¿½es recomendadas instaladas
+- [ ] ? Repositï¿½rio clonado
 - [ ] ? Branch `feature/frontend-usinas` criada e pushed
 - [ ] ? `npm install` executado com sucesso
 - [ ] ? `npm run dev` funciona
 - [ ] ? Hot reload testado e funcionando
-- [ ] ? Backend acessível (Swagger)
+- [ ] ? Backend acessï¿½vel (Swagger)
 - [ ] ? VS Code workspace configurado
 
 ---
 
-## ?? PRÓXIMO PASSO
+## ?? PRï¿½XIMO PASSO
 
-**Se todos os itens acima estão ?:**
+**Se todos os itens acima estï¿½o ?:**
 
-? **Partir para PARTE 2: Análise da Tela Legada**
+? **Partir para PARTE 2: Anï¿½lise da Tela Legada**
 
 ---
 
@@ -302,14 +302,14 @@ dotnet run
 ### Erro: "npm install" falha
 
 ```powershell
-# Solução 1: Limpar cache
+# Soluï¿½ï¿½o 1: Limpar cache
 npm cache clean --force
 npm install
 
-# Solução 2: Usar npm ci (se package-lock.json existe)
+# Soluï¿½ï¿½o 2: Usar npm ci (se package-lock.json existe)
 npm ci
 
-# Solução 3: Deletar tudo e reinstalar
+# Soluï¿½ï¿½o 3: Deletar tudo e reinstalar
 Remove-Item -Recurse -Force node_modules
 Remove-Item -Force package-lock.json
 npm install
@@ -321,7 +321,7 @@ npm install
 # Ver erros detalhados
 npm run dev --verbose
 
-# Verificar se porta 5173 está em uso
+# Verificar se porta 5173 estï¿½ em uso
 netstat -ano | findstr :5173
 
 # Se estiver em uso, matar processo
@@ -331,28 +331,28 @@ taskkill /PID <numero> /F
 npm run dev -- --port 3000
 ```
 
-### Erro: Git não reconhece comandos
+### Erro: Git nï¿½o reconhece comandos
 
 ```powershell
-# Verificar se Git está no PATH
+# Verificar se Git estï¿½ no PATH
 $env:Path -split ';' | Select-String "Git"
 
-# Se não estiver, adicionar:
-# Painel de Controle ? Sistema ? Variáveis de Ambiente
+# Se nï¿½o estiver, adicionar:
+# Painel de Controle ? Sistema ? Variï¿½veis de Ambiente
 # Adicionar: C:\Program Files\Git\cmd
 ```
 
-### Erro: Backend não está acessível
+### Erro: Backend nï¿½o estï¿½ acessï¿½vel
 
 ```powershell
-# Verificar se backend está rodando
+# Verificar se backend estï¿½ rodando
 # Perguntar para DEV 1 ou DEV 2
 
-# Ou iniciar você mesmo:
+# Ou iniciar vocï¿½ mesmo:
 cd C:\temp\_ONS_PoC-PDPW\src\PDPW.API
 dotnet run
 
-# Aguardar até ver:
+# Aguardar atï¿½ ver:
 # "Now listening on: http://localhost:5000"
 ```
 
@@ -360,7 +360,7 @@ dotnet run
 
 **Checklist criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Tempo estimado:** 45 minutos
 
-**Após completar este checklist, você está pronto para começar o desenvolvimento! ??**
+**Apï¿½s completar este checklist, vocï¿½ estï¿½ pronto para comeï¿½ar o desenvolvimento! ??**

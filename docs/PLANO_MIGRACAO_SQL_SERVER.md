@@ -1,28 +1,28 @@
-# ??? PLANO DE MIGRAÇÃO - BASE SQL SERVER COM DADOS REAIS
+ï»¿# ??? PLANO DE MIGRAï¿½ï¿½O - BASE SQL SERVER COM DADOS REAIS
 
 ## ?? **OBJETIVO**
 
-Criar um banco de dados SQL Server com **~150 registros reais** extraídos do backup do cliente, mantendo relacionamentos e integridade referencial para testes robustos via Swagger.
+Criar um banco de dados SQL Server com **~150 registros reais** extraï¿½dos do backup do cliente, mantendo relacionamentos e integridade referencial para testes robustos via Swagger.
 
 ---
 
-## ?? **SITUAÇÃO ATUAL**
+## ?? **SITUAï¿½ï¿½O ATUAL**
 
 ### ? **O que temos:**
 - ? Backup do cliente: `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak` (43.2 GB)
-- ? Código legado VB.NET: `C:\temp\_ONS_PoC-PDPW_V2\legado`
+- ? Cï¿½digo legado VB.NET: `C:\temp\_ONS_PoC-PDPW_V2\legado`
 - ? POC .NET 8 funcionando com **InMemory** (69 registros)
 - ? Migrations EF Core criadas
 - ? Docker Compose configurado
 
-### ?? **Limitações:**
-- ? Backup completo requer 350 GB (não temos espaço)
+### ?? **Limitaï¿½ï¿½es:**
+- ? Backup completo requer 350 GB (nï¿½o temos espaï¿½o)
 - ? InMemory perde dados ao reiniciar
-- ? InMemory não simula comportamento real de SQL Server
+- ? InMemory nï¿½o simula comportamento real de SQL Server
 
 ---
 
-## ?? **ESTRATÉGIA RECOMENDADA: EXTRAÇÃO SELETIVA**
+## ?? **ESTRATï¿½GIA RECOMENDADA: EXTRAï¿½ï¿½O SELETIVA**
 
 ### **Abordagem em 3 Fases:**
 
@@ -34,19 +34,19 @@ FASE 2: Extrair ~150 registros do backup (seletivo)
 FASE 3: Popular banco SQL Server da POC
 ```
 
-**Espaço necessário:** ~10-15 GB (viável!)
+**Espaï¿½o necessï¿½rio:** ~10-15 GB (viï¿½vel!)
 
 ---
 
 ## ?? **FASE 1: CRIAR BANCO SQL SERVER VAZIO**
 
-### **Opção A: Usar docker-compose.full.yml (Recomendado)**
+### **Opï¿½ï¿½o A: Usar docker-compose.full.yml (Recomendado)**
 
 **Vantagens:**
-- ? Já configurado
+- ? Jï¿½ configurado
 - ? Isolado em container
-- ? Fácil de resetar
-- ? Persistência em volumes Docker
+- ? Fï¿½cil de resetar
+- ? Persistï¿½ncia em volumes Docker
 
 **Como fazer:**
 ```powershell
@@ -67,7 +67,7 @@ dotnet ef database update
 docker exec pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "SELECT name FROM sys.databases"
 ```
 
-### **Opção B: SQL Server Express Local**
+### **Opï¿½ï¿½o B: SQL Server Express Local**
 
 **Vantagens:**
 - ? Mais performance
@@ -93,48 +93,48 @@ dotnet ef database update
 
 ## ?? **FASE 2: EXTRAIR DADOS DO BACKUP**
 
-### **Estratégia de Extração Seletiva**
+### **Estratï¿½gia de Extraï¿½ï¿½o Seletiva**
 
-#### **Tabelas Prioritárias (150 registros):**
+#### **Tabelas Prioritï¿½rias (150 registros):**
 
-| Tabela | Qtd Registros | Critério de Seleção |
+| Tabela | Qtd Registros | Critï¿½rio de Seleï¿½ï¿½o |
 |--------|---------------|---------------------|
 | **Empresa** | 30 | Top 30 por quantidade de usinas |
 | **TipoUsina** | 10 | Todos os tipos (UHE, UTE, EOL, UFV, PCH, etc) |
-| **Usina** | 50 | Top 50 por potência instalada |
-| **SemanaPMO** | 26 | Últimos 6 meses (26 semanas) |
+| **Usina** | 50 | Top 50 por potï¿½ncia instalada |
+| **SemanaPMO** | 26 | ï¿½ltimos 6 meses (26 semanas) |
 | **EquipePDP** | 10 | Todas as equipes ativas |
 | **UnidadeGeradora** | 20 | Top 20 UGs das maiores usinas |
-| **RestricaoUS** | 10 | Últimas 10 restrições ativas |
-| **ArquivoDadger** | 5 | Últimos 5 arquivos |
+| **RestricaoUS** | 10 | ï¿½ltimas 10 restriï¿½ï¿½es ativas |
+| **ArquivoDadger** | 5 | ï¿½ltimos 5 arquivos |
 | **TOTAL** | **~150** | Dados recentes e relevantes |
 
-### **Script de Extração:**
+### **Script de Extraï¿½ï¿½o:**
 
 Criaremos `scripts/Extract-And-Migrate-Data.ps1`:
 
 ```powershell
-# Pseudocódigo do script:
+# Pseudocï¿½digo do script:
 
-1. Criar banco temporário (PDPW_TEMP)
+1. Criar banco temporï¿½rio (PDPW_TEMP)
 2. Restaurar backup COM NORECOVERY (sem logs)
 3. Extrair dados em formato SQL INSERT
 4. Aplicar INSERTs no banco da POC
-5. Dropar banco temporário
-6. Limpar arquivos temporários
+5. Dropar banco temporï¿½rio
+6. Limpar arquivos temporï¿½rios
 ```
 
 **Vantagens:**
-- ? Não precisa restaurar backup completo
-- ? Economiza ~300 GB de espaço
-- ? Mais rápido (~10-15 min vs 30-40 min)
-- ? Dados já validados e limpos
+- ? Nï¿½o precisa restaurar backup completo
+- ? Economiza ~300 GB de espaï¿½o
+- ? Mais rï¿½pido (~10-15 min vs 30-40 min)
+- ? Dados jï¿½ validados e limpos
 
 ---
 
 ## ?? **FASE 3: POPULAR BANCO DA POC**
 
-### **Opção A: Via Script SQL (Mais Seguro)**
+### **Opï¿½ï¿½o A: Via Script SQL (Mais Seguro)**
 
 ```sql
 -- 1. Desabilitar constraints temporariamente
@@ -149,7 +149,7 @@ INSERT INTO Usinas (...) SELECT TOP 50 ... FROM PDPW_TEMP.dbo.Usinas;
 ALTER TABLE Usinas CHECK CONSTRAINT ALL;
 ```
 
-### **Opção B: Via BCP (Bulk Copy) - Mais Rápido**
+### **Opï¿½ï¿½o B: Via BCP (Bulk Copy) - Mais Rï¿½pido**
 
 ```powershell
 # Exportar de PDPW_TEMP
@@ -159,7 +159,7 @@ bcp "SELECT TOP 30 * FROM Empresas" queryout empresas.dat -S localhost -T -c
 bcp PDPW_DB.dbo.Empresas in empresas.dat -S localhost -T -c
 ```
 
-### **Opção C: Via EF Core Seeder (Mais Manutenível)**
+### **Opï¿½ï¿½o C: Via EF Core Seeder (Mais Manutenï¿½vel)**
 
 ```csharp
 // Criar arquivo: SqlServerDataSeeder.cs
@@ -177,12 +177,12 @@ public static class SqlServerDataSeeder
 
 ---
 
-## ??? **IMPLEMENTAÇÃO PRÁTICA**
+## ??? **IMPLEMENTAï¿½ï¿½O PRï¿½TICA**
 
 ### **Passo 1: Preparar Ambiente**
 
 ```powershell
-# Verificar espaço disponível
+# Verificar espaï¿½o disponï¿½vel
 Get-PSDrive C | Select-Object Used, Free
 
 # Verificar SQL Server rodando
@@ -190,11 +190,11 @@ docker ps
 # ou
 Get-Service MSSQL*
 
-# Criar diretório para scripts
+# Criar diretï¿½rio para scripts
 mkdir C:\temp\_ONS_PoC-PDPW_V2\scripts\migration
 ```
 
-### **Passo 2: Criar Script de Extração**
+### **Passo 2: Criar Script de Extraï¿½ï¿½o**
 
 Arquivo: `scripts/migration/Extract-Legacy-Data.ps1`
 
@@ -207,17 +207,17 @@ param(
     [int]$SemanasPMO = 26
 )
 
-# 1. Criar banco temporário
+# 1. Criar banco temporï¿½rio
 # 2. Restaurar apenas estrutura
 # 3. Extrair dados
 # 4. Gerar scripts SQL
 # 5. Limpar
 ```
 
-### **Passo 3: Executar Migração**
+### **Passo 3: Executar Migraï¿½ï¿½o**
 
 ```powershell
-# 1. Executar extração
+# 1. Executar extraï¿½ï¿½o
 .\scripts\migration\Extract-Legacy-Data.ps1
 
 # 2. Aplicar dados no banco da POC
@@ -251,17 +251,17 @@ EquipePDP (10)
 Usuarios (vinculados)
 ```
 
-### **Validações Necessárias:**
+### **Validaï¿½ï¿½es Necessï¿½rias:**
 
-- ? Foreign Keys válidas
-- ? Dados não duplicados
+- ? Foreign Keys vï¿½lidas
+- ? Dados nï¿½o duplicados
 - ? Datas consistentes
-- ? CNPJs válidos
-- ? Potências > 0
+- ? CNPJs vï¿½lidos
+- ? Potï¿½ncias > 0
 
 ---
 
-## ?? **CONFIGURAÇÃO DO DOCKER COMPOSE**
+## ?? **CONFIGURAï¿½ï¿½O DO DOCKER COMPOSE**
 
 ### **Atualizar docker-compose.full.yml:**
 
@@ -277,7 +277,7 @@ services:
       - "5001:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - UseInMemoryDatabase=false  # ? MUDANÇA AQUI
+      - UseInMemoryDatabase=false  # ? MUDANï¿½A AQUI
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=true;
     depends_on:
       - sqlserver
@@ -306,59 +306,59 @@ networks:
 
 ---
 
-## ? **CHECKLIST DE IMPLEMENTAÇÃO**
+## ? **CHECKLIST DE IMPLEMENTAï¿½ï¿½O**
 
-### **Preparação:**
-- [ ] Verificar espaço em disco (mínimo 15 GB livre)
+### **Preparaï¿½ï¿½o:**
+- [ ] Verificar espaï¿½o em disco (mï¿½nimo 15 GB livre)
 - [ ] SQL Server instalado ou Docker configurado
-- [ ] Backup do cliente acessível
+- [ ] Backup do cliente acessï¿½vel
 - [ ] Migrations EF Core aplicadas
 
-### **Extração:**
-- [ ] Script de extração criado
-- [ ] Backup temporário restaurado
-- [ ] Dados extraídos com sucesso
+### **Extraï¿½ï¿½o:**
+- [ ] Script de extraï¿½ï¿½o criado
+- [ ] Backup temporï¿½rio restaurado
+- [ ] Dados extraï¿½dos com sucesso
 - [ ] Scripts SQL gerados
 
-### **Migração:**
+### **Migraï¿½ï¿½o:**
 - [ ] Banco PDPW_DB criado
 - [ ] Dados inseridos respeitando FKs
 - [ ] Constraints validadas
-- [ ] Índices criados
+- [ ] ï¿½ndices criados
 
-### **Validação:**
+### **Validaï¿½ï¿½o:**
 - [ ] Contagem de registros correta (~150)
 - [ ] Relacionamentos funcionando
 - [ ] APIs retornando dados
 - [ ] Swagger testado
 
-### **Documentação:**
-- [ ] Guia de restauração criado
+### **Documentaï¿½ï¿½o:**
+- [ ] Guia de restauraï¿½ï¿½o criado
 - [ ] Troubleshooting documentado
 - [ ] Dados catalogados
 
 ---
 
-## ?? **PRÓXIMOS PASSOS**
+## ?? **PRï¿½XIMOS PASSOS**
 
-### **Decisão Necessária:**
+### **Decisï¿½o Necessï¿½ria:**
 
 **Qual abordagem preferir:**
 
-**A) ?? Extração Automática (Recomendado)**
+**A) ?? Extraï¿½ï¿½o Automï¿½tica (Recomendado)**
 - Criar script PowerShell completo
-- Execução única (~15 min)
-- 150 registros extraídos automaticamente
+- Execuï¿½ï¿½o ï¿½nica (~15 min)
+- 150 registros extraï¿½dos automaticamente
 
-**B) ??? Extração Manual Guiada**
-- Criar queries SQL específicas
+**B) ??? Extraï¿½ï¿½o Manual Guiada**
+- Criar queries SQL especï¿½ficas
 - Executar passo a passo
 - Mais controle sobre dados
 
 **C) ?? Usar SQL Server em Docker**
 - Mais isolado
-- Fácil de resetar
-- Configuração via docker-compose
+- Fï¿½cil de resetar
+- Configuraï¿½ï¿½o via docker-compose
 
 **D) ?? Usar SQL Server Express Local**
 - Mais performance
@@ -367,42 +367,42 @@ networks:
 
 ---
 
-## ?? **RECOMENDAÇÃO FINAL**
+## ?? **RECOMENDAï¿½ï¿½O FINAL**
 
-### **Estratégia Híbrida: C + A**
+### **Estratï¿½gia Hï¿½brida: C + A**
 
 1. ? **Usar SQL Server em Docker** (docker-compose.full.yml)
-2. ? **Criar script de extração automática**
+2. ? **Criar script de extraï¿½ï¿½o automï¿½tica**
 3. ? **Popular dados incrementalmente**
 4. ? **Manter seed data como fallback**
 
 **Vantagens:**
 - Isolamento completo
-- Fácil de resetar
+- Fï¿½cil de resetar
 - Automatizado
-- Reproduzível
+- Reproduzï¿½vel
 
-**Tempo estimado:** 30-45 minutos de implementação
+**Tempo estimado:** 30-45 minutos de implementaï¿½ï¿½o
 
 ---
 
-## ?? **AÇÃO IMEDIATA**
+## ?? **Aï¿½ï¿½O IMEDIATA**
 
 **Gostaria que eu:**
 
-1?? **Crie o script de extração completo?**
+1?? **Crie o script de extraï¿½ï¿½o completo?**
 2?? **Configure docker-compose.full.yml com SQL Server?**
 3?? **Atualize migrations para usar SQL Server?**
-4?? **Todas as opções acima?** ? **Recomendado**
+4?? **Todas as opï¿½ï¿½es acima?** ? **Recomendado**
 
 ---
 
-**Aguardando sua decisão para prosseguir...** ??
+**Aguardando sua decisï¿½o para prosseguir...** ??
 
 ---
 
 **Data:** 20/12/2024  
-**Status:** Aguardando Aprovação  
-**Espaço Necessário:** ~15 GB  
+**Status:** Aguardando Aprovaï¿½ï¿½o  
+**Espaï¿½o Necessï¿½rio:** ~15 GB  
 **Tempo Estimado:** 30-45 minutos
 

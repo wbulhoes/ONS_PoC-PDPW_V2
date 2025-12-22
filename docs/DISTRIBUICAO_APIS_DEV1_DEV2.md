@@ -1,21 +1,21 @@
-# ?? DISTRIBUIÇÃO DE APIs - DEV 1 e DEV 2
+ï»¿# ?? DISTRIBUIï¿½ï¿½O DE APIs - DEV 1 e DEV 2
 
 **Data:** 19/12/2024  
 **Total de APIs:** 29  
 **DEV 1 (Backend Senior):** 14 APIs  
 **DEV 2 (Backend Pleno):** 15 APIs  
-**Critério:** Complexidade balanceada
+**Critï¿½rio:** Complexidade balanceada
 
 ---
 
-## ?? RESUMO DA DISTRIBUIÇÃO
+## ?? RESUMO DA DISTRIBUIï¿½ï¿½O
 
 ```
 ??????????????????????????????????????????????
 ? DEV 1 (Backend Senior)                     ?
 ? 14 APIs - Mais complexas                   ?
 ??????????????????????????????????????????????
-? Gestão de Ativos:        5 APIs            ?
+? Gestï¿½o de Ativos:        5 APIs            ?
 ? Core System:             4 APIs            ?
 ? Consolidados:            3 APIs            ?
 ? Documentos:              2 APIs            ?
@@ -26,8 +26,8 @@
 ? 15 APIs - Balanceadas                      ?
 ??????????????????????????????????????????????
 ? Dados e Arquivos:        6 APIs            ?
-? Restrições e Operação:   5 APIs            ?
-? Configurações:           4 APIs            ?
+? Restriï¿½ï¿½es e Operaï¿½ï¿½o:   5 APIs            ?
+? Configuraï¿½ï¿½es:           4 APIs            ?
 ??????????????????????????????????????????????
 ```
 
@@ -35,11 +35,11 @@
 
 ## ????? DEV 1 (BACKEND SENIOR) - 14 APIs
 
-### ?? CATEGORIA 1: GESTÃO DE ATIVOS (5 APIs)
+### ?? CATEGORIA 1: GESTï¿½O DE ATIVOS (5 APIs)
 
 #### 1. API USINA ?? COMPLEXA
 **Branch:** `feature/gestao-ativos`  
-**Prioridade:** ?? CRÍTICA (dia 1)  
+**Prioridade:** ?? CRï¿½TICA (dia 1)  
 **Tempo estimado:** 3h
 
 **Entidade:**
@@ -70,11 +70,11 @@ public class Usina : BaseEntity
 - PUT /api/usinas/{id}
 - DELETE /api/usinas/{id}
 
-**Seed Data:** 10 usinas (3 hidro, 3 térmicas, 2 eólicas, 2 solares)
+**Seed Data:** 10 usinas (3 hidro, 3 tï¿½rmicas, 2 eï¿½licas, 2 solares)
 
 ---
 
-#### 2. API EMPRESA ?? MÉDIA
+#### 2. API EMPRESA ?? Mï¿½DIA
 **Prioridade:** ?? ALTA (dia 1)  
 **Tempo estimado:** 2h
 
@@ -105,16 +105,16 @@ public class Empresa : BaseEntity
 ---
 
 #### 3. API TIPO USINA ?? SIMPLES
-**Prioridade:** ?? MÉDIA (dia 1)  
+**Prioridade:** ?? Mï¿½DIA (dia 1)  
 **Tempo estimado:** 1.5h
 
 **Entidade:**
 ```csharp
 public class TipoUsina : BaseEntity
 {
-    public string Nome { get; set; } = string.Empty; // Hidrelétrica, Térmica, Eólica, Solar
+    public string Nome { get; set; } = string.Empty; // Hidrelï¿½trica, Tï¿½rmica, Eï¿½lica, Solar
     public string? Descricao { get; set; }
-    public string? FonteEnergia { get; set; } // Água, Gás, Vento, Solar
+    public string? FonteEnergia { get; set; } // ï¿½gua, Gï¿½s, Vento, Solar
     
     // Relacionamentos
     public ICollection<Usina>? Usinas { get; set; }
@@ -127,11 +127,11 @@ public class TipoUsina : BaseEntity
 - POST /api/tiposusina
 - PUT /api/tiposusina/{id}
 
-**Seed Data:** 5 tipos (Hidrelétrica, Térmica, Eólica, Solar, Nuclear)
+**Seed Data:** 5 tipos (Hidrelï¿½trica, Tï¿½rmica, Eï¿½lica, Solar, Nuclear)
 
 ---
 
-#### 4. API SEMANA PMO ?? MÉDIA
+#### 4. API SEMANA PMO ?? Mï¿½DIA
 **Prioridade:** ?? ALTA (dia 2)  
 **Tempo estimado:** 2.5h
 
@@ -139,7 +139,7 @@ public class TipoUsina : BaseEntity
 ```csharp
 public class SemanaPMO : BaseEntity
 {
-    public int Numero { get; set; } // Número da semana PMO
+    public int Numero { get; set; } // Nï¿½mero da semana PMO
     public DateTime DataInicio { get; set; }
     public DateTime DataFim { get; set; }
     public int Ano { get; set; }
@@ -158,12 +158,12 @@ public class SemanaPMO : BaseEntity
 - POST /api/semanaspmo
 - PUT /api/semanaspmo/{id}
 
-**Seed Data:** 20 semanas (ano atual + próximo)
+**Seed Data:** 20 semanas (ano atual + prï¿½ximo)
 
 ---
 
-#### 5. API EQUIPE PDP ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 2)  
+#### 5. API EQUIPE PDP ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 2)  
 **Tempo estimado:** 2h
 
 **Entidade:**
@@ -195,7 +195,7 @@ public class EquipePDP : BaseEntity
 ### ?? CATEGORIA 2: DADOS CORE (4 APIs)
 
 #### 6. API ARQUIVO DADGER ?? MUITO COMPLEXA
-**Prioridade:** ?? CRÍTICA (dia 2)  
+**Prioridade:** ?? CRï¿½TICA (dia 2)  
 **Tempo estimado:** 4h
 
 **Entidade:**
@@ -231,7 +231,7 @@ public class ArquivoDadger : BaseEntity
 ---
 
 #### 7. API ARQUIVO DADGER VALOR ?? MUITO COMPLEXA
-**Prioridade:** ?? CRÍTICA (dia 3)  
+**Prioridade:** ?? CRï¿½TICA (dia 3)  
 **Tempo estimado:** 4h
 
 **Entidade:**
@@ -261,8 +261,8 @@ public class ArquivoDadgerValor : BaseEntity
 
 ---
 
-#### 8. API CARGA ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 3)  
+#### 8. API CARGA ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 3)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -286,12 +286,12 @@ public class Carga : BaseEntity
 - POST /api/cargas
 - PUT /api/cargas/{id}
 
-**Seed Data:** 30 registros (últimos 30 dias)
+**Seed Data:** 30 registros (ï¿½ltimos 30 dias)
 
 ---
 
-#### 9. API USUARIO ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 4)  
+#### 9. API USUARIO ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 4)  
 **Tempo estimado:** 2h
 
 **Entidade:**
@@ -315,7 +315,7 @@ public class Usuario : BaseEntity
 - PUT /api/usuarios/{id}
 - DELETE /api/usuarios/{id}
 
-**Seed Data:** 15 usuários exemplo
+**Seed Data:** 15 usuï¿½rios exemplo
 
 ---
 
@@ -353,7 +353,7 @@ public class DCA : BaseEntity
 
 ---
 
-#### 11. API DCR (Dados Consolidados Revisão) ?? COMPLEXA
+#### 11. API DCR (Dados Consolidados Revisï¿½o) ?? COMPLEXA
 **Prioridade:** ?? ALTA (dia 4)  
 **Tempo estimado:** 3.5h
 
@@ -387,7 +387,7 @@ public class DCR : BaseEntity
 ---
 
 #### 12. API RESPONSAVEL ?? SIMPLES
-**Prioridade:** ?? MÉDIA (dia 4)  
+**Prioridade:** ?? Mï¿½DIA (dia 4)  
 **Tempo estimado:** 1.5h
 
 **Entidade:**
@@ -409,14 +409,14 @@ public class Responsavel : BaseEntity
 - PUT /api/responsaveis/{id}
 - DELETE /api/responsaveis/{id}
 
-**Seed Data:** 10 responsáveis
+**Seed Data:** 10 responsï¿½veis
 
 ---
 
 ### ?? CATEGORIA 4: DOCUMENTOS (2 APIs)
 
-#### 13. API UPLOAD ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 5)  
+#### 13. API UPLOAD ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 5)  
 **Tempo estimado:** 3h
 
 **Entidade:**
@@ -445,8 +445,8 @@ public class Upload : BaseEntity
 
 ---
 
-#### 14. API RELATORIO ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 5)  
+#### 14. API RELATORIO ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 5)  
 **Tempo estimado:** 3h
 
 **Entidade:**
@@ -471,7 +471,7 @@ public class Relatorio : BaseEntity
 - DELETE /api/relatorios/{id}
 - GET /api/relatorios/tipos
 
-**Seed Data:** 5 relatórios exemplo
+**Seed Data:** 5 relatï¿½rios exemplo
 
 ---
 
@@ -483,27 +483,27 @@ public class Relatorio : BaseEntity
 ????????????????????????????????????????????????????
 ? DIA 1 (3 APIs):                                  ?
 ?  1. Usina (3h)           ?? COMPLEXA             ?
-?  2. Empresa (2h)         ?? MÉDIA                ?
+?  2. Empresa (2h)         ?? Mï¿½DIA                ?
 ?  3. TipoUsina (1.5h)     ?? SIMPLES              ?
 ?                                                  ?
 ? DIA 2 (3 APIs):                                  ?
-?  4. SemanaPMO (2.5h)     ?? MÉDIA                ?
-?  5. EquipePDP (2h)       ?? MÉDIA                ?
+?  4. SemanaPMO (2.5h)     ?? Mï¿½DIA                ?
+?  5. EquipePDP (2h)       ?? Mï¿½DIA                ?
 ?  6. ArquivoDadger (4h)   ?? MUITO COMPLEXA       ?
 ?                                                  ?
 ? DIA 3 (2 APIs):                                  ?
 ?  7. ArquivoDadgerValor (4h) ?? MUITO COMPLEXA    ?
-?  8. Carga (2.5h)         ?? MÉDIA                ?
+?  8. Carga (2.5h)         ?? Mï¿½DIA                ?
 ?                                                  ?
 ? DIA 4 (4 APIs):                                  ?
-?  9. Usuario (2h)         ?? MÉDIA                ?
+?  9. Usuario (2h)         ?? Mï¿½DIA                ?
 ? 10. DCA (3.5h)           ?? COMPLEXA             ?
 ? 11. DCR (3.5h)           ?? COMPLEXA             ?
 ? 12. Responsavel (1.5h)   ?? SIMPLES              ?
 ?                                                  ?
 ? DIA 5 (2 APIs):                                  ?
-? 13. Upload (3h)          ?? MÉDIA                ?
-? 14. Relatorio (3h)       ?? MÉDIA                ?
+? 13. Upload (3h)          ?? Mï¿½DIA                ?
+? 14. Relatorio (3h)       ?? Mï¿½DIA                ?
 ????????????????????????????????????????????????????
 ? TOTAL: 14 APIs | ~80 endpoints                   ?
 ????????????????????????????????????????????????????
@@ -513,11 +513,11 @@ public class Relatorio : BaseEntity
 
 ## ????? DEV 2 (BACKEND PLENO) - 15 APIs
 
-### ?? CATEGORIA 1: UNIDADES E GERAÇÃO (6 APIs)
+### ?? CATEGORIA 1: UNIDADES E GERAï¿½ï¿½O (6 APIs)
 
 #### 15. API UNIDADE GERADORA ?? COMPLEXA
 **Branch:** `feature/arquivos-dados`  
-**Prioridade:** ?? CRÍTICA (dia 1)  
+**Prioridade:** ?? CRï¿½TICA (dia 1)  
 **Tempo estimado:** 3h
 
 **Entidade:**
@@ -552,7 +552,7 @@ public class UnidadeGeradora : BaseEntity
 
 ---
 
-#### 16. API PARADA UG ?? MÉDIA
+#### 16. API PARADA UG ?? Mï¿½DIA
 **Prioridade:** ?? ALTA (dia 1)  
 **Tempo estimado:** 2.5h
 
@@ -582,7 +582,7 @@ public class ParadaUG : BaseEntity
 
 ---
 
-#### 17. API RESTRIÇÃO UG ?? MÉDIA
+#### 17. API RESTRIï¿½ï¿½O UG ?? Mï¿½DIA
 **Prioridade:** ?? ALTA (dia 2)  
 **Tempo estimado:** 2.5h
 
@@ -609,11 +609,11 @@ public class RestricaoUG : BaseEntity
 - POST /api/restricoesug
 - PUT /api/restricoesug/{id}
 
-**Seed Data:** 8 restrições
+**Seed Data:** 8 restriï¿½ï¿½es
 
 ---
 
-#### 18. API RESTRIÇÃO US ?? MÉDIA
+#### 18. API RESTRIï¿½ï¿½O US ?? Mï¿½DIA
 **Prioridade:** ?? ALTA (dia 2)  
 **Tempo estimado:** 2.5h
 
@@ -640,12 +640,12 @@ public class RestricaoUS : BaseEntity
 - POST /api/restricoesus
 - PUT /api/restricoesus/{id}
 
-**Seed Data:** 6 restrições
+**Seed Data:** 6 restriï¿½ï¿½es
 
 ---
 
-#### 19. API MOTIVO RESTRIÇÃO ?? SIMPLES
-**Prioridade:** ?? MÉDIA (dia 2)  
+#### 19. API MOTIVO RESTRIï¿½ï¿½O ?? SIMPLES
+**Prioridade:** ?? Mï¿½DIA (dia 2)  
 **Tempo estimado:** 1.5h
 
 **Entidade:**
@@ -654,7 +654,7 @@ public class MotivoRestricao : BaseEntity
 {
     public string Nome { get; set; } = string.Empty;
     public string? Descricao { get; set; }
-    public string? Categoria { get; set; } // Técnico, Ambiental, Operacional
+    public string? Categoria { get; set; } // Tï¿½cnico, Ambiental, Operacional
 }
 ```
 
@@ -668,8 +668,8 @@ public class MotivoRestricao : BaseEntity
 
 ---
 
-#### 20. API GERAÇÃO FORA MÉRITO ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 3)  
+#### 20. API GERAï¿½ï¿½O FORA Mï¿½RITO ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 3)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -697,10 +697,10 @@ public class GerForaMerito : BaseEntity
 
 ---
 
-### ?? CATEGORIA 2: OPERAÇÃO (5 APIs)
+### ?? CATEGORIA 2: OPERAï¿½ï¿½O (5 APIs)
 
-#### 21. API INTERCÂMBIO ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 2-3)  
+#### 21. API INTERCï¿½MBIO ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 2-3)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -727,8 +727,8 @@ public class Intercambio : BaseEntity
 
 ---
 
-#### 22. API BALANÇO ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 3)  
+#### 22. API BALANï¿½O ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 3)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -758,8 +758,8 @@ public class Balanco : BaseEntity
 
 ---
 
-#### 23. API OBSERVAÇÃO ?? SIMPLES
-**Prioridade:** ?? MÉDIA (dia 4)  
+#### 23. API OBSERVAï¿½ï¿½O ?? SIMPLES
+**Prioridade:** ?? Mï¿½DIA (dia 4)  
 **Tempo estimado:** 1.5h
 
 **Entidade:**
@@ -781,12 +781,12 @@ public class Observacao : BaseEntity
 - POST /api/observacoes
 - PUT /api/observacoes/{id}
 
-**Seed Data:** 10 observações
+**Seed Data:** 10 observaï¿½ï¿½es
 
 ---
 
-#### 24. API DIRETÓRIO ?? SIMPLES
-**Prioridade:** ?? MÉDIA (dia 4)  
+#### 24. API DIRETï¿½RIO ?? SIMPLES
+**Prioridade:** ?? Mï¿½DIA (dia 4)  
 **Tempo estimado:** 2h
 
 **Entidade:**
@@ -813,12 +813,12 @@ public class Diretorio : BaseEntity
 - PUT /api/diretorios/{id}
 - DELETE /api/diretorios/{id}
 
-**Seed Data:** 8 diretórios
+**Seed Data:** 8 diretï¿½rios
 
 ---
 
-#### 25. API ARQUIVO ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 4-5)  
+#### 25. API ARQUIVO ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 4-5)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -848,10 +848,10 @@ public class Arquivo : BaseEntity
 
 ---
 
-### ?? CATEGORIA 3: CONFIGURAÇÕES TÉRMICAS (4 APIs)
+### ?? CATEGORIA 3: CONFIGURAï¿½ï¿½ES Tï¿½RMICAS (4 APIs)
 
-#### 26. API MODALIDADE OP TÉRMICA ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 5)  
+#### 26. API MODALIDADE OP Tï¿½RMICA ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 5)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -877,8 +877,8 @@ public class ModalidadeOpTermica : BaseEntity
 
 ---
 
-#### 27. API INFLEXIBILIDADE CONTRATADA ?? MÉDIA
-**Prioridade:** ?? MÉDIA (dia 5)  
+#### 27. API INFLEXIBILIDADE CONTRATADA ?? Mï¿½DIA
+**Prioridade:** ?? Mï¿½DIA (dia 5)  
 **Tempo estimado:** 2.5h
 
 **Entidade:**
@@ -907,7 +907,7 @@ public class InflexibilidadeContratada : BaseEntity
 
 ---
 
-#### 28. API RAMPAS USINA TÉRMICA ?? MÉDIA
+#### 28. API RAMPAS USINA Tï¿½RMICA ?? Mï¿½DIA
 **Prioridade:** ?? BAIXA (dia 6)  
 **Tempo estimado:** 2h
 
@@ -931,7 +931,7 @@ public class RampasUsinaTermica : BaseEntity
 - POST /api/rampasusinatermica
 - PUT /api/rampasusinatermica/{id}
 
-**Seed Data:** 5 configurações
+**Seed Data:** 5 configuraï¿½ï¿½es
 
 ---
 
@@ -971,32 +971,32 @@ public class UsinaConversora : BaseEntity
 ????????????????????????????????????????????????????
 ? DIA 1 (2.5 APIs):                                ?
 ? 15. UnidadeGeradora (3h)    ?? COMPLEXA          ?
-? 16. ParadaUG (2.5h)         ?? MÉDIA             ?
-? 17. RestricaoUG (início)    ?? MÉDIA             ?
+? 16. ParadaUG (2.5h)         ?? Mï¿½DIA             ?
+? 17. RestricaoUG (inï¿½cio)    ?? Mï¿½DIA             ?
 ?                                                  ?
 ? DIA 2 (3.5 APIs):                                ?
-? 17. RestricaoUG (conclusão) ?? MÉDIA             ?
-? 18. RestricaoUS (2.5h)      ?? MÉDIA             ?
+? 17. RestricaoUG (conclusï¿½o) ?? Mï¿½DIA             ?
+? 18. RestricaoUS (2.5h)      ?? Mï¿½DIA             ?
 ? 19. MotivoRestricao (1.5h)  ?? SIMPLES           ?
-? 21. Intercambio (início)    ?? MÉDIA             ?
+? 21. Intercambio (inï¿½cio)    ?? Mï¿½DIA             ?
 ?                                                  ?
 ? DIA 3 (3 APIs):                                  ?
-? 21. Intercambio (conclusão) ?? MÉDIA             ?
-? 22. Balanco (2.5h)          ?? MÉDIA             ?
-? 20. GerForaMerito (2.5h)    ?? MÉDIA             ?
+? 21. Intercambio (conclusï¿½o) ?? Mï¿½DIA             ?
+? 22. Balanco (2.5h)          ?? Mï¿½DIA             ?
+? 20. GerForaMerito (2.5h)    ?? Mï¿½DIA             ?
 ?                                                  ?
 ? DIA 4 (3 APIs):                                  ?
 ? 23. Observacao (1.5h)       ?? SIMPLES           ?
 ? 24. Diretorio (2h)          ?? SIMPLES           ?
-? 25. Arquivo (2.5h)          ?? MÉDIA             ?
+? 25. Arquivo (2.5h)          ?? Mï¿½DIA             ?
 ?                                                  ?
 ? DIA 5 (3 APIs):                                  ?
-? 26. ModalidadeOpTermica (2.5h) ?? MÉDIA          ?
-? 27. InflexibilidadeContratada (2.5h) ?? MÉDIA    ?
-? 28. RampasUsinaTermica (início)                  ?
+? 26. ModalidadeOpTermica (2.5h) ?? Mï¿½DIA          ?
+? 27. InflexibilidadeContratada (2.5h) ?? Mï¿½DIA    ?
+? 28. RampasUsinaTermica (inï¿½cio)                  ?
 ?                                                  ?
 ? DIA 6 (2 APIs):                                  ?
-? 28. RampasUsinaTermica (conclusão) ?? MÉDIA      ?
+? 28. RampasUsinaTermica (conclusï¿½o) ?? Mï¿½DIA      ?
 ? 29. UsinaConversora (1.5h)  ?? SIMPLES           ?
 ????????????????????????????????????????????????????
 ? TOTAL: 15 APIs | ~85 endpoints                   ?
@@ -1005,7 +1005,7 @@ public class UsinaConversora : BaseEntity
 
 ---
 
-## ?? COMPARAÇÃO FINAL
+## ?? COMPARAï¿½ï¿½O FINAL
 
 ```
 ???????????????????????????????????????????????
@@ -1015,7 +1015,7 @@ public class UsinaConversora : BaseEntity
 ? Endpoints:    ~80          ~85              ?
 ?                                             ?
 ? Complexas:      6            1              ?
-? Médias:         6           11              ?
+? Mï¿½dias:         6           11              ?
 ? Simples:        2            3              ?
 ?                                             ?
 ? Horas:        ~40h         ~40h             ?
@@ -1023,7 +1023,7 @@ public class UsinaConversora : BaseEntity
 
 BALANCEAMENTO: ? Equilibrado
 - DEV 1: Mais APIs complexas (Senior)
-- DEV 2: Mais APIs médias (Pleno)
+- DEV 2: Mais APIs mï¿½dias (Pleno)
 - Ambos: Carga de trabalho similar
 ```
 
@@ -1036,7 +1036,7 @@ BALANCEAMENTO: ? Equilibrado
 - DEV 1: 6 APIs
 - DEV 2: 5 APIs
 
-### Checkpoint DIA 3 (21/12 - Sábado)
+### Checkpoint DIA 3 (21/12 - Sï¿½bado)
 **Meta:** 16 APIs acumuladas (55%)
 - DEV 1: 8 APIs
 - DEV 2: 8 APIs
@@ -1051,16 +1051,16 @@ BALANCEAMENTO: ? Equilibrado
 - DEV 1: 14 APIs
 - DEV 2: 13 APIs
 
-### Final DIA 6 (24/12 - Terça)
+### Final DIA 6 (24/12 - Terï¿½a)
 **Meta:** 29 APIs completas (100%) ?
 - DEV 1: 14 APIs
 - DEV 2: 15 APIs
 
 ---
 
-**Documentação criada por:** GitHub Copilot  
+**Documentaï¿½ï¿½o criada por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO E BALANCEADO
 
-**Próximo:** Criar arquivos base e começar primeira API (Usina)
+**Prï¿½ximo:** Criar arquivos base e comeï¿½ar primeira API (Usina)

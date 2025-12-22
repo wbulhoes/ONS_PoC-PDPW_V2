@@ -1,6 +1,6 @@
-# ?? GLOSSÁRIO COMPLETO - Linguagem Ubíqua PDPw
+ï»¿# ?? GLOSSï¿½RIO COMPLETO - Linguagem Ubï¿½qua PDPw
 
-**Versão:** 2.0  
+**Versï¿½o:** 2.0  
 **Data:** 20/12/2024  
 **Branch:** `feature/backend`
 
@@ -8,20 +8,20 @@
 
 ## ?? OBJETIVO
 
-Este glossário define a **linguagem ubíqua** do domínio PDPw, alinhada com a terminologia oficial do **ONS (Operador Nacional do Sistema Elétrico)** e do setor elétrico brasileiro.
+Este glossï¿½rio define a **linguagem ubï¿½qua** do domï¿½nio PDPw, alinhada com a terminologia oficial do **ONS (Operador Nacional do Sistema Elï¿½trico)** e do setor elï¿½trico brasileiro.
 
 ---
 
-## ? DOMÍNIO: SISTEMA ELÉTRICO
+## ? DOMï¿½NIO: SISTEMA ELï¿½TRICO
 
 ### **SIN (Sistema Interligado Nacional)**
-Sistema de produção e transmissão de energia elétrica do Brasil, integrado nacionalmente.
+Sistema de produï¿½ï¿½o e transmissï¿½o de energia elï¿½trica do Brasil, integrado nacionalmente.
 
-### **ONS (Operador Nacional do Sistema Elétrico)**
-Entidade responsável pela coordenação e controle da operação do SIN.
+### **ONS (Operador Nacional do Sistema Elï¿½trico)**
+Entidade responsï¿½vel pela coordenaï¿½ï¿½o e controle da operaï¿½ï¿½o do SIN.
 
-### **Subsistema Elétrico**
-Divisão regional do SIN. Principais subsistemas:
+### **Subsistema Elï¿½trico**
+Divisï¿½o regional do SIN. Principais subsistemas:
 - **SE** - Sudeste/Centro-Oeste
 - **SUL** - Sul
 - **NE** - Nordeste
@@ -29,10 +29,10 @@ Divisão regional do SIN. Principais subsistemas:
 
 ---
 
-## ?? DOMÍNIO: AGENTES E ATIVOS
+## ?? DOMï¿½NIO: AGENTES E ATIVOS
 
 ### **AgenteSetorEletrico** (antiga "Empresa")
-Pessoa jurídica autorizada a atuar no setor elétrico brasileiro.
+Pessoa jurï¿½dica autorizada a atuar no setor elï¿½trico brasileiro.
 
 **Tipos:**
 - Gerador
@@ -42,17 +42,17 @@ Pessoa jurídica autorizada a atuar no setor elétrico brasileiro.
 
 **Nomenclatura:**
 ```csharp
-// ? Antiga (genérica)
+// ? Antiga (genï¿½rica)
 public class Empresa
 
-// ? Nova (ubíqua)
+// ? Nova (ubï¿½qua)
 public class AgenteSetorEletrico
 ```
 
 ---
 
 ### **UsinaGeradora** (antiga "Usina")
-Instalação destinada à produção de energia elétrica.
+Instalaï¿½ï¿½o destinada ï¿½ produï¿½ï¿½o de energia elï¿½trica.
 
 **Nomenclatura:**
 ```csharp
@@ -63,22 +63,22 @@ public class Usina
 public class UsinaGeradora
 ```
 
-**Sinônimos aceitos:**
+**Sinï¿½nimos aceitos:**
 - Usina
 - Central Geradora
 
 ---
 
 ### **TipoUsinaGeradora** (antiga "TipoUsina")
-Classificação da usina por fonte de energia.
+Classificaï¿½ï¿½o da usina por fonte de energia.
 
 **Tipos principais:**
-- **UHE** - Usina Hidrelétrica
-- **UTE** - Usina Termelétrica
-- **EOL** - Usina Eólica
+- **UHE** - Usina Hidrelï¿½trica
+- **UTE** - Usina Termelï¿½trica
+- **EOL** - Usina Eï¿½lica
 - **UFV** - Usina Fotovoltaica (Solar)
-- **PCH** - Pequena Central Hidrelétrica
-- **CGH** - Central Geradora Hidrelétrica
+- **PCH** - Pequena Central Hidrelï¿½trica
+- **CGH** - Central Geradora Hidrelï¿½trica
 - **UNE** - Usina Nuclear
 
 **Nomenclatura:**
@@ -95,10 +95,10 @@ public class TipoUsinaGeradora
 ### **UnidadeGeradora (UG)**
 Conjunto de equipamentos (turbina + gerador) que produz energia em uma usina.
 
-**Características:**
-- Código único (ex: UTE001.01)
-- Potência nominal (MW)
-- Potência mínima (MW)
+**Caracterï¿½sticas:**
+- Cï¿½digo ï¿½nico (ex: UTE001.01)
+- Potï¿½ncia nominal (MW)
+- Potï¿½ncia mï¿½nima (MW)
 - Status operacional
 
 **Exemplo:** Usina Angra 1 possui 1 UG nuclear de 640 MW.
@@ -106,35 +106,35 @@ Conjunto de equipamentos (turbina + gerador) que produz energia em uma usina.
 ---
 
 ### **PotenciaInstalada**
-Capacidade máxima de geração de energia de uma usina ou UG, medida em **MW (megawatts)**.
+Capacidade mï¿½xima de geraï¿½ï¿½o de energia de uma usina ou UG, medida em **MW (megawatts)**.
 
 ---
 
 ### **PotenciaDisponivel**
-Capacidade real de geração no momento, considerando restrições e paradas.
+Capacidade real de geraï¿½ï¿½o no momento, considerando restriï¿½ï¿½es e paradas.
 
 ---
 
-## ?? DOMÍNIO: PROGRAMAÇÃO
+## ?? DOMï¿½NIO: PROGRAMAï¿½ï¿½O
 
-### **PDPw (Programação Diária de Produção)**
-Sistema e processo de planejamento da operação elétrica do SIN para o dia seguinte.
+### **PDPw (Programaï¿½ï¿½o Diï¿½ria de Produï¿½ï¿½o)**
+Sistema e processo de planejamento da operaï¿½ï¿½o elï¿½trica do SIN para o dia seguinte.
 
-**Nome completo:** Programação Diária da Produção de Energia Elétrica
+**Nome completo:** Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o de Energia Elï¿½trica
 
 ---
 
-### **PMO (Programa Mensal de Operação)**
-Planejamento mensal da operação do SIN, base para a programação diária.
+### **PMO (Programa Mensal de Operaï¿½ï¿½o)**
+Planejamento mensal da operaï¿½ï¿½o do SIN, base para a programaï¿½ï¿½o diï¿½ria.
 
 ---
 
 ### **SemanaProgramaMensalOperacao** (antiga "SemanaPMO")
-Semana operativa do PMO, utilizada para referenciar períodos de programação.
+Semana operativa do PMO, utilizada para referenciar perï¿½odos de programaï¿½ï¿½o.
 
 **Nomenclatura:**
 ```csharp
-// ? Antiga (sigla não explicativa)
+// ? Antiga (sigla nï¿½o explicativa)
 public class SemanaPMO
 
 // ? Nova (nome completo)
@@ -146,25 +146,25 @@ public class SemanaPMODto
 
 ---
 
-### **DESSEM (Despacho Hidrotérmico de Curto Prazo)**
-Modelo computacional de otimização da operação elétrica do SIN.
+### **DESSEM (Despacho Hidrotï¿½rmico de Curto Prazo)**
+Modelo computacional de otimizaï¿½ï¿½o da operaï¿½ï¿½o elï¿½trica do SIN.
 
 ---
 
-### **ProgramacaoEnergetica** (antiga "Programação")
-Planejamento de geração, carga e intercâmbios para determinado período.
+### **ProgramacaoEnergetica** (antiga "Programaï¿½ï¿½o")
+Planejamento de geraï¿½ï¿½o, carga e intercï¿½mbios para determinado perï¿½odo.
 
 ---
 
-## ?? DOMÍNIO: OPERAÇÃO
+## ?? DOMï¿½NIO: OPERAï¿½ï¿½O
 
 ### **GeracaoEnergetica**
-Produção de energia elétrica por uma usina ou unidade geradora, medida em **MW médio** ou **MWh**.
+Produï¿½ï¿½o de energia elï¿½trica por uma usina ou unidade geradora, medida em **MW mï¿½dio** ou **MWh**.
 
 ---
 
 ### **CargaEletrica** (antiga "Carga")
-Demanda de energia elétrica de um subsistema ou área, medida em **MW médio**.
+Demanda de energia elï¿½trica de um subsistema ou ï¿½rea, medida em **MW mï¿½dio**.
 
 **Tipos:**
 - **CargaPrevista** - Estimativa de demanda
@@ -172,7 +172,7 @@ Demanda de energia elétrica de um subsistema ou área, medida em **MW médio**.
 
 **Nomenclatura:**
 ```csharp
-// ? Antiga (genérica)
+// ? Antiga (genï¿½rica)
 public class Carga
 
 // ? Nova
@@ -182,9 +182,9 @@ public class CargaEletrica
 ---
 
 ### **IntercambioEnergetico** (antiga "Intercambio")
-Transferência de energia elétrica entre subsistemas.
+Transferï¿½ncia de energia elï¿½trica entre subsistemas.
 
-**Exemplo:** Intercâmbio SE ? SUL: 2.000 MW médios
+**Exemplo:** Intercï¿½mbio SE ? SUL: 2.000 MW mï¿½dios
 
 **Nomenclatura:**
 ```csharp
@@ -198,11 +198,11 @@ public class IntercambioEnergetico
 ---
 
 ### **BalancoEnergetico** (antiga "Balanco")
-Equilíbrio entre geração, carga e intercâmbios de um subsistema.
+Equilï¿½brio entre geraï¿½ï¿½o, carga e intercï¿½mbios de um subsistema.
 
-**Fórmula:**
+**Fï¿½rmula:**
 ```
-Geração - Carga + Intercâmbio - Perdas = Déficit/Sobra
+Geraï¿½ï¿½o - Carga + Intercï¿½mbio - Perdas = Dï¿½ficit/Sobra
 ```
 
 **Nomenclatura:**
@@ -217,14 +217,14 @@ public class BalancoEnergetico
 ---
 
 ### **DeficitEnergetico**
-Situação em que a geração disponível não atende à carga de um subsistema.
+Situaï¿½ï¿½o em que a geraï¿½ï¿½o disponï¿½vel nï¿½o atende ï¿½ carga de um subsistema.
 
 ---
 
-## ?? DOMÍNIO: RESTRIÇÕES
+## ?? DOMï¿½NIO: RESTRIï¿½ï¿½ES
 
 ### **RestricaoUnidadeGeradora** (antiga "RestricaoUG")
-Limitação operacional de uma unidade geradora.
+Limitaï¿½ï¿½o operacional de uma unidade geradora.
 
 **Nomenclatura:**
 ```csharp
@@ -238,7 +238,7 @@ public class RestricaoUnidadeGeradora
 ---
 
 ### **RestricaoUsina** (antiga "RestricaoUS")
-Limitação operacional de uma usina como um todo.
+Limitaï¿½ï¿½o operacional de uma usina como um todo.
 
 **Nomenclatura:**
 ```csharp
@@ -254,22 +254,22 @@ public class RestricaoUsina
 ---
 
 ### **MotivoRestricao**
-Motivo/categoria de uma restrição operacional.
+Motivo/categoria de uma restriï¿½ï¿½o operacional.
 
 **Exemplos:**
-- Manutenção Programada
+- Manutenï¿½ï¿½o Programada
 - Falha de Equipamento
-- Restrição Hidráulica
-- Restrição de Combustível
+- Restriï¿½ï¿½o Hidrï¿½ulica
+- Restriï¿½ï¿½o de Combustï¿½vel
 
 ---
 
 ### **ParadaUnidadeGeradora** (antiga "ParadaUG")
-Período em que uma unidade geradora está fora de operação.
+Perï¿½odo em que uma unidade geradora estï¿½ fora de operaï¿½ï¿½o.
 
 **Tipos:**
-- **Programada** - Planejada para manutenção
-- **Forçada** - Por falha/emergência
+- **Programada** - Planejada para manutenï¿½ï¿½o
+- **Forï¿½ada** - Por falha/emergï¿½ncia
 
 **Nomenclatura:**
 ```csharp
@@ -282,22 +282,22 @@ public class ParadaUnidadeGeradora
 
 ---
 
-## ?? DOMÍNIO: USINAS TÉRMICAS
+## ?? DOMï¿½NIO: USINAS Tï¿½RMICAS
 
-### **CVU (Custo Variável Unitário)**
-Custo para gerar 1 MWh de energia em uma usina térmica, incluindo combustível.
+### **CVU (Custo Variï¿½vel Unitï¿½rio)**
+Custo para gerar 1 MWh de energia em uma usina tï¿½rmica, incluindo combustï¿½vel.
 
 **Unidade:** R$/MWh
 
 ---
 
 ### **InflexibilidadeOperacional**
-Geração mínima obrigatória de uma usina térmica, independente do despacho econômico.
+Geraï¿½ï¿½o mï¿½nima obrigatï¿½ria de uma usina tï¿½rmica, independente do despacho econï¿½mico.
 
 **Tipos:**
-- **Inflexibilidade Leve** - Limite mínimo de geração
-- **Inflexibilidade Média** - Nível intermediário
-- **Inflexibilidade Pesada** - Geração máxima obrigatória
+- **Inflexibilidade Leve** - Limite mï¿½nimo de geraï¿½ï¿½o
+- **Inflexibilidade Mï¿½dia** - Nï¿½vel intermediï¿½rio
+- **Inflexibilidade Pesada** - Geraï¿½ï¿½o mï¿½xima obrigatï¿½ria
 
 ---
 
@@ -307,7 +307,7 @@ Inflexibilidade definida em contrato de suprimento.
 ---
 
 ### **GeracaoForaMerito** (antiga "GerForaMerito")
-Geração de uma usina térmica por motivos não econômicos (ex: segurança energética, restrições de rede).
+Geraï¿½ï¿½o de uma usina tï¿½rmica por motivos nï¿½o econï¿½micos (ex: seguranï¿½a energï¿½tica, restriï¿½ï¿½es de rede).
 
 **Nomenclatura:**
 ```csharp
@@ -321,7 +321,7 @@ public class GeracaoForaMerito
 ---
 
 ### **RampasOperacionais** (antiga "RampasUsinaTermica")
-Taxas de variação de geração de uma usina térmica.
+Taxas de variaï¿½ï¿½o de geraï¿½ï¿½o de uma usina tï¿½rmica.
 
 **Tipos:**
 - **RampaSubida** - MW/minuto
@@ -343,7 +343,7 @@ public class RampasUsinaTermica (aceito)
 ---
 
 ### **ModalidadeOperacaoTermica**
-Modo de operação contratado para uma usina térmica.
+Modo de operaï¿½ï¿½o contratado para uma usina tï¿½rmica.
 
 **Exemplos:**
 - Disponibilidade Total
@@ -357,44 +357,44 @@ Usina que converte energia entre formas (ex: solar + bateria).
 
 ---
 
-## ?? DOMÍNIO: ARQUIVOS E DOCUMENTOS
+## ?? DOMï¿½NIO: ARQUIVOS E DOCUMENTOS
 
 ### **ArquivoDadger** (ou **DADGER**)
-Arquivo de dados gerais do DESSEM, contém informações de usinas, restrições e previsões.
+Arquivo de dados gerais do DESSEM, contï¿½m informaï¿½ï¿½es de usinas, restriï¿½ï¿½es e previsï¿½es.
 
 **Formato:** Arquivo texto estruturado (.dat)
 
 ---
 
 ### **ArquivoDadgerValor**
-Valor específico extraído de um arquivo DADGER (ex: CVU, inflexibilidade).
+Valor especï¿½fico extraï¿½do de um arquivo DADGER (ex: CVU, inflexibilidade).
 
 ---
 
-### **DCA (Declaração de Carga Agregada)**
-Documento consolidado de previsão de carga de um agente.
+### **DCA (Declaraï¿½ï¿½o de Carga Agregada)**
+Documento consolidado de previsï¿½o de carga de um agente.
 
 ---
 
-### **DCR (Declaração de Carga Revisada)**
-Revisão de uma DCA, ajustando previsões.
+### **DCR (Declaraï¿½ï¿½o de Carga Revisada)**
+Revisï¿½o de uma DCA, ajustando previsï¿½es.
 
 ---
 
 ### **RelatorioOperacional** (antiga "Relatorio")
-Documento técnico gerado pelo sistema.
+Documento tï¿½cnico gerado pelo sistema.
 
 ---
 
 ### **UploadDocumento** (antiga "Upload")
-Arquivo enviado por usuário ao sistema.
+Arquivo enviado por usuï¿½rio ao sistema.
 
 ---
 
-## ?? DOMÍNIO: ADMINISTRATIVO
+## ?? DOMï¿½NIO: ADMINISTRATIVO
 
 ### **EquipeProgramacaoDiaria** (antiga "EquipePDP")
-Equipe responsável pela programação diária da operação.
+Equipe responsï¿½vel pela programaï¿½ï¿½o diï¿½ria da operaï¿½ï¿½o.
 
 **Nomenclatura:**
 ```csharp
@@ -422,12 +422,12 @@ Pessoa autorizada a acessar o sistema PDPw.
 ---
 
 ### **ResponsavelTecnico** (antiga "Responsavel")
-Pessoa responsável tecnicamente por declarações, documentos ou processos.
+Pessoa responsï¿½vel tecnicamente por declaraï¿½ï¿½es, documentos ou processos.
 
 ---
 
 ### **ObservacaoOperacional** (antiga "Observacao")
-Nota/comentário sobre evento operacional.
+Nota/comentï¿½rio sobre evento operacional.
 
 ---
 
@@ -436,9 +436,9 @@ Nota/comentário sobre evento operacional.
 ### **Entidades do Domain:**
 ```csharp
 // Usar nomes completos, evitar siglas obscuras
-UsinaGeradora (não "Usina")
-AgenteSetorEletrico (não "Empresa")
-SemanaProgramaMensalOperacao (não "SemanaPMO")
+UsinaGeradora (nï¿½o "Usina")
+AgenteSetorEletrico (nï¿½o "Empresa")
+SemanaProgramaMensalOperacao (nï¿½o "SemanaPMO")
 ```
 
 ### **DTOs:**
@@ -475,7 +475,7 @@ SemanasPMOController (sigla aceita)
 
 ## ?? MAPEAMENTO: ANTIGA ? NOVA NOMENCLATURA
 
-| Antiga (Genérica) | Nova (Ubíqua) | Contexto |
+| Antiga (Genï¿½rica) | Nova (Ubï¿½qua) | Contexto |
 |-------------------|---------------|----------|
 | `Usina` | `UsinaGeradora` | Entidade, Service, Repository |
 | `TipoUsina` | `TipoUsinaGeradora` | Entidade |
@@ -497,27 +497,27 @@ SemanasPMOController (sigla aceita)
 
 ---
 
-## ? CHECKLIST DE VALIDAÇÃO
+## ? CHECKLIST DE VALIDAï¿½ï¿½O
 
 Ao criar nova entidade/classe, verificar:
 
-- [ ] Nome usa terminologia do domínio (não genérica)
+- [ ] Nome usa terminologia do domï¿½nio (nï¿½o genï¿½rica)
 - [ ] Nome seria entendido por especialista ONS
-- [ ] Documentação XML explica termos técnicos
-- [ ] Propriedades usam nomes do setor elétrico
+- [ ] Documentaï¿½ï¿½o XML explica termos tï¿½cnicos
+- [ ] Propriedades usam nomes do setor elï¿½trico
 - [ ] Evita siglas obscuras (ou documenta se usar)
-- [ ] Consistente com este glossário
+- [ ] Consistente com este glossï¿½rio
 
 ---
 
-## ?? REFERÊNCIAS
+## ?? REFERï¿½NCIAS
 
-- [Glossário ONS](http://www.ons.org.br/paginas/sobre-o-ons/glossario)
+- [Glossï¿½rio ONS](http://www.ons.org.br/paginas/sobre-o-ons/glossario)
 - [Procedimentos de Rede ONS](http://www.ons.org.br/paginas/sobre-o-sin/procedimentos-de-rede)
-- [Código Legado VB.NET](../legado/pdpw_vb/pdpw/)
+- [Cï¿½digo Legado VB.NET](../legado/pdpw_vb/pdpw/)
 
 ---
 
-**Última atualização:** 20/12/2024  
-**Responsável:** Willian + GitHub Copilot  
-**Status:** ?? Em evolução contínua
+**ï¿½ltima atualizaï¿½ï¿½o:** 20/12/2024  
+**Responsï¿½vel:** Willian + GitHub Copilot  
+**Status:** ?? Em evoluï¿½ï¿½o contï¿½nua

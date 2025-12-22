@@ -1,8 +1,8 @@
-# ?? ROADMAP V2 - Backend Completo
+ï»¿# ?? ROADMAP V2 - Backend Completo
 
 **Branch:** `feature/backend`  
-**Data Início:** 20/12/2024  
-**Objetivo:** Implementar backend completo com qualidade produção
+**Data Inï¿½cio:** 20/12/2024  
+**Objetivo:** Implementar backend completo com qualidade produï¿½ï¿½o
 
 ---
 
@@ -10,41 +10,41 @@
 
 ### 1?? **Implementar 24 APIs Restantes**
 - Total de APIs no legado: 29
-- Já implementadas: 5 (Usinas, TiposUsina, Empresas, SemanasPMO, EquipesPDP)
+- Jï¿½ implementadas: 5 (Usinas, TiposUsina, Empresas, SemanasPMO, EquipesPDP)
 - **Pendentes: 24 APIs**
 
-### 2?? **Testes Unitários (xUnit)**
-- Cobertura mínima: 80%
+### 2?? **Testes Unitï¿½rios (xUnit)**
+- Cobertura mï¿½nima: 80%
 - Testes para Services
 - Testes para Repositories
 - Testes para Controllers
 
-### 3?? **Linguagem Ubíqua Completa**
+### 3?? **Linguagem Ubï¿½qua Completa**
 - Refatorar nomenclatura existente
-- Alinhar com glossário do domínio PDP
-- Atualizar toda documentação
+- Alinhar com glossï¿½rio do domï¿½nio PDP
+- Atualizar toda documentaï¿½ï¿½o
 
 ### 4?? **Result<T> Pattern**
 - Implementar classe `Result<T>`
-- Substituir exceptions por Result em operações de negócio
+- Substituir exceptions por Result em operaï¿½ï¿½es de negï¿½cio
 - Melhorar tratamento de erros
 
-### 5?? **Testes de Integração**
+### 5?? **Testes de Integraï¿½ï¿½o**
 - Testes de API end-to-end
 - Testes com banco InMemory
-- Validação de fluxos completos
+- Validaï¿½ï¿½o de fluxos completos
 
 ---
 
 ## ?? CRONOGRAMA PROPOSTO
 
-### **FASE 1: Fundação (Dias 1-2)**
-Preparar base para desenvolvimento escalável
+### **FASE 1: Fundaï¿½ï¿½o (Dias 1-2)**
+Preparar base para desenvolvimento escalï¿½vel
 
 - [ ] Implementar Result<T> pattern
-- [ ] Refatorar nomenclatura para linguagem ubíqua
+- [ ] Refatorar nomenclatura para linguagem ubï¿½qua
 - [ ] Criar estrutura de testes (xUnit + fixtures)
-- [ ] Documentar padrões de código
+- [ ] Documentar padrï¿½es de cï¿½digo
 
 **Entregas:**
 - ? `Common/Result.cs` implementado
@@ -54,10 +54,10 @@ Preparar base para desenvolvimento escalável
 
 ---
 
-### **FASE 2: APIs Críticas (Dias 3-7)**
-Implementar APIs de maior valor de negócio
+### **FASE 2: APIs Crï¿½ticas (Dias 3-7)**
+Implementar APIs de maior valor de negï¿½cio
 
-#### **Grupo A: Operação Energética (Prioridade ALTA)**
+#### **Grupo A: Operaï¿½ï¿½o Energï¿½tica (Prioridade ALTA)**
 - [ ] ArquivoDadger (5 endpoints) - SLICE 2
 - [ ] UnidadeGeradora (8 endpoints)
 - [ ] RestricaoUG (6 endpoints)
@@ -65,53 +65,53 @@ Implementar APIs de maior valor de negócio
 - [ ] GerForaMerito (6 endpoints)
 
 **Entregas:**
-- ? 5 APIs + testes unitários
+- ? 5 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
 
-#### **Grupo B: Cargas e Balanço (Prioridade ALTA)**
+#### **Grupo B: Cargas e Balanï¿½o (Prioridade ALTA)**
 - [ ] Carga (8 endpoints)
 - [ ] Intercambio (8 endpoints)
 - [ ] Balanco (8 endpoints)
 
 **Entregas:**
-- ? 3 APIs + testes unitários
+- ? 3 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
 
-#### **Grupo C: Consolidados (Prioridade MÉDIA)**
+#### **Grupo C: Consolidados (Prioridade Mï¿½DIA)**
 - [ ] DCA (8 endpoints)
 - [ ] DCR (8 endpoints)
 - [ ] Responsavel (6 endpoints)
 
 **Entregas:**
-- ? 3 APIs + testes unitários
+- ? 3 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
 
-### **FASE 3: APIs Secundárias (Dias 8-12)**
+### **FASE 3: APIs Secundï¿½rias (Dias 8-12)**
 
-#### **Grupo D: Térmicas e Contratos (Prioridade MÉDIA)**
+#### **Grupo D: Tï¿½rmicas e Contratos (Prioridade Mï¿½DIA)**
 - [ ] ModalidadeOpTermica (8 endpoints)
 - [ ] InflexibilidadeContratada (8 endpoints)
 - [ ] RampasUsinaTermica (8 endpoints)
 - [ ] UsinaConversora (8 endpoints)
 
 **Entregas:**
-- ? 4 APIs + testes unitários
+- ? 4 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
 
-#### **Grupo E: Paradas e Motivos (Prioridade MÉDIA)**
+#### **Grupo E: Paradas e Motivos (Prioridade Mï¿½DIA)**
 - [ ] ParadaUG (8 endpoints)
 - [ ] MotivoRestricao (6 endpoints)
 
 **Entregas:**
-- ? 2 APIs + testes unitários
+- ? 2 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
@@ -123,7 +123,7 @@ Implementar APIs de maior valor de negócio
 - [ ] Diretorio (8 endpoints)
 
 **Entregas:**
-- ? 4 APIs + testes unitários
+- ? 4 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
@@ -133,57 +133,57 @@ Implementar APIs de maior valor de negócio
 - [ ] Observacao (8 endpoints)
 
 **Entregas:**
-- ? 2 APIs + testes unitários
+- ? 2 APIs + testes unitï¿½rios
 - ? Cobertura > 80%
 
 ---
 
-### **FASE 4: Testes de Integração (Dias 13-14)**
-- [ ] Testes E2E para fluxos críticos
+### **FASE 4: Testes de Integraï¿½ï¿½o (Dias 13-14)**
+- [ ] Testes E2E para fluxos crï¿½ticos
 - [ ] Testes de relacionamentos entre entidades
-- [ ] Testes de validações de negócio
-- [ ] Testes de performance básicos
+- [ ] Testes de validaï¿½ï¿½es de negï¿½cio
+- [ ] Testes de performance bï¿½sicos
 
 **Entregas:**
-- ? 50+ testes de integração
-- ? Documentação de cenários de teste
+- ? 50+ testes de integraï¿½ï¿½o
+- ? Documentaï¿½ï¿½o de cenï¿½rios de teste
 
 ---
 
-### **FASE 5: Finalização (Dias 15-16)**
+### **FASE 5: Finalizaï¿½ï¿½o (Dias 15-16)**
 - [ ] Code review completo
 - [ ] Ajustes de nomenclatura final
-- [ ] Documentação completa (Swagger + README)
-- [ ] Atualização de diagramas
-- [ ] Preparação para merge
+- [ ] Documentaï¿½ï¿½o completa (Swagger + README)
+- [ ] Atualizaï¿½ï¿½o de diagramas
+- [ ] Preparaï¿½ï¿½o para merge
 
 **Entregas:**
-- ? Código revisado
-- ? Documentação atualizada
+- ? Cï¿½digo revisado
+- ? Documentaï¿½ï¿½o atualizada
 - ? Pull Request criado
 
 ---
 
-## ?? MÉTRICAS DE QUALIDADE
+## ?? Mï¿½TRICAS DE QUALIDADE
 
 ### **Objetivos:**
 - ? Cobertura de testes: > 80%
 - ? APIs implementadas: 29/29 (100%)
 - ? Endpoints totais: ~200+
 - ? 0 warnings do compilador
-- ? 0 code smells críticos
-- ? Documentação XML completa
+- ? 0 code smells crï¿½ticos
+- ? Documentaï¿½ï¿½o XML completa
 
-### **Definição de Pronto (DoD):**
+### **Definiï¿½ï¿½o de Pronto (DoD):**
 Para cada API:
-- [ ] Entidade com navegação completa
-- [ ] Repository com métodos customizados
-- [ ] Service com validações de negócio
-- [ ] Controller com documentação Swagger
+- [ ] Entidade com navegaï¿½ï¿½o completa
+- [ ] Repository com mï¿½todos customizados
+- [ ] Service com validaï¿½ï¿½es de negï¿½cio
+- [ ] Controller com documentaï¿½ï¿½o Swagger
 - [ ] DTOs (Create, Update, Response)
-- [ ] Testes unitários (>80% cobertura)
-- [ ] Testes de integração (cenários principais)
-- [ ] Seed data (se aplicável)
+- [ ] Testes unitï¿½rios (>80% cobertura)
+- [ ] Testes de integraï¿½ï¿½o (cenï¿½rios principais)
+- [ ] Seed data (se aplicï¿½vel)
 
 ---
 
@@ -216,19 +216,19 @@ tests/
 
 ---
 
-## ?? NOMENCLATURA - LINGUAGEM UBÍQUA
+## ?? NOMENCLATURA - LINGUAGEM UBï¿½QUA
 
-### **Mudanças Principais:**
+### **Mudanï¿½as Principais:**
 
-| Atual | Novo (Ubíqua) | Motivo |
+| Atual | Novo (Ubï¿½qua) | Motivo |
 |-------|---------------|--------|
-| `Usina` | `UsinaGeradora` | Termo técnico preciso do setor |
+| `Usina` | `UsinaGeradora` | Termo tï¿½cnico preciso do setor |
 | `Empresa` | `AgenteSetorEletrico` | Nomenclatura ONS oficial |
-| `TipoUsina` | `TipoUsinaGeradora` | Consistência com UsinaGeradora |
-| `EquipePDP` | `EquipeProgramacaoDiaria` | Nome completo do domínio |
+| `TipoUsina` | `TipoUsinaGeradora` | Consistï¿½ncia com UsinaGeradora |
+| `EquipePDP` | `EquipeProgramacaoDiaria` | Nome completo do domï¿½nio |
 | `SemanaPMO` | `SemanaProgramaMensalOperacao` | Clareza para novos devs |
 
-### **Padrões de Nomenclatura:**
+### **Padrï¿½es de Nomenclatura:**
 
 **Controllers:**
 ```csharp
@@ -261,7 +261,7 @@ UsinaGeradoraDto
 
 ## ?? RESULT<T> PATTERN
 
-### **Implementação:**
+### **Implementaï¿½ï¿½o:**
 
 ```csharp
 public class Result<T>
@@ -271,7 +271,7 @@ public class Result<T>
     public T? Value { get; }
     public string Error { get; }
     
-    // Métodos Success, Failure, etc
+    // Mï¿½todos Success, Failure, etc
 }
 ```
 
@@ -282,7 +282,7 @@ public class Result<T>
 public async Task<UsinaDto> CreateAsync(CreateUsinaDto dto)
 {
     if (await CodigoExisteAsync(dto.Codigo))
-        throw new InvalidOperationException("Código já existe");
+        throw new InvalidOperationException("Cï¿½digo jï¿½ existe");
     
     // ...
 }
@@ -291,7 +291,7 @@ public async Task<UsinaDto> CreateAsync(CreateUsinaDto dto)
 public async Task<Result<UsinaGeradoraDto>> CreateAsync(CreateUsinaGeradoraDto dto)
 {
     if (await CodigoExisteAsync(dto.Codigo))
-        return Result<UsinaGeradoraDto>.Failure("Código já existe");
+        return Result<UsinaGeradoraDto>.Failure("Cï¿½digo jï¿½ existe");
     
     // ...
     return Result<UsinaGeradoraDto>.Success(usinaDto);
@@ -300,11 +300,11 @@ public async Task<Result<UsinaGeradoraDto>> CreateAsync(CreateUsinaGeradoraDto d
 
 ---
 
-## ?? PRIORIZAÇÃO DAS 24 APIs
+## ?? PRIORIZAï¿½ï¿½O DAS 24 APIs
 
-### **Critérios:**
-1. **Valor de Negócio** (impacto para ONS)
-2. **Dependências Técnicas** (outras APIs precisam)
+### **Critï¿½rios:**
+1. **Valor de Negï¿½cio** (impacto para ONS)
+2. **Dependï¿½ncias Tï¿½cnicas** (outras APIs precisam)
 3. **Complexidade** (mais simples primeiro para ganhar ritmo)
 
 ### **Lista Priorizada:**
@@ -312,76 +312,76 @@ public async Task<Result<UsinaGeradoraDto>> CreateAsync(CreateUsinaGeradoraDto d
 | # | API | Prioridade | Complexidade | Estimativa |
 |---|-----|------------|--------------|------------|
 | 1 | ArquivoDadger | ??? ALTA | ALTA | 1.5 dias |
-| 2 | UnidadeGeradora | ??? ALTA | MÉDIA | 1 dia |
-| 3 | RestricaoUG | ??? ALTA | MÉDIA | 1 dia |
-| 4 | RestricaoUS | ??? ALTA | MÉDIA | 1 dia |
-| 5 | GerForaMerito | ??? ALTA | MÉDIA | 1 dia |
-| 6 | Carga | ??? ALTA | MÉDIA | 1 dia |
-| 7 | Intercambio | ??? ALTA | MÉDIA | 1 dia |
+| 2 | UnidadeGeradora | ??? ALTA | Mï¿½DIA | 1 dia |
+| 3 | RestricaoUG | ??? ALTA | Mï¿½DIA | 1 dia |
+| 4 | RestricaoUS | ??? ALTA | Mï¿½DIA | 1 dia |
+| 5 | GerForaMerito | ??? ALTA | Mï¿½DIA | 1 dia |
+| 6 | Carga | ??? ALTA | Mï¿½DIA | 1 dia |
+| 7 | Intercambio | ??? ALTA | Mï¿½DIA | 1 dia |
 | 8 | Balanco | ??? ALTA | ALTA | 1 dia |
-| 9 | DCA | ?? MÉDIA | MÉDIA | 0.5 dia |
-| 10 | DCR | ?? MÉDIA | MÉDIA | 0.5 dia |
-| 11 | Responsavel | ?? MÉDIA | BAIXA | 0.5 dia |
-| 12 | ModalidadeOpTermica | ?? MÉDIA | MÉDIA | 0.5 dia |
-| 13 | InflexibilidadeContratada | ?? MÉDIA | MÉDIA | 0.5 dia |
-| 14 | RampasUsinaTermica | ?? MÉDIA | MÉDIA | 0.5 dia |
-| 15 | UsinaConversora | ?? MÉDIA | BAIXA | 0.5 dia |
-| 16 | ParadaUG | ?? MÉDIA | BAIXA | 0.5 dia |
-| 17 | MotivoRestricao | ?? MÉDIA | BAIXA | 0.5 dia |
+| 9 | DCA | ?? Mï¿½DIA | Mï¿½DIA | 0.5 dia |
+| 10 | DCR | ?? Mï¿½DIA | Mï¿½DIA | 0.5 dia |
+| 11 | Responsavel | ?? Mï¿½DIA | BAIXA | 0.5 dia |
+| 12 | ModalidadeOpTermica | ?? Mï¿½DIA | Mï¿½DIA | 0.5 dia |
+| 13 | InflexibilidadeContratada | ?? Mï¿½DIA | Mï¿½DIA | 0.5 dia |
+| 14 | RampasUsinaTermica | ?? Mï¿½DIA | Mï¿½DIA | 0.5 dia |
+| 15 | UsinaConversora | ?? Mï¿½DIA | BAIXA | 0.5 dia |
+| 16 | ParadaUG | ?? Mï¿½DIA | BAIXA | 0.5 dia |
+| 17 | MotivoRestricao | ?? Mï¿½DIA | BAIXA | 0.5 dia |
 | 18 | Upload | ? BAIXA | BAIXA | 0.5 dia |
-| 19 | Relatorio | ? BAIXA | MÉDIA | 0.5 dia |
+| 19 | Relatorio | ? BAIXA | Mï¿½DIA | 0.5 dia |
 | 20 | Arquivo | ? BAIXA | BAIXA | 0.5 dia |
 | 21 | Diretorio | ? BAIXA | BAIXA | 0.5 dia |
-| 22 | Usuario | ? BAIXA | MÉDIA | 0.5 dia |
+| 22 | Usuario | ? BAIXA | Mï¿½DIA | 0.5 dia |
 | 23 | Observacao | ? BAIXA | BAIXA | 0.5 dia |
 | 24 | DadoEnergetico (refactor) | ? BAIXA | BAIXA | 0.5 dia |
 
-**Total Estimado:** ~20 dias úteis
+**Total Estimado:** ~20 dias ï¿½teis
 
 ---
 
 ## ?? STATUS TRACKING
 
 ### **Legenda:**
-- ? Não iniciado
+- ? Nï¿½o iniciado
 - ?? Em progresso
-- ? Concluído
+- ? Concluï¿½do
 - ?? Bloqueado
 
 ### **Progresso Atual:**
 
 | Fase | Status | Progresso |
 |------|--------|-----------|
-| Fase 1: Fundação | ? | 0% |
-| Fase 2: APIs Críticas | ? | 0% |
-| Fase 3: APIs Secundárias | ? | 0% |
-| Fase 4: Testes Integração | ? | 0% |
-| Fase 5: Finalização | ? | 0% |
+| Fase 1: Fundaï¿½ï¿½o | ? | 0% |
+| Fase 2: APIs Crï¿½ticas | ? | 0% |
+| Fase 3: APIs Secundï¿½rias | ? | 0% |
+| Fase 4: Testes Integraï¿½ï¿½o | ? | 0% |
+| Fase 5: Finalizaï¿½ï¿½o | ? | 0% |
 
 **Progresso Geral:** 0% (0/24 APIs pendentes)
 
 ---
 
-## ?? CONVENÇÕES DE COMMIT
+## ?? CONVENï¿½ï¿½ES DE COMMIT
 
 ```bash
-# Convenção: tipo(escopo): mensagem
+# Convenï¿½ï¿½o: tipo(escopo): mensagem
 
 # Exemplos:
 feat(api): adiciona API de UnidadeGeradora
-test(service): adiciona testes unitários para UsinaGeradoraService
+test(service): adiciona testes unitï¿½rios para UsinaGeradoraService
 refactor(domain): renomeia Usina para UsinaGeradora
-fix(repository): corrige filtro de busca por código
-docs(readme): atualiza documentação de APIs
+fix(repository): corrige filtro de busca por cï¿½digo
+docs(readme): atualiza documentaï¿½ï¿½o de APIs
 ```
 
 ---
 
-## ?? LINKS ÚTEIS
+## ?? LINKS ï¿½TEIS
 
-- [Código Legado VB.NET](../legado/pdpw_vb/pdpw/)
-- [Glossário do Domínio](../GLOSSARIO.md)
-- [Documentação xUnit](https://xunit.net/)
+- [Cï¿½digo Legado VB.NET](../legado/pdpw_vb/pdpw/)
+- [Glossï¿½rio do Domï¿½nio](../GLOSSARIO.md)
+- [Documentaï¿½ï¿½o xUnit](https://xunit.net/)
 - [Result Pattern Reference](https://enterprisecraftsmanship.com/posts/functional-c-handling-failures-input-errors/)
 
 ---
@@ -392,10 +392,10 @@ Antes de fazer merge para `develop`:
 
 - [ ] 29 APIs implementadas (100%)
 - [ ] Cobertura de testes > 80%
-- [ ] Nomenclatura ubíqua aplicada
+- [ ] Nomenclatura ubï¿½qua aplicada
 - [ ] Result<T> pattern implementado
-- [ ] Testes de integração funcionando
-- [ ] Documentação Swagger completa
+- [ ] Testes de integraï¿½ï¿½o funcionando
+- [ ] Documentaï¿½ï¿½o Swagger completa
 - [ ] README atualizado
 - [ ] Code review aprovado
 - [ ] CI/CD pipeline passando
@@ -404,6 +404,6 @@ Antes de fazer merge para `develop`:
 ---
 
 **Criado em:** 20/12/2024  
-**Última atualização:** 20/12/2024  
+**ï¿½ltima atualizaï¿½ï¿½o:** 20/12/2024  
 **Branch:** `feature/backend`  
-**Responsável:** Willian + GitHub Copilot
+**Responsï¿½vel:** Willian + GitHub Copilot

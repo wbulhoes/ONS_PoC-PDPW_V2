@@ -1,7 +1,7 @@
-# ?? DISTRIBUIÇÃO DE APIS - POC PDPW
+ï»¿# ?? DISTRIBUIï¿½ï¿½O DE APIS - POC PDPW
 
-**Projeto:** PoC Modernização Sistema ONS  
-**Versão:** 1.0  
+**Projeto:** PoC Modernizaï¿½ï¿½o Sistema ONS  
+**Versï¿½o:** 1.0  
 **Data:** 19/12/2024  
 **Status:** ? Em Desenvolvimento
 
@@ -13,26 +13,26 @@
 
 ```
 ???????????????????????????????????????????
-? BACKEND (80% do esforço)                ?
+? BACKEND (80% do esforï¿½o)                ?
 ?                                         ?
 ? ? 29 APIs RESTful (.NET 8)             ?
 ?    ?? 154 endpoints total               ?
 ?                                         ?
-? Responsáveis:                           ?
-? • [Willian] - 15 APIs (52%)             ?
-? • [George] - 12 APIs (41%)              ?
-? • [Pendente] - 2 APIs (7%)              ?
+? Responsï¿½veis:                           ?
+? ï¿½ [Willian] - 15 APIs (52%)             ?
+? ï¿½ [George] - 12 APIs (41%)              ?
+? ï¿½ [Pendente] - 2 APIs (7%)              ?
 ?                                         ?
 ???????????????????????????????????????????
               ? (Fornece dados)
 ???????????????????????????????????????????
-? FRONTEND (20% do esforço)               ?
+? FRONTEND (20% do esforï¿½o)               ?
 ?                                         ?
 ? ? 1 Tela React/TypeScript              ?
 ?    ?? CRUD Cadastro de Usinas           ?
 ?                                         ?
 ? Consome:                                ?
-? • API Usinas (Backend)                  ?
+? ï¿½ API Usinas (Backend)                  ?
 ?                                         ?
 ???????????????????????????????????????????
 ```
@@ -41,20 +41,20 @@
 
 ## ?? BACKEND - 29 APIS RESTFUL
 
-### Características
+### Caracterï¿½sticas
 - **Tecnologia:** .NET 8 + Entity Framework Core
-- **Padrão:** Clean Architecture
+- **Padrï¿½o:** Clean Architecture
 - **API:** RESTful com Swagger
 - **Banco:** SQL Server
 - **Total:** 29 APIs, 154 endpoints
 
 ---
 
-## ????? DISTRIBUIÇÃO POR DESENVOLVEDOR
+## ????? DISTRIBUIï¿½ï¿½O POR DESENVOLVEDOR
 
 ### **DEV 1: [Willian] - 15 APIs (52%)**
 
-#### ?? Gestão de Ativos (3 APIs)
+#### ?? Gestï¿½o de Ativos (3 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
 | 1. **Usinas** | 8 | ? Completa |
@@ -70,12 +70,12 @@
 | 7. **Cargas** | 5 | ? Pendente |
 | 8. **Uploads** | 5 | ? Pendente |
 
-#### ?? Gestão de Equipes (3 APIs)
+#### ?? Gestï¿½o de Equipes (3 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
 | 9. **Equipes PDP** | 5 | ? Pendente |
-| 10. **Usuários** | 5 | ? Pendente |
-| 11. **Responsáveis** | 5 | ? Pendente |
+| 10. **Usuï¿½rios** | 5 | ? Pendente |
+| 11. **Responsï¿½veis** | 5 | ? Pendente |
 
 **Subtotal Willian:** 15 APIs, 60 endpoints
 
@@ -83,25 +83,25 @@
 
 ### **DEV 2: [George] - 12 APIs (41%)**
 
-#### ?? Gestão de Ativos (1 API)
+#### ?? Gestï¿½o de Ativos (1 API)
 | API | Endpoints | Status |
 |-----|-----------|--------|
 | 12. **Unidades Geradoras** | 7 | ? Pendente |
 
-#### ?? Restrições e Paradas (4 APIs)
+#### ?? Restriï¿½ï¿½es e Paradas (4 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
 | 13. **Paradas UG** | 6 | ? Pendente |
-| 14. **Restrições UG** | 5 | ? Pendente |
-| 15. **Restrições US** | 5 | ? Pendente |
-| 16. **Motivos de Restrição** | 5 | ? Pendente |
+| 14. **Restriï¿½ï¿½es UG** | 5 | ? Pendente |
+| 15. **Restriï¿½ï¿½es US** | 5 | ? Pendente |
+| 16. **Motivos de Restriï¿½ï¿½o** | 5 | ? Pendente |
 
-#### ? Operação e Geração (4 APIs)
+#### ? Operaï¿½ï¿½o e Geraï¿½ï¿½o (4 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
-| 17. **Intercâmbio** | 5 | ? Pendente |
-| 18. **Balanço** | 5 | ? Pendente |
-| 19. **Geração Fora Mérito** | 5 | ? Pendente |
+| 17. **Intercï¿½mbio** | 5 | ? Pendente |
+| 18. **Balanï¿½o** | 5 | ? Pendente |
+| 19. **Geraï¿½ï¿½o Fora Mï¿½rito** | 5 | ? Pendente |
 | 20. **PDOC** | 6 | ? Pendente |
 
 #### ?? Dados Consolidados (2 APIs)
@@ -114,26 +114,26 @@
 
 ---
 
-### **[PENDENTE - Sem Responsável] - 2 APIs (7%)**
+### **[PENDENTE - Sem Responsï¿½vel] - 2 APIs (7%)**
 
-#### ?? Gestão de Ativos (2 APIs)
+#### ?? Gestï¿½o de Ativos (2 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
-| 23. **Usinas Conversoras** | 5 | ? Sem responsável |
-| 24. **Rampas Usina Térmica** | 5 | ? Sem responsável |
+| 23. **Usinas Conversoras** | 5 | ? Sem responsï¿½vel |
+| 24. **Rampas Usina Tï¿½rmica** | 5 | ? Sem responsï¿½vel |
 
-#### ?? Restrições e Paradas (2 APIs)
+#### ?? Restriï¿½ï¿½es e Paradas (2 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
-| 25. **Inflexibilidade Contratada** | 5 | ? Sem responsável |
-| 26. **Modalidade Op. Térmica** | 5 | ? Sem responsável |
+| 25. **Inflexibilidade Contratada** | 5 | ? Sem responsï¿½vel |
+| 26. **Modalidade Op. Tï¿½rmica** | 5 | ? Sem responsï¿½vel |
 
-#### ?? Documentos e Relatórios (4 APIs)
+#### ?? Documentos e Relatï¿½rios (4 APIs)
 | API | Endpoints | Status |
 |-----|-----------|--------|
-| 27. **Diretórios** | 5 | ? Sem responsável |
-| 28. **Arquivos** | 5 | ? Sem responsável |
-| 29. **Relatórios** | 5 | ? Sem responsável |
+| 27. **Diretï¿½rios** | 5 | ? Sem responsï¿½vel |
+| 28. **Arquivos** | 5 | ? Sem responsï¿½vel |
+| 29. **Relatï¿½rios** | 5 | ? Sem responsï¿½vel |
 
 **Subtotal Pendente:** 9 APIs, 33 endpoints
 
@@ -162,16 +162,16 @@ frontend/
 ?   ?       ??? UsinaForm.tsx        (Criar/Editar)
 ?   ?       ??? UsinaDetail.tsx      (Detalhes)
 ?   ??? services/
-?   ?   ??? usinaService.ts          (Integração API)
+?   ?   ??? usinaService.ts          (Integraï¿½ï¿½o API)
 ?   ??? types/
 ?   ?   ??? usina.types.ts           (TypeScript Types)
 ?   ??? components/
 ?       ??? Loading.tsx              (Componente Loading)
 ?       ??? ErrorMessage.tsx         (Tratamento erros)
-?       ??? Table.tsx                (Tabela genérica)
+?       ??? Table.tsx                (Tabela genï¿½rica)
 ```
 
-**Integração com Backend:**
+**Integraï¿½ï¿½o com Backend:**
 ```typescript
 // usinaService.ts
 const API_URL = 'http://localhost:5000/api';
@@ -187,15 +187,15 @@ export const usinaService = {
 
 ---
 
-## ?? RESUMO ESTATÍSTICO
+## ?? RESUMO ESTATï¿½STICO
 
 ### Backend
 ```
 Total de APIs:        29
 Total de Endpoints:   154
-Média por API:        5.3 endpoints
+Mï¿½dia por API:        5.3 endpoints
 
-Distribuição por Dev:
+Distribuiï¿½ï¿½o por Dev:
 ?? [Willian]: 15 APIs (52%) - 60 endpoints
 ?? [George]:  12 APIs (41%) - 61 endpoints
 ?? [Pendente]: 2 APIs (7%)  - 33 endpoints
@@ -231,7 +231,7 @@ META:   ??????????  29/29 APIs (100%)
 ### Frontend (1 Tela)
 ```
 DIA 1:  ??????????  0/1 Tela (0%)
-        ?? Não iniciado
+        ?? Nï¿½o iniciado
 
 META:   ??????????  1/1 Tela (100%)
         ?? 27/12/2024
@@ -239,7 +239,7 @@ META:   ??????????  1/1 Tela (100%)
 
 ---
 
-## ?? INTEGRAÇÃO BACKEND ? FRONTEND
+## ?? INTEGRAï¿½ï¿½O BACKEND ? FRONTEND
 
 ```
 BACKEND (.NET 8)               FRONTEND (React)
@@ -247,7 +247,7 @@ BACKEND (.NET 8)               FRONTEND (React)
 ?              ?              ?              ?
 ? API Usinas   ? ??? HTTP ??? ? Tela CRUD    ?
 ?              ?   JSON       ?              ?
-? 8 endpoints  ?              ? 5 ações      ?
+? 8 endpoints  ?              ? 5 aï¿½ï¿½es      ?
 ?              ?              ?              ?
 ????????????????              ????????????????
      ?                              ?
@@ -259,14 +259,14 @@ BACKEND (.NET 8)               FRONTEND (React)
 
 ---
 
-## ?? PADRÃO DE ENDPOINT
+## ?? PADRï¿½O DE ENDPOINT
 
 ### Todos os endpoints seguem RESTful:
 
 ```
 GET    /api/{entidade}                  - Lista todos
 GET    /api/{entidade}/{id}             - Busca por ID
-GET    /api/{entidade}/codigo/{codigo}  - Busca por código (quando aplicável)
+GET    /api/{entidade}/codigo/{codigo}  - Busca por cï¿½digo (quando aplicï¿½vel)
 POST   /api/{entidade}                  - Criar
 PUT    /api/{entidade}/{id}             - Atualizar
 DELETE /api/{entidade}/{id}             - Deletar (soft delete)
@@ -276,8 +276,8 @@ DELETE /api/{entidade}/{id}             - Deletar (soft delete)
 ```
 GET    /api/usinas                      - Lista 10 usinas
 GET    /api/usinas/1                    - Busca Itaipu
-GET    /api/usinas/codigo/UHE-ITAIPU   - Busca por código
-GET    /api/usinas/tipo/1               - Hidrelétricas
+GET    /api/usinas/codigo/UHE-ITAIPU   - Busca por cï¿½digo
+GET    /api/usinas/tipo/1               - Hidrelï¿½tricas
 GET    /api/usinas/empresa/2            - Usinas da Eletronorte
 POST   /api/usinas                      - Criar nova
 PUT    /api/usinas/1                    - Atualizar Itaipu
@@ -288,13 +288,13 @@ DELETE /api/usinas/1                    - Remover Itaipu
 
 ## ?? AGRUPAMENTO DAS APIS
 
-### ?? **Gestão de Ativos** (6 APIs, 31 endpoints)
+### ?? **Gestï¿½o de Ativos** (6 APIs, 31 endpoints)
 - Usinas [Willian] ?
 - Empresas [Willian] ?
 - Tipos de Usina [Willian] ?
 - Unidades Geradoras [George] ?
 - Usinas Conversoras [Pendente] ?
-- Rampas Usina Térmica [Pendente] ?
+- Rampas Usina Tï¿½rmica [Pendente] ?
 
 ### ?? **Arquivos e Dados** (5 APIs, 31 endpoints)
 - Arquivos DADGER [Willian] ?
@@ -303,34 +303,34 @@ DELETE /api/usinas/1                    - Remover Itaipu
 - Cargas [Willian] ?
 - Uploads [Willian] ?
 
-### ?? **Restrições e Paradas** (6 APIs, 30 endpoints)
+### ?? **Restriï¿½ï¿½es e Paradas** (6 APIs, 30 endpoints)
 - Paradas UG [George] ?
-- Restrições UG [George] ?
-- Restrições US [George] ?
-- Motivos de Restrição [George] ?
+- Restriï¿½ï¿½es UG [George] ?
+- Restriï¿½ï¿½es US [George] ?
+- Motivos de Restriï¿½ï¿½o [George] ?
 - Inflexibilidade Contratada [Pendente] ?
-- Modalidade Op. Térmica [Pendente] ?
+- Modalidade Op. Tï¿½rmica [Pendente] ?
 
-### ? **Operação e Geração** (4 APIs, 21 endpoints)
-- Intercâmbio [George] ?
-- Balanço [George] ?
-- Geração Fora Mérito [George] ?
+### ? **Operaï¿½ï¿½o e Geraï¿½ï¿½o** (4 APIs, 21 endpoints)
+- Intercï¿½mbio [George] ?
+- Balanï¿½o [George] ?
+- Geraï¿½ï¿½o Fora Mï¿½rito [George] ?
 - PDOC [George] ?
 
 ### ?? **Dados Consolidados** (2 APIs, 12 endpoints)
 - DCA - Dados Agregados [George] ?
 - DCR - Dados Consolidados [George] ?
 
-### ?? **Gestão de Equipes** (3 APIs, 15 endpoints)
+### ?? **Gestï¿½o de Equipes** (3 APIs, 15 endpoints)
 - Equipes PDP [Willian] ?
-- Usuários [Willian] ?
-- Responsáveis [Willian] ?
+- Usuï¿½rios [Willian] ?
+- Responsï¿½veis [Willian] ?
 
-### ?? **Documentos e Relatórios** (4 APIs, 19 endpoints)
-- Diretórios [Pendente] ?
+### ?? **Documentos e Relatï¿½rios** (4 APIs, 19 endpoints)
+- Diretï¿½rios [Pendente] ?
 - Arquivos [Pendente] ?
-- Relatórios [Pendente] ?
-- Observações [Pendente] ?
+- Relatï¿½rios [Pendente] ?
+- Observaï¿½ï¿½es [Pendente] ?
 
 ---
 
@@ -342,7 +342,7 @@ DELETE /api/usinas/1                    - Remover Itaipu
 ? 29 Entidades Domain
 ? 30 Tabelas database
 ? API Usinas completa
-? Documentação
+? Documentaï¿½ï¿½o
 ```
 
 ### DIA 2 (20/12) - ?? EM PROGRESSO
@@ -366,45 +366,45 @@ Objetivo: 29 APIs + 1 Frontend
 DIA 3: 11 APIs + Frontend iniciado
 DIA 4: 22 APIs + CRUD completo
 DIA 5: 27 APIs + Frontend polido
-DIA 6: 29 APIs + Apresentação final ?
+DIA 6: 29 APIs + Apresentaï¿½ï¿½o final ?
 ```
 
 ---
 
-## ?? PROPORÇÃO DA POC
+## ?? PROPORï¿½ï¿½O DA POC
 
 ```
-Backend:  29 APIs  = 80% do esforço
-Frontend:  1 Tela  = 20% do esforço
+Backend:  29 APIs  = 80% do esforï¿½o
+Frontend:  1 Tela  = 20% do esforï¿½o
 
 Justificativa:
-? APIs = Base reutilizável (Web, Mobile, Desktop)
-? Backend robusto = Fundação do sistema
-? Frontend = Prova de conceito integração
+? APIs = Base reutilizï¿½vel (Web, Mobile, Desktop)
+? Backend robusto = Fundaï¿½ï¿½o do sistema
+? Frontend = Prova de conceito integraï¿½ï¿½o
 ? Swagger = Testes sem depender do frontend
 ```
 
 ---
 
-## ?? OBSERVAÇÕES IMPORTANTES
+## ?? OBSERVAï¿½ï¿½ES IMPORTANTES
 
-### Por que TODAS as APIs são Backend?
+### Por que TODAS as APIs sï¿½o Backend?
 
-1. ? São **RESTful Services** (.NET 8)
+1. ? Sï¿½o **RESTful Services** (.NET 8)
 2. ? Retornam **JSON** via HTTP
-3. ? Não têm **interface visual**
+3. ? Nï¿½o tï¿½m **interface visual**
 4. ? Acessam **banco de dados**
-5. ? Implementam **lógica de negócio**
+5. ? Implementam **lï¿½gica de negï¿½cio**
 6. ? Podem ser consumidas por **qualquer frontend**
 
-### O Frontend é separado porque:
+### O Frontend ï¿½ separado porque:
 
-1. ? É **React/TypeScript**
+1. ? ï¿½ **React/TypeScript**
 2. ? Tem **interface visual** (HTML/CSS)
 3. ? Roda no **navegador**
 4. ? **Consome** APIs backend via HTTP
-5. ? Gerencia **estado** do usuário
-6. ? Responsável pela **UX/UI**
+5. ? Gerencia **estado** do usuï¿½rio
+6. ? Responsï¿½vel pela **UX/UI**
 
 ---
 
@@ -412,28 +412,28 @@ Justificativa:
 
 ### Backend
 ```
-• .NET 8
-• Entity Framework Core 8.0
-• SQL Server 2022
-• AutoMapper
-• Swagger/OpenAPI
-• Clean Architecture
-• Repository Pattern
+ï¿½ .NET 8
+ï¿½ Entity Framework Core 8.0
+ï¿½ SQL Server 2022
+ï¿½ AutoMapper
+ï¿½ Swagger/OpenAPI
+ï¿½ Clean Architecture
+ï¿½ Repository Pattern
 ```
 
 ### Frontend
 ```
-• React 18
-• TypeScript
-• Vite
-• Axios
-• React Router
-• Styled Components (ou CSS Modules)
+ï¿½ React 18
+ï¿½ TypeScript
+ï¿½ Vite
+ï¿½ Axios
+ï¿½ React Router
+ï¿½ Styled Components (ou CSS Modules)
 ```
 
 ---
 
-## ?? ESTATÍSTICAS FINAIS
+## ?? ESTATï¿½STICAS FINAIS
 
 ```
 ?????????????????????????????????????????????
@@ -441,24 +441,24 @@ Justificativa:
 ?  ?? TOTAL DA POC                          ?
 ?                                           ?
 ?  Backend:                                 ?
-?  • 29 APIs RESTful                        ?
-?  • 154 endpoints                          ?
-?  • 30 tabelas database                    ?
-?  • 29 entidades Domain                    ?
+?  ï¿½ 29 APIs RESTful                        ?
+?  ï¿½ 154 endpoints                          ?
+?  ï¿½ 30 tabelas database                    ?
+?  ï¿½ 29 entidades Domain                    ?
 ?                                           ?
 ?  Frontend:                                ?
-?  • 1 Tela CRUD completa                   ?
-?  • ~10 componentes React                  ?
-?  • 1 API consumida                        ?
+?  ï¿½ 1 Tela CRUD completa                   ?
+?  ï¿½ ~10 componentes React                  ?
+?  ï¿½ 1 API consumida                        ?
 ?                                           ?
-?  Proporção: 80% Backend / 20% Frontend    ?
+?  Proporï¿½ï¿½o: 80% Backend / 20% Frontend    ?
 ?                                           ?
 ?????????????????????????????????????????????
 ```
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Imediato (Hoje - 20/12)
 - [ ] [Willian] Iniciar API TipoUsina
@@ -470,13 +470,13 @@ Justificativa:
 ### Curto Prazo (23-24/12)
 - [ ] 11 APIs funcionais
 - [ ] Frontend com listagem
-- [ ] Integração backend-frontend
+- [ ] Integraï¿½ï¿½o backend-frontend
 
 ### Entrega Final (27/12)
 - [ ] 29 APIs completas
 - [ ] 1 Frontend completo
-- [ ] Apresentação ao cliente
-- [ ] Documentação finalizada
+- [ ] Apresentaï¿½ï¿½o ao cliente
+- [ ] Documentaï¿½ï¿½o finalizada
 
 ---
 
@@ -490,11 +490,11 @@ Justificativa:
 
 ---
 
-## ?? DOCUMENTAÇÃO DISPONÍVEL
+## ?? DOCUMENTAï¿½ï¿½O DISPONï¿½VEL
 
-- `docs/API_USINA_COMPLETA.md` - Documentação API Usinas
-- `docs/GUIA_DOCKER_DAILY.md` - Docker para apresentações
-- `docs/APRESENTACAO_DAILY_DIA1.md` - Apresentação Daily
+- `docs/API_USINA_COMPLETA.md` - Documentaï¿½ï¿½o API Usinas
+- `docs/GUIA_DOCKER_DAILY.md` - Docker para apresentaï¿½ï¿½es
+- `docs/APRESENTACAO_DAILY_DIA1.md` - Apresentaï¿½ï¿½o Daily
 - `docs/CRONOGRAMA_DETALHADO_V2.md` - Cronograma completo
 - `docs/testes/` - Estrutura de testes modulares
 
@@ -502,7 +502,7 @@ Justificativa:
 
 **Criado por:** Squad PDPW  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? Em Desenvolvimento
 
 **VAMOS FAZER ESSA POC ACONTECER! ??**

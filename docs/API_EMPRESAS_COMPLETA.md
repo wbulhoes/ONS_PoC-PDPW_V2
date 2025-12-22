@@ -1,4 +1,4 @@
-# ? API EMPRESAS - COMPLETA!
+ï»¿# ? API EMPRESAS - COMPLETA!
 
 **Data:** 19/12/2024  
 **Desenvolvedor:** Willian  
@@ -13,16 +13,16 @@
 
 #### Domain Layer (1 arquivo)
 1. `src/PDPW.Domain/Interfaces/IEmpresaRepository.cs`
-   - Interface do repositório
-   - 10 métodos definidos
+   - Interface do repositï¿½rio
+   - 10 mï¿½todos definidos
 
 #### Infrastructure Layer (1 arquivo)
 2. `src/PDPW.Infrastructure/Repositories/EmpresaRepository.cs`
-   - Implementação do repositório
+   - Implementaï¿½ï¿½o do repositï¿½rio
    - Herda de BaseRepository<Empresa>
    - Include de Usinas relacionadas
-   - Validação de nome e CNPJ duplicados
-   - Método auxiliar para limpar CNPJ
+   - Validaï¿½ï¿½o de nome e CNPJ duplicados
+   - Mï¿½todo auxiliar para limpar CNPJ
 
 #### Application Layer (5 arquivos)
 3. `src/PDPW.Application/DTOs/Empresa/EmpresaDto.cs`
@@ -30,41 +30,41 @@
    - Inclui QuantidadeUsinas
 
 4. `src/PDPW.Application/DTOs/Empresa/CreateEmpresaDto.cs`
-   - DTO para criação
-   - Validações DataAnnotations (Nome, CNPJ, Email, Telefone)
+   - DTO para criaï¿½ï¿½o
+   - Validaï¿½ï¿½es DataAnnotations (Nome, CNPJ, Email, Telefone)
 
 5. `src/PDPW.Application/DTOs/Empresa/UpdateEmpresaDto.cs`
-   - DTO para atualização
-   - Validações DataAnnotations
+   - DTO para atualizaï¿½ï¿½o
+   - Validaï¿½ï¿½es DataAnnotations
 
 6. `src/PDPW.Application/Interfaces/IEmpresaService.cs`
-   - Interface do serviço
-   - 9 métodos definidos
+   - Interface do serviï¿½o
+   - 9 mï¿½todos definidos
 
 7. `src/PDPW.Application/Services/EmpresaService.cs`
-   - Implementação do serviço
-   - Lógica de negócio
-   - Validações (nome duplicado, CNPJ duplicado, usinas vinculadas)
+   - Implementaï¿½ï¿½o do serviï¿½o
+   - Lï¿½gica de negï¿½cio
+   - Validaï¿½ï¿½es (nome duplicado, CNPJ duplicado, usinas vinculadas)
 
 #### API Layer (1 arquivo)
 8. `src/PDPW.API/Controllers/EmpresasController.cs`
    - Controller RESTful
    - 8 endpoints
-   - Documentação Swagger completa
+   - Documentaï¿½ï¿½o Swagger completa
 
-#### Configurações (2 arquivos atualizados)
+#### Configuraï¿½ï¿½es (2 arquivos atualizados)
 9. `src/PDPW.Application/Mappings/AutoMapperProfile.cs`
    - Mappings Empresa ? DTOs
 
 10. `src/PDPW.API/Extensions/ServiceCollectionExtensions.cs`
-    - Registro de dependências (DI)
+    - Registro de dependï¿½ncias (DI)
 
 ---
 
 ## ?? ENDPOINTS CRIADOS (8)
 
 ### 1. GET /api/empresas
-**Descrição:** Obtém todas as empresas  
+**Descriï¿½ï¿½o:** Obtï¿½m todas as empresas  
 **Response:** 200 OK - Lista de EmpresaDto  
 **Swagger:** ? Documentado
 
@@ -76,7 +76,7 @@
     "cnpj": "00.276.910/0001-56",
     "telefone": "(45) 3520-5252",
     "email": "contato@itaipu.gov.br",
-    "endereco": "Av. Tancredo Neves, 6731 - Foz do Iguaçu/PR",
+    "endereco": "Av. Tancredo Neves, 6731 - Foz do Iguaï¿½u/PR",
     "quantidadeUsinas": 1,
     "ativo": true,
     "dataCriacao": "2024-01-01T00:00:00Z",
@@ -88,7 +88,7 @@
 ---
 
 ### 2. GET /api/empresas/{id}
-**Descrição:** Obtém empresa por ID  
+**Descriï¿½ï¿½o:** Obtï¿½m empresa por ID  
 **Response:** 200 OK ou 404 Not Found  
 **Swagger:** ? Documentado
 
@@ -99,7 +99,7 @@
   "cnpj": "00.276.910/0001-56",
   "telefone": "(45) 3520-5252",
   "email": "contato@itaipu.gov.br",
-  "endereco": "Av. Tancredo Neves, 6731 - Foz do Iguaçu/PR",
+  "endereco": "Av. Tancredo Neves, 6731 - Foz do Iguaï¿½u/PR",
   "quantidadeUsinas": 1,
   "ativo": true
 }
@@ -108,7 +108,7 @@
 ---
 
 ### 3. GET /api/empresas/nome/{nome}
-**Descrição:** Obtém empresa por nome  
+**Descriï¿½ï¿½o:** Obtï¿½m empresa por nome  
 **Response:** 200 OK ou 404 Not Found  
 **Swagger:** ? Documentado
 
@@ -119,7 +119,7 @@ GET /api/empresas/nome/Itaipu Binacional
 ---
 
 ### 4. GET /api/empresas/cnpj/{cnpj}
-**Descrição:** Obtém empresa por CNPJ  
+**Descriï¿½ï¿½o:** Obtï¿½m empresa por CNPJ  
 **Response:** 200 OK ou 404 Not Found  
 **Swagger:** ? Documentado
 
@@ -127,12 +127,12 @@ GET /api/empresas/nome/Itaipu Binacional
 GET /api/empresas/cnpj/00.276.910/0001-56
 ```
 
-**Nota:** O CNPJ é limpo automaticamente (remove . / -)
+**Nota:** O CNPJ ï¿½ limpo automaticamente (remove . / -)
 
 ---
 
 ### 5. POST /api/empresas
-**Descrição:** Cria nova empresa  
+**Descriï¿½ï¿½o:** Cria nova empresa  
 **Response:** 201 Created ou 400 Bad Request  
 **Swagger:** ? Documentado
 
@@ -143,23 +143,23 @@ GET /api/empresas/cnpj/00.276.910/0001-56
   "cnpj": "12.345.678/0001-90",
   "telefone": "(11) 1234-5678",
   "email": "contato@novaempresa.com.br",
-  "endereco": "Rua Exemplo, 123 - São Paulo/SP"
+  "endereco": "Rua Exemplo, 123 - Sï¿½o Paulo/SP"
 }
 ```
 
-**Validações:**
-- ? Nome obrigatório (3-200 caracteres)
-- ? Nome único (não pode duplicar)
-- ? CNPJ formato válido: 00.000.000/0000-00
-- ? CNPJ único (não pode duplicar)
-- ? Email formato válido
-- ? Telefone formato válido
-- ? Endereço opcional (max 500 caracteres)
+**Validaï¿½ï¿½es:**
+- ? Nome obrigatï¿½rio (3-200 caracteres)
+- ? Nome ï¿½nico (nï¿½o pode duplicar)
+- ? CNPJ formato vï¿½lido: 00.000.000/0000-00
+- ? CNPJ ï¿½nico (nï¿½o pode duplicar)
+- ? Email formato vï¿½lido
+- ? Telefone formato vï¿½lido
+- ? Endereï¿½o opcional (max 500 caracteres)
 
 ---
 
 ### 6. PUT /api/empresas/{id}
-**Descrição:** Atualiza empresa existente  
+**Descriï¿½ï¿½o:** Atualiza empresa existente  
 **Response:** 200 OK, 400 Bad Request ou 404 Not Found  
 **Swagger:** ? Documentado
 
@@ -170,34 +170,34 @@ GET /api/empresas/cnpj/00.276.910/0001-56
   "cnpj": "00.276.910/0001-56",
   "telefone": "(45) 3520-5252",
   "email": "contato@itaipu.gov.br",
-  "endereco": "Endereço atualizado",
+  "endereco": "Endereï¿½o atualizado",
   "ativo": true
 }
 ```
 
-**Validações:**
-- ? Nome obrigatório (3-200 caracteres)
-- ? Nome único (exceto o próprio registro)
-- ? CNPJ único (exceto o próprio registro)
+**Validaï¿½ï¿½es:**
+- ? Nome obrigatï¿½rio (3-200 caracteres)
+- ? Nome ï¿½nico (exceto o prï¿½prio registro)
+- ? CNPJ ï¿½nico (exceto o prï¿½prio registro)
 - ? Registro deve existir
 
 ---
 
 ### 7. DELETE /api/empresas/{id}
-**Descrição:** Remove empresa (soft delete)  
+**Descriï¿½ï¿½o:** Remove empresa (soft delete)  
 **Response:** 204 No Content, 400 Bad Request ou 404 Not Found  
 **Swagger:** ? Documentado
 
-**Validações:**
+**Validaï¿½ï¿½es:**
 - ? Empresa deve existir
-- ? NÃO pode ter usinas ativas vinculadas
+- ? Nï¿½O pode ter usinas ativas vinculadas
 - ? Soft delete (Ativo = false)
 
 ---
 
 ### 8. GET /api/empresas/verificar-nome/{nome}
-**Descrição:** Verifica se nome já existe  
-**Query Param:** empresaId (opcional - para excluir da verificação)  
+**Descriï¿½ï¿½o:** Verifica se nome jï¿½ existe  
+**Query Param:** empresaId (opcional - para excluir da verificaï¿½ï¿½o)  
 **Response:** 200 OK  
 **Swagger:** ? Documentado
 
@@ -210,8 +210,8 @@ GET /api/empresas/cnpj/00.276.910/0001-56
 ---
 
 ### 9. GET /api/empresas/verificar-cnpj/{cnpj}
-**Descrição:** Verifica se CNPJ já existe  
-**Query Param:** empresaId (opcional - para excluir da verificação)  
+**Descriï¿½ï¿½o:** Verifica se CNPJ jï¿½ existe  
+**Query Param:** empresaId (opcional - para excluir da verificaï¿½ï¿½o)  
 **Response:** 200 OK  
 **Swagger:** ? Documentado
 
@@ -231,48 +231,48 @@ GET /api/empresas/cnpj/00.276.910/0001-56
 - [x] Update (PUT)
 - [x] Delete (DELETE - soft delete)
 
-### ? Validações de Negócio
-- [x] Nome único
-- [x] CNPJ único
-- [x] CNPJ formato válido
-- [x] Email formato válido
-- [x] Telefone formato válido
-- [x] Não pode excluir empresa com usinas vinculadas
-- [x] Campos obrigatórios
-- [x] Tamanhos mínimos e máximos
+### ? Validaï¿½ï¿½es de Negï¿½cio
+- [x] Nome ï¿½nico
+- [x] CNPJ ï¿½nico
+- [x] CNPJ formato vï¿½lido
+- [x] Email formato vï¿½lido
+- [x] Telefone formato vï¿½lido
+- [x] Nï¿½o pode excluir empresa com usinas vinculadas
+- [x] Campos obrigatï¿½rios
+- [x] Tamanhos mï¿½nimos e mï¿½ximos
 
 ### ? Buscas Customizadas
 - [x] Por ID
 - [x] Por nome
 - [x] Por CNPJ
-- [x] Verificar existência de nome
-- [x] Verificar existência de CNPJ
+- [x] Verificar existï¿½ncia de nome
+- [x] Verificar existï¿½ncia de CNPJ
 
 ### ? Relacionamentos
 - [x] Include de Usinas relacionadas
 - [x] Contagem de usinas ativas
-- [x] Validação de integridade referencial
+- [x] Validaï¿½ï¿½o de integridade referencial
 
 ### ? Soft Delete
-- [x] Ativo = false (não exclui do banco)
-- [x] Filtro automático por Ativo
+- [x] Ativo = false (nï¿½o exclui do banco)
+- [x] Filtro automï¿½tico por Ativo
 - [x] DataAtualizacao preenchida
 
 ### ? Auditoria
-- [x] DataCriacao automática
-- [x] DataAtualizacao automática
+- [x] DataCriacao automï¿½tica
+- [x] DataAtualizacao automï¿½tica
 - [x] Campo Ativo
 
-### ? Documentação
+### ? Documentaï¿½ï¿½o
 - [x] Swagger UI completo
 - [x] XML Comments
 - [x] Exemplos de request/response
 - [x] Status codes documentados
 
 ### ? Funcionalidades Especiais
-- [x] Limpeza automática de CNPJ (remove . / -)
+- [x] Limpeza automï¿½tica de CNPJ (remove . / -)
 - [x] Busca case-insensitive por nome
-- [x] Validação de formato CNPJ via Regex
+- [x] Validaï¿½ï¿½o de formato CNPJ via Regex
 
 ---
 
@@ -294,7 +294,7 @@ GET /api/empresas/cnpj/00.276.910/0001-56
 
 ---
 
-## ?? TESTES RÁPIDOS
+## ?? TESTES Rï¿½PIDOS
 
 ### Swagger UI
 ```
@@ -332,7 +332,7 @@ curl -X POST http://localhost:5000/api/empresas \
     "cnpj": "11.222.333/0001-44",
     "telefone": "(11) 9999-8888",
     "email": "contato@novaenergia.com.br",
-    "endereco": "Av. Paulista, 1000 - São Paulo/SP"
+    "endereco": "Av. Paulista, 1000 - Sï¿½o Paulo/SP"
   }'
 ```
 
@@ -345,7 +345,7 @@ curl -X PUT http://localhost:5000/api/empresas/1 \
     "cnpj": "00.276.910/0001-56",
     "telefone": "(45) 3520-5252",
     "email": "novo@itaipu.gov.br",
-    "endereco": "Endereço atualizado",
+    "endereco": "Endereï¿½o atualizado",
     "ativo": true
   }'
 ```
@@ -377,7 +377,7 @@ APIs Completas: 3/29 (10.3%)
 
 Total de Endpoints: 22/154 (14.3%)
 
-Próximas APIs:
+Prï¿½ximas APIs:
 ? SemanaPMO (6 endpoints)
 ? ArquivoDADGER (6 endpoints)
 ? Cargas (5 endpoints)
@@ -406,36 +406,36 @@ Próximas APIs:
 
 ## ? CHECKLIST DE QUALIDADE
 
-### Código
+### Cï¿½digo
 - [x] Build sem erros
 - [x] Seguindo Clean Architecture
 - [x] Seguindo SOLID principles
-- [x] Comentários XML
+- [x] Comentï¿½rios XML
 - [x] Async/await correto
 
 ### Funcionalidade
 - [x] CRUD completo funcionando
-- [x] Validações implementadas
+- [x] Validaï¿½ï¿½es implementadas
 - [x] Soft delete implementado
 - [x] Relacionamentos funcionando
 - [x] Auditoria funcionando
 - [x] CNPJ formatado corretamente
 
-### Documentação
+### Documentaï¿½ï¿½o
 - [x] Swagger UI completo
 - [x] Endpoints documentados
 - [x] DTOs documentados
 - [x] Status codes documentados
-- [x] Exemplos incluídos
+- [x] Exemplos incluï¿½dos
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### Imediato
 1. ? API TiposUsina completa
 2. ? API Empresas completa
-3. ? **API SemanaPMO** (próxima - 3h)
+3. ? **API SemanaPMO** (prï¿½xima - 3h)
 
 ### Hoje (Meta)
 - ? 3 APIs completas (Usinas, TiposUsina, Empresas)
@@ -444,10 +444,10 @@ Próximas APIs:
 
 ---
 
-## ?? ESTATÍSTICAS
+## ?? ESTATï¿½STICAS
 
 ```
-Linhas de código:      ~900
+Linhas de cï¿½digo:      ~900
 Arquivos criados:      10
 Arquivos modificados:  2
 Tempo desenvolvimento: 2h
@@ -461,41 +461,41 @@ Commits:               1
 ## ?? DESTAQUES DESTA API
 
 ### ? Funcionalidades Especiais
-1. **Validação de CNPJ**
+1. **Validaï¿½ï¿½o de CNPJ**
    - Regex para formato: 00.000.000/0000-00
-   - Limpeza automática (remove pontos, barras e hífens)
+   - Limpeza automï¿½tica (remove pontos, barras e hï¿½fens)
    - Busca normalizada
 
-2. **Múltiplas Buscas**
+2. **Mï¿½ltiplas Buscas**
    - Por ID
    - Por nome
    - Por CNPJ
-   - Verificação de existência
+   - Verificaï¿½ï¿½o de existï¿½ncia
 
-3. **Validações Robustas**
-   - Nome único
-   - CNPJ único
-   - Email válido
-   - Telefone válido
-   - Não pode excluir com usinas vinculadas
+3. **Validaï¿½ï¿½es Robustas**
+   - Nome ï¿½nico
+   - CNPJ ï¿½nico
+   - Email vï¿½lido
+   - Telefone vï¿½lido
+   - Nï¿½o pode excluir com usinas vinculadas
 
 ---
 
-## ?? COMPARAÇÃO COM APIs ANTERIORES
+## ?? COMPARAï¿½ï¿½O COM APIs ANTERIORES
 
-### Semelhanças
-- ? Pattern idêntico
+### Semelhanï¿½as
+- ? Pattern idï¿½ntico
 - ? CRUD completo
 - ? Soft delete
 - ? Auditoria
 - ? Swagger documentado
 
-### Diferenças
-- ?? Validação de CNPJ (formato e unicidade)
+### Diferenï¿½as
+- ?? Validaï¿½ï¿½o de CNPJ (formato e unicidade)
 - ?? Limpeza de CNPJ para busca
 - ?? Busca por CNPJ adicional
-- ?? Validação de Email
-- ?? Validação de Telefone
+- ?? Validaï¿½ï¿½o de Email
+- ?? Validaï¿½ï¿½o de Telefone
 - ?? 8 endpoints (vs 6 da TiposUsina)
 
 ---
@@ -505,6 +505,6 @@ Commits:               1
 **Branch:** develop  
 **Status:** ? COMPLETA E FUNCIONANDO
 
-**3ª API COMPLETA! ??**
+**3ï¿½ API COMPLETA! ??**
 
-**PRÓXIMA API: SEMANA PMO! ??**
+**PRï¿½XIMA API: SEMANA PMO! ??**

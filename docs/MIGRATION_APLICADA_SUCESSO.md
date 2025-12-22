@@ -1,4 +1,4 @@
-# ? MIGRATION APLICADA COM SUCESSO NO BANCO DE DADOS!
+ï»¿# ? MIGRATION APLICADA COM SUCESSO NO BANCO DE DADOS!
 
 **Data:** 19/12/2024  
 **Status:** ? COMPLETO  
@@ -14,15 +14,15 @@
 ? Banco de dados criado
 ? 30 tabelas criadas
 ? Relacionamentos configurados
-? Índices criados
+? ï¿½ndices criados
 ? Constraints aplicadas
-? Conexão testada e funcionando
-? Script SQL gerado para documentação
+? Conexï¿½o testada e funcionando
+? Script SQL gerado para documentaï¿½ï¿½o
 ```
 
 ---
 
-## ??? INFORMAÇÕES DO BANCO
+## ??? INFORMAï¿½ï¿½ES DO BANCO
 
 ### Connection String (Development)
 ```
@@ -32,7 +32,7 @@ Provider: Microsoft.EntityFrameworkCore.SqlServer
 Authentication: Trusted_Connection (Windows Auth)
 ```
 
-### Informações do DbContext
+### Informaï¿½ï¿½es do DbContext
 ```
 Type: PDPW.Infrastructure.Data.PdpwDbContext
 Provider: Microsoft.EntityFrameworkCore.SqlServer
@@ -45,7 +45,7 @@ Options: None
 
 ## ?? TABELAS CRIADAS (30)
 
-### 1. Gestão de Ativos (5 tabelas)
+### 1. Gestï¿½o de Ativos (5 tabelas)
 ```sql
 ? TiposUsina
 ? Empresas
@@ -54,7 +54,7 @@ Options: None
 ? EquipesPDP
 ```
 
-### 2. Unidades e Geração (6 tabelas)
+### 2. Unidades e Geraï¿½ï¿½o (6 tabelas)
 ```sql
 ? UnidadesGeradoras
 ? ParadasUG
@@ -87,14 +87,14 @@ Options: None
 ? Arquivos
 ```
 
-### 6. Operação (3 tabelas)
+### 6. Operaï¿½ï¿½o (3 tabelas)
 ```sql
 ? Intercambios
 ? Balancos
 ? Observacoes
 ```
 
-### 7. Térmicas (4 tabelas)
+### 7. Tï¿½rmicas (4 tabelas)
 ```sql
 ? ModalidadesOpTermica
 ? InflexibilidadesContratadas
@@ -131,7 +131,7 @@ GeracoesForaMerito.UsinaId ? Usinas.Id
 ArquivosDadger.SemanaPMOId ? SemanasPMO.Id
 ArquivosDadgerValores.ArquivoDadgerId ? ArquivosDadger.Id
 
--- Usuários
+-- Usuï¿½rios
 Usuarios.EquipePDPId ? EquipesPDP.Id
 
 -- Consolidados
@@ -143,7 +143,7 @@ DCRs.DCAId ? DCAs.Id
 Arquivos.DiretorioId ? Diretorios.Id
 Diretorios.DiretorioPaiId ? Diretorios.Id (hierarquia)
 
--- Térmicas
+-- Tï¿½rmicas
 InflexibilidadesContratadas.UsinaId ? Usinas.Id
 RampasUsinasTermicas.UsinaId ? Usinas.Id
 UsinasConversoras.UsinaId ? Usinas.Id
@@ -151,9 +151,9 @@ UsinasConversoras.UsinaId ? Usinas.Id
 
 ---
 
-## ?? ÍNDICES CRIADOS
+## ?? ï¿½NDICES CRIADOS
 
-### Índices Únicos (8)
+### ï¿½ndices ï¿½nicos (8)
 ```sql
 ? Empresas.CNPJ (unique)
 ? Usinas.Codigo (unique)
@@ -162,7 +162,7 @@ UsinasConversoras.UsinaId ? Usinas.Id
 ? SemanasPMO (Numero, Ano) (composite unique)
 ```
 
-### Índices de Performance (15+)
+### ï¿½ndices de Performance (15+)
 ```sql
 ? TiposUsina.Nome
 ? Empresas.Nome
@@ -176,17 +176,17 @@ UsinasConversoras.UsinaId ? Usinas.Id
 
 ---
 
-## ? VALIDAÇÕES REALIZADAS
+## ? VALIDAï¿½ï¿½ES REALIZADAS
 
 ### 1. Build do Projeto
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW
 dotnet build
 
-Resultado: ? Construir êxito em 3,2s
+Resultado: ? Construir ï¿½xito em 3,2s
 ```
 
-### 2. Aplicação da Migration
+### 2. Aplicaï¿½ï¿½o da Migration
 ```powershell
 cd src\PDPW.Infrastructure
 dotnet ef database update --startup-project ..\PDPW.API
@@ -194,35 +194,35 @@ dotnet ef database update --startup-project ..\PDPW.API
 Resultado: ? Applying migration '20251219122515_InitialCreate'. Done.
 ```
 
-### 3. Verificação do DbContext
+### 3. Verificaï¿½ï¿½o do DbContext
 ```powershell
 dotnet ef dbcontext info --startup-project ..\PDPW.API
 
 Resultado: ? Database: PDPW_DB_Dev connected
 ```
 
-### 4. Teste de Conexão
+### 4. Teste de Conexï¿½o
 ```powershell
 cd ..\PDPW.API
 dotnet run
 
 Logs:
-? info: ? Conexão com banco de dados estabelecida com sucesso!
-? info: ?? Iniciando aplicação PDPW API...
+? info: ? Conexï¿½o com banco de dados estabelecida com sucesso!
+? info: ?? Iniciando aplicaï¿½ï¿½o PDPW API...
 ? info: Now listening on: http://localhost:65418
 ```
 
 ---
 
-## ?? DOCUMENTAÇÃO GERADA
+## ?? DOCUMENTAï¿½ï¿½O GERADA
 
 ### Script SQL
-**Localização:** `docs/database_schema.sql`
+**Localizaï¿½ï¿½o:** `docs/database_schema.sql`
 
-Contém:
-- ? Todas as instruções CREATE TABLE
+Contï¿½m:
+- ? Todas as instruï¿½ï¿½es CREATE TABLE
 - ? Todas as Foreign Keys
-- ? Todos os Índices
+- ? Todos os ï¿½ndices
 - ? Todas as Constraints
 - ? Migration History
 
@@ -230,7 +230,7 @@ Contém:
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
 ### ? INFRAESTRUTURA COMPLETA
 
@@ -239,22 +239,22 @@ Agora temos:
 2. ? DbContext configurado
 3. ? Migration criada e aplicada
 4. ? Banco de dados funcionando
-5. ? Conexão testada
+5. ? Conexï¿½o testada
 
-### ?? COMEÇAR DESENVOLVIMENTO DE APIs
+### ?? COMEï¿½AR DESENVOLVIMENTO DE APIs
 
-**Opção A) Criar Primeira API Completa (Usina)** - RECOMENDADO
+**Opï¿½ï¿½o A) Criar Primeira API Completa (Usina)** - RECOMENDADO
 - Interface IUsinaRepository
-- UsinaRepository (implementação)
+- UsinaRepository (implementaï¿½ï¿½o)
 - DTOs (UsinaDto, CreateUsinaDto, UpdateUsinaDto)
 - Interface IUsinaService
-- UsinaService (implementação)
+- UsinaService (implementaï¿½ï¿½o)
 - UsinasController (API endpoints)
 - Seed data (dados iniciais)
 
 **Tempo estimado:** 3 horas
 
-**Opção B) Criar Seed Data Primeiro**
+**Opï¿½ï¿½o B) Criar Seed Data Primeiro**
 - Popular tabelas com dados iniciais
 - TipoUsina (5 tipos)
 - Empresa (8 empresas)
@@ -263,9 +263,9 @@ Agora temos:
 
 **Tempo estimado:** 1-2 horas
 
-**Opção C) Criar Todas as Interfaces e Repositórios**
+**Opï¿½ï¿½o C) Criar Todas as Interfaces e Repositï¿½rios**
 - 29 interfaces
-- 29 repositórios básicos
+- 29 repositï¿½rios bï¿½sicos
 - Pattern estabelecido
 
 **Tempo estimado:** 3-4 horas
@@ -296,7 +296,7 @@ PDPW_DB_Dev
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
 ### Verificar Migrations
 ```powershell
@@ -309,7 +309,7 @@ dotnet ef migrations list --startup-project ..\PDPW.API
 dotnet ef dbcontext info --startup-project ..\PDPW.API
 ```
 
-### Reverter Migration (se necessário)
+### Reverter Migration (se necessï¿½rio)
 ```powershell
 dotnet ef database update 0 --startup-project ..\PDPW.API
 ```
@@ -338,9 +338,9 @@ Database: PDPW_DB_Dev
 ? ? Infrastructure (DbContext + Repositories)   ?
 ? ? Database Schema (30 tabelas)                ?
 ? ? Migration aplicada                          ?
-? ? Conexão testada                             ?
+? ? Conexï¿½o testada                             ?
 ?                                                ?
-? Próximo: Desenvolvimento de APIs              ?
+? Prï¿½ximo: Desenvolvimento de APIs              ?
 ??????????????????????????????????????????????????
 
 Progresso PoC: 30% ????????????????????
@@ -366,7 +366,7 @@ Progresso PoC: 30% ????????????????????
 
 ---
 
-## ?? BACKUP E SEGURANÇA
+## ?? BACKUP E SEGURANï¿½A
 
 ### Criar Backup do Banco
 ```powershell
@@ -378,12 +378,12 @@ WITH FORMAT, INIT;
 
 ### Exportar Schema
 ```powershell
-# Já foi exportado em: docs/database_schema.sql
+# Jï¿½ foi exportado em: docs/database_schema.sql
 ```
 
 ---
 
-## ?? CHECKLIST DE VALIDAÇÃO
+## ?? CHECKLIST DE VALIDAï¿½ï¿½O
 
 ### Infraestrutura
 - [x] ? Entidades criadas (29)
@@ -395,33 +395,33 @@ WITH FORMAT, INIT;
 - [x] ? Banco de dados criado
 - [x] ? Tabelas criadas (30)
 - [x] ? Relacionamentos aplicados
-- [x] ? Índices criados
-- [x] ? Conexão testada
+- [x] ? ï¿½ndices criados
+- [x] ? Conexï¿½o testada
 - [x] ? API inicializada
-- [x] ? Documentação gerada
+- [x] ? Documentaï¿½ï¿½o gerada
 
-### Próximos Passos
+### Prï¿½ximos Passos
 - [ ] ?? Criar primeira API (Usina)
 - [ ] ?? Implementar Seed Data
 - [ ] ?? Criar 28 APIs restantes
-- [ ] ?? Testes de integração
-- [ ] ?? Documentação Swagger
+- [ ] ?? Testes de integraï¿½ï¿½o
+- [ ] ?? Documentaï¿½ï¿½o Swagger
 
 ---
 
-## ?? RECOMENDAÇÃO
+## ?? RECOMENDAï¿½ï¿½O
 
-**Melhor próximo passo:**
+**Melhor prï¿½ximo passo:**
 
 ### ??? Criar API Usina Completa
 
-**Por quê?**
-1. É a API mais crítica (DEV 1 - Prioridade 1)
+**Por quï¿½?**
+1. ï¿½ a API mais crï¿½tica (DEV 1 - Prioridade 1)
 2. Estabelece o pattern para as outras 28 APIs
 3. Tem relacionamentos complexos (bom exemplo)
 4. Frontend precisa dela (DEV 3)
 
-**O que será criado:**
+**O que serï¿½ criado:**
 ```
 Domain/Interfaces/
 ??? IUsinaRepository.cs
@@ -458,7 +458,7 @@ Infrastructure/Data/Seed/
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
 **Tempo total:** 40 minutos  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO E VALIDADO
 
 **BANCO DE DADOS PRONTO! VAMOS CRIAR AS APIs! ??**

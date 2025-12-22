@@ -1,41 +1,41 @@
-# ?? TESTES - API USINA
+ï»¿# ?? TESTES - API USINA
 
 **API:** Usinas  
 **Entidade:** Usina  
 **Endpoints:** 8  
-**Data criação:** 19/12/2024  
+**Data criaï¿½ï¿½o:** 19/12/2024  
 **Status:** ? Implementada
 
 ---
 
-## ?? CHECKLIST RÁPIDO
+## ?? CHECKLIST Rï¿½PIDO
 
 - [x] ? GET /usinas - Listar todas
 - [x] ? GET /usinas/{id} - Buscar por ID
-- [x] ? GET /usinas/codigo/{codigo} - Buscar por código
+- [x] ? GET /usinas/codigo/{codigo} - Buscar por cï¿½digo
 - [x] ? GET /usinas/tipo/{tipoUsinaId} - Listar por tipo
 - [x] ? GET /usinas/empresa/{empresaId} - Listar por empresa
 - [x] ? POST /usinas - Criar
 - [x] ? PUT /usinas/{id} - Atualizar
 - [x] ? DELETE /usinas/{id} - Deletar
-- [x] ? GET /usinas/verificar-codigo/{codigo} - Verificar código
+- [x] ? GET /usinas/verificar-codigo/{codigo} - Verificar cï¿½digo
 
 ---
 
 ## ?? DADOS DE TESTE
 
-### Seed Data Disponível
+### Seed Data Disponï¿½vel
 ```
 Usinas no banco: 10 registros (41.493 MW total)
 ```
 
 ### Registros para Testar
-1. **ID 1:** Itaipu (14.000 MW) - Hidrelétrica
-2. **ID 2:** Belo Monte (11.233 MW) - Hidrelétrica
+1. **ID 1:** Itaipu (14.000 MW) - Hidrelï¿½trica
+2. **ID 2:** Belo Monte (11.233 MW) - Hidrelï¿½trica
 3. **ID 9:** Angra I (640 MW) - Nuclear
 4. **ID 10:** Angra II (1.350 MW) - Nuclear
 
-### Códigos Únicos
+### Cï¿½digos ï¿½nicos
 - `UHE-ITAIPU`
 - `UHE-BELO-MONTE`
 - `UHE-TUCURUI`
@@ -60,13 +60,13 @@ Usinas no banco: 10 registros (41.493 MW total)
   {
     "id": 1,
     "codigo": "UHE-ITAIPU",
-    "nome": "Usina Hidrelétrica de Itaipu",
+    "nome": "Usina Hidrelï¿½trica de Itaipu",
     "tipoUsinaId": 1,
-    "tipoUsina": "Hidrelétrica",
+    "tipoUsina": "Hidrelï¿½trica",
     "empresaId": 1,
     "empresa": "Itaipu Binacional",
     "capacidadeInstalada": 14000.00,
-    "localizacao": "Foz do Iguaçu, PR - Fronteira Brasil/Paraguai",
+    "localizacao": "Foz do Iguaï¿½u, PR - Fronteira Brasil/Paraguai",
     "dataOperacao": "1984-05-05T00:00:00",
     "ativo": true,
     "dataCriacao": "2024-01-01T00:00:00",
@@ -76,12 +76,12 @@ Usinas no banco: 10 registros (41.493 MW total)
 ]
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **10 usinas**
 - [ ] Todos os campos preenchidos
-- [ ] `tipoUsina` é nome (não ID)
-- [ ] `empresa` é nome (não ID)
+- [ ] `tipoUsina` ï¿½ nome (nï¿½o ID)
+- [ ] `empresa` ï¿½ nome (nï¿½o ID)
 - [ ] Ordenado por nome
 - [ ] Apenas usinas ativas
 
@@ -106,21 +106,21 @@ Usinas no banco: 10 registros (41.493 MW total)
 {
   "id": 1,
   "codigo": "UHE-ITAIPU",
-  "nome": "Usina Hidrelétrica de Itaipu",
-  "tipoUsina": "Hidrelétrica",
+  "nome": "Usina Hidrelï¿½trica de Itaipu",
+  "tipoUsina": "Hidrelï¿½trica",
   "empresa": "Itaipu Binacional",
   "capacidadeInstalada": 14000.00,
-  "localizacao": "Foz do Iguaçu, PR - Fronteira Brasil/Paraguai",
+  "localizacao": "Foz do Iguaï¿½u, PR - Fronteira Brasil/Paraguai",
   "dataOperacao": "1984-05-05T00:00:00"
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Itaipu retornada
 - [ ] Capacidade: **14.000 MW**
 - [ ] Empresa: **Itaipu Binacional**
-- [ ] Data operação: **1984-05-05**
+- [ ] Data operaï¿½ï¿½o: **1984-05-05**
 
 ### Teste Negativo
 - `id = 999`: **404 Not Found**
@@ -130,7 +130,7 @@ Usinas no banco: 10 registros (41.493 MW total)
 
 ---
 
-## ?? TESTE 3: BUSCAR BELO MONTE POR CÓDIGO
+## ?? TESTE 3: BUSCAR BELO MONTE POR Cï¿½DIGO
 
 ### Endpoint
 **GET /api/usinas/codigo/{codigo}**
@@ -147,29 +147,29 @@ Usinas no banco: 10 registros (41.493 MW total)
 {
   "id": 2,
   "codigo": "UHE-BELO-MONTE",
-  "nome": "Usina Hidrelétrica Belo Monte",
-  "tipoUsina": "Hidrelétrica",
-  "empresa": "Eletronorte - Centrais Elétricas do Norte do Brasil",
+  "nome": "Usina Hidrelï¿½trica Belo Monte",
+  "tipoUsina": "Hidrelï¿½trica",
+  "empresa": "Eletronorte - Centrais Elï¿½tricas do Norte do Brasil",
   "capacidadeInstalada": 11233.00,
   "localizacao": "Altamira, PA - Rio Xingu"
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Belo Monte retornada
-- [ ] 3ª maior hidrelétrica do mundo
+- [ ] 3ï¿½ maior hidrelï¿½trica do mundo
 - [ ] Capacidade: **11.233 MW**
 
-### Outros códigos para testar:
-- **UHE-TUCURUI** ? Tucuruí (8.370 MW)
+### Outros cï¿½digos para testar:
+- **UHE-TUCURUI** ? Tucuruï¿½ (8.370 MW)
 - **UTN-ANGRA-I** ? Angra I (640 MW)
 - **UTN-ANGRA-II** ? Angra II (1.350 MW)
 - **CODIGO-INVALIDO** ? 404 Not Found
 
 ---
 
-## ?? TESTE 4: LISTAR HIDRELÉTRICAS
+## ?? TESTE 4: LISTAR HIDRELï¿½TRICAS
 
 ### Endpoint
 **GET /api/usinas/tipo/{tipoUsinaId}**
@@ -178,31 +178,31 @@ Usinas no banco: 10 registros (41.493 MW total)
 1. Expandir `GET /api/usinas/tipo/{tipoUsinaId}`
 2. Clicar em **"Try it out"**
 3. Preencher:
-   - `tipoUsinaId`: **1** (Hidrelétrica)
+   - `tipoUsinaId`: **1** (Hidrelï¿½trica)
 4. Clicar em **"Execute"**
 
 ### ? Resultado Esperado
 ```json
 [
-  { "nome": "Usina Hidrelétrica de Itaipu", "capacidadeInstalada": 14000 },
-  { "nome": "Usina Hidrelétrica Belo Monte", "capacidadeInstalada": 11233 },
-  { "nome": "Usina Hidrelétrica de Tucuruí", "capacidadeInstalada": 8370 },
-  { "nome": "Usina Hidrelétrica de São Simão", "capacidadeInstalada": 1710 },
-  { "nome": "Usina Hidrelétrica de Sobradinho", "capacidadeInstalada": 1050.4 },
-  { "nome": "Usina Hidrelétrica de Itumbiara", "capacidadeInstalada": 2082 }
+  { "nome": "Usina Hidrelï¿½trica de Itaipu", "capacidadeInstalada": 14000 },
+  { "nome": "Usina Hidrelï¿½trica Belo Monte", "capacidadeInstalada": 11233 },
+  { "nome": "Usina Hidrelï¿½trica de Tucuruï¿½", "capacidadeInstalada": 8370 },
+  { "nome": "Usina Hidrelï¿½trica de Sï¿½o Simï¿½o", "capacidadeInstalada": 1710 },
+  { "nome": "Usina Hidrelï¿½trica de Sobradinho", "capacidadeInstalada": 1050.4 },
+  { "nome": "Usina Hidrelï¿½trica de Itumbiara", "capacidadeInstalada": 2082 }
 ]
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
-- [ ] Retornou **6 usinas** hidrelétricas
+- [ ] Retornou **6 usinas** hidrelï¿½tricas
 - [ ] Total: **38.445 MW**
 - [ ] Ordenado por nome
 
 ### Outros tipos para testar:
-- `tipoUsinaId = 2` (Térmica): **2 usinas** (1.058 MW)
+- `tipoUsinaId = 2` (Tï¿½rmica): **2 usinas** (1.058 MW)
 - `tipoUsinaId = 5` (Nuclear): **2 usinas** (1.990 MW)
-- `tipoUsinaId = 3` (Eólica): **0 usinas**
+- `tipoUsinaId = 3` (Eï¿½lica): **0 usinas**
 - `tipoUsinaId = 4` (Solar): **0 usinas**
 - `tipoUsinaId = 999` (inexistente): **0 usinas** (200 OK, array vazio)
 
@@ -223,13 +223,13 @@ Usinas no banco: 10 registros (41.493 MW total)
 ### ? Resultado Esperado
 ```json
 [
-  { "nome": "Usina Hidrelétrica Belo Monte", ... },
-  { "nome": "Usina Hidrelétrica de Tucuruí", ... },
-  { "nome": "Usina Termelétrica do Maranhão", ... }
+  { "nome": "Usina Hidrelï¿½trica Belo Monte", ... },
+  { "nome": "Usina Hidrelï¿½trica de Tucuruï¿½", ... },
+  { "nome": "Usina Termelï¿½trica do Maranhï¿½o", ... }
 ]
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **3 usinas**
 - [ ] Todas da **Eletronorte**
@@ -252,7 +252,7 @@ Usinas no banco: 10 registros (41.493 MW total)
 ```json
 {
   "codigo": "UHE-JIRAU",
-  "nome": "Usina Hidrelétrica de Jirau",
+  "nome": "Usina Hidrelï¿½trica de Jirau",
   "tipoUsinaId": 1,
   "empresaId": 3,
   "capacidadeInstalada": 3750,
@@ -273,9 +273,9 @@ Usinas no banco: 10 registros (41.493 MW total)
 {
   "id": 11,
   "codigo": "UHE-JIRAU",
-  "nome": "Usina Hidrelétrica de Jirau",
-  "tipoUsina": "Hidrelétrica",
-  "empresa": "Furnas Centrais Elétricas",
+  "nome": "Usina Hidrelï¿½trica de Jirau",
+  "tipoUsina": "Hidrelï¿½trica",
+  "empresa": "Furnas Centrais Elï¿½tricas",
   "capacidadeInstalada": 3750.00,
   "localizacao": "Porto Velho, RO - Rio Madeira",
   "dataOperacao": "2013-09-01T00:00:00",
@@ -284,32 +284,32 @@ Usinas no banco: 10 registros (41.493 MW total)
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **201 Created**
 - [ ] ID gerado: **11**
 - [ ] `dataCriacao` preenchida automaticamente
 - [ ] Location header: `/api/usinas/11`
 - [ ] Relacionamentos resolvidos (TipoUsina e Empresa)
 
-### Testes de Validação (400 Bad Request)
+### Testes de Validaï¿½ï¿½o (400 Bad Request)
 
-**1. Código duplicado:**
+**1. Cï¿½digo duplicado:**
 ```json
 {
   "codigo": "UHE-ITAIPU",
   ...
 }
 ```
-**Esperado:** `"Já existe uma usina com o código 'UHE-ITAIPU'"`
+**Esperado:** `"Jï¿½ existe uma usina com o cï¿½digo 'UHE-ITAIPU'"`
 
-**2. Código vazio:**
+**2. Cï¿½digo vazio:**
 ```json
 {
   "codigo": "",
   ...
 }
 ```
-**Esperado:** `"O código é obrigatório"`
+**Esperado:** `"O cï¿½digo ï¿½ obrigatï¿½rio"`
 
 **3. Nome muito curto:**
 ```json
@@ -329,23 +329,23 @@ Usinas no banco: 10 registros (41.493 MW total)
 ```
 **Esperado:** `"A capacidade deve ser maior que zero"`
 
-**5. TipoUsina inválido:**
+**5. TipoUsina invï¿½lido:**
 ```json
 {
   "tipoUsinaId": 0,
   ...
 }
 ```
-**Esperado:** `"Tipo de usina inválido"`
+**Esperado:** `"Tipo de usina invï¿½lido"`
 
-**6. Empresa inválida:**
+**6. Empresa invï¿½lida:**
 ```json
 {
   "empresaId": 999,
   ...
 }
 ```
-**Esperado:** FK constraint error ou validação de negócio
+**Esperado:** FK constraint error ou validaï¿½ï¿½o de negï¿½cio
 
 ---
 
@@ -358,7 +358,7 @@ Usinas no banco: 10 registros (41.493 MW total)
 ```json
 {
   "codigo": "UHE-JIRAU",
-  "nome": "Usina Hidrelétrica de Jirau (ATUALIZADA)",
+  "nome": "Usina Hidrelï¿½trica de Jirau (ATUALIZADA)",
   "tipoUsinaId": 1,
   "empresaId": 3,
   "capacidadeInstalada": 3750,
@@ -380,49 +380,49 @@ Usinas no banco: 10 registros (41.493 MW total)
 ```json
 {
   "id": 11,
-  "nome": "Usina Hidrelétrica de Jirau (ATUALIZADA)",
+  "nome": "Usina Hidrelï¿½trica de Jirau (ATUALIZADA)",
   "localizacao": "Porto Velho, RO - Rio Madeira - ATUALIZADO",
   "dataAtualizacao": "2024-12-19T..."
 }
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK**
 - [ ] Nome atualizado
-- [ ] Localização atualizada
+- [ ] Localizaï¿½ï¿½o atualizada
 - [ ] `dataAtualizacao` preenchida
-- [ ] `dataCriacao` não mudou
+- [ ] `dataCriacao` nï¿½o mudou
 
 ### Teste Negativo
-- `id = 999`: **404 Not Found** - "Usina com ID 999 não encontrada"
+- `id = 999`: **404 Not Found** - "Usina com ID 999 nï¿½o encontrada"
 
-### Teste de Validação
-- Mudar código para um existente: **400 Bad Request**
+### Teste de Validaï¿½ï¿½o
+- Mudar cï¿½digo para um existente: **400 Bad Request**
 
 ---
 
-## ?? TESTE 8: VERIFICAR SE CÓDIGO EXISTE
+## ?? TESTE 8: VERIFICAR SE Cï¿½DIGO EXISTE
 
 ### Endpoint
 **GET /api/usinas/verificar-codigo/{codigo}**
 
-### Teste 8.1: Código existente
+### Teste 8.1: Cï¿½digo existente
 1. Preencher `codigo`: **UHE-ITAIPU**
 2. **Resultado:** `{ "existe": true }`
 
-### Teste 8.2: Código não existente
+### Teste 8.2: Cï¿½digo nï¿½o existente
 1. Preencher `codigo`: **UHE-NAO-EXISTE**
 2. **Resultado:** `{ "existe": false }`
 
-### Teste 8.3: Excluir usina da verificação
+### Teste 8.3: Excluir usina da verificaï¿½ï¿½o
 1. Preencher `codigo`: **UHE-ITAIPU**
 2. Preencher `usinaId` (query param): **1**
-3. **Resultado:** `{ "existe": false }` (porque excluiu o próprio ID 1)
+3. **Resultado:** `{ "existe": false }` (porque excluiu o prï¿½prio ID 1)
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **200 OK** (sempre)
-- [ ] Response é objeto com propriedade `existe`
-- [ ] `existe` é boolean
+- [ ] Response ï¿½ objeto com propriedade `existe`
+- [ ] `existe` ï¿½ boolean
 
 ---
 
@@ -444,7 +444,7 @@ Status Code: 204 No Content
 (Sem corpo na resposta)
 ```
 
-### Validações
+### Validaï¿½ï¿½es
 - [ ] Status Code: **204 No Content**
 - [ ] Sem body na resposta
 - [ ] Soft delete (Ativo = false no banco)
@@ -476,12 +476,12 @@ curl http://localhost:5000/api/usinas
 curl http://localhost:5000/api/usinas/1
 ```
 
-### Buscar por código
+### Buscar por cï¿½digo
 ```bash
 curl http://localhost:5000/api/usinas/codigo/UHE-BELO-MONTE
 ```
 
-### Listar hidrelétricas
+### Listar hidrelï¿½tricas
 ```bash
 curl http://localhost:5000/api/usinas/tipo/1
 ```
@@ -495,7 +495,7 @@ curl http://localhost:5000/api/usinas/empresa/2
 ```bash
 curl -X POST "http://localhost:5000/api/usinas" \
   -H "Content-Type: application/json" \
-  -d '{"codigo":"UHE-JIRAU","nome":"Usina Hidrelétrica de Jirau","tipoUsinaId":1,"empresaId":3,"capacidadeInstalada":3750,"localizacao":"Porto Velho, RO","dataOperacao":"2013-09-01","ativo":true}'
+  -d '{"codigo":"UHE-JIRAU","nome":"Usina Hidrelï¿½trica de Jirau","tipoUsinaId":1,"empresaId":3,"capacidadeInstalada":3750,"localizacao":"Porto Velho, RO","dataOperacao":"2013-09-01","ativo":true}'
 ```
 
 ### Atualizar Jirau
@@ -510,7 +510,7 @@ curl -X PUT "http://localhost:5000/api/usinas/11" \
 curl -X DELETE "http://localhost:5000/api/usinas/11"
 ```
 
-### Verificar código
+### Verificar cï¿½digo
 ```bash
 curl "http://localhost:5000/api/usinas/verificar-codigo/UHE-ITAIPU"
 ```
@@ -525,34 +525,34 @@ curl "http://localhost:5000/api/usinas/verificar-codigo/UHE-ITAIPU"
 - [ ] GET /usinas/999 (404)
 - [ ] GET /usinas/codigo/UHE-BELO-MONTE (Belo Monte)
 - [ ] GET /usinas/codigo/INVALIDO (404)
-- [ ] GET /usinas/tipo/1 (6 hidrelétricas)
-- [ ] GET /usinas/tipo/2 (2 térmicas)
+- [ ] GET /usinas/tipo/1 (6 hidrelï¿½tricas)
+- [ ] GET /usinas/tipo/2 (2 tï¿½rmicas)
 - [ ] GET /usinas/tipo/5 (2 nucleares)
 - [ ] GET /usinas/empresa/2 (3 da Eletronorte)
 - [ ] GET /usinas/verificar-codigo/UHE-ITAIPU (existe)
 
 ### Endpoints POST
 - [ ] POST /usinas (Jirau) ? 201
-- [ ] POST código duplicado ? 400
-- [ ] POST código vazio ? 400
+- [ ] POST cï¿½digo duplicado ? 400
+- [ ] POST cï¿½digo vazio ? 400
 - [ ] POST nome curto ? 400
 - [ ] POST capacidade zero ? 400
-- [ ] POST tipoUsina inválido ? 400
-- [ ] POST empresa inválida ? FK error
+- [ ] POST tipoUsina invï¿½lido ? 400
+- [ ] POST empresa invï¿½lida ? FK error
 
 ### Endpoints PUT
 - [ ] PUT /usinas/11 (atualizar Jirau) ? 200
 - [ ] PUT /usinas/999 ? 404
-- [ ] PUT código duplicado ? 400
+- [ ] PUT cï¿½digo duplicado ? 400
 
 ### Endpoints DELETE
 - [ ] DELETE /usinas/11 (soft delete) ? 204
 - [ ] DELETE /usinas/999 ? 404
-- [ ] GET /usinas/11 após delete ? 404
+- [ ] GET /usinas/11 apï¿½s delete ? 404
 
 ---
 
-## ?? OBSERVAÇÕES
+## ?? OBSERVAï¿½ï¿½ES
 
 ### Relacionamentos
 - **Depende de:** TipoUsina, Empresa
@@ -568,8 +568,8 @@ curl "http://localhost:5000/api/usinas/verificar-codigo/UHE-ITAIPU"
 ### Dados Reais
 - 10 usinas do Sistema Interligado Nacional (SIN)
 - Total: **41.493 MW** de capacidade instalada
-- 6 Hidrelétricas (92.7%)
-- 2 Térmicas (2.5%)
+- 6 Hidrelï¿½tricas (92.7%)
+- 2 Tï¿½rmicas (2.5%)
 - 2 Nucleares (4.8%)
 
 ---

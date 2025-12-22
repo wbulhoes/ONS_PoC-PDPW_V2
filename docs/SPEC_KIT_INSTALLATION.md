@@ -1,27 +1,27 @@
-# ?? Guia de Instalação do Spec Kit
+ï»¿# ?? Guia de Instalaï¿½ï¿½o do Spec Kit
 
-## ?? O Que é Spec Kit?
+## ?? O Que ï¿½ Spec Kit?
 
-**Spec Kit** é uma ferramenta da GitHub para criar e gerenciar especificações técnicas estruturadas de projetos de software.
+**Spec Kit** ï¿½ uma ferramenta da GitHub para criar e gerenciar especificaï¿½ï¿½es tï¿½cnicas estruturadas de projetos de software.
 
 ---
 
-## ? Alternativa: Especificação Manual (JÁ CRIADA)
+## ? Alternativa: Especificaï¿½ï¿½o Manual (Jï¿½ CRIADA)
 
-**Boa notícia!** Já criei uma especificação técnica completa para você em:
+**Boa notï¿½cia!** Jï¿½ criei uma especificaï¿½ï¿½o tï¿½cnica completa para vocï¿½ em:
 
 ?? **`docs/TECHNICAL_SPEC.md`**
 
-Esta especificação contém:
-- ? Visão geral do projeto
+Esta especificaï¿½ï¿½o contï¿½m:
+- ? Visï¿½o geral do projeto
 - ? Arquitetura detalhada
 - ? Endpoints da API
 - ? Modelo de dados
-- ? Configurações
+- ? Configuraï¿½ï¿½es
 - ? Roadmap
 - ? E muito mais!
 
-**Você pode usar esta especificação sem precisar instalar o Spec Kit!**
+**Vocï¿½ pode usar esta especificaï¿½ï¿½o sem precisar instalar o Spec Kit!**
 
 ---
 
@@ -29,7 +29,7 @@ Esta especificação contém:
 
 Se ainda quiser instalar o Spec Kit oficial, siga estes passos:
 
-### Pré-requisitos
+### Prï¿½-requisitos
 
 1. **Python 3.11+**
 2. **UV** (gerenciador de pacotes Python moderno)
@@ -38,27 +38,27 @@ Se ainda quiser instalar o Spec Kit oficial, siga estes passos:
 
 ### ?? Passo 1: Instalar Python
 
-#### Opção A: Via Microsoft Store (Mais Fácil)
+#### Opï¿½ï¿½o A: Via Microsoft Store (Mais Fï¿½cil)
 
 ```powershell
 # Abre a Microsoft Store e busca por "Python 3.12"
 start ms-windows-store://search/?query=Python
 ```
 
-#### Opção B: Via Instalador Oficial
+#### Opï¿½ï¿½o B: Via Instalador Oficial
 
 1. Acesse: https://www.python.org/downloads/
 2. Baixe Python 3.12 ou superior
-3. **IMPORTANTE**: Marque "Add Python to PATH" durante a instalação
+3. **IMPORTANTE**: Marque "Add Python to PATH" durante a instalaï¿½ï¿½o
 
-#### Opção C: Via winget
+#### Opï¿½ï¿½o C: Via winget
 
 ```powershell
 # Requer Windows Package Manager
 winget install Python.Python.3.12
 ```
 
-### Verificar Instalação
+### Verificar Instalaï¿½ï¿½o
 
 ```powershell
 # Fechar e reabrir o terminal, depois:
@@ -66,7 +66,7 @@ python --version
 # Deve mostrar: Python 3.12.x
 
 pip --version
-# Deve mostrar versão do pip
+# Deve mostrar versï¿½o do pip
 ```
 
 ---
@@ -74,21 +74,21 @@ pip --version
 ### ?? Passo 2: Instalar UV
 
 ```powershell
-# Opção A: Via pip
+# Opï¿½ï¿½o A: Via pip
 pip install uv
 
-# Opção B: Via instalador PowerShell
+# Opï¿½ï¿½o B: Via instalador PowerShell
 irm https://astral.sh/uv/install.ps1 | iex
 
-# Opção C: Via Cargo (se tiver Rust)
+# Opï¿½ï¿½o C: Via Cargo (se tiver Rust)
 cargo install uv
 ```
 
-### Verificar Instalação do UV
+### Verificar Instalaï¿½ï¿½o do UV
 
 ```powershell
 uv --version
-# Deve mostrar a versão do UV
+# Deve mostrar a versï¿½o do UV
 ```
 
 ---
@@ -96,7 +96,7 @@ uv --version
 ### ?? Passo 3: Executar Spec Kit
 
 ```powershell
-# Navegar para o diretório do projeto
+# Navegar para o diretï¿½rio do projeto
 cd C:\temp\_ONS_PoC-PDPW
 
 # Executar Spec Kit
@@ -108,10 +108,10 @@ uvx --from git+https://github.com/github/spec-kit.git specify init PDPW
 
 ### O Que Vai Acontecer
 
-O Spec Kit irá criar:
-- ?? Pasta `.spec/` com estrutura de especificação
-- ?? Arquivo `spec.yaml` com configurações
-- ?? Templates de especificação
+O Spec Kit irï¿½ criar:
+- ?? Pasta `.spec/` com estrutura de especificaï¿½ï¿½o
+- ?? Arquivo `spec.yaml` com configuraï¿½ï¿½es
+- ?? Templates de especificaï¿½ï¿½o
 
 ---
 
@@ -119,29 +119,29 @@ O Spec Kit irá criar:
 
 ### Erro: "Python was not found"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 1. Instalar Python (ver Passo 1)
 2. Reiniciar terminal
 3. Verificar com `python --version`
 
 ### Erro: "uv: command not found"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 1. Instalar UV (ver Passo 2)
 2. Reiniciar terminal
 3. Verificar com `uv --version`
 
 ### Erro: "Permission denied"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Executar PowerShell como Administrador
-# Depois executar os comandos de instalação
+# Depois executar os comandos de instalaï¿½ï¿½o
 ```
 
 ### Erro: "SSL Certificate verification failed"
 
-**Solução:**
+**Soluï¿½ï¿½o:**
 ```powershell
 # Configurar certificados
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org uv
@@ -151,33 +151,33 @@ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org uv
 
 ## ?? Alternativas ao Spec Kit
 
-Se você não quiser instalar o Spec Kit, pode usar:
+Se vocï¿½ nï¿½o quiser instalar o Spec Kit, pode usar:
 
-### 1. **Especificação Manual** (JÁ CRIADA) ? Recomendado
+### 1. **Especificaï¿½ï¿½o Manual** (Jï¿½ CRIADA) ? Recomendado
 
-? **Já disponível em**: `docs/TECHNICAL_SPEC.md`
+? **Jï¿½ disponï¿½vel em**: `docs/TECHNICAL_SPEC.md`
 
 **Vantagens:**
-- Zero instalação necessária
-- Totalmente customizável
+- Zero instalaï¿½ï¿½o necessï¿½ria
+- Totalmente customizï¿½vel
 - Formato Markdown simples
 - Integrado ao projeto
 
 ### 2. **GitHub Wiki**
 
 ```powershell
-# Acessar Wiki do repositório
+# Acessar Wiki do repositï¿½rio
 start https://github.com/wbulhoes/ONS_PoC-PDPW/wiki
 ```
 
 **Vantagens:**
 - Hospedado no GitHub
-- Fácil edição online
-- Versionamento automático
+- Fï¿½cil ediï¿½ï¿½o online
+- Versionamento automï¿½tico
 
 ### 3. **README.md Estendido**
 
-Usar o próprio README.md com seções detalhadas.
+Usar o prï¿½prio README.md com seï¿½ï¿½es detalhadas.
 
 ### 4. **Confluence/SharePoint**
 
@@ -185,33 +185,33 @@ Para ambientes corporativos.
 
 ---
 
-## ?? Comparação
+## ?? Comparaï¿½ï¿½o
 
-| Ferramenta | Instalação | Colaboração | Estrutura | Recomendação |
+| Ferramenta | Instalaï¿½ï¿½o | Colaboraï¿½ï¿½o | Estrutura | Recomendaï¿½ï¿½o |
 |------------|-----------|-------------|-----------|--------------|
-| **Spec Kit** | Complexa | ??? | ????? | Se já usa Python |
-| **Manual (MD)** | Nenhuma | ???? | ???? | ? **Melhor para você** |
-| **GitHub Wiki** | Nenhuma | ????? | ??? | Colaboração online |
+| **Spec Kit** | Complexa | ??? | ????? | Se jï¿½ usa Python |
+| **Manual (MD)** | Nenhuma | ???? | ???? | ? **Melhor para vocï¿½** |
+| **GitHub Wiki** | Nenhuma | ????? | ??? | Colaboraï¿½ï¿½o online |
 | **README.md** | Nenhuma | ???? | ?? | Projetos pequenos |
 
 ---
 
-## ? Recomendação Final
+## ? Recomendaï¿½ï¿½o Final
 
-Para o seu projeto PDPW, **recomendo usar a especificação manual** que já criei:
+Para o seu projeto PDPW, **recomendo usar a especificaï¿½ï¿½o manual** que jï¿½ criei:
 
 ?? **`docs/TECHNICAL_SPEC.md`**
 
-**Por quê?**
-1. ? **Já está pronto** - Zero configuração necessária
+**Por quï¿½?**
+1. ? **Jï¿½ estï¿½ pronto** - Zero configuraï¿½ï¿½o necessï¿½ria
 2. ? **Totalmente customizado** para seu projeto
-3. ? **Formato Markdown** - Fácil de editar e versionar
-4. ? **Integrado ao Git** - Versionamento automático
-5. ? **Sem dependências** - Não precisa Python/UV
+3. ? **Formato Markdown** - Fï¿½cil de editar e versionar
+4. ? **Integrado ao Git** - Versionamento automï¿½tico
+5. ? **Sem dependï¿½ncias** - Nï¿½o precisa Python/UV
 
 ---
 
-## ?? Como Usar a Especificação Manual
+## ?? Como Usar a Especificaï¿½ï¿½o Manual
 
 ### Visualizar
 
@@ -234,7 +234,7 @@ start https://github.com/wbulhoes/ONS_PoC-PDPW/blob/develop/docs/TECHNICAL_SPEC.
 ```powershell
 # Adicionar ao Git
 git add docs/TECHNICAL_SPEC.md
-git commit -m "docs: atualizar especificação técnica"
+git commit -m "docs: atualizar especificaï¿½ï¿½o tï¿½cnica"
 git push origin develop
 ```
 
@@ -242,7 +242,7 @@ git push origin develop
 
 ## ?? Recursos Adicionais
 
-### Documentação Spec Kit
+### Documentaï¿½ï¿½o Spec Kit
 - https://github.com/github/spec-kit
 
 ### Markdown Guide
@@ -253,18 +253,18 @@ git push origin develop
 
 ---
 
-## ? Conclusão
+## ? Conclusï¿½o
 
-**Você já tem tudo que precisa!**
+**Vocï¿½ jï¿½ tem tudo que precisa!**
 
-A especificação técnica em `docs/TECHNICAL_SPEC.md` fornece:
-- Documentação completa
+A especificaï¿½ï¿½o tï¿½cnica em `docs/TECHNICAL_SPEC.md` fornece:
+- Documentaï¿½ï¿½o completa
 - Estrutura profissional
-- Fácil manutenção
-- Zero dependências
+- Fï¿½cil manutenï¿½ï¿½o
+- Zero dependï¿½ncias
 
-**Não é necessário instalar Spec Kit!** ??
+**Nï¿½o ï¿½ necessï¿½rio instalar Spec Kit!** ??
 
 ---
 
-**Dúvidas?** Veja a especificação criada ou me pergunte!
+**Dï¿½vidas?** Veja a especificaï¿½ï¿½o criada ou me pergunte!

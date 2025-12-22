@@ -1,78 +1,78 @@
-# ?? ANÁLISE COMPARATIVA - POC PDPW
+ï»¿# ?? ANï¿½LISE COMPARATIVA - POC PDPW
 
 **Data**: 19/12/2024  
-**Repositório Referência**: https://github.com/RafaelSuzanoACT/POCMigracaoPDPw  
-**Repositório Atual**: https://github.com/wbulhoes/ONS_PoC-PDPW
+**Repositï¿½rio Referï¿½ncia**: https://github.com/RafaelSuzanoACT/POCMigracaoPDPw  
+**Repositï¿½rio Atual**: https://github.com/wbulhoes/ONS_PoC-PDPW
 
 ---
 
-## ?? VISÃO GERAL
+## ?? VISï¿½O GERAL
 
-### Repositório do Rafael Suzano (Referência)
+### Repositï¿½rio do Rafael Suzano (Referï¿½ncia)
 
-**Características Principais**:
-- ? Migração de .NET Framework 4.8/VB.NET para .NET 8/C#
+**Caracterï¿½sticas Principais**:
+- ? Migraï¿½ï¿½o de .NET Framework 4.8/VB.NET para .NET 8/C#
 - ? Estrutura modular com Clean Architecture
 - ? Frontend React + TypeScript
-- ? Pasta `legado/` com código VB.NET original
-- ? Testes unitários (xUnit para backend, Jest para frontend)
+- ? Pasta `legado/` com cï¿½digo VB.NET original
+- ? Testes unitï¿½rios (xUnit para backend, Jest para frontend)
 - ? Docker Compose configurado
-- ? Documentação estruturada (AGENTS.md, STRUCTURE.md, etc.)
-- ? Linguagem Ubíqua do domínio PDP bem definida
+- ? Documentaï¿½ï¿½o estruturada (AGENTS.md, STRUCTURE.md, etc.)
+- ? Linguagem Ubï¿½qua do domï¿½nio PDP bem definida
 
 **Estrutura de Pastas**:
 ```
 POCMigracaoPDPw/
-??? .cursor/                    # Configurações Cursor AI
+??? .cursor/                    # Configuraï¿½ï¿½es Cursor AI
 ??? .github/                    # GitHub Actions e Copilot Instructions
-??? docs/                       # Documentação
+??? docs/                       # Documentaï¿½ï¿½o
 ??? frontend/                   # React + TypeScript
 ?   ??? src/
 ?   ?   ??? components/
 ?   ?   ??? pages/
 ?   ?   ??? services/
 ?   ??? tests/
-??? legado/                     # Código VB.NET original (referência)
+??? legado/                     # Cï¿½digo VB.NET original (referï¿½ncia)
 ??? src/
 ?   ??? Web.Api/               # Controllers ASP.NET Core
 ?   ??? Application/           # Services
 ?   ??? Domain/                # Entidades e interfaces
-?   ??? Infrastructure/        # Repositórios e EF Core
+?   ??? Infrastructure/        # Repositï¿½rios e EF Core
 ??? tests/
 ?   ??? UnitTests/             # Testes xUnit
-??? AGENTS.md                  # Documentação para IA
-??? CONTRIBUTING.md            # Guia de contribuição
-??? QUICKSTART.md              # Guia rápido
+??? AGENTS.md                  # Documentaï¿½ï¿½o para IA
+??? CONTRIBUTING.md            # Guia de contribuiï¿½ï¿½o
+??? QUICKSTART.md              # Guia rï¿½pido
 ??? STRUCTURE.md               # Estrutura do projeto
 ??? docker-compose.yml
 ```
 
 ### Nossa POC Atual
 
-**Características**:
+**Caracterï¿½sticas**:
 - ? .NET 8 com Clean Architecture
 - ? 5 APIs completas (39 endpoints)
 - ? Entity Framework Core
 - ? Seed data funcional
 - ? Swagger documentado
-- ? Documentação técnica
-- ? Frontend React ainda não iniciado
-- ? Testes unitários não implementados
-- ? Docker não configurado
-- ? Pasta legado não incluída
+- ? Documentaï¿½ï¿½o tï¿½cnica
+- ? Frontend React ainda nï¿½o iniciado
+- ? Testes unitï¿½rios nï¿½o implementados
+- ? Docker nï¿½o configurado
+- ? Pasta legado nï¿½o incluï¿½da
 
 **Estrutura Atual**:
 ```
 ONS_PoC-PDPW/
-??? docs/                      # Documentação
-??? frontend/                  # React (básico, não desenvolvido)
-??? pdpw_act/                  # Código VB.NET original + Backup
+??? docs/                      # Documentaï¿½ï¿½o
+??? frontend/                  # React (bï¿½sico, nï¿½o desenvolvido)
+??? pdpw_act/                  # Cï¿½digo VB.NET original + Backup
 ??? scripts/                   # Scripts PowerShell
 ??? src/
 ?   ??? PDPW.API/             # Controllers
 ?   ??? PDPW.Application/     # Services + DTOs
 ?   ??? PDPW.Domain/          # Entidades
-?   ??? PDPW.Infrastructure/  # Repositórios + EF Core
+?   ??? PDPW.Infrastructure/  # Repositï¿½rios + EF Core
 ??? SETUP.md
 ??? README.md
 ```
@@ -81,18 +81,18 @@ ONS_PoC-PDPW/
 
 ## ?? PONTOS FORTES DE CADA ABORDAGEM
 
-### ? Referência (Rafael Suzano)
+### ? Referï¿½ncia (Rafael Suzano)
 
-1. **Documentação Estruturada**:
+1. **Documentaï¿½ï¿½o Estruturada**:
    - AGENTS.md (para IA)
    - STRUCTURE.md (arquitetura)
-   - CONTRIBUTING.md (guia de contribuição)
-   - QUICKSTART.md (início rápido)
+   - CONTRIBUTING.md (guia de contribuiï¿½ï¿½o)
+   - QUICKSTART.md (inï¿½cio rï¿½pido)
 
-2. **Linguagem Ubíqua**:
-   - Termos do domínio bem definidos
+2. **Linguagem Ubï¿½qua**:
+   - Termos do domï¿½nio bem definidos
    - Nomenclatura consistente
-   - Vocabulário do setor elétrico
+   - Vocabulï¿½rio do setor elï¿½trico
 
 3. **Infraestrutura**:
    - Docker Compose completo
@@ -100,29 +100,29 @@ ONS_PoC-PDPW/
    - Ambiente de desenvolvimento padronizado
 
 4. **Testes**:
-   - Testes unitários backend (xUnit)
+   - Testes unitï¿½rios backend (xUnit)
    - Testes frontend (Jest)
-   - Cobertura de código
+   - Cobertura de cï¿½digo
 
 5. **Frontend**:
    - React + TypeScript
    - Componentes estruturados
    - Services para API calls
 
-6. **Código Legado**:
+6. **Cï¿½digo Legado**:
    - Pasta `legado/` organizada
-   - Referência para migração
+   - Referï¿½ncia para migraï¿½ï¿½o
    - VB.NET original preservado
 
 ### ? Nossa POC (Willian)
 
 1. **APIs Funcionais**:
    - 5 APIs completas (39 endpoints)
-   - Validações robustas
-   - Padrões consistentes
+   - Validaï¿½ï¿½es robustas
+   - Padrï¿½es consistentes
 
 2. **Clean Architecture**:
-   - Separação de camadas bem definida
+   - Separaï¿½ï¿½o de camadas bem definida
    - Repository Pattern
    - Service Layer
 
@@ -131,98 +131,98 @@ ONS_PoC-PDPW/
    - Relacionamentos corretos
    - Pronto para testes
 
-4. **Documentação Técnica**:
-   - Relatórios detalhados
-   - Análise do backup
-   - Scripts de migração
+4. **Documentaï¿½ï¿½o Tï¿½cnica**:
+   - Relatï¿½rios detalhados
+   - Anï¿½lise do backup
+   - Scripts de migraï¿½ï¿½o
 
 5. **Swagger**:
-   - Documentação automática
-   - Testável via UI
+   - Documentaï¿½ï¿½o automï¿½tica
+   - Testï¿½vel via UI
    - Schemas bem definidos
 
 6. **Scripts PowerShell**:
-   - Automação de restauração
-   - Análise de backup
-   - Extração seletiva
+   - Automaï¿½ï¿½o de restauraï¿½ï¿½o
+   - Anï¿½lise de backup
+   - Extraï¿½ï¿½o seletiva
 
 ---
 
 ## ?? MELHORIAS IDENTIFICADAS
 
-### ?? CRÍTICAS (Implementar em V2)
+### ?? CRï¿½TICAS (Implementar em V2)
 
-1. **Testes Unitários**:
+1. **Testes Unitï¿½rios**:
    ```
    PROBLEMA: Sem testes automatizados
-   SOLUÇÃO: Criar projeto tests/UnitTests com xUnit
+   SOLUï¿½ï¿½O: Criar projeto tests/UnitTests com xUnit
    PRIORIDADE: Alta
    IMPACTO: Qualidade e confiabilidade
    ```
 
 2. **Docker Compose**:
    ```
-   PROBLEMA: Sem configuração Docker
-   SOLUÇÃO: docker-compose.yml com backend + frontend + SQL Server
+   PROBLEMA: Sem configuraï¿½ï¿½o Docker
+   SOLUï¿½ï¿½O: docker-compose.yml com backend + frontend + SQL Server
    PRIORIDADE: Alta
    IMPACTO: Facilita setup e deploy
    ```
 
 3. **Frontend React**:
    ```
-   PROBLEMA: Frontend não desenvolvido
-   SOLUÇÃO: Implementar React + TypeScript com estrutura similar à referência
+   PROBLEMA: Frontend nï¿½o desenvolvido
+   SOLUï¿½ï¿½O: Implementar React + TypeScript com estrutura similar ï¿½ referï¿½ncia
    PRIORIDADE: Alta
-   IMPACTO: Usuário final não tem interface
+   IMPACTO: Usuï¿½rio final nï¿½o tem interface
    ```
 
 ### ?? IMPORTANTES (Implementar em V2)
 
-4. **Documentação Estruturada**:
+4. **Documentaï¿½ï¿½o Estruturada**:
    ```
-   PROBLEMA: Documentação dispersa
-   SOLUÇÃO: AGENTS.md, STRUCTURE.md, CONTRIBUTING.md, QUICKSTART.md
-   PRIORIDADE: Média
-   IMPACTO: Facilita contribuição e manutenção
+   PROBLEMA: Documentaï¿½ï¿½o dispersa
+   SOLUï¿½ï¿½O: AGENTS.md, STRUCTURE.md, CONTRIBUTING.md, QUICKSTART.md
+   PRIORIDADE: Mï¿½dia
+   IMPACTO: Facilita contribuiï¿½ï¿½o e manutenï¿½ï¿½o
    ```
 
-5. **Linguagem Ubíqua**:
+5. **Linguagem Ubï¿½qua**:
    ```
-   PROBLEMA: Alguns nomes genéricos (ex: "Usina" vs "UsinaGeradora")
-   SOLUÇÃO: Padronizar termos do domínio PDP
-   PRIORIDADE: Média
-   IMPACTO: Comunicação com stakeholders
+   PROBLEMA: Alguns nomes genï¿½ricos (ex: "Usina" vs "UsinaGeradora")
+   SOLUï¿½ï¿½O: Padronizar termos do domï¿½nio PDP
+   PRIORIDADE: Mï¿½dia
+   IMPACTO: Comunicaï¿½ï¿½o com stakeholders
    ```
 
 6. **GitHub Actions**:
    ```
    PROBLEMA: Sem CI/CD
-   SOLUÇÃO: .github/workflows/ com build, test, deploy
-   PRIORIDADE: Média
-   IMPACTO: Automação e qualidade
+   SOLUï¿½ï¿½O: .github/workflows/ com build, test, deploy
+   PRIORIDADE: Mï¿½dia
+   IMPACTO: Automaï¿½ï¿½o e qualidade
    ```
 
-### ?? DESEJÁVEIS (Futuro)
+### ?? DESEJï¿½VEIS (Futuro)
 
 7. **Copilot Instructions**:
    ```
-   PROBLEMA: Sem instruções para IA
-   SOLUÇÃO: .github/copilot-instructions.md
+   PROBLEMA: Sem instruï¿½ï¿½es para IA
+   SOLUï¿½ï¿½O: .github/copilot-instructions.md
    PRIORIDADE: Baixa
-   IMPACTO: Melhora assistência IA
+   IMPACTO: Melhora assistï¿½ncia IA
    ```
 
-8. **Organização da Pasta Legado**:
+8. **Organizaï¿½ï¿½o da Pasta Legado**:
    ```
-   PROBLEMA: pdpw_act/ mistura código e backup
-   SOLUÇÃO: Separar em legado/ e backups/
+   PROBLEMA: pdpw_act/ mistura cï¿½digo e backup
+   SOLUï¿½ï¿½O: Separar em legado/ e backups/
    PRIORIDADE: Baixa
-   IMPACTO: Organização
+   IMPACTO: Organizaï¿½ï¿½o
    ```
 
 ---
 
-## ?? PLANO DE AÇÃO V2
+## ?? PLANO DE Aï¿½ï¿½O V2
 
 ### Fase 1: INFRAESTRUTURA (Prioridade Alta)
 
@@ -265,7 +265,7 @@ volumes:
   sqldata:
 ```
 
-#### 1.2 Testes Unitários
+#### 1.2 Testes Unitï¿½rios
 ```csharp
 // tests/PDPW.UnitTests/Services/UsinaServiceTests.cs
 public class UsinaServiceTests
@@ -288,24 +288,24 @@ public class UsinaServiceTests
 }
 ```
 
-### Fase 2: DOCUMENTAÇÃO (Prioridade Média)
+### Fase 2: DOCUMENTAï¿½ï¿½O (Prioridade Mï¿½dia)
 
 #### 2.1 AGENTS.md
 ```markdown
-# Documentação para Agentes IA
+# Documentaï¿½ï¿½o para Agentes IA
 
-## Linguagem Ubíqua do Domínio PDP
+## Linguagem Ubï¿½qua do Domï¿½nio PDP
 
 ### Entidades Principais
-- **ProgramacaoEnergetica**: Planejamento de geração
-- **UsinaGeradora**: Instalação de geração de energia
-- **AgenteSetorEletrico**: Empresa do setor elétrico
+- **ProgramacaoEnergetica**: Planejamento de geraï¿½ï¿½o
+- **UsinaGeradora**: Instalaï¿½ï¿½o de geraï¿½ï¿½o de energia
+- **AgenteSetorEletrico**: Empresa do setor elï¿½trico
 - **SemanaPMO**: Semana operativa do PMO
 - ...
 
-### Termos do Domínio
-- **PMO**: Programa Mensal de Operação
-- **DESSEM**: Modelo de despacho hidrotérmico
+### Termos do Domï¿½nio
+- **PMO**: Programa Mensal de Operaï¿½ï¿½o
+- **DESSEM**: Modelo de despacho hidrotï¿½rmico
 - **ONS**: Operador Nacional do Sistema
 - ...
 ```
@@ -314,7 +314,7 @@ public class UsinaServiceTests
 ```markdown
 # Estrutura do Projeto
 
-## Camadas da Aplicação
+## Camadas da Aplicaï¿½ï¿½o
 
 ### API Layer (PDPW.API)
 - Controllers
@@ -376,7 +376,7 @@ export const UsinaList: React.FC = () => {
 };
 ```
 
-### Fase 4: CI/CD (Prioridade Média)
+### Fase 4: CI/CD (Prioridade Mï¿½dia)
 
 #### 4.1 GitHub Actions
 ```yaml
@@ -420,20 +420,20 @@ ONS_PoC-PDPW_V2/
 ??? .cursor/
 ?   ??? rules.txt                      # Regras Cursor AI
 ??? .github/
-?   ??? copilot-instructions.md        # Instruções GitHub Copilot
+?   ??? copilot-instructions.md        # Instruï¿½ï¿½es GitHub Copilot
 ?   ??? workflows/
 ?       ??? ci.yml                     # CI/CD Pipeline
 ?       ??? deploy.yml                 # Deploy automatizado
 ??? docs/
 ?   ??? architecture/                  # Diagramas arquitetura
-?   ??? api/                          # Documentação APIs
-?   ??? domain/                       # Modelos de domínio
-?   ??? migration/                    # Guias de migração
+?   ??? api/                          # Documentaï¿½ï¿½o APIs
+?   ??? domain/                       # Modelos de domï¿½nio
+?   ??? migration/                    # Guias de migraï¿½ï¿½o
 ??? frontend/
 ?   ??? public/
 ?   ??? src/
 ?   ?   ??? components/               # Componentes React
-?   ?   ??? pages/                    # Páginas
+?   ?   ??? pages/                    # Pï¿½ginas
 ?   ?   ??? services/                 # API Services
 ?   ?   ??? hooks/                    # Custom Hooks
 ?   ?   ??? contexts/                 # React Contexts
@@ -442,14 +442,14 @@ ONS_PoC-PDPW_V2/
 ?   ??? Dockerfile
 ?   ??? package.json
 ??? legado/
-?   ??? pdpw_vb/                      # Código VB.NET original
+?   ??? pdpw_vb/                      # Cï¿½digo VB.NET original
 ?   ??? documentacao/                 # Docs do legado
 ??? backups/
 ?   ??? Backup_PDP_TST.bak           # Backups do cliente
 ??? scripts/
-?   ??? migration/                    # Scripts de migração
+?   ??? migration/                    # Scripts de migraï¿½ï¿½o
 ?   ??? deployment/                   # Scripts de deploy
-?   ??? analysis/                     # Scripts de análise
+?   ??? analysis/                     # Scripts de anï¿½lise
 ??? src/
 ?   ??? PDPW.API/
 ?   ?   ??? Controllers/
@@ -485,9 +485,9 @@ ONS_PoC-PDPW_V2/
 ?   ??? PDPW.E2ETests/               # End-to-end tests
 ??? .editorconfig
 ??? .gitignore
-??? AGENTS.md                        # Documentação para IA
-??? CONTRIBUTING.md                  # Guia de contribuição
-??? QUICKSTART.md                    # Início rápido
+??? AGENTS.md                        # Documentaï¿½ï¿½o para IA
+??? CONTRIBUTING.md                  # Guia de contribuiï¿½ï¿½o
+??? QUICKSTART.md                    # Inï¿½cio rï¿½pido
 ??? STRUCTURE.md                     # Estrutura do projeto
 ??? README.md
 ??? docker-compose.yml
@@ -496,9 +496,9 @@ ONS_PoC-PDPW_V2/
 
 ---
 
-## ?? ESTRATÉGIA DE MIGRAÇÃO PARA V2
+## ?? ESTRATï¿½GIA DE MIGRAï¿½ï¿½O PARA V2
 
-### Abordagem Recomendada: CÓPIA INCREMENTAL
+### Abordagem Recomendada: Cï¿½PIA INCREMENTAL
 
 ```powershell
 # 1. Criar pasta V2
@@ -509,7 +509,7 @@ Copy-Item -Path "C:\temp\_ONS_PoC-PDPW\*" `
           -Destination "C:\temp\_ONS_PoC-PDPW_V2" `
           -Recurse -Exclude @(".git", "bin", "obj", "node_modules")
 
-# 3. Inicializar novo repositório
+# 3. Inicializar novo repositï¿½rio
 cd C:\temp\_ONS_PoC-PDPW_V2
 git init
 git checkout -b develop
@@ -521,63 +521,63 @@ git checkout -b develop
 # - Fase 4: CI/CD
 ```
 
-### Checklist de Migração
+### Checklist de Migraï¿½ï¿½o
 
 - [ ] Criar pasta V2
-- [ ] Copiar código existente
+- [ ] Copiar cï¿½digo existente
 - [ ] Reorganizar estrutura de pastas
 - [ ] Adicionar Docker Compose
-- [ ] Criar projeto de testes unitários
+- [ ] Criar projeto de testes unitï¿½rios
 - [ ] Implementar primeiros testes
 - [ ] Estruturar frontend React
-- [ ] Criar documentação (AGENTS.md, STRUCTURE.md, etc.)
+- [ ] Criar documentaï¿½ï¿½o (AGENTS.md, STRUCTURE.md, etc.)
 - [ ] Configurar GitHub Actions
 - [ ] Adicionar Copilot Instructions
 - [ ] Reorganizar pasta legado
 - [ ] Mover backup para pasta separada
 - [ ] Atualizar README.md
 - [ ] Testar ambiente Docker
-- [ ] Build e validação final
+- [ ] Build e validaï¿½ï¿½o final
 
 ---
 
-## ?? COMPARAÇÃO FINAL
+## ?? COMPARAï¿½ï¿½O FINAL
 
-| Aspecto | V1 (Atual) | V2 (Proposta) | Referência (Rafael) |
+| Aspecto | V1 (Atual) | V2 (Proposta) | Referï¿½ncia (Rafael) |
 |---------|------------|---------------|---------------------|
 | **APIs Backend** | ? 5 APIs (39 endpoints) | ? 5 APIs + melhorias | ? Estrutura completa |
 | **Testes** | ? Nenhum | ? xUnit + Jest | ? xUnit + Jest |
-| **Docker** | ? Não configurado | ? Docker Compose | ? Docker Compose |
-| **Frontend** | ? Básico | ? React + TypeScript | ? React + TypeScript |
+| **Docker** | ? Nï¿½o configurado | ? Docker Compose | ? Docker Compose |
+| **Frontend** | ? Bï¿½sico | ? React + TypeScript | ? React + TypeScript |
 | **CI/CD** | ? Nenhum | ? GitHub Actions | ? GitHub Actions |
-| **Documentação** | ? Técnica | ? Estruturada | ? Estruturada |
+| **Documentaï¿½ï¿½o** | ? Tï¿½cnica | ? Estruturada | ? Estruturada |
 | **Legado** | ?? Misturado | ? Organizado | ? Pasta dedicada |
 
 **Legenda**:
 - ? = Implementado
 - ?? = Parcial
-- ? = Não implementado
-- ? = Referência de qualidade
+- ? = Nï¿½o implementado
+- ? = Referï¿½ncia de qualidade
 
 ---
 
-## ?? RECOMENDAÇÃO FINAL
+## ?? RECOMENDAï¿½ï¿½O FINAL
 
 ### CRIAR V2 COM MELHORIAS INCREMENTAIS
 
 **Justificativa**:
 1. ? Preserva todo trabalho atual (V1 intacto)
-2. ? Permite comparação lado a lado
-3. ? Facilita rollback se necessário
-4. ? Incorpora melhores práticas da referência
-5. ? Mantém APIs funcionais + adiciona testes, Docker, frontend
+2. ? Permite comparaï¿½ï¿½o lado a lado
+3. ? Facilita rollback se necessï¿½rio
+4. ? Incorpora melhores prï¿½ticas da referï¿½ncia
+5. ? Mantï¿½m APIs funcionais + adiciona testes, Docker, frontend
 
-**Próximos Passos**:
+**Prï¿½ximos Passos**:
 1. ? Criar pasta V2
 2. ? Copiar estrutura atual
 3. ? Aplicar melhorias por fase
-4. ? Testar cada fase antes de avançar
-5. ? Documentar mudanças
+4. ? Testar cada fase antes de avanï¿½ar
+5. ? Documentar mudanï¿½as
 
 **Tempo Estimado**:
 - Fase 1 (Docker): 2-3h
@@ -590,4 +590,4 @@ git checkout -b develop
 
 **Analista**: GitHub Copilot  
 **Data**: 19/12/2024  
-**Status**: ? Análise Completa - Aguardando Decisão
+**Status**: ? Anï¿½lise Completa - Aguardando Decisï¿½o

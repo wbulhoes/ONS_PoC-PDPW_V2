@@ -1,39 +1,39 @@
-# ?? APRESENTAÇÃO DAILY - POC PDPW
+ï»¿# ?? APRESENTAï¿½ï¿½O DAILY - POC PDPW
 
 **Data:** 19/12/2024  
-**Projeto:** PoC PDPW - Modernização Sistema ONS  
+**Projeto:** PoC PDPW - Modernizaï¿½ï¿½o Sistema ONS  
 **Apresentador:** Willian Bulhoes  
-**Duração:** 5-10 minutos
+**Duraï¿½ï¿½o:** 5-10 minutos
 
 ---
 
-## ?? VISÃO GERAL DA POC
+## ?? VISï¿½O GERAL DA POC
 
 ### Objetivo
-Modernizar o sistema PDPW (Programação Diária da Produção de Energia) do ONS utilizando tecnologias modernas.
+Modernizar o sistema PDPW (Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o de Energia) do ONS utilizando tecnologias modernas.
 
 ### Escopo da PoC
 ```
 ???????????????????????????????????????????
 ? BACKEND (Prioridade)                    ?
-? • .NET 8 + Clean Architecture           ?
-? • 29 APIs RESTful                       ?
-? • SQL Server                            ?
-? • Entity Framework Core                 ?
+? ï¿½ .NET 8 + Clean Architecture           ?
+? ï¿½ 29 APIs RESTful                       ?
+? ï¿½ SQL Server                            ?
+? ï¿½ Entity Framework Core                 ?
 ???????????????????????????????????????????
               ?
 ???????????????????????????????????????????
 ? FRONTEND (1 Tela Demonstrativa)         ?
-? • React 18 + TypeScript                 ?
-? • 1 CRUD: Cadastro de Usinas            ?
-? • Prova de conceito da integração       ?
+? ï¿½ React 18 + TypeScript                 ?
+? ï¿½ 1 CRUD: Cadastro de Usinas            ?
+? ï¿½ Prova de conceito da integraï¿½ï¿½o       ?
 ???????????????????????????????????????????
 ```
 
-### Estratégia
+### Estratï¿½gia
 **80% Backend + 20% Frontend**
 - Foco em APIs robustas e bem documentadas
-- 1 interface frontend para demonstrar integração
+- 1 interface frontend para demonstrar integraï¿½ï¿½o
 - Pattern estabelecido para escalabilidade futura
 
 ---
@@ -61,30 +61,30 @@ Modernizar o sistema PDPW (Programação Diária da Produção de Energia) do ONS uti
 ### 1. Arquitetura ? 100%
 ```
 ? Clean Architecture implementada
-? Separação em 4 camadas
+? Separaï¿½ï¿½o em 4 camadas
    ?? Domain (Entidades e Regras)
    ?? Infrastructure (Banco de dados)
-   ?? Application (Lógica de negócio)
+   ?? Application (Lï¿½gica de negï¿½cio)
    ?? API (Controllers REST)
 ```
 
 ### 2. Domain Layer ? 100%
 ```
 ? 29 Entidades criadas
-   ?? Gestão Ativos: Usina, Empresa, TipoUsina, etc (5)
-   ?? Unidades Geração: UnidadeGeradora, Paradas, etc (6)
+   ?? Gestï¿½o Ativos: Usina, Empresa, TipoUsina, etc (5)
+   ?? Unidades Geraï¿½ï¿½o: UnidadeGeradora, Paradas, etc (6)
    ?? Dados Core: ArquivoDadger, Cargas, etc (4)
    ?? Consolidados: DCA, DCR, etc (3)
-   ?? Documentos: Uploads, Relatórios, etc (4)
-   ?? Operação: Intercâmbios, Balanços, etc (3)
-   ?? Térmicas: Inflexibilidades, Rampas, etc (4)
+   ?? Documentos: Uploads, Relatï¿½rios, etc (4)
+   ?? Operaï¿½ï¿½o: Intercï¿½mbios, Balanï¿½os, etc (3)
+   ?? Tï¿½rmicas: Inflexibilidades, Rampas, etc (4)
 ```
 
 ### 3. Database ? 100%
 ```
 ? 30 tabelas criadas
 ? 23 Foreign Keys configuradas
-? 20+ Índices de performance
+? 20+ ï¿½ndices de performance
 ? 2 Migrations aplicadas
 ? 23 registros de dados reais inseridos
    ?? 5 Tipos de Usina
@@ -106,29 +106,29 @@ Modernizar o sistema PDPW (Programação Diária da Produção de Energia) do ONS uti
    ?? DELETE /api/usinas/{id}
 
 ? CRUD completo
-? Validações de negócio
+? Validaï¿½ï¿½es de negï¿½cio
 ? Swagger documentado
 ? Pattern estabelecido para replicar
 ```
 
-### 5. Documentação ? 100%
+### 5. Documentaï¿½ï¿½o ? 100%
 ```
-? 24 documentos técnicos criados
+? 24 documentos tï¿½cnicos criados
    ?? Guias de desenvolvimento
    ?? Cronogramas detalhados
    ?? Estrutura de testes modular
-   ?? Patterns reutilizáveis
+   ?? Patterns reutilizï¿½veis
    ?? Scripts SQL completos
 ```
 
 ---
 
-## ?? NÚMEROS DO DIA 1
+## ?? Nï¿½MEROS DO DIA 1
 
 ```
-Código Criado:
+Cï¿½digo Criado:
 ?? 75+ arquivos criados
-?? 16.000+ linhas de código
+?? 16.000+ linhas de cï¿½digo
 ?? 5 commits realizados
 ?? 100% pushed no GitHub
 
@@ -137,46 +137,46 @@ Estrutura:
 ?? 30 Tabelas no banco
 ?? 23 Registros seed
 ?? 8 Endpoints funcionais
-?? 24 Documentos técnicos
+?? 24 Documentos tï¿½cnicos
 
 Tempo:
-?? Duração: 8 horas
+?? Duraï¿½ï¿½o: 8 horas
 ?? Velocity: Alta
 ```
 
 ---
 
-## ?? ESTRATÉGIA DE DESENVOLVIMENTO
+## ?? ESTRATï¿½GIA DE DESENVOLVIMENTO
 
 ### Abordagem Escolhida
 
-**Backend First** (80% do esforço)
+**Backend First** (80% do esforï¿½o)
 ```
 Motivos:
-? 29 APIs = base crítica do sistema
-? Dados complexos do setor elétrico
-? Validações de negócio essenciais
-? Integração com múltiplos sistemas
-? Pattern bem definido = desenvolvimento rápido
+? 29 APIs = base crï¿½tica do sistema
+? Dados complexos do setor elï¿½trico
+? Validaï¿½ï¿½es de negï¿½cio essenciais
+? Integraï¿½ï¿½o com mï¿½ltiplos sistemas
+? Pattern bem definido = desenvolvimento rï¿½pido
 ```
 
-**Frontend Demonstrativo** (20% do esforço)
+**Frontend Demonstrativo** (20% do esforï¿½o)
 ```
 Objetivo:
-? Provar conceito de integração
+? Provar conceito de integraï¿½ï¿½o
 ? Demonstrar CRUD funcional
-? Validar usabilidade básica
+? Validar usabilidade bï¿½sica
 ? 1 tela: Cadastro de Usinas
 ```
 
-### Por que esta estratégia?
+### Por que esta estratï¿½gia?
 
 **? Vantagens:**
-1. Backend robusto = base sólida
-2. APIs bem documentadas = múltiplos frontends possíveis
+1. Backend robusto = base sï¿½lida
+2. APIs bem documentadas = mï¿½ltiplos frontends possï¿½veis
 3. Pattern estabelecido = desenvolvimento paralelo
 4. Swagger = testes imediatos sem frontend
-5. Reutilização futura = Mobile, Desktop, Web
+5. Reutilizaï¿½ï¿½o futura = Mobile, Desktop, Web
 
 **? Alternativa descartada: Frontend First**
 - Frontend sem APIs = mockups sem valor real
@@ -194,7 +194,7 @@ Objetivo:
 ? Database + Migration
 ? API Usina completa
 ? Seed data com dados reais
-? Documentação completa
+? Documentaï¿½ï¿½o completa
 
 Status: 40% da PoC
 ```
@@ -206,7 +206,7 @@ Objetivo: 5 APIs funcionais (1 ? 5)
 Backend (3 devs em paralelo):
 ?? DEV 1: APIs TipoUsina, Empresa, SemanaPMO
 ?? DEV 2: APIs UnidadeGeradora, ParadaUG
-?? DEV 3: Análise + estrutura frontend
+?? DEV 3: Anï¿½lise + estrutura frontend
 
 Entrega:
 ? 4 APIs novas (total 5)
@@ -226,13 +226,13 @@ Backend:
 
 Frontend:
 ?? Listagem de Usinas
-?? Integração com API
-?? Formulário básico
+?? Integraï¿½ï¿½o com API
+?? Formulï¿½rio bï¿½sico
 
 Status esperado: 60% da PoC
 ```
 
-### DIA 4 (24/12) - Terça
+### DIA 4 (24/12) - Terï¿½a
 ```
 Objetivo: 22 APIs + CRUD completo
 
@@ -242,7 +242,7 @@ Backend:
 
 Frontend:
 ?? CRUD completo
-?? Validações
+?? Validaï¿½ï¿½es
 ?? UX polido
 
 Status esperado: 80% da PoC
@@ -257,7 +257,7 @@ Backend:
 ?? Testes: 80%
 
 Frontend:
-?? Integração completa
+?? Integraï¿½ï¿½o completa
 ?? Loading states
 ?? Error handling
 
@@ -266,7 +266,7 @@ Status esperado: 90% da PoC
 
 ### DIA 6 (27/12) - Sexta ?? ENTREGA
 ```
-Objetivo: 29 APIs + Apresentação final
+Objetivo: 29 APIs + Apresentaï¿½ï¿½o final
 
 Backend:
 ?? 2 APIs finais (27 ? 29)
@@ -278,9 +278,9 @@ Frontend:
 ?? Responsividade
 ?? Deploy preparado
 
-Apresentação:
+Apresentaï¿½ï¿½o:
 ?? Demo ao vivo
-?? Documentação completa
+?? Documentaï¿½ï¿½o completa
 ?? Roadmap futuro
 
 Status: 100% da PoC ?
@@ -288,7 +288,7 @@ Status: 100% da PoC ?
 
 ---
 
-## ?? DISTRIBUIÇÃO DE TRABALHO
+## ?? DISTRIBUIï¿½ï¿½O DE TRABALHO
 
 ### DEV 1 - Backend Senior (APIs Complexas)
 ```
@@ -301,7 +301,7 @@ Responsabilidade: 15 APIs
 ?? DCA/DCR
 ?? ... (9 mais)
 
-Foco: Lógica de negócio complexa
+Foco: Lï¿½gica de negï¿½cio complexa
 ```
 
 ### DEV 2 - Backend Pleno (APIs Relacionadas)
@@ -311,23 +311,23 @@ Responsabilidade: 14 APIs
 ?? ParadaUG
 ?? RestricaoUG/US
 ?? MotivoRestricao
-?? Intercâmbio
+?? Intercï¿½mbio
 ?? Balanco
 ?? ... (8 mais)
 
-Foco: Relacionamentos e validações
+Foco: Relacionamentos e validaï¿½ï¿½es
 ```
 
 ### DEV 3 - Frontend (1 CRUD Demonstrativo)
 ```
 Responsabilidade: 1 Tela completa
 ?? Listagem de Usinas
-?? Formulário Create/Edit
-?? Validações
-?? Integração com API Usina
+?? Formulï¿½rio Create/Edit
+?? Validaï¿½ï¿½es
+?? Integraï¿½ï¿½o com API Usina
 ?? UX/UI polido
 
-Foco: Prova de conceito da integração
+Foco: Prova de conceito da integraï¿½ï¿½o
 ```
 
 ---
@@ -340,8 +340,8 @@ Foco: Prova de conceito da integração
 ### DEV 1 - 3 APIs
 ```
 ? 2h - API TipoUsina (simples - 5 registros)
-? 2h - API Empresa (média - 8 registros)
-? 2.5h - API SemanaPMO (complexa - validações)
+? 2h - API Empresa (mï¿½dia - 8 registros)
+? 2.5h - API SemanaPMO (complexa - validaï¿½ï¿½es)
 
 Total: 6.5 horas
 ```
@@ -349,7 +349,7 @@ Total: 6.5 horas
 ### DEV 2 - 2 APIs
 ```
 ? 3h - API UnidadeGeradora (complexa - FK Usina)
-? 2.5h - API ParadaUG (média - FK UnidadeGeradora)
+? 2.5h - API ParadaUG (mï¿½dia - FK UnidadeGeradora)
 
 Total: 5.5 horas
 ```
@@ -357,7 +357,7 @@ Total: 5.5 horas
 ### DEV 3 - Estrutura
 ```
 ? 1h - Setup ambiente React
-? 2h - Análise tela legada
+? 2h - Anï¿½lise tela legada
 ? 2h - Estrutura base componentes
 ? 3h - Mock de interface
 
@@ -368,37 +368,37 @@ Total: 8 horas
 
 ## ?? KPIs DA POC
 
-### Métricas Técnicas
+### Mï¿½tricas Tï¿½cnicas
 ```
 APIs Funcionais:        1/29 (3.4%)
 Entidades Domain:       29/29 (100%)
 Tabelas Database:       30/30 (100%)
 Dados Seed:             23 registros
-Documentação:           24 documentos
-Cobertura Testes:       0% (não iniciado)
+Documentaï¿½ï¿½o:           24 documentos
+Cobertura Testes:       0% (nï¿½o iniciado)
 ```
 
-### Métricas de Qualidade
+### Mï¿½tricas de Qualidade
 ```
 Build Status:           ? Success
 Compilation Errors:     0
-Warnings:               1 (não crítico)
-Code Reviews:           Não aplicável (PoC)
+Warnings:               1 (nï¿½o crï¿½tico)
+Code Reviews:           Nï¿½o aplicï¿½vel (PoC)
 ```
 
-### Métricas de Produtividade
+### Mï¿½tricas de Produtividade
 ```
-Linhas de Código:       16.000+
+Linhas de Cï¿½digo:       16.000+
 Commits:                5
 Velocity:               Alta
-Retrabalho:             Mínimo
+Retrabalho:             Mï¿½nimo
 ```
 
 ---
 
 ## ?? DIFERENCIAIS DA POC
 
-### 1. Arquitetura Sólida
+### 1. Arquitetura Sï¿½lida
 ```
 ? Clean Architecture
 ? SOLID Principles
@@ -411,28 +411,28 @@ Retrabalho:             Mínimo
 ? 10 Usinas do SIN
 ? 8 Empresas reais do setor
 ? Capacidades reais (41.493 MW)
-? Dados históricos (desde 1984)
+? Dados histï¿½ricos (desde 1984)
 ```
 
 ### 3. Escalabilidade
 ```
-? Pattern replicável 28x
+? Pattern replicï¿½vel 28x
 ? Estrutura para 1000+ usinas
 ? Multi-tenant ready
 ? Microservices ready
 ```
 
-### 4. Documentação
+### 4. Documentaï¿½ï¿½o
 ```
 ? Swagger UI completo
-? 24 documentos técnicos
+? 24 documentos tï¿½cnicos
 ? Guias de teste detalhados
 ? Onboarding facilitado
 ```
 
 ---
 
-## ?? PRÓXIMAS ENTREGAS
+## ?? PRï¿½XIMAS ENTREGAS
 
 ### Curto Prazo (Esta Semana)
 ```
@@ -441,64 +441,64 @@ Retrabalho:             Mínimo
 24/12 - 22 APIs + CRUD completo
 ```
 
-### Médio Prazo (Próxima Semana)
+### Mï¿½dio Prazo (Prï¿½xima Semana)
 ```
 26/12 - 27 APIs + Frontend polido
-27/12 - 29 APIs + Apresentação final ?
+27/12 - 29 APIs + Apresentaï¿½ï¿½o final ?
 ```
 
-### Pós PoC
+### Pï¿½s PoC
 ```
-? Apresentação ao cliente
+? Apresentaï¿½ï¿½o ao cliente
 ? Feedback e ajustes
 ? Planejamento projeto completo
-? Estimativa de esforço produção
+? Estimativa de esforï¿½o produï¿½ï¿½o
 ```
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
 ### Riscos Identificados
 
 **1. Prazo curto (6 dias)**
-- Mitigação: Pattern estabelecido acelera desenvolvimento
+- Mitigaï¿½ï¿½o: Pattern estabelecido acelera desenvolvimento
 - Status: ? Sob controle
 
 **2. 29 APIs = grande volume**
-- Mitigação: Desenvolvimento paralelo (3 devs)
+- Mitigaï¿½ï¿½o: Desenvolvimento paralelo (3 devs)
 - Status: ? Planejado
 
-**3. Complexidade do domínio**
-- Mitigação: Dados reais + documentação do cliente
+**3. Complexidade do domï¿½nio**
+- Mitigaï¿½ï¿½o: Dados reais + documentaï¿½ï¿½o do cliente
 - Status: ? Mapeado
 
-**4. Integração Backend-Frontend**
-- Mitigação: Swagger para testes isolados
-- Status: ? Testável
+**4. Integraï¿½ï¿½o Backend-Frontend**
+- Mitigaï¿½ï¿½o: Swagger para testes isolados
+- Status: ? Testï¿½vel
 
 **5. Falta de testes automatizados**
-- Mitigação: Testes manuais via Swagger + Testes automatizados DIA 3
-- Status: ?? Atenção
+- Mitigaï¿½ï¿½o: Testes manuais via Swagger + Testes automatizados DIA 3
+- Status: ?? Atenï¿½ï¿½o
 
 ---
 
-## ?? RECOMENDAÇÕES
+## ?? RECOMENDAï¿½ï¿½ES
 
 ### Para o Gestor
 
 **1. Validar Escopo**
 ```
-?? 29 APIs backend está adequado?
-?? 1 tela frontend é suficiente para PoC?
-?? 6 dias é viável?
+?? 29 APIs backend estï¿½ adequado?
+?? 1 tela frontend ï¿½ suficiente para PoC?
+?? 6 dias ï¿½ viï¿½vel?
 ```
 
-**2. Aprovações Necessárias**
+**2. Aprovaï¿½ï¿½es Necessï¿½rias**
 ```
-?? Acesso ao banco de produção?
-?? Validação com especialistas ONS?
-?? Apresentação intermediária?
+?? Acesso ao banco de produï¿½ï¿½o?
+?? Validaï¿½ï¿½o com especialistas ONS?
+?? Apresentaï¿½ï¿½o intermediï¿½ria?
 ```
 
 **3. Recursos**
@@ -510,20 +510,20 @@ Retrabalho:             Mínimo
 
 ---
 
-## ?? PRÓXIMOS PASSOS IMEDIATOS
+## ?? PRï¿½XIMOS PASSOS IMEDIATOS
 
-### Hoje (Pós-Daily)
+### Hoje (Pï¿½s-Daily)
 ```
-1. ? Aprovação do escopo e cronograma
+1. ? Aprovaï¿½ï¿½o do escopo e cronograma
 2. ? Confirmar recursos (3 devs)
 3. ? Iniciar DEV 1: API TipoUsina
 4. ? Iniciar DEV 2: API UnidadeGeradora
 5. ? Iniciar DEV 3: Setup React
 ```
 
-### Amanhã (21/12)
+### Amanhï¿½ (21/12)
 ```
-1. Daily rápida (10 min)
+1. Daily rï¿½pida (10 min)
 2. Review das 4 APIs novas
 3. Ajustes conforme feedback
 4. Preparar demo parcial
@@ -542,7 +542,7 @@ Retrabalho:             Mínimo
 ? ? DATABASE             100%  ??????????       ?
 ? ?? BACKEND APIs           3%  ??????????       ?
 ? ? FRONTEND               0%  ??????????       ?
-? ? DOCUMENTAÇÃO         100%  ??????????       ?
+? ? DOCUMENTAï¿½ï¿½O         100%  ??????????       ?
 ?                                                ?
 ? ?? PROGRESSO GERAL:      40%  ??????????       ?
 ?                                                ?
@@ -556,37 +556,37 @@ Retrabalho:             Mínimo
 
 ## ?? PERGUNTA PARA O GESTOR
 
-**"Você aprova esta estratégia (80% Backend + 20% Frontend) para a PoC?"**
+**"Vocï¿½ aprova esta estratï¿½gia (80% Backend + 20% Frontend) para a PoC?"**
 
 **Alternativas:**
 - ? **A) Aprovar conforme apresentado** (recomendado)
-- ?? B) Ajustar proporção (ex: 70% Backend + 30% Frontend)
-- ?? C) Priorizar frontend (não recomendado para PoC)
+- ?? B) Ajustar proporï¿½ï¿½o (ex: 70% Backend + 30% Frontend)
+- ?? C) Priorizar frontend (nï¿½o recomendado para PoC)
 - ?? D) Reduzir escopo (menos APIs)
 
 ---
 
-## ?? CONCLUSÃO
+## ?? CONCLUSï¿½O
 
 ### Pontos Fortes
 ```
-? Arquitetura sólida estabelecida
-? Pattern replicável definido
+? Arquitetura sï¿½lida estabelecida
+? Pattern replicï¿½vel definido
 ? Primeira API completa e funcional
-? Dados reais do setor elétrico
-? Documentação abrangente
+? Dados reais do setor elï¿½trico
+? Documentaï¿½ï¿½o abrangente
 ? Cronograma detalhado
 ? Riscos mapeados
 ```
 
-### Próximos Marcos
+### Prï¿½ximos Marcos
 ```
 ? Hoje (20/12): 5 APIs funcionais
 ? Segunda (23/12): Frontend iniciado
-? Sexta (27/12): Apresentação final ?
+? Sexta (27/12): Apresentaï¿½ï¿½o final ?
 ```
 
-### Confiança na Entrega
+### Confianï¿½a na Entrega
 ```
 ?? Alta (80%)
 
@@ -595,24 +595,24 @@ Motivos:
 ? Pattern estabelecido e testado
 ? Cronograma realista
 ? Equipe experiente
-? Documentação completa
+? Documentaï¿½ï¿½o completa
 ```
 
 ---
 
 **Preparado por:** Willian Bulhoes  
 **Data:** 19/12/2024  
-**Versão:** 1.0 - Daily DIA 1  
-**Próxima Daily:** 20/12/2024 - 09:00
+**Versï¿½o:** 1.0 - Daily DIA 1  
+**Prï¿½xima Daily:** 20/12/2024 - 09:00
 
 ---
 
 ## ?? CALL TO ACTION
 
-**Aguardando aprovação para:**
+**Aguardando aprovaï¿½ï¿½o para:**
 1. ? Validar escopo (29 APIs + 1 tela)
 2. ? Confirmar cronograma (6 dias)
 3. ? Aprovar recursos (3 devs)
 4. ? Iniciar desenvolvimento DIA 2
 
-**Equipe pronta para começar! ??**
+**Equipe pronta para comeï¿½ar! ??**

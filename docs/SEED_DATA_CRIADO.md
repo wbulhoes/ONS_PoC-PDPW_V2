@@ -1,4 +1,4 @@
-# ? SEED DATA CRIADO E APLICADO COM SUCESSO!
+ï»¿# ? SEED DATA CRIADO E APLICADO COM SUCESSO!
 
 **Data:** 19/12/2024  
 **Status:** ? COMPLETO  
@@ -10,7 +10,7 @@
 
 ```
 ? 3 arquivos de seed criados
-? Dados realistas do setor elétrico brasileiro (ONS)
+? Dados realistas do setor elï¿½trico brasileiro (ONS)
 ? 23 registros inseridos
 ? Migration criada e aplicada
 ? Banco populado com sucesso
@@ -25,9 +25,9 @@
 
 | ID | Nome | Fonte Energia |
 |----|------|---------------|
-| 1 | Hidrelétrica | Hídrica |
-| 2 | Térmica | Combustíveis Fósseis / Biomassa |
-| 3 | Eólica | Eólica |
+| 1 | Hidrelï¿½trica | Hï¿½drica |
+| 2 | Tï¿½rmica | Combustï¿½veis Fï¿½sseis / Biomassa |
+| 3 | Eï¿½lica | Eï¿½lica |
 | 4 | Solar | Solar |
 | 5 | Nuclear | Nuclear |
 
@@ -39,7 +39,7 @@
 |----|------|------|
 | 1 | Itaipu Binacional | 00.341.583/0001-71 |
 | 2 | Eletronorte | 00.357.038/0001-16 |
-| 3 | Furnas Centrais Elétricas | 23.047.150/0001-13 |
+| 3 | Furnas Centrais Elï¿½tricas | 23.047.150/0001-13 |
 | 4 | Chesf | 33.541.368/0001-16 |
 | 5 | Eletrosul | 00.073.957/0001-46 |
 | 6 | CESP | 60.933.603/0001-78 |
@@ -50,16 +50,16 @@
 
 ### 3. Usinas (10 registros)
 
-| ID | Código | Nome | Tipo | Empresa | Capacidade (MW) | Localização |
+| ID | Cï¿½digo | Nome | Tipo | Empresa | Capacidade (MW) | Localizaï¿½ï¿½o |
 |----|--------|------|------|---------|-----------------|-------------|
-| 1 | UHE-ITAIPU | UH de Itaipu | Hidrelétrica | Itaipu | 14.000 | Foz do Iguaçu, PR |
-| 2 | UHE-BELO-MONTE | UH Belo Monte | Hidrelétrica | Eletronorte | 11.233 | Altamira, PA |
-| 3 | UHE-TUCURUI | UH de Tucuruí | Hidrelétrica | Eletronorte | 8.370 | Tucuruí, PA |
-| 4 | UHE-SAO-SIMAO | UH de São Simão | Hidrelétrica | Furnas | 1.710 | São Simão, GO |
-| 5 | UHE-SOBRADINHO | UH de Sobradinho | Hidrelétrica | Chesf | 1.050 | Sobradinho, BA |
-| 6 | UHE-ITUMBIARA | UH de Itumbiara | Hidrelétrica | Furnas | 2.082 | Itumbiara, GO |
-| 7 | UTE-TERMO-MARANHAO | UT do Maranhão | Térmica | Eletronorte | 338 | Miranda do Norte, MA |
-| 8 | UTE-TERMO-PECEM | UT de Pecém | Térmica | Chesf | 720 | São Gonçalo, CE |
+| 1 | UHE-ITAIPU | UH de Itaipu | Hidrelï¿½trica | Itaipu | 14.000 | Foz do Iguaï¿½u, PR |
+| 2 | UHE-BELO-MONTE | UH Belo Monte | Hidrelï¿½trica | Eletronorte | 11.233 | Altamira, PA |
+| 3 | UHE-TUCURUI | UH de Tucuruï¿½ | Hidrelï¿½trica | Eletronorte | 8.370 | Tucuruï¿½, PA |
+| 4 | UHE-SAO-SIMAO | UH de Sï¿½o Simï¿½o | Hidrelï¿½trica | Furnas | 1.710 | Sï¿½o Simï¿½o, GO |
+| 5 | UHE-SOBRADINHO | UH de Sobradinho | Hidrelï¿½trica | Chesf | 1.050 | Sobradinho, BA |
+| 6 | UHE-ITUMBIARA | UH de Itumbiara | Hidrelï¿½trica | Furnas | 2.082 | Itumbiara, GO |
+| 7 | UTE-TERMO-MARANHAO | UT do Maranhï¿½o | Tï¿½rmica | Eletronorte | 338 | Miranda do Norte, MA |
+| 8 | UTE-TERMO-PECEM | UT de Pecï¿½m | Tï¿½rmica | Chesf | 720 | Sï¿½o Gonï¿½alo, CE |
 | 9 | UTN-ANGRA-I | Angra I | Nuclear | Eletronuclear | 640 | Angra dos Reis, RJ |
 | 10 | UTN-ANGRA-II | Angra II | Nuclear | Eletronuclear | 1.350 | Angra dos Reis, RJ |
 
@@ -85,36 +85,36 @@ database/
 
 ---
 
-## ?? CARACTERÍSTICAS DOS DADOS
+## ?? CARACTERï¿½STICAS DOS DADOS
 
 ### Dados Realistas
 ? Usinas reais do Sistema Interligado Nacional (SIN)  
-? Empresas reais do setor elétrico brasileiro  
+? Empresas reais do setor elï¿½trico brasileiro  
 ? CNPJs reais das empresas  
-? Capacidades reais de geração  
-? Localizações reais  
-? Datas reais de operação  
+? Capacidades reais de geraï¿½ï¿½o  
+? Localizaï¿½ï¿½es reais  
+? Datas reais de operaï¿½ï¿½o  
 
-### Principais Usinas Incluídas
+### Principais Usinas Incluï¿½das
 
 **1. Itaipu Binacional**
 - Maior usina do Brasil
 - 14.000 MW
-- 2ª maior hidrelétrica do mundo
+- 2ï¿½ maior hidrelï¿½trica do mundo
 - Operando desde 1984
 
 **2. Belo Monte**
 - 11.233 MW
-- 3ª maior hidrelétrica do mundo
+- 3ï¿½ maior hidrelï¿½trica do mundo
 - Operando desde 2016
 
-**3. Tucuruí**
+**3. Tucuruï¿½**
 - 8.370 MW
 - Rio Tocantins
 - Operando desde 1984
 
 **4. Angra I e II**
-- Únicas nucleares do Brasil
+- ï¿½nicas nucleares do Brasil
 - 640 MW (Angra I) + 1.350 MW (Angra II)
 - Angra dos Reis, RJ
 
@@ -143,19 +143,19 @@ curl http://localhost:5000/api/usinas
 curl http://localhost:5000/api/usinas/codigo/UHE-ITAIPU
 ```
 
-**Listar usinas hidrelétricas:**
+**Listar usinas hidrelï¿½tricas:**
 ```bash
 curl http://localhost:5000/api/usinas/tipo/1
 ```
 
-**Resposta esperada: 6 usinas hidrelétricas**
+**Resposta esperada: 6 usinas hidrelï¿½tricas**
 
 **Listar usinas da Eletronorte:**
 ```bash
 curl http://localhost:5000/api/usinas/empresa/2
 ```
 
-**Resposta esperada: 3 usinas (Belo Monte, Tucuruí, Termo Maranhão)**
+**Resposta esperada: 3 usinas (Belo Monte, Tucuruï¿½, Termo Maranhï¿½o)**
 
 ### 3. Via Swagger
 
@@ -167,7 +167,7 @@ Testar cada endpoint visualmente!
 
 ---
 
-## ?? QUERIES ÚTEIS
+## ?? QUERIES ï¿½TEIS
 
 ### Verificar dados no banco
 
@@ -270,37 +270,37 @@ public static class DbSeeder
 
 ---
 
-## ?? PRÓXIMOS SEEDS A CRIAR
+## ?? PRï¿½XIMOS SEEDS A CRIAR
 
 ### Prioridade Alta (para APIs em desenvolvimento)
 
 1. **MotivosRestricao** (10 registros)
-   - Necessário para RestricaoUG e RestricaoUS
-   - Simples, sem dependências
+   - Necessï¿½rio para RestricaoUG e RestricaoUS
+   - Simples, sem dependï¿½ncias
 
 2. **UnidadesGeradoras** (20 registros)
    - Depende de Usinas ?
-   - Necessário para ParadaUG
+   - Necessï¿½rio para ParadaUG
 
 3. **SemanaPMO** (10 semanas)
-   - Sem dependências
-   - Necessário para ArquivoDadger
+   - Sem dependï¿½ncias
+   - Necessï¿½rio para ArquivoDadger
 
-### Prioridade Média
+### Prioridade Mï¿½dia
 
 4. **EquipePDP** (3 equipes)
-5. **Usuarios** (10 usuários)
-6. **Cargas** (dados de 1 mês)
+5. **Usuarios** (10 usuï¿½rios)
+6. **Cargas** (dados de 1 mï¿½s)
 7. **Intercambios** (dados de 1 semana)
 
 ### Prioridade Baixa
 
-8. **Observacoes** (5 observações)
-9. **Responsaveis** (5 responsáveis)
+8. **Observacoes** (5 observaï¿½ï¿½es)
+9. **Responsaveis** (5 responsï¿½veis)
 
 ---
 
-## ?? ESTATÍSTICAS DO SEED
+## ?? ESTATï¿½STICAS DO SEED
 
 ### Dados Inseridos
 
@@ -315,38 +315,38 @@ Total:      23 registros
 ### Capacidade Total
 
 ```
-Hidrelétricas:  38.445 MW (92.7%)
-Térmicas:        1.058 MW  (2.5%)
+Hidrelï¿½tricas:  38.445 MW (92.7%)
+Tï¿½rmicas:        1.058 MW  (2.5%)
 Nucleares:       1.990 MW  (4.8%)
 ???????????????????????????????
 Total:          41.493 MW
 ```
 
-### Por Região
+### Por Regiï¿½o
 
 ```
 Sudeste:   14.640 MW (Itaipu + Furnas + Nucleares)
-Norte:     19.941 MW (Belo Monte + Tucuruí + Termo MA)
-Nordeste:   1.770 MW (Sobradinho + Termo Pecém)
-Centro:     3.792 MW (São Simão + Itumbiara)
+Norte:     19.941 MW (Belo Monte + Tucuruï¿½ + Termo MA)
+Nordeste:   1.770 MW (Sobradinho + Termo Pecï¿½m)
+Centro:     3.792 MW (Sï¿½o Simï¿½o + Itumbiara)
 Sul:        1.350 MW (Angra II)
 ```
 
 ---
 
-## ?? VALIDAÇÃO DOS DADOS
+## ?? VALIDAï¿½ï¿½O DOS DADOS
 
 ### Checklist
 
-- [x] ? Todos os IDs únicos
-- [x] ? Todas as FKs válidas
+- [x] ? Todos os IDs ï¿½nicos
+- [x] ? Todas as FKs vï¿½lidas
 - [x] ? Datas no formato correto
-- [x] ? Campos obrigatórios preenchidos
-- [x] ? CNPJs válidos
+- [x] ? Campos obrigatï¿½rios preenchidos
+- [x] ? CNPJs vï¿½lidos
 - [x] ? Capacidades reais
 - [x] ? Nomes oficiais
 
-### Testes Automáticos
+### Testes Automï¿½ticos
 
 ```csharp
 // Verificar se seed foi aplicado
@@ -365,16 +365,16 @@ var itaipu = await _context.Usinas
     .Include(u => u.Empresa)
     .FirstAsync(u => u.Codigo == "UHE-ITAIPU");
 
-Assert.Equal("Hidrelétrica", itaipu.TipoUsina.Nome);
+Assert.Equal("Hidrelï¿½trica", itaipu.TipoUsina.Nome);
 Assert.Equal("Itaipu Binacional", itaipu.Empresa.Nome);
 Assert.Equal(14000m, itaipu.CapacidadeInstalada);
 ```
 
 ---
 
-## ?? COMANDOS ÚTEIS
+## ?? COMANDOS ï¿½TEIS
 
-### Remover última migration
+### Remover ï¿½ltima migration
 
 ```powershell
 cd src\PDPW.Infrastructure
@@ -396,9 +396,9 @@ DELETE FROM Usinas;
 DELETE FROM Empresas;
 DELETE FROM TiposUsina;
 
--- Ou usar TRUNCATE (mais rápido)
+-- Ou usar TRUNCATE (mais rï¿½pido)
 TRUNCATE TABLE Usinas;
--- Nota: TRUNCATE não funciona se houver FKs
+-- Nota: TRUNCATE nï¿½o funciona se houver FKs
 ```
 
 ### Reaplicar seed
@@ -424,7 +424,7 @@ dotnet ef database update --startup-project ..\PDPW.API
 Violation of PRIMARY KEY constraint... Cannot insert duplicate key
 ```
 
-**Solução:** IDs duplicados nos seeds. Verificar os IDs em cada seed.
+**Soluï¿½ï¿½o:** IDs duplicados nos seeds. Verificar os IDs em cada seed.
 
 ### Erro: Foreign key constraint
 
@@ -432,7 +432,7 @@ Violation of PRIMARY KEY constraint... Cannot insert duplicate key
 The INSERT statement conflicted with the FOREIGN KEY constraint
 ```
 
-**Solução:** Ordem errada no DbSeeder. Verificar se as tabelas pai foram populadas primeiro.
+**Soluï¿½ï¿½o:** Ordem errada no DbSeeder. Verificar se as tabelas pai foram populadas primeiro.
 
 ### Erro: String truncation
 
@@ -440,7 +440,7 @@ The INSERT statement conflicted with the FOREIGN KEY constraint
 String or binary data would be truncated
 ```
 
-**Solução:** Valor de string maior que o tamanho da coluna. Verificar `HasMaxLength()` no DbContext.
+**Soluï¿½ï¿½o:** Valor de string maior que o tamanho da coluna. Verificar `HasMaxLength()` no DbContext.
 
 ---
 
@@ -451,7 +451,7 @@ String or binary data would be truncated
    23 registros de dados realistas criados
 
 ?? DATA ARCHITECT
-   Estrutura completa de dados do setor elétrico
+   Estrutura completa de dados do setor elï¿½trico
 
 ?? ONS EXPERT
    Conhecimento das principais usinas do Brasil
@@ -462,7 +462,7 @@ String or binary data would be truncated
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
 **Tempo:** 30 minutos  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? COMPLETO E APLICADO
 
 **SEED DATA PRONTO! API PRONTA PARA TESTES! ??**

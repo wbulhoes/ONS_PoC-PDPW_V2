@@ -1,4 +1,4 @@
-# ?? POC Migração PDPw - Backend .NET 8
+ï»¿# ?? POC Migraï¿½ï¿½o PDPw - Backend .NET 8
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
@@ -6,20 +6,20 @@
 [![Tests](https://img.shields.io/badge/Tests-55%20Automated-success)](docs/relatorio-testes-completos.md)
 [![Coverage](https://img.shields.io/badge/Success%20Rate-89%25-success)]()
 
-> **Migração do sistema PDPw (Programação Diária de Produção) do setor elétrico brasileiro de VB.NET/Framework para .NET 8/C# + React**
+> **Migraï¿½ï¿½o do sistema PDPw (Programaï¿½ï¿½o Diï¿½ria de Produï¿½ï¿½o) do setor elï¿½trico brasileiro de VB.NET/Framework para .NET 8/C# + React**
 
 ---
 
-## ?? Visão Geral
+## ?? Visï¿½o Geral
 
-Sistema de gestão de programação diária de produção energética do SIN (Sistema Interligado Nacional), responsável por gerenciar:
+Sistema de gestï¿½o de programaï¿½ï¿½o diï¿½ria de produï¿½ï¿½o energï¿½tica do SIN (Sistema Interligado Nacional), responsï¿½vel por gerenciar:
 
-- ? Usinas Geradoras (Hidro, Termo, Nuclear, Eólica, Solar)
-- ?? Empresas do Setor Elétrico (Distribuidoras e Geradoras)
-- ?? Semanas PMO (Programa Mensal de Operação)
-- ?? Cargas Elétricas por Subsistema (SE, S, NE, N)
-- ?? Arquivos DADGER (Dados de Geração)
-- ?? Restrições de Unidades Geradoras
+- ? Usinas Geradoras (Hidro, Termo, Nuclear, Eï¿½lica, Solar)
+- ?? Empresas do Setor Elï¿½trico (Distribuidoras e Geradoras)
+- ?? Semanas PMO (Programa Mensal de Operaï¿½ï¿½o)
+- ?? Cargas Elï¿½tricas por Subsistema (SE, S, NE, N)
+- ?? Arquivos DADGER (Dados de Geraï¿½ï¿½o)
+- ?? Restriï¿½ï¿½es de Unidades Geradoras
 
 ---
 
@@ -30,7 +30,7 @@ Sistema de gestão de programação diária de produção energética do SIN (Sistema I
 | **Backend API** | ? Completo | 8 APIs + 62 endpoints |
 | **Banco de Dados** | ? Completo | 259 registros |
 | **Testes Automatizados** | ? Completo | 55 testes (89% sucesso) |
-| **Documentação** | ? Completa | Swagger + Markdown |
+| **Documentaï¿½ï¿½o** | ? Completa | Swagger + Markdown |
 | **Docker** | ? Pronto | Compose configurado |
 | **Frontend** | ?? Em desenvolvimento | React + TypeScript |
 
@@ -38,13 +38,13 @@ Sistema de gestão de programação diária de produção energética do SIN (Sistema I
 
 ## ?? Quick Start
 
-### **Pré-requisitos**
+### **Prï¿½-requisitos**
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (v4.25+)
 - [Git](https://git-scm.com/) (v2.40+)
 - [PowerShell 7+](https://github.com/PowerShell/PowerShell) (para testes)
 
-### **1. Clonar o Repositório**
+### **1. Clonar o Repositï¿½rio**
 
 ```bash
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW_V2.git
@@ -62,11 +62,11 @@ docker-compose -f docker-compose.full.yml up -d
 
 Abra o navegador em: **http://localhost:5001/swagger**
 
-? **Pronto! O sistema está rodando!**
+? **Pronto! O sistema estï¿½ rodando!**
 
 ---
 
-## ?? Dados Disponíveis
+## ?? Dados Disponï¿½veis
 
 | Tabela | Registros | Origem |
 |--------|-----------|--------|
@@ -94,37 +94,37 @@ Abra o navegador em: **http://localhost:5001/swagger**
 
 **Resultado Esperado:**
 ```
-?? ESTATÍSTICAS:
-  • Total: 55 testes
-  • Sucessos: 49 (89.09%)
-  • Tempo Médio: 10.27ms
+?? ESTATï¿½STICAS:
+  ï¿½ Total: 55 testes
+  ï¿½ Sucessos: 49 (89.09%)
+  ï¿½ Tempo Mï¿½dio: 10.27ms
   
 ? Coverage:
-  • GET: 32 testes
-  • POST: 14 testes
-  • PUT: 2 testes
-  • DELETE: 6 testes
-  • PATCH: 1 teste
+  ï¿½ GET: 32 testes
+  ï¿½ POST: 14 testes
+  ï¿½ PUT: 2 testes
+  ï¿½ DELETE: 6 testes
+  ï¿½ PATCH: 1 teste
 ```
 
-**Relatório:** `docs/relatorio-testes-completos.md`
+**Relatï¿½rio:** `docs/relatorio-testes-completos.md`
 
 ---
 
-## ?? APIs Disponíveis
+## ?? APIs Disponï¿½veis
 
 ### **Base URL:** `http://localhost:5001/api`
 
-| API | Endpoints | Registros | Documentação |
+| API | Endpoints | Registros | Documentaï¿½ï¿½o |
 |-----|-----------|-----------|--------------|
-| [Empresas](http://localhost:5001/swagger#/Empresas) | 8 | 30 | Agentes do setor elétrico |
+| [Empresas](http://localhost:5001/swagger#/Empresas) | 8 | 30 | Agentes do setor elï¿½trico |
 | [Usinas](http://localhost:5001/swagger#/Usinas) | 8 | 50 | Usinas geradoras |
 | [SemanasPMO](http://localhost:5001/swagger#/SemanasPMO) | 9 | 25 | Semanas operativas |
-| [Cargas](http://localhost:5001/swagger#/Cargas) | 8 | 30 | Cargas elétricas |
+| [Cargas](http://localhost:5001/swagger#/Cargas) | 8 | 30 | Cargas elï¿½tricas |
 | [ArquivosDadger](http://localhost:5001/swagger#/ArquivosDadger) | 10 | 20 | Arquivos DESSEM |
-| [RestricoesUG](http://localhost:5001/swagger#/RestricoesUG) | 9 | 35 | Restrições operativas |
+| [RestricoesUG](http://localhost:5001/swagger#/RestricoesUG) | 9 | 35 | Restriï¿½ï¿½es operativas |
 | [EquipesPDP](http://localhost:5001/swagger#/EquipesPDP) | 5 | 11 | Equipes regionais |
-| [TiposUsina](http://localhost:5001/swagger#/TiposUsina) | 5 | 8 | Tipos de geração |
+| [TiposUsina](http://localhost:5001/swagger#/TiposUsina) | 5 | 8 | Tipos de geraï¿½ï¿½o |
 
 **Total:** 62+ endpoints
 
@@ -161,8 +161,8 @@ Clean Architecture + Repository Pattern
 - **Entity Framework Core 8** - ORM
 - **SQL Server 2022** - Banco de dados
 - **AutoMapper** - Mapeamento objeto-objeto
-- **Swagger/OpenAPI** - Documentação de API
-- **Docker** - Containerização
+- **Swagger/OpenAPI** - Documentaï¿½ï¿½o de API
+- **Docker** - Containerizaï¿½ï¿½o
 
 ---
 
@@ -178,8 +178,8 @@ ONS_PoC-PDPW_V2/
 ??? scripts/
 ?   ??? sql/                   # Scripts SQL (seed, test data)
 ?   ??? test/                  # Testes PowerShell
-??? docs/                      # Documentação completa
-??? docker-compose.full.yml    # Orquestração completa
+??? docs/                      # Documentaï¿½ï¿½o completa
+??? docker-compose.full.yml    # Orquestraï¿½ï¿½o completa
 ??? Dockerfile                 # Build da API
 ```
 
@@ -187,7 +187,7 @@ ONS_PoC-PDPW_V2/
 
 ## ??? Banco de Dados
 
-### **Conexão**
+### **Conexï¿½o**
 
 ```
 Server=localhost,1433
@@ -213,19 +213,19 @@ docker exec pdpw-sqlserver /opt/mssql-tools18/bin/sqlcmd `
 
 ---
 
-## ?? Documentação
+## ?? Documentaï¿½ï¿½o
 
-| Documento | Descrição |
+| Documento | Descriï¿½ï¿½o |
 |-----------|-----------|
 | [Guia de Setup para QA](docs/GUIA_SETUP_QA.md) | Setup completo + testes |
-| [Relatório de Validação](docs/RELATORIO_VALIDACAO_COMPLETA.md) | 201 registros validados |
-| [Testes Automatizados](docs/relatorio-testes-completos.md) | 55 testes + análise |
-| [Correção de Erros](docs/CORRECAO_ERRO_TESTE_API.md) | Troubleshooting |
+| [Relatï¿½rio de Validaï¿½ï¿½o](docs/RELATORIO_VALIDACAO_COMPLETA.md) | 201 registros validados |
+| [Testes Automatizados](docs/relatorio-testes-completos.md) | 55 testes + anï¿½lise |
+| [Correï¿½ï¿½o de Erros](docs/CORRECAO_ERRO_TESTE_API.md) | Troubleshooting |
 | [Guia Swagger](docs/GUIA_TESTES_SWAGGER_RESUMIDO.md) | Como testar via UI |
 
 ---
 
-## ?? Comandos Úteis
+## ?? Comandos ï¿½teis
 
 ### **Docker**
 
@@ -247,7 +247,7 @@ docker-compose -f docker-compose.full.yml up -d --build
 ### **Testes**
 
 ```powershell
-# Testes básicos
+# Testes bï¿½sicos
 .\scripts\test\Test-AllApis.ps1
 
 # Testes completos
@@ -306,14 +306,14 @@ curl http://localhost:5001/api/semanaspmo/atual
 
 ### **Branches**
 
-- `main` - Produção (protegida)
+- `main` - Produï¿½ï¿½o (protegida)
 - `feature/backend` - Desenvolvimento backend ? **ATUAL**
 - `feature/frontend` - Desenvolvimento frontend ??
 - `feature/apis-implementadas` - Fork sincronizado
 
 ### **Workflow**
 
-1. Clone o repositório
+1. Clone o repositï¿½rio
 2. Crie uma branch: `git checkout -b feature/minha-feature`
 3. Commit: `git commit -m "feat: minha feature"`
 4. Push: `git push origin feature/minha-feature`
@@ -323,48 +323,48 @@ curl http://localhost:5001/api/semanaspmo/atual
 
 ```
 feat:     Nova funcionalidade
-fix:      Correção de bug
-docs:     Documentação
+fix:      Correï¿½ï¿½o de bug
+docs:     Documentaï¿½ï¿½o
 test:     Testes
-refactor: Refatoração
-chore:    Manutenção
+refactor: Refatoraï¿½ï¿½o
+chore:    Manutenï¿½ï¿½o
 ```
 
 ---
 
-## ?? Métricas
+## ?? Mï¿½tricas
 
-| Métrica | Valor |
+| Mï¿½trica | Valor |
 |---------|-------|
-| **Linhas de Código** | ~15.000 |
+| **Linhas de Cï¿½digo** | ~15.000 |
 | **APIs** | 8 |
 | **Endpoints** | 62+ |
 | **Testes** | 55 |
 | **Taxa de Sucesso** | 89.09% |
-| **Tempo Médio API** | 10.27ms |
+| **Tempo Mï¿½dio API** | 10.27ms |
 | **Cobertura CRUD** | 100% |
-| **Documentação** | 100% (Swagger) |
+| **Documentaï¿½ï¿½o** | 100% (Swagger) |
 
 ---
 
 ## ?? Troubleshooting
 
-### **Erro: Container não inicia**
+### **Erro: Container nï¿½o inicia**
 
 ```bash
 docker-compose -f docker-compose.full.yml logs
 ```
 
-### **Erro: Swagger não carrega**
+### **Erro: Swagger nï¿½o carrega**
 
-Verifique se o backend está rodando:
+Verifique se o backend estï¿½ rodando:
 ```bash
 docker ps | findstr pdpw-backend
 ```
 
 ### **Erro: 500 ao criar registro**
 
-Verifique se está usando IDs válidos (ex: `semanaPMOId: 3` ao invés de `0`)
+Verifique se estï¿½ usando IDs vï¿½lidos (ex: `semanaPMOId: 3` ao invï¿½s de `0`)
 
 Consulte: [docs/CORRECAO_ERRO_TESTE_API.md](docs/CORRECAO_ERRO_TESTE_API.md)
 
@@ -372,16 +372,16 @@ Consulte: [docs/CORRECAO_ERRO_TESTE_API.md](docs/CORRECAO_ERRO_TESTE_API.md)
 
 ## ?? Contato
 
-**Desenvolvedor:** Willian Bulhões  
-**Repositórios:**
+**Desenvolvedor:** Willian Bulhï¿½es  
+**Repositï¿½rios:**
 - Principal: https://github.com/wbulhoes/ONS_PoC-PDPW_V2
 - Fork: https://github.com/wbulhoes/POCMigracaoPDPw
 
 ---
 
-## ?? Licença
+## ?? Licenï¿½a
 
-Este projeto é uma POC (Proof of Concept) desenvolvida para o ONS (Operador Nacional do Sistema Elétrico).
+Este projeto ï¿½ uma POC (Proof of Concept) desenvolvida para o ONS (Operador Nacional do Sistema Elï¿½trico).
 
 ---
 
@@ -389,14 +389,14 @@ Este projeto é uma POC (Proof of Concept) desenvolvida para o ONS (Operador Naci
 
 ? **Backend Completo e Testado**  
 ? **Pronto para Testes de QA**  
-? **Documentação Completa**  
+? **Documentaï¿½ï¿½o Completa**  
 ? **Docker Ready**  
 ?? **Frontend em Desenvolvimento**
 
 ---
 
-**Última Atualização:** 20/12/2024  
-**Versão:** 2.0  
+**ï¿½ltima Atualizaï¿½ï¿½o:** 20/12/2024  
+**Versï¿½o:** 2.0  
 **Branch Ativa:** `feature/backend`
 
 ?? **Sistema 100% funcional e pronto para uso!**

@@ -1,37 +1,37 @@
-# ?? ÍNDICE COMPLETO DA DOCUMENTAÇÃO - PoC PDPW
+ï»¿# ?? ï¿½NDICE COMPLETO DA DOCUMENTAï¿½ï¿½O - PoC PDPW
 
-**Projeto:** Modernização PDPW - ONS  
+**Projeto:** Modernizaï¿½ï¿½o PDPW - ONS  
 **Data:** 19/12/2024  
 **Status:** ? Pronto para Kick-off
 
 ---
 
-## ?? PARA QUEM É CADA DOCUMENTO?
+## ?? PARA QUEM ï¿½ CADA DOCUMENTO?
 
 ### ????? Tech Lead / Gerente de Projeto
-Documentos para conduzir a reunião e gerenciar o projeto:
+Documentos para conduzir a reuniï¿½o e gerenciar o projeto:
 
 1. **[CHECKLIST_REUNIAO_EXECUTIVO.md](CHECKLIST_REUNIAO_EXECUTIVO.md)** ???
-   - Checklist passo a passo para conduzir a reunião das 15h
-   - Scripts prontos para cada tópico
+   - Checklist passo a passo para conduzir a reuniï¿½o das 15h
+   - Scripts prontos para cada tï¿½pico
    - Troubleshooting de problemas comuns
    - Template de ata
-   - **Usar:** Durante a reunião
+   - **Usar:** Durante a reuniï¿½o
 
 2. **[RESUMO_1_PAGINA.md](RESUMO_1_PAGINA.md)** ???
-   - Resumo executivo em 1 página para imprimir
-   - Informações-chave do projeto
+   - Resumo executivo em 1 pï¿½gina para imprimir
+   - Informaï¿½ï¿½es-chave do projeto
    - Cronograma visual
-   - **Usar:** Como cola durante a reunião
+   - **Usar:** Como cola durante a reuniï¿½o
 
 3. **[APRESENTACAO_REUNIAO_SQUAD.md](APRESENTACAO_REUNIAO_SQUAD.md)** ??
-   - Material completo de apresentação (45 min)
+   - Material completo de apresentaï¿½ï¿½o (45 min)
    - Agenda detalhada por minuto
-   - Pontos a cobrir em cada seção
-   - **Usar:** Como roteiro da apresentação
+   - Pontos a cobrir em cada seï¿½ï¿½o
+   - **Usar:** Como roteiro da apresentaï¿½ï¿½o
 
 4. **[RESUMO_VISUAL_APRESENTACAO.md](RESUMO_VISUAL_APRESENTACAO.md)** ??
-   - Slides visuais para projeção
+   - Slides visuais para projeï¿½ï¿½o
    - Diagramas ASCII art
    - Tabelas e cronogramas visuais
    - **Usar:** Para projetar na tela
@@ -44,34 +44,34 @@ Documentos que todos devem ler:
 5. **[SQUAD_BRIEFING_19DEC.md](SQUAD_BRIEFING_19DEC.md)** ???
    - **DOCUMENTO PRINCIPAL DO SQUAD**
    - Briefing completo com todas as tarefas
-   - Divisão detalhada por pessoa
+   - Divisï¿½o detalhada por pessoa
    - Cronograma completo
-   - Critérios de aceite
-   - **Usar:** Como referência diária
+   - Critï¿½rios de aceite
+   - **Usar:** Como referï¿½ncia diï¿½ria
 
 6. **[SETUP_AMBIENTE_GUIA.md](SETUP_AMBIENTE_GUIA.md)** ???
-   - Guia passo a passo de instalação
+   - Guia passo a passo de instalaï¿½ï¿½o
    - Comandos prontos para copiar/colar
    - Troubleshooting de problemas comuns
-   - Checklist de verificação
-   - **Usar:** Imediatamente após a reunião (setup)
+   - Checklist de verificaï¿½ï¿½o
+   - **Usar:** Imediatamente apï¿½s a reuniï¿½o (setup)
 
 ---
 
 ### ??? Desenvolvedores Backend (DEV 1 e DEV 2)
-Documentos técnicos para os devs backend:
+Documentos tï¿½cnicos para os devs backend:
 
 7. **[ANALISE_TECNICA_CODIGO_LEGADO.md](ANALISE_TECNICA_CODIGO_LEGADO.md)** ???
    - **DOCUMENTO MAIS IMPORTANTE PARA BACKEND**
-   - Análise detalhada de 473 arquivos VB.NET
+   - Anï¿½lise detalhada de 473 arquivos VB.NET
    - Mapeamento de entidades
    - Queries SQL analisadas
-   - Padrões identificados
-   - Estratégia de migração
-   - Glossário de termos do domínio
-   - **Usar:** Antes de começar a codificar
+   - Padrï¿½es identificados
+   - Estratï¿½gia de migraï¿½ï¿½o
+   - Glossï¿½rio de termos do domï¿½nio
+   - **Usar:** Antes de comeï¿½ar a codificar
 
-8. **Código Legado - Referências:**
+8. **Cï¿½digo Legado - Referï¿½ncias:**
    - `pdpw_act/pdpw/Dao/UsinaDAO.vb` (SLICE 1)
    - `pdpw_act/pdpw/DTOs/UsinaDTO.vb` (SLICE 1)
    - `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb` (SLICE 2)
@@ -83,14 +83,14 @@ Documentos técnicos para os devs backend:
 Documentos para o dev frontend:
 
 9. **[ANALISE_TECNICA_CODIGO_LEGADO.md](ANALISE_TECNICA_CODIGO_LEGADO.md)** ??
-   - Seção "Análise das Telas WebForms"
+   - Seï¿½ï¿½o "Anï¿½lise das Telas WebForms"
    - Mapeamento ASPX ? React
    - Componentes identificados
    - **Usar:** Para entender as telas legadas
 
-10. **Telas Legadas - Referências:**
+10. **Telas Legadas - Referï¿½ncias:**
     - `pdpw_act/pdpw/frmCnsArquivo.aspx` (exemplo de consulta)
-    - `pdpw_act/pdpw/*.aspx` (168 páginas para referência)
+    - `pdpw_act/pdpw/*.aspx` (168 pï¿½ginas para referï¿½ncia)
 
 ---
 
@@ -98,9 +98,9 @@ Documentos para o dev frontend:
 Documentos para QA:
 
 11. **[SQUAD_BRIEFING_19DEC.md](SQUAD_BRIEFING_19DEC.md)** ???
-    - Seção "QA - Quality Assurance"
-    - Entregáveis esperados
-    - Critérios de aceite
+    - Seï¿½ï¿½o "QA - Quality Assurance"
+    - Entregï¿½veis esperados
+    - Critï¿½rios de aceite
     - **Usar:** Como guia de testes
 
 12. **Documentos a Criar (Templates):**
@@ -119,15 +119,15 @@ docs/
 ??? ?? RESUMO_1_PAGINA.md                    ??? (Imprimir)
 ??? ?? CHECKLIST_REUNIAO_EXECUTIVO.md        ??? (Tech Lead)
 ??? ?? APRESENTACAO_REUNIAO_SQUAD.md         ?? (Tech Lead)
-??? ?? RESUMO_VISUAL_APRESENTACAO.md         ?? (Projeção)
+??? ?? RESUMO_VISUAL_APRESENTACAO.md         ?? (Projeï¿½ï¿½o)
 ??? ?? SQUAD_BRIEFING_19DEC.md               ??? (Todos)
 ??? ?? ANALISE_TECNICA_CODIGO_LEGADO.md      ??? (Devs)
 ??? ?? SETUP_AMBIENTE_GUIA.md                ??? (Todos)
 ??? ?? INDEX_DOCUMENTACAO.md                 (Este arquivo)
 
 / (raiz)
-??? ?? README.md                              ??? (Visão geral)
-??? ?? VERTICAL_SLICES_DECISION.md            ?? (Decisões)
+??? ?? README.md                              ??? (Visï¿½o geral)
+??? ?? VERTICAL_SLICES_DECISION.md            ?? (Decisï¿½es)
 ??? ?? RESUMO_EXECUTIVO.md                    ? (Executivo)
 ??? ?? GLOSSARIO.md                           ? (Termos)
 
@@ -146,62 +146,62 @@ pdpw_act/pdpw/
 
 **Legenda:**
 - ??? Essencial (ler/usar obrigatoriamente)
-- ?? Importante (ler quando necessário)
+- ?? Importante (ler quando necessï¿½rio)
 - ? Opcional (consulta)
 
 ---
 
 ## ?? ORDEM DE LEITURA RECOMENDADA
 
-### Antes da Reunião (Tech Lead)
-1. ? `CHECKLIST_REUNIAO_EXECUTIVO.md` - Preparação completa
+### Antes da Reuniï¿½o (Tech Lead)
+1. ? `CHECKLIST_REUNIAO_EXECUTIVO.md` - Preparaï¿½ï¿½o completa
 2. ? `RESUMO_1_PAGINA.md` - Imprimir para ter na mesa
-3. ? `APRESENTACAO_REUNIAO_SQUAD.md` - Roteiro da apresentação
+3. ? `APRESENTACAO_REUNIAO_SQUAD.md` - Roteiro da apresentaï¿½ï¿½o
 4. ? `RESUMO_VISUAL_APRESENTACAO.md` - Slides para projetar
 
-### Durante a Reunião (Todos)
-1. ?? Seguir apresentação do Tech Lead
-2. ?? Tomar notas sobre suas tarefas específicas
-3. ? Fazer perguntas durante a reunião
+### Durante a Reuniï¿½o (Todos)
+1. ?? Seguir apresentaï¿½ï¿½o do Tech Lead
+2. ?? Tomar notas sobre suas tarefas especï¿½ficas
+3. ? Fazer perguntas durante a reuniï¿½o
 
-### Após a Reunião (Squad)
+### Apï¿½s a Reuniï¿½o (Squad)
 
 #### Todos (30 min)
 1. ? `SETUP_AMBIENTE_GUIA.md` - Fazer setup imediato
-2. ? `SQUAD_BRIEFING_19DEC.md` - Ler sua seção específica
+2. ? `SQUAD_BRIEFING_19DEC.md` - Ler sua seï¿½ï¿½o especï¿½fica
 
 #### Backend Devs (1-2 horas)
 1. ? `ANALISE_TECNICA_CODIGO_LEGADO.md` - Ler completamente
-2. ? Analisar código legado correspondente ao seu slice:
+2. ? Analisar cï¿½digo legado correspondente ao seu slice:
    - DEV 1: `UsinaDAO.vb` + `UsinaDTO.vb`
    - DEV 2: `ArquivoDadgerValorDAO.vb` + `ArquivoDadgerValorDTO.vb`
-3. ? `VERTICAL_SLICES_DECISION.md` - Entender decisões
-4. ?? Começar a codificar!
+3. ? `VERTICAL_SLICES_DECISION.md` - Entender decisï¿½es
+4. ?? Comeï¿½ar a codificar!
 
 #### Frontend Dev (1-2 horas)
-1. ? `ANALISE_TECNICA_CODIGO_LEGADO.md` - Seção de telas
+1. ? `ANALISE_TECNICA_CODIGO_LEGADO.md` - Seï¿½ï¿½o de telas
 2. ? Analisar telas legadas: `frmCnsArquivo.aspx`
 3. ? `SQUAD_BRIEFING_19DEC.md` - Wireframes das telas
-4. ?? Começar a criar componentes!
+4. ?? Comeï¿½ar a criar componentes!
 
 #### QA (1 hora)
-1. ? `SQUAD_BRIEFING_19DEC.md` - Seção QA
+1. ? `SQUAD_BRIEFING_19DEC.md` - Seï¿½ï¿½o QA
 2. ? Criar estrutura de documentos de teste
-3. ?? Começar a escrever `TEST_PLAN.md`
+3. ?? Comeï¿½ar a escrever `TEST_PLAN.md`
 
 ---
 
-## ?? BUSCA RÁPIDA POR TEMA
+## ?? BUSCA Rï¿½PIDA POR TEMA
 
-### Preciso de informações sobre...
+### Preciso de informaï¿½ï¿½es sobre...
 
-#### Setup e Instalação
+#### Setup e Instalaï¿½ï¿½o
 ? `SETUP_AMBIENTE_GUIA.md`
 
-#### Minhas tarefas específicas
-? `SQUAD_BRIEFING_19DEC.md` (procurar sua seção)
+#### Minhas tarefas especï¿½ficas
+? `SQUAD_BRIEFING_19DEC.md` (procurar sua seï¿½ï¿½o)
 
-#### Código legado VB.NET
+#### Cï¿½digo legado VB.NET
 ? `ANALISE_TECNICA_CODIGO_LEGADO.md`
 
 #### Arquitetura do projeto
@@ -211,24 +211,24 @@ pdpw_act/pdpw/
 ? `database/SCHEMA_ANALYSIS_FROM_CODE.md`
 
 #### Cronograma e prazos
-? `SQUAD_BRIEFING_19DEC.md` (seção Cronograma)
+? `SQUAD_BRIEFING_19DEC.md` (seï¿½ï¿½o Cronograma)
 
-#### Critérios de aceite
-? `SQUAD_BRIEFING_19DEC.md` (seção Critérios de Aceite)
+#### Critï¿½rios de aceite
+? `SQUAD_BRIEFING_19DEC.md` (seï¿½ï¿½o Critï¿½rios de Aceite)
 
 #### Entidades a criar
-? `VERTICAL_SLICES_DECISION.md` (seção Entidades Mapeadas)
+? `VERTICAL_SLICES_DECISION.md` (seï¿½ï¿½o Entidades Mapeadas)
 
 #### Telas legadas
-? `ANALISE_TECNICA_CODIGO_LEGADO.md` (seção Análise das Telas)
+? `ANALISE_TECNICA_CODIGO_LEGADO.md` (seï¿½ï¿½o Anï¿½lise das Telas)
 
 #### Riscos do projeto
-? `SQUAD_BRIEFING_19DEC.md` (seção Riscos e Mitigações)
+? `SQUAD_BRIEFING_19DEC.md` (seï¿½ï¿½o Riscos e Mitigaï¿½ï¿½es)
 
-#### Comunicação do squad
-? `SQUAD_BRIEFING_19DEC.md` (seção Comunicação)
+#### Comunicaï¿½ï¿½o do squad
+? `SQUAD_BRIEFING_19DEC.md` (seï¿½ï¿½o Comunicaï¿½ï¿½o)
 
-#### Termos técnicos / Siglas
+#### Termos tï¿½cnicos / Siglas
 ? `GLOSSARIO.md`
 
 ---
@@ -236,25 +236,25 @@ pdpw_act/pdpw/
 ## ?? DOCUMENTOS POR FASE DO PROJETO
 
 ### Fase 1: Kick-off (19/12 - Hoje)
-- ? `CHECKLIST_REUNIAO_EXECUTIVO.md` - Conduzir reunião
+- ? `CHECKLIST_REUNIAO_EXECUTIVO.md` - Conduzir reuniï¿½o
 - ? `APRESENTACAO_REUNIAO_SQUAD.md` - Apresentar
 - ? `SQUAD_BRIEFING_19DEC.md` - Distribuir tarefas
 - ? `SETUP_AMBIENTE_GUIA.md` - Setup de todos
 
 ### Fase 2: Desenvolvimento (20-23/12)
-- ?? `ANALISE_TECNICA_CODIGO_LEGADO.md` - Consulta diária
-- ?? `VERTICAL_SLICES_DECISION.md` - Referência de decisões
-- ?? Código legado (pdpw_act/pdpw/) - Consulta constante
+- ?? `ANALISE_TECNICA_CODIGO_LEGADO.md` - Consulta diï¿½ria
+- ?? `VERTICAL_SLICES_DECISION.md` - Referï¿½ncia de decisï¿½es
+- ?? Cï¿½digo legado (pdpw_act/pdpw/) - Consulta constante
 - ?? Daily Standups (09:00) - Acompanhamento
 
 ### Fase 3: Testes (24/12)
 - ?? `TEST_PLAN.md` (criado pelo QA)
 - ?? `TEST_CASES_*.md` (criado pelo QA)
-- ?? `BUG_REPORT.md` (se necessário)
+- ?? `BUG_REPORT.md` (se necessï¿½rio)
 
 ### Fase 4: Entrega (26/12)
 - ?? `README.md` - Atualizar
-- ?? Apresentação final (preparar)
+- ?? Apresentaï¿½ï¿½o final (preparar)
 - ? `QUALITY_CHECKLIST.md` - Validar tudo
 
 ---
@@ -262,25 +262,25 @@ pdpw_act/pdpw/
 ## ?? DICAS DE USO
 
 ### Para Tech Lead
-1. **Antes da reunião:**
+1. **Antes da reuniï¿½o:**
    - Imprimir `RESUMO_1_PAGINA.md` como cola
    - Ter `CHECKLIST_REUNIAO_EXECUTIVO.md` aberto no tablet/laptop
    - Projetar `RESUMO_VISUAL_APRESENTACAO.md`
 
-2. **Durante a reunião:**
+2. **Durante a reuniï¿½o:**
    - Seguir checklist passo a passo
-   - Fazer perguntas de verificação ao final de cada seção
+   - Fazer perguntas de verificaï¿½ï¿½o ao final de cada seï¿½ï¿½o
    - Timeboxar cada parte (45 min total)
 
-3. **Após a reunião:**
+3. **Apï¿½s a reuniï¿½o:**
    - Enviar ata por email
    - Verificar se todos fizeram setup
    - Agendar Daily Standup do dia seguinte
 
 ### Para Devs
 1. **Prioridade 1:** Setup do ambiente (30 min)
-2. **Prioridade 2:** Ler análise técnica (1-2 horas)
-3. **Prioridade 3:** Começar a codificar (hoje mesmo!)
+2. **Prioridade 2:** Ler anï¿½lise tï¿½cnica (1-2 horas)
+3. **Prioridade 3:** Comeï¿½ar a codificar (hoje mesmo!)
 
 ### Para QA
 1. **Prioridade 1:** Setup do Postman
@@ -289,9 +289,9 @@ pdpw_act/pdpw/
 
 ---
 
-## ?? LINKS EXTERNOS ÚTEIS
+## ?? LINKS EXTERNOS ï¿½TEIS
 
-### Documentação Oficial
+### Documentaï¿½ï¿½o Oficial
 - [.NET 8 Docs](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-8)
 - [React 18 Docs](https://react.dev)
 - [EF Core InMemory](https://learn.microsoft.com/ef/core/providers/in-memory/)
@@ -317,33 +317,33 @@ pdpw_act/pdpw/
 **A:** Depende do seu papel:
 - **Tech Lead:** `CHECKLIST_REUNIAO_EXECUTIVO.md`
 - **Dev Backend:** `ANALISE_TECNICA_CODIGO_LEGADO.md`
-- **Dev Frontend:** `SQUAD_BRIEFING_19DEC.md` (seção Frontend)
-- **QA:** `SQUAD_BRIEFING_19DEC.md` (seção QA)
+- **Dev Frontend:** `SQUAD_BRIEFING_19DEC.md` (seï¿½ï¿½o Frontend)
+- **QA:** `SQUAD_BRIEFING_19DEC.md` (seï¿½ï¿½o QA)
 
 ### Q: Onde encontro os comandos de setup?
-**A:** `SETUP_AMBIENTE_GUIA.md` - Todos os comandos estão prontos para copiar/colar
+**A:** `SETUP_AMBIENTE_GUIA.md` - Todos os comandos estï¿½o prontos para copiar/colar
 
-### Q: Onde está o cronograma detalhado?
-**A:** `SQUAD_BRIEFING_19DEC.md` - Seção "Cronograma de Implementação"
+### Q: Onde estï¿½ o cronograma detalhado?
+**A:** `SQUAD_BRIEFING_19DEC.md` - Seï¿½ï¿½o "Cronograma de Implementaï¿½ï¿½o"
 
 ### Q: Como sei se entendi tudo?
-**A:** `CHECKLIST_REUNIAO_EXECUTIVO.md` - Seção "Checklist de Entendimento"
+**A:** `CHECKLIST_REUNIAO_EXECUTIVO.md` - Seï¿½ï¿½o "Checklist de Entendimento"
 
-### Q: Onde encontro o código legado?
-**A:** `pdpw_act/pdpw/` - Código VB.NET original
+### Q: Onde encontro o cï¿½digo legado?
+**A:** `pdpw_act/pdpw/` - Cï¿½digo VB.NET original
 
 ### Q: Preciso ler TODOS os documentos?
-**A:** Não. Veja a seção "Para quem é cada documento?" acima
+**A:** Nï¿½o. Veja a seï¿½ï¿½o "Para quem ï¿½ cada documento?" acima
 
-### Q: Qual a diferença entre BRIEFING e APRESENTAÇÃO?
+### Q: Qual a diferenï¿½a entre BRIEFING e APRESENTAï¿½ï¿½O?
 **A:**
-- **BRIEFING** (`SQUAD_BRIEFING_19DEC.md`): Documento técnico completo para devs lerem
-- **APRESENTAÇÃO** (`APRESENTACAO_REUNIAO_SQUAD.md`): Roteiro da reunião para Tech Lead
+- **BRIEFING** (`SQUAD_BRIEFING_19DEC.md`): Documento tï¿½cnico completo para devs lerem
+- **APRESENTAï¿½ï¿½O** (`APRESENTACAO_REUNIAO_SQUAD.md`): Roteiro da reuniï¿½o para Tech Lead
 
-### Q: E se eu tiver dúvidas durante o desenvolvimento?
+### Q: E se eu tiver dï¿½vidas durante o desenvolvimento?
 **A:**
 1. Consultar `ANALISE_TECNICA_CODIGO_LEGADO.md`
-2. Analisar código legado correspondente
+2. Analisar cï¿½digo legado correspondente
 3. Perguntar no Daily Standup (09:00)
 4. Criar issue no GitHub
 
@@ -351,39 +351,39 @@ pdpw_act/pdpw/
 
 ## ? CHECKLIST FINAL
 
-### Antes de começar a desenvolver, confirme:
+### Antes de comeï¿½ar a desenvolver, confirme:
 
 #### Tech Lead
 - [ ] Li `CHECKLIST_REUNIAO_EXECUTIVO.md`
 - [ ] Imprimi `RESUMO_1_PAGINA.md`
-- [ ] Preparei projeção dos slides
-- [ ] Agendei reunião das 15h
+- [ ] Preparei projeï¿½ï¿½o dos slides
+- [ ] Agendei reuniï¿½o das 15h
 
 #### Todos os Devs
-- [ ] Participei da reunião de kick-off
+- [ ] Participei da reuniï¿½o de kick-off
 - [ ] Entendi minhas tarefas
 - [ ] Fiz setup do ambiente
-- [ ] Li documentação relevante ao meu papel
+- [ ] Li documentaï¿½ï¿½o relevante ao meu papel
 - [ ] Criei minha branch no Git
 - [ ] Sei meu prazo de entrega
 
 #### QA
-- [ ] Participei da reunião
+- [ ] Participei da reuniï¿½o
 - [ ] Instalei Postman
 - [ ] Criei estrutura de docs de teste
-- [ ] Entendi os critérios de aceite
+- [ ] Entendi os critï¿½rios de aceite
 
 ---
 
 ## ?? SUPORTE
 
-**Dúvidas sobre documentação:**
+**Dï¿½vidas sobre documentaï¿½ï¿½o:**
 - Tech Lead via Teams/Slack
 
-**Problemas técnicos:**
+**Problemas tï¿½cnicos:**
 - GitHub Issues
 
-**Código legado:**
+**Cï¿½digo legado:**
 - `ANALISE_TECNICA_CODIGO_LEGADO.md`
 
 **Setup:**
@@ -393,21 +393,21 @@ pdpw_act/pdpw/
 
 ## ?? MENSAGEM FINAL
 
-**Temos documentação completa para:**
-? Conduzir a reunião  
-? Entender o código legado  
+**Temos documentaï¿½ï¿½o completa para:**
+? Conduzir a reuniï¿½o  
+? Entender o cï¿½digo legado  
 ? Fazer setup do ambiente  
 ? Executar cada tarefa  
-? Testar a aplicação  
+? Testar a aplicaï¿½ï¿½o  
 ? Entregar com qualidade
 
-**Não há desculpas! Vamos entregar! ??**
+**Nï¿½o hï¿½ desculpas! Vamos entregar! ??**
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Status:** ? Documentação completa
+**Versï¿½o:** 1.0  
+**Status:** ? Documentaï¿½ï¿½o completa
 
-**BOA REUNIÃO E BOM DESENVOLVIMENTO! ??**
+**BOA REUNIï¿½O E BOM DESENVOLVIMENTO! ??**

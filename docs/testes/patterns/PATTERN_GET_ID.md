@@ -1,14 +1,14 @@
-# ?? PATTERN - GET POR ID
+ï»¿# ?? PATTERN - GET POR ID
 
 **Pattern:** GET /api/{entidade}/{id}  
-**Descrição:** Retorna registro específico por ID  
-**Aplicável a:** Todas as APIs
+**Descriï¿½ï¿½o:** Retorna registro especï¿½fico por ID  
+**Aplicï¿½vel a:** Todas as APIs
 
 ---
 
 ## ?? OBJETIVO
 
-Testar endpoint que retorna **um** registro específico.
+Testar endpoint que retorna **um** registro especï¿½fico.
 
 ---
 
@@ -17,7 +17,7 @@ Testar endpoint que retorna **um** registro específico.
 ### Passos
 1. Expandir endpoint `GET /api/{entidade}/{id}`
 2. Clicar em **"Try it out"**
-3. Preencher parâmetro:
+3. Preencher parï¿½metro:
    - `id` (integer): **1**
 4. Clicar em **"Execute"**
 
@@ -40,7 +40,7 @@ Testar endpoint que retorna **um** registro específico.
 ### Response (ID inexistente)
 ```json
 {
-  "message": "Recurso não encontrado"
+  "message": "Recurso nï¿½o encontrado"
 }
 ```
 
@@ -48,24 +48,24 @@ Testar endpoint que retorna **um** registro específico.
 
 ---
 
-## ? VALIDAÇÕES
+## ? VALIDAï¿½ï¿½ES
 
-### Cenário: ID Existente
+### Cenï¿½rio: ID Existente
 - [ ] Status Code: **200 OK**
-- [ ] Retorna objeto (não array)
+- [ ] Retorna objeto (nï¿½o array)
 - [ ] ID corresponde ao solicitado
 - [ ] Todos os campos preenchidos
 - [ ] Relacionamentos carregados
 
-### Cenário: ID Inexistente
+### Cenï¿½rio: ID Inexistente
 - [ ] Status Code: **404 Not Found**
 - [ ] Mensagem de erro descritiva
-- [ ] Não retorna null (retorna 404)
+- [ ] Nï¿½o retorna null (retorna 404)
 
-### Cenário: ID Inválido
+### Cenï¿½rio: ID Invï¿½lido
 - [ ] `id = 0`: **404 Not Found**
 - [ ] `id = -1`: **400 Bad Request** ou **404**
-- [ ] `id = "abc"`: **400 Bad Request** (validação automática)
+- [ ] `id = "abc"`: **400 Bad Request** (validaï¿½ï¿½o automï¿½tica)
 
 ### Edge Cases
 - [ ] Registro inativo (soft delete): **404 Not Found**
@@ -75,7 +75,7 @@ Testar endpoint que retorna **um** registro específico.
 
 ## ?? PROBLEMAS COMUNS
 
-### Retornar null ao invés de 404
+### Retornar null ao invï¿½s de 404
 ```csharp
 // ? ERRADO
 public async Task<IActionResult> GetById(int id)
@@ -89,7 +89,7 @@ public async Task<IActionResult> GetById(int id)
 {
     var entity = await _service.GetByIdAsync(id);
     if (entity == null)
-        return NotFound(new { message = $"{EntityName} com ID {id} não encontrado" });
+        return NotFound(new { message = $"{EntityName} com ID {id} nï¿½o encontrado" });
     
     return Ok(entity);
 }
@@ -121,7 +121,7 @@ public async Task<Usina?> GetByIdAsync(int id)
 }
 ```
 
-### Não filtrar por Ativo (soft delete)
+### Nï¿½o filtrar por Ativo (soft delete)
 ```csharp
 // ? ERRADO - retorna registros inativos
 public async Task<Usina?> GetByIdAsync(int id)
@@ -153,8 +153,8 @@ curl http://localhost:5000/api/usinas/1
 {
   "id": 1,
   "codigo": "UHE-ITAIPU",
-  "nome": "Usina Hidrelétrica de Itaipu",
-  "tipoUsina": "Hidrelétrica",
+  "nome": "Usina Hidrelï¿½trica de Itaipu",
+  "tipoUsina": "Hidrelï¿½trica",
   "empresa": "Itaipu Binacional",
   "capacidadeInstalada": 14000.00
 }
@@ -162,14 +162,14 @@ curl http://localhost:5000/api/usinas/1
 
 ### API TipoUsina
 ```bash
-# Buscar tipo Hidrelétrica (ID 1)
+# Buscar tipo Hidrelï¿½trica (ID 1)
 curl http://localhost:5000/api/tiposusina/1
 
 # Response:
 {
   "id": 1,
-  "nome": "Hidrelétrica",
-  "fonteEnergia": "Hídrica"
+  "nome": "Hidrelï¿½trica",
+  "fonteEnergia": "Hï¿½drica"
 }
 ```
 
@@ -190,13 +190,13 @@ curl http://localhost:5000/api/empresas/1
 
 ## ?? CASOS DE TESTE
 
-### Teste 1: ID Válido Existente
+### Teste 1: ID Vï¿½lido Existente
 ```
 Input: id = 1
 Expected: 200 OK + objeto completo
 ```
 
-### Teste 2: ID Válido Inexistente
+### Teste 2: ID Vï¿½lido Inexistente
 ```
 Input: id = 999
 Expected: 404 Not Found
@@ -214,7 +214,7 @@ Input: id = -1
 Expected: 400 Bad Request ou 404 Not Found
 ```
 
-### Teste 5: ID String (validação automática)
+### Teste 5: ID String (validaï¿½ï¿½o automï¿½tica)
 ```
 Input: id = "abc"
 Expected: 400 Bad Request
@@ -229,7 +229,7 @@ Expected: 404 Not Found
 
 ---
 
-## ?? IMPLEMENTAÇÃO RECOMENDADA
+## ?? IMPLEMENTAï¿½ï¿½O RECOMENDADA
 
 ### Repository
 ```csharp
@@ -274,7 +274,7 @@ public async Task<IActionResult> GetById(int id)
 < 300ms - Com 3+ relacionamentos
 ```
 
-### Otimizações
+### Otimizaï¿½ï¿½es
 ```csharp
 // Cache para entidades que mudam pouco
 [ResponseCache(Duration = 300)] // 5 minutos
@@ -287,12 +287,12 @@ public async Task<IActionResult> GetById(int id)
 public async Task<T?> GetByIdAsync(int id)
 {
     return await _dbSet
-        .AsNoTracking() // Mais rápido
+        .AsNoTracking() // Mais rï¿½pido
         .FirstOrDefaultAsync(e => e.Id == id);
 }
 ```
 
 ---
 
-**Aplicável a:** 29/29 APIs  
+**Aplicï¿½vel a:** 29/29 APIs  
 **Implementado em:** Usina ?

@@ -1,6 +1,6 @@
-# ?? GUIA DE USO - EXTRAÇÃO SELETIVA DE DADOS
+ï»¿# ?? GUIA DE USO - EXTRAï¿½ï¿½O SELETIVA DE DADOS
 
-## ? EXECUÇÃO RÁPIDA
+## ? EXECUï¿½ï¿½O Rï¿½PIDA
 
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW
@@ -11,49 +11,49 @@ cd C:\temp\_ONS_PoC-PDPW
 
 ## ?? O QUE O SCRIPT FAZ
 
-### Fase 1: PREPARAÇÃO (1 min)
+### Fase 1: PREPARAï¿½ï¿½O (1 min)
 - ? Verifica backup do cliente
-- ? Testa conexão SQL Server
+- ? Testa conexï¿½o SQL Server
 - ? Valida banco da POC
-- ? Remove bancos temporários anteriores
+- ? Remove bancos temporï¿½rios anteriores
 
-### Fase 2: RESTAURAÇÃO ESTRUTURA (5-10 min)
+### Fase 2: RESTAURAï¿½ï¿½O ESTRUTURA (5-10 min)
 - ? Restaura apenas estrutura do banco legado
-- ? Espaço necessário: ~20-30 GB (vs 350 GB completo)
-- ? Mantém em banco temporário isolado
+- ? Espaï¿½o necessï¿½rio: ~20-30 GB (vs 350 GB completo)
+- ? Mantï¿½m em banco temporï¿½rio isolado
 
-### Fase 3: ANÁLISE (30 seg)
+### Fase 3: ANï¿½LISE (30 seg)
 - ? Identifica tabelas relevantes automaticamente
 - ? Mapeia nomes Legado ? POC
-- ? Exibe estatísticas de dados disponíveis
+- ? Exibe estatï¿½sticas de dados disponï¿½veis
 
-### Fase 4: EXTRAÇÃO E MIGRAÇÃO (2-5 min)
+### Fase 4: EXTRAï¿½ï¿½O E MIGRAï¿½ï¿½O (2-5 min)
 Migra dados filtrados:
 - ? **TiposUsina**: Todos os tipos
 - ? **Empresas**: Top 20 principais
 - ? **Usinas**: Top 100 por capacidade
-- ? **SemanasPMO**: Últimos 6 meses
+- ? **SemanasPMO**: ï¿½ltimos 6 meses
 - ? **EquipesPDP**: Todas as equipes
 
 ### Fase 5: LIMPEZA (30 seg)
-- ? Remove banco temporário
-- ? Libera espaço em disco
-- ? Mantém apenas dados na POC
+- ? Remove banco temporï¿½rio
+- ? Libera espaï¿½o em disco
+- ? Mantï¿½m apenas dados na POC
 
-### Fase 6: RELATÓRIO
-- ? Estatísticas de migração
+### Fase 6: RELATï¿½RIO
+- ? Estatï¿½sticas de migraï¿½ï¿½o
 - ? Tabelas e registros migrados
-- ? Tempo total de execução
+- ? Tempo total de execuï¿½ï¿½o
 
 ---
 
 ## ?? TEMPO TOTAL ESTIMADO
 
 ```
-Preparação:        ~1 min
-Restauração:       ~5-10 min
-Análise:           ~30 seg
-Migração:          ~2-5 min
+Preparaï¿½ï¿½o:        ~1 min
+Restauraï¿½ï¿½o:       ~5-10 min
+Anï¿½lise:           ~30 seg
+Migraï¿½ï¿½o:          ~2-5 min
 Limpeza:           ~30 seg
 ?????????????????????????
 TOTAL:             ~9-17 min
@@ -61,18 +61,18 @@ TOTAL:             ~9-17 min
 
 ---
 
-## ?? ESPAÇO EM DISCO
+## ?? ESPAï¿½O EM DISCO
 
 ```
 Backup original:        43.2 GB (compactado)
-Banco temporário:       ~20-30 GB (estrutura + dados filtrados)
+Banco temporï¿½rio:       ~20-30 GB (estrutura + dados filtrados)
 Dados na POC:           ~500 MB - 1 GB (apenas dados migrados)
-Espaço livre mínimo:    ~30 GB recomendado
+Espaï¿½o livre mï¿½nimo:    ~30 GB recomendado
 ```
 
 ---
 
-## ?? PARÂMETROS OPCIONAIS
+## ?? PARï¿½METROS OPCIONAIS
 
 ### Personalizar quantidades:
 ```powershell
@@ -97,24 +97,24 @@ Espaço livre mínimo:    ~30 GB recomendado
 
 ---
 
-## ? PRÉ-REQUISITOS
+## ? PRï¿½-REQUISITOS
 
 1. ? SQL Server Express rodando
-2. ? Backup do cliente disponível (43.2 GB)
-3. ? Espaço livre: ~30 GB no disco C
+2. ? Backup do cliente disponï¿½vel (43.2 GB)
+3. ? Espaï¿½o livre: ~30 GB no disco C
 4. ? Banco da POC criado (migrations aplicadas)
 5. ? PowerShell 5.1+ e sqlcmd instalado
 
 ---
 
-## ?? VERIFICAÇÕES PRÉ-EXECUÇÃO
+## ?? VERIFICAï¿½ï¿½ES PRï¿½-EXECUï¿½ï¿½O
 
 ### 1. Verificar SQL Server:
 ```powershell
 Get-Service MSSQL* | Select-Object Name, Status
 ```
 
-### 2. Verificar espaço em disco:
+### 2. Verificar espaï¿½o em disco:
 ```powershell
 Get-PSDrive C | Select-Object @{N='Free(GB)';E={[math]::Round($_.Free/1GB,2)}}
 ```
@@ -133,55 +133,55 @@ Test-Path "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
 
 ## ?? PROBLEMAS COMUNS
 
-### Problema 1: Espaço insuficiente
+### Problema 1: Espaï¿½o insuficiente
 ```
-Erro: O espaço livre no volume do disco 'C:\' é insuficiente
+Erro: O espaï¿½o livre no volume do disco 'C:\' ï¿½ insuficiente
 ```
-**Solução**:
+**Soluï¿½ï¿½o**:
 ```powershell
-# Liberar espaço temporário
+# Liberar espaï¿½o temporï¿½rio
 Remove-Item C:\Windows\Temp\* -Recurse -Force -ErrorAction SilentlyContinue
 
-# Verificar espaço novamente
+# Verificar espaï¿½o novamente
 Get-PSDrive C | Select-Object Used, Free
 ```
 
-### Problema 2: Banco POC não encontrado
+### Problema 2: Banco POC nï¿½o encontrado
 ```
-Erro: Banco da POC não encontrado: PDPW_PoC
+Erro: Banco da POC nï¿½o encontrado: PDPW_PoC
 ```
-**Solução**:
+**Soluï¿½ï¿½o**:
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW\src\PDPW.Infrastructure
 dotnet ef database update --startup-project ..\PDPW.API\PDPW.API.csproj
 ```
 
-### Problema 3: Permissões SQL Server
+### Problema 3: Permissï¿½es SQL Server
 ```
 Erro: Login failed for user
 ```
-**Solução**:
+**Soluï¿½ï¿½o**:
 - Execute PowerShell como Administrador
 - Verifique Windows Authentication habilitado
 
-### Problema 4: Timeout na restauração
+### Problema 4: Timeout na restauraï¿½ï¿½o
 ```
 Erro: Timeout expired
 ```
-**Solução**: Script já configurado com timeout de 30 minutos (1800 seg)
+**Soluï¿½ï¿½o**: Script jï¿½ configurado com timeout de 30 minutos (1800 seg)
 
 ---
 
 ## ?? RESULTADO ESPERADO
 
-Após execução bem-sucedida:
+Apï¿½s execuï¿½ï¿½o bem-sucedida:
 
 ```
 ============================================
-  EXTRAÇÃO CONCLUÍDA COM SUCESSO!
+  EXTRAï¿½ï¿½O CONCLUï¿½DA COM SUCESSO!
 ============================================
 
-?? ESTATÍSTICAS:
+?? ESTATï¿½STICAS:
    Tabelas migradas: 5
    Registros migrados: 250-500
    Tempo total: 12m 34s
@@ -196,7 +196,7 @@ Após execução bem-sucedida:
 
 ---
 
-## ?? APÓS A MIGRAÇÃO
+## ?? APï¿½S A MIGRAï¿½ï¿½O
 
 ### 1. Testar APIs:
 ```powershell
@@ -229,7 +229,7 @@ UNION ALL SELECT 'EquipesPDP', COUNT(*) FROM EquipesPDP
 
 ## ?? EXECUTAR NOVAMENTE
 
-Para re-executar a migração:
+Para re-executar a migraï¿½ï¿½o:
 
 ```powershell
 # Limpar dados anteriores (CUIDADO!)
@@ -262,11 +262,11 @@ DELETE FROM TiposUsina WHERE Id > 5;
 
 ## ?? DICAS
 
-1. **Execute em horário de baixo uso** do servidor
-2. **Backup do banco POC** antes da migração
-3. **Monitore o espaço em disco** durante execução
-4. **Não interrompa** durante a restauração
-5. **Valide os dados** após migração
+1. **Execute em horï¿½rio de baixo uso** do servidor
+2. **Backup do banco POC** antes da migraï¿½ï¿½o
+3. **Monitore o espaï¿½o em disco** durante execuï¿½ï¿½o
+4. **Nï¿½o interrompa** durante a restauraï¿½ï¿½o
+5. **Valide os dados** apï¿½s migraï¿½ï¿½o
 
 ---
 
@@ -274,12 +274,12 @@ DELETE FROM TiposUsina WHERE Id > 5;
 
 Em caso de problemas:
 1. Consulte os logs de erro exibidos
-2. Verifique pré-requisitos acima
+2. Verifique prï¿½-requisitos acima
 3. Revise `docs/SITUACAO_BACKUP_CLIENTE.md`
 4. Tente executar novamente
 
 ---
 
 **Criado em**: 19/12/2024  
-**Versão**: 1.0.0  
+**Versï¿½o**: 1.0.0  
 **Status**: ? Pronto para uso

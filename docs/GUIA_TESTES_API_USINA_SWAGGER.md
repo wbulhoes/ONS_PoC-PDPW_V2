@@ -1,4 +1,4 @@
-# ?? GUIA DE TESTES - API USINA COM SWAGGER
+ï»¿# ?? GUIA DE TESTES - API USINA COM SWAGGER
 
 **Data:** 19/12/2024  
 **Status:** ? PRONTO PARA TESTAR  
@@ -17,15 +17,15 @@ dotnet run
 
 ### Via Visual Studio
 
-1. Abrir solução: `C:\temp\_ONS_PoC-PDPW\PDPW.sln`
-2. Definir `PDPW.API` como projeto de inicialização
+1. Abrir soluï¿½ï¿½o: `C:\temp\_ONS_PoC-PDPW\PDPW.sln`
+2. Definir `PDPW.API` como projeto de inicializaï¿½ï¿½o
 3. Pressionar `F5` ou clicar em ?? Run
 
-### Aguardar inicialização
+### Aguardar inicializaï¿½ï¿½o
 
 ```
-? Conexão com banco de dados estabelecida com sucesso!
-?? Iniciando aplicação PDPW API...
+? Conexï¿½o com banco de dados estabelecida com sucesso!
+?? Iniciando aplicaï¿½ï¿½o PDPW API...
 ?? Ambiente: Development
 ?? Swagger: http://localhost:5000/swagger
 Now listening on: https://localhost:XXXXX
@@ -38,7 +38,7 @@ Now listening on: http://localhost:XXXXX
 
 ## ?? PASSO 2: ABRIR SWAGGER
 
-### Opções de URL:
+### Opï¿½ï¿½es de URL:
 
 1. **HTTP (recomendado para testes):**
    ```
@@ -64,10 +64,10 @@ Now listening on: http://localhost:XXXXX
 
 ### Interface do Swagger
 
-Você verá:
+Vocï¿½ verï¿½:
 ```
 PDPW API v1
-API para Programação Diária da Produção de Energia
+API para Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o de Energia
 
 Usinas
   GET    /api/usinas
@@ -99,13 +99,13 @@ Usinas
   {
     "id": 1,
     "codigo": "UHE-ITAIPU",
-    "nome": "Usina Hidrelétrica de Itaipu",
+    "nome": "Usina Hidrelï¿½trica de Itaipu",
     "tipoUsinaId": 1,
-    "tipoUsina": "Hidrelétrica",
+    "tipoUsina": "Hidrelï¿½trica",
     "empresaId": 1,
     "empresa": "Itaipu Binacional",
     "capacidadeInstalada": 14000.00,
-    "localizacao": "Foz do Iguaçu, PR - Fronteira Brasil/Paraguai",
+    "localizacao": "Foz do Iguaï¿½u, PR - Fronteira Brasil/Paraguai",
     "dataOperacao": "1984-05-05T00:00:00",
     "ativo": true,
     "dataCriacao": "2024-01-01T00:00:00",
@@ -114,11 +114,11 @@ Usinas
   {
     "id": 2,
     "codigo": "UHE-BELO-MONTE",
-    "nome": "Usina Hidrelétrica Belo Monte",
+    "nome": "Usina Hidrelï¿½trica Belo Monte",
     "tipoUsinaId": 1,
-    "tipoUsina": "Hidrelétrica",
+    "tipoUsina": "Hidrelï¿½trica",
     "empresaId": 2,
-    "empresa": "Eletronorte - Centrais Elétricas do Norte do Brasil",
+    "empresa": "Eletronorte - Centrais Elï¿½tricas do Norte do Brasil",
     "capacidadeInstalada": 11233.00,
     ...
   },
@@ -126,7 +126,7 @@ Usinas
 ]
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **10 usinas**
 - [ ] Cada usina tem todos os campos preenchidos
@@ -151,19 +151,19 @@ Usinas
 {
   "id": 1,
   "codigo": "UHE-ITAIPU",
-  "nome": "Usina Hidrelétrica de Itaipu",
+  "nome": "Usina Hidrelï¿½trica de Itaipu",
   "tipoUsinaId": 1,
-  "tipoUsina": "Hidrelétrica",
+  "tipoUsina": "Hidrelï¿½trica",
   "empresaId": 1,
   "empresa": "Itaipu Binacional",
   "capacidadeInstalada": 14000.00,
-  "localizacao": "Foz do Iguaçu, PR - Fronteira Brasil/Paraguai",
+  "localizacao": "Foz do Iguaï¿½u, PR - Fronteira Brasil/Paraguai",
   "dataOperacao": "1984-05-05T00:00:00",
   "ativo": true
 }
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **Itaipu** (maior usina do Brasil)
 - [ ] Capacidade: **14.000 MW**
@@ -175,7 +175,7 @@ Usinas
 
 ---
 
-## ?? TESTE 3: BUSCAR POR CÓDIGO
+## ?? TESTE 3: BUSCAR POR Cï¿½DIGO
 
 ### Endpoint
 **GET /api/usinas/codigo/{codigo}**
@@ -192,22 +192,22 @@ Usinas
 {
   "id": 2,
   "codigo": "UHE-BELO-MONTE",
-  "nome": "Usina Hidrelétrica Belo Monte",
-  "tipoUsina": "Hidrelétrica",
-  "empresa": "Eletronorte - Centrais Elétricas do Norte do Brasil",
+  "nome": "Usina Hidrelï¿½trica Belo Monte",
+  "tipoUsina": "Hidrelï¿½trica",
+  "empresa": "Eletronorte - Centrais Elï¿½tricas do Norte do Brasil",
   "capacidadeInstalada": 11233.00,
   "localizacao": "Altamira, PA - Rio Xingu"
 }
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **Belo Monte**
 - [ ] Capacidade: **11.233 MW**
-- [ ] 3ª maior hidrelétrica do mundo
+- [ ] 3ï¿½ maior hidrelï¿½trica do mundo
 
-### Outros códigos para testar:
-- **UHE-TUCURUI** ? Tucuruí
+### Outros cï¿½digos para testar:
+- **UHE-TUCURUI** ? Tucuruï¿½
 - **UTN-ANGRA-I** ? Angra I (nuclear)
 - **UTN-ANGRA-II** ? Angra II (nuclear)
 
@@ -218,33 +218,33 @@ Usinas
 ### Endpoint
 **GET /api/usinas/tipo/{tipoUsinaId}**
 
-### Teste 4.1: Hidrelétricas
+### Teste 4.1: Hidrelï¿½tricas
 1. Clicar em `GET /api/usinas/tipo/{tipoUsinaId}`
 2. Clicar em **"Try it out"**
 3. Preencher:
-   - `tipoUsinaId`: **1** (Hidrelétrica)
+   - `tipoUsinaId`: **1** (Hidrelï¿½trica)
 4. Clicar em **"Execute"**
 
 ### Resultado esperado:
 ```json
 [
-  { "nome": "Usina Hidrelétrica de Itaipu", ... },
-  { "nome": "Usina Hidrelétrica Belo Monte", ... },
-  { "nome": "Usina Hidrelétrica de Tucuruí", ... },
-  { "nome": "Usina Hidrelétrica de São Simão", ... },
-  { "nome": "Usina Hidrelétrica de Sobradinho", ... },
-  { "nome": "Usina Hidrelétrica de Itumbiara", ... }
+  { "nome": "Usina Hidrelï¿½trica de Itaipu", ... },
+  { "nome": "Usina Hidrelï¿½trica Belo Monte", ... },
+  { "nome": "Usina Hidrelï¿½trica de Tucuruï¿½", ... },
+  { "nome": "Usina Hidrelï¿½trica de Sï¿½o Simï¿½o", ... },
+  { "nome": "Usina Hidrelï¿½trica de Sobradinho", ... },
+  { "nome": "Usina Hidrelï¿½trica de Itumbiara", ... }
 ]
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **200 OK**
-- [ ] Retornou **6 usinas** hidrelétricas
+- [ ] Retornou **6 usinas** hidrelï¿½tricas
 - [ ] Total: **38.445 MW**
 
-### Teste 4.2: Térmicas
+### Teste 4.2: Tï¿½rmicas
 - `tipoUsinaId`: **2**
-- Esperado: **2 usinas** (Termo Maranhão, Termo Pecém)
+- Esperado: **2 usinas** (Termo Maranhï¿½o, Termo Pecï¿½m)
 
 ### Teste 4.3: Nucleares
 - `tipoUsinaId`: **5**
@@ -267,13 +267,13 @@ Usinas
 ### Resultado esperado:
 ```json
 [
-  { "nome": "Usina Hidrelétrica Belo Monte", ... },
-  { "nome": "Usina Hidrelétrica de Tucuruí", ... },
-  { "nome": "Usina Termelétrica do Maranhão", ... }
+  { "nome": "Usina Hidrelï¿½trica Belo Monte", ... },
+  { "nome": "Usina Hidrelï¿½trica de Tucuruï¿½", ... },
+  { "nome": "Usina Termelï¿½trica do Maranhï¿½o", ... }
 ]
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **200 OK**
 - [ ] Retornou **3 usinas**
 - [ ] Todas da **Eletronorte**
@@ -301,7 +301,7 @@ Usinas
 ```json
 {
   "codigo": "UHE-JIRAU",
-  "nome": "Usina Hidrelétrica de Jirau",
+  "nome": "Usina Hidrelï¿½trica de Jirau",
   "tipoUsinaId": 1,
   "empresaId": 3,
   "capacidadeInstalada": 3750,
@@ -318,9 +318,9 @@ Usinas
 {
   "id": 11,
   "codigo": "UHE-JIRAU",
-  "nome": "Usina Hidrelétrica de Jirau",
-  "tipoUsina": "Hidrelétrica",
-  "empresa": "Furnas Centrais Elétricas",
+  "nome": "Usina Hidrelï¿½trica de Jirau",
+  "tipoUsina": "Hidrelï¿½trica",
+  "empresa": "Furnas Centrais Elï¿½tricas",
   "capacidadeInstalada": 3750.00,
   "localizacao": "Porto Velho, RO - Rio Madeira",
   "dataOperacao": "2013-09-01T00:00:00",
@@ -329,14 +329,14 @@ Usinas
 }
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **201 Created**
 - [ ] Retornou usina criada com **ID 11**
 - [ ] `dataCriacao` preenchida automaticamente
 - [ ] Location header aponta para `/api/usinas/11`
 
-### Teste de validação (erro):
-Tente criar com código duplicado:
+### Teste de validaï¿½ï¿½o (erro):
+Tente criar com cï¿½digo duplicado:
 ```json
 {
   "codigo": "UHE-ITAIPU",
@@ -346,7 +346,7 @@ Tente criar com código duplicado:
 
 **Esperado:** 
 - Status Code: **400 Bad Request**
-- Mensagem: "Já existe uma usina com o código 'UHE-ITAIPU'"
+- Mensagem: "Jï¿½ existe uma usina com o cï¿½digo 'UHE-ITAIPU'"
 
 ---
 
@@ -365,7 +365,7 @@ Tente criar com código duplicado:
 ```json
 {
   "codigo": "UHE-JIRAU",
-  "nome": "Usina Hidrelétrica de Jirau (Atualizada)",
+  "nome": "Usina Hidrelï¿½trica de Jirau (Atualizada)",
   "tipoUsinaId": 1,
   "empresaId": 3,
   "capacidadeInstalada": 3750,
@@ -381,26 +381,26 @@ Tente criar com código duplicado:
 ```json
 {
   "id": 11,
-  "nome": "Usina Hidrelétrica de Jirau (Atualizada)",
+  "nome": "Usina Hidrelï¿½trica de Jirau (Atualizada)",
   "localizacao": "Porto Velho, RO - Rio Madeira - ATUALIZADO",
   "dataAtualizacao": "2024-12-19T..."
 }
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **200 OK**
 - [ ] Nome atualizado
-- [ ] Localização atualizada
+- [ ] Localizaï¿½ï¿½o atualizada
 - [ ] `dataAtualizacao` preenchida automaticamente
 
 ---
 
-## ?? TESTE 8: VERIFICAR CÓDIGO
+## ?? TESTE 8: VERIFICAR Cï¿½DIGO
 
 ### Endpoint
 **GET /api/usinas/verificar-codigo/{codigo}**
 
-### Teste 8.1: Código existente
+### Teste 8.1: Cï¿½digo existente
 1. Clicar em `GET /api/usinas/verificar-codigo/{codigo}`
 2. Clicar em **"Try it out"**
 3. Preencher:
@@ -414,14 +414,14 @@ Tente criar com código duplicado:
 }
 ```
 
-### Teste 8.2: Código não existente
+### Teste 8.2: Cï¿½digo nï¿½o existente
 - `codigo`: **UHE-NAO-EXISTE**
 - Esperado: `{ "existe": false }`
 
-### Teste 8.3: Excluir usina da verificação
+### Teste 8.3: Excluir usina da verificaï¿½ï¿½o
 - `codigo`: **UHE-ITAIPU**
 - `usinaId` (query param): **1**
-- Esperado: `{ "existe": false }` (porque excluiu o próprio ID 1)
+- Esperado: `{ "existe": false }` (porque excluiu o prï¿½prio ID 1)
 
 ---
 
@@ -443,7 +443,7 @@ Status Code: 204 No Content
 (Sem body na resposta)
 ```
 
-### ? Validações:
+### ? Validaï¿½ï¿½es:
 - [ ] Status Code: **204 No Content**
 - [ ] Sem corpo na resposta
 
@@ -462,16 +462,16 @@ Status Code: 204 No Content
 - [ ] ? GET /api/usinas/1 (Itaipu)
 - [ ] ? GET /api/usinas/999 (404 Not Found)
 - [ ] ? GET /api/usinas/codigo/UHE-BELO-MONTE (Belo Monte)
-- [ ] ? GET /api/usinas/tipo/1 (6 hidrelétricas)
-- [ ] ? GET /api/usinas/tipo/2 (2 térmicas)
+- [ ] ? GET /api/usinas/tipo/1 (6 hidrelï¿½tricas)
+- [ ] ? GET /api/usinas/tipo/2 (2 tï¿½rmicas)
 - [ ] ? GET /api/usinas/tipo/5 (2 nucleares)
 - [ ] ? GET /api/usinas/empresa/2 (3 da Eletronorte)
 - [ ] ? GET /api/usinas/verificar-codigo/UHE-ITAIPU (existe)
 
 ### Endpoints POST
 - [ ] ? POST /api/usinas (criar Jirau - 201 Created)
-- [ ] ? POST /api/usinas código duplicado (400 Bad Request)
-- [ ] ? POST /api/usinas dados inválidos (400 Bad Request)
+- [ ] ? POST /api/usinas cï¿½digo duplicado (400 Bad Request)
+- [ ] ? POST /api/usinas dados invï¿½lidos (400 Bad Request)
 
 ### Endpoints PUT
 - [ ] ? PUT /api/usinas/11 (atualizar Jirau - 200 OK)
@@ -483,11 +483,11 @@ Status Code: 204 No Content
 
 ---
 
-## ?? CENÁRIOS DE TESTE AVANÇADOS
+## ?? CENï¿½RIOS DE TESTE AVANï¿½ADOS
 
-### 1. Validação de Campos Obrigatórios
+### 1. Validaï¿½ï¿½o de Campos Obrigatï¿½rios
 
-**POST /api/usinas** sem campos obrigatórios:
+**POST /api/usinas** sem campos obrigatï¿½rios:
 ```json
 {
   "codigo": "",
@@ -498,11 +498,11 @@ Status Code: 204 No Content
 }
 ```
 
-**Esperado:** 400 Bad Request com mensagens de validação
+**Esperado:** 400 Bad Request com mensagens de validaï¿½ï¿½o
 
-### 2. Validação de Tamanho de String
+### 2. Validaï¿½ï¿½o de Tamanho de String
 
-**POST /api/usinas** com código muito grande:
+**POST /api/usinas** com cï¿½digo muito grande:
 ```json
 {
   "codigo": "CODIGO-MUITO-GRANDE-QUE-EXCEDE-O-LIMITE-DE-50-CARACTERES-CONFIGURADO",
@@ -521,10 +521,10 @@ Medir tempo de resposta:
 
 ### 4. Teste de Relacionamentos
 
-Verificar se os relacionamentos estão carregados:
+Verificar se os relacionamentos estï¿½o carregados:
 - Cada usina tem `tipoUsina` (nome do tipo)
 - Cada usina tem `empresa` (nome da empresa)
-- Não deve retornar apenas IDs
+- Nï¿½o deve retornar apenas IDs
 
 ---
 
@@ -535,7 +535,7 @@ Verificar se os relacionamentos estão carregados:
 Usinas
 ???????????????????????????????????????????
 ? GET /api/usinas                         ?
-? Obtém todas as usinas                   ?
+? Obtï¿½m todas as usinas                   ?
 ?                                         ?
 ? [Try it out]                            ?
 ?                                         ?
@@ -553,12 +553,12 @@ Usinas
 
 ## ?? TROUBLESHOOTING
 
-### API não inicia
+### API nï¿½o inicia
 ```powershell
 # Verificar porta em uso
 netstat -ano | findstr :5000
 
-# Matar processo se necessário
+# Matar processo se necessï¿½rio
 taskkill /F /PID <PID>
 
 # Tentar portas diferentes
@@ -567,15 +567,15 @@ dotnet run --urls "http://localhost:5050"
 
 ### Erro 500 Internal Server Error
 - Verificar logs no terminal
-- Verificar conexão com banco de dados
+- Verificar conexï¿½o com banco de dados
 - Verificar se migration foi aplicada
 
-### Swagger não abre
+### Swagger nï¿½o abre
 - Verificar URL correta (usar porta do terminal)
-- Tentar HTTP ao invés de HTTPS
-- Verificar se `app.UseSwagger()` está no Program.cs
+- Tentar HTTP ao invï¿½s de HTTPS
+- Verificar se `app.UseSwagger()` estï¿½ no Program.cs
 
-### Dados não aparecem
+### Dados nï¿½o aparecem
 ```sql
 -- Verificar no SQL Server
 USE PDPW_DB_Dev;
@@ -607,16 +607,16 @@ Capacidade Total: 41.493 MW
 
 ---
 
-## ?? CONCLUSÃO
+## ?? CONCLUSï¿½O
 
-Após completar todos os testes, você terá validado:
+Apï¿½s completar todos os testes, vocï¿½ terï¿½ validado:
 
 ? CRUD completo funcionando  
-? Validações de negócio (código único)  
-? Validações de entrada (Data Annotations)  
+? Validaï¿½ï¿½es de negï¿½cio (cï¿½digo ï¿½nico)  
+? Validaï¿½ï¿½es de entrada (Data Annotations)  
 ? Relacionamentos (TipoUsina, Empresa)  
 ? Soft delete  
-? Dados realistas do setor elétrico  
+? Dados realistas do setor elï¿½trico  
 ? Performance adequada  
 ? Swagger bem documentado  
 
@@ -624,11 +624,11 @@ Após completar todos os testes, você terá validado:
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-Após validar a API Usina:
+Apï¿½s validar a API Usina:
 
-1. **Criar APIs TipoUsina e Empresa** (necessárias para frontend)
+1. **Criar APIs TipoUsina e Empresa** (necessï¿½rias para frontend)
 2. **Criar API UnidadeGeradora** (relacionada com Usina)
 3. **Implementar testes automatizados** (xUnit)
 4. **Documentar mais exemplos** no Swagger
@@ -637,7 +637,7 @@ Após validar a API Usina:
 
 **Criado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
+**Versï¿½o:** 1.0  
 **Status:** ? PRONTO PARA USAR
 
 **BOA SORTE NOS TESTES! ??**

@@ -1,30 +1,30 @@
-# ??? GUIA DE SETUP DO AMBIENTE - PoC PDPW
+ï»¿# ??? GUIA DE SETUP DO AMBIENTE - PoC PDPW
 
 **Objetivo:** Configurar ambiente de desenvolvimento completo em < 30 minutos  
 **Data:** 19/12/2024  
-**Versão:** 1.0
+**Versï¿½o:** 1.0
 
 ---
 
-## ?? PRÉ-REQUISITOS
+## ?? PRï¿½-REQUISITOS
 
 ### Sistema Operacional
 - ? Windows 10/11 (64-bit)
-- ? Mínimo 8GB RAM (recomendado 16GB)
-- ? 10GB de espaço livre em disco
-- ? Conexão com internet
+- ? Mï¿½nimo 8GB RAM (recomendado 16GB)
+- ? 10GB de espaï¿½o livre em disco
+- ? Conexï¿½o com internet
 
 ---
 
-## ?? INSTALAÇÃO RÁPIDA (TODOS OS DEVS)
+## ?? INSTALAï¿½ï¿½O Rï¿½PIDA (TODOS OS DEVS)
 
-### 1?? Instalar Winget (se não tiver)
+### 1?? Instalar Winget (se nï¿½o tiver)
 
 ```powershell
-# Verificar se já está instalado
+# Verificar se jï¿½ estï¿½ instalado
 winget --version
 
-# Se não estiver, baixar de:
+# Se nï¿½o estiver, baixar de:
 # https://aka.ms/getwinget
 ```
 
@@ -36,23 +36,23 @@ winget install Git.Git
 
 # Verificar
 git --version
-# Saída esperada: git version 2.43.0 (ou superior)
+# Saï¿½da esperada: git version 2.43.0 (ou superior)
 
 # Configurar (substituir por seus dados)
 git config --global user.name "Seu Nome"
 git config --global user.email "seu.email@example.com"
 ```
 
-### 3?? Clonar o Repositório
+### 3?? Clonar o Repositï¿½rio
 
 ```powershell
-# Navegar para diretório de trabalho
+# Navegar para diretï¿½rio de trabalho
 cd C:\temp
 
-# Clonar (se ainda não clonou)
+# Clonar (se ainda nï¿½o clonou)
 git clone https://github.com/wbulhoes/ONS_PoC-PDPW.git
 
-# Entrar no diretório
+# Entrar no diretï¿½rio
 cd ONS_PoC-PDPW
 
 # Verificar branch
@@ -75,7 +75,7 @@ winget install Microsoft.DotNet.SDK.8
 
 # Verificar
 dotnet --version
-# Saída esperada: 8.0.xxx
+# Saï¿½da esperada: 8.0.xxx
 
 # Listar SDKs instalados
 dotnet --list-sdks
@@ -91,7 +91,7 @@ winget install Microsoft.VisualStudio.2022.Community
 winget install JetBrains.Rider
 ```
 
-**Workloads necessários:**
+**Workloads necessï¿½rios:**
 - ASP.NET and web development
 - .NET desktop development
 - Azure development (opcional)
@@ -106,7 +106,7 @@ winget install Microsoft.SQLServer.2022.Express
 winget install Microsoft.SQLServerManagementStudio
 ```
 
-?? **Nota:** Para a PoC, usaremos InMemory Database, então SQL Server é opcional.
+?? **Nota:** Para a PoC, usaremos InMemory Database, entï¿½o SQL Server ï¿½ opcional.
 
 ### 4?? Instalar Docker Desktop
 
@@ -114,14 +114,14 @@ winget install Microsoft.SQLServerManagementStudio
 # Instalar
 winget install Docker.DockerDesktop
 
-# Após instalação, reiniciar o computador
+# Apï¿½s instalaï¿½ï¿½o, reiniciar o computador
 
 # Verificar
 docker --version
-# Saída esperada: Docker version 24.x.x
+# Saï¿½da esperada: Docker version 24.x.x
 
 docker-compose --version
-# Saída esperada: Docker Compose version v2.x.x
+# Saï¿½da esperada: Docker Compose version v2.x.x
 ```
 
 ### 5?? Testar o Backend
@@ -130,7 +130,7 @@ docker-compose --version
 # Navegar para o projeto API
 cd C:\temp\ONS_PoC-PDPW\src\PDPW.API
 
-# Restaurar dependências
+# Restaurar dependï¿½ncias
 dotnet restore
 
 # Compilar
@@ -140,7 +140,7 @@ dotnet build
 dotnet run
 ```
 
-**Saída esperada:**
+**Saï¿½da esperada:**
 ```
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://localhost:5000
@@ -152,10 +152,10 @@ info: Microsoft.Hosting.Lifetime[0]
 - Swagger: http://localhost:5000/swagger
 - Health: http://localhost:5000/health
 
-### 6?? Extensões Recomendadas para Visual Studio
+### 6?? Extensï¿½es Recomendadas para Visual Studio
 
 - C# Dev Kit
-- GitHub Copilot (se disponível)
+- GitHub Copilot (se disponï¿½vel)
 - REST Client
 - Docker Extension
 - GitLens
@@ -172,10 +172,10 @@ winget install OpenJS.NodeJS.LTS
 
 # Verificar
 node --version
-# Saída esperada: v20.x.x
+# Saï¿½da esperada: v20.x.x
 
 npm --version
-# Saída esperada: 10.x.x
+# Saï¿½da esperada: 10.x.x
 ```
 
 ### 2?? Instalar Visual Studio Code
@@ -188,7 +188,7 @@ winget install Microsoft.VisualStudioCode
 code .
 ```
 
-### 3?? Instalar Extensões do VS Code
+### 3?? Instalar Extensï¿½es do VS Code
 
 ```powershell
 # ES7+ React/Redux/React-Native snippets
@@ -209,7 +209,7 @@ code --install-extension christian-kohler.path-intellisense
 # GitLens
 code --install-extension eamodio.gitlens
 
-# GitHub Copilot (se disponível)
+# GitHub Copilot (se disponï¿½vel)
 code --install-extension GitHub.copilot
 ```
 
@@ -219,14 +219,14 @@ code --install-extension GitHub.copilot
 # Navegar para o projeto frontend
 cd C:\temp\ONS_PoC-PDPW\frontend
 
-# Instalar dependências
+# Instalar dependï¿½ncias
 npm install
 
 # Executar em modo desenvolvimento
 npm run dev
 ```
 
-**Saída esperada:**
+**Saï¿½da esperada:**
 ```
   VITE v5.x.x  ready in xxx ms
 
@@ -270,7 +270,7 @@ winget install Microsoft.Edge
 # Git
 winget install Git.Git
 
-# VS Code (para editar documentação)
+# VS Code (para editar documentaï¿½ï¿½o)
 winget install Microsoft.VisualStudioCode
 ```
 
@@ -286,12 +286,12 @@ winget install Greenshot.Greenshot
 
 ---
 
-## ? CHECKLIST DE VERIFICAÇÃO
+## ? CHECKLIST DE VERIFICAï¿½ï¿½O
 
 ### Backend Devs
 
 ```powershell
-# Executar todos os comandos abaixo e verificar saída
+# Executar todos os comandos abaixo e verificar saï¿½da
 
 # 1. .NET 8 SDK
 dotnet --version
@@ -305,7 +305,7 @@ git --version
 docker --version
 # ? Deve ser 24.x.x ou superior
 
-# 4. Compilar solução
+# 4. Compilar soluï¿½ï¿½o
 cd C:\temp\ONS_PoC-PDPW
 dotnet build
 # ? Build succeeded. 0 Warning(s). 0 Error(s).
@@ -317,7 +317,7 @@ dotnet run
 
 # 6. Testar Swagger
 # Abrir http://localhost:5000/swagger
-# ? Página do Swagger carrega
+# ? Pï¿½gina do Swagger carrega
 ```
 
 ### Frontend Dev
@@ -335,7 +335,7 @@ npm --version
 git --version
 # ? Deve ser 2.43.x ou superior
 
-# 4. Instalar dependências
+# 4. Instalar dependï¿½ncias
 cd C:\temp\ONS_PoC-PDPW\frontend
 npm install
 # ? Sem erros
@@ -346,7 +346,7 @@ npm run dev
 
 # 6. Testar no navegador
 # Abrir http://localhost:3000
-# ? Aplicação React carrega
+# ? Aplicaï¿½ï¿½o React carrega
 ```
 
 ### QA Specialist
@@ -364,7 +364,7 @@ git --version
 code --version
 # ? Instalado
 
-# 4. Clonar repositório
+# 4. Clonar repositï¿½rio
 cd C:\temp\ONS_PoC-PDPW
 git status
 # ? On branch develop
@@ -374,10 +374,10 @@ git status
 
 ## ?? TROUBLESHOOTING
 
-### Problema: Porta 5000 já está em uso
+### Problema: Porta 5000 jï¿½ estï¿½ em uso
 
 ```powershell
-# Verificar o que está usando a porta
+# Verificar o que estï¿½ usando a porta
 netstat -ano | findstr :5000
 
 # Matar o processo (substituir XXXX pelo PID)
@@ -388,16 +388,16 @@ taskkill /PID XXXX /F
 # "applicationUrl": "http://localhost:5001"
 ```
 
-### Problema: Porta 3000 já está em uso
+### Problema: Porta 3000 jï¿½ estï¿½ em uso
 
 ```powershell
-# Verificar o que está usando a porta
+# Verificar o que estï¿½ usando a porta
 netstat -ano | findstr :3000
 
 # Matar o processo
 taskkill /PID XXXX /F
 
-# Ou o Vite perguntará automaticamente para usar outra porta
+# Ou o Vite perguntarï¿½ automaticamente para usar outra porta
 ```
 
 ### Problema: dotnet build falha
@@ -427,13 +427,13 @@ rm package-lock.json
 npm install
 ```
 
-### Problema: Docker Desktop não inicia
+### Problema: Docker Desktop nï¿½o inicia
 
 ```powershell
-# 1. Verificar se WSL 2 está instalado
+# 1. Verificar se WSL 2 estï¿½ instalado
 wsl --version
 
-# 2. Se não estiver, instalar WSL 2
+# 2. Se nï¿½o estiver, instalar WSL 2
 wsl --install
 
 # 3. Reiniciar o computador
@@ -442,7 +442,7 @@ wsl --install
 # Procurar "Docker Desktop" no menu Iniciar
 ```
 
-### Problema: Git clone falha (autenticação)
+### Problema: Git clone falha (autenticaï¿½ï¿½o)
 
 ```powershell
 # Usar GitHub Personal Access Token
@@ -452,12 +452,12 @@ wsl --install
 
 # Ou configurar SSH
 ssh-keygen -t ed25519 -C "seu.email@example.com"
-# Adicionar chave pública em: https://github.com/settings/keys
+# Adicionar chave pï¿½blica em: https://github.com/settings/keys
 ```
 
 ---
 
-## ?? CONFIGURAÇÕES ADICIONAIS
+## ?? CONFIGURAï¿½ï¿½ES ADICIONAIS
 
 ### Configurar Git (todos)
 
@@ -466,10 +466,10 @@ ssh-keygen -t ed25519 -C "seu.email@example.com"
 git config --global user.name "Seu Nome"
 git config --global user.email "seu.email@example.com"
 
-# Editor padrão (VS Code)
+# Editor padrï¿½o (VS Code)
 git config --global core.editor "code --wait"
 
-# Alias úteis
+# Alias ï¿½teis
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.br branch
@@ -512,7 +512,7 @@ git config --global core.autocrlf true
 ## ?? ESTRUTURA DE BRANCHES
 
 ```
-main (produção)
+main (produï¿½ï¿½o)
 ??? develop (desenvolvimento)
     ??? feature/slice-1-usinas (DEV 1)
     ??? feature/slice-2-dadger (DEV 2)
@@ -550,15 +550,15 @@ git push -u origin docs/test-documentation
 
 ---
 
-## ?? PRÓXIMOS PASSOS
+## ?? PRï¿½XIMOS PASSOS
 
-### Após Setup Completo
+### Apï¿½s Setup Completo
 
 1. ? **Sincronizar com o time**
-   - Confirmar que todos concluíram o setup
+   - Confirmar que todos concluï¿½ram o setup
    - Resolver problemas em conjunto
 
-2. ? **Estudar o código legado**
+2. ? **Estudar o cï¿½digo legado**
    - Ler: `docs/ANALISE_TECNICA_CODIGO_LEGADO.md`
    - Analisar: `pdpw_act/pdpw/Dao/UsinaDAO.vb`
    - Analisar: `pdpw_act/pdpw/Dao/ArquivoDadgerValorDAO.vb`
@@ -577,54 +577,54 @@ git push -u origin docs/test-documentation
 
 ## ?? SUPORTE
 
-### Problemas Técnicos
+### Problemas Tï¿½cnicos
 - Consultar: `docs/ANALISE_TECNICA_CODIGO_LEGADO.md`
 - Issues no GitHub: https://github.com/wbulhoes/ONS_PoC-PDPW/issues
 
-### Dúvidas sobre Arquitetura
+### Dï¿½vidas sobre Arquitetura
 - Consultar: `README.md`
 - Consultar: `VERTICAL_SLICES_DECISION.md`
 
-### Dúvidas sobre o Domínio
+### Dï¿½vidas sobre o Domï¿½nio
 - Consultar: `GLOSSARIO.md`
-- Analisar código legado em: `pdpw_act/pdpw/`
+- Analisar cï¿½digo legado em: `pdpw_act/pdpw/`
 
 ---
 
-## ? CHECKLIST FINAL PRÉ-DESENVOLVIMENTO
+## ? CHECKLIST FINAL PRï¿½-DESENVOLVIMENTO
 
 ### Todos os Devs
 - [ ] Git instalado e configurado
-- [ ] Repositório clonado
+- [ ] Repositï¿½rio clonado
 - [ ] Branch criada e pushed
-- [ ] Documentação lida (README, BRIEFING, ANÁLISE TÉCNICA)
+- [ ] Documentaï¿½ï¿½o lida (README, BRIEFING, ANï¿½LISE Tï¿½CNICA)
 - [ ] Ambiente testado (build/run funciona)
 
 ### Backend Devs
 - [ ] .NET 8 SDK instalado
 - [ ] Visual Studio/Rider instalado
-- [ ] Solução compila sem erros
-- [ ] Swagger acessível
+- [ ] Soluï¿½ï¿½o compila sem erros
+- [ ] Swagger acessï¿½vel
 
 ### Frontend Dev
 - [ ] Node.js 20 instalado
-- [ ] VS Code com extensões instalado
-- [ ] npm install concluído
+- [ ] VS Code com extensï¿½es instalado
+- [ ] npm install concluï¿½do
 - [ ] Dev server executando
 
 ### QA
 - [ ] Postman instalado
-- [ ] Acesso ao repositório
+- [ ] Acesso ao repositï¿½rio
 - [ ] Casos de teste documentados
 - [ ] Navegadores instalados
 
 ---
 
-**?? SETUP CONCLUÍDO! PRONTO PARA DESENVOLVER!** ??
+**?? SETUP CONCLUï¿½DO! PRONTO PARA DESENVOLVER!** ??
 
 ---
 
 **Documento preparado por:** GitHub Copilot  
 **Data:** 19/12/2024  
-**Versão:** 1.0  
-**Próximo passo:** Daily Standup - 09:00 (20/12)
+**Versï¿½o:** 1.0  
+**Prï¿½ximo passo:** Daily Standup - 09:00 (20/12)

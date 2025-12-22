@@ -1,10 +1,10 @@
-# ? APIS DE SEMANAS PMO E EQUIPES PDP - IMPLEMENTADAS
+ï»¿# ? APIS DE SEMANAS PMO E EQUIPES PDP - IMPLEMENTADAS
 
-## ?? **RESUMO DA IMPLEMENTAÇÃO**
+## ?? **RESUMO DA IMPLEMENTAï¿½ï¿½O**
 
-### ? **Status:** CONCLUÍDO COM SUCESSO
+### ? **Status:** CONCLUï¿½DO COM SUCESSO
 
-As APIs de **Semanas PMO** e **Equipes PDP** já estavam implementadas e agora foram **validadas e documentadas** com dados reais do cliente.
+As APIs de **Semanas PMO** e **Equipes PDP** jï¿½ estavam implementadas e agora foram **validadas e documentadas** com dados reais do cliente.
 
 ---
 
@@ -12,30 +12,30 @@ As APIs de **Semanas PMO** e **Equipes PDP** já estavam implementadas e agora fo
 
 ### 1?? **API de Semanas PMO** - `/api/semanaspmo`
 
-#### ? **Endpoints Disponíveis (9 total):**
+#### ? **Endpoints Disponï¿½veis (9 total):**
 
-| Método | Endpoint | Descrição | Status |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o | Status |
 |--------|----------|-----------|--------|
 | GET | `/api/semanaspmo` | Lista todas as semanas PMO | ? |
 | GET | `/api/semanaspmo/{id}` | Busca semana por ID | ? |
-| GET | `/api/semanaspmo/numero/{numero}/ano/{ano}` | Busca por número e ano | ? |
+| GET | `/api/semanaspmo/numero/{numero}/ano/{ano}` | Busca por nï¿½mero e ano | ? |
 | GET | `/api/semanaspmo/ano/{ano}` | Lista semanas de um ano | ? |
-| GET | `/api/semanaspmo/data/{data}` | Busca semana que contém uma data | ? |
+| GET | `/api/semanaspmo/data/{data}` | Busca semana que contï¿½m uma data | ? |
 | POST | `/api/semanaspmo` | Cria nova semana PMO | ? |
 | PUT | `/api/semanaspmo/{id}` | Atualiza semana PMO | ? |
 | DELETE | `/api/semanaspmo/{id}` | Remove semana PMO (soft delete) | ? |
-| GET | `/api/semanaspmo/verificar-numero/{numero}/ano/{ano}` | Verifica duplicação | ? |
+| GET | `/api/semanaspmo/verificar-numero/{numero}/ano/{ano}` | Verifica duplicaï¿½ï¿½o | ? |
 
-#### ?? **Dados Disponíveis:**
+#### ?? **Dados Disponï¿½veis:**
 - **16 semanas PMO** no total
 - **13 semanas reais** (Nov/2024 a Jan/2025)
 - **3 semanas de seed** (Jan/2025)
 
-#### ?? **Validações Implementadas:**
-- ? Verificação de número/ano duplicado
-- ? Validação de datas (início < fim)
-- ? Proteção contra remoção com arquivos vinculados
-- ? Soft delete (mantém registro inativo)
+#### ?? **Validaï¿½ï¿½es Implementadas:**
+- ? Verificaï¿½ï¿½o de nï¿½mero/ano duplicado
+- ? Validaï¿½ï¿½o de datas (inï¿½cio < fim)
+- ? Proteï¿½ï¿½o contra remoï¿½ï¿½o com arquivos vinculados
+- ? Soft delete (mantï¿½m registro inativo)
 
 #### ?? **Exemplo de Uso:**
 
@@ -66,9 +66,9 @@ POST /api/semanaspmo
 
 ### 2?? **API de Equipes PDP** - `/api/equipespdp`
 
-#### ? **Endpoints Disponíveis (8 total):**
+#### ? **Endpoints Disponï¿½veis (8 total):**
 
-| Método | Endpoint | Descrição | Status |
+| Mï¿½todo | Endpoint | Descriï¿½ï¿½o | Status |
 |--------|----------|-----------|--------|
 | GET | `/api/equipespdp` | Lista todas as equipes PDP | ? |
 | GET | `/api/equipespdp/{id}` | Busca equipe por ID | ? |
@@ -79,16 +79,16 @@ POST /api/semanaspmo
 | DELETE | `/api/equipespdp/{id}` | Remove equipe PDP (soft delete) | ? |
 | GET | `/api/equipespdp/verificar-nome` | Verifica nome duplicado | ? |
 
-#### ?? **Dados Disponíveis:**
+#### ?? **Dados Disponï¿½veis:**
 - **11 equipes PDP** no total
 - **6 equipes reais** (Regionais do ONS)
 - **5 equipes de seed**
 
-#### ?? **Validações Implementadas:**
-- ? Verificação de nome duplicado
-- ? Validação de email
-- ? Proteção contra remoção com membros vinculados
-- ? Soft delete (mantém registro inativo)
+#### ?? **Validaï¿½ï¿½es Implementadas:**
+- ? Verificaï¿½ï¿½o de nome duplicado
+- ? Validaï¿½ï¿½o de email
+- ? Proteï¿½ï¿½o contra remoï¿½ï¿½o com membros vinculados
+- ? Soft delete (mantï¿½m registro inativo)
 
 #### ?? **Exemplo de Uso:**
 
@@ -170,7 +170,7 @@ Resultado: ? Equipe Norte encontrada
 
 ### ?? **Semanas PMO Reais (13 registros):**
 
-| ID | Semana | Ano | Data Início | Data Fim |
+| ID | Semana | Ano | Data Inï¿½cio | Data Fim |
 |----|--------|-----|-------------|----------|
 | 50 | 44 | 2024 | 02/11/2024 | 08/11/2024 |
 | 51 | 45 | 2024 | 09/11/2024 | 15/11/2024 |
@@ -190,16 +190,16 @@ Resultado: ? Equipe Norte encontrada
 
 | ID | Nome | Coordenador | Email | Telefone |
 |----|------|-------------|-------|----------|
-| 50 | Equipe Norte | João Silva Santos | norte@ons.org.br | (61) 3429-3000 |
+| 50 | Equipe Norte | Joï¿½o Silva Santos | norte@ons.org.br | (61) 3429-3000 |
 | 51 | Equipe Nordeste | Maria Oliveira Costa | nordeste@ons.org.br | (61) 3429-3001 |
 | 52 | Equipe Sudeste/Centro-Oeste | Pedro Almeida Ferreira | sudeste@ons.org.br | (61) 3429-3002 |
 | 53 | Equipe Sul | Ana Paula Rodrigues | sul@ons.org.br | (61) 3429-3003 |
-| 54 | Equipe Operação em Tempo Real | Carlos Eduardo Lima | operacao@ons.org.br | (61) 3429-3004 |
-| 55 | Equipe Planejamento da Operação | Juliana Martins Souza | planejamento@ons.org.br | (61) 3429-3005 |
+| 54 | Equipe Operaï¿½ï¿½o em Tempo Real | Carlos Eduardo Lima | operacao@ons.org.br | (61) 3429-3004 |
+| 55 | Equipe Planejamento da Operaï¿½ï¿½o | Juliana Martins Souza | planejamento@ons.org.br | (61) 3429-3005 |
 
 ---
 
-## ?? **ARQUITETURA TÉCNICA**
+## ?? **ARQUITETURA Tï¿½CNICA**
 
 ### **Camadas Implementadas:**
 
@@ -211,8 +211,8 @@ src/
 ?
 ??? PDPW.Application/
 ?   ??? Services/
-?   ?   ??? SemanaPmoService.cs      ? Lógica de negócio
-?   ?   ??? EquipePdpService.cs      ? Lógica de negócio
+?   ?   ??? SemanaPmoService.cs      ? Lï¿½gica de negï¿½cio
+?   ?   ??? EquipePdpService.cs      ? Lï¿½gica de negï¿½cio
 ?   ?
 ?   ??? DTOs/SemanaPmo/
 ?   ?   ??? SemanaPmoDto.cs          ? Response
@@ -226,17 +226,17 @@ src/
 ?
 ??? PDPW.Domain/
 ?   ??? Entities/
-?   ?   ??? SemanaPMO.cs             ? Entidade de domínio
-?   ?   ??? EquipePDP.cs             ? Entidade de domínio
+?   ?   ??? SemanaPMO.cs             ? Entidade de domï¿½nio
+?   ?   ??? EquipePDP.cs             ? Entidade de domï¿½nio
 ?   ?
 ?   ??? Interfaces/
-?       ??? ISemanaPMORepository.cs  ? Interface repositório
-?       ??? IEquipePDPRepository.cs  ? Interface repositório
+?       ??? ISemanaPMORepository.cs  ? Interface repositï¿½rio
+?       ??? IEquipePDPRepository.cs  ? Interface repositï¿½rio
 ?
 ??? PDPW.Infrastructure/
     ??? Repositories/
-    ?   ??? SemanaPMORepository.cs   ? Implementação EF Core
-    ?   ??? EquipePDPRepository.cs   ? Implementação EF Core
+    ?   ??? SemanaPMORepository.cs   ? Implementaï¿½ï¿½o EF Core
+    ?   ??? EquipePDPRepository.cs   ? Implementaï¿½ï¿½o EF Core
     ?
     ??? Data/Seed/
         ??? LegacyDataSeeder.cs      ? Dados reais do cliente
@@ -244,89 +244,89 @@ src/
 
 ---
 
-## ?? **DOCUMENTAÇÃO ATUALIZADA**
+## ?? **DOCUMENTAï¿½ï¿½O ATUALIZADA**
 
 ### ? **Documentos Criados/Atualizados:**
 
 1. **`docs/GUIA_TESTES_SWAGGER.md`**
    - ? 6 novos testes adicionados (Semanas PMO + Equipes PDP)
    - ? Exemplos de requests e responses
-   - ? Tabelas de referência com IDs
-   - ? Cenários avançados de teste
+   - ? Tabelas de referï¿½ncia com IDs
+   - ? Cenï¿½rios avanï¿½ados de teste
 
 2. **`docs/DADOS_REAIS_APLICADOS.md`**
    - ? Atualizado com novos endpoints
-   - ? Estatísticas completas
+   - ? Estatï¿½sticas completas
 
 3. **`docs/APIS_SEMANAS_PMO_EQUIPES_PDP.md`** (este arquivo)
-   - ? Documentação técnica completa
+   - ? Documentaï¿½ï¿½o tï¿½cnica completa
    - ? Exemplos de uso
    - ? Dados reais implementados
 
 ---
 
-## ?? **PRÓXIMOS PASSOS**
+## ?? **PRï¿½XIMOS PASSOS**
 
 ### Para o QA:
 1. ? Testar todos os 17 endpoints (9 + 8)
-2. ? Validar criação de registros
-3. ? Validar atualizações
-4. ? Validar exclusões (soft delete)
-5. ? Testar validações de duplicação
+2. ? Validar criaï¿½ï¿½o de registros
+3. ? Validar atualizaï¿½ï¿½es
+4. ? Validar exclusï¿½es (soft delete)
+5. ? Testar validaï¿½ï¿½es de duplicaï¿½ï¿½o
 
 ### Para o Desenvolvimento:
-1. ? Implementar relacionamentos avançados
-2. ? Adicionar mais dados de seed se necessário
+1. ? Implementar relacionamentos avanï¿½ados
+2. ? Adicionar mais dados de seed se necessï¿½rio
 3. ? Implementar APIs de outras entidades
-4. ? Adicionar testes unitários
+4. ? Adicionar testes unitï¿½rios
 
 ---
 
-## ?? **ESTATÍSTICAS FINAIS**
+## ?? **ESTATï¿½STICAS FINAIS**
 
-| Métrica | Valor |
+| Mï¿½trica | Valor |
 |---------|-------|
 | **APIs Implementadas** | 2 (Semanas PMO + Equipes PDP) |
-| **Endpoints Disponíveis** | 17 (9 + 8) |
+| **Endpoints Disponï¿½veis** | 17 (9 + 8) |
 | **Dados Reais Aplicados** | 19 registros (13 + 6) |
 | **Controllers** | 2 completos |
 | **Services** | 2 completos |
 | **Repositories** | 2 completos |
 | **DTOs** | 6 (3 para cada API) |
-| **Entidades de Domínio** | 2 |
-| **Testes Documentados** | 14 novos cenários |
+| **Entidades de Domï¿½nio** | 2 |
+| **Testes Documentados** | 14 novos cenï¿½rios |
 
 ---
 
-## ? **VALIDAÇÃO FINAL**
+## ? **VALIDAï¿½ï¿½O FINAL**
 
-### Checklist de Implementação:
+### Checklist de Implementaï¿½ï¿½o:
 
 - [x] ? Controllers criados e funcionando
-- [x] ? Services com lógica de negócio
+- [x] ? Services com lï¿½gica de negï¿½cio
 - [x] ? Repositories com acesso a dados
 - [x] ? DTOs para requests e responses
-- [x] ? Validações implementadas
+- [x] ? Validaï¿½ï¿½es implementadas
 - [x] ? Dados reais carregados no seed
-- [x] ? Documentação completa
+- [x] ? Documentaï¿½ï¿½o completa
 - [x] ? Testes manuais realizados
 - [x] ? Swagger funcionando
-- [x] ? Código commitado e enviado
+- [x] ? Cï¿½digo commitado e enviado
 
 ---
 
-## ?? **CONCLUSÃO**
+## ?? **CONCLUSï¿½O**
 
-? **Ambas as APIs estão 100% funcionais!**  
+? **Ambas as APIs estï¿½o 100% funcionais!**  
 ? **Todos os endpoints testados e validados!**  
-? **Documentação completa disponível!**  
+? **Documentaï¿½ï¿½o completa disponï¿½vel!**  
 ? **Dados reais do cliente aplicados!**  
 
-**As APIs de Semanas PMO e Equipes PDP estão prontas para uso em testes e desenvolvimento!** ??
+**As APIs de Semanas PMO e Equipes PDP estï¿½o prontas para uso em testes e desenvolvimento!** ??
 
 ---
 
-**Data de Implementação**: 20/12/2024  
-**Versão**: POC PDPW V2  
-**Status**: ? Concluído e Validado  
+**Data de Implementaï¿½ï¿½o**: 20/12/2024  
+**Versï¿½o**: POC PDPW V2  
+**Status**: ? Concluï¿½do e Validado  
 

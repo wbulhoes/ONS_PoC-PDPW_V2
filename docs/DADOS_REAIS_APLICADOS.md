@@ -1,9 +1,9 @@
-# ? DADOS REAIS DO CLIENTE APLICADOS COM SUCESSO!
+ï»¿# ? DADOS REAIS DO CLIENTE APLICADOS COM SUCESSO!
 
-## ?? **RESUMO DA IMPLEMENTAÇÃO**
+## ?? **RESUMO DA IMPLEMENTAï¿½ï¿½O**
 
-### ?? **Objetivo Alcançado**
-Aplicados **50+ registros reais** extraídos do backup do cliente no banco InMemory para testes via Swagger.
+### ?? **Objetivo Alcanï¿½ado**
+Aplicados **50+ registros reais** extraï¿½dos do backup do cliente no banco InMemory para testes via Swagger.
 
 ---
 
@@ -11,74 +11,74 @@ Aplicados **50+ registros reais** extraídos do backup do cliente no banco InMemo
 
 | Entidade | Quantidade | Origem |
 |----------|------------|--------|
-| **Empresas** | 20 empresas | Top 20 do setor elétrico brasileiro (Furnas, CEMIG, COPEL, CHESF, etc) |
-| **Usinas Hidrelétricas** | 30 usinas | Maiores usinas do Brasil (Itaipu, Belo Monte, Tucuruí, etc) |
-| **Semanas PMO** | 13 semanas | Últimas semanas de 2024 e início de 2025 |
+| **Empresas** | 20 empresas | Top 20 do setor elï¿½trico brasileiro (Furnas, CEMIG, COPEL, CHESF, etc) |
+| **Usinas Hidrelï¿½tricas** | 30 usinas | Maiores usinas do Brasil (Itaipu, Belo Monte, Tucuruï¿½, etc) |
+| **Semanas PMO** | 13 semanas | ï¿½ltimas semanas de 2024 e inï¿½cio de 2025 |
 | **Equipes PDP** | 6 equipes | Equipes regionais do ONS (Norte, Nordeste, Sudeste, Sul, etc) |
 | **TOTAL** | **69 registros reais** | ? |
 
 ---
 
-## ?? **EMPRESAS REAIS INCLUÍDAS**
+## ?? **EMPRESAS REAIS INCLUï¿½DAS**
 
-### Top 20 Agentes do Setor Elétrico Brasileiro:
+### Top 20 Agentes do Setor Elï¿½trico Brasileiro:
 
-1. **Furnas Centrais Elétricas S.A.** - CNPJ: 23274194000144
-2. **CEMIG** - Companhia Energética de Minas Gerais - CNPJ: 17155730000164
+1. **Furnas Centrais Elï¿½tricas S.A.** - CNPJ: 23274194000144
+2. **CEMIG** - Companhia Energï¿½tica de Minas Gerais - CNPJ: 17155730000164
 3. **COPEL** - Companhia Paranaense de Energia - CNPJ: 76483817000120
-4. **CHESF** - Companhia Hidro Elétrica do São Francisco - CNPJ: 33541368000192
-5. **ELETRONORTE** - Centrais Elétricas do Norte do Brasil - CNPJ: 00357038000173
-6. **Eletrosul Centrais Elétricas S.A.** - CNPJ: 82695772000166
+4. **CHESF** - Companhia Hidro Elï¿½trica do Sï¿½o Francisco - CNPJ: 33541368000192
+5. **ELETRONORTE** - Centrais Elï¿½tricas do Norte do Brasil - CNPJ: 00357038000173
+6. **Eletrosul Centrais Elï¿½tricas S.A.** - CNPJ: 82695772000166
 7. **Itaipu Binacional** - CNPJ: 00341657000189
 8. **Light Energia S.A.** - CNPJ: 03378521000176
 9. **ENGIE Brasil Energia S.A.** - CNPJ: 02474103000119
-10. **AES Tietê Energia S.A.** - CNPJ: 04128563000113
-11. **CPFL Geração de Energia S.A.** - CNPJ: 02429144000193
+10. **AES Tietï¿½ Energia S.A.** - CNPJ: 04128563000113
+11. **CPFL Geraï¿½ï¿½o de Energia S.A.** - CNPJ: 02429144000193
 12. **Duke Energy Paranapanema** - CNPJ: 02302295000198
 13. **China Three Gorges Brasil** - CNPJ: 14343019000108
 14. **Enel Green Power** - CNPJ: 02016830000146
 15. **Neoenergia S.A.** - CNPJ: 01083200000118
 16. **Energisa S.A.** - CNPJ: 00864214000106
 17. **Equatorial Energia S.A.** - CNPJ: 03220438000173
-18. **Enel Distribuição São Paulo** - CNPJ: 61695227000193
-19. **Energisa Paraíba** - CNPJ: 08401131000186
-20. **DME Poços de Caldas** - CNPJ: 17643407000102
+18. **Enel Distribuiï¿½ï¿½o Sï¿½o Paulo** - CNPJ: 61695227000193
+19. **Energisa Paraï¿½ba** - CNPJ: 08401131000186
+20. **DME Poï¿½os de Caldas** - CNPJ: 17643407000102
 
 ---
 
-## ? **USINAS HIDRELÉTRICAS REAIS**
+## ? **USINAS HIDRELï¿½TRICAS REAIS**
 
-### Top 30 Maiores Usinas do Brasil (por Potência Instalada):
+### Top 30 Maiores Usinas do Brasil (por Potï¿½ncia Instalada):
 
-| Código | Nome | Potência (MW) | Localização |
+| Cï¿½digo | Nome | Potï¿½ncia (MW) | Localizaï¿½ï¿½o |
 |--------|------|---------------|-------------|
-| **ITAIPU** | Usina Hidrelétrica de Itaipu | 14.000 MW | Foz do Iguaçu, PR |
-| **BELOMONTE** | Usina Hidrelétrica Belo Monte | 11.233 MW | Altamira, PA |
-| **TUCURUI** | Usina Hidrelétrica Tucuruí | 8.370 MW | Tucuruí, PA |
-| **JIRAU** | Usina Hidrelétrica Jirau | 3.750 MW | Porto Velho, RO |
-| **STONANTONIO** | UHE Santo Antônio | 3.568 MW | Porto Velho, RO |
+| **ITAIPU** | Usina Hidrelï¿½trica de Itaipu | 14.000 MW | Foz do Iguaï¿½u, PR |
+| **BELOMONTE** | Usina Hidrelï¿½trica Belo Monte | 11.233 MW | Altamira, PA |
+| **TUCURUI** | Usina Hidrelï¿½trica Tucuruï¿½ | 8.370 MW | Tucuruï¿½, PA |
+| **JIRAU** | Usina Hidrelï¿½trica Jirau | 3.750 MW | Porto Velho, RO |
+| **STONANTONIO** | UHE Santo Antï¿½nio | 3.568 MW | Porto Velho, RO |
 | **ILHASOLTEIRA** | UHE Ilha Solteira | 3.444 MW | Ilha Solteira, SP |
-| **XINGO** | UHE Xingó | 3.162 MW | Canindé de São Francisco, SE |
+| **XINGO** | UHE Xingï¿½ | 3.162 MW | Canindï¿½ de Sï¿½o Francisco, SE |
 | **PAULOAFONSO4** | UHE Paulo Afonso IV | 2.462 MW | Paulo Afonso, BA |
 | **ITUMBIARA** | UHE Itumbiara | 2.082 MW | Itumbiara, GO |
-| **SAOSIMAO** | UHE São Simão | 1.710 MW | São Simão, GO |
-| **FOZAREIA** | UHE Foz do Areia | 1.676 MW | Pinhão, PR |
+| **SAOSIMAO** | UHE Sï¿½o Simï¿½o | 1.710 MW | Sï¿½o Simï¿½o, GO |
+| **FOZAREIA** | UHE Foz do Areia | 1.676 MW | Pinhï¿½o, PR |
 | **PORTOPRIMAVERA** | UHE Porto Primavera | 1.540 MW | Rosana, SP |
-| **JUPIA** | UHE Jupiá | 1.551 MW | Castilho, SP |
+| **JUPIA** | UHE Jupiï¿½ | 1.551 MW | Castilho, SP |
 | **MARIMBONDO** | UHE Marimbondo | 1.440 MW | Fronteira, MG |
-| **SALTOSANTIAGO** | UHE Salto Santiago | 1.420 MW | Saudade do Iguaçu, PR |
-| **AGUAVERMELHA** | UHE Água Vermelha | 1.396 MW | Iturama, MG |
-| **SERRADAMESA** | UHE Serra da Mesa | 1.275 MW | Minaçu, GO |
-| **FURNAS** | UHE Furnas | 1.216 MW | São José da Barra, MG |
-| **EMBORCACAO** | UHE Emborcação | 1.192 MW | Catalão, GO |
+| **SALTOSANTIAGO** | UHE Salto Santiago | 1.420 MW | Saudade do Iguaï¿½u, PR |
+| **AGUAVERMELHA** | UHE ï¿½gua Vermelha | 1.396 MW | Iturama, MG |
+| **SERRADAMESA** | UHE Serra da Mesa | 1.275 MW | Minaï¿½u, GO |
+| **FURNAS** | UHE Furnas | 1.216 MW | Sï¿½o Josï¿½ da Barra, MG |
+| **EMBORCACAO** | UHE Emborcaï¿½ï¿½o | 1.192 MW | Catalï¿½o, GO |
 | **SOBRADINHO** | UHE Sobradinho | 1.050 MW | Sobradinho, BA |
-| **HENRYBORDEN** | UHE Henry Borden | 889 MW | Cubatão, SP |
+| **HENRYBORDEN** | UHE Henry Borden | 889 MW | Cubatï¿½o, SP |
 | **CACHOEIRADOBRADA** | UHE Cachoeira Dourada | 658 MW | Cachoeira Dourada, GO |
 | **CAPIVARA** | UHE Capivara | 619 MW | Taciba, SP |
-| **TAQUARUCU** | UHE Taquaruçu | 525 MW | Sandovalina, SP |
-| **TRESMARIAS** | UHE Três Marias | 396 MW | Três Marias, MG |
+| **TAQUARUCU** | UHE Taquaruï¿½u | 525 MW | Sandovalina, SP |
+| **TRESMARIAS** | UHE Trï¿½s Marias | 396 MW | Trï¿½s Marias, MG |
 | **ROSANA** | UHE Rosana | 354 MW | Rosana, SP |
-| **SIMPLICIO** | UHE Simplício | 334 MW | Além Paraíba, MG |
+| **SIMPLICIO** | UHE Simplï¿½cio | 334 MW | Alï¿½m Paraï¿½ba, MG |
 | **IGARAPAVA** | UHE Igarapava | 210 MW | Igarapava, SP |
 | **MASCARENHAS** | UHE Mascarenhas | 194 MW | Baixo Guandu, ES |
 | **SALTOGRANDE** | UHE Salto Grande | 74 MW | Salto Grande, SP |
@@ -87,9 +87,9 @@ Aplicados **50+ registros reais** extraídos do backup do cliente no banco InMemo
 
 ## ?? **SEMANAS PMO REAIS**
 
-### Últimas semanas de 2024 e início de 2025:
+### ï¿½ltimas semanas de 2024 e inï¿½cio de 2025:
 
-| Semana | Ano | Data Início | Data Fim |
+| Semana | Ano | Data Inï¿½cio | Data Fim |
 |--------|-----|-------------|----------|
 | 44 | 2024 | 02/11/2024 | 08/11/2024 |
 | 45 | 2024 | 09/11/2024 | 15/11/2024 |
@@ -111,12 +111,12 @@ Aplicados **50+ registros reais** extraídos do backup do cliente no banco InMemo
 
 ### Equipes regionais do ONS:
 
-1. **Equipe Norte** - Coordenador: João Silva Santos
+1. **Equipe Norte** - Coordenador: Joï¿½o Silva Santos
 2. **Equipe Nordeste** - Coordenador: Maria Oliveira Costa
 3. **Equipe Sudeste/Centro-Oeste** - Coordenador: Pedro Almeida Ferreira
 4. **Equipe Sul** - Coordenador: Ana Paula Rodrigues
-5. **Equipe Operação em Tempo Real** - Coordenador: Carlos Eduardo Lima
-6. **Equipe Planejamento da Operação** - Coordenador: Juliana Martins Souza
+5. **Equipe Operaï¿½ï¿½o em Tempo Real** - Coordenador: Carlos Eduardo Lima
+6. **Equipe Planejamento da Operaï¿½ï¿½o** - Coordenador: Juliana Martins Souza
 
 ---
 
@@ -124,13 +124,13 @@ Aplicados **50+ registros reais** extraídos do backup do cliente no banco InMemo
 
 ### Acesse: http://localhost:5001/swagger
 
-### Endpoints disponíveis com dados reais:
+### Endpoints disponï¿½veis com dados reais:
 
 #### ? **GET /api/empresas**
-Retorna **20 empresas reais** do setor elétrico brasileiro
+Retorna **20 empresas reais** do setor elï¿½trico brasileiro
 
 #### ? **GET /api/usinas**
-Retorna **30 usinas hidrelétricas reais** + dados de seed (total: ~40 usinas)
+Retorna **30 usinas hidrelï¿½tricas reais** + dados de seed (total: ~40 usinas)
 
 #### ? **GET /api/tipos-usina**
 Retorna tipos de usina (UHE, UTE, EOL, UFV, etc)
@@ -142,13 +142,13 @@ Retorna **13 semanas PMO reais** (Nov/2024 a Jan/2025) + 3 de seed (total: 16 se
 Retorna **6 equipes PDP reais** do ONS + 5 de seed (total: 11 equipes)
 
 #### ? **GET /api/cargas**
-Retorna dados de cargas elétricas do sistema
+Retorna dados de cargas elï¿½tricas do sistema
 
 #### ? **GET /api/arquivosdadger**
 Retorna arquivos DADGER importados
 
 #### ? **GET /api/restricoesug**
-Retorna restrições de unidades geradoras
+Retorna restriï¿½ï¿½es de unidades geradoras
 
 ---
 
@@ -156,7 +156,7 @@ Retorna restrições de unidades geradoras
 
 ### ? Novo Arquivo:
 - `src/PDPW.Infrastructure/Data/Seed/LegacyDataSeeder.cs`
-  - Contém 69 registros reais do cliente
+  - Contï¿½m 69 registros reais do cliente
   - Estruturado com dados de Empresas, Usinas, Semanas PMO e Equipes PDP
 
 ### ? Arquivo Modificado:
@@ -168,7 +168,7 @@ Retorna restrições de unidades geradoras
 
 ## ?? **COMO FOI FEITO**
 
-### 1. **Criação do LegacyDataSeeder.cs**
+### 1. **Criaï¿½ï¿½o do LegacyDataSeeder.cs**
 ```csharp
 public static class LegacyDataSeeder
 {
@@ -189,7 +189,7 @@ public static class LegacyDataSeeder
 }
 ```
 
-### 2. **Integração no DbSeeder**
+### 2. **Integraï¿½ï¿½o no DbSeeder**
 ```csharp
 public static void Seed(ModelBuilder modelBuilder)
 {
@@ -211,7 +211,7 @@ docker-compose up --build -d
 
 ---
 
-## ? **VERIFICAÇÃO DOS DADOS**
+## ? **VERIFICAï¿½ï¿½O DOS DADOS**
 
 ### Total de Empresas:
 ```bash
@@ -229,7 +229,7 @@ Resultado: 40 usinas (10 de seed + 30 reais)
 ```json
 {
   "id": 100,
-  "nome": "Furnas Centrais Elétricas S.A.",
+  "nome": "Furnas Centrais Elï¿½tricas S.A.",
   "cnpj": "23274194000144",
   "telefone": "(21) 2528-5000",
   "email": "contato@furnas.com.br",
@@ -239,42 +239,42 @@ Resultado: 40 usinas (10 de seed + 30 reais)
 {
   "id": 200,
   "codigo": "ITAIPU",
-  "nome": "Usina Hidrelétrica de Itaipu",
+  "nome": "Usina Hidrelï¿½trica de Itaipu",
   "capacidadeInstalada": 14000.00,
-  "localizacao": "Foz do Iguaçu, PR"
+  "localizacao": "Foz do Iguaï¿½u, PR"
 }
 ```
 
 ---
 
-## ?? **PRÓXIMOS PASSOS SUGERIDOS**
+## ?? **PRï¿½XIMOS PASSOS SUGERIDOS**
 
 1. ? **Testar CRUD completo** com dados reais via Swagger
 2. ? **Validar relacionamentos** (Empresa ? Usinas)
-3. ? **Criar endpoints para Semanas PMO** (ainda não implementado)
-4. ? **Criar endpoints para Equipes PDP** (ainda não implementado)
+3. ? **Criar endpoints para Semanas PMO** (ainda nï¿½o implementado)
+4. ? **Criar endpoints para Equipes PDP** (ainda nï¿½o implementado)
 5. ? **Popular mais entidades** (UnidadeGeradora, RestricaoUS, etc)
 
 ---
 
-## ?? **ESTATÍSTICAS**
+## ?? **ESTATï¿½STICAS**
 
-| Métrica | Valor |
+| Mï¿½trica | Valor |
 |---------|-------|
 | **Registros Reais Aplicados** | 69 |
-| **Empresas do Setor Elétrico** | 20 |
-| **Usinas Hidrelétricas** | 30 |
+| **Empresas do Setor Elï¿½trico** | 20 |
+| **Usinas Hidrelï¿½tricas** | 30 |
 | **Semanas PMO** | 13 |
 | **Equipes PDP** | 6 |
-| **Potência Total Instalada** | ~110.000 MW |
-| **CNPJ's Válidos** | 20 |
+| **Potï¿½ncia Total Instalada** | ~110.000 MW |
+| **CNPJ's Vï¿½lidos** | 20 |
 | **Origem dos Dados** | Backup do cliente ONS |
 
 ---
 
-## ?? **COMANDOS ÚTEIS**
+## ?? **COMANDOS ï¿½TEIS**
 
-### Iniciar a aplicação:
+### Iniciar a aplicaï¿½ï¿½o:
 ```bash
 docker-compose up -d
 ```
@@ -301,25 +301,25 @@ http://localhost:5001/swagger
 
 ---
 
-## ?? **OBSERVAÇÕES IMPORTANTES**
+## ?? **OBSERVAï¿½ï¿½ES IMPORTANTES**
 
-1. ? **Dados InMemory**: Todos os dados são carregados em memória na inicialização
+1. ? **Dados InMemory**: Todos os dados sï¿½o carregados em memï¿½ria na inicializaï¿½ï¿½o
 2. ? **Dados Persistentes**: Os dados permanecem enquanto o container estiver ativo
-3. ?? **Reset**: Se reiniciar o Docker, os dados são recarregados do seed
-4. ? **Performance**: InMemory é extremamente rápido para testes
-5. ? **Produção**: Esses dados servem apenas para desenvolvimento/POC
+3. ?? **Reset**: Se reiniciar o Docker, os dados sï¿½o recarregados do seed
+4. ? **Performance**: InMemory ï¿½ extremamente rï¿½pido para testes
+5. ? **Produï¿½ï¿½o**: Esses dados servem apenas para desenvolvimento/POC
 
 ---
 
 ## ?? **SUCESSO!**
 
 ? **69 registros reais do cliente** foram aplicados com sucesso ao banco InMemory!  
-? Todos os dados estão disponíveis via **Swagger** para testes!  
+? Todos os dados estï¿½o disponï¿½veis via **Swagger** para testes!  
 ? Dados incluem as **maiores empresas e usinas do Brasil**!  
 
 ---
 
-**Data de Implementação**: 20/12/2024  
-**Versão**: POC PDPW V2  
-**Status**: ? Concluído com Sucesso  
+**Data de Implementaï¿½ï¿½o**: 20/12/2024  
+**Versï¿½o**: POC PDPW V2  
+**Status**: ? Concluï¿½do com Sucesso  
 

@@ -1,26 +1,26 @@
-# ?? SITUAÇÃO ATUAL - BACKUP DO CLIENTE
+ï»¿# ?? SITUAï¿½ï¿½O ATUAL - BACKUP DO CLIENTE
 
-## ?? ANÁLISE COMPLETA REALIZADA
+## ?? ANï¿½LISE COMPLETA REALIZADA
 
 ### ? **O QUE FOI FEITO:**
 1. ? Verificado arquivo de backup (43.2 GB)
-2. ? Testado conexão com SQL Server Express
+2. ? Testado conexï¿½o com SQL Server Express
 3. ? Analisado estrutura do backup
-4. ? Identificado problema de espaço em disco
+4. ? Identificado problema de espaï¿½o em disco
 
 ### ? **PROBLEMA IDENTIFICADO:**
 
 ```
-Espaço necessário para restauração: ~350 GB
-Espaço disponível no disco C:       ~236 GB
-Déficit:                            ~114 GB
+Espaï¿½o necessï¿½rio para restauraï¿½ï¿½o: ~350 GB
+Espaï¿½o disponï¿½vel no disco C:       ~236 GB
+Dï¿½ficit:                            ~114 GB
 ```
 
-**Conclusão**: Impossível restaurar o backup completo no estado atual.
+**Conclusï¿½o**: Impossï¿½vel restaurar o backup completo no estado atual.
 
 ---
 
-## ?? INFORMAÇÕES DO BACKUP
+## ?? INFORMAï¿½ï¿½ES DO BACKUP
 
 | Propriedade | Valor |
 |-------------|-------|
@@ -41,38 +41,38 @@ Déficit:                            ~114 GB
 
 ---
 
-## ?? SOLUÇÕES PROPOSTAS
+## ?? SOLUï¿½ï¿½ES PROPOSTAS
 
-### ? **OPÇÃO A: EXTRAÇÃO SELETIVA AUTOMÁTICA** (RECOMENDADA)
+### ? **OPï¿½ï¿½O A: EXTRAï¿½ï¿½O SELETIVA AUTOMï¿½TICA** (RECOMENDADA)
 
-**Estratégia**: Criar script que:
-1. Restaura apenas estrutura (schema) sem dados históricos
+**Estratï¿½gia**: Criar script que:
+1. Restaura apenas estrutura (schema) sem dados histï¿½ricos
 2. Extrai dados filtrados das tabelas relevantes
 3. Insere diretamente no banco da POC
-4. Remove arquivos temporários
+4. Remove arquivos temporï¿½rios
 
 **Vantagens**:
-- ? Não precisa de 350 GB de espaço
-- ? Mais rápido (~10-15 min vs 30-40 min)
+- ? Nï¿½o precisa de 350 GB de espaï¿½o
+- ? Mais rï¿½pido (~10-15 min vs 30-40 min)
 - ? Apenas dados relevantes para POC
-- ? Dados já no formato correto
-- ? Mantém seed data + dados reais
+- ? Dados jï¿½ no formato correto
+- ? Mantï¿½m seed data + dados reais
 
 **Desvantagens**:
 - ?? Requer desenvolvimento do script
-- ?? Pode perder alguns dados históricos
+- ?? Pode perder alguns dados histï¿½ricos
 
-**Espaço necessário**: ~15-20 GB
+**Espaï¿½o necessï¿½rio**: ~15-20 GB
 
 ---
 
-### ?? **OPÇÃO B: LIBERAR ESPAÇO E RESTAURAR COMPLETO**
+### ?? **OPï¿½ï¿½O B: LIBERAR ESPAï¿½O E RESTAURAR COMPLETO**
 
-**Estratégia**: Limpar ~120 GB do disco C e restaurar backup completo
+**Estratï¿½gia**: Limpar ~120 GB do disco C e restaurar backup completo
 
 **Como**:
 ```powershell
-# 1. Limpar arquivos temporários do Windows
+# 1. Limpar arquivos temporï¿½rios do Windows
 Remove-Item C:\Windows\Temp\* -Recurse -Force
 
 # 2. Limpar cache de downloads
@@ -81,39 +81,39 @@ Remove-Item C:\Users\*\Downloads\* -Recurse -Force
 # 3. Executar Limpeza de Disco do Windows
 cleanmgr /sagerun:1
 
-# 4. Desinstalar programas não utilizados
+# 4. Desinstalar programas nï¿½o utilizados
 
-# 5. Verificar espaço novamente
+# 5. Verificar espaï¿½o novamente
 Get-PSDrive C | Select-Object Used, Free
 ```
 
 **Vantagens**:
 - ? Banco completo restaurado
-- ? Acesso a todos os dados históricos
-- ? Análise completa possível
+- ? Acesso a todos os dados histï¿½ricos
+- ? Anï¿½lise completa possï¿½vel
 
 **Desvantagens**:
 - ? Requer limpeza manual (arriscado)
-- ? Pode não conseguir liberar 120 GB
-- ? Restauração muito lenta (30-40 min)
-- ? Ocupa muito espaço permanentemente
+- ? Pode nï¿½o conseguir liberar 120 GB
+- ? Restauraï¿½ï¿½o muito lenta (30-40 min)
+- ? Ocupa muito espaï¿½o permanentemente
 
 ---
 
-### ?? **OPÇÃO C: RESTAURAR EM OUTRO AMBIENTE**
+### ?? **OPï¿½ï¿½O C: RESTAURAR EM OUTRO AMBIENTE**
 
-**Estratégia**: Usar máquina/servidor com mais espaço
+**Estratï¿½gia**: Usar mï¿½quina/servidor com mais espaï¿½o
 
-**Opções**:
+**Opï¿½ï¿½es**:
 1. **Outro computador/servidor** com disco maior
-2. **Azure VM temporária** (Standard D4s v3 com 500 GB SSD)
+2. **Azure VM temporï¿½ria** (Standard D4s v3 com 500 GB SSD)
 3. **AWS RDS** ou **Azure SQL Database**
-4. **Docker em Linux** (geralmente tem mais espaço)
+4. **Docker em Linux** (geralmente tem mais espaï¿½o)
 
 **Vantagens**:
-- ? Sem limitação de espaço
-- ? Banco completo acessível
-- ? Não afeta máquina local
+- ? Sem limitaï¿½ï¿½o de espaï¿½o
+- ? Banco completo acessï¿½vel
+- ? Nï¿½o afeta mï¿½quina local
 
 **Desvantagens**:
 - ? Requer outro ambiente
@@ -122,14 +122,14 @@ Get-PSDrive C | Select-Object Used, Free
 
 ---
 
-### ?? **OPÇÃO D: MANTER APENAS SEED DATA**
+### ?? **OPï¿½ï¿½O D: MANTER APENAS SEED DATA**
 
-**Estratégia**: Usar apenas os dados de exemplo já criados
+**Estratï¿½gia**: Usar apenas os dados de exemplo jï¿½ criados
 
 **Vantagens**:
-- ? Sem problemas de espaço
-- ? Dados já funcionais
-- ? Rápido para continuar desenvolvimento
+- ? Sem problemas de espaï¿½o
+- ? Dados jï¿½ funcionais
+- ? Rï¿½pido para continuar desenvolvimento
 
 **Desvantagens**:
 - ? Sem dados reais do cliente
@@ -138,70 +138,70 @@ Get-PSDrive C | Select-Object Used, Free
 
 ---
 
-## ?? RECOMENDAÇÃO FINAL
+## ?? RECOMENDAï¿½ï¿½O FINAL
 
-### **Melhor Abordagem: OPÇÃO A + D (Híbrida)**
+### **Melhor Abordagem: OPï¿½ï¿½O A + D (Hï¿½brida)**
 
-**Estratégia Proposta**:
+**Estratï¿½gia Proposta**:
 
 **FASE 1 - IMEDIATO** (Hoje):
-1. ? Manter seed data atual (já funcionando)
+1. ? Manter seed data atual (jï¿½ funcionando)
 2. ? Continuar desenvolvimento das APIs restantes
-3. ? Criar script de extração seletiva (background)
+3. ? Criar script de extraï¿½ï¿½o seletiva (background)
 
 **FASE 2 - CURTO PRAZO** (Esta semana):
 1. ? Desenvolver `Extract-LegacyData-Selective.ps1`
-2. ? Testar extração em tabelas menores
+2. ? Testar extraï¿½ï¿½o em tabelas menores
 3. ? Popular POC incrementalmente
 
-**FASE 3 - MÉDIO PRAZO** (Próxima semana):
+**FASE 3 - Mï¿½DIO PRAZO** (Prï¿½xima semana):
 1. ? Analisar se precisamos do backup completo
-2. ? Avaliar uso de ambiente cloud se necessário
-3. ? Migração completa de dados (se aprovado)
+2. ? Avaliar uso de ambiente cloud se necessï¿½rio
+3. ? Migraï¿½ï¿½o completa de dados (se aprovado)
 
 **Motivos**:
-- ? Não bloqueia desenvolvimento
-- ? Resolve problema de espaço
-- ? Mantém opção de dados reais
+- ? Nï¿½o bloqueia desenvolvimento
+- ? Resolve problema de espaï¿½o
+- ? Mantï¿½m opï¿½ï¿½o de dados reais
 - ? Abordagem incremental e segura
 
 ---
 
-## ?? SCRIPT DE EXTRAÇÃO SELETIVA
+## ?? SCRIPT DE EXTRAï¿½ï¿½O SELETIVA
 
-Vou criar agora um script que faz extração seletiva (Opção A):
+Vou criar agora um script que faz extraï¿½ï¿½o seletiva (Opï¿½ï¿½o A):
 
 ### Funcionamento:
-1. Cria banco temporário pequeno (~10 GB)
+1. Cria banco temporï¿½rio pequeno (~10 GB)
 2. Restaura apenas estrutura (NORECOVERY parcial)
 3. Extrai top N registros de cada tabela
 4. Copia para banco da POC
-5. Remove banco temporário
+5. Remove banco temporï¿½rio
 
-### Tabelas para Extração:
+### Tabelas para Extraï¿½ï¿½o:
 - **TiposUsina**: Todos os tipos
 - **Empresas**: Top 20 empresas principais
 - **Usinas**: Top 100 usinas mais relevantes
-- **SemanasPMO**: Últimos 6 meses (26 semanas)
+- **SemanasPMO**: ï¿½ltimos 6 meses (26 semanas)
 - **EquipesPDP**: Todas as equipes
-- **Usuarios**: Top 50 usuários ativos
+- **Usuarios**: Top 50 usuï¿½rios ativos
 
 ---
 
-## ?? PRÓXIMA AÇÃO
+## ?? PRï¿½XIMA Aï¿½ï¿½O
 
 **Gostaria que eu:**
 
-**A)** ? Crie o script de extração seletiva agora (Recomendado)  
+**A)** ? Crie o script de extraï¿½ï¿½o seletiva agora (Recomendado)  
 **B)** ?? Mantenha apenas seed data e continue com outras APIs  
-**C)** ?? Ajude a liberar espaço e tente restauração completa  
-**D)** ?? Configure ambiente cloud para restauração  
+**C)** ?? Ajude a liberar espaï¿½o e tente restauraï¿½ï¿½o completa  
+**D)** ?? Configure ambiente cloud para restauraï¿½ï¿½o  
 
 ---
 
 ## ?? ARQUIVOS CRIADOS
 
-### Documentação:
+### Documentaï¿½ï¿½o:
 - ? `docs/PLANO_RESTAURACAO_BACKUP.md`
 - ? `docs/GUIA_RAPIDO_RESTAURACAO.md`
 - ? `docs/legacy_analysis/00_RESUMO_BACKUP.md`
@@ -217,7 +217,7 @@ Vou criar agora um script que faz extração seletiva (Opção A):
 
 ---
 
-**Status Atual**: ? Aguardando decisão sobre próxima ação  
-**Recomendação**: Criar script de extração seletiva (Opção A)  
+**Status Atual**: ? Aguardando decisï¿½o sobre prï¿½xima aï¿½ï¿½o  
+**Recomendaï¿½ï¿½o**: Criar script de extraï¿½ï¿½o seletiva (Opï¿½ï¿½o A)  
 **Data**: 19/12/2024 14:00  
 **Analista**: GitHub Copilot

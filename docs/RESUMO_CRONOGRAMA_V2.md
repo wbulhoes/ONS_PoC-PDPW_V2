@@ -1,13 +1,13 @@
-# ?? RESUMO EXECUTIVO - Cronograma PoC PDPW
+ï»¿# ?? RESUMO EXECUTIVO - Cronograma PoC PDPW
 
 **Bom dia! ??**  
 **Data:** 19/12/2024 - Quinta-feira  
-**Status:** ? Docker funcionando - Pronto para começar  
-**Prazo:** 26/12/2024 (6 dias úteis + meio período)
+**Status:** ? Docker funcionando - Pronto para comeï¿½ar  
+**Prazo:** 26/12/2024 (6 dias ï¿½teis + meio perï¿½odo)
 
 ---
 
-## ? VISÃO GERAL
+## ? VISï¿½O GERAL
 
 ```
 ??????????????????????????????????????????????????
@@ -20,7 +20,7 @@
 ?????????????????????????????????????????????????
 19/12 Qui ????????????  5 APIs   (17%)
 20/12 Sex ????????????  6 APIs   (38%)
-21/12 Sáb ????????????  5 APIs   (55%)
+21/12 Sï¿½b ????????????  5 APIs   (55%)
 22/12 Dom ????????????  6 APIs   (76%)
 23/12 Seg ????????????  5 APIs   (93%)
 24/12 Ter ????????????  2 APIs   (100%) ?
@@ -30,12 +30,12 @@
 
 ---
 
-## ?? DISTRIBUIÇÃO DO SQUAD
+## ?? DISTRIBUIï¿½ï¿½O DO SQUAD
 
 | Dev | Perfil | Foco | Meta |
 |-----|--------|------|------|
-| **DEV 1** ?? | Backend Senior | Gestão Ativos + Core | 12-14 APIs |
-| **DEV 2** ????? | Backend Pleno | Arquivos + Restrições | 12-14 APIs |
+| **DEV 1** ?? | Backend Senior | Gestï¿½o Ativos + Core | 12-14 APIs |
+| **DEV 2** ????? | Backend Pleno | Arquivos + Restriï¿½ï¿½es | 12-14 APIs |
 | **DEV 3** ?? | Frontend | Tela Usinas CRUD | 1 tela completa |
 
 ---
@@ -61,7 +61,7 @@ Entrega: 3 APIs, 15 endpoints ?
 09:00-10:00  Setup + Estrutura
 10:00-13:00  ? API 11: UnidadeGeradora (3h)
 14:00-16:30  ? API 12: ParadaUG (2.5h)
-16:30-18:00  ? API 13: RestricaoUG - início (1.5h)
+16:30-18:00  ? API 13: RestricaoUG - inï¿½cio (1.5h)
 
 Entrega: 2 APIs completas + 1 em andamento ?
 ```
@@ -69,10 +69,10 @@ Entrega: 2 APIs completas + 1 em andamento ?
 #### DEV 3 (Frontend)
 ```
 09:00-10:00  Setup Node.js
-10:00-12:00  Análise tela legada
+10:00-12:00  Anï¿½lise tela legada
 12:00-13:00  Estrutura componentes
 14:00-16:00  Componente listagem
-16:00-18:00  Componente formulário (estrutura)
+16:00-18:00  Componente formulï¿½rio (estrutura)
 
 Entrega: Estrutura 60% completa ?
 ```
@@ -88,17 +88,17 @@ Entrega: Estrutura 60% completa ?
 
 **Objetivo:** 6 APIs + Frontend 90%
 
-| Dev | Manhã | Tarde |
+| Dev | Manhï¿½ | Tarde |
 |-----|-------|-------|
 | DEV 1 | SemanaPMO + EquipePDP | ArquivoDadger |
 | DEV 2 | RestricaoUG + RestricaoUS | MotivoRestricao + Intercambio |
-| DEV 3 | Integração API | Validações + Filtros |
+| DEV 3 | Integraï¿½ï¿½o API | Validaï¿½ï¿½es + Filtros |
 
 **META:** 11 APIs acumuladas (38%)
 
 ---
 
-### DIA 3: SÁBADO 21/12
+### DIA 3: Sï¿½BADO 21/12
 
 **Objetivo:** 5 APIs complexas + Frontend 100%
 
@@ -122,7 +122,7 @@ Entrega: Estrutura 60% completa ?
 
 ---
 
-### DIA 6: TERÇA 24/12 (MEIO PERÍODO)
+### DIA 6: TERï¿½A 24/12 (MEIO PERï¿½ODO)
 
 **Objetivo:** 2 APIs finais + Docker final
 
@@ -138,12 +138,12 @@ Entrega: Estrutura 60% completa ?
 
 ### DIA 8: QUINTA 26/12
 
-**?? ENTREGA + APRESENTAÇÃO**
+**?? ENTREGA + APRESENTAï¿½ï¿½O**
 
 ```
-09:00-09:30  Preparação final
-09:30-10:00  Apresentação (demo ao vivo)
-10:00-10:30  Q&A + Próximos passos
+09:00-09:30  Preparaï¿½ï¿½o final
+09:30-10:00  Apresentaï¿½ï¿½o (demo ao vivo)
+10:00-10:30  Q&A + Prï¿½ximos passos
 ```
 
 ---
@@ -154,9 +154,9 @@ Entrega: Estrutura 60% completa ?
 
 | Complexidade | Tempo | Exemplo |
 |-------------|-------|---------|
-| **Simples** ?? | 1-1.5h | Enum, entidade básica |
-| **Média** ?? | 2-3h | CRUD completo |
-| **Complexa** ?? | 4-5h | Múltiplos relacionamentos |
+| **Simples** ?? | 1-1.5h | Enum, entidade bï¿½sica |
+| **Mï¿½dia** ?? | 2-3h | CRUD completo |
+| **Complexa** ?? | 4-5h | Mï¿½ltiplos relacionamentos |
 
 ### Exemplos
 
@@ -166,13 +166,13 @@ Entrega: Estrutura 60% completa ?
    - MotivoRestricao
    - Status
 
-?? MÉDIA (2-3h)
+?? Mï¿½DIA (2-3h)
    - Empresa
    - Usuario
    - Responsavel
 
 ?? COMPLEXA (4-5h)
-   - Usina (relacionamentos múltiplos)
+   - Usina (relacionamentos mï¿½ltiplos)
    - ArquivoDadger
    - UnidadeGeradora
 ```
@@ -196,7 +196,7 @@ Entrega: Estrutura 60% completa ?
 [ ] 10. Commit e Push
 ```
 
-### Tempo Médio por Etapa
+### Tempo Mï¿½dio por Etapa
 
 ```
 1. Entity          ? 15-20 min
@@ -210,12 +210,12 @@ Entrega: Estrutura 60% completa ?
 9. Test            ? 5-10 min
 10. Commit         ? 5 min
 ???????????????????????????????
-TOTAL: 2-3h (API média)
+TOTAL: 2-3h (API mï¿½dia)
 ```
 
 ---
 
-## ?? COMEÇAR AGORA - PRIMEIROS 30 MINUTOS
+## ?? COMEï¿½AR AGORA - PRIMEIROS 30 MINUTOS
 
 ### TODOS OS DEVS (09:00-09:15)
 
@@ -224,7 +224,7 @@ TOTAL: 2-3h (API média)
 ? Validar Docker funcionando
 ? Definir branches
 ? Alinhar expectativas
-? Tirar dúvidas
+? Tirar dï¿½vidas
 ```
 
 ### CRIAR BRANCHES (09:15-09:20)
@@ -251,42 +251,42 @@ git push -u origin feature/frontend-usinas
 
 ### ESCOLHER AMBIENTE (09:20-09:30)
 
-**OPÇÃO A: Desenvolvimento Local** ? (RECOMENDADO)
+**OPï¿½ï¿½O A: Desenvolvimento Local** ? (RECOMENDADO)
 
 ```powershell
 # Backend (hot reload!)
 cd src\PDPW.API
 dotnet watch run
-# Edita código ? vê mudanças instantâneas
+# Edita cï¿½digo ? vï¿½ mudanï¿½as instantï¿½neas
 
 # Frontend (hot reload!)
 cd frontend
 npm run dev
-# Edita código ? vê mudanças instantâneas
+# Edita cï¿½digo ? vï¿½ mudanï¿½as instantï¿½neas
 ```
 
 **Vantagens:**
-- ? 10x mais rápido
+- ? 10x mais rï¿½pido
 - ?? Hot reload
-- ?? Fácil debugar
+- ?? Fï¿½cil debugar
 - ?? Menos RAM
 
-**OPÇÃO B: Docker**
+**OPï¿½ï¿½O B: Docker**
 
 ```powershell
 docker-compose up
 ```
 
 **Quando usar:**
-- ? Validação final
-- ? Apresentação
-- ? Teste de integração completa
+- ? Validaï¿½ï¿½o final
+- ? Apresentaï¿½ï¿½o
+- ? Teste de integraï¿½ï¿½o completa
 
 ---
 
-## ?? MÉTRICAS DE SUCESSO
+## ?? Mï¿½TRICAS DE SUCESSO
 
-### Mínimo Aceitável
+### Mï¿½nimo Aceitï¿½vel
 
 ```
 ? 25+ APIs backend
@@ -312,18 +312,18 @@ docker-compose up
 
 ---
 
-## ?? RISCOS E MITIGAÇÕES
+## ?? RISCOS E MITIGAï¿½ï¿½ES
 
-| Risco | Probabilidade | Mitigação |
+| Risco | Probabilidade | Mitigaï¿½ï¿½o |
 |-------|--------------|-----------|
-| Dev bloqueado | Média | Daily + pair programming |
-| API muito complexa | Média | Simplificar, CRUD primeiro |
-| Conflitos merge | Baixa | Merge diário, branches separadas |
+| Dev bloqueado | Mï¿½dia | Daily + pair programming |
+| API muito complexa | Mï¿½dia | Simplificar, CRUD primeiro |
+| Conflitos merge | Baixa | Merge diï¿½rio, branches separadas |
 | Frontend sem API | Baixa | Usina no DIA 1 (prioridade) |
 
 ---
 
-## ? CHECKLIST DIÁRIO
+## ? CHECKLIST DIï¿½RIO
 
 ### Fim de Cada Dia
 
@@ -341,13 +341,13 @@ docker-compose up
 - [ ] Commit feito
 
 **Todos:**
-- [ ] Daily amanhã agendado
+- [ ] Daily amanhï¿½ agendado
 - [ ] Bloqueios comunicados
 - [ ] Status no board atualizado
 
 ---
 
-## ?? COMUNICAÇÃO
+## ?? COMUNICAï¿½ï¿½O
 
 ### Daily Standup (09:00 - 15 min)
 
@@ -355,18 +355,18 @@ docker-compose up
 1. Ontem? (1 min cada)
 2. Hoje? (1 min cada)
 3. Bloqueios? (1 min cada)
-4. Decisões? (5 min)
+4. Decisï¿½es? (5 min)
 
-### Padrão de Commits
+### Padrï¿½o de Commits
 
 ```bash
-[CATEGORIA] tipo: descrição
+[CATEGORIA] tipo: descriï¿½ï¿½o
 
 Exemplo:
 [GESTAO-ATIVOS] feat: adiciona CRUD de Usinas
 
 - 6 endpoints implementados
-- Validações completas
+- Validaï¿½ï¿½es completas
 - Seed com 10 usinas
 - Swagger documentado
 ```
@@ -394,7 +394,7 @@ Exemplo:
 
 ---
 
-## ?? DOCUMENTAÇÃO DISPONÍVEL
+## ?? DOCUMENTAï¿½ï¿½O DISPONï¿½VEL
 
 **Planejamento:**
 1. ? [`CRONOGRAMA_DETALHADO_V2.md`](CRONOGRAMA_DETALHADO_V2.md) - Dia a dia completo
@@ -405,42 +405,42 @@ Exemplo:
 4. ? [`SOLUCAO_DEFINITIVA_LINUX_CONTAINERS.md`](SOLUCAO_DEFINITIVA_LINUX_CONTAINERS.md)
 5. ? [`GUIA_DEMONSTRACAO_DOCKER.md`](GUIA_DEMONSTRACAO_DOCKER.md)
 
-**Gestão:**
+**Gestï¿½o:**
 6. ? [`RESUMO_EXECUTIVO_GESTOR.md`](RESUMO_EXECUTIVO_GESTOR.md)
 
 ---
 
-## ?? AÇÃO IMEDIATA
+## ?? Aï¿½ï¿½O IMEDIATA
 
-**AGORA (Próximos 15 minutos):**
+**AGORA (Prï¿½ximos 15 minutos):**
 
 1. ? **Daily Standup** (5 min)
 2. ? **Criar Branches** (5 min)
 3. ? **Escolher Ambiente** (5 min)
-4. ?? **COMEÇAR PRIMEIRA API!**
+4. ?? **COMEï¿½AR PRIMEIRA API!**
 
 ---
 
-**DEV 1:** Começar API Usina  
-**DEV 2:** Começar API UnidadeGeradora  
-**DEV 3:** Análise tela legada + setup
+**DEV 1:** Comeï¿½ar API Usina  
+**DEV 2:** Comeï¿½ar API UnidadeGeradora  
+**DEV 3:** Anï¿½lise tela legada + setup
 
 ---
 
 ## ?? PRECISA DE AJUDA?
 
 **Me pergunte sobre:**
-- ??? Como estruturar uma API específica
+- ??? Como estruturar uma API especï¿½fica
 - ?? Como implementar componente frontend
 - ?? Troubleshooting de erros
-- ?? Revisão de progresso
-- ?? Decisões de arquitetura
+- ?? Revisï¿½o de progresso
+- ?? Decisï¿½es de arquitetura
 
 ---
 
 **Resumo criado por:** GitHub Copilot  
 **Data:** 19/12/2024 - Quinta-feira  
-**Versão:** 2.0  
-**Status:** ? PRONTO PARA EXECUÇÃO
+**Versï¿½o:** 2.0  
+**Status:** ? PRONTO PARA EXECUï¿½ï¿½O
 
-**BORA COMEÇAR! LET'S GO! ??????**
+**BORA COMEï¿½AR! LET'S GO! ??????**

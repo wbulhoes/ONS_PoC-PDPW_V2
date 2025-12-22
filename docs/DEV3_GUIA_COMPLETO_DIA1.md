@@ -1,19 +1,19 @@
-# ??? GUIA COMPLETO - DEV 3 (Frontend) DIA 1
+ï»¿# ??? GUIA COMPLETO - DEV 3 (Frontend) DIA 1
 
 **Data:** 19/12/2024  
-**Responsável:** DEV 3  
+**Responsï¿½vel:** DEV 3  
 **Branch:** `feature/frontend-usinas`
 
 ---
 
-## ?? ÍNDICE
+## ?? ï¿½NDICE
 
-1. ? [PARTE 1: Setup e Validação (09:00-10:00)](DEV3_CHECKLIST_SETUP.md)
-2. ? [PARTE 2: Análise Tela Legada (10:00-12:00)](DEV3_PARTE2_ANALISE_LEGADO.md)
+1. ? [PARTE 1: Setup e Validaï¿½ï¿½o (09:00-10:00)](DEV3_CHECKLIST_SETUP.md)
+2. ? [PARTE 2: Anï¿½lise Tela Legada (10:00-12:00)](DEV3_PARTE2_ANALISE_LEGADO.md)
 3. ?? [PARTE 3: Estrutura de Componentes (12:00-13:00)](#parte-3)
-4. ??? [ALMOÇO (13:00-14:00)](#almoco)
+4. ??? [ALMOï¿½O (13:00-14:00)](#almoco)
 5. ?? [PARTE 4: Componente Listagem (14:00-16:00)](#parte-4)
-6. ?? [PARTE 5: Componente Formulário (16:00-18:00)](#parte-5)
+6. ?? [PARTE 5: Componente Formulï¿½rio (16:00-18:00)](#parte-5)
 7. ?? [PARTE 6: Commit e Push (18:00-18:15)](#parte-6)
 
 ---
@@ -63,7 +63,7 @@ src/
 ??? hooks/
 ?   ??? useUsinas.ts              (criar)
 ??? utils/
-    ??? api.ts                    (configuração axios)
+    ??? api.ts                    (configuraï¿½ï¿½o axios)
 ```
 
 ---
@@ -76,13 +76,13 @@ src/
 // src/types/usina.ts
 
 /**
- * Representação completa de uma Usina
+ * Representaï¿½ï¿½o completa de uma Usina
  */
 export interface Usina {
   id: number;
   codigo: string;
   nome: string;
-  tipoUsina: string;          // Nome do tipo (ex: "Hidrelétrica")
+  tipoUsina: string;          // Nome do tipo (ex: "Hidrelï¿½trica")
   tipoUsinaId: number;
   empresa: string;             // Nome da empresa
   empresaId: number;
@@ -93,7 +93,7 @@ export interface Usina {
 }
 
 /**
- * DTO para criação de nova Usina
+ * DTO para criaï¿½ï¿½o de nova Usina
  */
 export interface CreateUsinaDto {
   codigo: string;
@@ -107,7 +107,7 @@ export interface CreateUsinaDto {
 }
 
 /**
- * DTO para atualização de Usina
+ * DTO para atualizaï¿½ï¿½o de Usina
  * (mesmo que Create por enquanto)
  */
 export type UpdateUsinaDto = CreateUsinaDto;
@@ -116,7 +116,7 @@ export type UpdateUsinaDto = CreateUsinaDto;
  * Filtros para listagem de Usinas
  */
 export interface UsinaFilters {
-  search?: string;        // Busca em código, nome
+  search?: string;        // Busca em cï¿½digo, nome
   tipoUsinaId?: number;   // Filtro por tipo
   empresaId?: number;     // Filtro por empresa
   ativa?: boolean;        // Filtro por status
@@ -154,12 +154,12 @@ import axios from 'axios';
 /**
  * URL base da API
  * Em desenvolvimento: backend local
- * Em produção: variável de ambiente
+ * Em produï¿½ï¿½o: variï¿½vel de ambiente
  */
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 /**
- * Instância do Axios configurada
+ * Instï¿½ncia do Axios configurada
  */
 export const api = axios.create({
   baseURL: API_BASE_URL,
@@ -170,11 +170,11 @@ export const api = axios.create({
 });
 
 /**
- * Interceptor para adicionar token (se houver autenticação)
+ * Interceptor para adicionar token (se houver autenticaï¿½ï¿½o)
  */
 api.interceptors.request.use(
   (config) => {
-    // Aqui você pode adicionar token de autenticação se necessário
+    // Aqui vocï¿½ pode adicionar token de autenticaï¿½ï¿½o se necessï¿½rio
     // const token = localStorage.getItem('token');
     // if (token) {
     //   config.headers.Authorization = `Bearer ${token}`;
@@ -196,10 +196,10 @@ api.interceptors.response.use(
       // Servidor respondeu com erro
       console.error('API Error:', error.response.status, error.response.data);
     } else if (error.request) {
-      // Requisição foi feita mas sem resposta
+      // Requisiï¿½ï¿½o foi feita mas sem resposta
       console.error('Network Error:', error.message);
     } else {
-      // Erro na configuração da requisição
+      // Erro na configuraï¿½ï¿½o da requisiï¿½ï¿½o
       console.error('Request Error:', error.message);
     }
     return Promise.reject(error);
@@ -228,7 +228,7 @@ import type {
 } from '../../types/usina';
 
 /**
- * Service para operações de Usinas
+ * Service para operaï¿½ï¿½es de Usinas
  */
 export const usinaService = {
   /**
@@ -256,7 +256,7 @@ export const usinaService = {
   },
 
   /**
-   * Obter usina por código
+   * Obter usina por cï¿½digo
    */
   async getByCodigo(codigo: string): Promise<Usina> {
     const response = await api.get<Usina>(`/usinas/codigo/${codigo}`);
@@ -309,7 +309,7 @@ export default usinaService;
 
 ## ? RESULTADO DA PARTE 3
 
-Ao final de 1 hora, você deve ter:
+Ao final de 1 hora, vocï¿½ deve ter:
 
 ```
 ? Estrutura de pastas criada
@@ -322,7 +322,7 @@ Ao final de 1 hora, você deve ter:
 ---
 
 <a name="almoco"></a>
-## ??? ALMOÇO (13:00 - 14:00)
+## ??? ALMOï¿½O (13:00 - 14:00)
 
 **1 hora de pausa**
 
@@ -383,11 +383,11 @@ export const UsinaCard: React.FC<UsinaCardProps> = ({ usina, onEdit, onDelete })
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      {/* Header com código e status */}
+      {/* Header com cï¿½digo e status */}
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold text-gray-800">{usina.nome}</h3>
-          <p className="text-sm text-gray-500">Código: {usina.codigo}</p>
+          <p className="text-sm text-gray-500">Cï¿½digo: {usina.codigo}</p>
         </div>
         <span 
           className={`px-3 py-1 rounded-full text-sm font-semibold ${
@@ -400,7 +400,7 @@ export const UsinaCard: React.FC<UsinaCardProps> = ({ usina, onEdit, onDelete })
         </span>
       </div>
 
-      {/* Informações principais */}
+      {/* Informaï¿½ï¿½es principais */}
       <div className="space-y-2 mb-4">
         <div className="flex justify-between">
           <span className="text-gray-600">Tipo:</span>
@@ -416,13 +416,13 @@ export const UsinaCard: React.FC<UsinaCardProps> = ({ usina, onEdit, onDelete })
         </div>
         {usina.localizacao && (
           <div className="flex justify-between">
-            <span className="text-gray-600">Localização:</span>
+            <span className="text-gray-600">Localizaï¿½ï¿½o:</span>
             <span className="font-medium">{usina.localizacao}</span>
           </div>
         )}
       </div>
 
-      {/* Ações */}
+      {/* Aï¿½ï¿½es */}
       <div className="flex gap-2 pt-4 border-t">
         <button
           onClick={() => onEdit(usina)}
@@ -480,7 +480,7 @@ export const useUsinas = (initialFilters?: UsinaFilters) => {
   const deleteUsina = async (id: number) => {
     try {
       await usinaService.delete(id);
-      await loadUsinas(); // Recarregar lista após deletar
+      await loadUsinas(); // Recarregar lista apï¿½s deletar
     } catch (err) {
       console.error('Erro ao deletar usina:', err);
       setError('Erro ao deletar usina. Tente novamente.');
@@ -597,7 +597,7 @@ export default UsinasList;
 
 ---
 
-### PASSO 5: Página Principal (20 min)
+### PASSO 5: Pï¿½gina Principal (20 min)
 
 **Criar:** `src/pages/Usinas/UsinasPage.tsx`
 
@@ -632,7 +632,7 @@ export const UsinasPage: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Gestão de Usinas
+          Gestï¿½o de Usinas
         </h1>
         <p className="text-gray-600 mt-2">
           Cadastro e gerenciamento de usinas geradoras
@@ -663,7 +663,7 @@ export const UsinasPage: React.FC = () => {
             </h2>
             
             <p className="text-gray-500">
-              Formulário será implementado na próxima etapa (16:00-18:00)
+              Formulï¿½rio serï¿½ implementado na prï¿½xima etapa (16:00-18:00)
             </p>
           </div>
         )}
@@ -694,9 +694,9 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>PDPW - Programação Diária da Produção</h1>
+          <h1>PDPW - Programaï¿½ï¿½o Diï¿½ria da Produï¿½ï¿½o</h1>
           <nav>
-            <Link to="/">Dados Energéticos</Link>
+            <Link to="/">Dados Energï¿½ticos</Link>
             <Link to="/usinas">Usinas</Link> {/* NOVO */}
             <Link to="/novo">Novo Registro</Link>
           </nav>
@@ -726,7 +726,7 @@ export default App
 ? Componente UsinaCard criado
 ? Hook useUsinas criado
 ? Componente UsinasList criado
-? Página UsinasPage criada
+? Pï¿½gina UsinasPage criada
 ? Rota adicionada no App.tsx
 ? Listagem funcionando (80% completa)
 ```
@@ -740,12 +740,12 @@ npm run dev
 ---
 
 <a name="parte-5"></a>
-## ?? PARTE 5: COMPONENTE FORMULÁRIO (16:00 - 18:00)
+## ?? PARTE 5: COMPONENTE FORMULï¿½RIO (16:00 - 18:00)
 
-**Será implementado se houver tempo, caso contrário deixar para DIA 2**
+**Serï¿½ implementado se houver tempo, caso contrï¿½rio deixar para DIA 2**
 
-**Por enquanto, formulário mostra mensagem:**
-> "Formulário será implementado na próxima etapa"
+**Por enquanto, formulï¿½rio mostra mensagem:**
+> "Formulï¿½rio serï¿½ implementado na prï¿½xima etapa"
 
 ---
 
@@ -755,7 +755,7 @@ npm run dev
 ```powershell
 cd C:\temp\_ONS_PoC-PDPW
 
-# Ver mudanças
+# Ver mudanï¿½as
 git status
 
 # Adicionar tudo
@@ -764,15 +764,15 @@ git add .
 # Commit
 git commit -m "[FRONTEND] feat: estrutura inicial tela de Usinas
 
-Implementações DIA 1:
+Implementaï¿½ï¿½es DIA 1:
 - Estrutura de pastas e componentes
 - Types TypeScript (Usina, CreateUsinaDto, etc.)
-- Configuração Axios
+- Configuraï¿½ï¿½o Axios
 - Service de Usinas (API calls)
 - Hook useUsinas (gerenciamento de estado)
 - Componente UsinaCard (card individual)
 - Componente UsinasList (listagem completa)
-- Componente UsinasPage (página principal)
+- Componente UsinasPage (pï¿½gina principal)
 - Rota /usinas adicionada
 
 Funcionalidades:
@@ -780,11 +780,11 @@ Funcionalidades:
 ? Loading state
 ? Error handling
 ? Empty state
-? Navegação criar/editar (estrutura)
-? Exclusão com confirmação
+? Navegaï¿½ï¿½o criar/editar (estrutura)
+? Exclusï¿½o com confirmaï¿½ï¿½o
 
 Status: Listagem 80% completa
-Próximo: Formulário (DIA 2)"
+Prï¿½ximo: Formulï¿½rio (DIA 2)"
 
 # Push
 git push origin feature/frontend-usinas
@@ -799,7 +799,7 @@ git push origin feature/frontend-usinas
 ? ENTREGAS DO DIA 1 - DEV 3               ?
 ???????????????????????????????????????????
 ? ? Ambiente configurado                  ?
-? ? Documentação de análise completa      ?
+? ? Documentaï¿½ï¿½o de anï¿½lise completa      ?
 ? ? Estrutura de componentes criada       ?
 ? ? Types TypeScript definidos            ?
 ? ? Service de API implementado           ?
