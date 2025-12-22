@@ -144,6 +144,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICargaRepository, CargaRepository>();
         services.AddScoped<IArquivoDadgerRepository, ArquivoDadgerRepository>();
         services.AddScoped<IRestricaoUGRepository, RestricaoUGRepository>();
+        services.AddScoped<IUnidadeGeradoraRepository, UnidadeGeradoraRepository>();
+        services.AddScoped<IParadaUGRepository, ParadaUGRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
@@ -154,6 +156,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICargaService, CargaService>();
         services.AddScoped<IArquivoDadgerService, ArquivoDadgerService>();
         services.AddScoped<IRestricaoUGService, RestricaoUGService>();
+        services.AddScoped<IUnidadeGeradoraService, UnidadeGeradoraService>();
+        services.AddScoped<IParadaUGService, ParadaUGService>();
 
         return services;
     }

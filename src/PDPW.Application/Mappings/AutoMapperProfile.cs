@@ -4,6 +4,8 @@ using PDPW.Application.DTOs.TipoUsina;
 using PDPW.Application.DTOs.Empresa;
 using PDPW.Application.DTOs.SemanaPmo;
 using PDPW.Application.DTOs.EquipePdp;
+using PDPW.Application.DTOs.UnidadeGeradora;
+using PDPW.Application.DTOs.ParadaUG;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -141,5 +143,53 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.Membros, opt => opt.Ignore());
+
+        // === UNIDADE GERADORA MAPPINGS ===
+        
+        // UnidadeGeradora ? UnidadeGeradoraDto
+        CreateMap<UnidadeGeradora, UnidadeGeradoraDto>()
+            .ForMember(dest => dest.NomeUsina, opt => opt.MapFrom(src => src.Usina!.Nome))
+            .ForMember(dest => dest.CodigoUsina, opt => opt.MapFrom(src => src.Usina!.Codigo));
+
+        // CreateUnidadeGeradoraDto ? UnidadeGeradora
+        CreateMap<CreateUnidadeGeradoraDto, UnidadeGeradora>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.Restricoes, opt => opt.Ignore())
+            .ForMember(dest => dest.Paradas, opt => opt.Ignore());
+
+        // UpdateUnidadeGeradoraDto ? UnidadeGeradora
+        CreateMap<UpdateUnidadeGeradoraDto, UnidadeGeradora>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.Restricoes, opt => opt.Ignore())
+            .ForMember(dest => dest.Paradas, opt => opt.Ignore());
+
+        // === PARADA UG MAPPINGS ===
+        
+        // ParadaUG ? ParadaUGDto
+        CreateMap<ParadaUG, ParadaUGDto>()
+            .ForMember(dest => dest.UnidadeGeradora, opt => opt.MapFrom(src => src.UnidadeGeradora!.Nome))
+            .ForMember(dest => dest.CodigoUnidade, opt => opt.MapFrom(src => src.UnidadeGeradora!.Codigo));
+
+        // CreateParadaUGDto ? ParadaUG
+        CreateMap<CreateParadaUGDto, ParadaUG>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.UnidadeGeradora, opt => opt.Ignore());
+
+        // UpdateParadaUGDto ? ParadaUG
+        CreateMap<UpdateParadaUGDto, ParadaUG>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.UnidadeGeradora, opt => opt.Ignore());
     }
 }
