@@ -6,15 +6,9 @@ using PDPW.Application.DTOs.SemanaPmo;
 using PDPW.Application.DTOs.EquipePdp;
 using PDPW.Application.DTOs.UnidadeGeradora;
 using PDPW.Application.DTOs.ParadaUG;
-<<<<<<< HEAD
-<<<<<<< HEAD
 using PDPW.Application.DTOs.MotivoRestricao;
 using PDPW.Application.DTOs.Balanco;
 using PDPW.Application.DTOs.Intercambio;
-=======
->>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
-=======
->>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -200,8 +194,6 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.UnidadeGeradora, opt => opt.Ignore());
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         // === MOTIVO RESTRIÇÃO MAPPINGS ===
         
@@ -266,9 +258,5 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.Ignore())
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore());
-=======
->>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
-=======
->>>>>>> 041196e85191de26d7aed60e8e34a7e150b532e2
     }
 }
