@@ -33,11 +33,6 @@ public class SemanaPMO : BaseEntity
     public int Ano { get; set; }
 
     /// <summary>
-    /// Mês de referência do PMO
-    /// </summary>
-    public int Mes { get; set; }
-
-    /// <summary>
     /// Observações operacionais sobre a semana
     /// </summary>
     /// <remarks>

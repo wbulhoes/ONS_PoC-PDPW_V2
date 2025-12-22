@@ -1,0 +1,354 @@
+# ?? GUIA RÁPIDO - MIGRAÇÃO PARA SQL SERVER
+
+## ? **PRÉ-REQUISITOS VERIFICADOS**
+
+- ? **Espaço em disco:** 191 GB livres (necessário: 15-20 GB)
+- ? **Backup do cliente:** `C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak` (43.2 GB)
+- ? **SQL Server:** Express instalado (localhost\SQLEXPRESS)
+- ? **Script de migração:** Criado e pronto
+
+---
+
+## ?? **OPÇÕES DE IMPLEMENTAÇÃO**
+
+### **OPÇÃO 1: SQL Server via Docker (Recomendado)** ?
+
+? **Vantagens:**
+- Isolado em container
+- Fácil de resetar
+- Não afeta SQL Server local
+- Configuração via docker-compose
+
+**Como fazer:**
+
+```powershell
+# 1. Parar InMemory atual
+cd C:\temp\_ONS_PoC-PDPW_V2
+docker-compose down
+
+# 2. Iniciar SQL Server em Docker
+docker-compose -f docker-compose.full.yml up -d
+
+# 3. Aguardar SQL Server inicializar (1-2 minutos)
+timeout /t 90
+
+# 4. Aplicar migrations EF Core
+cd src\PDPW.API
+dotnet ef database update
+
+# 5. Executar script de migração
+cd ..\..
+.\scripts\migration\Migrate-Legacy-To-POC.ps1 -SqlServer "localhost" -SqlInstance "" -TargetDatabase "PDPW_DB"
+
+# 6. Testar no Swagger
+start http://localhost:5001/swagger
+```
+
+**Tempo estimado:** 20-30 minutos
+
+---
+
+### **OPÇÃO 2: SQL Server Express Local**
+
+? **Vantagens:**
+- Mais performance
+- Acesso via SSMS
+- Sem overhead de Docker
+
+**Como fazer:**
+
+```powershell
+# 1. Parar Docker
+cd C:\temp\_ONS_PoC-PDPW_V2
+docker-compose down
+
+# 2. Atualizar appsettings.json
+# Editar: src\PDPW.API\appsettings.json
+# Alterar: "UseInMemoryDatabase": false
+
+# 3. Aplicar migrations
+cd src\PDPW.API
+dotnet ef database update
+
+# 4. Executar script de migração
+cd ..\..
+.\scripts\migration\Migrate-Legacy-To-POC.ps1
+
+# 5. Rodar aplicação
+cd src\PDPW.API
+dotnet run
+
+# 6. Testar no Swagger
+start http://localhost:5001/swagger
+```
+
+**Tempo estimado:** 15-25 minutos
+
+---
+
+## ?? **PASSO A PASSO DETALHADO - OPÇÃO 1 (Docker)**
+
+### **1. Preparar Ambiente**
+
+```powershell
+# Parar container atual
+docker-compose down
+
+# Verificar se SQL Server está no Docker
+docker images | findstr mssql
+```
+
+### **2. Configurar docker-compose.full.yml**
+
+Verificar se o arquivo existe:
+
+```powershell
+Get-Content docker-compose.full.yml
+```
+
+Se não existir, criar com este conteúdo mínimo:
+
+```yaml
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: pdpw-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pdpw@2024!Strong
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - pdpw-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: src/PDPW.API/Dockerfile
+    container_name: pdpw-backend
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - UseInMemoryDatabase=false
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=true;
+    depends_on:
+      - sqlserver
+    networks:
+      - pdpw-network
+
+volumes:
+  sqlserver-data:
+
+networks:
+  pdpw-network:
+```
+
+### **3. Iniciar SQL Server**
+
+```powershell
+# Iniciar apenas SQL Server primeiro
+docker-compose -f docker-compose.full.yml up -d sqlserver
+
+# Aguardar inicialização
+timeout /t 60
+
+# Verificar se está rodando
+docker ps
+docker logs pdpw-sqlserver --tail 20
+```
+
+### **4. Aplicar Migrations**
+
+```powershell
+cd src\PDPW.API
+
+# Configurar connection string temporária
+$env:ConnectionStrings__DefaultConnection="Server=localhost,1433;Database=PDPW_DB;User Id=sa;Password=Pdpw@2024!Strong;TrustServerCertificate=true;"
+
+# Aplicar migrations
+dotnet ef database update
+
+# Verificar banco criado
+docker exec pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "SELECT name FROM sys.databases WHERE name = 'PDPW_DB'"
+```
+
+### **5. Executar Migração de Dados**
+
+```powershell
+cd ..\..
+
+# Executar script de migração
+.\scripts\migration\Migrate-Legacy-To-POC.ps1 `
+    -SqlServer "localhost,1433" `
+    -SqlInstance "" `
+    -TargetDatabase "PDPW_DB" `
+    -TopEmpresas 30 `
+    -TopUsinas 50 `
+    -SemanasPMO 26
+```
+
+**Durante a execução:**
+- Responda **"S"** quando perguntado se deseja aplicar os dados
+- Responda **"S"** quando perguntado se deseja remover banco temporário
+
+### **6. Iniciar Backend**
+
+```powershell
+# Iniciar backend conectado ao SQL Server
+docker-compose -f docker-compose.full.yml up -d backend
+
+# Verificar logs
+docker logs pdpw-backend --tail 50
+
+# Aguardar inicialização
+timeout /t 10
+```
+
+### **7. Testar Swagger**
+
+```powershell
+# Abrir Swagger no navegador
+start http://localhost:5001/swagger
+```
+
+**Validações:**
+- ? GET /api/empresas deve retornar ~30 empresas
+- ? GET /api/usinas deve retornar ~50 usinas
+- ? Dados devem ser diferentes do InMemory
+- ? Relacionamentos devem funcionar
+
+---
+
+## ?? **TROUBLESHOOTING**
+
+### **Problema: SQL Server não inicia**
+
+```powershell
+# Ver logs detalhados
+docker logs pdpw-sqlserver
+
+# Reiniciar container
+docker-compose -f docker-compose.full.yml restart sqlserver
+
+# Verificar porta 1433 livre
+netstat -ano | findstr 1433
+```
+
+### **Problema: Migrations falham**
+
+```powershell
+# Verificar connection string
+echo $env:ConnectionStrings__DefaultConnection
+
+# Testar conexão manualmente
+docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong"
+
+# Dropar e recriar banco
+docker exec pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "DROP DATABASE PDPW_DB"
+dotnet ef database update
+```
+
+### **Problema: Script de migração falha**
+
+```powershell
+# Verificar backup existe
+Test-Path "C:\temp\_ONS_PoC-PDPW\pdpw_act\Backup_PDP_TST.bak"
+
+# Executar com verbose
+.\scripts\migration\Migrate-Legacy-To-POC.ps1 -Verbose
+
+# Aplicar dados manualmente
+sqlcmd -S localhost,1433 -U sa -P "Pdpw@2024!Strong" -d PDPW_DB -i ".\scripts\migration\output\migrate-all.sql"
+```
+
+### **Problema: Backend não conecta ao SQL Server**
+
+```powershell
+# Verificar variáveis de ambiente
+docker inspect pdpw-backend | findstr ConnectionStrings
+
+# Reiniciar backend
+docker-compose -f docker-compose.full.yml restart backend
+
+# Ver logs de erro
+docker logs pdpw-backend --tail 100
+```
+
+---
+
+## ? **VALIDAÇÃO FINAL**
+
+### **Checklist Pós-Migração:**
+
+```powershell
+# 1. Verificar containers rodando
+docker ps
+# Deve mostrar: pdpw-sqlserver e pdpw-backend
+
+# 2. Testar conexão SQL Server
+docker exec -it pdpw-sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Pdpw@2024!Strong" -Q "USE PDPW_DB; SELECT COUNT(*) FROM Empresas; SELECT COUNT(*) FROM Usinas;"
+
+# 3. Testar APIs
+curl http://localhost:5001/api/empresas | ConvertFrom-Json | Measure-Object
+curl http://localhost:5001/api/usinas | ConvertFrom-Json | Measure-Object
+
+# 4. Verificar Swagger
+start http://localhost:5001/swagger
+```
+
+**Resultados esperados:**
+- ? Empresas: ~30 registros
+- ? Usinas: ~50 registros
+- ? Swagger carrega sem erros
+- ? CRUD funciona normalmente
+
+---
+
+## ?? **PRÓXIMOS PASSOS**
+
+Após migração bem-sucedida:
+
+1. ? **Atualizar QA** - Informar sobre nova base de dados
+2. ? **Executar testes** - Validar todos os endpoints
+3. ? **Documentar diferenças** - InMemory vs SQL Server
+4. ? **Backup da base** - Guardar estado atual
+5. ? **Planejar próximas migrações** - Mais tabelas se necessário
+
+---
+
+## ?? **COMPARAÇÃO: InMemory vs SQL Server**
+
+| Característica | InMemory | SQL Server |
+|----------------|----------|------------|
+| **Dados** | 69 registros | ~150 registros |
+| **Origem** | Seed manual | Backup real do cliente |
+| **Persistência** | Perdidos ao reiniciar | Mantidos em volumes |
+| **Performance** | Muito rápida | Rápida |
+| **Relacionamentos** | Simulados | Reais (FKs) |
+| **Validações** | Limitadas | Completas |
+| **Realismo** | Médio | Alto |
+| **Uso recomendado** | Desenvolvimento rápido | Testes QA |
+
+---
+
+## ?? **SUPORTE**
+
+**Dúvidas ou problemas?**
+- Consulte: `docs/PLANO_MIGRACAO_SQL_SERVER.md`
+- Verifique logs: `docker logs pdpw-backend`
+- Scripts em: `.\scripts\migration\output\`
+
+---
+
+**Boa sorte com a migração! ??**
+
+**Tempo total estimado:** 20-30 minutos  
+**Espaço necessário:** ~15 GB  
+**Dados extraídos:** ~150 registros reais  
+

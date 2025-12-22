@@ -26,7 +26,7 @@ docker-compose up --build
 
 # Aguardar ~2 minutos para inicialização
 # Frontend: http://localhost:3000
-# Backend: http://localhost:5000/swagger
+# Backend: http://localhost:5001/swagger
 ```
 
 ---
@@ -68,8 +68,8 @@ dotnet ef database update --startup-project ..\PDPW.API
 cd ..\PDPW.API
 dotnet run
 
-# API rodando em: http://localhost:5000
-# Swagger UI: http://localhost:5000/swagger
+# API rodando em: http://localhost:5001
+# Swagger UI: http://localhost:5001/swagger
 ```
 
 ### Frontend React
@@ -83,7 +83,7 @@ npm install
 #### 2. Configurar Variáveis de Ambiente (Opcional)
 ```powershell
 # Criar arquivo .env na pasta frontend
-# VITE_API_URL=http://localhost:5000/api
+# VITE_API_URL=http://localhost:5001/api
 ```
 
 #### 3. Executar em Modo Dev
@@ -98,7 +98,7 @@ npm run dev
 ## 🧪 Testar a Aplicação
 
 ### 1. Acessar Swagger
-Abrir: http://localhost:5000/swagger
+Abrir: http://localhost:5001/swagger
 
 ### 2. Criar Primeiro Registro
 ```json
@@ -122,8 +122,8 @@ Acessar: http://localhost:3000 (ou :5173 se local)
 
 ### Erro: "Porta já em uso"
 ```powershell
-# Verificar processos na porta 5000
-netstat -ano | findstr :5000
+# Verificar processos na porta 5001
+netstat -ano | findstr :5001
 
 # Matar processo (substituir PID)
 taskkill /PID <numero_pid> /F
