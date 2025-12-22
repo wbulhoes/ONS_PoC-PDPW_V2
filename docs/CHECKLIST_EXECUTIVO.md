@@ -1,8 +1,8 @@
 # ? CHECKLIST EXECUTIVO - POC PDPW
 
-## ?? Objetivo: Entrega em 29/12/2024
+## ?? Objetivo: Entrega em 30/12/2025
 
-**Responsável:** Wellington Bulhões  
+**Responsável:** Willian Bulhões  
 **Status Geral:** ?? 85% Concluído  
 **Dias Restantes:** 7 dias
 

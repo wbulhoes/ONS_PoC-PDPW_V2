@@ -2,9 +2,9 @@
 
 ## Migração .NET Framework ? .NET 8 + React
 
-**Apresentador:** Wellington Bulhões  
-**Data:** 22/12/2024  
-**Prazo:** 29/12/2024 (7 dias restantes)
+**Apresentador:** Willian Bulhões  
+**Data:** 22/12/2025  
+**Prazo:** 30/12/2025 (7 dias restantes)
 
 ---
 
@@ -34,7 +34,6 @@ Prova de Conceito para migração do sistema PDPW (Programação Diária de Produção)
 ? Definir arquitetura moderna (Clean Architecture)  
 ? Implementar APIs REST principais  
 ? Criar frontend React básico  
-? Estabelecer pipeline CI/CD  
 
 ### **Objetivos de Negócio:**
 ? Reduzir custos de manutenção  

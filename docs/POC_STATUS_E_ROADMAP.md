@@ -24,7 +24,6 @@ Este documento apresenta o status atual da Prova de Conceito (POC) para migraç�
 ### **Próximos Passos:**
 - 🔄 Frontend React (início previsto)
 - 🔄 Testes automatizados
-- 🔄 CI/CD pipeline
 - 🔄 Documentação técnica final
 
 ---
@@ -41,7 +40,6 @@ Este documento apresenta o status atual da Prova de Conceito (POC) para migraç�
 | **ORM** | Entity Framework Core 8 | ✅ 100% |
 | **API Docs** | Swagger/OpenAPI | ✅ 100% |
 | **Testes** | xUnit + Moq | 🚧 10% |
-| **CI/CD** | GitHub Actions | 🚧 0% |
 
 ### **Estrutura do Projeto**
 
@@ -260,55 +258,6 @@ Repositórios Git:
 
 ---
 
-## 📊 CRONOGRAMA VISUAL
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│ DIA 22/12 (SEG) │ Testes Backend + Validação APIs              │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 23/12 (TER) │ Frontend React - Setup + 3 telas             │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 26/12 (SEX) │ Frontend React - CRUD + Dashboard            │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 27/12 (SAB) │ Integração + Testes E2E                      │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 29/12 (SEG) │ Documentação Final + Apresentação            │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-├─────────────────────────────────────────────────────────────────┤
-│ DIA 30/12 (TER) │ Revisão Final + Entrega                      │
-│ Tempo: 8h       │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%                     │
-└─────────────────────────────────────────────────────────────────┘
-
-Total: 56 horas de trabalho
-```
-
----
-
-## 🎯 PRIORIDADES POR DIA
-
-### **Prioridade ALTA (Deve ser feito)**
-- ✅ Testes unitários básicos (23/12)
-- ✅ Frontend com 3 telas funcionais (24-25/12)
-- ✅ Integração Backend ↔ Frontend (26/12)
-- ✅ Documentação completa (28/12)
-- ✅ Apresentação final (29/12)
-
-### **Prioridade MÉDIA (Deveria ser feito)**
-- 🟡 CI/CD básico (27/12)
-- 🟡 Testes E2E básicos (26/12)
-- 🟡 Manual do usuário (28/12)
-
-### **Prioridade BAIXA (Pode ser feito se sobrar tempo)**
-- 🔵 Docker
-- 🔵 Deploy em nuvem
-- 🔵 Testes de performance
-- 🔵 Internacionalização
-
----
 
 ## 🚧 RISCOS E MITIGAÇÕES
 
@@ -367,7 +316,7 @@ Uma tarefa é considerada **PRONTA** quando:
 
 ---
 
-## ✅ CHECKLIST FINAL PARA 29/12
+## ✅ CHECKLIST FINAL PARA 30/12
 
 ### **Backend (85% → 95%)**
 - [x] 15 APIs implementadas
@@ -386,12 +335,6 @@ Uma tarefa é considerada **PRONTA** quando:
 - [ ] Validações de formulários
 - [ ] Dashboard com gráficos
 - [ ] Filtros e pesquisa funcionando
-
-### **DevOps (0% → 60%)**
-- [ ] GitHub Actions configurado
-- [ ] Build automático
-- [ ] Testes automáticos
-- [ ] Deploy staging (opcional)
 
 ### **Documentação (85% → 100%)**
 - [x] README atualizado
@@ -435,19 +378,13 @@ Uma tarefa é considerada **PRONTA** quando:
 
 A POC está **85% concluída** e no caminho certo para entrega no prazo (29/12/2024). O backend está sólido com 15 APIs funcionais e ~550 registros de dados realistas. 
 
-**Próximos 7 dias são críticos** para implementar:
-1. Frontend React (3 dias)
-2. Testes automatizados (1 dia)
-3. CI/CD (1 dia)
-4. Documentação final (2 dias)
-
 Com foco e execução disciplinada do roadmap, a POC será entregue com sucesso demonstrando a viabilidade técnica da migração para .NET 8/React.
 
 ---
 
-**📅 Última Atualização:** 22/12/2024 - 17:00  
-**👤 Responsável:** Wellington Bulhões  
-**📧 Contato:** [seu email]  
+**📅 Última Atualização:** 22/12/2025 - 12:00  
+**👤 Responsável:** Willian Bulhões  
+**📧 Contato:** willian.bulhoes@actdigital.com  
 **🔗 Repositório:** https://github.com/wbulhoes/ONS_PoC-PDPW_V2
 
 ---
