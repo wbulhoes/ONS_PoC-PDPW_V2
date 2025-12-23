@@ -1,7 +1,7 @@
 # 🧪 GUIA DE TESTES MANUAIS - SWAGGER
 
 **URL**: http://localhost:5001/swagger/index.html  
-**Data**: 23/12/2024  
+**Data**: 23/12/2025  
 **Objetivo**: Validar funcionamento de todas as APIs REST
 
 ---
@@ -694,7 +694,7 @@ _________________________________________________
 
 ---
 
-**📅 Criado**: 23/12/2024 19:15  
+**📅 Criado**: 23/12/2025   
 **👤 Responsável**: Willian Bulhões  
 **🔗 Swagger**: http://localhost:5001/swagger/index.html  
 **✅ Status**: Pronto para Testes
