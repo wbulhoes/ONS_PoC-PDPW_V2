@@ -1,7 +1,7 @@
 # 🎯 POC PDPW - Resumo Técnico para Alinhamento do Squad
 
 **Reunião**: Alinhamento Técnico Squad  
-**Data**: 24/12/2024  
+**Data**: 23/12/2025  
 **Participantes**: Gestor, Backend, Frontend, QA  
 **Objetivo**: Apresentar setup completo e entregas do backend
 
@@ -418,7 +418,7 @@ http://localhost:5001/swagger
 
 ---
 
-**📅 Documento criado**: 24/12/2024  
+**📅 Documento criado**: 23/12/2025  
 **🎯 Objetivo**: Alinhamento técnico do squad  
 **⏱️ Tempo de leitura**: 10 minutos  
 **✅ Status**: Pronto para reunião!  

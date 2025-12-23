@@ -1,7 +1,7 @@
 # 📚 ÍNDICE DA DOCUMENTAÇÃO DA POC
 
 **POC PDPW - Migração para .NET 8**  
-**Data**: 24/12/2024  
+**Data**: 23/12/2025  
 **Versão**: 1.0
 
 ---
@@ -259,7 +259,7 @@ docs/
 
 ---
 
-**📅 Última atualização**: 24/12/2024  
+**📅 Última atualização**: 23/12/2025  
 **🎯 Versão**: 1.0  
 **✅ Status**: Completo e validado  
 

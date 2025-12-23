@@ -3,7 +3,7 @@
 **Sistema**: PDPW (Programação Diária da Produção)  
 **Migração**: .NET Framework 4.8/VB.NET → .NET 8/C#  
 **Arquitetura**: Clean Architecture + Repository Pattern  
-**Período**: 19-23 Dezembro/2024  
+**Período**: 19-23 Dezembro/2025  
 **Status**: ✅ **v1.0 CONCLUÍDA**
 
 ---
