@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PDPW.API.Extensions;
 using PDPW.API.Filters;
 using PDPW.API.Middlewares;
@@ -125,6 +125,37 @@ app.MapGet("/", () => Results.Ok(new
     environment = app.Environment.EnvironmentName,
     timestamp = DateTime.UtcNow
 }));
+
+// Endpoint temporário para popular dados (remover em produção)
+app.MapPost("/seed-data", async (PdpwDbContext dbContext, ILogger<Program> logger) =>
+{
+    try
+    {
+        logger.LogInformation("🌱 Iniciando seed de dados via endpoint...");
+        await RealisticDataSeeder.SeedAsync(dbContext);
+        logger.LogInformation("✅ Seed concluído com sucesso!");
+        
+        var stats = new
+        {
+            empresas = await dbContext.Empresas.CountAsync(),
+            usinas = await dbContext.Usinas.CountAsync(),
+            unidadesGeradoras = await dbContext.UnidadesGeradoras.CountAsync(),
+            semanasPMO = await dbContext.SemanasPMO.CountAsync(),
+            equipesPDP = await dbContext.EquipesPDP.CountAsync(),
+            balancos = await dbContext.Balancos.CountAsync(),
+            intercambios = await dbContext.Intercambios.CountAsync(),
+            motivosRestricao = await dbContext.MotivosRestricao.CountAsync(),
+            paradasUG = await dbContext.ParadasUG.CountAsync()
+        };
+        
+        return Results.Ok(new { success = true, message = "Seed executado com sucesso", stats });
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Erro ao executar seed");
+        return Results.Problem(detail: ex.Message, title: "Erro ao popular dados");
+    }
+});
 
 app.MapControllers();
 
