@@ -2,7 +2,7 @@
 
 **Projeto**: Prova de Conceito - Migração do sistema PDPW  
 **Cliente**: ONS (Operador Nacional do Sistema)  
-**Período**: Dezembro/2024  
+**Período**: Dezembro/2025  
 **Status**: ✅ Concluído
 
 ---
@@ -142,9 +142,9 @@ src/
 
 ## 👥 Squad
 
-- **Tech Lead**: Rafael Suzano
+- **Tech Lead**: Bryan Gustavo de Oliveira
 - **Backend Developer**: Willian Bulhões
-- **Período**: 19-23 Dezembro/2024
+- **Período**: 19-23 Dezembro/2025
 
 ---
 
@@ -170,6 +170,6 @@ Ver documentação em docs/ para:
 
 ---
 
-**📅 Última Atualização**: 23/12/2024  
+**📅 Última Atualização**: 23/12/2025  
 **🎯 Versão**: 1.0 (POC)  
 **🏆 Score**: 76/100 ⭐⭐⭐⭐
