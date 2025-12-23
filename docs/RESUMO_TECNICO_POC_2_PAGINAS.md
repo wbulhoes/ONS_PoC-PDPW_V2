@@ -345,7 +345,6 @@ Média: 3-5 (Baixa)
 ## 🚀 PRÓXIMOS PASSOS TÉCNICOS
 
 ### v1.1 - Backend Completo (4 semanas)
-- [ ] 14 APIs restantes (29 total)
 - [ ] Testes: 53 → 120+ (score 25 → 60)
 - [ ] Autenticação JWT (ASP.NET Identity)
 - [ ] Serilog (logs estruturados)
@@ -381,7 +380,7 @@ Média: 3-5 (Baixa)
 
 ---
 
-**📅 Documento criado**: 24/12/2024  
+**📅 Documento criado**: 23/12/2025  
 **🎯 Versão**: 1.0 (Técnica)  
 **📊 Score POC**: 76/100 ⭐⭐⭐⭐  
 **✅ Status**: PRODUÇÃO-READY (Backend)

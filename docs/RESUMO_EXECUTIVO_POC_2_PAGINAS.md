@@ -147,7 +147,6 @@ Fizemos em **etapas pequenas** (como montar um LEGO):
 ## 🎯 PRÓXIMOS PASSOS
 
 ### Fase 1: Completar Backend (8 semanas)
-- Implementar **14 APIs restantes** (das 29 planejadas)
 - Aumentar testes para **120 testes**
 - Adicionar segurança (login/senha)
 
@@ -191,7 +190,6 @@ Fizemos em **etapas pequenas** (como montar um LEGO):
 
 ## 📞 CONTATO
 
-**Squad**: Rafael Suzano (Tech Lead)  
 **Desenvolvedor**: Willian Bulhões  
 **Repositório**: https://github.com/RafaelSuzanoACT/POCMigracaoPDPw  
 
