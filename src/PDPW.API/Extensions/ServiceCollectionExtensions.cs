@@ -151,6 +151,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IIntercambioRepository, IntercambioRepository>();
         services.AddScoped<IOfertaExportacaoRepository, OfertaExportacaoRepository>();
         services.AddScoped<IOfertaRespostaVoluntariaRepository, OfertaRespostaVoluntariaRepository>();
+        services.AddScoped<IJanelaEnvioAgenteRepository, JanelaEnvioAgenteRepository>();
+        services.AddScoped<ISubmissaoAgenteRepository, SubmissaoAgenteRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();

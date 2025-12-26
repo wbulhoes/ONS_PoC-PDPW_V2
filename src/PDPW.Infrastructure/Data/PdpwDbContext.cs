@@ -64,6 +64,10 @@ public class PdpwDbContext : DbContext
     // Ofertas
     public DbSet<OfertaExportacao> OfertasExportacao { get; set; }
     public DbSet<OfertaRespostaVoluntaria> OfertasRespostaVoluntaria { get; set; }
+    
+    // Controle de Agentes
+    public DbSet<JanelaEnvioAgente> JanelasEnvioAgente { get; set; }
+    public DbSet<SubmissaoAgente> SubmissoesAgente { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -540,6 +544,86 @@ public class PdpwDbContext : DbContext
             entity.HasIndex(e => e.FlgAprovadoONS);
             entity.HasIndex(e => e.TipoPrograma);
             entity.HasIndex(e => new { e.EmpresaId, e.DataPDP });
+        });
+
+        // JanelaEnvioAgente
+        modelBuilder.Entity<JanelaEnvioAgente>(entity =>
+        {
+            entity.ToTable("JanelasEnvioAgente");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.TipoDado)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.Status)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.Observacoes)
+                .HasMaxLength(500);
+            
+            entity.Property(e => e.UsuarioAutorizacaoExcecao)
+                .HasMaxLength(100);
+            
+            entity.HasOne(e => e.SemanaPMO)
+                .WithMany()
+                .HasForeignKey(e => e.SemanaPMOId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            entity.HasIndex(e => e.TipoDado);
+            entity.HasIndex(e => e.DataReferencia);
+            entity.HasIndex(e => e.Status);
+            entity.HasIndex(e => new { e.TipoDado, e.DataReferencia });
+        });
+
+        // SubmissaoAgente
+        modelBuilder.Entity<SubmissaoAgente>(entity =>
+        {
+            entity.ToTable("SubmissoesAgente");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.TipoDado)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.UsuarioEnvio)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.IpOrigem)
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.StatusSubmissao)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.MotivoRejeicao)
+                .HasMaxLength(500);
+            
+            entity.Property(e => e.HashDados)
+                .HasMaxLength(32);
+            
+            entity.Property(e => e.Observacoes)
+                .HasMaxLength(500);
+            
+            entity.HasOne(e => e.Empresa)
+                .WithMany()
+                .HasForeignKey(e => e.EmpresaId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            entity.HasOne(e => e.JanelaEnvio)
+                .WithMany()
+                .HasForeignKey(e => e.JanelaEnvioId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            entity.HasIndex(e => e.EmpresaId);
+            entity.HasIndex(e => e.TipoDado);
+            entity.HasIndex(e => e.DataReferencia);
+            entity.HasIndex(e => e.DataHoraSubmissao);
+            entity.HasIndex(e => e.StatusSubmissao);
+            entity.HasIndex(e => e.HashDados);
+            entity.HasIndex(e => new { e.EmpresaId, e.TipoDado, e.DataReferencia });
         });
     }
 }
