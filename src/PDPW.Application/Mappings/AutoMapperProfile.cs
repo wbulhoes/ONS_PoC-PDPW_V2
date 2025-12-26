@@ -13,6 +13,7 @@ using PDPW.Application.DTOs.OfertaExportacao;
 using PDPW.Application.DTOs.OfertaRespostaVoluntaria;
 using PDPW.Application.DTOs.PrevisaoEolica;
 using PDPW.Application.DTOs.ArquivoDadger;
+using PDPW.Application.DTOs.Usuario;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -386,5 +387,26 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.Status, opt => opt.Ignore())
             .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore())
             .ForMember(dest => dest.Valores, opt => opt.Ignore());
+
+        // === USUARIO MAPPINGS ===
+        
+        // Usuario → UsuarioDto
+        CreateMap<Usuario, UsuarioDto>()
+            .ForMember(dest => dest.EquipePDPNome, opt => opt.MapFrom(src => src.EquipePDP != null ? src.EquipePDP.Nome : null));
+
+        // CreateUsuarioDto → Usuario
+        CreateMap<CreateUsuarioDto, Usuario>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.EquipePDP, opt => opt.Ignore());
+
+        // UpdateUsuarioDto → Usuario
+        CreateMap<UpdateUsuarioDto, Usuario>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.EquipePDP, opt => opt.Ignore());
     }
 }
