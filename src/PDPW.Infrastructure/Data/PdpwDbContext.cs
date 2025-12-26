@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+Ôªøusing Microsoft.EntityFrameworkCore;
 using PDPW.Domain.Entities;
 using PDPW.Infrastructure.Data.Seed;
 
@@ -15,17 +15,17 @@ public class PdpwDbContext : DbContext
 
     // DbSets - Entidades do sistema
     
-    // Dados EnergÈticos (legado)
+    // Dados Energ√©ticos (legado)
     public DbSet<DadoEnergetico> DadosEnergeticos { get; set; }
 
-    // Gest„o de Ativos
+    // Gest√£o de Ativos
     public DbSet<TipoUsina> TiposUsina { get; set; }
     public DbSet<Empresa> Empresas { get; set; }
     public DbSet<Usina> Usinas { get; set; }
     public DbSet<SemanaPMO> SemanasPMO { get; set; }
     public DbSet<EquipePDP> EquipesPDP { get; set; }
 
-    // Unidades e GeraÁ„o
+    // Unidades e Gera√ß√£o
     public DbSet<UnidadeGeradora> UnidadesGeradoras { get; set; }
     public DbSet<ParadaUG> ParadasUG { get; set; }
     public DbSet<RestricaoUG> RestricoesUG { get; set; }
@@ -50,25 +50,28 @@ public class PdpwDbContext : DbContext
     public DbSet<Arquivo> Arquivos { get; set; }
     public DbSet<Diretorio> Diretorios { get; set; }
 
-    // OperaÁ„o
+    // Opera√ß√£o
     public DbSet<Intercambio> Intercambios { get; set; }
     public DbSet<Balanco> Balancos { get; set; }
     public DbSet<Observacao> Observacoes { get; set; }
 
-    // TÈrmicas
+    // T√©rmicas
     public DbSet<ModalidadeOpTermica> ModalidadesOpTermica { get; set; }
     public DbSet<InflexibilidadeContratada> InflexibilidadesContratadas { get; set; }
     public DbSet<RampasUsinaTermica> RampasUsinasTermicas { get; set; }
     public DbSet<UsinaConversora> UsinasConversoras { get; set; }
 
+    // Ofertas
+    public DbSet<OfertaExportacao> OfertasExportacao { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
-        // ConfiguraÁ„o de DadoEnergetico (legado)
+        // Configura√ß√£o de DadoEnergetico (legado)
         ConfigurarDadoEnergetico(modelBuilder);
 
-        // Aplicar configuraÁıes via Fluent API
+        // Aplicar configura√ß√µes via Fluent API
         ConfigurarEntidades(modelBuilder);
 
         // Aplicar seed data
@@ -452,6 +455,44 @@ public class PdpwDbContext : DbContext
                 .WithMany(u => u.Conversoras)
                 .HasForeignKey(e => e.UsinaId)
                 .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // OfertaExportacao
+        modelBuilder.Entity<OfertaExportacao>(entity =>
+        {
+            entity.ToTable("OfertasExportacao");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.ValorMW)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired();
+            
+            entity.Property(e => e.PrecoMWh)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired();
+            
+            entity.Property(e => e.UsuarioAnaliseONS)
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.ObservacaoONS)
+                .HasMaxLength(500);
+            
+            entity.Property(e => e.Observacoes)
+                .HasMaxLength(500);
+            
+            entity.HasOne(e => e.Usina)
+                .WithMany()
+                .HasForeignKey(e => e.UsinaId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            entity.HasOne(e => e.SemanaPMO)
+                .WithMany()
+                .HasForeignKey(e => e.SemanaPMOId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            entity.HasIndex(e => e.DataPDP);
+            entity.HasIndex(e => e.FlgAprovadoONS);
+            entity.HasIndex(e => new { e.UsinaId, e.DataPDP });
         });
     }
 }

@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+Ôªøusing Microsoft.EntityFrameworkCore;
 using PDPW.Application.Interfaces;
 using PDPW.Application.Services;
 using PDPW.Domain.Interfaces;
@@ -8,12 +8,12 @@ using PDPW.Infrastructure.Repositories;
 namespace PDPW.API.Extensions;
 
 /// <summary>
-/// Extensıes para configuraÁ„o de serviÁos
+/// Extens√µes para configura√ß√£o de servi√ßos
 /// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Adiciona configuraÁ„o do banco de dados
+    /// Adiciona configura√ß√£o do banco de dados
     /// </summary>
     public static IServiceCollection AddDatabaseConfiguration(
         this IServiceCollection services, 
@@ -70,7 +70,7 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Adiciona configuraÁ„o de CORS
+    /// Adiciona configura√ß√£o de CORS
     /// </summary>
     public static IServiceCollection AddCorsConfiguration(this IServiceCollection services)
     {
@@ -96,7 +96,7 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Adiciona configuraÁ„o do Swagger
+    /// Adiciona configura√ß√£o do Swagger
     /// </summary>
     public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
     {
@@ -107,7 +107,7 @@ public static class ServiceCollectionExtensions
             {
                 Title = "PDPW API",
                 Version = "v1",
-                Description = "API para ProgramaÁ„o Di·ria da ProduÁ„o de Energia",
+                Description = "API para Programa√ß√£o Di√°ria da Produ√ß√£o de Energia",
                 Contact = new()
                 {
                     Name = "ONS - Operador Nacional do Sistema",
@@ -115,7 +115,7 @@ public static class ServiceCollectionExtensions
                 }
             });
 
-            // Incluir coment·rios XML
+            // Incluir coment√°rios XML
             var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             if (File.Exists(xmlPath))
@@ -131,11 +131,11 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Adiciona repositÛrios e serviÁos da aplicaÁ„o
+    /// Adiciona reposit√≥rios e servi√ßos da aplica√ß√£o
     /// </summary>
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        // === REPOSIT”RIOS ===
+        // === REPOSIT√ìRIOS ===
         services.AddScoped<IUsinaRepository, UsinaRepository>();
         services.AddScoped<ITipoUsinaRepository, TipoUsinaRepository>();
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
@@ -149,6 +149,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IMotivoRestricaoRepository, MotivoRestricaoRepository>();
         services.AddScoped<IBalancoRepository, BalancoRepository>();
         services.AddScoped<IIntercambioRepository, IntercambioRepository>();
+        services.AddScoped<IOfertaExportacaoRepository, OfertaExportacaoRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
@@ -164,6 +165,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IMotivoRestricaoService, MotivoRestricaoService>();
         services.AddScoped<IBalancoService, BalancoService>();
         services.AddScoped<IIntercambioService, IntercambioService>();
+        services.AddScoped<IOfertaExportacaoService, OfertaExportacaoService>();
 
         return services;
     }
