@@ -1,7 +1,7 @@
-namespace PDPW.Domain.Entities;
+﻿namespace PDPW.Domain.Entities;
 
 /// <summary>
-/// Arquivo DADGER (Dados de Gera��o)
+/// Arquivo DADGER (Dados de Geração)
 /// </summary>
 public class ArquivoDadger : BaseEntity
 {
@@ -16,7 +16,7 @@ public class ArquivoDadger : BaseEntity
     public string CaminhoArquivo { get; set; } = string.Empty;
 
     /// <summary>
-    /// Data de importa��o do arquivo
+    /// Data de importação do arquivo
     /// </summary>
     public DateTime DataImportacao { get; set; }
 
@@ -31,7 +31,7 @@ public class ArquivoDadger : BaseEntity
     public SemanaPMO? SemanaPMO { get; set; }
 
     /// <summary>
-    /// Observa��es sobre o arquivo
+    /// Observações sobre o arquivo
     /// </summary>
     public string? Observacoes { get; set; }
 
@@ -44,6 +44,42 @@ public class ArquivoDadger : BaseEntity
     /// Data de processamento
     /// </summary>
     public DateTime? DataProcessamento { get; set; }
+
+    /// <summary>
+    /// Status da programação
+    /// Valores: Aberto, EmAnalise, Aprovado, Finalizado
+    /// </summary>
+    public string Status { get; set; } = "Aberto";
+
+    /// <summary>
+    /// Data de finalização da programação
+    /// </summary>
+    public DateTime? DataFinalizacao { get; set; }
+
+    /// <summary>
+    /// Usuário que finalizou a programação
+    /// </summary>
+    public string? UsuarioFinalizacao { get; set; }
+
+    /// <summary>
+    /// Observações da finalização
+    /// </summary>
+    public string? ObservacaoFinalizacao { get; set; }
+
+    /// <summary>
+    /// Data de aprovação da programação
+    /// </summary>
+    public DateTime? DataAprovacao { get; set; }
+
+    /// <summary>
+    /// Usuário que aprovou a programação
+    /// </summary>
+    public string? UsuarioAprovacao { get; set; }
+
+    /// <summary>
+    /// Observações da aprovação
+    /// </summary>
+    public string? ObservacaoAprovacao { get; set; }
 
     // Relacionamentos
     public ICollection<ArquivoDadgerValor>? Valores { get; set; }

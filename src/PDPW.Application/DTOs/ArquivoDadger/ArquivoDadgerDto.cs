@@ -1,4 +1,4 @@
-namespace PDPW.Application.DTOs.ArquivoDadger;
+﻿namespace PDPW.Application.DTOs.ArquivoDadger;
 
 /// <summary>
 /// DTO de leitura de Arquivo DADGER
@@ -14,6 +14,16 @@ public class ArquivoDadgerDto
     public string? Observacoes { get; set; }
     public bool Processado { get; set; }
     public DateTime? DataProcessamento { get; set; }
+    
+    // Campos de finalização e aprovação
+    public string Status { get; set; } = "Aberto";
+    public DateTime? DataFinalizacao { get; set; }
+    public string? UsuarioFinalizacao { get; set; }
+    public string? ObservacaoFinalizacao { get; set; }
+    public DateTime? DataAprovacao { get; set; }
+    public string? UsuarioAprovacao { get; set; }
+    public string? ObservacaoAprovacao { get; set; }
+    
     public bool Ativo { get; set; }
     public DateTime DataCriacao { get; set; }
 }
