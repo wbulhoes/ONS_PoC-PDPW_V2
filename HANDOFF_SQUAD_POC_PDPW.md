@@ -2,7 +2,7 @@
 
 **Para**: Squad POC PDPw  
 **De**: Willian Bulhões  
-**Data**: 27/12/2024  
+**Data**: 26/12/2025  
 **Repositório**: https://github.com/RafaelSuzanoACT/POCMigracaoPDPw  
 **Branch**: feature/backend  
 
@@ -385,7 +385,7 @@ docker-compose up -d
 ---
 
 **Status**: ✅ **POC 100% CONCLUÍDA**  
-**Data de Entrega**: 27/12/2024  
+**Data de Entrega**: 26/12/2025  
 **Pronto para Demonstração**: SIM ✅
 
 ---
