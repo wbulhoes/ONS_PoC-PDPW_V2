@@ -153,6 +153,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IOfertaRespostaVoluntariaRepository, OfertaRespostaVoluntariaRepository>();
         services.AddScoped<IJanelaEnvioAgenteRepository, JanelaEnvioAgenteRepository>();
         services.AddScoped<ISubmissaoAgenteRepository, SubmissaoAgenteRepository>();
+        services.AddScoped<IPrevisaoEolicaRepository, PrevisaoEolicaRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
@@ -170,6 +171,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IIntercambioService, IntercambioService>();
         services.AddScoped<IOfertaExportacaoService, OfertaExportacaoService>();
         services.AddScoped<IOfertaRespostaVoluntariaService, OfertaRespostaVoluntariaService>();
+        services.AddScoped<IPrevisaoEolicaService, PrevisaoEolicaService>();
 
         return services;
     }

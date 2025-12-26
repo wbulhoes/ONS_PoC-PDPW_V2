@@ -68,6 +68,9 @@ public class PdpwDbContext : DbContext
     // Controle de Agentes
     public DbSet<JanelaEnvioAgente> JanelasEnvioAgente { get; set; }
     public DbSet<SubmissaoAgente> SubmissoesAgente { get; set; }
+    
+    // Previsão Eólica
+    public DbSet<PrevisaoEolica> PrevisoesEolicas { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -624,6 +627,81 @@ public class PdpwDbContext : DbContext
             entity.HasIndex(e => e.StatusSubmissao);
             entity.HasIndex(e => e.HashDados);
             entity.HasIndex(e => new { e.EmpresaId, e.TipoDado, e.DataReferencia });
+        });
+
+        // PrevisaoEolica
+        modelBuilder.Entity<PrevisaoEolica>(entity =>
+        {
+            entity.ToTable("PrevisoesEolicas");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.GeracaoPrevistaMWmed)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired();
+            
+            entity.Property(e => e.VelocidadeVentoMS)
+                .HasColumnType("decimal(6,2)");
+            
+            entity.Property(e => e.DirecaoVentoGraus)
+                .HasColumnType("decimal(5,2)");
+            
+            entity.Property(e => e.TemperaturaC)
+                .HasColumnType("decimal(5,2)");
+            
+            entity.Property(e => e.PressaoAtmosfericaHPa)
+                .HasColumnType("decimal(6,2)");
+            
+            entity.Property(e => e.UmidadeRelativa)
+                .HasColumnType("decimal(5,2)");
+            
+            entity.Property(e => e.ModeloPrevisao)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.VersaoModelo)
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.IncertezaPercentual)
+                .HasColumnType("decimal(5,2)");
+            
+            entity.Property(e => e.LimiteInferiorMW)
+                .HasColumnType("decimal(18,2)");
+            
+            entity.Property(e => e.LimiteSuperiorMW)
+                .HasColumnType("decimal(18,2)");
+            
+            entity.Property(e => e.TipoPrevisao)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.GeracaoRealMWmed)
+                .HasColumnType("decimal(18,2)");
+            
+            entity.Property(e => e.ErroAbsolutoMW)
+                .HasColumnType("decimal(18,2)");
+            
+            entity.Property(e => e.ErroPercentual)
+                .HasColumnType("decimal(6,2)");
+            
+            entity.Property(e => e.Observacoes)
+                .HasMaxLength(500);
+            
+            entity.HasOne(e => e.Usina)
+                .WithMany()
+                .HasForeignKey(e => e.UsinaId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            entity.HasOne(e => e.SemanaPMO)
+                .WithMany()
+                .HasForeignKey(e => e.SemanaPMOId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            entity.HasIndex(e => e.UsinaId);
+            entity.HasIndex(e => e.DataHoraReferencia);
+            entity.HasIndex(e => e.DataHoraPrevista);
+            entity.HasIndex(e => e.ModeloPrevisao);
+            entity.HasIndex(e => e.TipoPrevisao);
+            entity.HasIndex(e => new { e.UsinaId, e.DataHoraPrevista });
         });
     }
 }

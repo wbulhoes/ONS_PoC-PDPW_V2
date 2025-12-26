@@ -11,6 +11,7 @@ using PDPW.Application.DTOs.Balanco;
 using PDPW.Application.DTOs.Intercambio;
 using PDPW.Application.DTOs.OfertaExportacao;
 using PDPW.Application.DTOs.OfertaRespostaVoluntaria;
+using PDPW.Application.DTOs.PrevisaoEolica;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -326,6 +327,37 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
             .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
             .ForMember(dest => dest.Empresa, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // === PREVISÃO EÓLICA MAPPINGS ===
+        
+        // PrevisaoEolica → PrevisaoEolicaDto
+        CreateMap<PrevisaoEolica, PrevisaoEolicaDto>()
+            .ForMember(dest => dest.UsinaNome, opt => opt.MapFrom(src => src.Usina!.Nome))
+            .ForMember(dest => dest.SemanaPMO, opt => opt.MapFrom(src => 
+                src.SemanaPMO != null ? $"Semana {src.SemanaPMO.Numero}/{src.SemanaPMO.Ano}" : null));
+
+        // CreatePrevisaoEolicaDto → PrevisaoEolica
+        CreateMap<CreatePrevisaoEolicaDto, PrevisaoEolica>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.GeracaoRealMWmed, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroAbsolutoMW, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroPercentual, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // UpdatePrevisaoEolicaDto → PrevisaoEolica
+        CreateMap<UpdatePrevisaoEolicaDto, PrevisaoEolica>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.GeracaoRealMWmed, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroAbsolutoMW, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroPercentual, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
             .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
     }
 }
