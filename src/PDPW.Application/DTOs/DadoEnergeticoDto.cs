@@ -14,6 +14,11 @@ public class DadoEnergeticoDto
     public decimal CapacidadeDisponivel { get; set; }
     public string Status { get; set; } = string.Empty;
     public string? Observacoes { get; set; }
+    
+    // Campos de Energia Vertida Turbinável
+    public decimal? EnergiaVertida { get; set; }
+    public decimal? EnergiaTurbinavelNaoUtilizada { get; set; }
+    public string? MotivoVertimento { get; set; }
 }
 
 public class CriarDadoEnergeticoDto
@@ -39,6 +44,16 @@ public class CriarDadoEnergeticoDto
 
     [StringLength(500, ErrorMessage = "Observações devem ter no máximo 500 caracteres")]
     public string? Observacoes { get; set; }
+    
+    // Campos opcionais de Energia Vertida
+    [Range(0, double.MaxValue, ErrorMessage = "Energia vertida deve ser um valor positivo")]
+    public decimal? EnergiaVertida { get; set; }
+    
+    [Range(0, double.MaxValue, ErrorMessage = "Energia turbinável não utilizada deve ser um valor positivo")]
+    public decimal? EnergiaTurbinavelNaoUtilizada { get; set; }
+    
+    [StringLength(500, ErrorMessage = "Motivo do vertimento deve ter no máximo 500 caracteres")]
+    public string? MotivoVertimento { get; set; }
 }
 
 public class AtualizarDadoEnergeticoDto
@@ -64,4 +79,14 @@ public class AtualizarDadoEnergeticoDto
 
     [StringLength(500, ErrorMessage = "Observações devem ter no máximo 500 caracteres")]
     public string? Observacoes { get; set; }
+    
+    // Campos opcionais de Energia Vertida
+    [Range(0, double.MaxValue, ErrorMessage = "Energia vertida deve ser um valor positivo")]
+    public decimal? EnergiaVertida { get; set; }
+    
+    [Range(0, double.MaxValue, ErrorMessage = "Energia turbinável não utilizada deve ser um valor positivo")]
+    public decimal? EnergiaTurbinavelNaoUtilizada { get; set; }
+    
+    [StringLength(500, ErrorMessage = "Motivo do vertimento deve ter no máximo 500 caracteres")]
+    public string? MotivoVertimento { get; set; }
 }

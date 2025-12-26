@@ -87,6 +87,9 @@ public class PdpwDbContext : DbContext
             entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.ProducaoMWh).HasPrecision(18, 2);
             entity.Property(e => e.CapacidadeDisponivel).HasPrecision(18, 2);
+            entity.Property(e => e.EnergiaVertida).HasPrecision(18, 2);
+            entity.Property(e => e.EnergiaTurbinavelNaoUtilizada).HasPrecision(18, 2);
+            entity.Property(e => e.MotivoVertimento).HasMaxLength(500);
             entity.HasIndex(e => e.DataReferencia);
         });
     }
