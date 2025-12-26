@@ -1,6 +1,6 @@
 # 🎯 ROTEIRO DE VALIDAÇÃO DOCKER + SWAGGER - POC 100%
 
-**Data**: 27/12/2024  
+**Data**: 26/12/2025  
 **Objetivo**: Validar POC 100% via Docker e Swagger  
 **Tempo Total Estimado**: 30-45 minutos
 
@@ -427,5 +427,5 @@ docker-compose logs -f
 ---
 
 **📝 Roteiro criado por**: Willian Bulhões + GitHub Copilot  
-**Data**: 27/12/2024  
+**Data**: 26/12/2025  
 **Status**: ✅ Pronto para execução

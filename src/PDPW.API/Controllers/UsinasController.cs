@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+Ôªøusing Microsoft.AspNetCore.Mvc;
 using PDPW.Application.DTOs.Usina;
 using PDPW.Application.Interfaces;
 using PDPW.API.Extensions;
@@ -9,7 +9,7 @@ namespace PDPW.API.Controllers;
 /// Controller para gerenciamento de Usinas Geradoras
 /// </summary>
 /// <remarks>
-/// Nomenclatura ubÌqua: UsinasGeradorasController (mantido como UsinasController por compatibilidade)
+/// Nomenclatura ub√≠qua: UsinasGeradorasController (mantido como UsinasController por compatibilidade)
 /// </remarks>
 [ApiController]
 [Route("api/[controller]")]
@@ -26,7 +26,7 @@ public class UsinasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm todas as usinas geradoras
+    /// Obt√©m todas as usinas geradoras
     /// </summary>
     /// <returns>Lista de usinas</returns>
     /// <response code="200">Lista retornada com sucesso</response>
@@ -39,13 +39,13 @@ public class UsinasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm usina por ID
+    /// Obt√©m usina por ID
     /// </summary>
     /// <param name="id">ID da usina</param>
     /// <returns>Dados da usina</returns>
     /// <response code="200">Usina encontrada</response>
-    /// <response code="404">Usina n„o encontrada</response>
-    [HttpGet("{id:int}", Name = nameof(GetById))]
+    /// <response code="404">Usina n√£o encontrada</response>
+    [HttpGet("{id:int}", Name = "GetUsinaById")]
     [ProducesResponseType(typeof(UsinaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(int id)
@@ -55,12 +55,12 @@ public class UsinasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm usina por cÛdigo
+    /// Obt√©m usina por c√≥digo
     /// </summary>
-    /// <param name="codigo">CÛdigo ˙nico da usina</param>
+    /// <param name="codigo">C√≥digo √∫nico da usina</param>
     /// <returns>Dados da usina</returns>
     /// <response code="200">Usina encontrada</response>
-    /// <response code="404">Usina n„o encontrada</response>
+    /// <response code="404">Usina n√£o encontrada</response>
     [HttpGet("codigo/{codigo}")]
     [ProducesResponseType(typeof(UsinaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -71,7 +71,7 @@ public class UsinasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm usinas por tipo
+    /// Obt√©m usinas por tipo
     /// </summary>
     /// <param name="tipoUsinaId">ID do tipo de usina</param>
     /// <returns>Lista de usinas do tipo especificado</returns>
@@ -85,7 +85,7 @@ public class UsinasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm usinas por empresa
+    /// Obt√©m usinas por empresa
     /// </summary>
     /// <param name="empresaId">ID da empresa</param>
     /// <returns>Lista de usinas da empresa especificada</returns>
@@ -104,8 +104,8 @@ public class UsinasController : BaseController
     /// <param name="createDto">Dados da usina</param>
     /// <returns>Usina criada</returns>
     /// <response code="201">Usina criada com sucesso</response>
-    /// <response code="400">Dados inv·lidos</response>
-    /// <response code="409">CÛdigo j· existe</response>
+    /// <response code="400">Dados inv√°lidos</response>
+    /// <response code="409">C√≥digo j√° existe</response>
     [HttpPost]
     [ProducesResponseType(typeof(UsinaDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -130,9 +130,9 @@ public class UsinasController : BaseController
     /// <param name="updateDto">Dados atualizados</param>
     /// <returns>Usina atualizada</returns>
     /// <response code="200">Usina atualizada com sucesso</response>
-    /// <response code="404">Usina n„o encontrada</response>
-    /// <response code="400">Dados inv·lidos</response>
-    /// <response code="409">CÛdigo j· existe</response>
+    /// <response code="404">Usina n√£o encontrada</response>
+    /// <response code="400">Dados inv√°lidos</response>
+    /// <response code="409">C√≥digo j√° existe</response>
     [HttpPut("{id:int}")]
     [ProducesResponseType(typeof(UsinaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -154,9 +154,9 @@ public class UsinasController : BaseController
     /// Remove usina
     /// </summary>
     /// <param name="id">ID da usina</param>
-    /// <returns>ConfirmaÁ„o de remoÁ„o</returns>
+    /// <returns>Confirma√ß√£o de remo√ß√£o</returns>
     /// <response code="204">Usina removida com sucesso</response>
-    /// <response code="404">Usina n„o encontrada</response>
+    /// <response code="404">Usina n√£o encontrada</response>
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -173,12 +173,12 @@ public class UsinasController : BaseController
     }
 
     /// <summary>
-    /// Verifica se cÛdigo j· existe
+    /// Verifica se c√≥digo j√° existe
     /// </summary>
-    /// <param name="codigo">CÛdigo a verificar</param>
-    /// <param name="usinaId">ID da usina a excluir da verificaÁ„o (opcional)</param>
-    /// <returns>True se cÛdigo existe, False caso contr·rio</returns>
-    /// <response code="200">VerificaÁ„o realizada</response>
+    /// <param name="codigo">C√≥digo a verificar</param>
+    /// <param name="usinaId">ID da usina a excluir da verifica√ß√£o (opcional)</param>
+    /// <returns>True se c√≥digo existe, False caso contr√°rio</returns>
+    /// <response code="200">Verifica√ß√£o realizada</response>
     [HttpGet("verificar-codigo/{codigo}")]
     [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarCodigo(string codigo, [FromQuery] int? usinaId = null)
