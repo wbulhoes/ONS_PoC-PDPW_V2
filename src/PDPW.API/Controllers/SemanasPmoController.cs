@@ -24,9 +24,9 @@ public class SemanasPmoController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm todas as semanas PMO
+    /// Obt√©m todas as semanas PMO
     /// </summary>
-    /// <returns>Lista de semanas PMO ordenadas por ano e n˙mero</returns>
+    /// <returns>Lista de semanas PMO ordenadas por ano e n√∫mero</returns>
     /// <response code="200">Lista de semanas PMO retornada com sucesso</response>
     [HttpGet(Name = nameof(GetAllSemanasPmo))]
     [ProducesResponseType(typeof(List<SemanaPmoDto>), StatusCodes.Status200OK)]
@@ -39,12 +39,12 @@ public class SemanasPmoController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm uma semana PMO por ID
+    /// Obt√©m uma semana PMO por ID
     /// </summary>
     /// <param name="id">ID da semana PMO</param>
     /// <returns>Semana PMO encontrada</returns>
     /// <response code="200">Semana PMO encontrada</response>
-    /// <response code="404">Semana PMO n„o encontrada</response>
+    /// <response code="404">Semana PMO n√£o encontrada</response>
     [HttpGet("{id:int}", Name = nameof(GetSemanaPmoById))]
     [ProducesResponseType(typeof(SemanaPmoDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -57,13 +57,13 @@ public class SemanasPmoController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm uma semana PMO por n˙mero e ano
+    /// Obt√©m uma semana PMO por n√∫mero e ano
     /// </summary>
-    /// <param name="numero">N˙mero da semana (1-53)</param>
-    /// <param name="ano">Ano de referÍncia</param>
+    /// <param name="numero">N√∫mero da semana (1-53)</param>
+    /// <param name="ano">Ano de refer√™ncia</param>
     /// <returns>Semana PMO encontrada</returns>
     /// <response code="200">Semana PMO encontrada</response>
-    /// <response code="404">Semana PMO n„o encontrada</response>
+    /// <response code="404">Semana PMO n√£o encontrada</response>
     [HttpGet("numero/{numero}/ano/{ano}", Name = nameof(GetSemanaPmoByNumeroAno))]
     [ProducesResponseType(typeof(SemanaPmoDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -76,9 +76,9 @@ public class SemanasPmoController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm todas as semanas PMO de um ano especÌfico
+    /// Obt√©m todas as semanas PMO de um ano espec√≠fico
     /// </summary>
-    /// <param name="ano">Ano de referÍncia</param>
+    /// <param name="ano">Ano de refer√™ncia</param>
     /// <returns>Lista de semanas PMO do ano</returns>
     /// <response code="200">Lista de semanas PMO retornada com sucesso</response>
     [HttpGet("ano/{ano}", Name = nameof(GetSemanasPmoByAno))]
@@ -92,7 +92,7 @@ public class SemanasPmoController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm a semana PMO que contÈm uma data especÌfica
+    /// Obt√©m a semana PMO que cont√©m uma data espec√≠fica
     /// </summary>
     /// <param name="data">Data a ser pesquisada (formato: yyyy-MM-dd)</param>
     /// <returns>Semana PMO encontrada</returns>
@@ -115,7 +115,7 @@ public class SemanasPmoController : BaseController
     /// <param name="dto">Dados da semana PMO</param>
     /// <returns>Semana PMO criada</returns>
     /// <response code="201">Semana PMO criada com sucesso</response>
-    /// <response code="400">Dados inv·lidos, n˙mero/ano duplicado ou conflito de datas</response>
+    /// <response code="400">Dados inv√°lidos, n√∫mero/ano duplicado ou conflito de datas</response>
     [HttpPost(Name = nameof(CreateSemanaPmo))]
     [ProducesResponseType(typeof(SemanaPmoDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -133,7 +133,7 @@ public class SemanasPmoController : BaseController
         }
         catch (InvalidOperationException ex)
         {
-            _logger.LogWarning(ex, "Erro de validaÁ„o ao criar semana PMO");
+            _logger.LogWarning(ex, "Erro de valida√ß√£o ao criar semana PMO");
             return BadRequest(new { message = ex.Message });
         }
     }
@@ -145,8 +145,8 @@ public class SemanasPmoController : BaseController
     /// <param name="dto">Dados atualizados</param>
     /// <returns>Semana PMO atualizada</returns>
     /// <response code="200">Semana PMO atualizada com sucesso</response>
-    /// <response code="400">Dados inv·lidos, n˙mero/ano duplicado ou conflito de datas</response>
-    /// <response code="404">Semana PMO n„o encontrada</response>
+    /// <response code="400">Dados inv√°lidos, n√∫mero/ano duplicado ou conflito de datas</response>
+    /// <response code="404">Semana PMO n√£o encontrada</response>
     [HttpPut("{id:int}", Name = nameof(UpdateSemanaPmo))]
     [ProducesResponseType(typeof(SemanaPmoDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -162,7 +162,7 @@ public class SemanasPmoController : BaseController
         }
         catch (InvalidOperationException ex)
         {
-            _logger.LogWarning(ex, "Erro de validaÁ„o ao atualizar semana PMO");
+            _logger.LogWarning(ex, "Erro de valida√ß√£o ao atualizar semana PMO");
             return BadRequest(new { message = ex.Message });
         }
     }
@@ -171,10 +171,10 @@ public class SemanasPmoController : BaseController
     /// Remove uma semana PMO (soft delete)
     /// </summary>
     /// <param name="id">ID da semana PMO</param>
-    /// <returns>Sem conte˙do</returns>
+    /// <returns>Sem conte√∫do</returns>
     /// <response code="204">Semana PMO removida com sucesso</response>
-    /// <response code="400">N„o È possÌvel remover semana com arquivos vinculados</response>
-    /// <response code="404">Semana PMO n„o encontrada</response>
+    /// <response code="400">N√£o √© poss√≠vel remover semana com arquivos vinculados</response>
+    /// <response code="404">Semana PMO n√£o encontrada</response>
     [HttpDelete("{id:int}", Name = nameof(DeleteSemanaPmo))]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -186,7 +186,7 @@ public class SemanasPmoController : BaseController
         try
         {
             var deleted = await _service.DeleteAsync(id);
-            return deleted ? NoContent() : NotFound(new { message = $"Semana PMO com ID {id} n„o encontrada" });
+            return deleted ? NoContent() : NotFound(new { message = $"Semana PMO com ID {id} n√£o encontrada" });
         }
         catch (InvalidOperationException ex)
         {
@@ -196,13 +196,13 @@ public class SemanasPmoController : BaseController
     }
 
     /// <summary>
-    /// Verifica se j· existe uma semana PMO com o n˙mero e ano informados
+    /// Verifica se j√° existe uma semana PMO com o n√∫mero e ano informados
     /// </summary>
-    /// <param name="numero">N˙mero da semana</param>
-    /// <param name="ano">Ano de referÍncia</param>
-    /// <param name="semanaPmoId">ID da semana PMO a excluir da verificaÁ„o (opcional)</param>
-    /// <returns>Indica se j· existe</returns>
-    /// <response code="200">Resultado da verificaÁ„o</response>
+    /// <param name="numero">N√∫mero da semana</param>
+    /// <param name="ano">Ano de refer√™ncia</param>
+    /// <param name="semanaPmoId">ID da semana PMO a excluir da verifica√ß√£o (opcional)</param>
+    /// <returns>Indica se j√° existe</returns>
+    /// <response code="200">Resultado da verifica√ß√£o</response>
     [HttpGet("verificar-numero/{numero}/ano/{ano}", Name = nameof(VerificarNumeroAnoExiste))]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarNumeroAnoExiste(int numero, int ano, [FromQuery] int? semanaPmoId = null)
@@ -211,5 +211,47 @@ public class SemanasPmoController : BaseController
         
         var existe = await _service.ExisteNumeroAnoAsync(numero, ano, semanaPmoId);
         return Ok(new { existe });
+    }
+
+    /// <summary>
+    /// Obt√©m a semana PMO atual (que cont√©m a data de hoje)
+    /// </summary>
+    /// <returns>Semana PMO atual</returns>
+    /// <response code="200">Semana PMO atual encontrada</response>
+    /// <response code="404">Nenhuma semana PMO cont√©m a data atual</response>
+    [HttpGet("atual", Name = nameof(GetSemanaPmoAtual))]
+    [ProducesResponseType(typeof(SemanaPmoDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetSemanaPmoAtual()
+    {
+        _logger.LogInformation("GET api/semanaspmo/atual - Buscando semana PMO atual");
+        
+        var semana = await _service.GetByDataAsync(DateTime.Today);
+        return HandleResult(semana);
+    }
+
+    /// <summary>
+    /// Obt√©m as pr√≥ximas N semanas PMO a partir de hoje
+    /// </summary>
+    /// <param name="quantidade">Quantidade de semanas futuras (padr√£o: 4)</param>
+    /// <returns>Lista de pr√≥ximas semanas PMO</returns>
+    /// <response code="200">Lista de pr√≥ximas semanas retornada com sucesso</response>
+    [HttpGet("proximas", Name = nameof(GetProximasSemanas))]
+    [ProducesResponseType(typeof(List<SemanaPmoDto>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetProximasSemanas([FromQuery] int quantidade = 4)
+    {
+        _logger.LogInformation("GET api/semanaspmo/proximas?quantidade={Quantidade} - Buscando pr√≥ximas semanas", quantidade);
+        
+        // Buscar todas as semanas e filtrar as pr√≥ximas
+        var todasSemanas = await _service.GetAllAsync();
+        var hoje = DateTime.Today;
+        
+        var proximasSemanas = todasSemanas
+            .Where(s => s.DataInicio > hoje)
+            .OrderBy(s => s.DataInicio)
+            .Take(quantidade)
+            .ToList();
+        
+        return Ok(proximasSemanas);
     }
 }

@@ -7,12 +7,15 @@ services:
     container_name: pdpw-sqlserver
     environment:
       - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Pdpw@2024!Strong
       - SA_PASSWORD=Pdpw@2024!Strong
       - MSSQL_PID=Developer
     ports:
       - "1433:1433"
     volumes:
       - sqldata:/var/opt/mssql
+      - ./docker/sql-server-entrypoint.sh:/usr/local/bin/entrypoint.sh:ro
+    entrypoint: ["/bin/bash", "/usr/local/bin/entrypoint.sh"]
     networks:
       - pdpw-network
     healthcheck:

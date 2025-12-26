@@ -9,11 +9,11 @@ using PDPW.Infrastructure.Data;
 
 #nullable disable
 
-namespace PDPW.Infrastructure.Data.Migrations
+namespace PDPW.Infrastructure.Migrations
 {
     [DbContext(typeof(PdpwDbContext))]
-    [Migration("20251219124913_SeedData")]
-    partial class SeedData
+    [Migration("20251226144838_SeedUnicoConsolidado")]
+    partial class SeedUnicoConsolidado
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -500,8 +500,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 1,
                             Ativo = true,
-                            CNPJ = "00.341.583/0001-71",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "00341583000171",
+                            DataCriacao = new DateTime(1984, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "contato@itaipu.gov.br",
                             Endereco = "Av. Tancredo Neves, 6731 - Foz do Iguaçu, PR",
                             Nome = "Itaipu Binacional",
@@ -511,8 +511,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 2,
                             Ativo = true,
-                            CNPJ = "00.357.038/0001-16",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "00357038000116",
+                            DataCriacao = new DateTime(1973, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "contato@eletronorte.gov.br",
                             Endereco = "SCN - Quadra 6 - Conjunto A - Bloco C - Brasília, DF",
                             Nome = "Eletronorte - Centrais Elétricas do Norte do Brasil",
@@ -522,8 +522,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 3,
                             Ativo = true,
-                            CNPJ = "23.047.150/0001-13",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "23047150000113",
+                            DataCriacao = new DateTime(1957, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ouvidoria@furnas.com.br",
                             Endereco = "Rua Real Grandeza, 219 - Rio de Janeiro, RJ",
                             Nome = "Furnas Centrais Elétricas",
@@ -533,8 +533,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 4,
                             Ativo = true,
-                            CNPJ = "33.541.368/0001-16",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "33541368000116",
+                            DataCriacao = new DateTime(1945, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "faleconosco@chesf.gov.br",
                             Endereco = "Rua Delmiro Gouveia, 333 - Recife, PE",
                             Nome = "Chesf - Companhia Hidro Elétrica do São Francisco",
@@ -544,8 +544,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 5,
                             Ativo = true,
-                            CNPJ = "00.073.957/0001-46",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "00073957000146",
+                            DataCriacao = new DateTime(1968, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "comunicacao@eletrosul.gov.br",
                             Endereco = "Av. Prefeito Osmar Cunha, 183 - Florianópolis, SC",
                             Nome = "Eletrosul Centrais Elétricas",
@@ -555,8 +555,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 6,
                             Ativo = true,
-                            CNPJ = "60.933.603/0001-78",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "60933603000178",
+                            DataCriacao = new DateTime(1966, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ouvidoria@cesp.com.br",
                             Endereco = "Av. Nossa Senhora do Sabará, 5312 - São Paulo, SP",
                             Nome = "CESP - Companhia Energética de São Paulo",
@@ -566,8 +566,8 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 7,
                             Ativo = true,
-                            CNPJ = "42.540.211/0001-67",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "42540211000167",
+                            DataCriacao = new DateTime(1997, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "eletronuclear@eletronuclear.gov.br",
                             Endereco = "Rua da Candelária, 65 - Rio de Janeiro, RJ",
                             Nome = "Eletronuclear - Eletrobrás Termonuclear",
@@ -577,12 +577,34 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 8,
                             Ativo = true,
-                            CNPJ = "76.483.817/0001-20",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CNPJ = "76483817000120",
+                            DataCriacao = new DateTime(1954, 10, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "copel@copel.com",
                             Endereco = "Rua José Izidoro Biazetto, 158 - Curitiba, PR",
                             Nome = "COPEL - Companhia Paranaense de Energia",
                             Telefone = "(41) 3331-4011"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Ativo = true,
+                            CNPJ = "17155730000164",
+                            DataCriacao = new DateTime(1952, 5, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "contato@cemig.com.br",
+                            Endereco = "Av. Barbacena, 1200 - Belo Horizonte, MG",
+                            Nome = "CEMIG - Companhia Energética de Minas Gerais",
+                            Telefone = "(31) 3506-5000"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Ativo = true,
+                            CNPJ = "02429144000193",
+                            DataCriacao = new DateTime(1998, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "contato@cpfl.com.br",
+                            Endereco = "Rod. Eng. Miguel Noel Nascentes Burnier - Campinas, SP",
+                            Nome = "CPFL Energia",
+                            Telefone = "(19) 3756-8000"
                         });
                 });
 
@@ -625,6 +647,63 @@ namespace PDPW.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EquipesPDP");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ativo = true,
+                            Coordenador = "João Silva Santos",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Nordeste",
+                            Email = "operacao.ne@ons.org.br",
+                            Nome = "Equipe de Operação Nordeste",
+                            Telefone = "(81) 3421-5000"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ativo = true,
+                            Coordenador = "Maria Oliveira Costa",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Sudeste/Centro-Oeste",
+                            Email = "operacao.se@ons.org.br",
+                            Nome = "Equipe de Operação Sudeste",
+                            Telefone = "(21) 3444-5500"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Ativo = true,
+                            Coordenador = "Carlos Eduardo Ferreira",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Sul",
+                            Email = "operacao.sul@ons.org.br",
+                            Nome = "Equipe de Operação Sul",
+                            Telefone = "(41) 3333-4400"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Ativo = true,
+                            Coordenador = "Ana Paula Rodrigues",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pela programação diária de produção da região Norte",
+                            Email = "operacao.norte@ons.org.br",
+                            Nome = "Equipe de Operação Norte",
+                            Telefone = "(92) 3232-1100"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Ativo = true,
+                            Coordenador = "Roberto Mendes Lima",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Responsável pelo planejamento de médio e longo prazo da operação",
+                            Email = "planejamento@ons.org.br",
+                            Nome = "Equipe de Planejamento Energético",
+                            Telefone = "(21) 3444-5600"
+                        });
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.GerForaMerito", b =>
@@ -828,6 +907,53 @@ namespace PDPW.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MotivosRestricao");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ativo = true,
+                            Categoria = "Manutenção",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Parada para manutenção preventiva ou corretiva",
+                            Nome = "Manutenção Programada"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ativo = true,
+                            Categoria = "Técnica",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Problema em equipamento que restringe a geração",
+                            Nome = "Falha de Equipamento"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Ativo = true,
+                            Categoria = "Hidráulica",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Vazão insuficiente para geração plena",
+                            Nome = "Restrição Hidráulica"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Ativo = true,
+                            Categoria = "Elétrica",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Limitação no sistema de transmissão",
+                            Nome = "Restrição de Transmissão"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Ativo = true,
+                            Categoria = "Operacional",
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Teste de equipamentos ou sistemas",
+                            Nome = "Teste Operacional"
+                        });
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.Observacao", b =>
@@ -1172,6 +1298,169 @@ namespace PDPW.Infrastructure.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("SemanasPMO");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ano = 2024,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2024, 11, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2024, 12, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 49
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ano = 2024,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2024, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2024, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2024, 12, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 50
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Ano = 2024,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2024, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2024, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 51,
+                            Observacoes = "SEMANA ATUAL - Natal 2024"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Ano = 2024,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2024, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2024, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 52
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2024, 12, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 3
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 4
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 1, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 5
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 6
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 7
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 2, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 8
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 9
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 2, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 10
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 3, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 11
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Ano = 2025,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2025, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataFim = new DateTime(2025, 3, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataInicio = new DateTime(2025, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Numero = 12
+                        });
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.TipoUsina", b =>
@@ -1215,7 +1504,7 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 1,
                             Ativo = true,
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descricao = "Usina que gera energia através da força da água",
                             FonteEnergia = "Hídrica",
                             Nome = "Hidrelétrica"
@@ -1224,7 +1513,7 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 2,
                             Ativo = true,
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descricao = "Usina que gera energia através da queima de combustíveis",
                             FonteEnergia = "Combustíveis Fósseis / Biomassa",
                             Nome = "Térmica"
@@ -1233,7 +1522,7 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 3,
                             Ativo = true,
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descricao = "Usina que gera energia através da força dos ventos",
                             FonteEnergia = "Eólica",
                             Nome = "Eólica"
@@ -1242,7 +1531,7 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 4,
                             Ativo = true,
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descricao = "Usina que gera energia através da luz solar",
                             FonteEnergia = "Solar",
                             Nome = "Solar"
@@ -1251,10 +1540,37 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 5,
                             Ativo = true,
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Descricao = "Usina que gera energia através da fissão nuclear",
                             FonteEnergia = "Nuclear",
                             Nome = "Nuclear"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Pequena Central Hidrelétrica",
+                            FonteEnergia = "Hídrica",
+                            Nome = "PCH"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Central Geradora Hidrelétrica",
+                            FonteEnergia = "Hídrica",
+                            Nome = "CGH"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Ativo = true,
+                            DataCriacao = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Descricao = "Usina que gera energia através da queima de biomassa",
+                            FonteEnergia = "Biomassa",
+                            Nome = "Biomassa"
                         });
                 });
 
@@ -1423,10 +1739,10 @@ namespace PDPW.Infrastructure.Data.Migrations
                             Ativo = true,
                             CapacidadeInstalada = 14000.00m,
                             Codigo = "UHE-ITAIPU",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(1984, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataOperacao = new DateTime(1984, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 1,
-                            Localizacao = "Foz do Iguaçu, PR - Fronteira Brasil/Paraguai",
+                            Localizacao = "Foz do Iguaçu, PR",
                             Nome = "Usina Hidrelétrica de Itaipu",
                             TipoUsinaId = 1
                         },
@@ -1436,10 +1752,10 @@ namespace PDPW.Infrastructure.Data.Migrations
                             Ativo = true,
                             CapacidadeInstalada = 11233.00m,
                             Codigo = "UHE-BELO-MONTE",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2016, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataOperacao = new DateTime(2016, 4, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 2,
-                            Localizacao = "Altamira, PA - Rio Xingu",
+                            Localizacao = "Altamira, PA",
                             Nome = "Usina Hidrelétrica Belo Monte",
                             TipoUsinaId = 1
                         },
@@ -1449,10 +1765,10 @@ namespace PDPW.Infrastructure.Data.Migrations
                             Ativo = true,
                             CapacidadeInstalada = 8370.00m,
                             Codigo = "UHE-TUCURUI",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(1984, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataOperacao = new DateTime(1984, 11, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 2,
-                            Localizacao = "Tucuruí, PA - Rio Tocantins",
+                            Localizacao = "Tucuruí, PA",
                             Nome = "Usina Hidrelétrica de Tucuruí",
                             TipoUsinaId = 1
                         },
@@ -1460,66 +1776,66 @@ namespace PDPW.Infrastructure.Data.Migrations
                         {
                             Id = 4,
                             Ativo = true,
-                            CapacidadeInstalada = 1710.00m,
-                            Codigo = "UHE-SAO-SIMAO",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DataOperacao = new DateTime(1978, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EmpresaId = 3,
-                            Localizacao = "São Simão, GO - Rio Paranaíba",
-                            Nome = "Usina Hidrelétrica de São Simão",
+                            CapacidadeInstalada = 3568.00m,
+                            Codigo = "UHE-SANTO-ANTONIO",
+                            DataCriacao = new DateTime(2012, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataOperacao = new DateTime(2012, 3, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmpresaId = 2,
+                            Localizacao = "Porto Velho, RO",
+                            Nome = "Usina Hidrelétrica Santo Antônio",
                             TipoUsinaId = 1
                         },
                         new
                         {
                             Id = 5,
                             Ativo = true,
-                            CapacidadeInstalada = 1050.40m,
-                            Codigo = "UHE-SOBRADINHO",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DataOperacao = new DateTime(1979, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EmpresaId = 4,
-                            Localizacao = "Sobradinho, BA - Rio São Francisco",
-                            Nome = "Usina Hidrelétrica de Sobradinho",
+                            CapacidadeInstalada = 3750.00m,
+                            Codigo = "UHE-JIRAU",
+                            DataCriacao = new DateTime(2013, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataOperacao = new DateTime(2013, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmpresaId = 2,
+                            Localizacao = "Porto Velho, RO",
+                            Nome = "Usina Hidrelétrica Jirau",
                             TipoUsinaId = 1
                         },
                         new
                         {
                             Id = 6,
                             Ativo = true,
-                            CapacidadeInstalada = 2082.00m,
-                            Codigo = "UHE-ITUMBIARA",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DataOperacao = new DateTime(1980, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CapacidadeInstalada = 3444.00m,
+                            Codigo = "UHE-ILHA-SOLTEIRA",
+                            DataCriacao = new DateTime(1973, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataOperacao = new DateTime(1973, 6, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 3,
-                            Localizacao = "Itumbiara, GO - Rio Paranaíba",
-                            Nome = "Usina Hidrelétrica de Itumbiara",
+                            Localizacao = "Ilha Solteira, SP",
+                            Nome = "Usina Hidrelétrica Ilha Solteira",
                             TipoUsinaId = 1
                         },
                         new
                         {
                             Id = 7,
                             Ativo = true,
-                            CapacidadeInstalada = 338.00m,
-                            Codigo = "UTE-TERMO-MARANHAO",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DataOperacao = new DateTime(2013, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EmpresaId = 2,
-                            Localizacao = "Miranda do Norte, MA",
-                            Nome = "Usina Termelétrica do Maranhão",
-                            TipoUsinaId = 2
+                            CapacidadeInstalada = 3162.00m,
+                            Codigo = "UHE-XINGO",
+                            DataCriacao = new DateTime(1994, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataOperacao = new DateTime(1994, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmpresaId = 4,
+                            Localizacao = "Canindé de São Francisco, SE",
+                            Nome = "Usina Hidrelétrica Xingó",
+                            TipoUsinaId = 1
                         },
                         new
                         {
                             Id = 8,
                             Ativo = true,
-                            CapacidadeInstalada = 720.00m,
-                            Codigo = "UTE-TERMO-PECEM",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DataOperacao = new DateTime(2012, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CapacidadeInstalada = 2462.00m,
+                            Codigo = "UHE-PAULO-AFONSO-IV",
+                            DataCriacao = new DateTime(1979, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataOperacao = new DateTime(1979, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 4,
-                            Localizacao = "São Gonçalo do Amarante, CE",
-                            Nome = "Usina Termelétrica de Pecém",
-                            TipoUsinaId = 2
+                            Localizacao = "Paulo Afonso, BA",
+                            Nome = "Usina Hidrelétrica Paulo Afonso IV",
+                            TipoUsinaId = 1
                         },
                         new
                         {
@@ -1527,7 +1843,7 @@ namespace PDPW.Infrastructure.Data.Migrations
                             Ativo = true,
                             CapacidadeInstalada = 640.00m,
                             Codigo = "UTN-ANGRA-I",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(1985, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataOperacao = new DateTime(1985, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 7,
                             Localizacao = "Angra dos Reis, RJ",
@@ -1540,7 +1856,7 @@ namespace PDPW.Infrastructure.Data.Migrations
                             Ativo = true,
                             CapacidadeInstalada = 1350.00m,
                             Codigo = "UTN-ANGRA-II",
-                            DataCriacao = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DataCriacao = new DateTime(2001, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataOperacao = new DateTime(2001, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmpresaId = 7,
                             Localizacao = "Angra dos Reis, RJ",

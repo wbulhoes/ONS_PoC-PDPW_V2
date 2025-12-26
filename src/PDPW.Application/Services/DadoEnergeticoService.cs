@@ -1,4 +1,4 @@
-using PDPW.Application.DTOs;
+﻿using PDPW.Application.DTOs;
 using PDPW.Application.Interfaces;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
@@ -31,6 +31,19 @@ public class DadoEnergeticoService : IDadoEnergeticoService
 
     public async Task<DadoEnergeticoDto> CriarAsync(CriarDadoEnergeticoDto dto)
     {
+        // Validações adicionais
+        if (string.IsNullOrWhiteSpace(dto.CodigoUsina))
+            throw new ArgumentException("Código da usina é obrigatório");
+
+        if (string.IsNullOrWhiteSpace(dto.Status))
+            throw new ArgumentException("Status é obrigatório");
+
+        if (dto.ProducaoMWh < 0)
+            throw new ArgumentException("Produção não pode ser negativa");
+
+        if (dto.CapacidadeDisponivel < 0)
+            throw new ArgumentException("Capacidade disponível não pode ser negativa");
+
         var dado = new DadoEnergetico
         {
             DataReferencia = dto.DataReferencia,
@@ -39,7 +52,8 @@ public class DadoEnergeticoService : IDadoEnergeticoService
             CapacidadeDisponivel = dto.CapacidadeDisponivel,
             Status = dto.Status,
             Observacoes = dto.Observacoes,
-            DataCriacao = DateTime.UtcNow
+            DataCriacao = DateTime.UtcNow,
+            Ativo = true
         };
 
         var dadoCriado = await _repository.AdicionarAsync(dado);
@@ -48,6 +62,19 @@ public class DadoEnergeticoService : IDadoEnergeticoService
 
     public async Task AtualizarAsync(int id, AtualizarDadoEnergeticoDto dto)
     {
+        // Validações adicionais
+        if (string.IsNullOrWhiteSpace(dto.CodigoUsina))
+            throw new ArgumentException("Código da usina é obrigatório");
+
+        if (string.IsNullOrWhiteSpace(dto.Status))
+            throw new ArgumentException("Status é obrigatório");
+
+        if (dto.ProducaoMWh < 0)
+            throw new ArgumentException("Produção não pode ser negativa");
+
+        if (dto.CapacidadeDisponivel < 0)
+            throw new ArgumentException("Capacidade disponível não pode ser negativa");
+
         var dado = await _repository.ObterPorIdAsync(id);
         if (dado == null)
             throw new KeyNotFoundException($"Dado energético com ID {id} não encontrado.");

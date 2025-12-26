@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+ï»¿using Microsoft.EntityFrameworkCore;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
 using PDPW.Infrastructure.Data;
@@ -6,7 +6,7 @@ using PDPW.Infrastructure.Data;
 namespace PDPW.Infrastructure.Repositories;
 
 /// <summary>
-/// Repositório de Semana PMO
+/// RepositÃ³rio de Semana PMO
 /// </summary>
 public class SemanaPMORepository : ISemanaPMORepository
 {
@@ -18,7 +18,7 @@ public class SemanaPMORepository : ISemanaPMORepository
     }
 
     /// <summary>
-    /// Obtém todas as semanas de um ano específico
+    /// ObtÃ©m todas as semanas de um ano especÃ­fico
     /// </summary>
     public async Task<IEnumerable<SemanaPMO>> ObterPorAnoAsync(int ano)
     {
@@ -30,7 +30,7 @@ public class SemanaPMORepository : ISemanaPMORepository
     }
 
     /// <summary>
-    /// Obtém a semana PMO atual (baseada na data de hoje)
+    /// ObtÃ©m a semana PMO atual (baseada na data de hoje)
     /// </summary>
     public async Task<SemanaPMO?> ObterSemanaAtualAsync()
     {
@@ -42,7 +42,7 @@ public class SemanaPMORepository : ISemanaPMORepository
     }
 
     /// <summary>
-    /// Obtém semana por número e ano
+    /// ObtÃ©m semana por nÃºmero e ano
     /// </summary>
     public async Task<SemanaPMO?> ObterPorNumeroEAnoAsync(int numero, int ano)
     {
@@ -53,7 +53,7 @@ public class SemanaPMORepository : ISemanaPMORepository
     }
 
     /// <summary>
-    /// Verifica se já existe uma semana com o mesmo número e ano
+    /// Verifica se jÃ¡ existe uma semana com o mesmo nÃºmero e ano
     /// </summary>
     public async Task<bool> ExisteNumeroAnoAsync(int numero, int ano, int? excluirId = null)
     {
@@ -69,19 +69,19 @@ public class SemanaPMORepository : ISemanaPMORepository
     }
 
     /// <summary>
-    /// Obtém semanas em um período específico
+    /// ObtÃ©m semanas em um perÃ­odo especÃ­fico
     /// </summary>
     public async Task<IEnumerable<SemanaPMO>> ObterPorPeriodoAsync(DateTime dataInicio, DateTime dataFim)
     {
         return await _context.SemanasPMO
-            .Where(s => s.DataInicio >= dataInicio && s.DataFim <= dataFim && s.Ativo)
+            .Where(s => s.DataInicio <= dataFim && s.DataFim >= dataInicio && s.Ativo)
             .Include(s => s.ArquivosDadger)
             .OrderBy(s => s.DataInicio)
             .ToListAsync();
     }
 
     /// <summary>
-    /// Obtém as próximas N semanas a partir de hoje
+    /// ObtÃ©m as prÃ³ximas N semanas a partir de hoje
     /// </summary>
     public async Task<IEnumerable<SemanaPMO>> ObterProximasSemanasAsync(int quantidade)
     {

@@ -29,6 +29,10 @@ builder.Services.AddSwaggerConfiguration();
 builder.Services.AddScoped<IDadoEnergeticoRepository, DadoEnergeticoRepository>();
 builder.Services.AddScoped<IDadoEnergeticoService, DadoEnergeticoService>();
 
+// Usuarios - NOVO
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
 // Adicionar novos serviços conforme APIs forem criadas
 builder.Services.AddApplicationServices();
 
@@ -41,7 +45,7 @@ var app = builder.Build();
 // Middleware de erro customizado (primeira coisa no pipeline)
 app.UseErrorHandling();
 
-// Testar conexão com banco de dados e popular dados realistas
+// Testar conexão com banco de dados e aplicar migrations automaticamente
 try
 {
     using var scope = app.Services.CreateScope();
@@ -54,44 +58,87 @@ try
     {
         logger.LogInformation("🗄️ Banco de dados InMemory inicializado (dados temporários)");
         await dbContext.Database.EnsureCreatedAsync();
-        
-        // Popular com dados realistas
-        logger.LogInformation("📊 Populando banco com dados realistas do setor elétrico brasileiro...");
-        await RealisticDataSeeder.SeedAsync(dbContext);
     }
     else
     {
-        logger.LogInformation("Testando conexão com o banco de dados SQL Server...");
+        logger.LogInformation("🔧 Testando conexão com o banco de dados SQL Server...");
         
-        if (await dbContext.Database.CanConnectAsync())
+        // Tenta conectar ao banco
+        var maxRetries = 10;
+        var retryCount = 0;
+        var connected = false;
+        
+        while (retryCount < maxRetries && !connected)
         {
-            logger.LogInformation("✓ Conexão com banco de dados estabelecida com sucesso!");
-            
-            var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
-            if (pendingMigrations.Any())
+            try
             {
-                logger.LogWarning("⚠ Há {Count} migrações pendentes no banco de dados", pendingMigrations.Count());
-                logger.LogInformation("Para aplicar as migrações, execute: dotnet ef database update");
+                connected = await dbContext.Database.CanConnectAsync();
+                
+                if (connected)
+                {
+                    logger.LogInformation("✅ Conexão com banco de dados estabelecida com sucesso!");
+                    
+                    // APLICAR MIGRATIONS AUTOMATICAMENTE
+                    logger.LogInformation("🚀 Verificando migrations pendentes...");
+                    var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+                    
+                    if (pendingMigrations.Any())
+                    {
+                        logger.LogWarning("📦 Encontradas {Count} migrations pendentes. Aplicando...", pendingMigrations.Count());
+                        
+                        foreach (var migration in pendingMigrations)
+                        {
+                            logger.LogInformation("   - {Migration}", migration);
+                        }
+                        
+                        await dbContext.Database.MigrateAsync();
+                        logger.LogInformation("✅ Migrations aplicadas com sucesso!");
+                    }
+                    else
+                    {
+                        logger.LogInformation("✅ Banco de dados já está atualizado (sem migrations pendentes)");
+                    }
+                    
+                    // Verificar se há dados (contar registros principais)
+                    var empresasCount = await dbContext.Empresas.CountAsync();
+                    var usinasCount = await dbContext.Usinas.CountAsync();
+                    var semanasPMOCount = await dbContext.SemanasPMO.CountAsync();
+                    
+                    logger.LogInformation("📊 Registros no banco:");
+                    logger.LogInformation("   - Empresas: {Count}", empresasCount);
+                    logger.LogInformation("   - Usinas: {Count}", usinasCount);
+                    logger.LogInformation("   - Semanas PMO: {Count}", semanasPMOCount);
+                    
+                    if (empresasCount == 0 || usinasCount == 0 || semanasPMOCount == 0)
+                    {
+                        logger.LogWarning("⚠️  Banco parece estar vazio! Os dados de seed devem ter sido inseridos pela migration.");
+                        logger.LogInformation("💡 Se não houver dados, verifique se a migration 'SeedUnicoConsolidado' foi aplicada corretamente.");
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Popular com dados realistas se o banco estiver vazio
-                // FORÇA SEED PARA POPULAR DADOS COMPLETOS
-                logger.LogInformation("📊 Forçando seed de dados realistas do setor elétrico brasileiro...");
-                await RealisticDataSeeder.SeedAsync(dbContext);
+                retryCount++;
+                if (retryCount < maxRetries)
+                {
+                    logger.LogWarning("⚠️  Tentativa {Retry}/{MaxRetries} falhou. Aguardando 3 segundos antes de tentar novamente...", retryCount, maxRetries);
+                    logger.LogWarning("   Erro: {Message}", ex.Message);
+                    await Task.Delay(3000);
+                }
+                else
+                {
+                    logger.LogError(ex, "❌ Não foi possível conectar ao banco de dados após {MaxRetries} tentativas", maxRetries);
+                    logger.LogInformation("💡 Dica: Configure UseInMemoryDatabase=true no appsettings para usar banco em memória");
+                }
             }
-        }
-        else
-        {
-            logger.LogWarning("⚠ Não foi possível conectar ao banco de dados SQL Server");
-            logger.LogInformation("💡 Dica: Configure UseInMemoryDatabase=true no appsettings para usar banco em memória");
         }
     }
 }
 catch (Exception ex)
 {
     var logger = app.Services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "❌ Erro ao testar conexão com banco de dados: {Message}", ex.Message);
+    logger.LogError(ex, "❌ Erro crítico ao inicializar banco de dados: {Message}", ex.Message);
+    // Não lançar exceção para permitir que a API inicie mesmo sem banco
 }
 
 // Configuração do pipeline HTTP
@@ -125,37 +172,6 @@ app.MapGet("/", () => Results.Ok(new
     environment = app.Environment.EnvironmentName,
     timestamp = DateTime.UtcNow
 }));
-
-// Endpoint temporário para popular dados (remover em produção)
-app.MapPost("/seed-data", async (PdpwDbContext dbContext, ILogger<Program> logger) =>
-{
-    try
-    {
-        logger.LogInformation("🌱 Iniciando seed de dados via endpoint...");
-        await RealisticDataSeeder.SeedAsync(dbContext);
-        logger.LogInformation("✅ Seed concluído com sucesso!");
-        
-        var stats = new
-        {
-            empresas = await dbContext.Empresas.CountAsync(),
-            usinas = await dbContext.Usinas.CountAsync(),
-            unidadesGeradoras = await dbContext.UnidadesGeradoras.CountAsync(),
-            semanasPMO = await dbContext.SemanasPMO.CountAsync(),
-            equipesPDP = await dbContext.EquipesPDP.CountAsync(),
-            balancos = await dbContext.Balancos.CountAsync(),
-            intercambios = await dbContext.Intercambios.CountAsync(),
-            motivosRestricao = await dbContext.MotivosRestricao.CountAsync(),
-            paradasUG = await dbContext.ParadasUG.CountAsync()
-        };
-        
-        return Results.Ok(new { success = true, message = "Seed executado com sucesso", stats });
-    }
-    catch (Exception ex)
-    {
-        logger.LogError(ex, "Erro ao executar seed");
-        return Results.Problem(detail: ex.Message, title: "Erro ao popular dados");
-    }
-});
 
 app.MapControllers();
 
