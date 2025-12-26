@@ -1,56 +1,68 @@
+Ôªøusing AutoMapper;
 using PDPW.Application.DTOs.ArquivoDadger;
 using PDPW.Application.Interfaces;
+using PDPW.Domain.Common;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
 
 namespace PDPW.Application.Services;
 
 /// <summary>
-/// ServiÁo de Arquivo DADGER
+/// Servi√ßo de Arquivo DADGER
 /// </summary>
 public class ArquivoDadgerService : IArquivoDadgerService
 {
     private readonly IArquivoDadgerRepository _repository;
     private readonly ISemanaPMORepository _semanaPMORepository;
+    private readonly IMapper _mapper;
 
     public ArquivoDadgerService(
         IArquivoDadgerRepository repository,
-        ISemanaPMORepository semanaPMORepository)
+        ISemanaPMORepository semanaPMORepository,
+        IMapper _mapper)
     {
         _repository = repository;
         _semanaPMORepository = semanaPMORepository;
+        this._mapper = _mapper;
     }
 
-    public async Task<IEnumerable<ArquivoDadgerDto>> GetAllAsync()
+    public async Task<Result<IEnumerable<ArquivoDadgerDto>>> GetAllAsync()
     {
         var arquivos = await _repository.GetAllAsync();
-        return arquivos.Select(MapToDto);
+        var dtos = _mapper.Map<IEnumerable<ArquivoDadgerDto>>(arquivos);
+        return Result<IEnumerable<ArquivoDadgerDto>>.Success(dtos);
     }
 
-    public async Task<ArquivoDadgerDto?> GetByIdAsync(int id)
+    public async Task<Result<ArquivoDadgerDto>> GetByIdAsync(int id)
     {
         var arquivo = await _repository.GetByIdAsync(id);
-        return arquivo != null ? MapToDto(arquivo) : null;
+        if (arquivo == null)
+        {
+            return Result<ArquivoDadgerDto>.NotFound("Arquivo DADGER", id);
+        }
+        
+        var dto = _mapper.Map<ArquivoDadgerDto>(arquivo);
+        return Result<ArquivoDadgerDto>.Success(dto);
     }
 
-    public async Task<ArquivoDadgerDto> CreateAsync(CreateArquivoDadgerDto dto)
+    public async Task<Result<ArquivoDadgerDto>> CreateAsync(CreateArquivoDadgerDto dto)
     {
-        // ValidaÁıes conforme ArquivoDadgerValorDAO.vb
+        // Valida√ß√µes conforme ArquivoDadgerValorDAO.vb
         if (string.IsNullOrWhiteSpace(dto.NomeArquivo))
         {
-            throw new ArgumentException("Nome do arquivo n„o informado");
+            return Result<ArquivoDadgerDto>.Failure("Nome do arquivo n√£o informado");
         }
 
         if (dto.SemanaPMOId <= 0)
         {
-            throw new ArgumentException("Semana PMO n„o informada");
+            return Result<ArquivoDadgerDto>.Failure("Semana PMO n√£o informada");
         }
 
         // Validar se semana PMO existe
         var semanaPMO = await _semanaPMORepository.ObterPorIdAsync(dto.SemanaPMOId);
         if (semanaPMO == null)
         {
-            throw new ArgumentException($"Semana PMO com ID {dto.SemanaPMOId} n„o encontrada");
+            return Result<ArquivoDadgerDto>.Failure($"Semana PMO com ID {dto.SemanaPMOId} n√£o encontrada");
         }
 
         var arquivo = new ArquivoDadger
@@ -66,31 +78,31 @@ public class ArquivoDadgerService : IArquivoDadgerService
         };
 
         var created = await _repository.AddAsync(arquivo);
-        return MapToDto(created);
+        return Result<ArquivoDadgerDto>.Success(_mapper.Map<ArquivoDadgerDto>(created));
     }
 
-    public async Task<ArquivoDadgerDto> UpdateAsync(int id, UpdateArquivoDadgerDto dto)
+    public async Task<Result<ArquivoDadgerDto>> UpdateAsync(int id, UpdateArquivoDadgerDto dto)
     {
-        // ValidaÁıes conforme ArquivoDadgerValorDAO.vb
+        // Valida√ß√µes conforme ArquivoDadgerValorDAO.vb
         if (string.IsNullOrWhiteSpace(dto.NomeArquivo))
         {
-            throw new ArgumentException("Nome do arquivo n„o informado");
+            return Result<ArquivoDadgerDto>.Failure("Nome do arquivo n√£o informado");
         }
 
         if (dto.SemanaPMOId <= 0)
         {
-            throw new ArgumentException("Semana PMO n„o informada");
+            return Result<ArquivoDadgerDto>.Failure("Semana PMO n√£o informada");
         }
 
         var arquivo = await _repository.GetByIdAsync(id);
         if (arquivo == null)
-            throw new KeyNotFoundException($"Arquivo DADGER com ID {id} n„o encontrado");
+            return Result<ArquivoDadgerDto>.NotFound("Arquivo DADGER", id);
 
         // Validar se semana PMO existe
         var semanaPMO = await _semanaPMORepository.ObterPorIdAsync(dto.SemanaPMOId);
         if (semanaPMO == null)
         {
-            throw new ArgumentException($"Semana PMO com ID {dto.SemanaPMOId} n„o encontrada");
+            return Result<ArquivoDadgerDto>.Failure($"Semana PMO com ID {dto.SemanaPMOId} n√£o encontrada");
         }
 
         arquivo.NomeArquivo = dto.NomeArquivo;
@@ -103,80 +115,145 @@ public class ArquivoDadgerService : IArquivoDadgerService
         arquivo.DataAtualizacao = DateTime.UtcNow;
 
         await _repository.UpdateAsync(arquivo);
-        return MapToDto(arquivo);
+        return Result<ArquivoDadgerDto>.Success(_mapper.Map<ArquivoDadgerDto>(arquivo));
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<Result> DeleteAsync(int id)
     {
         var arquivo = await _repository.GetByIdAsync(id);
         if (arquivo == null)
-            return false;
+            return Result.Failure($"Arquivo DADGER com ID {id} n√£o encontrado");
 
         await _repository.DeleteAsync(id);
-        return true;
+        return Result.Success();
     }
 
-    public async Task<IEnumerable<ArquivoDadgerDto>> GetBySemanaPMOAsync(int semanaPMOId)
+    public async Task<Result<IEnumerable<ArquivoDadgerDto>>> GetBySemanaPMOAsync(int semanaPMOId)
     {
-        // ValidaÁ„o conforme ArquivoDadgerValorDAO.vb
         if (semanaPMOId <= 0)
         {
-            throw new ArgumentException("Semana PMO n„o informada");
+            return Result<IEnumerable<ArquivoDadgerDto>>.Failure("Semana PMO n√£o informada");
         }
 
         var arquivos = await _repository.GetBySemanaPMOAsync(semanaPMOId);
-        return arquivos.Select(MapToDto);
+        var dtos = _mapper.Map<IEnumerable<ArquivoDadgerDto>>(arquivos);
+        return Result<IEnumerable<ArquivoDadgerDto>>.Success(dtos);
     }
 
-    public async Task<IEnumerable<ArquivoDadgerDto>> GetProcessadosAsync(bool processado)
+    public async Task<Result<IEnumerable<ArquivoDadgerDto>>> GetProcessadosAsync(bool processado)
     {
         var arquivos = await _repository.GetProcessadosAsync(processado);
-        return arquivos.Select(MapToDto);
+        var dtos = _mapper.Map<IEnumerable<ArquivoDadgerDto>>(arquivos);
+        return Result<IEnumerable<ArquivoDadgerDto>>.Success(dtos);
     }
 
-    public async Task<IEnumerable<ArquivoDadgerDto>> GetByPeriodoAsync(DateTime dataInicio, DateTime dataFim)
+    public async Task<Result<IEnumerable<ArquivoDadgerDto>>> GetByPeriodoAsync(DateTime dataInicio, DateTime dataFim)
     {
+        if (dataInicio > dataFim)
+        {
+            return Result<IEnumerable<ArquivoDadgerDto>>.Failure("Data inicial n√£o pode ser maior que data final");
+        }
+
         var arquivos = await _repository.GetByPeriodoAsync(dataInicio, dataFim);
-        return arquivos.Select(MapToDto);
+        var dtos = _mapper.Map<IEnumerable<ArquivoDadgerDto>>(arquivos);
+        return Result<IEnumerable<ArquivoDadgerDto>>.Success(dtos);
     }
 
-    public async Task<ArquivoDadgerDto?> GetByNomeArquivoAsync(string nomeArquivo)
+    public async Task<Result<ArquivoDadgerDto>> GetByNomeArquivoAsync(string nomeArquivo)
     {
         var arquivo = await _repository.GetByNomeArquivoAsync(nomeArquivo);
-        return arquivo != null ? MapToDto(arquivo) : null;
+        if (arquivo == null)
+        {
+            return Result<ArquivoDadgerDto>.Failure($"Arquivo '{nomeArquivo}' n√£o encontrado");
+        }
+        
+        var dto = _mapper.Map<ArquivoDadgerDto>(arquivo);
+        return Result<ArquivoDadgerDto>.Success(dto);
     }
 
-    public async Task<ArquivoDadgerDto> MarcarComoProcessadoAsync(int id)
+    public async Task<Result<ArquivoDadgerDto>> MarcarComoProcessadoAsync(int id)
     {
         var arquivo = await _repository.GetByIdAsync(id);
         if (arquivo == null)
-            throw new KeyNotFoundException($"Arquivo DADGER com ID {id} n„o encontrado");
+        {
+            return Result<ArquivoDadgerDto>.NotFound("Arquivo DADGER", id);
+        }
 
         arquivo.Processado = true;
-        arquivo.DataProcessamento = DateTime.UtcNow;
-        arquivo.DataAtualizacao = DateTime.UtcNow;
+        arquivo.DataProcessamento = DateTime.Now;
+        arquivo.DataAtualizacao = DateTime.Now;
 
         await _repository.UpdateAsync(arquivo);
-        return MapToDto(arquivo);
+        
+        var dto = _mapper.Map<ArquivoDadgerDto>(arquivo);
+        return Result<ArquivoDadgerDto>.Success(dto);
     }
 
-    private static ArquivoDadgerDto MapToDto(ArquivoDadger arquivo)
+    public async Task<Result<IEnumerable<ArquivoDadgerDto>>> GetByStatusAsync(string status)
     {
-        return new ArquivoDadgerDto
+        var arquivos = await _repository.GetByStatusAsync(status);
+        var dtos = _mapper.Map<IEnumerable<ArquivoDadgerDto>>(arquivos);
+        return Result<IEnumerable<ArquivoDadgerDto>>.Success(dtos);
+    }
+
+    public async Task<Result<IEnumerable<ArquivoDadgerDto>>> GetPendentesAprovacaoAsync()
+    {
+        var arquivos = await _repository.GetPendentesAprovacaoAsync();
+        var dtos = _mapper.Map<IEnumerable<ArquivoDadgerDto>>(arquivos);
+        return Result<IEnumerable<ArquivoDadgerDto>>.Success(dtos);
+    }
+
+    public async Task<Result> FinalizarAsync(int id, FinalizarProgramacaoDto dto)
+    {
+        var arquivo = await _repository.GetByIdAsync(id);
+        if (arquivo == null)
         {
-            Id = arquivo.Id,
-            NomeArquivo = arquivo.NomeArquivo,
-            CaminhoArquivo = arquivo.CaminhoArquivo,
-            DataImportacao = arquivo.DataImportacao,
-            SemanaPMOId = arquivo.SemanaPMOId,
-            SemanaPMO = arquivo.SemanaPMO != null 
-                ? $"Semana {arquivo.SemanaPMO.Numero}/{arquivo.SemanaPMO.Ano}" 
-                : string.Empty,
-            Observacoes = arquivo.Observacoes,
-            Processado = arquivo.Processado,
-            DataProcessamento = arquivo.DataProcessamento,
-            Ativo = arquivo.Ativo,
-            DataCriacao = arquivo.DataCriacao
-        };
+            return Result.Failure($"Arquivo DADGER com ID {id} n√£o encontrado");
+        }
+
+        // Validar status atual
+        if (arquivo.Status != "Aberto")
+        {
+            return Result.Failure($"Apenas programa√ß√µes com status 'Aberto' podem ser finalizadas. Status atual: {arquivo.Status}");
+        }
+
+        await _repository.FinalizarAsync(id, dto.Usuario, dto.Observacao);
+        return Result.Success();
+    }
+
+    public async Task<Result> AprovarAsync(int id, AprovarProgramacaoDto dto)
+    {
+        var arquivo = await _repository.GetByIdAsync(id);
+        if (arquivo == null)
+        {
+            return Result.Failure($"Arquivo DADGER com ID {id} n√£o encontrado");
+        }
+
+        // Validar status atual
+        if (arquivo.Status != "EmAnalise")
+        {
+            return Result.Failure($"Apenas programa√ß√µes com status 'EmAnalise' podem ser aprovadas. Status atual: {arquivo.Status}");
+        }
+
+        await _repository.AprovarAsync(id, dto.Usuario, dto.Observacao);
+        return Result.Success();
+    }
+
+    public async Task<Result> ReabrirAsync(int id, ReabrirProgramacaoDto dto)
+    {
+        var arquivo = await _repository.GetByIdAsync(id);
+        if (arquivo == null)
+        {
+            return Result.Failure($"Arquivo DADGER com ID {id} n√£o encontrado");
+        }
+
+        // Pode reabrir qualquer status, mas n√£o pode reabrir o que j√° est√° aberto
+        if (arquivo.Status == "Aberto")
+        {
+            return Result.Failure("Programa√ß√£o j√° est√° aberta");
+        }
+
+        await _repository.ReabrirAsync(id, dto.Usuario, dto.Observacao);
+        return Result.Success();
     }
 }

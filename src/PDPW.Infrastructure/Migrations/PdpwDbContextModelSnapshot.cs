@@ -84,10 +84,16 @@ namespace PDPW.Infrastructure.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
+                    b.Property<DateTime?>("DataAprovacao")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("DataAtualizacao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataFinalizacao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataImportacao")
@@ -101,6 +107,12 @@ namespace PDPW.Infrastructure.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<string>("ObservacaoAprovacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ObservacaoFinalizacao")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Observacoes")
                         .HasColumnType("nvarchar(max)");
 
@@ -109,6 +121,16 @@ namespace PDPW.Infrastructure.Migrations
 
                     b.Property<int>("SemanaPMOId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuarioAprovacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsuarioFinalizacao")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -128,7 +150,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S49_REV0.DAT",
                             Observacoes = "Revisão inicial (domingo)",
                             Processado = true,
-                            SemanaPMOId = 1
+                            SemanaPMOId = 1,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -141,7 +164,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S49_REV1.DAT",
                             Observacoes = "Revisão 1 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 1
+                            SemanaPMOId = 1,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -154,7 +178,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S49_REV2.DAT",
                             Observacoes = "Revisão 2 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 1
+                            SemanaPMOId = 1,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -167,7 +192,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S49_REV3.DAT",
                             Observacoes = "Revisão 3 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 1
+                            SemanaPMOId = 1,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -180,7 +206,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S49_REV4.DAT",
                             Observacoes = "Revisão 4 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 1
+                            SemanaPMOId = 1,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -193,7 +220,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S50_REV0.DAT",
                             Observacoes = "Revisão inicial (domingo)",
                             Processado = true,
-                            SemanaPMOId = 2
+                            SemanaPMOId = 2,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -206,7 +234,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S50_REV1.DAT",
                             Observacoes = "Revisão 1 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 2
+                            SemanaPMOId = 2,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -219,7 +248,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S50_REV2.DAT",
                             Observacoes = "Revisão 2 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 2
+                            SemanaPMOId = 2,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -232,7 +262,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S50_REV3.DAT",
                             Observacoes = "Revisão 3 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 2
+                            SemanaPMOId = 2,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -245,7 +276,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S50_REV4.DAT",
                             Observacoes = "Revisão 4 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 2
+                            SemanaPMOId = 2,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -258,7 +290,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S51_REV0.DAT",
                             Observacoes = "Revisão inicial (domingo)",
                             Processado = true,
-                            SemanaPMOId = 3
+                            SemanaPMOId = 3,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -271,7 +304,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S51_REV1.DAT",
                             Observacoes = "Revisão 1 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 3
+                            SemanaPMOId = 3,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -284,7 +318,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S51_REV2.DAT",
                             Observacoes = "Revisão 2 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 3
+                            SemanaPMOId = 3,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -297,7 +332,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S51_REV3.DAT",
                             Observacoes = "Revisão 3 - atualização diária",
                             Processado = true,
-                            SemanaPMOId = 3
+                            SemanaPMOId = 3,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -309,7 +345,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S51_REV4.DAT",
                             Observacoes = "Revisão 4 - atualização diária",
                             Processado = false,
-                            SemanaPMOId = 3
+                            SemanaPMOId = 3,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -321,7 +358,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S52_REV0.DAT",
                             Observacoes = "Revisão inicial (domingo)",
                             Processado = false,
-                            SemanaPMOId = 4
+                            SemanaPMOId = 4,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -333,7 +371,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S52_REV1.DAT",
                             Observacoes = "Revisão 1 - atualização diária",
                             Processado = false,
-                            SemanaPMOId = 4
+                            SemanaPMOId = 4,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -345,7 +384,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S52_REV2.DAT",
                             Observacoes = "Revisão 2 - atualização diária",
                             Processado = false,
-                            SemanaPMOId = 4
+                            SemanaPMOId = 4,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -357,7 +397,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S52_REV3.DAT",
                             Observacoes = "Revisão 3 - atualização diária",
                             Processado = false,
-                            SemanaPMOId = 4
+                            SemanaPMOId = 4,
+                            Status = "Aberto"
                         },
                         new
                         {
@@ -369,7 +410,8 @@ namespace PDPW.Infrastructure.Migrations
                             NomeArquivo = "DADGER_2024_S52_REV4.DAT",
                             Observacoes = "Revisão 4 - atualização diária",
                             Processado = false,
-                            SemanaPMOId = 4
+                            SemanaPMOId = 4,
+                            Status = "Aberto"
                         });
                 });
 
@@ -3526,6 +3568,18 @@ namespace PDPW.Infrastructure.Migrations
                     b.Property<DateTime>("DataReferencia")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal?>("EnergiaTurbinavelNaoUtilizada")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("EnergiaVertida")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("MotivoVertimento")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("Observacoes")
                         .HasColumnType("nvarchar(max)");
 
@@ -6372,6 +6426,153 @@ namespace PDPW.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PDPW.Domain.Entities.JanelaEnvioAgente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataHoraAutorizacaoExcecao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraFim")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataReferencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Observacoes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("PermiteEnvioForaJanela")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("SemanaPMOId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TipoDado")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UsuarioAutorizacaoExcecao")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DataReferencia");
+
+                    b.HasIndex("SemanaPMOId");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("TipoDado");
+
+                    b.HasIndex("TipoDado", "DataReferencia");
+
+                    b.ToTable("JanelasEnvioAgente", (string)null);
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.MetricaDashboard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Categoria")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraReferencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int?>("EntidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Meta")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("NomeMetrica")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<decimal?>("PercentualMeta")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Tendencia")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TipoEntidade")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Unidade")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Categoria");
+
+                    b.HasIndex("DataHoraReferencia");
+
+                    b.HasIndex("NomeMetrica");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("Categoria", "DataHoraReferencia");
+
+                    b.ToTable("MetricasDashboard", (string)null);
+                });
+
             modelBuilder.Entity("PDPW.Domain.Entities.ModalidadeOpTermica", b =>
                 {
                     b.Property<int>("Id")
@@ -6495,6 +6696,102 @@ namespace PDPW.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PDPW.Domain.Entities.Notificacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Categoria")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraEnvio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataHoraLeitura")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataVencimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DestinatarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EntidadeRelacionadaId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lida")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LinkAcao")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Mensagem")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("Prioridade")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TextoAcao")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TipoDestinatario")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TipoEntidadeRelacionada")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("TipoNotificacao")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Categoria");
+
+                    b.HasIndex("DataHoraEnvio");
+
+                    b.HasIndex("DestinatarioId");
+
+                    b.HasIndex("Lida");
+
+                    b.HasIndex("Prioridade");
+
+                    b.HasIndex("TipoDestinatario");
+
+                    b.HasIndex("DestinatarioId", "Lida");
+
+                    b.ToTable("Notificacoes", (string)null);
+                });
+
             modelBuilder.Entity("PDPW.Domain.Entities.Observacao", b =>
                 {
                     b.Property<int>("Id")
@@ -6533,6 +6830,157 @@ namespace PDPW.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Observacoes");
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.OfertaExportacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DataAnaliseONS")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataOferta")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataPDP")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("FlgAprovadoONS")
+                        .HasColumnType("bit");
+
+                    b.Property<TimeSpan>("HoraFinal")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("HoraInicial")
+                        .HasColumnType("time");
+
+                    b.Property<string>("ObservacaoONS")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Observacoes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal>("PrecoMWh")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("SemanaPMOId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsinaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuarioAnaliseONS")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("ValorMW")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DataPDP");
+
+                    b.HasIndex("FlgAprovadoONS");
+
+                    b.HasIndex("SemanaPMOId");
+
+                    b.HasIndex("UsinaId", "DataPDP");
+
+                    b.ToTable("OfertasExportacao", (string)null);
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.OfertaRespostaVoluntaria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DataAnaliseONS")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataOferta")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataPDP")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("FlgAprovadoONS")
+                        .HasColumnType("bit");
+
+                    b.Property<TimeSpan>("HoraFinal")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("HoraInicial")
+                        .HasColumnType("time");
+
+                    b.Property<string>("ObservacaoONS")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Observacoes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal>("PrecoMWh")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ReducaoDemandaMW")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("SemanaPMOId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TipoPrograma")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UsuarioAnaliseONS")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DataPDP");
+
+                    b.HasIndex("FlgAprovadoONS");
+
+                    b.HasIndex("SemanaPMOId");
+
+                    b.HasIndex("TipoPrograma");
+
+                    b.HasIndex("EmpresaId", "DataPDP");
+
+                    b.ToTable("OfertasRespostaVoluntaria", (string)null);
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.ParadaUG", b =>
@@ -6939,6 +7387,111 @@ namespace PDPW.Infrastructure.Migrations
                             Programada = false,
                             UnidadeGeradoraId = 91
                         });
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.PrevisaoEolica", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraPrevista")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraReferencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("DirecaoVentoGraus")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("ErroAbsolutoMW")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("ErroPercentual")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<decimal>("GeracaoPrevistaMWmed")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("GeracaoRealMWmed")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("HorizontePrevisaoHoras")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("IncertezaPercentual")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<decimal?>("LimiteInferiorMW")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("LimiteSuperiorMW")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ModeloPrevisao")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Observacoes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal?>("PressaoAtmosfericaHPa")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<int?>("SemanaPMOId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("TemperaturaC")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<string>("TipoPrevisao")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal?>("UmidadeRelativa")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<int>("UsinaId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("VelocidadeVentoMS")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<string>("VersaoModelo")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DataHoraPrevista");
+
+                    b.HasIndex("DataHoraReferencia");
+
+                    b.HasIndex("ModeloPrevisao");
+
+                    b.HasIndex("SemanaPMOId");
+
+                    b.HasIndex("TipoPrevisao");
+
+                    b.HasIndex("UsinaId");
+
+                    b.HasIndex("UsinaId", "DataHoraPrevista");
+
+                    b.ToTable("PrevisoesEolicas", (string)null);
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.RampasUsinaTermica", b =>
@@ -8875,6 +9428,93 @@ namespace PDPW.Infrastructure.Migrations
                             DataInicio = new DateTime(2026, 12, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Numero = 52
                         });
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.SubmissaoAgente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraSubmissao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataReferencia")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("DentroJanela")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HashDados")
+                        .HasMaxLength(32)
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("IpOrigem")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("JanelaEnvioId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MotivoRejeicao")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Observacoes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("RegistroId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StatusSubmissao")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("TipoDado")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UsuarioEnvio")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DataHoraSubmissao");
+
+                    b.HasIndex("DataReferencia");
+
+                    b.HasIndex("EmpresaId");
+
+                    b.HasIndex("HashDados");
+
+                    b.HasIndex("JanelaEnvioId");
+
+                    b.HasIndex("StatusSubmissao");
+
+                    b.HasIndex("TipoDado");
+
+                    b.HasIndex("EmpresaId", "TipoDado", "DataReferencia");
+
+                    b.ToTable("SubmissoesAgente", (string)null);
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.TipoUsina", b =>
@@ -10929,6 +11569,52 @@ namespace PDPW.Infrastructure.Migrations
                     b.Navigation("Usina");
                 });
 
+            modelBuilder.Entity("PDPW.Domain.Entities.JanelaEnvioAgente", b =>
+                {
+                    b.HasOne("PDPW.Domain.Entities.SemanaPMO", "SemanaPMO")
+                        .WithMany()
+                        .HasForeignKey("SemanaPMOId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("SemanaPMO");
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.OfertaExportacao", b =>
+                {
+                    b.HasOne("PDPW.Domain.Entities.SemanaPMO", "SemanaPMO")
+                        .WithMany()
+                        .HasForeignKey("SemanaPMOId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("PDPW.Domain.Entities.Usina", "Usina")
+                        .WithMany()
+                        .HasForeignKey("UsinaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("SemanaPMO");
+
+                    b.Navigation("Usina");
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.OfertaRespostaVoluntaria", b =>
+                {
+                    b.HasOne("PDPW.Domain.Entities.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PDPW.Domain.Entities.SemanaPMO", "SemanaPMO")
+                        .WithMany()
+                        .HasForeignKey("SemanaPMOId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("SemanaPMO");
+                });
+
             modelBuilder.Entity("PDPW.Domain.Entities.ParadaUG", b =>
                 {
                     b.HasOne("PDPW.Domain.Entities.UnidadeGeradora", "UnidadeGeradora")
@@ -10938,6 +11624,24 @@ namespace PDPW.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("UnidadeGeradora");
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.PrevisaoEolica", b =>
+                {
+                    b.HasOne("PDPW.Domain.Entities.SemanaPMO", "SemanaPMO")
+                        .WithMany()
+                        .HasForeignKey("SemanaPMOId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("PDPW.Domain.Entities.Usina", "Usina")
+                        .WithMany()
+                        .HasForeignKey("UsinaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("SemanaPMO");
+
+                    b.Navigation("Usina");
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.RampasUsinaTermica", b =>
@@ -10987,6 +11691,24 @@ namespace PDPW.Infrastructure.Migrations
                     b.Navigation("MotivoRestricao");
 
                     b.Navigation("Usina");
+                });
+
+            modelBuilder.Entity("PDPW.Domain.Entities.SubmissaoAgente", b =>
+                {
+                    b.HasOne("PDPW.Domain.Entities.Empresa", "Empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpresaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PDPW.Domain.Entities.JanelaEnvioAgente", "JanelaEnvio")
+                        .WithMany()
+                        .HasForeignKey("JanelaEnvioId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Empresa");
+
+                    b.Navigation("JanelaEnvio");
                 });
 
             modelBuilder.Entity("PDPW.Domain.Entities.UnidadeGeradora", b =>

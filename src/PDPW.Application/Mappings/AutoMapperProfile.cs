@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using PDPW.Application.DTOs.Usina;
 using PDPW.Application.DTOs.TipoUsina;
 using PDPW.Application.DTOs.Empresa;
@@ -9,19 +9,22 @@ using PDPW.Application.DTOs.ParadaUG;
 using PDPW.Application.DTOs.MotivoRestricao;
 using PDPW.Application.DTOs.Balanco;
 using PDPW.Application.DTOs.Intercambio;
+using PDPW.Application.DTOs.OfertaExportacao;
+using PDPW.Application.DTOs.OfertaRespostaVoluntaria;
+using PDPW.Application.DTOs.PrevisaoEolica;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
 
 /// <summary>
 /// Profile base do AutoMapper
-/// Profiles espec�ficos devem herdar desta classe
+/// Profiles específicos devem herdar desta classe
 /// </summary>
 public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
-        // Configura��es globais de mapeamento
+        // Configurações globais de mapeamento
         AllowNullCollections = true;
 
         // === USINA MAPPINGS ===
@@ -45,7 +48,7 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.RampasTermicas, opt => opt.Ignore())
             .ForMember(dest => dest.Conversoras, opt => opt.Ignore());
 
-        // UpdateUsinaDto ? Usina (atualiza��o de propriedades existentes)
+        // UpdateUsinaDto ? Usina (atualização de propriedades existentes)
         CreateMap<UpdateUsinaDto, Usina>()
             .ForMember(dest => dest.Id, opt => opt.Ignore())
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
@@ -195,7 +198,7 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
             .ForMember(dest => dest.UnidadeGeradora, opt => opt.Ignore());
 
-        // === MOTIVO RESTRI��O MAPPINGS ===
+        // === MOTIVO RESTRIÇÃO MAPPINGS ===
         
         // MotivoRestricao ? MotivoRestricaoDto
         CreateMap<MotivoRestricao, MotivoRestricaoDto>()
@@ -221,7 +224,7 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.RestricoesUG, opt => opt.Ignore())
             .ForMember(dest => dest.RestricoesUS, opt => opt.Ignore());
 
-        // === BALAN�O MAPPINGS ===
+        // === BALANÇO MAPPINGS ===
         
         // Balanco ? BalancoDto
         CreateMap<Balanco, BalancoDto>()
@@ -241,7 +244,7 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore());
 
-        // === INTERC�MBIO MAPPINGS ===
+        // === INTERCÂMBIO MAPPINGS ===
         
         // Intercambio ? IntercambioDto
         CreateMap<Intercambio, IntercambioDto>();
@@ -258,5 +261,103 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.Ignore())
             .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
             .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore());
+
+        // === OFERTA EXPORTAÇÃO MAPPINGS ===
+        
+        // OfertaExportacao → OfertaExportacaoDto
+        CreateMap<OfertaExportacao, OfertaExportacaoDto>()
+            .ForMember(dest => dest.UsinaNome, opt => opt.MapFrom(src => src.Usina!.Nome))
+            .ForMember(dest => dest.EmpresaNome, opt => opt.MapFrom(src => src.Usina!.Empresa!.Nome))
+            .ForMember(dest => dest.SemanaPMO, opt => opt.MapFrom(src => 
+                src.SemanaPMO != null ? $"Semana {src.SemanaPMO.Numero}/{src.SemanaPMO.Ano}" : null));
+
+        // CreateOfertaExportacaoDto → OfertaExportacao
+        CreateMap<CreateOfertaExportacaoDto, OfertaExportacao>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.FlgAprovadoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // UpdateOfertaExportacaoDto → OfertaExportacao
+        CreateMap<UpdateOfertaExportacaoDto, OfertaExportacao>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.FlgAprovadoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // === OFERTA RESPOSTA VOLUNTÁRIA MAPPINGS ===
+        
+        // OfertaRespostaVoluntaria → OfertaRespostaVoluntariaDto
+        CreateMap<OfertaRespostaVoluntaria, OfertaRespostaVoluntariaDto>()
+            .ForMember(dest => dest.EmpresaNome, opt => opt.MapFrom(src => src.Empresa!.Nome))
+            .ForMember(dest => dest.SemanaPMO, opt => opt.MapFrom(src => 
+                src.SemanaPMO != null ? $"Semana {src.SemanaPMO.Numero}/{src.SemanaPMO.Ano}" : null));
+
+        // CreateOfertaRespostaVoluntariaDto → OfertaRespostaVoluntaria
+        CreateMap<CreateOfertaRespostaVoluntariaDto, OfertaRespostaVoluntaria>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.FlgAprovadoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.Empresa, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // UpdateOfertaRespostaVoluntariaDto → OfertaRespostaVoluntaria
+        CreateMap<UpdateOfertaRespostaVoluntariaDto, OfertaRespostaVoluntaria>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.FlgAprovadoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.Empresa, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // === PREVISÃO EÓLICA MAPPINGS ===
+        
+        // PrevisaoEolica → PrevisaoEolicaDto
+        CreateMap<PrevisaoEolica, PrevisaoEolicaDto>()
+            .ForMember(dest => dest.UsinaNome, opt => opt.MapFrom(src => src.Usina!.Nome))
+            .ForMember(dest => dest.SemanaPMO, opt => opt.MapFrom(src => 
+                src.SemanaPMO != null ? $"Semana {src.SemanaPMO.Numero}/{src.SemanaPMO.Ano}" : null));
+
+        // CreatePrevisaoEolicaDto → PrevisaoEolica
+        CreateMap<CreatePrevisaoEolicaDto, PrevisaoEolica>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.GeracaoRealMWmed, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroAbsolutoMW, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroPercentual, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // UpdatePrevisaoEolicaDto → PrevisaoEolica
+        CreateMap<UpdatePrevisaoEolicaDto, PrevisaoEolica>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.GeracaoRealMWmed, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroAbsolutoMW, opt => opt.Ignore())
+            .ForMember(dest => dest.ErroPercentual, opt => opt.Ignore())
+            .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
     }
 }

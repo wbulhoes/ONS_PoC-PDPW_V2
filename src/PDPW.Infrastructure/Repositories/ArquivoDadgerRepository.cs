@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
 using PDPW.Infrastructure.Data;
@@ -6,7 +6,7 @@ using PDPW.Infrastructure.Data;
 namespace PDPW.Infrastructure.Repositories;
 
 /// <summary>
-/// Reposit�rio de Arquivo DADGER
+/// Repositório de Arquivo DADGER
 /// </summary>
 public class ArquivoDadgerRepository : BaseRepository<ArquivoDadger>, IArquivoDadgerRepository
 {
@@ -63,5 +63,86 @@ public class ArquivoDadgerRepository : BaseRepository<ArquivoDadger>, IArquivoDa
         return await _context.ArquivosDadger
             .Include(a => a.SemanaPMO)
             .FirstOrDefaultAsync(a => a.NomeArquivo == nomeArquivo && a.Ativo);
+    }
+
+    /// <summary>
+    /// Obtém arquivos por status
+    /// </summary>
+    public async Task<IEnumerable<ArquivoDadger>> GetByStatusAsync(string status)
+    {
+        return await _context.ArquivosDadger
+            .Include(a => a.SemanaPMO)
+            .Where(a => a.Status == status && a.Ativo)
+            .OrderByDescending(a => a.DataImportacao)
+            .ToListAsync();
+    }
+
+    /// <summary>
+    /// Obtém arquivos pendentes de aprovação
+    /// </summary>
+    public async Task<IEnumerable<ArquivoDadger>> GetPendentesAprovacaoAsync()
+    {
+        return await _context.ArquivosDadger
+            .Include(a => a.SemanaPMO)
+            .Where(a => a.Status == "EmAnalise" && a.Ativo)
+            .OrderBy(a => a.DataFinalizacao)
+            .ToListAsync();
+    }
+
+    /// <summary>
+    /// Finaliza programação
+    /// </summary>
+    public async Task FinalizarAsync(int id, string usuario, string? observacao = null)
+    {
+        var arquivo = await _dbSet.FindAsync(id);
+        if (arquivo != null)
+        {
+            arquivo.Status = "EmAnalise";
+            arquivo.DataFinalizacao = DateTime.Now;
+            arquivo.UsuarioFinalizacao = usuario;
+            arquivo.ObservacaoFinalizacao = observacao;
+            arquivo.DataAtualizacao = DateTime.Now;
+            
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    /// <summary>
+    /// Aprova programação
+    /// </summary>
+    public async Task AprovarAsync(int id, string usuario, string? observacao = null)
+    {
+        var arquivo = await _dbSet.FindAsync(id);
+        if (arquivo != null)
+        {
+            arquivo.Status = "Aprovado";
+            arquivo.DataAprovacao = DateTime.Now;
+            arquivo.UsuarioAprovacao = usuario;
+            arquivo.ObservacaoAprovacao = observacao;
+            arquivo.DataAtualizacao = DateTime.Now;
+            
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    /// <summary>
+    /// Reabre programação
+    /// </summary>
+    public async Task ReabrirAsync(int id, string usuario, string? observacao = null)
+    {
+        var arquivo = await _dbSet.FindAsync(id);
+        if (arquivo != null)
+        {
+            arquivo.Status = "Aberto";
+            arquivo.DataFinalizacao = null;
+            arquivo.UsuarioFinalizacao = null;
+            arquivo.ObservacaoFinalizacao = null;
+            arquivo.DataAprovacao = null;
+            arquivo.UsuarioAprovacao = null;
+            arquivo.ObservacaoAprovacao = observacao;
+            arquivo.DataAtualizacao = DateTime.Now;
+            
+            await _context.SaveChangesAsync();
+        }
     }
 }
