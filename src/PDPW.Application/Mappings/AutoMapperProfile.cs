@@ -10,6 +10,7 @@ using PDPW.Application.DTOs.MotivoRestricao;
 using PDPW.Application.DTOs.Balanco;
 using PDPW.Application.DTOs.Intercambio;
 using PDPW.Application.DTOs.OfertaExportacao;
+using PDPW.Application.DTOs.OfertaRespostaVoluntaria;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -292,6 +293,39 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
             .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
             .ForMember(dest => dest.Usina, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // === OFERTA RESPOSTA VOLUNTÁRIA MAPPINGS ===
+        
+        // OfertaRespostaVoluntaria → OfertaRespostaVoluntariaDto
+        CreateMap<OfertaRespostaVoluntaria, OfertaRespostaVoluntariaDto>()
+            .ForMember(dest => dest.EmpresaNome, opt => opt.MapFrom(src => src.Empresa!.Nome))
+            .ForMember(dest => dest.SemanaPMO, opt => opt.MapFrom(src => 
+                src.SemanaPMO != null ? $"Semana {src.SemanaPMO.Numero}/{src.SemanaPMO.Ano}" : null));
+
+        // CreateOfertaRespostaVoluntariaDto → OfertaRespostaVoluntaria
+        CreateMap<CreateOfertaRespostaVoluntariaDto, OfertaRespostaVoluntaria>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.FlgAprovadoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.Empresa, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // UpdateOfertaRespostaVoluntariaDto → OfertaRespostaVoluntaria
+        CreateMap<UpdateOfertaRespostaVoluntariaDto, OfertaRespostaVoluntaria>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.FlgAprovadoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.UsuarioAnaliseONS, opt => opt.Ignore())
+            .ForMember(dest => dest.ObservacaoONS, opt => opt.Ignore())
+            .ForMember(dest => dest.Empresa, opt => opt.Ignore())
             .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
     }
 }

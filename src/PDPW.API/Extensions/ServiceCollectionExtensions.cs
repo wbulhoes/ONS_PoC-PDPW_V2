@@ -150,6 +150,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IBalancoRepository, BalancoRepository>();
         services.AddScoped<IIntercambioRepository, IntercambioRepository>();
         services.AddScoped<IOfertaExportacaoRepository, OfertaExportacaoRepository>();
+        services.AddScoped<IOfertaRespostaVoluntariaRepository, OfertaRespostaVoluntariaRepository>();
 
         // === SERVICES ===
         services.AddScoped<IUsinaService, UsinaService>();
@@ -166,6 +167,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IBalancoService, BalancoService>();
         services.AddScoped<IIntercambioService, IntercambioService>();
         services.AddScoped<IOfertaExportacaoService, OfertaExportacaoService>();
+        services.AddScoped<IOfertaRespostaVoluntariaService, OfertaRespostaVoluntariaService>();
 
         return services;
     }

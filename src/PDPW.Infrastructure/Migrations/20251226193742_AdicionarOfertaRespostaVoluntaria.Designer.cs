@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PDPW.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using PDPW.Infrastructure.Data;
 namespace PDPW.Infrastructure.Migrations
 {
     [DbContext(typeof(PdpwDbContext))]
-    partial class PdpwDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251226193742_AdicionarOfertaRespostaVoluntaria")]
+    partial class AdicionarOfertaRespostaVoluntaria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -63,6 +63,7 @@ public class PdpwDbContext : DbContext
 
     // Ofertas
     public DbSet<OfertaExportacao> OfertasExportacao { get; set; }
+    public DbSet<OfertaRespostaVoluntaria> OfertasRespostaVoluntaria { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -496,6 +497,49 @@ public class PdpwDbContext : DbContext
             entity.HasIndex(e => e.DataPDP);
             entity.HasIndex(e => e.FlgAprovadoONS);
             entity.HasIndex(e => new { e.UsinaId, e.DataPDP });
+        });
+
+        // OfertaRespostaVoluntaria
+        modelBuilder.Entity<OfertaRespostaVoluntaria>(entity =>
+        {
+            entity.ToTable("OfertasRespostaVoluntaria");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.ReducaoDemandaMW)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired();
+            
+            entity.Property(e => e.PrecoMWh)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired();
+            
+            entity.Property(e => e.TipoPrograma)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.UsuarioAnaliseONS)
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.ObservacaoONS)
+                .HasMaxLength(500);
+            
+            entity.Property(e => e.Observacoes)
+                .HasMaxLength(500);
+            
+            entity.HasOne(e => e.Empresa)
+                .WithMany()
+                .HasForeignKey(e => e.EmpresaId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            entity.HasOne(e => e.SemanaPMO)
+                .WithMany()
+                .HasForeignKey(e => e.SemanaPMOId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            entity.HasIndex(e => e.DataPDP);
+            entity.HasIndex(e => e.FlgAprovadoONS);
+            entity.HasIndex(e => e.TipoPrograma);
+            entity.HasIndex(e => new { e.EmpresaId, e.DataPDP });
         });
     }
 }
