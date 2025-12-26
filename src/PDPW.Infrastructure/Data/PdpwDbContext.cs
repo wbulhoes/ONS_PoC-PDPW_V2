@@ -71,6 +71,10 @@ public class PdpwDbContext : DbContext
     
     // Previsão Eólica
     public DbSet<PrevisaoEolica> PrevisoesEolicas { get; set; }
+    
+    // Notificações e Dashboard
+    public DbSet<Notificacao> Notificacoes { get; set; }
+    public DbSet<MetricaDashboard> MetricasDashboard { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -702,6 +706,102 @@ public class PdpwDbContext : DbContext
             entity.HasIndex(e => e.ModeloPrevisao);
             entity.HasIndex(e => e.TipoPrevisao);
             entity.HasIndex(e => new { e.UsinaId, e.DataHoraPrevista });
+        });
+
+        // Notificacao
+        modelBuilder.Entity<Notificacao>(entity =>
+        {
+            entity.ToTable("Notificacoes");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.TipoDestinatario)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.TipoNotificacao)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.Categoria)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.Titulo)
+                .IsRequired()
+                .HasMaxLength(200);
+            
+            entity.Property(e => e.Mensagem)
+                .IsRequired()
+                .HasMaxLength(1000);
+            
+            entity.Property(e => e.Prioridade)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.LinkAcao)
+                .HasMaxLength(500);
+            
+            entity.Property(e => e.TextoAcao)
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.TipoEntidadeRelacionada)
+                .HasMaxLength(100);
+            
+            entity.HasIndex(e => e.DestinatarioId);
+            entity.HasIndex(e => e.TipoDestinatario);
+            entity.HasIndex(e => e.Categoria);
+            entity.HasIndex(e => e.Lida);
+            entity.HasIndex(e => e.Prioridade);
+            entity.HasIndex(e => e.DataHoraEnvio);
+            entity.HasIndex(e => new { e.DestinatarioId, e.Lida });
+        });
+
+        // MetricaDashboard
+        modelBuilder.Entity<MetricaDashboard>(entity =>
+        {
+            entity.ToTable("MetricasDashboard");
+            entity.HasKey(e => e.Id);
+            
+            entity.Property(e => e.Categoria)
+                .IsRequired()
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.NomeMetrica)
+                .IsRequired()
+                .HasMaxLength(200);
+            
+            entity.Property(e => e.Valor)
+                .HasColumnType("decimal(18,2)")
+                .IsRequired();
+            
+            entity.Property(e => e.Unidade)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.TipoEntidade)
+                .HasMaxLength(100);
+            
+            entity.Property(e => e.Descricao)
+                .HasMaxLength(500);
+            
+            entity.Property(e => e.Meta)
+                .HasColumnType("decimal(18,2)");
+            
+            entity.Property(e => e.PercentualMeta)
+                .HasColumnType("decimal(6,2)");
+            
+            entity.Property(e => e.Tendencia)
+                .HasMaxLength(50);
+            
+            entity.Property(e => e.Status)
+                .IsRequired()
+                .HasMaxLength(50);
+            
+            entity.HasIndex(e => e.Categoria);
+            entity.HasIndex(e => e.NomeMetrica);
+            entity.HasIndex(e => e.DataHoraReferencia);
+            entity.HasIndex(e => e.Status);
+            entity.HasIndex(e => new { e.Categoria, e.DataHoraReferencia });
         });
     }
 }
