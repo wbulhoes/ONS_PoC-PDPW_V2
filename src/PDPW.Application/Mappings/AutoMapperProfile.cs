@@ -12,6 +12,7 @@ using PDPW.Application.DTOs.Intercambio;
 using PDPW.Application.DTOs.OfertaExportacao;
 using PDPW.Application.DTOs.OfertaRespostaVoluntaria;
 using PDPW.Application.DTOs.PrevisaoEolica;
+using PDPW.Application.DTOs.ArquivoDadger;
 using PDPW.Domain.Entities;
 
 namespace PDPW.Application.Mappings;
@@ -359,5 +360,31 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.ErroPercentual, opt => opt.Ignore())
             .ForMember(dest => dest.Usina, opt => opt.Ignore())
             .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore());
+
+        // === ARQUIVO DADGER MAPPINGS ===
+        
+        // ArquivoDadger → ArquivoDadgerDto
+        CreateMap<ArquivoDadger, ArquivoDadgerDto>()
+            .ForMember(dest => dest.SemanaPMO, opt => opt.MapFrom(src => 
+                src.SemanaPMO != null ? $"Semana {src.SemanaPMO.Numero}/{src.SemanaPMO.Ano}" : string.Empty));
+
+        // CreateArquivoDadgerDto → ArquivoDadger
+        CreateMap<CreateArquivoDadgerDto, ArquivoDadger>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Ativo, opt => opt.Ignore())
+            .ForMember(dest => dest.Status, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore())
+            .ForMember(dest => dest.Valores, opt => opt.Ignore());
+
+        // UpdateArquivoDadgerDto → ArquivoDadger
+        CreateMap<UpdateArquivoDadgerDto, ArquivoDadger>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.DataCriacao, opt => opt.Ignore())
+            .ForMember(dest => dest.DataAtualizacao, opt => opt.Ignore())
+            .ForMember(dest => dest.Status, opt => opt.Ignore())
+            .ForMember(dest => dest.SemanaPMO, opt => opt.Ignore())
+            .ForMember(dest => dest.Valores, opt => opt.Ignore());
     }
 }

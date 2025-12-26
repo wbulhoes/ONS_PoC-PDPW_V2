@@ -45,7 +45,7 @@ public class EmpresasController : BaseController
     /// <returns>Empresa encontrada</returns>
     /// <response code="200">Empresa encontrada</response>
     /// <response code="404">Empresa não encontrada</response>
-    [HttpGet("{id:int}", Name = nameof(GetEmpresaById))]
+    [HttpGet("{id:int}", Name = "GetEmpresaById")]
     [ProducesResponseType(typeof(EmpresaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetEmpresaById(int id)

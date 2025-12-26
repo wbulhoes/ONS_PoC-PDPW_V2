@@ -36,7 +36,7 @@ public class PrevisoesEolicasController : BaseController
     /// <summary>
     /// Obtém uma previsão por ID
     /// </summary>
-    [HttpGet("{id:int}", Name = nameof(GetPrevisaoById))]
+    [HttpGet("{id:int}", Name = "GetPrevisaoEolicaById")]
     [ProducesResponseType(typeof(PrevisaoEolicaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetPrevisaoById(int id)

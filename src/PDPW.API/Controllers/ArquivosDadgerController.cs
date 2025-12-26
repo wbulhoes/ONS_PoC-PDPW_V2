@@ -39,7 +39,7 @@ public class ArquivosDadgerController : BaseController
     /// <summary>
     /// Obtém um arquivo DADGER por ID
     /// </summary>
-    [HttpGet("{id:int}", Name = nameof(GetById))]
+    [HttpGet("{id:int}", Name = "GetArquivoDadgerById")]
     [ProducesResponseType(typeof(ArquivoDadgerDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetById(int id)

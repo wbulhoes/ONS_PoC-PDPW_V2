@@ -93,7 +93,7 @@ Final:   100% ████████████████████ ✅
 5. **Docker** funcional
 6. **Documentação** completa
 
-### **🔧 Últimas Correções (27/12/2024)**
+### **🔧 Últimas Correções (26/12/2025)**
 
 1. ✅ **TiposUsina** - Endpoint `/buscar`
 2. ✅ **Empresas** - Endpoint `/buscar`
@@ -178,9 +178,9 @@ docs(readme): atualizar guia de instalação
 
 | Versão | Data | Descrição | Documentos |
 |--------|------|-----------|------------|
-| 1.0 | 27/12/2024 | ✅ POC 100% concluída | FINALIZACAO_POC_100_PORCENTO.md |
-| 0.92 | 26/12/2024 | 🟡 92% - Faltam 4 endpoints | STATUS_FINAL_POC_92_PORCENTO.md |
-| 0.76 | 25/12/2024 | 🟡 76% - Início da POC | - |
+| 1.0 | 26/12/2025 | ✅ POC 100% concluída | FINALIZACAO_POC_100_PORCENTO.md |
+| 0.92 | 25/12/2025 | 🟡 92% - Faltam 4 endpoints | STATUS_FINAL_POC_92_PORCENTO.md |
+| 0.76 | 24/12/2025 | 🟡 76% - Início da POC | - |
 
 ---
 
@@ -274,6 +274,6 @@ Esta pasta contém **toda a documentação** necessária para:
 
 ---
 
-**Última Atualização**: 27/12/2024  
+**Última Atualização**: 26/12/2025  
 **Mantido por**: Willian Bulhões  
 **Versão**: 1.0
