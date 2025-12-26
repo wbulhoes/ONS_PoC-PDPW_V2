@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+Ôªøusing Microsoft.AspNetCore.Mvc;
 using PDPW.Application.DTOs.TipoUsina;
 using PDPW.Application.Interfaces;
 
@@ -24,7 +24,7 @@ public class TiposUsinaController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm todos os tipos de usina
+    /// Obt√©m todos os tipos de usina
     /// </summary>
     /// <returns>Lista de tipos de usina</returns>
     /// <response code="200">Lista de tipos de usina retornada com sucesso</response>
@@ -39,12 +39,33 @@ public class TiposUsinaController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm um tipo de usina por ID
+    /// Busca tipos de usina por termo (nome ou descri√ß√£o)
+    /// </summary>
+    /// <param name="termo">Termo de busca</param>
+    /// <returns>Lista de tipos de usina que correspondem ao termo</returns>
+    /// <response code="200">Lista de tipos de usina retornada com sucesso</response>
+    [HttpGet("buscar", Name = nameof(BuscarTiposUsina))]
+    [ProducesResponseType(typeof(List<TipoUsinaDto>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> BuscarTiposUsina([FromQuery] string termo)
+    {
+        _logger.LogInformation("GET api/tiposusina/buscar?termo={Termo} - Buscando tipos de usina", termo);
+        
+        var tipos = await _service.GetAllAsync();
+        var filtrados = tipos.Where(t => 
+            t.Nome.Contains(termo, StringComparison.OrdinalIgnoreCase) ||
+            (t.Descricao != null && t.Descricao.Contains(termo, StringComparison.OrdinalIgnoreCase))
+        ).ToList();
+        
+        return Ok(filtrados);
+    }
+
+    /// <summary>
+    /// Obt√©m um tipo de usina por ID
     /// </summary>
     /// <param name="id">ID do tipo de usina</param>
     /// <returns>Tipo de usina encontrado</returns>
     /// <response code="200">Tipo de usina encontrado</response>
-    /// <response code="404">Tipo de usina n„o encontrado</response>
+    /// <response code="404">Tipo de usina n√£o encontrado</response>
     [HttpGet("{id:int}", Name = nameof(GetTipoUsinaById))]
     [ProducesResponseType(typeof(TipoUsinaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -57,12 +78,12 @@ public class TiposUsinaController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm um tipo de usina por nome
+    /// Obt√©m um tipo de usina por nome
     /// </summary>
     /// <param name="nome">Nome do tipo de usina</param>
     /// <returns>Tipo de usina encontrado</returns>
     /// <response code="200">Tipo de usina encontrado</response>
-    /// <response code="404">Tipo de usina n„o encontrado</response>
+    /// <response code="404">Tipo de usina n√£o encontrado</response>
     [HttpGet("nome/{nome}", Name = nameof(GetTipoUsinaByNome))]
     [ProducesResponseType(typeof(TipoUsinaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -80,7 +101,7 @@ public class TiposUsinaController : BaseController
     /// <param name="dto">Dados do tipo de usina</param>
     /// <returns>Tipo de usina criado</returns>
     /// <response code="201">Tipo de usina criado com sucesso</response>
-    /// <response code="400">Dados inv·lidos ou nome duplicado</response>
+    /// <response code="400">Dados inv√°lidos ou nome duplicado</response>
     [HttpPost(Name = nameof(CreateTipoUsina))]
     [ProducesResponseType(typeof(TipoUsinaDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -98,7 +119,7 @@ public class TiposUsinaController : BaseController
         }
         catch (InvalidOperationException ex)
         {
-            _logger.LogWarning(ex, "Erro de validaÁ„o ao criar tipo de usina");
+            _logger.LogWarning(ex, "Erro de valida√ß√£o ao criar tipo de usina");
             return BadRequest(new { message = ex.Message });
         }
     }
@@ -110,8 +131,8 @@ public class TiposUsinaController : BaseController
     /// <param name="dto">Dados atualizados</param>
     /// <returns>Tipo de usina atualizado</returns>
     /// <response code="200">Tipo de usina atualizado com sucesso</response>
-    /// <response code="400">Dados inv·lidos ou nome duplicado</response>
-    /// <response code="404">Tipo de usina n„o encontrado</response>
+    /// <response code="400">Dados inv√°lidos ou nome duplicado</response>
+    /// <response code="404">Tipo de usina n√£o encontrado</response>
     [HttpPut("{id:int}", Name = nameof(UpdateTipoUsina))]
     [ProducesResponseType(typeof(TipoUsinaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -127,7 +148,7 @@ public class TiposUsinaController : BaseController
         }
         catch (InvalidOperationException ex)
         {
-            _logger.LogWarning(ex, "Erro de validaÁ„o ao atualizar tipo de usina");
+            _logger.LogWarning(ex, "Erro de valida√ß√£o ao atualizar tipo de usina");
             return BadRequest(new { message = ex.Message });
         }
     }
@@ -136,10 +157,10 @@ public class TiposUsinaController : BaseController
     /// Remove um tipo de usina (soft delete)
     /// </summary>
     /// <param name="id">ID do tipo de usina</param>
-    /// <returns>Sem conte˙do</returns>
+    /// <returns>Sem conte√∫do</returns>
     /// <response code="204">Tipo de usina removido com sucesso</response>
-    /// <response code="400">N„o È possÌvel remover tipo com usinas vinculadas</response>
-    /// <response code="404">Tipo de usina n„o encontrado</response>
+    /// <response code="400">N√£o √© poss√≠vel remover tipo com usinas vinculadas</response>
+    /// <response code="404">Tipo de usina n√£o encontrado</response>
     [HttpDelete("{id:int}", Name = nameof(DeleteTipoUsina))]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -151,7 +172,7 @@ public class TiposUsinaController : BaseController
         try
         {
             var deleted = await _service.DeleteAsync(id);
-            return deleted ? NoContent() : NotFound(new { message = $"Tipo de usina com ID {id} n„o encontrado" });
+            return deleted ? NoContent() : NotFound(new { message = $"Tipo de usina com ID {id} n√£o encontrado" });
         }
         catch (InvalidOperationException ex)
         {
@@ -161,17 +182,17 @@ public class TiposUsinaController : BaseController
     }
 
     /// <summary>
-    /// Verifica se j· existe um tipo de usina com o nome informado
+    /// Verifica se j√° existe um tipo de usina com o nome informado
     /// </summary>
     /// <param name="nome">Nome a verificar</param>
-    /// <param name="tipoUsinaId">ID do tipo de usina a excluir da verificaÁ„o (opcional)</param>
-    /// <returns>Indica se o nome j· existe</returns>
-    /// <response code="200">Resultado da verificaÁ„o</response>
+    /// <param name="tipoUsinaId">ID do tipo de usina a excluir da verifica√ß√£o (opcional)</param>
+    /// <returns>Indica se o nome j√° existe</returns>
+    /// <response code="200">Resultado da verifica√ß√£o</response>
     [HttpGet("verificar-nome/{nome}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarNomeExiste(string nome, [FromQuery] int? tipoUsinaId = null)
     {
-        _logger.LogInformation("GET api/tiposusina/verificar-nome/{Nome} - Verificando existÍncia de nome", nome);
+        _logger.LogInformation("GET api/tiposusina/verificar-nome/{Nome} - Verificando exist√™ncia de nome", nome);
         
         var existe = await _service.ExisteNomeAsync(nome, tipoUsinaId);
         return Ok(new { existe });

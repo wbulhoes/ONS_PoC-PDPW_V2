@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+Ôªøusing Microsoft.AspNetCore.Mvc;
 using PDPW.Application.DTOs.Empresa;
 using PDPW.Application.Interfaces;
 
@@ -24,7 +24,7 @@ public class EmpresasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm todas as empresas
+    /// Obt√©m todas as empresas
     /// </summary>
     /// <returns>Lista de empresas</returns>
     /// <response code="200">Lista de empresas retornada com sucesso</response>
@@ -39,12 +39,12 @@ public class EmpresasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm uma empresa por ID
+    /// Obt√©m uma empresa por ID
     /// </summary>
     /// <param name="id">ID da empresa</param>
     /// <returns>Empresa encontrada</returns>
     /// <response code="200">Empresa encontrada</response>
-    /// <response code="404">Empresa n„o encontrada</response>
+    /// <response code="404">Empresa n√£o encontrada</response>
     [HttpGet("{id:int}", Name = nameof(GetEmpresaById))]
     [ProducesResponseType(typeof(EmpresaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -57,12 +57,12 @@ public class EmpresasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm uma empresa por nome
+    /// Obt√©m uma empresa por nome
     /// </summary>
     /// <param name="nome">Nome da empresa</param>
     /// <returns>Empresa encontrada</returns>
     /// <response code="200">Empresa encontrada</response>
-    /// <response code="404">Empresa n„o encontrada</response>
+    /// <response code="404">Empresa n√£o encontrada</response>
     [HttpGet("nome/{nome}", Name = nameof(GetEmpresaByNome))]
     [ProducesResponseType(typeof(EmpresaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -75,12 +75,12 @@ public class EmpresasController : BaseController
     }
 
     /// <summary>
-    /// ObtÈm uma empresa por CNPJ
+    /// Obt√©m uma empresa por CNPJ
     /// </summary>
     /// <param name="cnpj">CNPJ da empresa</param>
     /// <returns>Empresa encontrada</returns>
     /// <response code="200">Empresa encontrada</response>
-    /// <response code="404">Empresa n„o encontrada</response>
+    /// <response code="404">Empresa n√£o encontrada</response>
     [HttpGet("cnpj/{cnpj}", Name = nameof(GetEmpresaByCnpj))]
     [ProducesResponseType(typeof(EmpresaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -98,7 +98,7 @@ public class EmpresasController : BaseController
     /// <param name="dto">Dados da empresa</param>
     /// <returns>Empresa criada</returns>
     /// <response code="201">Empresa criada com sucesso</response>
-    /// <response code="400">Dados inv·lidos, nome duplicado ou CNPJ duplicado</response>
+    /// <response code="400">Dados inv√°lidos, nome duplicado ou CNPJ duplicado</response>
     [HttpPost(Name = nameof(CreateEmpresa))]
     [ProducesResponseType(typeof(EmpresaDto), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -116,7 +116,7 @@ public class EmpresasController : BaseController
         }
         catch (InvalidOperationException ex)
         {
-            _logger.LogWarning(ex, "Erro de validaÁ„o ao criar empresa");
+            _logger.LogWarning(ex, "Erro de valida√ß√£o ao criar empresa");
             return BadRequest(new { message = ex.Message });
         }
     }
@@ -128,8 +128,8 @@ public class EmpresasController : BaseController
     /// <param name="dto">Dados atualizados</param>
     /// <returns>Empresa atualizada</returns>
     /// <response code="200">Empresa atualizada com sucesso</response>
-    /// <response code="400">Dados inv·lidos, nome duplicado ou CNPJ duplicado</response>
-    /// <response code="404">Empresa n„o encontrada</response>
+    /// <response code="400">Dados inv√°lidos, nome duplicado ou CNPJ duplicado</response>
+    /// <response code="404">Empresa n√£o encontrada</response>
     [HttpPut("{id:int}", Name = nameof(UpdateEmpresa))]
     [ProducesResponseType(typeof(EmpresaDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -145,7 +145,7 @@ public class EmpresasController : BaseController
         }
         catch (InvalidOperationException ex)
         {
-            _logger.LogWarning(ex, "Erro de validaÁ„o ao atualizar empresa");
+            _logger.LogWarning(ex, "Erro de valida√ß√£o ao atualizar empresa");
             return BadRequest(new { message = ex.Message });
         }
     }
@@ -154,10 +154,10 @@ public class EmpresasController : BaseController
     /// Remove uma empresa (soft delete)
     /// </summary>
     /// <param name="id">ID da empresa</param>
-    /// <returns>Sem conte˙do</returns>
+    /// <returns>Sem conte√∫do</returns>
     /// <response code="204">Empresa removida com sucesso</response>
-    /// <response code="400">N„o È possÌvel remover empresa com usinas vinculadas</response>
-    /// <response code="404">Empresa n„o encontrada</response>
+    /// <response code="400">N√£o √© poss√≠vel remover empresa com usinas vinculadas</response>
+    /// <response code="404">Empresa n√£o encontrada</response>
     [HttpDelete("{id:int}", Name = nameof(DeleteEmpresa))]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -169,7 +169,7 @@ public class EmpresasController : BaseController
         try
         {
             var deleted = await _service.DeleteAsync(id);
-            return deleted ? NoContent() : NotFound(new { message = $"Empresa com ID {id} n„o encontrada" });
+            return deleted ? NoContent() : NotFound(new { message = $"Empresa com ID {id} n√£o encontrada" });
         }
         catch (InvalidOperationException ex)
         {
@@ -179,36 +179,57 @@ public class EmpresasController : BaseController
     }
 
     /// <summary>
-    /// Verifica se j· existe uma empresa com o nome informado
+    /// Verifica se j√° existe uma empresa com o nome informado
     /// </summary>
     /// <param name="nome">Nome a verificar</param>
-    /// <param name="empresaId">ID da empresa a excluir da verificaÁ„o (opcional)</param>
-    /// <returns>Indica se o nome j· existe</returns>
-    /// <response code="200">Resultado da verificaÁ„o</response>
+    /// <param name="empresaId">ID da empresa a excluir da verifica√ß√£o (opcional)</param>
+    /// <returns>Indica se o nome j√° existe</returns>
+    /// <response code="200">Resultado da verifica√ß√£o</response>
     [HttpGet("verificar-nome/{nome}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarNomeExiste(string nome, [FromQuery] int? empresaId = null)
     {
-        _logger.LogInformation("GET api/empresas/verificar-nome/{Nome} - Verificando existÍncia de nome", nome);
+        _logger.LogInformation("GET api/empresas/verificar-nome/{Nome} - Verificando exist√™ncia de nome", nome);
         
         var existe = await _service.ExisteNomeAsync(nome, empresaId);
         return Ok(new { existe });
     }
 
     /// <summary>
-    /// Verifica se j· existe uma empresa com o CNPJ informado
+    /// Verifica se j√° existe uma empresa com o CNPJ informado
     /// </summary>
     /// <param name="cnpj">CNPJ a verificar</param>
-    /// <param name="empresaId">ID da empresa a excluir da verificaÁ„o (opcional)</param>
-    /// <returns>Indica se o CNPJ j· existe</returns>
-    /// <response code="200">Resultado da verificaÁ„o</response>
+    /// <param name="empresaId">ID da empresa a excluir da verifica√ß√£o (opcional)</param>
+    /// <returns>Indica se o CNPJ j√° existe</returns>
+    /// <response code="200">Resultado da verifica√ß√£o</response>
     [HttpGet("verificar-cnpj/{cnpj}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
     public async Task<IActionResult> VerificarCnpjExiste(string cnpj, [FromQuery] int? empresaId = null)
     {
-        _logger.LogInformation("GET api/empresas/verificar-cnpj/{Cnpj} - Verificando existÍncia de CNPJ", cnpj);
+        _logger.LogInformation("GET api/empresas/verificar-cnpj/{Cnpj} - Verificando exist√™ncia de CNPJ", cnpj);
         
         var existe = await _service.ExisteCnpjAsync(cnpj, empresaId);
         return Ok(new { existe });
+    }
+
+    /// <summary>
+    /// Busca empresas por termo (nome ou CNPJ)
+    /// </summary>
+    /// <param name="termo">Termo de busca</param>
+    /// <returns>Lista de empresas que correspondem ao termo</returns>
+    /// <response code="200">Lista de empresas retornada com sucesso</response>
+    [HttpGet("buscar", Name = nameof(BuscarEmpresas))]
+    [ProducesResponseType(typeof(List<EmpresaDto>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> BuscarEmpresas([FromQuery] string termo)
+    {
+        _logger.LogInformation("GET api/empresas/buscar?termo={Termo} - Buscando empresas", termo);
+        
+        var empresas = await _service.GetAllAsync();
+        var filtradas = empresas.Where(e => 
+            e.Nome.Contains(termo, StringComparison.OrdinalIgnoreCase) ||
+            (e.CNPJ != null && e.CNPJ.Contains(termo, StringComparison.OrdinalIgnoreCase))
+        ).ToList();
+        
+        return Ok(filtradas);
     }
 }
