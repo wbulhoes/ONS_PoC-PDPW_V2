@@ -204,7 +204,7 @@ public class EmpresasController : BaseController
     /// <response code="200">Resultado da verificação</response>
     [HttpGet("verificar-cnpj/{cnpj}")]
     [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
-    public async Task<IActionResult> VerificarCnpj Existe(string cnpj, [FromQuery] int? empresaId = null)
+    public async Task<IActionResult> VerificarCnpjExiste(string cnpj, [FromQuery] int? empresaId = null)
     {
         _logger.LogInformation("GET api/empresas/verificar-cnpj/{Cnpj} - Verificando existência de CNPJ", cnpj);
         
