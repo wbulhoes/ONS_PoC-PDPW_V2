@@ -1,7 +1,7 @@
 # 📊 RELATÓRIO DE TESTES - POC PDPW
 ## Validação Completa de Todas as APIs
 
-**Data**: 26/12/2024  
+**Data**: 26/12/2025  
 **Hora**: 17:57  
 **Executor**: TESTE-MASTER-COMPLETO.ps1  
 **Ambiente**: Docker (localhost:5001)  
@@ -441,7 +441,7 @@ A POC PDPw demonstra **excelente maturidade técnica** com:
 
 **Equipe**: Squad de Migração PDPw  
 **Product Owner**: Willian Bulhões  
-**Data do Teste**: 26/12/2024  
+**Data do Teste**: 26/12/2025  
 **Ambiente**: Docker Compose (localhost)  
 
 ---
