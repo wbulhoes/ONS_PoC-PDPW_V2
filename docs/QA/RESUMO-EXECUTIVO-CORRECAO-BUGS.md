@@ -1,6 +1,6 @@
 # 📊 RESUMO EXECUTIVO - CORREÇÃO DE BUGS QA
 
-**Data**: 23/12/2025  
+**Data**: 29/12/2025  
 **Projeto**: POC PDPw - Migração .NET Framework → .NET 8  
 **Sprint**: [Sprint Atual]  
 **Status**: ✅ Bugs Corrigidos / ⏳ Aguardando Validação QA
@@ -250,7 +250,7 @@ public async Task<Result<RestricaoUGDto>> CreateAsync(CreateRestricaoUGDto dto)
 - [ ] **Jira Atualizado**
 
 **Responsável**: Willian Bulhões  
-**Data**: 23/12/2025
+**Data**: 29/12/2025
 
 ---
 
@@ -287,5 +287,5 @@ public async Task<Result<RestricaoUGDto>> CreateAsync(CreateRestricaoUGDto dto)
 ---
 
 *Documento gerado em: 23/12/2025*  
-*Última atualização: 23/12/2025*  
+*Última atualização: 29/12/2025*  
 *Versão: 1.0*

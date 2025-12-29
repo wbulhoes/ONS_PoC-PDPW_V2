@@ -1,8 +1,8 @@
 # 🧪 RELATÓRIO DE ANÁLISE - BUGS REPORTADOS PELO QA
 
-**Data**: 23/12/2025  
+**Data**: 29/12/2025  
 **Executor**: Willian Bulhões (PO)  
-**QA**: [Nome do QA]  
+**QA**: Rafael Suzano  
 **Projeto**: POC PDPw - Migração .NET Framework → .NET 8
 
 ---
@@ -380,9 +380,9 @@ Invoke-RestMethod http://localhost:5001/health
 
 ---
 
-**📅 Criado**: 23/12/2025  
+**📅 Criado**: 29/12/2025  
 **👤 Responsável**: Willian Bulhões (PO)  
-**🔍 Revisor**: [Nome QA]  
+**🔍 Revisor**: Rafael Suzano  
 **✅ Status**: Aguardando Validação QA
 
 ---
