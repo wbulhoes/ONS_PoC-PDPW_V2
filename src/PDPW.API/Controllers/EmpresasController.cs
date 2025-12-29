@@ -87,8 +87,9 @@ public class EmpresasController : BaseController
     public async Task<IActionResult> GetEmpresaByCnpj(string cnpj)
     {
         _logger.LogInformation("GET api/empresas/cnpj/{Cnpj} - Buscando empresa por CNPJ", cnpj);
-        
-        var empresa = await _service.GetByCnpjAsync(cnpj);
+        // Normaliza o CNPJ para apenas números
+        var cnpjLimpo = new string(cnpj.Where(char.IsDigit).ToArray());
+        var empresa = await _service.GetByCnpjAsync(cnpjLimpo);
         return HandleResult(empresa);
     }
 

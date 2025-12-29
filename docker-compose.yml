@@ -52,6 +52,19 @@ services:
       retries: 3
       start_period: 60s
 
+  # Frontend React + Nginx
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: pdpw-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - pdpw-network
+
 volumes:
   sqldata:
     driver: local

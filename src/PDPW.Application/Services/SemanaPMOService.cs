@@ -1,13 +1,14 @@
-using AutoMapper;
+ï»¿using AutoMapper;
 using PDPW.Application.DTOs.SemanaPmo;
 using PDPW.Application.Interfaces;
+using PDPW.Domain.Common;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
 
 namespace PDPW.Application.Services;
 
 /// <summary>
-/// Serviço de Semana PMO
+/// ServiÃ§o de Semana PMO
 /// </summary>
 public class SemanaPmoService : ISemanaPmoService
 {
@@ -51,92 +52,83 @@ public class SemanaPmoService : ISemanaPmoService
         return semana != null ? _mapper.Map<SemanaPmoDto>(semana) : null;
     }
 
-    public async Task<SemanaPmoDto> CreateAsync(CreateSemanaPmoDto dto)
+    public async Task<Result<SemanaPmoDto>> CreateAsync(CreateSemanaPmoDto dto)
     {
-        // Validar data fim maior que data início
         if (dto.DataFim <= dto.DataInicio)
         {
-            throw new ArgumentException("A data de fim deve ser maior que a data de início");
+            return Result<SemanaPmoDto>.Failure("A data de fim deve ser maior que a data de inÃ­cio");
         }
 
-        // Validar período de 7 dias
         var dias = (dto.DataFim - dto.DataInicio).Days + 1;
         if (dias != 7)
         {
-            throw new ArgumentException($"O período deve ser de 7 dias. Período informado: {dias} dias");
+            return Result<SemanaPmoDto>.Failure($"O perÃ­odo deve ser de 7 dias. PerÃ­odo informado: {dias} dias");
         }
 
-        // Validar ano consistente com datas
         if (dto.DataInicio.Year != dto.Ano && dto.DataFim.Year != dto.Ano)
         {
-            throw new ArgumentException("O ano deve corresponder ao ano das datas de início ou fim");
+            return Result<SemanaPmoDto>.Failure("O ano deve corresponder ao ano das datas de inÃ­cio ou fim");
         }
 
-        // Validar duplicidade número + ano
         if (await _repository.ExisteNumeroAnoAsync(dto.Numero, dto.Ano))
         {
-            throw new InvalidOperationException($"Já existe uma semana PMO com número {dto.Numero} no ano {dto.Ano}");
+            return Result<SemanaPmoDto>.Failure($"JÃ¡ existe uma semana PMO com nÃºmero {dto.Numero} no ano {dto.Ano}");
         }
 
         var semana = _mapper.Map<SemanaPMO>(dto);
         var semanaCriada = await _repository.AdicionarAsync(semana);
-        return _mapper.Map<SemanaPmoDto>(semanaCriada);
+        return Result<SemanaPmoDto>.Success(_mapper.Map<SemanaPmoDto>(semanaCriada));
     }
 
-    public async Task<SemanaPmoDto?> UpdateAsync(int id, UpdateSemanaPmoDto dto)
+    public async Task<Result<SemanaPmoDto>> UpdateAsync(int id, UpdateSemanaPmoDto dto)
     {
         var semanaExistente = await _repository.ObterPorIdAsync(id);
         if (semanaExistente == null)
         {
-            return null;
+            return Result<SemanaPmoDto>.NotFound("Semana PMO", id);
         }
 
-        // Validar data fim maior que data início
         if (dto.DataFim <= dto.DataInicio)
         {
-            throw new ArgumentException("A data de fim deve ser maior que a data de início");
+            return Result<SemanaPmoDto>.Failure("A data de fim deve ser maior que a data de inÃ­cio");
         }
 
-        // Validar período de 7 dias
         var dias = (dto.DataFim - dto.DataInicio).Days + 1;
         if (dias != 7)
         {
-            throw new ArgumentException($"O período deve ser de 7 dias. Período informado: {dias} dias");
+            return Result<SemanaPmoDto>.Failure($"O perÃ­odo deve ser de 7 dias. PerÃ­odo informado: {dias} dias");
         }
 
-        // Validar ano consistente com datas
         if (dto.DataInicio.Year != dto.Ano && dto.DataFim.Year != dto.Ano)
         {
-            throw new ArgumentException("O ano deve corresponder ao ano das datas de início ou fim");
+            return Result<SemanaPmoDto>.Failure("O ano deve corresponder ao ano das datas de inÃ­cio ou fim");
         }
 
-        // Validar duplicidade número + ano (excluindo o próprio registro)
         if (await _repository.ExisteNumeroAnoAsync(dto.Numero, dto.Ano, id))
         {
-            throw new InvalidOperationException($"Já existe outra semana PMO com número {dto.Numero} no ano {dto.Ano}");
+            return Result<SemanaPmoDto>.Failure($"JÃ¡ existe outra semana PMO com nÃºmero {dto.Numero} no ano {dto.Ano}");
         }
 
         _mapper.Map(dto, semanaExistente);
         await _repository.AtualizarAsync(semanaExistente);
-        return _mapper.Map<SemanaPmoDto>(semanaExistente);
+        return Result<SemanaPmoDto>.Success(_mapper.Map<SemanaPmoDto>(semanaExistente));
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<Result> DeleteAsync(int id)
     {
         var semana = await _repository.ObterPorIdAsync(id);
         if (semana == null)
         {
-            return false;
+            return Result.Failure($"Semana PMO com ID {id} nÃ£o encontrada");
         }
 
-        // Verificar se tem arquivos vinculados
         if (semana.ArquivosDadger?.Any(a => a.Ativo) == true)
         {
-            throw new InvalidOperationException("Não é possível remover uma semana PMO com arquivos DADGER vinculados");
+            return Result.Failure("NÃ£o Ã© possÃ­vel remover uma semana PMO com arquivos DADGER vinculados");
         }
 
         await _repository.RemoverAsync(id);
-        return true;
+        return Result.Success();
     }
 
     public async Task<bool> ExisteNumeroAnoAsync(int numero, int ano, int? excluirId = null)
