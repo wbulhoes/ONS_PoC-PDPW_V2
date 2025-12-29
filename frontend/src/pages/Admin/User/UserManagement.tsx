@@ -12,6 +12,7 @@ const initialForm: Omit<User, 'id'> = {
 };
 
 const UserManagementPage: React.FC = () => {
+  console.log('UserManagementPage montado');
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
