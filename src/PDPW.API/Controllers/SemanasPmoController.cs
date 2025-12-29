@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PDPW.Application.DTOs.SemanaPmo;
 using PDPW.Application.Interfaces;
 
@@ -123,19 +123,15 @@ public class SemanasPmoController : BaseController
     {
         _logger.LogInformation("POST api/semanaspmo - Criando nova semana PMO: Semana {Numero}/{Ano}", dto.Numero, dto.Ano);
 
-        try
+        var result = await _service.CreateAsync(dto);
+        if (!result.IsSuccess)
         {
-            var semana = await _service.CreateAsync(dto);
-            return CreatedAtRoute(
-                nameof(GetSemanaPmoById),
-                new { id = semana.Id },
-                semana);
+            return BadRequest(new { message = result.Error });
         }
-        catch (InvalidOperationException ex)
-        {
-            _logger.LogWarning(ex, "Erro de validação ao criar semana PMO");
-            return BadRequest(new { message = ex.Message });
-        }
+        return CreatedAtRoute(
+            nameof(GetSemanaPmoById),
+            new { id = result.Value!.Id },
+            result.Value);
     }
 
     /// <summary>
@@ -155,16 +151,14 @@ public class SemanasPmoController : BaseController
     {
         _logger.LogInformation("PUT api/semanaspmo/{Id} - Atualizando semana PMO", id);
 
-        try
+        var result = await _service.UpdateAsync(id, dto);
+        if (!result.IsSuccess)
         {
-            var semana = await _service.UpdateAsync(id, dto);
-            return HandleResult(semana);
+            if (result.Error.Contains("não foi encontrado"))
+                return NotFound(new { message = result.Error });
+            return BadRequest(new { message = result.Error });
         }
-        catch (InvalidOperationException ex)
-        {
-            _logger.LogWarning(ex, "Erro de validação ao atualizar semana PMO");
-            return BadRequest(new { message = ex.Message });
-        }
+        return Ok(result.Value);
     }
 
     /// <summary>
@@ -183,16 +177,14 @@ public class SemanasPmoController : BaseController
     {
         _logger.LogInformation("DELETE api/semanaspmo/{Id} - Removendo semana PMO", id);
 
-        try
+        var result = await _service.DeleteAsync(id);
+        if (!result.IsSuccess)
         {
-            var deleted = await _service.DeleteAsync(id);
-            return deleted ? NoContent() : NotFound(new { message = $"Semana PMO com ID {id} não encontrada" });
+            if (result.Error.Contains("não encontrada"))
+                return NotFound(new { message = result.Error });
+            return BadRequest(new { message = result.Error });
         }
-        catch (InvalidOperationException ex)
-        {
-            _logger.LogWarning(ex, "Erro ao tentar remover semana PMO com arquivos vinculados");
-            return BadRequest(new { message = ex.Message });
-        }
+        return NoContent();
     }
 
     /// <summary>
