@@ -2,7 +2,7 @@
 
 **De**: Willian Bulhões (Product Owner)  
 **Para**: QA Team  
-**Data**: 23/12/2025  
+**Data**: 29/12/2025  
 **Assunto**: ✅ Correção de Bugs Reportados + Próximos Passos
 
 ---
@@ -221,7 +221,7 @@ Migração .NET Framework → .NET 8
 
 ---
 
-**📅 Data**: 23/12/2025  
+**📅 Data**: 29/12/2025  
 **⏰ Prazo para Validação**: 24/12/2025 (1 dia útil)  
 **🎯 Prioridade**: Alta  
 **✅ Status**: Aguardando Validação QA

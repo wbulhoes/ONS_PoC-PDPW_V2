@@ -1,7 +1,7 @@
 # 📚 ÍNDICE - DOCUMENTAÇÃO QA
 
 **Projeto**: POC PDPw  
-**Data**: 23/12/2025  
+**Data**: 29/12/2025  
 **Responsável**: Willian Bulhões (PO)
 
 ---
@@ -329,7 +329,7 @@ scripts/
 
 | Versão | Data | Alterações | Responsável |
 |--------|------|------------|-------------|
-| 1.0 | 23/12/2025 | Criação inicial | Willian Bulhões |
+| 1.0 | 29/12/2025 | Criação inicial | Willian Bulhões |
 | | | | |
 | | | | |
 
@@ -387,5 +387,5 @@ scripts/
 ---
 
 *Índice criado em: 23/12/2025*  
-*Última atualização: 23/12/2025*  
+*Última atualização: 29/12/2025*  
 *Versão: 1.0*
