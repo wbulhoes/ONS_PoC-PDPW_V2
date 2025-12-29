@@ -108,8 +108,8 @@ POST /api/ofertas-exportacao
 ```json
 {
   "usinaId": 1,
-  "dataOferta": "2024-12-27",
-  "dataPDP": "2024-12-29",
+  "dataOferta": "2025-12-27",
+  "dataPDP": "2025-12-29",
   "valorMW": 150.5,
   "precoMWh": 250.75,
   "horaInicial": "08:00:00",
@@ -369,7 +369,7 @@ Criar arquivo `VALIDACAO_DOCKER_SWAGGER_27-12-2024.md` com:
 ```markdown
 # ✅ Relatório de Validação - POC PDPw 100%
 
-**Data**: 27/12/2024
+**Data**: 26/12/2025
 **Validador**: [Seu Nome]
 **Duração**: XX minutos
 

@@ -1,8 +1,82 @@
-# 🧪 GUIA DE TESTES MANUAIS - SWAGGER
+# 🧪 GUIA DE TESTES VIA SWAGGER - POC PDPW
 
-**URL**: http://localhost:5001/swagger/index.html  
-**Data**: 23/12/2025  
-**Objetivo**: Validar funcionamento de todas as APIs REST
+**Sistema**: Programação Diária da Produção de Energia  
+**Cliente**: ONS - Operador Nacional do Sistema Elétrico  
+**URL Swagger**: http://localhost:5001/swagger/index.html  
+**Versão API**: 1.0  
+**Data**: Dezembro/2025  
+
+---
+
+## 📋 OBJETIVO
+
+Este documento fornece instruções detalhadas para validação manual de todas as APIs REST do sistema PDPW através da interface Swagger UI, garantindo a funcionalidade correta dos 50 endpoints implementados.
+
+---
+
+## 🚀 PRÉ-REQUISITOS
+
+### Ambiente Configurado
+
+1. **Backend Executando**:
+```bash
+# Via .NET CLI
+cd src/PDPW.API
+dotnet run
+
+# Via Docker
+docker-compose up -d
+```
+
+2. **Verificar Health Check**:
+```bash
+curl http://localhost:5001/health
+# Resposta esperada: "Healthy"
+```
+
+3. **Acessar Swagger**:
+```
+http://localhost:5001/swagger/index.html
+```
+
+### Dados de Teste Disponíveis
+
+O banco de dados possui **857 registros** pré-carregados:
+
+| Entidade | Quantidade | Exemplos |
+|----------|-----------|----------|
+| TiposUsina | 8 | UHE, UTE, EOL, UFV, UTN, PCH, CGH, BIO |
+| Empresas | 10 | CEMIG, COPEL, Itaipu, FURNAS, Chesf |
+| Usinas | 10 | Itaipu (14GW), Belo Monte (11GW), Tucuruí (8GW) |
+| UnidadesGeradoras | 100 | Distribuídas nas usinas |
+| SemanasPMO | 108 | 2024-2026 |
+| Cargas | 120 | Por subsistema (SE, S, NE, N) |
+| Intercambios | 240 | Entre subsistemas |
+
+---
+
+## 📚 ESTRUTURA DO SWAGGER
+
+### Organização das APIs
+
+```
+PDPW API v1
+├── 📁 TiposUsina (5 endpoints)
+├── 📁 Empresas (6 endpoints)
+├── 📁 Usinas (7 endpoints)
+├── 📁 UnidadesGeradoras (7 endpoints)
+├── 📁 SemanasPMO (6 endpoints)
+├── 📁 EquipesPDP (5 endpoints)
+├── 📁 Cargas (7 endpoints)
+├── 📁 Intercambios (6 endpoints)
+├── 📁 Balancos (6 endpoints)
+├── 📁 RestricoesUG (6 endpoints)
+├── 📁 ParadasUG (6 endpoints)
+├── 📁 MotivosRestricao (5 endpoints)
+├── 📁 ArquivosDadger (10 endpoints)
+├── 📁 DadosEnergeticos (7 endpoints)
+└── 📁 Usuarios (6 endpoints)
+```
 
 ---
 
@@ -536,134 +610,147 @@ GET /api/equipespdp
 
 ---
 
-## 📊 CENÁRIOS DE VALIDAÇÃO COMPLETOS
+## 🎯 BOAS PRÁTICAS DE TESTE
 
-### **Cenário 1: Fluxo Completo de Usina**
+### 1. Ordem de Testes Recomendada
 
-1. ✅ Listar tipos de usina → Escolher `tipoUsinaId`
-2. ✅ Listar empresas → Escolher `empresaId`
-3. ✅ Criar nova usina com os IDs acima
-4. ✅ Buscar a usina criada por código
-5. ✅ Atualizar capacidade instalada
-6. ✅ Verificar se foi atualizado
-7. ✅ Deletar (soft delete)
-8. ✅ Tentar buscar novamente (não deve aparecer na lista)
+1. **Cadastros Base** (requisitos para outros testes):
+   - TiposUsina
+   - Empresas
+   - SemanasPMO
+   - MotivosRestricao
 
----
+2. **Cadastros Dependentes**:
+   - Usinas (depende de TiposUsina e Empresas)
+   - UnidadesGeradoras (depende de Usinas)
 
-### **Cenário 2: Fluxo de Carga Diária**
+3. **Dados Operacionais**:
+   - Cargas
+   - Intercambios
+   - Balancos
 
-1. ✅ Listar cargas existentes
-2. ✅ Criar carga para subsistema SE
-3. ✅ Criar carga para subsistema S
-4. ✅ Filtrar por subsistema SE
-5. ✅ Filtrar por período
+4. **Restrições e Paradas**:
+   - RestricoesUG
+   - ParadasUG
 
----
+5. **Documentos e Arquivos**:
+   - ArquivosDadger
 
-### **Cenário 3: Fluxo de Arquivo DADGER**
+### 2. Registro de Evidências
 
-1. ✅ Buscar semana PMO atual
-2. ✅ Criar arquivo DADGER para a semana
-3. ✅ Verificar que `processado = false`
-4. ✅ Marcar como processado (PATCH)
-5. ✅ Verificar que `processado = true` e `dataProcessamento` preenchida
-6. ✅ Filtrar arquivos por semana PMO
+Para cada teste, documente:
 
----
-
-### **Cenário 4: Fluxo de Intercâmbio**
-
-1. ✅ Criar intercâmbio SE → S
-2. ✅ Criar intercâmbio NE → SE
-3. ✅ Tentar criar SE → SE (deve falhar)
-4. ✅ Filtrar por período
-5. ✅ Filtrar por subsistema origem
-
----
-
-### **Cenário 5: Fluxo de Restrição de UG**
-
-1. ✅ Listar unidades geradoras
-2. ✅ Escolher uma UG
-3. ✅ Listar motivos de restrição
-4. ✅ Criar restrição para a UG
-5. ✅ Buscar restrições ativas para hoje
-6. ✅ Verificar se aparece na lista
-
----
-
-## 🔍 VALIDAÇÕES DE ERRO (Devem FALHAR)
-
-### **1. Campos Obrigatórios**
-
-```json
-POST /api/usinas
-{
-  "nome": "Sem código"
-}
 ```
-**Esperado**: `400 Bad Request` - Validação de `codigo` obrigatório
+✅ Endpoint: GET /api/usinas
+✅ Status Code: 200 OK
+✅ Response Time: 45ms
+✅ Records Returned: 10
+✅ Validation: All fields present
+✅ Screenshot: evidence_001.png
+```
+
+### 3. Validações Críticas
+
+Para cada endpoint, verificar:
+
+- ✅ **Status Code**: Corresponde ao esperado (200, 201, 204, 400, 404)
+- ✅ **Response Time**: < 500ms para GET, < 1000ms para POST/PUT
+- ✅ **Data Integrity**: Todos os campos retornados corretamente
+- ✅ **Relationships**: Dados de navegação (FKs) corretos
+- ✅ **Error Handling**: Mensagens de erro claras e úteis
+- ✅ **Validation Rules**: Regras de negócio aplicadas
 
 ---
 
-### **2. Valores Inválidos**
+## 📊 TEMPLATE DE RELATÓRIO DE TESTES
 
-```json
-POST /api/cargas
-{
-  "dataReferencia": "2025-01-23",
-  "subsistemaId": "SE",
-  "cargaMWmed": -100.00
-}
+```markdown
+# Relatório de Testes - API PDPW
+
+**Data**: DD/MM/YYYY
+**Testador**: [Nome]
+**Ambiente**: [Desenvolvimento/Homologação]
+**Versão**: 1.0
+
+## Resumo Executivo
+
+- **Total de APIs**: 15
+- **Total de Endpoints**: 50
+- **Endpoints Testados**: __/50
+- **Sucessos**: __
+- **Falhas**: __
+- **Taxa de Sucesso**: __%
+
+## Detalhamento por API
+
+### 1. API Usinas
+
+| Endpoint | Método | Status | Observações |
+|----------|--------|--------|-------------|
+| /api/usinas | GET | ✅ PASS | 10 registros retornados |
+| /api/usinas/{id} | GET | ✅ PASS | - |
+| /api/usinas | POST | ✅ PASS | Validações OK |
+| /api/usinas/{id} | PUT | ✅ PASS | - |
+| /api/usinas/{id} | DELETE | ✅ PASS | Soft delete funcional |
+
+### 2. API Cargas
+
+[Repetir estrutura acima]
+
+## Bugs Identificados
+
+| ID | Severidade | API | Descrição | Status |
+|----|-----------|-----|-----------|--------|
+| BUG-001 | Alta | Usinas | [Descrição] | Aberto |
+
+## Evidências
+
+- evidence_001.png - GET /api/usinas
+- evidence_002.png - POST /api/usinas
+[...]
+
+## Conclusão
+
+[Observações gerais sobre os testes]
+
+## Assinaturas
+
+**Testador**: _________________  
+**Aprovador**: _________________
 ```
-**Esperado**: `400 Bad Request` - Carga não pode ser negativa
-
----
-
-### **3. Entidades Não Encontradas**
-
-```http
-GET /api/usinas/99999
-```
-**Esperado**: `404 Not Found`
-
----
-
-### **4. Relacionamentos Inválidos**
-
-```json
-POST /api/usinas
-{
-  "codigo": "TESTE",
-  "nome": "Teste",
-  "tipoUsinaId": 999,
-  "empresaId": 999
-}
-```
-**Esperado**: `400 Bad Request` - Tipo de usina ou empresa não existe
 
 ---
 
 ## ✅ CHECKLIST FINAL DE VALIDAÇÃO
 
-Marque conforme testar:
+### APIs Cadastros Base
+- [ ] TiposUsina - Listar (GET)
+- [ ] TiposUsina - Buscar por ID (GET)
+- [ ] TiposUsina - Criar (POST)
+- [ ] TiposUsina - Atualizar (PUT)
+- [ ] TiposUsina - Deletar (DELETE)
 
-- [ ] **Usinas**: Listar, Criar, Atualizar, Deletar
-- [ ] **Cargas**: Listar, Criar, Filtrar por Subsistema
-- [ ] **Arquivos DADGER**: Listar, Criar, Processar
-- [ ] **Intercâmbios**: Listar, Criar, Validar Origem≠Destino
-- [ ] **Restrições UG**: Listar, Criar, Buscar Ativas
-- [ ] **Semanas PMO**: Atual, Próximas
-- [ ] **Balanços**: Listar, Filtrar
-- [ ] **Empresas**: Listar, Criar
-- [ ] **Tipos Usina**: Listar
-- [ ] **Equipes PDP**: Listar
-- [ ] **Dados Energéticos**: Listar
-- [ ] **Usuários**: Listar
-- [ ] **Unidades Geradoras**: Listar
-- [ ] **Paradas UG**: Listar
-- [ ] **Motivos Restrição**: Listar
+### APIs Operacionais
+- [ ] Cargas - Listar (GET)
+- [ ] Cargas - Criar (POST)
+- [ ] Cargas - Filtrar por Subsistema (GET)
+- [ ] Cargas - Filtrar por Período (GET)
+
+### APIs de Restrições
+- [ ] RestricoesUG - Listar (GET)
+- [ ] RestricoesUG - Criar (POST)
+- [ ] RestricoesUG - Buscar Ativas (GET)
+
+### APIs de Documentos
+- [ ] ArquivosDadger - Listar (GET)
+- [ ] ArquivosDadger - Criar (POST)
+- [ ] ArquivosDadger - Processar (PATCH)
+
+### Validações de Negócio
+- [ ] Intercâmbios - Validar Origem ≠ Destino
+- [ ] Cargas - Validar valores não negativos
+- [ ] Usinas - Validar FKs existentes
+- [ ] ArquivosDadger - Validar Semana PMO existente
 
 ---
 
@@ -694,7 +781,7 @@ _________________________________________________
 
 ---
 
-**📅 Criado**: 23/12/2025   
+**📅 Criado**: 29/12/2025   
 **👤 Responsável**: Willian Bulhões  
 **🔗 Swagger**: http://localhost:5001/swagger/index.html  
 **✅ Status**: Pronto para Testes
