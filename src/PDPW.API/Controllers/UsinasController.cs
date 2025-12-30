@@ -145,6 +145,7 @@ public class UsinasController : BaseController
         if (result.IsSuccess)
         {
             _logger.LogInformation("Usina {UsinaId} atualizada com sucesso", id);
+            return Ok(result.Value);
         }
         
         return result.ToActionResult(this);

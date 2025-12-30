@@ -4,6 +4,8 @@ using PDPW.Application.DTOs.ArquivoDadger;
 using PDPW.Application.Services;
 using PDPW.Domain.Entities;
 using PDPW.Domain.Interfaces;
+using AutoMapper;
+using System.Linq;
 
 namespace PDPW.UnitTests.Services;
 
@@ -14,15 +16,18 @@ public class ArquivoDadgerServiceTests
 {
     private readonly Mock<IArquivoDadgerRepository> _mockRepository;
     private readonly Mock<ISemanaPMORepository> _mockSemanaPMORepository;
+    private readonly Mock<IMapper> _mockMapper;
     private readonly ArquivoDadgerService _service;
 
     public ArquivoDadgerServiceTests()
     {
         _mockRepository = new Mock<IArquivoDadgerRepository>();
         _mockSemanaPMORepository = new Mock<ISemanaPMORepository>();
+        _mockMapper = new Mock<IMapper>();
         _service = new ArquivoDadgerService(
             _mockRepository.Object,
-            _mockSemanaPMORepository.Object);
+            _mockSemanaPMORepository.Object,
+            _mockMapper.Object);
     }
 
     #region GetAllAsync Tests
@@ -43,9 +48,9 @@ public class ArquivoDadgerServiceTests
         var result = await _service.GetAllAsync();
 
         // Assert
-        result.Should().NotBeNull();
-        result.Should().HaveCount(2);
-        result.First().NomeArquivo.Should().Be("dadger_2025_01.dat");
+        result.Value.Should().NotBeNull();
+        result.Value.Should().HaveCount(2);
+        result.Value.First().NomeArquivo.Should().Be("dadger_2025_01.dat");
     }
 
     [Fact]
@@ -59,7 +64,7 @@ public class ArquivoDadgerServiceTests
         var result = await _service.GetAllAsync();
 
         // Assert
-        result.Should().BeEmpty();
+        result.Value.Should().BeEmpty();
     }
 
     #endregion
@@ -84,9 +89,9 @@ public class ArquivoDadgerServiceTests
         var result = await _service.GetByIdAsync(1);
 
         // Assert
-        result.Should().NotBeNull();
-        result!.Id.Should().Be(1);
-        result.NomeArquivo.Should().Be("dadger_2025_01.dat");
+        result.Value.Should().NotBeNull();
+        result.Value.Id.Should().Be(1);
+        result.Value.NomeArquivo.Should().Be("dadger_2025_01.dat");
     }
 
     [Fact]
@@ -99,7 +104,7 @@ public class ArquivoDadgerServiceTests
         var result = await _service.GetByIdAsync(999);
 
         // Assert
-        result.Should().BeNull();
+        result.Value.Should().BeNull();
     }
 
     #endregion
@@ -136,9 +141,9 @@ public class ArquivoDadgerServiceTests
         var result = await _service.CreateAsync(createDto);
 
         // Assert
-        result.Should().NotBeNull();
-        result.Id.Should().Be(1);
-        result.NomeArquivo.Should().Be("dadger_2025_01.dat");
+        result.Value.Should().NotBeNull();
+        result.Value.Id.Should().Be(1);
+        result.Value.NomeArquivo.Should().Be("dadger_2025_01.dat");
         _mockRepository.Verify(r => r.AddAsync(It.IsAny<ArquivoDadger>()), Times.Once);
     }
 
@@ -219,8 +224,8 @@ public class ArquivoDadgerServiceTests
         var result = await _service.UpdateAsync(1, updateDto);
 
         // Assert
-        result.Should().NotBeNull();
-        result.NomeArquivo.Should().Be("dadger_atualizado.dat");
+        result.Value.Should().NotBeNull();
+        result.Value.NomeArquivo.Should().Be("dadger_atualizado.dat");
         _mockRepository.Verify(r => r.UpdateAsync(It.IsAny<ArquivoDadger>()), Times.Once);
     }
 
@@ -257,7 +262,7 @@ public class ArquivoDadgerServiceTests
         var result = await _service.DeleteAsync(1);
 
         // Assert
-        result.Should().BeTrue();
+        result.Should().Be(true);
         _mockRepository.Verify(r => r.DeleteAsync(1), Times.Once);
     }
 
@@ -271,7 +276,7 @@ public class ArquivoDadgerServiceTests
         var result = await _service.DeleteAsync(999);
 
         // Assert
-        result.Should().BeFalse();
+        result.Should().Be(false);
         _mockRepository.Verify(r => r.DeleteAsync(It.IsAny<int>()), Times.Never);
     }
 
@@ -298,8 +303,8 @@ public class ArquivoDadgerServiceTests
         var result = await _service.MarcarComoProcessadoAsync(1);
 
         // Assert
-        result.Should().NotBeNull();
-        result.Processado.Should().BeTrue();
+        result.Value.Should().NotBeNull();
+        result.Value.Processado.Should().BeTrue();
         arquivo.Processado.Should().BeTrue();
         arquivo.DataProcessamento.Should().NotBeNull();
         _mockRepository.Verify(r => r.UpdateAsync(It.IsAny<ArquivoDadger>()), Times.Once);
@@ -336,9 +341,9 @@ public class ArquivoDadgerServiceTests
         var result = await _service.GetBySemanaPMOAsync(1);
 
         // Assert
-        result.Should().NotBeNull();
-        result.Should().HaveCount(2);
-        result.All(a => a.SemanaPMOId == 1).Should().BeTrue();
+        result.Value.Should().NotBeNull();
+        result.Value.Should().HaveCount(2);
+        result.Value.All(a => a.SemanaPMOId == 1).Should().BeTrue();
     }
 
     #endregion
