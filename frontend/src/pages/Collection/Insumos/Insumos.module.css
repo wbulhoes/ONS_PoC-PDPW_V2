@@ -1,0 +1,5 @@
+.container { padding: 16px; }
+.controls { display:flex; gap:8px; align-items:center; margin-bottom:12px; }
+.list table { width:100%; border-collapse:collapse; }
+.list th, .list td { border:1px solid #ddd; padding:6px; }
+.actions { margin-top:12px; }

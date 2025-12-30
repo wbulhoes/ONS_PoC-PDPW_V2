@@ -1,0 +1,332 @@
+/**
+ * Estilos para a página de Coleta de Dados Energéticos (Razão Energética Transformada)
+ * Mantém a identidade visual do legado WebForms com melhorias de usabilidade
+ */
+
+.container {
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* ========== Header ========== */
+.header {
+  margin-bottom: 20px;
+}
+
+.systemTitle {
+  background: url('/images/back_tit_sistema.gif') repeat-x;
+  height: 25px;
+  padding: 2px 0;
+}
+
+.systemTitle h2 {
+  font-size: 14px;
+  margin: 0;
+  padding: 4px 10px;
+  color: #003366;
+}
+
+.pageTitle {
+  background: url('/images/back_titulo.gif') repeat-x;
+  height: 23px;
+  padding: 2px 0;
+  margin-top: 2px;
+}
+
+.pageTitle h3 {
+  font-size: 13px;
+  margin: 0;
+  padding: 3px 10px;
+  color: #003366;
+  font-weight: bold;
+}
+
+/* ========== Messages ========== */
+.errorMessage {
+  color: #cc0000;
+  background-color: #ffe6e6;
+  border: 1px solid #cc0000;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #003366;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ========== Form ========== */
+.form {
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.formGroup:last-child {
+  margin-bottom: 0;
+}
+
+.formGroup label {
+  min-width: 150px;
+  text-align: right;
+  font-size: 13px;
+  color: #333;
+}
+
+.select {
+  padding: 5px 10px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+  font-size: 12px;
+  min-width: 220px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.select:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #003366;
+  box-shadow: 0 0 3px rgba(0, 51, 102, 0.3);
+}
+
+.saveButton {
+  padding: 6px 16px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: background-color 0.2s;
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: #004d99;
+}
+
+.saveButton:disabled {
+  background-color: #999999;
+  cursor: not-allowed;
+}
+
+/* ========== Table ========== */
+.tableWrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border: 1px solid #999999;
+  border-radius: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  background-color: #ffffff;
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f5deb3; /* Beige - mantendo padrão legado */
+}
+
+.table th {
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #999999;
+  background-color: #f5deb3;
+  white-space: nowrap;
+  color: #000;
+}
+
+.table td {
+  padding: 6px 8px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  white-space: nowrap;
+}
+
+.intervalColumn,
+.intervalCell {
+  background-color: #f5deb3 !important;
+  font-weight: bold;
+  min-width: 100px;
+  text-align: center;
+}
+
+.totalColumn,
+.totalCell {
+  background-color: #f5deb3 !important;
+  font-weight: bold;
+  min-width: 62px;
+}
+
+.selectedColumn {
+  color: #cc0000 !important;
+  font-weight: bold;
+}
+
+.selectedCell {
+  background-color: #fff8e1;
+}
+
+.totalRow {
+  background-color: #f5deb3;
+  font-weight: bold;
+}
+
+.totalLabel {
+  background-color: #f5deb3;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ========== Textarea Overlay ========== */
+.textareaOverlay {
+  position: absolute;
+  top: 269px;
+  z-index: 20;
+}
+
+.textarea {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  line-height: 20px;
+  height: 1001px;
+  width: 100%;
+  padding: 4px;
+  border: 2px solid #003366;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 1200px) {
+  .formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .formGroup label {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .tableContainer {
+    font-size: 10px;
+  }
+
+  .table th,
+  .table td {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .systemTitle h2 {
+    font-size: 12px;
+  }
+
+  .pageTitle h3 {
+    font-size: 11px;
+  }
+
+  .table {
+    font-size: 9px;
+  }
+
+  .table th,
+  .table td {
+    padding: 4px;
+    font-size: 9px;
+  }
+
+  .textarea {
+    font-size: 10px;
+    line-height: 18px;
+  }
+
+  .saveButton {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table {
+    font-size: 8px;
+  }
+
+  .table th,
+  .table td {
+    padding: 3px;
+  }
+
+  .intervalColumn,
+  .intervalCell {
+    min-width: 80px;
+  }
+
+  .totalColumn,
+  .totalCell {
+    min-width: 50px;
+  }
+}

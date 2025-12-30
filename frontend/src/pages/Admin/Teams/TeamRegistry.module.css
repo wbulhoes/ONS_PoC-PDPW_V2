@@ -1,0 +1,325 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.title {
+  color: #2c5aa0;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.content {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.form {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.label {
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+  padding-top: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  max-width: 400px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #2c5aa0;
+  box-shadow: 0 0 5px rgba(44, 90, 160, 0.3);
+}
+
+.textarea {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 60px;
+  max-width: 400px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #2c5aa0;
+  box-shadow: 0 0 5px rgba(44, 90, 160, 0.3);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox {
+  margin-right: 8px;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 8px 16px;
+  border: 1px solid #2c5aa0;
+  background: #2c5aa0;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+  min-width: 80px;
+}
+
+.button:hover:not(:disabled) {
+  background: #1e3f73;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSecondary {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+  min-width: 80px;
+}
+
+.buttonSecondary:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.tableContainer {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #9acd32;
+  color: black;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #e9f4cf;
+}
+
+.selectedRow {
+  background-color: #e6e6fa !important;
+}
+
+.checkboxColumn {
+  width: 30px;
+  text-align: center;
+}
+
+.actionButton {
+  padding: 4px 8px;
+  border: 1px solid #2c5aa0;
+  background: #2c5aa0;
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  border-radius: 2px;
+}
+
+.actionButton:hover:not(:disabled) {
+  background: #1e3f73;
+}
+
+.actionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.pageButton {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageButton:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.deleteButton {
+  padding: 8px 16px;
+  border: 1px solid #dc3545;
+  background: #dc3545;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 3px;
+  min-width: 150px;
+}
+
+.deleteButton:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.deleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label {
+    width: auto;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-right: 0;
+    padding-top: 0;
+  }
+
+  .input,
+  .textarea {
+    max-width: none;
+    width: 100%;
+  }
+
+  .formActions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .button,
+  .buttonSecondary {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .deleteButton {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .table {
+    font-size: 11px;
+  }
+
+  .table th,
+  .table td {
+    padding: 4px;
+  }
+
+  .actionButton {
+    padding: 2px 4px;
+    font-size: 10px;
+  }
+}

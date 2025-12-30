@@ -1,0 +1,390 @@
+/**
+ * Estilos para o componente Load (Coleta de Carga)
+ * 
+ * Layout: Grid com 48 intervalos + 2 linhas de resumo (total/média)
+ * Funcionalidade: Textarea overlay para edição em massa
+ * Tema: #EAECD4 (fundo) + YellowGreen (#9acd32) accents
+ */
+
+.loadContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #9acd32;
+  padding-bottom: 10px;
+}
+
+/* Mensagens de erro */
+.errorMessage {
+  background-color: #ffe6e6;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Área de filtros */
+.filterContainer {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 250px;
+  flex: 1;
+}
+
+.filterLabel {
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterSelect:hover:not(:disabled) {
+  border-color: #9acd32;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #9acd32;
+  box-shadow: 0 0 0 2px rgba(154, 205, 50, 0.2);
+}
+
+.filterSelect:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Container do grid */
+.gridContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.gridWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tabela de dados */
+.dataGrid {
+  border-collapse: collapse;
+  border: 2px ridge #999;
+  background-color: #EAECD4;
+  font-size: 12px;
+}
+
+.headerCell {
+  background-color: #EAECD4;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px solid #999;
+  color: #333;
+}
+
+.dataRow {
+  transition: background-color 0.2s ease;
+}
+
+.dataRow:hover {
+  background-color: #e0e2cc;
+}
+
+.timeCell {
+  background-color: #EAECD4;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 12px;
+  border: 1px solid #999;
+  width: 150px;
+  white-space: nowrap;
+}
+
+.valueCell {
+  text-align: right;
+  padding: 6px 12px;
+  border: 1px solid #999;
+  background-color: white;
+  width: 100px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Linhas de resumo (Total e Média) */
+.summaryRow {
+  background-color: #EAECD4;
+}
+
+.summaryLabelCell {
+  background-color: #EAECD4;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 12px;
+  border: 1px solid #999;
+}
+
+.summaryValueCell {
+  background-color: #EAECD4;
+  text-align: right;
+  padding: 8px 12px;
+  border: 1px solid #999;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Textarea overlay para edição */
+.textareaOverlay {
+  position: absolute;
+  top: 42px; /* Altura do cabeçalho */
+  left: 152px; /* Largura da coluna de hora + border */
+  z-index: 10;
+}
+
+.textareaEdit {
+  width: 100px;
+  height: 960px; /* 48 linhas * 20px line-height */
+  font-size: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 20px;
+  padding: 6px 12px;
+  border: 2px solid #9acd32;
+  background-color: white;
+  resize: none;
+  overflow-y: auto;
+}
+
+.textareaEdit:focus {
+  outline: none;
+  border-color: #7ab82a;
+  box-shadow: 0 0 8px rgba(154, 205, 50, 0.4);
+}
+
+.textareaEdit:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* Botões de ação */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.saveButton,
+.alterButton {
+  padding: 10px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.saveButton {
+  background-color: #9acd32;
+  color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: #7ab82a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.alterButton {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.alterButton:hover:not(:disabled) {
+  background-color: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.saveButton:disabled,
+.alterButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.saveButton:active:not(:disabled),
+.alterButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .loadContainer {
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .filterContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .filterGroup {
+    min-width: 100%;
+  }
+  
+  .gridContainer {
+    overflow-x: auto;
+  }
+  
+  .dataGrid {
+    font-size: 11px;
+  }
+  
+  .timeCell {
+    width: 120px;
+    font-size: 11px;
+  }
+  
+  .valueCell {
+    width: 80px;
+  }
+  
+  .textareaOverlay {
+    left: 122px;
+  }
+  
+  .textareaEdit {
+    width: 80px;
+    font-size: 11px;
+  }
+  
+  .buttonContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .saveButton,
+  .alterButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadContainer {
+    padding: 10px;
+  }
+  
+  .title {
+    font-size: 18px;
+  }
+  
+  .dataGrid {
+    font-size: 10px;
+  }
+  
+  .timeCell {
+    width: 100px;
+    padding: 4px 8px;
+  }
+  
+  .valueCell {
+    width: 70px;
+    padding: 4px 8px;
+  }
+  
+  .textareaOverlay {
+    left: 102px;
+  }
+  
+  .textareaEdit {
+    width: 70px;
+    font-size: 10px;
+    line-height: 18px;
+    height: 864px; /* 48 * 18px */
+  }
+}
+
+/* Loading state */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loadContainer.loading {
+  pointer-events: none;
+}
+
+.loadContainer.loading .dataGrid {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Acessibilidade */
+.filterSelect:focus-visible,
+.textareaEdit:focus-visible,
+.saveButton:focus-visible,
+.alterButton:focus-visible {
+  outline: 2px solid #9acd32;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .filterContainer,
+  .buttonContainer,
+  .textareaOverlay {
+    display: none;
+  }
+  
+  .loadContainer {
+    max-width: 100%;
+  }
+  
+  .dataGrid {
+    border: 1px solid black;
+  }
+  
+  .dataRow:hover {
+    background-color: transparent;
+  }
+}

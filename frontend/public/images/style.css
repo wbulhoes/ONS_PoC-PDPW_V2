@@ -1,0 +1,92 @@
+.titulo {
+    color: #A5D21F;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.01 {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.01:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+#SWDiv1 {
+	LEFT: 5px; POSITION: relative; TOP: 0px; HEIGHT: 0px
+}
+#SWDiv2 {
+	LEFT: 0px; OVERFLOW: hidden; WIDTH: 245px; CLIP: rect(0px 245px 50px 0px); POSITION: absolute; TOP: 0px; HEIGHT: 50px
+}
+#SCDiv3 {
+	Z-INDEX: 1; LEFT: 0px; WIDTH: 245px; POSITION: absolute; TOP: 0px; HEIGHT: 50px
+}
+A {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #666666
+}
+A:visited {
+	COLOR: #666666
+}
+A:hover {
+	COLOR: #000000
+}
+.texto {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.texto_bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.texto_navega {
+	FONT-WEIGHT: bolder; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.texto_caminho_preto {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.texto_caminho_cinza {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #999999; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.texto_caminho_verde {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #99cc00; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tit_submenu {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tit_submenu2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #c0c0c0; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.formulario {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; BORDER-LEFT-COLOR: #ffffff; BORDER-BOTTOM-COLOR: #ffffff; COLOR: #000000; BORDER-TOP-COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #c0c0c0; BORDER-RIGHT-COLOR: #ffffff; black: 
+}
+.formulario_texto {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.formulario_texto_bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #e5e5e5; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #b3b3b3; SCROLLBAR-ARROW-COLOR: #9f9e9e; SCROLLBAR-BASE-COLOR: #e5e5e5; scrollbar-3d-light-color: #B3B3B3; scrollbar-dark-shadow-color: #9F9E9E
+}
+.texto_navegamenu {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.modulo {
+	FONT-WEIGHT: bolder; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+UNKNOWN {
+	TEXT-DECORATION: none
+}
+A_modulo:link {
+	COLOR: #666666
+}
+A_modulo:visited {
+	COLOR: #666666
+}
+A_modulo:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}

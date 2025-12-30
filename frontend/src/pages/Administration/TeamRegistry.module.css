@@ -1,0 +1,366 @@
+/**
+ * Estilos para TeamRegistry (Cadastro de Equipe PDP)
+ * Migrado de: legado/pdpw/frmCadEquipePDP.aspx
+ * Tema: YellowGreen (#9acd32) com alternância #F7F7F7 e #E9F4CF
+ */
+
+.container {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Mensagens */
+.errorMessage {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #ef5350;
+  font-weight: bold;
+}
+
+.successMessage {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #66bb6a;
+  font-weight: bold;
+}
+
+.formError {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #ffc107;
+}
+
+/* Container do Grid */
+.gridContainer {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* DataGrid */
+.dataGrid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.dataGrid thead {
+  background-color: #9acd32; /* YellowGreen */
+  color: #000;
+  font-weight: bold;
+}
+
+.dataGrid thead th {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #88bb28;
+}
+
+.dataGrid tbody td {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  background-color: #e9f4cf;
+}
+
+.dataGrid tbody tr.alternateRow td {
+  background-color: #f7f7f7;
+}
+
+.dataGrid tbody tr:hover td {
+  background-color: #e6e6fa; /* Lavender */
+  cursor: pointer;
+}
+
+.dataGrid tbody tr td:first-child {
+  text-align: center;
+  width: 20px;
+}
+
+.loading,
+.noData {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.pageButton {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  background-color: #9acd32;
+  color: #000;
+  border: 1px solid #88bb28;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: #8bc34a;
+}
+
+.pageButton:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  border-color: #bbb;
+}
+
+.pageInfo {
+  font-size: 11px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Botões de Ação */
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.actionButtons button {
+  width: 71px;
+  height: 25px;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: #fff;
+}
+
+.btnIncluir {
+  background-color: #4caf50;
+}
+
+.btnIncluir:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.btnAlterar {
+  background-color: #2196f3;
+}
+
+.btnAlterar:hover:not(:disabled) {
+  background-color: #1976d2;
+}
+
+.btnExcluir {
+  background-color: #f44336;
+}
+
+.btnExcluir:hover:not(:disabled) {
+  background-color: #d32f2f;
+}
+
+.actionButtons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Formulário */
+.formContainer {
+  background-color: #fff;
+  border: 1px solid #e9f4cf;
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.formTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.formTable tr {
+  height: 35px;
+}
+
+.formTable td {
+  padding: 8px;
+}
+
+.labelCell {
+  width: 100px;
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+}
+
+.inputCodigo {
+  width: 89px;
+  height: 22px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #666;
+  font-size: 12px;
+}
+
+.inputNome {
+  width: 438px;
+  height: 22px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.inputNome:focus {
+  outline: none;
+  border-color: #9acd32;
+  box-shadow: 0 0 4px rgba(154, 205, 50, 0.3);
+}
+
+/* Botões do Formulário */
+.formButtons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.formButtons button {
+  width: 71px;
+  height: 25px;
+  font-size: 11px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: #fff;
+}
+
+.btnSalvar {
+  background-color: #4caf50;
+}
+
+.btnSalvar:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.btnCancelar {
+  background-color: #ff9800;
+}
+
+.btnCancelar:hover:not(:disabled) {
+  background-color: #f57c00;
+}
+
+.formButtons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .dataGrid {
+    font-size: 10px;
+  }
+
+  .dataGrid thead th,
+  .dataGrid tbody td {
+    padding: 4px;
+  }
+
+  .actionButtons {
+    flex-wrap: wrap;
+  }
+
+  .inputNome {
+    width: 100%;
+    max-width: 438px;
+  }
+
+  .labelCell {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 16px;
+  }
+
+  .dataGrid thead th:nth-child(2) {
+    display: none;
+  }
+
+  .dataGrid tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pageButton {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .formTable {
+    display: block;
+  }
+
+  .formTable tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .labelCell {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 4px;
+  }
+
+  .inputNome,
+  .inputCodigo {
+    width: 100%;
+  }
+}

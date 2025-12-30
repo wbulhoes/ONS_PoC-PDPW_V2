@@ -1,0 +1,349 @@
+/**
+ * Estilos para o componente UserRegistry
+ * Mantém a identidade visual do legado (frmCadUsuario.aspx)
+ */
+
+.container {
+  width: 100%;
+  max-width: 831px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding: 10px;
+  background: linear-gradient(to right, #99cc00, #88bb00);
+  border-radius: 4px;
+}
+
+.content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+/* Seção do formulário */
+.formSection {
+  margin-bottom: 20px;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  width: 71px;
+  text-align: right;
+  font-weight: normal;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.inputShort {
+  width: 89px;
+  height: 22px;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.inputShort:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.inputMedium {
+  width: 121px;
+  height: 22px;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.inputLong {
+  width: 438px;
+  height: 22px;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+/* Mensagens */
+.message {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #e9f4cf;
+  border: 1px solid #99cc00;
+  border-radius: 4px;
+  color: #333;
+  font-weight: bold;
+}
+
+.errorBanner {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #ffecec;
+  border: 1px solid #ff6b6b;
+  border-radius: 4px;
+  color: #b00000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.successBanner {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #e9f4cf;
+  border: 1px solid #99cc00;
+  border-radius: 4px;
+  color: #2d6a00;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.retryButton {
+  padding: 4px 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.retryButton:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Seção da tabela */
+.tableSection {
+  margin: 15px 0;
+}
+
+.table {
+  width: 620px;
+  border-collapse: collapse;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.table thead {
+  background-color: #99cc00;
+  font-weight: bold;
+  color: #000;
+}
+
+.table thead th {
+  padding: 6px 4px;
+  text-align: left;
+  border: 1px solid #88bb00;
+}
+
+.table tbody td {
+  padding: 4px;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.evenRow {
+  background-color: #e9f4cf;
+}
+
+.oddRow {
+  background-color: #f7f7f7;
+}
+
+.checkboxCell {
+  text-align: center;
+  width: 20px;
+}
+
+.checkboxCell input[type='checkbox'] {
+  cursor: pointer;
+}
+
+.skeletonBox {
+  width: 12px;
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+}
+
+.skeletonText {
+  width: 100%;
+  height: 12px;
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 3px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.pagination button {
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+.pagination button:hover {
+  background-color: #e0e0e0;
+}
+
+.pagination button:active {
+  background-color: #d0d0d0;
+}
+
+.pageInfo {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Seção de botões */
+.buttonSection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+.button {
+  width: 71px;
+  height: 25px;
+  padding: 0;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  background-image: linear-gradient(to bottom, #fff 0%, #e6e6e6 100%);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #e8e8e8;
+  background-image: linear-gradient(to bottom, #f8f8f8 0%, #d8d8d8 100%);
+  border-color: #777;
+}
+
+.button:active:not(:disabled) {
+  background-image: linear-gradient(to bottom, #e0e0e0 0%, #d0d0d0 100%);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+  background-image: none;
+  color: #999;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .inputLong {
+    width: 100%;
+    max-width: 438px;
+  }
+
+  .buttonSection {
+    flex-wrap: wrap;
+  }
+
+  .button {
+    min-width: 65px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .formRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .inputShort,
+  .inputMedium,
+  .inputLong {
+    width: 100%;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+}

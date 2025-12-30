@@ -45,6 +45,9 @@ import AvailabilityQuery from './pages/Query/Hydraulic/AvailabilityQuery';
 import './styles/global.css';
 import CompanyManagement from './pages/Admin/Company/CompanyManagement';
 import PlantManagement from './pages/Admin/Plant/PlantManagement';
+import OfertasExportacaoManagement from './pages/Exportacao/OfertasExportacaoManagement';
+import OfertasRVManagement from './pages/Exportacao/OfertasRVManagement';
+import EnergiaVertidaManagement from './pages/EnergiaVertida/EnergiaVertidaManagement';
 
 function App() {
   return (
@@ -120,6 +123,9 @@ function App() {
           <Route path="/frmCnsMotivoInfl.aspx" element={<InflexibilityDispatchReasonPage />} />
           <Route path="/admin/inflexibilidade-contratada" element={<ContractedInflexibility />} />
           <Route path="/frmInflxContratada.aspx" element={<ContractedInflexibility />} />
+          <Route path="/ofertas-exportacao" element={<OfertasExportacaoManagement />} />
+          <Route path="/ofertas-rv" element={<OfertasRVManagement />} />
+          <Route path="/energia-vertida" element={<EnergiaVertidaManagement />} />
         </Routes>
       </Layout>
     </BrowserRouter>
