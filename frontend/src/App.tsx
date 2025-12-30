@@ -43,6 +43,8 @@ import Comments from './pages/Query/DESSEM/Comments';
 import ObservationQuery from './pages/Query/Other/ObservationQuery';
 import AvailabilityQuery from './pages/Query/Hydraulic/AvailabilityQuery';
 import './styles/global.css';
+import CompanyManagement from './pages/Admin/Company/CompanyManagement';
+import PlantManagement from './pages/Admin/Plant/PlantManagement';
 
 function App() {
   return (
@@ -108,10 +110,10 @@ function App() {
           <Route path="/coleta/outros/usina-conversora" element={<PlantConverterPage />} />
           <Route path="/frmUsinaConversora.aspx" element={<PlantConverterPage />} />
           <Route path="/auth/integration" element={<IntegrationAuth />} />
-          <Route path="/admin/empresas" element={<Company />} />
+          <Route path="/admin/empresas" element={<CompanyManagement />} />
           <Route path="/admin/usuarios" element={<UserManagementPage />} />
           <Route path="/admin/associacao-usuario-empresa" element={<UserAssociation />} />
-          <Route path="/admin/usinas" element={<PlantRegistry />} />
+          <Route path="/admin/usinas" element={<PlantManagement />} />
           <Route path="/admin/motivos-despacho-eletrica" element={<ElectricalDispatchReasonPage />} />
           <Route path="/frmCnsMotivo.aspx" element={<ElectricalDispatchReasonPage />} />
           <Route path="/admin/motivos-despacho-inflexibilidade" element={<InflexibilityDispatchReasonPage />} />
