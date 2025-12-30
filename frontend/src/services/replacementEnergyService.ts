@@ -1,4 +1,5 @@
 import { ReplacementEnergy } from '../types/replacementEnergy';
+import { apiClient } from './apiClient';
 
 const MOCK_DATA: ReplacementEnergy[] = [
   {
@@ -18,21 +19,31 @@ const MOCK_DATA: ReplacementEnergy[] = [
 ];
 
 export const replacementEnergyService = {
-  getByDateAndAgent: async (date: string, agenteId: string): Promise<ReplacementEnergy[]> => {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    return MOCK_DATA.filter(d => d.data === date && d.agenteId === agenteId);
+  async getByDateAndAgent(date: string, agenteId: string): Promise<ReplacementEnergy[]> {
+    try {
+      return await apiClient.get<ReplacementEnergy[]>(`/replacement-energy?date=${date}&agenteId=${agenteId}`);
+    } catch (err) {
+      console.warn(`replacementEnergyService.getByDateAndAgent fallback mock - ${err}`);
+      await new Promise(resolve => setTimeout(resolve, 500));
+      return MOCK_DATA.filter(d => d.data === date && d.agenteId === agenteId);
+    }
   },
 
-  save: async (data: ReplacementEnergy): Promise<ReplacementEnergy> => {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    const index = MOCK_DATA.findIndex(d => d.id === data.id);
-    if (index >= 0) {
-      MOCK_DATA[index] = data;
-      return data;
-    } else {
-      const newData = { ...data, id: Math.random().toString() };
-      MOCK_DATA.push(newData);
-      return newData;
+  async save(data: ReplacementEnergy): Promise<ReplacementEnergy> {
+    try {
+      return await apiClient.post<ReplacementEnergy>('/replacement-energy', data);
+    } catch (err) {
+      console.warn(`replacementEnergyService.save fallback mock - ${err}`);
+      await new Promise(resolve => setTimeout(resolve, 500));
+      const index = MOCK_DATA.findIndex(d => d.id === data.id);
+      if (index >= 0) {
+        MOCK_DATA[index] = data;
+        return data;
+      } else {
+        const newData = { ...data, id: Math.random().toString() };
+        MOCK_DATA.push(newData);
+        return newData;
+      }
     }
   }
 };
