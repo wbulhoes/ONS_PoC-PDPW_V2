@@ -1,0 +1,85 @@
+.container {
+  max-width: 700px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px;
+}
+.form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.form input, .form select {
+  padding: 6px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.form button {
+  padding: 6px 16px;
+  border: none;
+  background: #0077cc;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form button[type="button"] {
+  background: #aaa;
+}
+.error {
+  color: #b00;
+  margin-bottom: 12px;
+}
+.success {
+  color: #080;
+  margin-bottom: 12px;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+.table th, .table td {
+  border: 1px solid #eee;
+  padding: 8px 6px;
+  text-align: left;
+}
+.table th {
+  background: #f5f5f5;
+}
+.table tr:nth-child(even) {
+  background: #fafafa;
+}
+.noData {
+  color: #888;
+  margin-top: 16px;
+}
+.btnPrimary {
+  background: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.btnSec {
+  background: #aaa;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.btnDanger {
+  background: #b00;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  cursor: pointer;
+}

@@ -1,0 +1,319 @@
+/**
+ * Estilos para RequirementRegistry (Cadastro de Requisito)
+ * Migrado de: legado/pdpw/frmCadRequisito.aspx
+ * Tema: Seguindo padrão do sistema legado
+ */
+
+.container {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header com títulos */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.systemTitle {
+  margin-bottom: 5px;
+}
+
+.systemImage {
+  width: 179px;
+  height: 25px;
+}
+
+.pageTitle {
+  margin-top: 5px;
+}
+
+.pageTitleImage {
+  width: 192px;
+  height: 23px;
+}
+
+/* Mensagens */
+.errorMessage {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #ef5350;
+  font-weight: bold;
+  text-align: center;
+  font-size: 11px;
+}
+
+.successMessage {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #66bb6a;
+  font-weight: bold;
+  text-align: center;
+  font-size: 11px;
+}
+
+.fieldError {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+/* Container do Formulário */
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form {
+  width: 100%;
+}
+
+/* Tabela do Formulário */
+.formTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.formTable tr {
+  height: 40px;
+}
+
+.labelCell {
+  text-align: right;
+  padding-right: 10px;
+  width: 270px;
+  font-size: 11px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.inputCell {
+  text-align: left;
+  padding-left: 5px;
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+/* Select de Data */
+.selectData {
+  width: 96px;
+  height: 24px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 11px;
+  background-color: #fff;
+}
+
+.selectData:focus {
+  outline: none;
+  border-color: #9acd32;
+  box-shadow: 0 0 4px rgba(154, 205, 50, 0.3);
+}
+
+.selectData:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Inputs de Valor e Hora */
+.inputValor {
+  width: 47px;
+  height: 20px;
+  padding: 2px 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 11px;
+  text-align: right;
+}
+
+.inputHora {
+  width: 42px;
+  height: 20px;
+  padding: 2px 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.inputValor:focus,
+.inputHora:focus {
+  outline: none;
+  border-color: #9acd32;
+  box-shadow: 0 0 4px rgba(154, 205, 50, 0.3);
+}
+
+.inputValor:disabled,
+.inputHora:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Célula de Botões */
+.buttonCell {
+  text-align: center;
+  padding-top: 20px;
+  vertical-align: middle;
+}
+
+/* Botões */
+.btnSalvar,
+.btnFechar {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btnSalvar:hover:not(:disabled),
+.btnFechar:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.btnSalvar:disabled,
+.btnFechar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnSalvar img,
+.btnFechar img {
+  display: block;
+  height: 25px;
+  width: auto;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .formContainer {
+    padding: 15px;
+  }
+
+  .formTable tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    height: auto;
+  }
+
+  .labelCell {
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+    padding-bottom: 5px;
+  }
+
+  .inputCell {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .selectData {
+    width: 120px;
+  }
+
+  .inputValor,
+  .inputHora {
+    width: 60px;
+  }
+
+  .buttonCell {
+    padding-top: 10px;
+  }
+
+  .systemImage {
+    width: 150px;
+    height: auto;
+  }
+
+  .pageTitleImage {
+    width: 160px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 10px;
+  }
+
+  .labelCell {
+    font-size: 10px;
+  }
+
+  .inputCell {
+    font-size: 10px;
+  }
+
+  .selectData,
+  .inputValor,
+  .inputHora {
+    font-size: 10px;
+  }
+
+  .btnSalvar img,
+  .btnFechar img {
+    height: 20px;
+  }
+}
+
+/* Estados de validação */
+.inputValor.error,
+.inputHora.error {
+  border-color: #ff0000;
+  background-color: #fff5f5;
+}
+
+/* Accessibility */
+.btnSalvar:focus,
+.btnFechar:focus,
+.selectData:focus,
+.inputValor:focus,
+.inputHora:focus {
+  outline: 2px solid #9acd32;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .btnSalvar,
+  .btnFechar {
+    display: none;
+  }
+
+  .errorMessage,
+  .successMessage {
+    border: 1px solid #000;
+    color: #000;
+  }
+}

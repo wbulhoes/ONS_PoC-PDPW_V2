@@ -1,0 +1,21 @@
+.container {
+  padding: 16px;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.error {
+  color: #b00020;
+  margin-bottom: 8px;
+}
