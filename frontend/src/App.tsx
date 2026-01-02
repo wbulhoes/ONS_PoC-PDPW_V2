@@ -91,6 +91,17 @@ import ProgramacaoSemanal from './pages/Collection/Demand/ProgramacaoSemanal';
 import ProgramacaoDiaria from './pages/Collection/Demand/ProgramacaoDiaria';
 import RelatorioOfertaReducao from './pages/Collection/Demand/RelatorioOfertaReducao';
 
+// Novas páginas - DESSEM
+import UploadDESSEM from './pages/DESSEM/UploadDESSEM';
+import DownloadDESSEM from './pages/DESSEM/DownloadDESSEM';
+import GerarArquivoDESSEM from './pages/DESSEM/GerarArquivoDESSEM';
+import RampasTermicasDESSEM from './pages/DESSEM/RampasTermicasDESSEM';
+
+// Novas páginas - Manutenção
+import ManutencaoDiretorio from './pages/Maintenance/ManutencaoDiretorio';
+import AberturaDia from './pages/Maintenance/AberturaDia';
+import ControleAgentes from './pages/Maintenance/ControleAgentes';
+
 import './styles/global.css';
 
 function App() {
@@ -240,6 +251,24 @@ function App() {
           <Route path="/PDPProgDiaria.aspx" element={<ProgramacaoDiaria />} />
           <Route path="/coleta/demanda/relatorio-oferta-reducao" element={<RelatorioOfertaReducao />} />
           <Route path="/frmRelOfertaReducaoSemana.aspx" element={<RelatorioOfertaReducao />} />
+          
+          {/* DESSEM - NOVAS */}
+          <Route path="/dessem/upload" element={<UploadDESSEM />} />
+          <Route path="/frmUpload.aspx?dessem=1" element={<UploadDESSEM />} />
+          <Route path="/dessem/download" element={<DownloadDESSEM />} />
+          <Route path="/frmCnsArquivo.aspx?dessem=1" element={<DownloadDESSEM />} />
+          <Route path="/dessem/gerar-arquivos" element={<GerarArquivoDESSEM />} />
+          <Route path="/frmGerArquivo.aspx?dessem=1" element={<GerarArquivoDESSEM />} />
+          <Route path="/dessem/rampas-termicas" element={<RampasTermicasDESSEM />} />
+          <Route path="/frmRampasUsinasTerm.aspx" element={<RampasTermicasDESSEM />} />
+          
+          {/* Manutenção - NOVAS */}
+          <Route path="/manutencao/diretorio" element={<ManutencaoDiretorio />} />
+          <Route path="/frmManDiretorio.aspx" element={<ManutencaoDiretorio />} />
+          <Route path="/manutencao/abrir-dia" element={<AberturaDia />} />
+          <Route path="/frmAberturaDia.aspx" element={<AberturaDia />} />
+          <Route path="/manutencao/controle-agentes" element={<ControleAgentes />} />
+          <Route path="/frmControleAgente.aspx" element={<ControleAgentes />} />
           
           {/* Admin/Cadastro */}
           <Route path="/admin/empresas" element={<CompanyManagement />} />
