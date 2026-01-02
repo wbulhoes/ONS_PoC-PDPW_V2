@@ -20,6 +20,18 @@ const initialForm: CreateEmpresaDto = {
   endereco: '',
 };
 
+const formatCNPJ = (value: string): string => {
+  // Remove tudo que não é dígito
+  const numbers = value.replace(/\D/g, '');
+  
+  // Aplica a máscara: 00.000.000/0000-00
+  if (numbers.length <= 2) return numbers;
+  if (numbers.length <= 5) return `${numbers.slice(0, 2)}.${numbers.slice(2)}`;
+  if (numbers.length <= 8) return `${numbers.slice(0, 2)}.${numbers.slice(2, 5)}.${numbers.slice(5)}`;
+  if (numbers.length <= 12) return `${numbers.slice(0, 2)}.${numbers.slice(2, 5)}.${numbers.slice(5, 8)}/${numbers.slice(8)}`;
+  return `${numbers.slice(0, 2)}.${numbers.slice(2, 5)}.${numbers.slice(5, 8)}/${numbers.slice(8, 12)}-${numbers.slice(12, 14)}`;
+};
+
 const Company: React.FC = () => {
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
   const [form, setForm] = useState<CreateEmpresaDto>(initialForm);
@@ -47,7 +59,13 @@ const Company: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
+    
+    // Aplica formatação automática no CNPJ
+    if (name === 'cnpj') {
+      setForm(prev => ({ ...prev, [name]: formatCNPJ(value) }));
+    } else {
+      setForm(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,17 +75,31 @@ const Company: React.FC = () => {
     setSuccess(null);
     try {
       if (editandoId) {
-        await companyService.update(editandoId, form as UpdateEmpresaDto);
+        console.log('Atualizando empresa ID:', editandoId, 'com dados:', form);
+        const updateData: UpdateEmpresaDto = {
+          nome: form.nome,
+          cnpj: form.cnpj,
+          telefone: form.telefone,
+          email: form.email,
+          endereco: form.endereco,
+        };
+        const resultado = await companyService.update(editandoId, updateData);
+        console.log('Empresa atualizada com sucesso:', resultado);
         setSuccess('Empresa atualizada com sucesso!');
       } else {
-        await companyService.create(form);
+        console.log('Criando nova empresa com dados:', form);
+        const resultado = await companyService.create(form);
+        console.log('Empresa criada com sucesso:', resultado);
         setSuccess('Empresa cadastrada com sucesso!');
       }
       setForm(initialForm);
       setEditandoId(null);
       await carregarEmpresas();
     } catch (err: any) {
-      setError('Erro ao salvar empresa');
+      console.error('Erro ao salvar empresa:', err);
+      // Captura a mensagem de erro do ApiClientError
+      const mensagemErro = err?.message || 'Erro ao salvar empresa';
+      setError(mensagemErro);
     } finally {
       setLoading(false);
     }
@@ -110,7 +142,14 @@ const Company: React.FC = () => {
         </div>
         <div>
           <label>CNPJ:</label>
-          <input name="cnpj" value={form.cnpj} onChange={handleChange} required maxLength={20} />
+          <input 
+            name="cnpj" 
+            value={form.cnpj} 
+            onChange={handleChange} 
+            required 
+            maxLength={20}
+            placeholder="00.000.000/0000-00"
+          />
         </div>
         <div>
           <label>Telefone:</label>

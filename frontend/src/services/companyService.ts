@@ -25,7 +25,7 @@ export interface CreateEmpresaDto {
 }
 
 export interface UpdateEmpresaDto {
-  nome?: string;
+  nome: string;
   cnpj?: string;
   telefone?: string;
   email?: string;
