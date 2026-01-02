@@ -19,7 +19,7 @@ import {
   Chip,
 } from '@mui/material';
 import { CloudUpload, Delete, CheckCircle } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 interface UploadedDESSEMFile {
   id: string;

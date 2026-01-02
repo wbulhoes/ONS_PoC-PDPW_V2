@@ -15,7 +15,7 @@ import {
   LinearProgress,
 } from '@mui/material';
 import { Build, FileDownload } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 const GerarArquivoDESSEM: React.FC = () => {
   const [dataPdp, setDataPdp] = useState('');

@@ -16,7 +16,7 @@ import {
   DialogActions,
 } from '@mui/material';
 import { LockOpen, Warning } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 const AberturaDia: React.FC = () => {
   const [dataPdp, setDataPdp] = useState('');

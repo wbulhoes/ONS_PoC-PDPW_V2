@@ -19,7 +19,7 @@ import {
   Paper,
 } from '@mui/material';
 import { Save, Send } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 interface RampaTermica {
   usinaId: string;

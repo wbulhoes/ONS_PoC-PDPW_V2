@@ -20,7 +20,7 @@ import {
   Chip,
 } from '@mui/material';
 import { FileDownload, Visibility } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 interface ArquivoDESSEM {
   id: string;

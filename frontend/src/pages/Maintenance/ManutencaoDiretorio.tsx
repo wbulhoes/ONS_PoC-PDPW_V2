@@ -18,7 +18,7 @@ import {
   IconButton,
 } from '@mui/material';
 import { Folder, Delete, Add } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 interface DiretorioTemp {
   id: string;
@@ -124,7 +124,7 @@ const ManutencaoDiretorio: React.FC = () => {
                           <Folder color="primary" />
                           {dir.caminho}
                         </Box>
-                      </TableCell>
+                      '</TableCell>
                       <TableCell>{dir.tamanho}</TableCell>
                       <TableCell>{new Date(dir.dataUltimaModificacao).toLocaleString('pt-BR')}</TableCell>
                       <TableCell align="right">

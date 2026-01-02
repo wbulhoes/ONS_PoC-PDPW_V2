@@ -22,7 +22,7 @@ import {
   DialogActions,
 } from '@mui/material';
 import { Block, CheckCircle, Visibility } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 interface Agente {
   id: string;
