@@ -6,13 +6,13 @@ Garantir que todas as páginas do menu PDPw estejam 100% funcionais e integradas
 ## 📊 Status Atual (Análise do Menu)
 
 ### Menus Principais
-1. **Coleta** ⚠️ (Parcial)
-2. **Consulta** ❌ (Maioria pendente)
-3. **Ferramentas** ❌ (Pendente)
-4. **Cadastro** ✅ (OK)
-5. **Exportação Energia** ⚠️ (Parcial)
-6. **Dados DESSEM** ❌ (Legado)
-7. **Manutenção** ❌ (Legado)
+1. **Coleta** ⚠️ (83% - 24/29)
+2. **Consulta** ⚠️ (66% - 19/29) ⬆️ **ATUALIZADO**
+3. **Ferramentas** ❌ (25% - 1/4)
+4. **Cadastro** ✅ (100% - 7/7)
+5. **Exportação Energia** ⚠️ (75% - 3/4)
+6. **Dados DESSEM** ❌ (20% - 1/5)
+7. **Manutenção** ❌ (0% - 0/3)
 
 ---
 
@@ -57,32 +57,32 @@ Garantir que todas as páginas do menu PDPw estejam 100% funcionais e integradas
 
 ---
 
-### 2. CONSULTA (Status: 10% OK)
+### 2. CONSULTA (Status: 48% OK) ⬆️ **ATUALIZADO**
 
-#### ✅ Páginas OK
+#### ✅ Páginas OK (14 implementadas)
+- `/consulta/carga` - CargaQuery ✅ **NOVO**
+- `/consulta/geracao` - GeracaoQuery ✅ **NOVO**
+- `/consulta/vazao` - VazaoQuery ✅ **NOVO**
+- `/consulta/inflexibilidade` - InflexibilidadeQuery ✅ **NOVO**
+- `/consulta/disponibilidade` - DisponibilidadeQuery ✅ **NOVO**
+- `/consulta/maquinas-paradas` - MaquinasParadasQuery ✅ **NOVO**
+- `/consulta/maquinas-operando` - MaquinasOperandoQuery ✅ **NOVO**
+- `/consulta/maquinas-gerando` - MaquinasGerandoQuery ✅ **NOVO**
+- `/consulta/parada-ug` - ParadaUGQuery ✅ **NOVO**
+- `/consulta/razao-energetica` - RazaoEnergeticaQuery ✅ **NOVO**
+- `/consulta/razao-eletrica` - RazaoEletricaQuery ✅ **NOVO**
+- `/consulta/exportacao` - ExportacaoQuery ✅ **NOVO**
+- `/consulta/importacao` - ImportacaoQuery ✅ **NOVO**
+- `/consulta/consumo` - ConsumoQuery ✅ **NOVO**
 - `/consulta/hidraulico/disponibilidade` - AvailabilityQuery ✅
 - `/consulta/outros/rro` - RROQuery ✅
 - `/consulta/dessem/comentarios` - Comments ✅
 - `/consulta/outros/observacao` - ObservationQuery ✅
 - `/consulta/outros/marcos-programacao` - ProgrammingMilestoneQuery ✅
 
-#### ❌ Páginas Pendentes
-- `{URL_BASE}/frmCnsCarga.aspx` - Carga ❌
-- `{URL_BASE}/frmCnsGeracao.aspx` - Geração ❌
-- `{URL_BASE}/frmCnsVazao.aspx` - Vazão ❌
-- `{URL_BASE}/frmCnsMaqParada.aspx` - Máq. Paradas ❌
-- `{URL_BASE}/frmCnsMaqOperando.aspx` - Máq. Operando ❌
-- `{URL_BASE}/frmCnsMaqGerando.aspx` - Máq. Gerando ❌
-- `{URL_BASE}/frmCnsParadaUG.aspx` - Parada UG ❌
-- `{URL_BASE}/frmCnsInflexibilidade.aspx` - Inflexibilidade ❌
-- `{URL_BASE}/frmCnsEnergetica.aspx` - Razão Energética ❌
-- `{URL_BASE}/frmCnsEletrica.aspx` - Razão Elétrica ❌
+#### ❌ Páginas Pendentes (15 restantes)
 - `{URL_BASE}/frmCnsDespInflex.aspx` - Unit Commitment ❌
-- `{URL_BASE}/frmCnsExportacao.aspx` - Exportação ❌
-- `{URL_BASE}/frmCnsImportacao.aspx` - Importação ❌
 - `{URL_BASE}/frmCnsDespRE.aspx` - Motivo Despacho RE ❌
-- `{URL_BASE}/frmCnsConsumo.aspx` - Perdas e Consumo ❌
-- `{URL_BASE}/frmCnsDisponibilidade.aspx` - Disponibilidade ❌
 - `{URL_BASE}/frmCnsCompensacao.aspx` - Compensação Lastro ❌
 - `{URL_BASE}/frmCnsResFaltaComb.aspx` - Restrição Combustível ❌
 - `{URL_BASE}/frmCnsRampa.aspx` - Garantia Energética ❌
@@ -92,7 +92,7 @@ Garantir que todas as páginas do menu PDPw estejam 100% funcionais e integradas
 - `{URL_BASE}/frmCnsGEC.aspx` - GE Crédito ❌
 - `{URL_BASE}/frmCnsGES.aspx` - GE Substituição ❌
 
-**Ação:** Criar 24 componentes de consulta React
+**Ação:** Criar 10 componentes de consulta React restantes
 
 ---
 
@@ -170,24 +170,26 @@ Garantir que todas as páginas do menu PDPw estejam 100% funcionais e integradas
 | Menu | Total Páginas | Implementadas | Pendentes | % Completo |
 |------|---------------|---------------|-----------|------------|
 | Coleta | 29 | 24 | 5 | 83% |
-| Consulta | 29 | 5 | 24 | 17% |
+| Consulta | 29 | 19 | 10 | **66%** ⬆️ |
 | Ferramentas | 4 | 1 | 3 | 25% |
 | Cadastro | 7 | 7 | 0 | **100%** |
 | Exportação | 4 | 3 | 1 | 75% |
 | DESSEM | 5 | 1 | 4 | 20% |
 | Manutenção | 3 | 0 | 3 | 0% |
-| **TOTAL** | **81** | **41** | **40** | **51%** |
+| **TOTAL** | **81** | **55** | **26** | **68%** ⬆️ |
 
 ---
 
 ## 🚀 PLANO DE IMPLEMENTAÇÃO
 
-### Fase 1: Páginas Críticas (Prioridade Alta - 2 dias)
-1. ✅ Criar componentes de Consulta mais usados (10 páginas)
-   - Carga, Geração, Vazão, Inflexibilidade
-   - Razão Energética, Razão Elétrica
-   - Exportação, Importação
-   - Disponibilidade, Consumo
+### Fase 1: Páginas Críticas (Prioridade Alta - 2 dias) ✅ **90% CONCLUÍDO**
+1. ✅ Criar componentes de Consulta mais usados (14 páginas) ✅ **CONCLUÍDO**
+   - ✅ Carga, Geração, Vazão, Inflexibilidade
+   - ✅ Razão Energética, Razão Elétrica
+   - ✅ Exportação, Importação
+   - ✅ Disponibilidade, Consumo
+   - ✅ Máquinas Paradas, Operando, Gerando
+   - ✅ Parada UG
 
 ### Fase 2: Ferramentas e Upload (Prioridade Alta - 1 dia)
 2. ✅ Implementar Upload/Download de arquivos (4 páginas)
