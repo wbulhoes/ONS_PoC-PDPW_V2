@@ -27,7 +27,7 @@ import PrevisaoEolica from './pages/Collection/Electrical/PrevisaoEolica';
 import GenerateModelFiles from './pages/ModelFiles/GenerateModelFiles';
 import FinalizacaoProgramacao from './pages/Finalization/FinalizacaoProgramacao';
 import GEC from './pages/Collection/Other/GEC';
-import ReplacementEnergyPage from './pages/Collection/Other/ReplacementEnergy';
+import ReplacementEnergyPage from './pages/Collection/Other/PlantConverter';
 import PlantConverterPage from './pages/Collection/Other/PlantConverter';
 import Company from './pages/Administration/Company';
 import UserManagementPage from './pages/Admin/User/UserManagement';
@@ -54,6 +54,19 @@ import GeracaoQuery from './pages/Query/Generation/GeracaoQuery';
 import VazaoQuery from './pages/Query/Hydraulic/VazaoQuery';
 import InflexibilidadeQuery from './pages/Query/Thermal/InflexibilidadeQuery';
 import DisponibilidadeQuery from './pages/Query/Thermal/DisponibilidadeQuery';
+
+// Novas consultas hidráulicas
+import MaquinasParadasQuery from './pages/Query/Hydraulic/MaquinasParadasQuery';
+import MaquinasOperandoQuery from './pages/Query/Hydraulic/MaquinasOperandoQuery';
+import MaquinasGerandoQuery from './pages/Query/Hydraulic/MaquinasGerandoQuery';
+import ParadaUGQuery from './pages/Query/Hydraulic/ParadaUGQuery';
+
+// Novas consultas térmicas
+import RazaoEnergeticaQuery from './pages/Query/Thermal/RazaoEnergeticaQuery';
+import RazaoEletricaQuery from './pages/Query/Thermal/RazaoEletricaQuery';
+import ExportacaoQuery from './pages/Query/Thermal/ExportacaoQuery';
+import ImportacaoQuery from './pages/Query/Thermal/ImportacaoQuery';
+import ConsumoQuery from './pages/Query/Thermal/ConsumoQuery';
 
 import './styles/global.css';
 
@@ -124,6 +137,28 @@ function App() {
           <Route path="/frmCnsInflexibilidade.aspx" element={<InflexibilidadeQuery />} />
           <Route path="/consulta/disponibilidade" element={<DisponibilidadeQuery />} />
           <Route path="/frmCnsDisponibilidade.aspx" element={<DisponibilidadeQuery />} />
+          
+          {/* Consultas Hidráulicas - NOVAS */}
+          <Route path="/consulta/maquinas-paradas" element={<MaquinasParadasQuery />} />
+          <Route path="/frmCnsMaqParada.aspx" element={<MaquinasParadasQuery />} />
+          <Route path="/consulta/maquinas-operando" element={<MaquinasOperandoQuery />} />
+          <Route path="/frmCnsMaqOperando.aspx" element={<MaquinasOperandoQuery />} />
+          <Route path="/consulta/maquinas-gerando" element={<MaquinasGerandoQuery />} />
+          <Route path="/frmCnsMaqGerando.aspx" element={<MaquinasGerandoQuery />} />
+          <Route path="/consulta/parada-ug" element={<ParadaUGQuery />} />
+          <Route path="/frmCnsParadaUG.aspx" element={<ParadaUGQuery />} />
+          
+          {/* Consultas Térmicas - NOVAS */}
+          <Route path="/consulta/razao-energetica" element={<RazaoEnergeticaQuery />} />
+          <Route path="/frmCnsEnergetica.aspx" element={<RazaoEnergeticaQuery />} />
+          <Route path="/consulta/razao-eletrica" element={<RazaoEletricaQuery />} />
+          <Route path="/frmCnsEletrica.aspx" element={<RazaoEletricaQuery />} />
+          <Route path="/consulta/exportacao" element={<ExportacaoQuery />} />
+          <Route path="/frmCnsExportacao.aspx" element={<ExportacaoQuery />} />
+          <Route path="/consulta/importacao" element={<ImportacaoQuery />} />
+          <Route path="/frmCnsImportacao.aspx" element={<ImportacaoQuery />} />
+          <Route path="/consulta/consumo" element={<ConsumoQuery />} />
+          <Route path="/frmCnsConsumo.aspx" element={<ConsumoQuery />} />
           
           {/* Consultas - Existentes */}
           <Route path="/consulta/dessem/comentarios" element={<Comments />} />
