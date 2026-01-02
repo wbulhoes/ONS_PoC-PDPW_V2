@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Card, CardContent, TextField, MenuItem, Button, Alert, Snackbar, Grid } from '@mui/material';
 import { Restore, Info } from '@mui/icons-material';
-import { apiClient } from '../../../services/apiClient';
+import { apiClient } from '../../services/apiClient';
 
 const RecuperarDadosDiaAnterior: React.FC = () => {
   const [dataOrigem, setDataOrigem] = useState('');
