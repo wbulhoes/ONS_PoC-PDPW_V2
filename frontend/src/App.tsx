@@ -80,6 +80,17 @@ import GECreditoQuery from './pages/Query/Other/GECreditoQuery';
 import GESubstituicaoQuery from './pages/Query/Other/GESubstituicaoQuery';
 import EnvioDadosEmpresaQuery from './pages/Query/Other/EnvioDadosEmpresaQuery';
 
+// Novas páginas - Ferramentas
+import UploadArquivos from './pages/Tools/UploadArquivos';
+import DownloadArquivos from './pages/Tools/DownloadArquivos';
+import VisualizacaoRecibos from './pages/Tools/VisualizacaoRecibos';
+import RecuperarDadosDiaAnterior from './pages/Tools/RecuperarDadosDiaAnterior';
+
+// Novas páginas - Coleta/Demanda
+import ProgramacaoSemanal from './pages/Collection/Demand/ProgramacaoSemanal';
+import ProgramacaoDiaria from './pages/Collection/Demand/ProgramacaoDiaria';
+import RelatorioOfertaReducao from './pages/Collection/Demand/RelatorioOfertaReducao';
+
 import './styles/global.css';
 
 function App() {
@@ -211,6 +222,24 @@ function App() {
           <Route path="/frmGerArquivo.aspx" element={<GenerateModelFiles />} />
           <Route path="/finalizacao/programacao" element={<FinalizacaoProgramacao />} />
           <Route path="/frmFinalizaProgramacao.aspx" element={<FinalizacaoProgramacao />} />
+          
+          {/* Ferramentas - NOVAS */}
+          <Route path="/ferramentas/upload" element={<UploadArquivos />} />
+          <Route path="/frmUpload.aspx" element={<UploadArquivos />} />
+          <Route path="/ferramentas/download" element={<DownloadArquivos />} />
+          <Route path="/frmCnsArquivo.aspx" element={<DownloadArquivos />} />
+          <Route path="/ferramentas/recibos" element={<VisualizacaoRecibos />} />
+          <Route path="/frmCnsRecibo.aspx" element={<VisualizacaoRecibos />} />
+          <Route path="/ferramentas/recuperar-dados" element={<RecuperarDadosDiaAnterior />} />
+          <Route path="/frmRecuperarDados.aspx" element={<RecuperarDadosDiaAnterior />} />
+          
+          {/* Coleta - Gerenciamento da Demanda - NOVAS */}
+          <Route path="/coleta/demanda/programacao-semanal" element={<ProgramacaoSemanal />} />
+          <Route path="/PDPProgSemanal.aspx" element={<ProgramacaoSemanal />} />
+          <Route path="/coleta/demanda/programacao-diaria" element={<ProgramacaoDiaria />} />
+          <Route path="/PDPProgDiaria.aspx" element={<ProgramacaoDiaria />} />
+          <Route path="/coleta/demanda/relatorio-oferta-reducao" element={<RelatorioOfertaReducao />} />
+          <Route path="/frmRelOfertaReducaoSemana.aspx" element={<RelatorioOfertaReducao />} />
           
           {/* Admin/Cadastro */}
           <Route path="/admin/empresas" element={<CompanyManagement />} />
