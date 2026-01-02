@@ -23,7 +23,7 @@ import {
   DialogActions,
 } from '@mui/material';
 import { Save, Refresh, ContentCopy } from '@mui/icons-material';
-import api from '../../../services/api';
+import { apiClient } from '../../../services/apiClient';
 
 interface LoadData {
   id: number;
@@ -59,8 +59,8 @@ const Load: React.FC = () => {
 
   const loadSubsistemas = async () => {
     try {
-      const response = await api.get('/subsistemas');
-      setSubsistemas(response.data.map((s: any) => s.nome));
+      const data = await apiClient.get<any[]>('/subsistemas');
+      setSubsistemas(data.map((s: any) => s.nome));
     } catch (error) {
       console.error('Erro ao carregar subsistemas');
     }
@@ -68,8 +68,8 @@ const Load: React.FC = () => {
 
   const loadEmpresas = async () => {
     try {
-      const response = await api.get('/empresas');
-      setEmpresas(response.data.map((e: any) => e.nome));
+      const data = await apiClient.get<any[]>('/empresas');
+      setEmpresas(data.map((e: any) => e.nome));
     } catch (error) {
       console.error('Erro ao carregar empresas');
     }
@@ -77,11 +77,10 @@ const Load: React.FC = () => {
 
   const loadData = async () => {
     try {
-      const response = await api.get('/coleta/carga', {
-        params: { dataPdp, subsistema, empresa },
-      });
-      if (response.data) {
-        setIntervalos(response.data.intervalos || Array(48).fill(0));
+      const params = new URLSearchParams({ dataPdp, subsistema, empresa });
+      const data = await apiClient.get<any>(`/coleta/carga?${params.toString()}`);
+      if (data) {
+        setIntervalos(data.intervalos || Array(48).fill(0));
       }
     } catch (error) {
       setIntervalos(Array(48).fill(0));
@@ -90,7 +89,7 @@ const Load: React.FC = () => {
 
   const handleSave = async () => {
     try {
-      await api.post('/coleta/carga', {
+      await apiClient.post('/coleta/carga', {
         dataPdp,
         subsistema,
         empresa,

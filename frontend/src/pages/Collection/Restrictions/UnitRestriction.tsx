@@ -25,7 +25,7 @@ import {
   Chip,
 } from '@mui/material';
 import { Add, Edit, Delete, Save, Cancel } from '@mui/icons-material';
-import api from '../../../services/api';
+import { apiClient } from '../../../services/apiClient';
 
 interface UnitRestriction {
   id?: number;
@@ -111,8 +111,8 @@ const UnitRestriction: React.FC = () => {
 
   const loadUsinas = async () => {
     try {
-      const response = await api.get('/usinas');
-      setUsinas(response.data);
+      const data = await apiClient.get<Usina[]>('/usinas');
+      setUsinas(data);
     } catch (error) {
       console.error('Erro ao carregar usinas');
     }
@@ -120,8 +120,8 @@ const UnitRestriction: React.FC = () => {
 
   const loadUnidades = async (usinaId: number) => {
     try {
-      const response = await api.get(`/usinas/${usinaId}/unidades`);
-      setUnidades(response.data);
+      const data = await apiClient.get<UnidadeGeradora[]>(`/usinas/${usinaId}/unidades`);
+      setUnidades(data);
     } catch (error) {
       console.error('Erro ao carregar unidades geradoras');
       setUnidades([]);
@@ -130,13 +130,13 @@ const UnitRestriction: React.FC = () => {
 
   const loadRestrictions = async () => {
     try {
-      const params: any = {};
-      if (filters.dataPdp) params.dataPdp = filters.dataPdp;
-      if (filters.usinaId) params.usinaId = filters.usinaId;
-      if (filters.status) params.status = filters.status;
+      const params = new URLSearchParams();
+      if (filters.dataPdp) params.append('dataPdp', filters.dataPdp);
+      if (filters.usinaId) params.append('usinaId', filters.usinaId.toString());
+      if (filters.status) params.append('status', filters.status);
 
-      const response = await api.get('/coleta/restricao-ug', { params });
-      setRestrictions(response.data);
+      const data = await apiClient.get<UnitRestriction[]>(`/coleta/restricao-ug?${params.toString()}`);
+      setRestrictions(data);
     } catch (error) {
       console.error('Erro ao carregar restrições');
       setRestrictions([]);
@@ -185,14 +185,14 @@ const UnitRestriction: React.FC = () => {
   const handleSave = async () => {
     try {
       if (editingRestriction?.id) {
-        await api.put(`/coleta/restricao-ug/${editingRestriction.id}`, formData);
+        await apiClient.put(`/coleta/restricao-ug/${editingRestriction.id}`, formData);
         setSnackbar({
           open: true,
           message: 'Restrição atualizada com sucesso',
           severity: 'success',
         });
       } else {
-        await api.post('/coleta/restricao-ug', formData);
+        await apiClient.post('/coleta/restricao-ug', formData);
         setSnackbar({
           open: true,
           message: 'Restrição criada com sucesso',
@@ -213,7 +213,7 @@ const UnitRestriction: React.FC = () => {
   const handleDelete = async (id: number) => {
     if (window.confirm('Deseja realmente excluir esta restrição?')) {
       try {
-        await api.delete(`/coleta/restricao-ug/${id}`);
+        await apiClient.delete(`/coleta/restricao-ug/${id}`);
         setSnackbar({
           open: true,
           message: 'Restrição excluída com sucesso',

@@ -1,4 +1,9 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api';
+/**
+ * API Client usando fetch
+ * Cliente HTTP padronizado para toda a aplicação
+ */
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 
 export interface ApiError {
   message: string;

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { apiClient } from './apiClient';
 
 export interface EnergiaVertida {
   id: number;
@@ -25,28 +25,24 @@ export interface UpdateEnergiaVertidaDto {
   observacoes?: string;
 }
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api',
-});
-
 export const energiaVertidaService = {
   async getAll(): Promise<EnergiaVertida[]> {
-    const { data } = await api.get<EnergiaVertida[]>('/energia-vertida');
-    return data;
+    return apiClient.get<EnergiaVertida[]>('/energia-vertida');
   },
+  
   async getById(id: number): Promise<EnergiaVertida> {
-    const { data } = await api.get<EnergiaVertida>(`/energia-vertida/${id}`);
-    return data;
+    return apiClient.get<EnergiaVertida>(`/energia-vertida/${id}`);
   },
+  
   async create(dto: CreateEnergiaVertidaDto): Promise<EnergiaVertida> {
-    const { data } = await api.post<EnergiaVertida>('/energia-vertida', dto);
-    return data;
+    return apiClient.post<EnergiaVertida>('/energia-vertida', dto);
   },
+  
   async update(id: number, dto: UpdateEnergiaVertidaDto): Promise<EnergiaVertida> {
-    const { data } = await api.put<EnergiaVertida>(`/energia-vertida/${id}`, dto);
-    return data;
+    return apiClient.put<EnergiaVertida>(`/energia-vertida/${id}`, dto);
   },
+  
   async delete(id: number): Promise<void> {
-    await api.delete(`/energia-vertida/${id}`);
+    return apiClient.delete(`/energia-vertida/${id}`);
   },
 };

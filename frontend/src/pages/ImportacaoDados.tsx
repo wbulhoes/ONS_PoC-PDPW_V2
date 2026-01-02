@@ -19,7 +19,7 @@ import {
   TextField,
 } from '@mui/material';
 import { CloudUpload, CheckCircle, Error as ErrorIcon, Description } from '@mui/icons-material';
-import api from '../services/api';
+import { apiClient } from '../services/apiClient';
 
 interface ImportResult {
   success: boolean;
@@ -68,22 +68,22 @@ const ImportacaoDados: React.FC = () => {
     formData.append('tipo', tipoImportacao);
 
     try {
-      const response = await api.post('/importacao/upload', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-        onUploadProgress: (progressEvent) => {
-          const percentCompleted = Math.round((progressEvent.loaded * 100) / (progressEvent.total || 1));
-          setProgress(percentCompleted);
-        },
-      });
+      // Simular progresso (fetch/apiClient não suporta onUploadProgress nativamente)
+      const interval = setInterval(() => {
+        setProgress((prev) => Math.min(prev + 10, 90));
+      }, 200);
 
-      setImportResult(response.data);
+      const response = await apiClient.post<ImportResult>('/importacao/upload', formData);
+      
+      clearInterval(interval);
+      setProgress(100);
+
+      setImportResult(response);
       setSnackbar({ open: true, message: 'Importação concluída com sucesso', severity: 'success' });
       setSelectedFile(null);
       setTipoImportacao('');
     } catch (error: any) {
-      const errorMessage = error.response?.data?.message || 'Erro ao importar dados';
+      const errorMessage = error.message || 'Erro ao importar dados';
       setSnackbar({ open: true, message: errorMessage, severity: 'error' });
       setImportResult({
         success: false,
@@ -104,11 +104,8 @@ const ImportacaoDados: React.FC = () => {
     }
 
     try {
-      const response = await api.get(`/importacao/template/${tipoImportacao}`, {
-        responseType: 'blob',
-      });
-
-      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const blob = await apiClient.get<Blob>(`/importacao/template/${tipoImportacao}`);
+      const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.setAttribute('download', `template_${tipoImportacao}.csv`);
