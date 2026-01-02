@@ -42,12 +42,20 @@ import ContractedInflexibility from './pages/Administration/ContractedInflexibil
 import Comments from './pages/Query/DESSEM/Comments';
 import ObservationQuery from './pages/Query/Other/ObservationQuery';
 import AvailabilityQuery from './pages/Query/Hydraulic/AvailabilityQuery';
-import './styles/global.css';
 import CompanyManagement from './pages/Admin/Company/CompanyManagement';
 import PlantManagement from './pages/Admin/Plant/PlantManagement';
 import OfertasExportacaoManagement from './pages/Exportacao/OfertasExportacaoManagement';
 import OfertasRVManagement from './pages/Exportacao/OfertasRVManagement';
 import EnergiaVertidaManagement from './pages/EnergiaVertida/EnergiaVertidaManagement';
+
+// Novas consultas
+import CargaQuery from './pages/Query/Load/CargaQuery';
+import GeracaoQuery from './pages/Query/Generation/GeracaoQuery';
+import VazaoQuery from './pages/Query/Hydraulic/VazaoQuery';
+import InflexibilidadeQuery from './pages/Query/Thermal/InflexibilidadeQuery';
+import DisponibilidadeQuery from './pages/Query/Thermal/DisponibilidadeQuery';
+
+import './styles/global.css';
 
 function App() {
   return (
@@ -57,18 +65,19 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/exemplo" element={<Example />} />
           <Route path="/splash" element={<Splash />} />
+          
+          {/* Coleta - Hidráulico */}
           <Route path="/coleta/hidraulico/vazao" element={<Flow />} />
           <Route path="/coleta/hidraulico/disponibilidade" element={<Availability initialType="H" />} />
           <Route path="/coleta/hidraulico/balanco" element={<Balance />} />
+          
+          {/* Coleta - Térmico */}
           <Route path="/coleta/termico/geracao" element={<Generation />} />
           <Route path="/coleta/termico/disponibilidade" element={<Availability initialType="T" />} />
           <Route path="/frmColDisponibilidade.aspx" element={<Availability initialType="T" />} />
           <Route path="/coleta/termico/inflexibilidade" element={<Inflexibility />} />
           <Route path="/coleta/termico/modalidade-operativa" element={<OperatingMode />} />
-          <Route
-            path="/coleta/termico/despacho-inflexibilidade"
-            element={<InflexibilityDispatch />}
-          />
+          <Route path="/coleta/termico/despacho-inflexibilidade" element={<InflexibilityDispatch />} />
           <Route path="/coleta/termico/oferta-exportacao" element={<ExportOffer />} />
           <Route path="/frmCnsOfertaExportacao.aspx" element={<ExportOffer />} />
           <Route path="/coleta/termico/analise-oferta-exportacao" element={<ExportOfferAnalysis />} />
@@ -79,8 +88,12 @@ function App() {
           <Route path="/frmColOfertaSemanalDespComp.aspx" element={<WeeklyDispatch />} />
           <Route path="/coleta/termico/restricao-combustivel" element={<FuelShortageRestriction />} />
           <Route path="/frmColResFaltaComb.aspx" element={<FuelShortageRestriction />} />
+          
+          {/* Coleta - Carga */}
           <Route path="/coleta/carga/carga" element={<Load />} />
           <Route path="/coleta/carga/consumo" element={<Consumption />} />
+          
+          {/* Coleta - Elétrica */}
           <Route path="/coleta/eletrica/energia" element={<Energy />} />
           <Route path="/frmColEnergetica.aspx" element={<Energy />} />
           <Route path="/coleta/eletrica/programacao" element={<ProgramacaoEnergeticaPage />} />
@@ -89,30 +102,48 @@ function App() {
           <Route path="/frmColProgramacaoEletrica.aspx" element={<ProgramacaoEletrica />} />
           <Route path="/coleta/eletrica/previsao-eolica" element={<PrevisaoEolica />} />
           <Route path="/frmColPrevisaoEolica.aspx" element={<PrevisaoEolica />} />
-          <Route path="/gerar/arquivos-modelos" element={<GenerateModelFiles />} />
-          <Route path="/frmGerArquivo.aspx" element={<GenerateModelFiles />} />
-          <Route path="/finalizacao/programacao" element={<FinalizacaoProgramacao />} />
-          <Route path="/frmFinalizaProgramacao.aspx" element={<FinalizacaoProgramacao />} />
+          
+          {/* Coleta - Outros */}
           <Route path="/coleta/restricoes/restricao-ug" element={<UnitRestriction />} />
           <Route path="/coleta/outros/gec" element={<GEC />} />
           <Route path="/coleta/outros/energia-reposicao" element={<ReplacementEnergyPage />} />
           <Route path="/frmColEnergiaRepPer.aspx" element={<ReplacementEnergyPage />} />
+          <Route path="/coleta/outros/usina-conversora" element={<PlantConverterPage />} />
+          <Route path="/frmUsinaConversora.aspx" element={<PlantConverterPage />} />
+          <Route path="/coleta/insumos" element={<Insumos />} />
+          <Route path="/frmColInsumos.aspx" element={<Insumos />} />
+          
+          {/* Consultas - NOVAS */}
+          <Route path="/consulta/carga" element={<CargaQuery />} />
+          <Route path="/frmCnsCarga.aspx" element={<CargaQuery />} />
+          <Route path="/consulta/geracao" element={<GeracaoQuery />} />
+          <Route path="/frmCnsGeracao.aspx" element={<GeracaoQuery />} />
+          <Route path="/consulta/vazao" element={<VazaoQuery />} />
+          <Route path="/frmCnsVazao.aspx" element={<VazaoQuery />} />
+          <Route path="/consulta/inflexibilidade" element={<InflexibilidadeQuery />} />
+          <Route path="/frmCnsInflexibilidade.aspx" element={<InflexibilidadeQuery />} />
+          <Route path="/consulta/disponibilidade" element={<DisponibilidadeQuery />} />
+          <Route path="/frmCnsDisponibilidade.aspx" element={<DisponibilidadeQuery />} />
+          
+          {/* Consultas - Existentes */}
           <Route path="/consulta/dessem/comentarios" element={<Comments />} />
           <Route path="/frmCnsObservacoes.aspx" element={<Comments />} />
           <Route path="/consulta/outros/observacao" element={<ObservationQuery />} />
           <Route path="/frmCnsObservacao.aspx" element={<ObservationQuery />} />
           <Route path="/consulta/hidraulico/disponibilidade" element={<AvailabilityQuery />} />
-          <Route path="/frmCnsDisponibilidade.aspx" element={<AvailabilityQuery />} />
           <Route path="/consulta/outros/rro" element={<RROQuery />} />
           <Route path="/frmCnsRRO.aspx" element={<RROQuery />} />
-          <Route path="/coleta/insumos" element={<Insumos />} />
-          <Route path="/frmColInsumos.aspx" element={<Insumos />} />
           <Route path="/consulta/outros/marcos-programacao" element={<ProgrammingMilestoneQuery />} />
           <Route path="/frmConsultaMarcoProgramacao.aspx" element={<ProgrammingMilestoneQuery />} />
           <Route path="/frmCnsEnergiaRepPer.aspx" element={<ReplacementEnergyPage />} />
-          <Route path="/coleta/outros/usina-conversora" element={<PlantConverterPage />} />
-          <Route path="/frmUsinaConversora.aspx" element={<PlantConverterPage />} />
-          <Route path="/auth/integration" element={<IntegrationAuth />} />
+          
+          {/* Ferramentas */}
+          <Route path="/gerar/arquivos-modelos" element={<GenerateModelFiles />} />
+          <Route path="/frmGerArquivo.aspx" element={<GenerateModelFiles />} />
+          <Route path="/finalizacao/programacao" element={<FinalizacaoProgramacao />} />
+          <Route path="/frmFinalizaProgramacao.aspx" element={<FinalizacaoProgramacao />} />
+          
+          {/* Admin/Cadastro */}
           <Route path="/admin/empresas" element={<CompanyManagement />} />
           <Route path="/admin/usuarios" element={<UserManagementPage />} />
           <Route path="/admin/associacao-usuario-empresa" element={<UserAssociation />} />
@@ -123,9 +154,14 @@ function App() {
           <Route path="/frmCnsMotivoInfl.aspx" element={<InflexibilityDispatchReasonPage />} />
           <Route path="/admin/inflexibilidade-contratada" element={<ContractedInflexibility />} />
           <Route path="/frmInflxContratada.aspx" element={<ContractedInflexibility />} />
+          
+          {/* Exportação */}
           <Route path="/ofertas-exportacao" element={<OfertasExportacaoManagement />} />
           <Route path="/ofertas-rv" element={<OfertasRVManagement />} />
           <Route path="/energia-vertida" element={<EnergiaVertidaManagement />} />
+          
+          {/* Auth */}
+          <Route path="/auth/integration" element={<IntegrationAuth />} />
         </Routes>
       </Layout>
     </BrowserRouter>
