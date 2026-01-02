@@ -67,6 +67,18 @@ import RazaoEletricaQuery from './pages/Query/Thermal/RazaoEletricaQuery';
 import ExportacaoQuery from './pages/Query/Thermal/ExportacaoQuery';
 import ImportacaoQuery from './pages/Query/Thermal/ImportacaoQuery';
 import ConsumoQuery from './pages/Query/Thermal/ConsumoQuery';
+import UnitCommitmentQuery from './pages/Query/Thermal/UnitCommitmentQuery';
+import MotivoDespachoREQuery from './pages/Query/Thermal/MotivoDespachoREQuery';
+import CompensacaoLastroQuery from './pages/Query/Thermal/CompensacaoLastroQuery';
+import RestricaoCombustivelQuery from './pages/Query/Thermal/RestricaoCombustivelQuery';
+import GarantiaEnergeticaQuery from './pages/Query/Thermal/GarantiaEnergeticaQuery';
+
+// Novas consultas outras
+import CreditoForaMeritoQuery from './pages/Query/Other/CreditoForaMeritoQuery';
+import SuprimentoOrdemMeritoQuery from './pages/Query/Other/SuprimentoOrdemMeritoQuery';
+import GECreditoQuery from './pages/Query/Other/GECreditoQuery';
+import GESubstituicaoQuery from './pages/Query/Other/GESubstituicaoQuery';
+import EnvioDadosEmpresaQuery from './pages/Query/Other/EnvioDadosEmpresaQuery';
 
 import './styles/global.css';
 
@@ -159,6 +171,28 @@ function App() {
           <Route path="/frmCnsImportacao.aspx" element={<ImportacaoQuery />} />
           <Route path="/consulta/consumo" element={<ConsumoQuery />} />
           <Route path="/frmCnsConsumo.aspx" element={<ConsumoQuery />} />
+          <Route path="/consulta/unit-commitment" element={<UnitCommitmentQuery />} />
+          <Route path="/frmCnsDespInflex.aspx" element={<UnitCommitmentQuery />} />
+          <Route path="/consulta/motivo-despacho-re" element={<MotivoDespachoREQuery />} />
+          <Route path="/frmCnsDespRE.aspx" element={<MotivoDespachoREQuery />} />
+          <Route path="/consulta/compensacao-lastro" element={<CompensacaoLastroQuery />} />
+          <Route path="/frmCnsCompensacao.aspx" element={<CompensacaoLastroQuery />} />
+          <Route path="/consulta/restricao-combustivel" element={<RestricaoCombustivelQuery />} />
+          <Route path="/frmCnsResFaltaComb.aspx" element={<RestricaoCombustivelQuery />} />
+          <Route path="/consulta/garantia-energetica" element={<GarantiaEnergeticaQuery />} />
+          <Route path="/frmCnsRampa.aspx" element={<GarantiaEnergeticaQuery />} />
+          
+          {/* Consultas Outras - NOVAS */}
+          <Route path="/consulta/credito-fora-merito" element={<CreditoForaMeritoQuery />} />
+          <Route path="/frmCnsCreForaMerito.aspx" element={<CreditoForaMeritoQuery />} />
+          <Route path="/consulta/suprimento-ordem-merito" element={<SuprimentoOrdemMeritoQuery />} />
+          <Route path="/frmCnsSom.aspx" element={<SuprimentoOrdemMeritoQuery />} />
+          <Route path="/consulta/ge-credito" element={<GECreditoQuery />} />
+          <Route path="/frmCnsGEC.aspx" element={<GECreditoQuery />} />
+          <Route path="/consulta/ge-substituicao" element={<GESubstituicaoQuery />} />
+          <Route path="/frmCnsGES.aspx" element={<GESubstituicaoQuery />} />
+          <Route path="/consulta/envio-dados-empresa" element={<EnvioDadosEmpresaQuery />} />
+          <Route path="/frmCnsEnvioEmp.aspx" element={<EnvioDadosEmpresaQuery />} />
           
           {/* Consultas - Existentes */}
           <Route path="/consulta/dessem/comentarios" element={<Comments />} />
